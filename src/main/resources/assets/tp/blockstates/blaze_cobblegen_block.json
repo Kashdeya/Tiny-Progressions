@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": {"model": "tp:blaze_cobblegen_block"}
+    }
+}

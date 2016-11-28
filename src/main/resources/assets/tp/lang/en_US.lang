@@ -1,0 +1,33 @@
+#Tech Blocks
+tile.cobblegen_block.name=Cobblestone Generator
+tile.iron_cobblegen_block.name=Cobblestone Generator Tier 2
+tile.diamond_cobblegen_block.name=Cobblestone Generator Tier 3
+tile.blaze_cobblegen_block.name=Cobblestone Generator Tier 4
+tile.emerald_cobblegen_block.name=Cobblestone Generator Tier 5
+
+#Growth Blocks
+tile.growth_block.name=Growth Crystal
+tile.growth_upgrade.name=Growth Crystal Tier 2
+
+#Deco Blocks
+tile.CharcoalBlock.name=Charcoal Block
+tile.FleshBlock.name=Flesh Block
+tile.ReinforcedGlass.name=Reinforced Glass
+tile.ReinforcedObsidian.name=Reinforced Obsidian
+
+#Tech Items
+item.WateringCan.name=Watering Can
+item.WateringCanUpgrade.name=Reinforced Watering Can
+item.QuartzDust.name=Quartz Enriched Iron Dust
+item.QuartzKnife.name=Quartz Knife
+item.UnfiredClayBucket.name=Unfired Clay Bucket
+item.FiredClayBucket.name=Clay Bucket
+item.WaterClayBucket.name=Clay Water Bucket
+item.LavaClayBucket.name=Clay Lava Bucket
+
+#Goodies
+item.BirthdayPickaxe.name=Party Pickaxe
+item.WyldAxe.name=Lord Cluckingtons Axe
+
+#Creative Tabs
+itemGroup.tiny_progressions=Tiny Progressions

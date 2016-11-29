@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "tp:items/EmptyWoodenBucket"
+        "layer0": "tp:items/stoneBoots"
     }
 }

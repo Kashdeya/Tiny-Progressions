@@ -7,8 +7,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
-import com.kashdeya.tinyprogressions.events.LeafDrops;
+import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.recipes.Recipes;
@@ -27,6 +28,7 @@ public class CommonProxy {
     	// Load everything else
 		TechItems.init();
 		TechBlocks.init();
+		TechArmor.init();
 
     }
 
@@ -35,7 +37,7 @@ public class CommonProxy {
     	Recipes.registerRecipes();
     	
     	// Events
-    	MinecraftForge.EVENT_BUS.register(new LeafDrops());
+    	MinecraftForge.EVENT_BUS.register(new EventDrops());
     	
     	// FuelHandler
     	GameRegistry.registerFuelHandler(new FuelHandler());

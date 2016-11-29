@@ -1,16 +1,22 @@
 package com.kashdeya.tinyprogressions.blocks;
 
+import java.util.List;
 import java.util.Random;
+
+import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
@@ -26,8 +32,8 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 public class BlockGrowthUpgrade extends Block{
 
 	public BlockGrowthUpgrade(){
-		
-    super(Material.GROUND);
+	// Turns block into a water source.	
+    super(Material.WATER);
     this.setTickRandomly(true);
     this.setHardness(1.25F);
     this.setHarvestLevel("pickaxe", 1);
@@ -36,6 +42,7 @@ public class BlockGrowthUpgrade extends Block{
 	this.setLightOpacity(1);
 	this.setCreativeTab(tinyprogressions.tabTP);
 	this.setSoundType(blockSoundType.METAL);
+	this.setDefaultState(this.blockState.getBaseState());
 	this.setUnlocalizedName("growth_upgrade");
 	}
     
@@ -57,9 +64,7 @@ public class BlockGrowthUpgrade extends Block{
         this.growCropsNearby(world, pos, state);
     }
     
-    /**
-     * Get the Item that this Block should drop when harvested.
-     */
+    // Get the Item that this Block should drop when harvested.
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
     	return Item.getItemFromBlock(TechBlocks.growth_upgrade);
@@ -71,7 +76,7 @@ public class BlockGrowthUpgrade extends Block{
         int zO = pos.getZ();
 
         for (int xD = -10; xD <= 10; xD++) {
-            for (int yD = -1; yD <= 5; yD++) {
+            for (int yD = -2; yD <= 5; yD++) {
                 for (int zD = -10; zD <= 10; zD++) {
                     int x = xO + xD;
                     int y = yO + yD;
@@ -136,6 +141,56 @@ public class BlockGrowthUpgrade extends Block{
                 }
             }
         }
+    }
+	
+	/**
+     * Whether this Block can be replaced directly by other blocks (true for e.g. tall grass)
+     */
+	@Override
+    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
+    {
+        return false;
+    }
+	
+	/**
+     * Whether this Block is solid on the given Side
+     */
+	@Override
+    public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
+    {
+        return worldIn.getBlockState(pos).getMaterial().isSolid();
+    }
+	
+	/**
+     * Check whether this Block can be placed on the given side
+     */
+	@Override
+    public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
+    {
+        return this.canPlaceBlockAt(worldIn, pos);
+    }
+    
+	protected static void addCollisionBoxToList(BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable AxisAlignedBB blockBox)
+    {
+        if (blockBox != NULL_AABB)
+        {
+            AxisAlignedBB axisalignedbb = blockBox.offset(pos);
+
+            if (entityBox.intersectsWith(axisalignedbb))
+            {
+                collidingBoxes.add(axisalignedbb);
+            }
+        }
+    }
+	
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean advanced)
+    {
+      tooltip.add("Can be used as a water source");
+      tooltip.add("for a 9x9 farm!");
+      tooltip.add("");
+      tooltip.add("Can also be used under Blocks!");
+      super.addInformation(stack, player, tooltip, advanced);
     }
 
 }

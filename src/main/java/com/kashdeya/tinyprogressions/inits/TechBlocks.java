@@ -38,49 +38,49 @@ public class TechBlocks {
 	public static void init(){
 		
 		// Tech Blocks
-		if (ConfigHandler.BlockGrowth){
+		if (ConfigHandler.BlockGrowth = true){
 		growth_block = new BlockGrowth();
 		registerBlock(growth_block, "growth_block", true);
 		}
-		if (ConfigHandler.BlockGrowthUpgrade){
+		if (ConfigHandler.BlockGrowthUpgrade = true){
 		growth_upgrade = new BlockGrowthUpgrade();
 		registerBlock(growth_upgrade, "growth_upgrade", true);
 		}
-		if (ConfigHandler.Cobblegen){
+		if (ConfigHandler.Cobblegen = true){
 		cobblegen_block = new Cobblegen();
 		registerBlock(cobblegen_block, "cobblegen_block", true);
 		}
-		if (ConfigHandler.IronCobblegen){
+		if (ConfigHandler.IronCobblegen = true){
 		iron_cobblegen_block = new IronCobblegen();
 		registerBlock(iron_cobblegen_block, "iron_cobblegen_block", true);
 		}
-		if (ConfigHandler.DiamondCobblegen){
+		if (ConfigHandler.DiamondCobblegen = true){
 		diamond_cobblegen_block = new DiamondCobblegen();
 		registerBlock(diamond_cobblegen_block, "diamond_cobblegen_block", true);
 		}
-		if (ConfigHandler.BlazeCobblegen){
+		if (ConfigHandler.BlazeCobblegen = true){
 		emerald_cobblegen_block = new EmeraldCobblegen();
 		registerBlock(emerald_cobblegen_block, "emerald_cobblegen_block", true);
 		}
-		if (ConfigHandler.EmeraldCobblegen){
+		if (ConfigHandler.EmeraldCobblegen = true){
 		blaze_cobblegen_block = new BlazeCobblegen();
 		registerBlock(blaze_cobblegen_block, "blaze_cobblegen_block", true);
 		}
 		
 		// Deco Blocks
-		if (ConfigHandler.CharcoalBlock){
+		if (ConfigHandler.CharcoalBlock = true){
 		CharcoalBlock = new CharcoalBlock();
 		registerBlock(CharcoalBlock, "CharcoalBlock", true);
 		}
-		if (ConfigHandler.FleshBlock){
+		if (ConfigHandler.FleshBlock = true){
 			FleshBlock = new FleshBlock();
 			registerBlock(FleshBlock, "FleshBlock", true);
 		}
-		if (ConfigHandler.ReinforcedGlass){
+		if (ConfigHandler.ReinforcedGlass = true){
 			ReinforcedGlass = new ReinforcedGlass();
 			registerBlock(ReinforcedGlass, "ReinforcedGlass", true);
 		}
-		if (ConfigHandler.ReinforcedObsidian){
+		if (ConfigHandler.ReinforcedObsidian = true){
 			ReinforcedObsidian = new ReinforcedObsidian();
 			registerBlock(ReinforcedObsidian, "ReinforcedObsidian", true);
 		}

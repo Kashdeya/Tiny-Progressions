@@ -1,25 +1,15 @@
-
-// For those who want the bleeding edge
 buildscript {
     repositories {
         jcenter()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
+        maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+//Only edit below this line, the above code adds and enables the nessasary things for Forge to be setup.
 
-/*
-// for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
-plugins {
-    id "net.minecraftforge.gradle.forge" version "2.0.2"
-}
-*/
 
 version = "${version}"
 group= "com.kashdeya.tinyprogressions" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -28,21 +18,14 @@ archivesBaseName = "tinyprogressions"
 minecraft {
     runDir = "run"
 	mappings = "${mappings_version}"
-    version = "${minecraft_version}-${forge_version}"
+    version = "${mcversion}-${forge_version}"
     replaceIn "${mod_info_path}"
-    replace "%MOD_VERSION%", "${mod_version}"
+    replace "%VERSION%", "${version}"
     replace "%FORGE_VERSION%", "${forge_version}"
 }
 
-version = "${minecraft_version}-${mod_version}"
-
-/*
-dependencies {
-    compile files(
-        'libs/BaseMetals/BaseMetals_1.9.4-2.3.2.6.jar',
-    )
-}
-*/
+display_version = "${display_version}" ?: "${mcversion}"
+version = "${display_version}-${mod_version}"
 
 processResources
 {
@@ -59,8 +42,3 @@ processResources
         exclude 'mcmod.info'
     }
 }
-
-jar {
-    classifier = 'release'
-}
-

@@ -27,23 +27,23 @@ public class TechItems {
 	public static void init(){
 		
 		// Tech Items
-		if (ConfigHandler.WateringCan){
+		if (ConfigHandler.WateringCan = true){
 			WateringCan = new WateringCan();
 			registerItem(WateringCan, "WateringCan");
 		}
-		if (ConfigHandler.WateringCanUpgrade){
+		if (ConfigHandler.WateringCanUpgrade = true){
 			WateringCanUpgrade = new WateringCanUpgrade();
 			registerItem(WateringCanUpgrade, "WateringCanUpgrade");
 		}
-	    if (ConfigHandler.QuartzKnife){
+	    if (ConfigHandler.QuartzKnife = true){
 	    	QuartzKnife = new QuartzKnife();
 	    	registerItem(QuartzKnife, "QuartzKnife");
 	    }
-	    if (ConfigHandler.QuartzDust){
+	    if (ConfigHandler.QuartzDust = true){
 	    	QuartzDust = new QuartzDust();
 	    	registerItem(QuartzDust, "QuartzDust");
 	    }
-	    if (ConfigHandler.BirthdayPickaxe){
+	    if (ConfigHandler.BirthdayPickaxe = true){
 	    	BirthdayPickaxe = new BirthdayPickaxe(BIRTHDAY);
 			registerItem(BirthdayPickaxe, "BirthdayPickaxe");
 		}

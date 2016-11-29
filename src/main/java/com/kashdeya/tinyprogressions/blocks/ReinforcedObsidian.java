@@ -1,12 +1,6 @@
 package com.kashdeya.tinyprogressions.blocks;
 
 import java.util.List;
-import java.util.Random;
-
-import javax.annotation.Nonnull;
-
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -15,15 +9,15 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class ReinforcedObsidian extends Block {
 	

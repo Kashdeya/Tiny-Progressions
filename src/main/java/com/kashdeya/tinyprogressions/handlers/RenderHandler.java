@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 
+import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -33,14 +34,19 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.BirthdayPickaxe, "BirthdayPickaxe");
 	}
 	
-	  public static void InventoryBlockRender(Block block, String blockName)
-	  {
-	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.MOD_ID + ":" + blockName, "inventory"));
-	  }
+	public static void initArmor(){
+		InventoryItemRender(TechArmor.stoneHelmet, "stoneHelmet");
+		InventoryItemRender(TechArmor.stoneChestplate, "stoneChestplate");
+		InventoryItemRender(TechArmor.stoneLeggings, "stoneLeggings");
+		InventoryItemRender(TechArmor.stoneBoots, "stoneBoots");
+	}
+	
+	public static void InventoryBlockRender(Block block, String blockName){
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.MOD_ID + ":" + blockName, "inventory"));
+	}
 	  
-	  public static void InventoryItemRender(Item item, String itemName)
-	  {
-	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + itemName, "inventory"));
-	  }
+	public static void InventoryItemRender(Item item, String itemName){
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + itemName, "inventory"));
+	}
 
 }

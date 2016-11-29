@@ -9,6 +9,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
@@ -16,7 +17,14 @@ public class Recipes {
 	
 	public static void registerRecipes(){
 		
-		if (ConfigHandler.QuartzDustRecipe == true){
+		if (ConfigHandler.StoneArmor == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneBoots), "s s", "s s", 's', new ItemStack(Blocks.STONE, 1, 0));
+			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneChestplate), "s s", "sss", "sss", 's', new ItemStack(Blocks.STONE, 1, 0));
+			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneHelmet), "sss", "s s", 's', new ItemStack(Blocks.STONE, 1, 0));
+			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneLeggings), "sss", "s s", "s s", 's', new ItemStack(Blocks.STONE, 1, 0));
+		}
+		
+		if (ConfigHandler.QuartzDustRecipe == true && ConfigHandler.QuartzKnife == false){
 			//GameRegistry.addShapelessRecipe(new ItemStack(TechItems.QuartzDust), new Object[] {"gemQuartz"});
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(TechItems.QuartzDust), "gemQuartz"));
 		}
@@ -24,6 +32,10 @@ public class Recipes {
 		if (ConfigHandler.FleshBlock == true){
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.FleshBlock), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(Items.ROTTEN_FLESH)});
 			GameRegistry.addShapelessRecipe(new ItemStack(Items.ROTTEN_FLESH, 9), new Object[] {new ItemStack(TechBlocks.FleshBlock)});
+		}
+		
+		if (ConfigHandler.NotchApple == true){
+			GameRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 1), new Object[] {"ggg", "gag", "ggg", 'a', new ItemStack(Items.APPLE), 'g', new ItemStack(Blocks.GOLD_BLOCK)});
 		}
 		
 		if (ConfigHandler.CharcoalBlock == true){
@@ -48,6 +60,7 @@ public class Recipes {
 		
 		if (ConfigHandler.QuartzKnife == true){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.QuartzKnife), "  s", " s ", "q  ", 's', "stickWood", 'q', "gemQuartz"));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.QuartzDust), "s", "q",  's', new ItemStack(TechItems.QuartzKnife), 'q', "gemQuartz"));
 		}
 		
 		if (ConfigHandler.WateringCan == true){
@@ -63,7 +76,7 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.BlockGrowthUpgrade == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CCC", "CEC", "CCC", 'C', new ItemStack(Blocks.OBSIDIAN), 'E', new ItemStack(TechBlocks.growth_block)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "CEC", "CWC", 'C', new ItemStack(Blocks.OBSIDIAN), 'E', new ItemStack(TechBlocks.growth_block), 'W', new ItemStack(Items.WATER_BUCKET)});
 		}
 		
 		if (ConfigHandler.Cobblegen == true){

@@ -47,12 +47,19 @@ public class TinyConfig {
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Extra Stuff", true, "Enable the Charcoal Block?");
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Extra Stuff", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
 		ConfigHandler.LeafDrops = config.getBoolean("Stick Drops", category + " Extra Stuff", true, "Enable Sticks to drop from leaves?");
-		ConfigHandler.LeafDropsChance = config.getInt("Stick Drop Chance", category + " Extra Stuff", 10, 1, 100, "Sets the drop rate of Sticks from leaves.");
+		ConfigHandler.LeafDropsChance = config.getFloat("Stick Drop Chance", category + " Extra Stuff", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
+		ConfigHandler.LeafDropsAmmount = config.getInt("Stick Drop Ammount", category + " Extra Stuff", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
+		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Extra Stuff", true, "Enable Bones to drop from Dirt?");
+		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Extra Stuff", 0.1F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
+		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Extra Stuff", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
+		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", category + " Extra Stuff", true, "Enable Skull to drop from Dirt? (Bone Drops must be enabled!)");
+		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Extra Stuff", 1, 1, 64, "Sets the Ammount of Skull Dropped from Dirt. (Skulls Have the same Drop Chance as Bones)");
+		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Extra Stuff", true, "Bring back the Notch Apple Recipe?");
 		
 		config.addCustomCategoryComment(category + " Quartz", "True or False");
 		ConfigHandler.QuartzDust = config.getBoolean("Quartz Dust", category + " Quartz", true, "Enable Quartz Dust?");
-		ConfigHandler.QuartzDustRecipe = config.getBoolean("Quartz Dust Recipe", category + " Quartz", false, "Enable Quartz Dust Recipe?");
-		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", true, "Enable the Quartz Knife?");
+		ConfigHandler.QuartzDustRecipe = config.getBoolean("Quartz Dust Recipe", category + " Quartz", false, "Enable vanilla style Quartz Dust Recipe?");
+		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", true, "Enable the Quartz Knife and Dust Recipe?");
 		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		
 		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False");
@@ -61,6 +68,9 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Goodies", "True or False");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Goodies", true, "Enable Party Pickaxe?");
+		
+		config.addCustomCategoryComment(category + " Armor", "True or False");
+		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
         
 		if (config.hasChanged())
         config.save();

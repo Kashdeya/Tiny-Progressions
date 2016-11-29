@@ -1,6 +1,9 @@
 package com.kashdeya.tinyprogressions.blocks;
 
+import java.util.List;
 import java.util.Random;
+
+import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
@@ -11,6 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
@@ -137,5 +141,45 @@ public class BlockGrowth extends Block{
             }
         }
     }
+	
+	/**
+     * Whether this Block can be replaced directly by other blocks (true for e.g. tall grass)
+     */
+	@Override
+    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
+    {
+        return false;
+    }
+	
+	/**
+     * Whether this Block is solid on the given Side
+     */
+	@Override
+    public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
+    {
+        return worldIn.getBlockState(pos).getMaterial().isSolid();
+    }
+	
+	/**
+     * Check whether this Block can be placed on the given side
+     */
+	@Override
+    public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
+    {
+        return this.canPlaceBlockAt(worldIn, pos);
+    }
+    
+	protected static void addCollisionBoxToList(BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable AxisAlignedBB blockBox)
+    {
+        if (blockBox != NULL_AABB)
+        {
+            AxisAlignedBB axisalignedbb = blockBox.offset(pos);
 
+            if (entityBox.intersectsWith(axisalignedbb))
+            {
+                collidingBoxes.add(axisalignedbb);
+            }
+        }
+    }
+	
 }

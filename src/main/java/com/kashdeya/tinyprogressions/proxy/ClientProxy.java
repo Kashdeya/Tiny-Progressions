@@ -19,6 +19,7 @@ public class ClientProxy extends CommonProxy {
         // Load Renders
         RenderHandler.initItems();
         RenderHandler.initBlocks();
+        RenderHandler.initArmor();
     }
 
     @Override

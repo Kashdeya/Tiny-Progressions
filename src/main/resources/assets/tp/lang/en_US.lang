@@ -20,14 +20,15 @@ item.WateringCan.name=Watering Can
 item.WateringCanUpgrade.name=Reinforced Watering Can
 item.QuartzDust.name=Quartz Enriched Iron Dust
 item.QuartzKnife.name=Quartz Knife
-item.UnfiredClayBucket.name=Unfired Clay Bucket
-item.FiredClayBucket.name=Clay Bucket
-item.WaterClayBucket.name=Clay Water Bucket
-item.LavaClayBucket.name=Clay Lava Bucket
 
 #Goodies
 item.BirthdayPickaxe.name=Party Pickaxe
-item.WyldAxe.name=Lord Cluckingtons Axe
 
 #Creative Tabs
 itemGroup.tiny_progressions=Tiny Progressions
+
+#Armor
+item.stoneHelmet.name=Stone Helmet
+item.stoneChestplate.name=Stone Helmet
+item.stoneLeggings.name=Stone Leggings
+item.stoneBoots.name=Stone Boots

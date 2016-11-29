@@ -5,8 +5,6 @@ public class ConfigHandler {
 	public static boolean WateringCanUpgrade = false;
 	
 	public static boolean BirthdayPickaxe = false;
-	public static boolean WyldAxe = false;
-	public static boolean BaconDonutSword = false;
 	
 	public static boolean Cobblegen = false;
 	public static boolean IronCobblegen = false;
@@ -28,11 +26,26 @@ public class ConfigHandler {
 	public static boolean CharcoalBlock = false;
 	
 	public static boolean LeafDrops = false;
-	public static int LeafDropsChance = 10;
+	public static float LeafDropsChance = 1.0F;
+	public static int LeafDropsAmmount = 1;
 	
 	public static boolean FleshBlock = false;
 	
 	public static boolean ReinforcedGlass = false;
 	public static boolean ReinforcedObsidian =  false;
+	
+	public static boolean StoneArmor = false;
+	
+	public static boolean NotchApple = false;
+	
+	public static boolean BoneDrops = false;
+	public static float BoneDropsChance = 1.0F;
+	public static int BoneAmmount = 1;
+	
+	public static boolean SkullDrops = false;
+	public static int SkullAmmount = 1;
+	
+	public static boolean AllowRightClick = false;
+	
 
 }

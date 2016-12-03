@@ -25,10 +25,10 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 public class WateringCanUpgrade extends WateringCanBase {
 	
 	public WateringCanUpgrade(){
-		this.setMaxStackSize(1);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		super();
 		this.setUnlocalizedName("WateringCanUpgrade");
 		this.setWateringRange(2);
+		this.setWateringChance(75);
 	}
 
 	@Override

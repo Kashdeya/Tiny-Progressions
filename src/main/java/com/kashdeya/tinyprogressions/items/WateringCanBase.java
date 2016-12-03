@@ -25,6 +25,7 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 public class WateringCanBase extends Item {
 	
 		private int range = 1;
+		private int waterChance = 25;
 		
 		public WateringCanBase(){
 			this.setMaxStackSize(1);
@@ -34,6 +35,11 @@ public class WateringCanBase extends Item {
 		protected void setWateringRange(int newRange)
 		{
 			this.range = newRange;
+		}
+		
+		protected void setWateringChance(int newChance)
+		{
+			this.waterChance = newChance;
 		}
 		  
 		public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
@@ -60,7 +66,7 @@ public class WateringCanBase extends Item {
 		    if (!world.isRemote)
 		    {
 		    	int chance = CanHandler.randInt(1, 100);
-		        if (chance <= 25)
+		        if (chance <= waterChance)
 		        {
 		          for (int xAxis = -range; xAxis <= range; xAxis++) {
 		            for (int zAxis = -range; zAxis <= range; zAxis++) {

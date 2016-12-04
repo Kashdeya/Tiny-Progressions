@@ -42,7 +42,6 @@ public class BlockGrowthUpgrade extends Block{
 	this.setLightOpacity(1);
 	this.setCreativeTab(tinyprogressions.tabTP);
 	this.setSoundType(blockSoundType.METAL);
-	this.setDefaultState(this.blockState.getBaseState());
 	this.setUnlocalizedName("growth_upgrade");
 	}
     

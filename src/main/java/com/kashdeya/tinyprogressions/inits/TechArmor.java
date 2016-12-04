@@ -24,7 +24,7 @@ public class TechArmor {
 	
 	public static void init(){
 		// Stone Armor
-		if (ConfigHandler.StoneArmor == true){
+		if (ConfigHandler.StoneArmor){
 		stoneHelmet = (ItemArmor) new StoneArmor(stoneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("stoneHelmet");
 		registerItem(stoneHelmet, "stoneHelmet");
 		stoneChestplate = (ItemArmor) new StoneArmor(stoneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("stoneChestplate");

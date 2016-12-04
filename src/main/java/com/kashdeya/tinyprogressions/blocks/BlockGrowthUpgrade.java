@@ -8,6 +8,9 @@ import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -30,6 +33,9 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BlockGrowthUpgrade extends Block{
+	
+	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
+	private final Integer value = 15;
 
 	public BlockGrowthUpgrade(){
 	// Turns block into a water source.	
@@ -42,8 +48,27 @@ public class BlockGrowthUpgrade extends Block{
 	this.setLightOpacity(1);
 	this.setCreativeTab(tinyprogressions.tabTP);
 	this.setSoundType(blockSoundType.METAL);
+	this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, value));
 	this.setUnlocalizedName("growth_upgrade");
 	}
+	
+	@Override
+	protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, new IProperty[] {LEVEL});
+    }
+
+	@Override
+    public IBlockState getStateFromMeta(int meta)
+    {
+        return this.getDefaultState().withProperty(LEVEL, value);
+    }
+
+	@Override
+    public int getMetaFromState(IBlockState state)
+    {
+        return value;  
+    }
     
     @SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer()

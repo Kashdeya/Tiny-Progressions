@@ -27,7 +27,7 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
-public class BlockGrowth extends Block{
+public class BlockGrowth extends Block {
 
 	public BlockGrowth(){
 		

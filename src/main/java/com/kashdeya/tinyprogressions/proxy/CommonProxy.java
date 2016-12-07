@@ -59,8 +59,5 @@ public class CommonProxy {
 
     }
 
-    public void setCustomStateMap(Block block, StateMap stateMap) {
-
-	}
 
 }

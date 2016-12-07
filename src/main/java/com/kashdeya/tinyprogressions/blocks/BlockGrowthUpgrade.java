@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -35,7 +36,7 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BlockGrowthUpgrade extends Block {
 	
-	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
+	//public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
 	public BlockGrowthUpgrade(){
 	// Turns block into a water source.	
@@ -48,24 +49,23 @@ public class BlockGrowthUpgrade extends Block {
 	this.setLightOpacity(1);
 	this.setCreativeTab(tinyprogressions.tabTP);
 	this.setSoundType(blockSoundType.METAL);
-	tinyprogressions.proxy.setCustomStateMap(this, new StateMap.Builder().ignore(new IProperty[] { LEVEL }).build());
-	setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, Integer.valueOf(0)));
+	setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 	this.setUnlocalizedName("growth_upgrade");
 	}
 	
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] { LEVEL });
+		return new BlockStateContainer(this, new IProperty[] { BlockLiquid.LEVEL });
 	}
 
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(LEVEL, Integer.valueOf(meta));
+		return this.getDefaultState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(meta));
 	}
 
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return ((Integer) state.getValue(LEVEL)).intValue();
+		return ((Integer) state.getValue(BlockLiquid.LEVEL)).intValue();
 	}
     
     @SideOnly(Side.CLIENT)

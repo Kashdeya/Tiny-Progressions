@@ -1,0 +1,34 @@
+#Tech Blocks
+tile.cobblegen_block.name=Bruchstein-Generator
+tile.iron_cobblegen_block.name=Bruchstein-Generator Stufe 2
+tile.diamond_cobblegen_block.name=Bruchstein-Generator Stufe 3
+tile.blaze_cobblegen_block.name=Bruchstein-Generator Stufe 4
+tile.emerald_cobblegen_block.name=Bruchstein-Generator Stufe 5
+
+#Growth Blocks
+tile.growth_block.name=Wachstumskristall
+tile.growth_upgrade.name=Wachstumskristall Stufe 2
+
+#Deco Blocks
+tile.CharcoalBlock.name=Holzkohleblock
+tile.FleshBlock.name=Fleischblock
+tile.ReinforcedGlass.name=Verstärktes Glas
+tile.ReinforcedObsidian.name=Verstärktes Obsidian
+
+#Tech Items
+item.WateringCan.name=Gießkanne
+item.WateringCanUpgrade.name=Verstärkte Gießkanne
+item.QuartzDust.name=Quarzangereicherter Eisenstaub
+item.QuartzKnife.name=Quarzmesser
+
+#Goodies
+item.BirthdayPickaxe.name=Partyspitzhacke
+
+#Creative Tabs
+itemGroup.tiny_progressions=Tiny Progressions
+
+#Armor
+item.stoneHelmet.name=Steinhelm
+item.stoneChestplate.name=Steinbrustplatte
+item.stoneLeggings.name=Steinbeinschutz
+item.stoneBoots.name=Steinstiefel

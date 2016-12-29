@@ -11,9 +11,16 @@ tile.growth_upgrade.name=Growth Crystal Tier 2
 
 #Deco Blocks
 tile.CharcoalBlock.name=Charcoal Block
-tile.FleshBlock.name=Flesh Block
 tile.ReinforcedGlass.name=Reinforced Glass
 tile.ReinforcedObsidian.name=Reinforced Obsidian
+tile.DirtyGlass.name=Dirty Glass
+tile.DioriteBrick.name=Diorite Brick
+tile.GraniteBrick.name=Granite Brick
+tile.AndesiteBrick.name=Andesite Brick
+
+#Compressed Blocks
+tile.FleshBlock.name=Compressed Flesh Block
+tile.BoneBlock.name=Compressed Bone Block
 
 #Tech Items
 item.WateringCan.name=Watering Can

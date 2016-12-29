@@ -1,7 +1,5 @@
 package com.kashdeya.tinyprogressions.proxy;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -11,6 +9,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
+import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -31,6 +30,7 @@ public class CommonProxy {
 		TechItems.init();
 		TechBlocks.init();
 		TechArmor.init();
+		OreDictHandler.init();
 
     }
 

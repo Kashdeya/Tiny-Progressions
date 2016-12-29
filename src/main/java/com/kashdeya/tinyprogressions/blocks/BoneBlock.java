@@ -14,16 +14,15 @@ import net.minecraft.world.World;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
-public class FleshBlock extends Block{
+public class BoneBlock extends Block{
 	
-	public FleshBlock() {
-		super(Material.SAND);
+	public BoneBlock() {
+		super(Material.GROUND);
 		this.setHardness(0.5F);
-		this.setHarvestLevel("shovel",0);
 		this.setResistance(5.0F);
-		this.setSoundType(blockSoundType.SAND);
+		this.setSoundType(blockSoundType.GROUND);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FleshBlock");
+		this.setUnlocalizedName("BoneBlock");
 	}
 	
 	/**
@@ -32,7 +31,7 @@ public class FleshBlock extends Block{
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.FleshBlock);
+        return Item.getItemFromBlock(TechBlocks.BoneBlock);
     }
 	
 	@Override
@@ -46,15 +45,4 @@ public class FleshBlock extends Block{
     {
         entityIn.fall(fallDistance, 3.0F);
     }
-	
-	/**
-     * Triggered whenever an entity collides with this block (enters into the block)
-     */
-    @Override
-    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
-    {
-    	entityIn.motionX *= 0.4D;
-        entityIn.motionZ *= 0.4D;
-    }
-	
 }

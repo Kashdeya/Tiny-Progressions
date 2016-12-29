@@ -17,6 +17,25 @@ public class Recipes {
 	
 	public static void registerRecipes(){
 		
+		if (ConfigHandler.AndesiteBrick == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.AndesiteBrick, 4), new Object[] {"CC", "CC", 'C', new ItemStack(Blocks.STONE, 1, 6)});
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 1, 6), new Object[] {new ItemStack(TechBlocks.AndesiteBrick)});
+		}
+		
+		if (ConfigHandler.DioriteBrick == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.DioriteBrick, 4), new Object[] {"CC", "CC", 'C', new ItemStack(Blocks.STONE, 1, 4)});
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 1, 4), new Object[] {new ItemStack(TechBlocks.DioriteBrick)});
+		}
+		
+		if (ConfigHandler.GraniteBrick == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.GraniteBrick, 4), new Object[] {"CC", "CC", 'C', new ItemStack(Blocks.STONE, 1, 2)});
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 1, 2), new Object[] {new ItemStack(TechBlocks.GraniteBrick)});
+		}
+		
+		if (ConfigHandler.DirtyGlass == true){
+			GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(TechBlocks.DirtyGlass), 0.5F);
+		}
+		
 		if (ConfigHandler.StoneArmor == true){
 			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneBoots), "s s", "s s", 's', new ItemStack(Blocks.STONE, 1, 0));
 			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneChestplate), "s s", "sss", "sss", 's', new ItemStack(Blocks.STONE, 1, 0));
@@ -72,7 +91,7 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.BlockGrowth == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {"CBC", "BEB", "CBC", 'C', new ItemStack(Items.IRON_INGOT), 'B', new ItemStack(Blocks.field_189880_di), 'E', new ItemStack(Blocks.SEA_LANTERN)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {"CBC", "BEB", "CBC", 'C', new ItemStack(Items.IRON_INGOT), 'B', new ItemStack(TechBlocks.BoneBlock), 'E', new ItemStack(Blocks.SEA_LANTERN)});
 		}
 		
 		if (ConfigHandler.BlockGrowthUpgrade == true){

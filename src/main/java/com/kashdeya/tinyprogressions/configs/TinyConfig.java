@@ -43,18 +43,23 @@ public class TinyConfig {
 		ConfigHandler.EmeraldCobblegen = config.getBoolean("Cobblegen Crystal Tier 5", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 5? (Requires Cobblegen Crystal Tier 4 to be Enabled)");
 		
 		config.addCustomCategoryComment(category + " Extra Stuff", "True or False");
-		ConfigHandler.FleshBlock = config.getBoolean("Flesh Block", category + " Misc Blocks", true, "Enable Compressed Flesh Block?");
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Extra Stuff", true, "Enable the Charcoal Block?");
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Extra Stuff", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
-		ConfigHandler.LeafDrops = config.getBoolean("Stick Drops", category + " Extra Stuff", true, "Enable Sticks to drop from leaves?");
-		ConfigHandler.LeafDropsChance = config.getFloat("Stick Drop Chance", category + " Extra Stuff", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
-		ConfigHandler.LeafDropsAmmount = config.getInt("Stick Drop Ammount", category + " Extra Stuff", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
-		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Extra Stuff", true, "Enable Bones to drop from Dirt?");
-		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Extra Stuff", 0.1F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
-		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Extra Stuff", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
-		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", category + " Extra Stuff", true, "Enable Skull to drop from Dirt? (Bone Drops must be enabled!)");
-		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Extra Stuff", 1, 1, 64, "Sets the Ammount of Skull Dropped from Dirt. (Skulls Have the same Drop Chance as Bones)");
+		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Extra Stuff", true, "Enable Dirty Glass Block?");
 		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Extra Stuff", true, "Bring back the Notch Apple Recipe?");
+		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Extra Stuff", true, "Enable Andesite Bricks?");
+		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Extra Stuff", true, "Enable Diorite Bricks?");
+		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Extra Stuff", true, "Enable Granite Bricks?");
+		
+		config.addCustomCategoryComment(category + " Drops", "True or False");
+		ConfigHandler.LeafDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
+		ConfigHandler.LeafDropsChance = config.getFloat("Stick Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
+		ConfigHandler.LeafDropsAmmount = config.getInt("Stick Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
+		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Drops", true, "Enable Bones to drop from Dirt?");
+		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
+		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
+		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", category + " Drops", true, "Enable Skull to drop from Dirt? (Bone Drops must be enabled!)");
+		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Skull Dropped from Dirt. (Skulls Have the same Drop Chance as Bones)");
 		
 		config.addCustomCategoryComment(category + " Quartz", "True or False");
 		ConfigHandler.QuartzDust = config.getBoolean("Quartz Dust", category + " Quartz", true, "Enable Quartz Dust?");
@@ -71,6 +76,10 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Armor", "True or False");
 		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
+		
+		config.addCustomCategoryComment(category + " Compressed Blocks", "True or False");
+		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
+		ConfigHandler.FleshBlock = config.getBoolean("Compressed Flesh Block", category + " Compressed Blocks", true, "Enable Compressed Flesh Block?");
         
 		if (config.hasChanged())
         config.save();

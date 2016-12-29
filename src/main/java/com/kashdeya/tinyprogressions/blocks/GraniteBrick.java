@@ -14,17 +14,18 @@ import net.minecraft.world.World;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
-public class FleshBlock extends Block{
+public class GraniteBrick extends Block {
 	
-	public FleshBlock() {
-		super(Material.SAND);
-		this.setHardness(0.5F);
-		this.setHarvestLevel("shovel",0);
-		this.setResistance(5.0F);
-		this.setSoundType(blockSoundType.SAND);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FleshBlock");
-	}
+	public GraniteBrick()
+    {
+        super(Material.ROCK);
+        this.setHardness(1.5F);
+        this.setHarvestLevel("pickaxe", 0);
+        this.setResistance(10.0F);
+        this.setSoundType(blockSoundType.STONE);
+        this.setCreativeTab(tinyprogressions.tabTP);
+        this.setUnlocalizedName("GraniteBrick");
+    }
 	
 	/**
      * Get the Item that this Block should drop when harvested.
@@ -32,7 +33,7 @@ public class FleshBlock extends Block{
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.FleshBlock);
+        return Item.getItemFromBlock(TechBlocks.GraniteBrick);
     }
 	
 	@Override
@@ -42,19 +43,15 @@ public class FleshBlock extends Block{
     }
 	
 	@Override
+    public int quantityDropped(Random rand)
+    {
+        return 1;
+    }
+	
+	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
     {
         entityIn.fall(fallDistance, 3.0F);
     }
-	
-	/**
-     * Triggered whenever an entity collides with this block (enters into the block)
-     */
-    @Override
-    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
-    {
-    	entityIn.motionX *= 0.4D;
-        entityIn.motionZ *= 0.4D;
-    }
-	
+
 }

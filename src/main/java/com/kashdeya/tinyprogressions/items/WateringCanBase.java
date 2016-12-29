@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.items;
 
-import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;

@@ -17,8 +17,6 @@ import com.kashdeya.tinyprogressions.main.Reference;
 public class RenderHandler {
 	
 	public static void initBlocks(){
-		
-
 	    InventoryBlockRender(TechBlocks.growth_block, "growth_block");
 	    InventoryBlockRender(TechBlocks.growth_upgrade, "growth_upgrade");
 	    InventoryBlockRender(TechBlocks.cobblegen_block, "cobblegen_block");
@@ -30,13 +28,17 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.FleshBlock, "FleshBlock");
 	    InventoryBlockRender(TechBlocks.ReinforcedGlass, "ReinforcedGlass");
 	    InventoryBlockRender(TechBlocks.ReinforcedObsidian, "ReinforcedObsidian");
-	    
-	    
+	    InventoryBlockRender(TechBlocks.BoneBlock, "BoneBlock");
+	    InventoryBlockRender(TechBlocks.DirtyGlass, "DirtyGlass");
+	    InventoryBlockRender(TechBlocks.GraniteBrick, "GraniteBrick");
+	    InventoryBlockRender(TechBlocks.DioriteBrick, "DioriteBrick");
+	    InventoryBlockRender(TechBlocks.AndesiteBrick, "AndesiteBrick");
 	}
 	
-	public static void preInitBlocks()
-	{
-	  	setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+	public static void preInitBlocks(){
+		if (ConfigHandler.BlockGrowthUpgrade == true){
+			setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+		}
 	}
 	
 	public static void initItems(){
@@ -62,8 +64,7 @@ public class RenderHandler {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + itemName, "inventory"));
 	}
 	
-	public static void setCustomStateMap(Block block, StateMap stateMap) 
-	{
+	public static void setCustomStateMap(Block block, StateMap stateMap){
 		ModelLoader.setCustomStateMapper(block, stateMap);
 	}
 

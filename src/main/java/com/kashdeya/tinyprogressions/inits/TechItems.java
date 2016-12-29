@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
+import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.QuartzDust;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
 import com.kashdeya.tinyprogressions.items.WateringCan;
@@ -21,6 +22,7 @@ public class TechItems {
 	public static Item QuartzKnife;
 	public static Item QuartzDust;
 	public static Item BirthdayPickaxe;
+	public static Item MyceliumSeeds;
 	
 	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 3, 3061, 45.0F, 12.0F, 25);
 	
@@ -47,6 +49,10 @@ public class TechItems {
 	    	BirthdayPickaxe = new BirthdayPickaxe(BIRTHDAY);
 			registerItem(BirthdayPickaxe, "BirthdayPickaxe");
 		}
+	    if (ConfigHandler.MyceliumSeeds){
+	    	MyceliumSeeds = new MyceliumSeeds();
+	    	registerItem(MyceliumSeeds, "MyceliumSeeds");
+	    }
 	}
 	
 	static void registerItem(Item item, String name){

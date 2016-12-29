@@ -47,6 +47,7 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.QuartzDust, "QuartzDust");
 		InventoryItemRender(TechItems.QuartzKnife, "QuartzKnife");
 		InventoryItemRender(TechItems.BirthdayPickaxe, "BirthdayPickaxe");
+		InventoryItemRender(TechItems.MyceliumSeeds, "MyceliumSeeds");
 	}
 	
 	public static void initArmor(){

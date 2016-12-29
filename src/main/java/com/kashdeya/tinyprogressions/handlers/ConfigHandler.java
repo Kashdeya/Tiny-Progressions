@@ -60,7 +60,8 @@ public class ConfigHandler {
 	public static boolean SkullDrops = false;
 	public static int SkullAmmount = 1;
 	
+	// MISC
 	public static boolean AllowRightClick = false;
-	
+	public static boolean MyceliumSeeds = false;
 
 }

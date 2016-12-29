@@ -39,3 +39,6 @@ item.stoneHelmet.name=Stone Helmet
 item.stoneChestplate.name=Stone Helmet
 item.stoneLeggings.name=Stone Leggings
 item.stoneBoots.name=Stone Boots
+
+#MISC
+item.MyceliumSeeds.name=Mycelium Seed

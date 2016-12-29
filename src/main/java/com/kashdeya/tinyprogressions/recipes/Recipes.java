@@ -36,6 +36,15 @@ public class Recipes {
 			GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(TechBlocks.DirtyGlass), 0.5F);
 		}
 		
+		if (ConfigHandler.BoneBlock == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.BoneBlock), new Object[] {"bbb", "bbb", "bbb", 'b', new ItemStack(Items.BONE)});
+			GameRegistry.addShapelessRecipe(new ItemStack(Items.BONE, 9), new Object[] {new ItemStack(TechBlocks.BoneBlock)});
+		}
+		
+		if (ConfigHandler.MyceliumSeeds == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.MyceliumSeeds), new Object[] {"bbb", "bsb", "bbb", 'b', new ItemStack(Items.SPIDER_EYE), 's', new ItemStack(Items.WHEAT_SEEDS)});
+		}
+		
 		if (ConfigHandler.StoneArmor == true){
 			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneBoots), "s s", "s s", 's', new ItemStack(Blocks.STONE, 1, 0));
 			GameRegistry.addShapedRecipe(new ItemStack(TechArmor.stoneChestplate), "s s", "sss", "sss", 's', new ItemStack(Blocks.STONE, 1, 0));

@@ -79,7 +79,7 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.ReinforcedGlass == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.ReinforcedGlass), " o ", "ogo", " o ", 'g', new ItemStack(Blocks.GLASS), 'o', new ItemStack(Blocks.OBSIDIAN));
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.ReinforcedGlass), " o ", "ogo", " o ", 'g', new ItemStack(TechBlocks.DirtyGlass), 'o', new ItemStack(Blocks.OBSIDIAN));
 		}
 		
 		if (ConfigHandler.ReinforcedObsidian == true){

@@ -42,3 +42,9 @@ item.stoneBoots.name=Stone Boots
 
 #MISC
 item.MyceliumSeeds.name=Mycelium Seed
+
+#Apple
+item.DiamondApple.name=Diamond Apple
+
+#Medkit
+item.MedKit.name=Medkit

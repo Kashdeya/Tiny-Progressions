@@ -7,6 +7,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
+import com.kashdeya.tinyprogressions.items.DiamondApple;
+import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.QuartzDust;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
@@ -23,8 +25,10 @@ public class TechItems {
 	public static Item QuartzDust;
 	public static Item BirthdayPickaxe;
 	public static Item MyceliumSeeds;
+	public static Item DiamondApple;
+	public static Item MedKit;
 	
-	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 3, 3061, 45.0F, 12.0F, 25);
+	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 45.0F, 4.0F, 25);
 	
 	public static void init(){
 		
@@ -52,6 +56,14 @@ public class TechItems {
 	    if (ConfigHandler.MyceliumSeeds){
 	    	MyceliumSeeds = new MyceliumSeeds();
 	    	registerItem(MyceliumSeeds, "MyceliumSeeds");
+	    }
+	    if (ConfigHandler.DiamondApple){
+	    	DiamondApple = new DiamondApple(4, 1.2F, false);
+	    	registerItem(DiamondApple, "DiamondApple");
+	    }
+	    if (ConfigHandler.MedKit){
+	    	MedKit = new MedKit();
+	    	registerItem(MedKit, "MedKit");
 	    }
 	}
 	

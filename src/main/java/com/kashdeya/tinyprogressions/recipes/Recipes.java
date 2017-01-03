@@ -17,6 +17,13 @@ public class Recipes {
 	
 	public static void registerRecipes(){
 		
+		if (ConfigHandler.MedKit == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.MedKit), new Object[]{"prp", "rgr", "lrl", 'p', new ItemStack(Items.PAPER), 'r', new ItemStack(Items.DYE, 1, 1), 'g', new ItemStack(Items.SPECKLED_MELON), 'l', new ItemStack(Items.LEATHER)});
+		}
+		if (ConfigHandler.DiamondApple == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.DiamondApple), new Object[]{"ddd", "dad", "ddd", 'd', new ItemStack(Items.DIAMOND), 'a', new ItemStack(Items.APPLE)});
+		}
+		
 		if (ConfigHandler.AndesiteBrick == true){
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.AndesiteBrick, 4), new Object[] {"CC", "CC", 'C', new ItemStack(Blocks.STONE, 1, 6)});
 			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 1, 6), new Object[] {new ItemStack(TechBlocks.AndesiteBrick)});
@@ -75,7 +82,7 @@ public class Recipes {
 			ItemStack BirthdayPickaxe;
 			BirthdayPickaxe  = new ItemStack(TechItems.BirthdayPickaxe);
 			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 1);
-			GameRegistry.addShapedRecipe(BirthdayPickaxe, new Object[] {"rrr", " i ", " i ", 'r', new ItemStack(Blocks.OBSIDIAN), 'i', new ItemStack(Items.STICK)});
+			GameRegistry.addShapedRecipe(BirthdayPickaxe, new Object[] {"rdr", " i ", " i ", 'd', new ItemStack(Blocks.DIAMOND_BLOCK), 'r', new ItemStack(Blocks.OBSIDIAN), 'i', new ItemStack(Items.STICK)});
 		}
 		
 		if (ConfigHandler.ReinforcedGlass == true){

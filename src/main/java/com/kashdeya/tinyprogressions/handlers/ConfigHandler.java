@@ -63,5 +63,8 @@ public class ConfigHandler {
 	// MISC
 	public static boolean AllowRightClick = false;
 	public static boolean MyceliumSeeds = false;
+	public static boolean DiamondApple = false;
+	public static boolean MedKit = false;
+	public static int healDuration = 300;
 
 }

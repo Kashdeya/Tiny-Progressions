@@ -2,9 +2,9 @@
 {
   "modid": "tp",
   "name": "Tiny Progressions",
-  "description": "Cobblegens, Growth Crystals and Watering Cans oh my!",
-  "version": "1.0.12",
-  "mcversion": "1.10.2",
+  "description": "Cobblegens, Growth Crystals and Watering Cans and more oh my!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "url": "https://minecraft.curseforge.com/projects/tiny-progressions",
   "updateUrl": "",
   "authorList": ["Kashdeya", "Darkosto", "GenDeathrow"],

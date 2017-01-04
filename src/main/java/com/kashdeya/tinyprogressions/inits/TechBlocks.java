@@ -70,12 +70,12 @@ public class TechBlocks {
 			registerBlock(diamond_cobblegen_block, "diamond_cobblegen_block", true);
 		}
 		if (ConfigHandler.BlazeCobblegen){
-			emerald_cobblegen_block = new EmeraldCobblegen();
-			registerBlock(emerald_cobblegen_block, "emerald_cobblegen_block", true);
-		}
-		if (ConfigHandler.EmeraldCobblegen){
 			blaze_cobblegen_block = new BlazeCobblegen();
 			registerBlock(blaze_cobblegen_block, "blaze_cobblegen_block", true);
+		}
+		if (ConfigHandler.EmeraldCobblegen){
+			emerald_cobblegen_block = new EmeraldCobblegen();
+			registerBlock(emerald_cobblegen_block, "emerald_cobblegen_block", true);
 		}
 		
 		// Deco Blocks

@@ -38,16 +38,18 @@ public class StoneArmor extends ItemArmor {
     @SideOnly(Side.CLIENT)
     public void onArmorTick(World world, EntityPlayer entity, ItemStack itemStack) {
     	if (entity instanceof EntityLivingBase)
-    	if (entity.inventory.armorItemInSlot(3) != null && entity.inventory.armorItemInSlot(3).getItem() == TechArmor.stoneHelmet
-            && entity.inventory.armorItemInSlot(2) != null && entity.inventory.armorItemInSlot(2).getItem() == TechArmor.stoneChestplate
-            && entity.inventory.armorItemInSlot(1) != null && entity.inventory.armorItemInSlot(1).getItem() == TechArmor.stoneLeggings
-            && entity.inventory.armorItemInSlot(0) != null && entity.inventory.armorItemInSlot(0).getItem() == TechArmor.stoneBoots){
-    		((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+    		if (entity.inventory.armorItemInSlot(3) != null && entity.inventory.armorItemInSlot(3).getItem() == TechArmor.stoneHelmet){
+    			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
+    	else if (entity.inventory.armorItemInSlot(2) != null && entity.inventory.armorItemInSlot(2).getItem() == TechArmor.stoneChestplate){
+    		((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
+    	else if (entity.inventory.armorItemInSlot(1) != null && entity.inventory.armorItemInSlot(1).getItem() == TechArmor.stoneLeggings){
+    		((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
+    	else if (entity.inventory.armorItemInSlot(0) != null && entity.inventory.armorItemInSlot(0).getItem() == TechArmor.stoneBoots){
+    		((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
     	}
-    }
     
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add("Full set gives you Slowness");
+        tooltip.add("Gives you Slowness");
     }
 }

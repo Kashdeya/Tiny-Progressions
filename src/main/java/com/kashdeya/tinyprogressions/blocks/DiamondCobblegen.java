@@ -28,7 +28,7 @@ public class DiamondCobblegen extends Block implements ITileEntityProvider{
 	public DiamondCobblegen(){
 		
     super(Material.IRON);
-    this.setHardness(1.F);
+    this.setHardness(1.5F);
     this.setHarvestLevel("pickaxe", 0);
     this.setResistance(1000.0F);
     this.setLightLevel(0.5F);

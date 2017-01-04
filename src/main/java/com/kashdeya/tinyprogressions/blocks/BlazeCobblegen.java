@@ -28,7 +28,7 @@ public class BlazeCobblegen extends Block implements ITileEntityProvider{
 	public BlazeCobblegen(){
 		
     super(Material.IRON);
-    this.setHardness(1.5F);
+    this.setHardness(2.0F);
     this.setHarvestLevel("pickaxe", 0);
     this.setResistance(1000.0F);
     this.setLightLevel(0.5F);

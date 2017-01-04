@@ -28,7 +28,7 @@ public class EmeraldCobblegen extends Block implements ITileEntityProvider{
 	public EmeraldCobblegen(){
 		
     super(Material.IRON);
-    this.setHardness(1.4F);
+    this.setHardness(2.5F);
     this.setHarvestLevel("pickaxe", 0);
     this.setResistance(1000.0F);
     this.setLightLevel(0.5F);

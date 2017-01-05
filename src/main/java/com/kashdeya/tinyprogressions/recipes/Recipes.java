@@ -107,11 +107,11 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.BlockGrowth == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {"CBC", "BEB", "CBC", 'C', new ItemStack(Items.IRON_INGOT), 'B', new ItemStack(TechBlocks.BoneBlock), 'E', new ItemStack(Blocks.SEA_LANTERN)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {"CBC", "BEB", "CBC", 'C', new ItemStack(Items.IRON_INGOT), 'B', new ItemStack(TechBlocks.BoneBlock), 'E', new ItemStack(Blocks.REDSTONE_BLOCK)});
 		}
 		
 		if (ConfigHandler.BlockGrowthUpgrade == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "CEC", "CWC", 'C', new ItemStack(Blocks.OBSIDIAN), 'E', new ItemStack(TechBlocks.growth_block), 'W', new ItemStack(Items.WATER_BUCKET)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "SES", "CWC", 'C', new ItemStack(Blocks.OBSIDIAN), 'S', new ItemStack(Blocks.SEA_LANTERN), 'E', new ItemStack(TechBlocks.growth_block), 'W', new ItemStack(Items.WATER_BUCKET)});
 		}
 		
 		if (ConfigHandler.Cobblegen == true){

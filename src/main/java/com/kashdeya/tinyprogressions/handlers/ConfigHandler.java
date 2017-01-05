@@ -60,6 +60,10 @@ public class ConfigHandler {
 	public static boolean SkullDrops = false;
 	public static int SkullAmmount = 1;
 	
+	// Shears
+	public static boolean WoodenShears = false;
+	public static boolean FlintShears = false;
+	
 	// MISC
 	public static boolean AllowRightClick = false;
 	public static boolean MyceliumSeeds = false;

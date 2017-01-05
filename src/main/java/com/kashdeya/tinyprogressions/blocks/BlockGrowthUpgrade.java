@@ -206,9 +206,10 @@ public class BlockGrowthUpgrade extends Block {
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean advanced)
     {
-      tooltip.add("Can be used as a water source");
-      tooltip.add("for a 9x9 farm!");
+      tooltip.add("Can be used as a water source!");
+      tooltip.add("Keep away from sponges!");
       tooltip.add("");
+      tooltip.add("for a 9x9 farm!");
       tooltip.add("Can also be used under Blocks!");
       super.addInformation(stack, player, tooltip, advanced);
     }

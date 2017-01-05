@@ -24,9 +24,12 @@ public class tinyprogressions {
 	public static CommonProxy proxy;
 	
 	public static final CreativeTabs tabTP = new TabTP("tiny_progressions");
+	
+    public static org.apache.logging.log4j.Logger logger;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
+    	logger = e.getModLog();
     	proxy.preInit(e);
     	MinecraftForge.EVENT_BUS.register(instance);
     }

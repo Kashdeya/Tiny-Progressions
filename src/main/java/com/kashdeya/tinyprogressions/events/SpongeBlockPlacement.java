@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.world.BlockEvent.PlaceEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -24,6 +25,7 @@ public class SpongeBlockPlacement {
                             IBlockState state = event.getWorld().getBlockState(new BlockPos(event.getPos().getX() + x, event.getPos().getY() + y, event.getPos().getZ() + z));
                             if (state.getBlock() instanceof BlockGrowthUpgrade) {
                                 event.setCanceled(true);
+                                event.getPlayer().addChatMessage(new TextComponentString("Cant place a sponge near a Growth Crystal"));
                             }
                         }
                     }

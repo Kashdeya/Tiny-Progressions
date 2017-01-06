@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.items;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -8,23 +10,22 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.fml.common.gameevent.InputEvent;
 
 import com.kashdeya.tinyprogressions.handlers.CanHandler;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
@@ -36,6 +37,8 @@ public class WateringCanBase extends Item {
 		
 		private boolean canWater = false;
 		private boolean showParticlTicks = false; 
+		
+		private long ticksInUse;
 		
 		public WateringCanBase(){
 			this.setMaxStackSize(1);
@@ -51,67 +54,30 @@ public class WateringCanBase extends Item {
 		{
 			this.waterChance = newChance;
 		}
-		
-	    /**
-	     * Called when the player finishes using this Item (E.g. finishes eating.). Not called when the player stops using
-	     * the Item before the action is complete.
-	     */
-	    @Nullable
-	    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
-	    {
 
-	        if (entityLiving instanceof EntityPlayer)
-	        {
-	        	if(!worldIn.isRemote)
-	        		canWater = true;
-	        }
-
-	        return stack;
-	    }
-	     
-	    @Override
-	    public void onUsingTick(ItemStack stack, EntityLivingBase player, int count)
+	    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
 	    {
-	    	// Gives particle's a delayed start
-	    	// Shows its not watering yet. 
-	    	if(count <=1)
-	    	{
-	    		this.showParticlTicks = true;
+	    	if(isSelected){
+	    		ticksInUse++;
+
+	    		if(ticksInUse % 4 == 0)
+	    		{
+	    			this.showParticlTicks = true;
+	    			canWater = true;
+	    		}
 	    	}
 	    }
-	    
-	    //Turn off particle's when mouse is released
-	    @Override
-	    public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft)
-	    {
-    		this.showParticlTicks = false;
-	    }
-	    
-	    /**
-	     * Amount of ticks before it makes plants grow
-	     */
-	    @Override
-	    public int getMaxItemUseDuration(ItemStack stack)
-	    {
-	    	// 4 is basically 5 clicks per sec, but there is a 4 tick delay before they can water, so spamming does nothing. 
-	    	return 4;
-	    }
-	    
+
 	    @Override
 	    public EnumAction getItemUseAction(ItemStack stack)
 	    {
 	        return EnumAction.NONE;
 	    }
 	    
+	    int clicks = 0;
 	    @Override
-	    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
+	    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
-	    	 playerIn.setActiveHand(hand);
-	    	 return new ActionResult(EnumActionResult.PASS, itemStackIn);
-	    }
-	    
-	    @Override
-	    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
 		    
 			if (!player.canPlayerEdit(pos.offset(facing), facing, stack)) 
 		    {
@@ -120,6 +86,8 @@ public class WateringCanBase extends Item {
 			
 			//Dont show particals if you cant water yet. 
 			if(this.showParticlTicks){
+    			this.showParticlTicks = false;
+
 				Random rand = new Random();
 				for (int x = -range; x <= range; x++) {
 					for (int z = -range; z <= range; z++)
@@ -138,7 +106,6 @@ public class WateringCanBase extends Item {
 					}
 				}
 			}
-			
 			
 			// only tick if canWater is true (Basically after the duration runs out getMaxDuration)
 		    if (!world.isRemote && canWater)
@@ -160,11 +127,11 @@ public class WateringCanBase extends Item {
 		              }
 		            }
 		          }
-		          return EnumActionResult.SUCCESS;
+		          return EnumActionResult.FAIL;
 		        }
-		        return EnumActionResult.PASS;
+		        //return EnumActionResult.FAIL;
 		      }
-		      return EnumActionResult.PASS;
+		      return EnumActionResult.FAIL;
 		    }
 		
 		public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player){

@@ -2,9 +2,6 @@ package com.kashdeya.tinyprogressions.items;
 
 import java.util.List;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-import com.kashdeya.tinyprogressions.util.InventoryHelper;
-
 import net.minecraft.block.BlockDirt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -16,9 +13,14 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.util.InventoryHelper;
 
 public class MyceliumSeeds extends Item {
 	
@@ -39,10 +41,12 @@ public class MyceliumSeeds extends Item {
 		return EnumActionResult.PASS;
 	}
 	
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean advanced){
-      tooltip.add("Right Click on Dirt!");
-      super.addInformation(stack, player, tooltip, advanced);
-    }
+	  @Override
+	  @SideOnly(Side.CLIENT)
+	  @SuppressWarnings({ "unchecked", "rawtypes" })
+	  public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.seeds").getFormattedText());
+	  }
+
 
 }

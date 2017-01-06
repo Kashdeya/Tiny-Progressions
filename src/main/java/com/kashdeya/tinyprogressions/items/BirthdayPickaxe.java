@@ -17,6 +17,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -76,13 +77,13 @@ public class BirthdayPickaxe extends ItemTool {
         return super.getIsRepairable(toRepair, repair);
     }
     
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean advanced)
-    {
-      tooltip.add("Super Fast Pickaxe!");
-      tooltip.add("Right-click for a Surprise!");
-      super.addInformation(stack, player, tooltip, advanced);
-    }
+    @Override
+	@SideOnly(Side.CLIENT)
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_1").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_2").getFormattedText());
+	}
     
     /**
      * Check whether this Item can harvest the given Block

@@ -4,12 +4,15 @@ import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
-import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
@@ -47,12 +50,13 @@ public class DiamondApple extends ItemFood
 	    }
 	  }
 	  
-	  public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
-	  {
-	    tooltip.add("Fire Resistance");
-	    tooltip.add("Regeneration");
-	    tooltip.add("Resistance");
-	    tooltip.add("Speed");
-	    tooltip.add("");
+	  @Override
+	  @SideOnly(Side.CLIENT)
+	  @SuppressWarnings({ "unchecked", "rawtypes" })
+	  public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_1").getFormattedText());
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_2").getFormattedText());
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_3").getFormattedText());
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_4").getFormattedText());
 	  }
 }

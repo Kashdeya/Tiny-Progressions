@@ -34,7 +34,6 @@ public class WateringCanBase extends Item {
 		private int range = 1;
 		private int waterChance = 25;
 		
-		
 		private boolean canWater = false;
 		private boolean showParticlTicks = false; 
 		
@@ -53,8 +52,6 @@ public class WateringCanBase extends Item {
 			this.waterChance = newChance;
 		}
 		
-		
-		
 	    /**
 	     * Called when the player finishes using this Item (E.g. finishes eating.). Not called when the player stops using
 	     * the Item before the action is complete.
@@ -71,8 +68,7 @@ public class WateringCanBase extends Item {
 
 	        return stack;
 	    }
-	    
-	    // 
+	     
 	    @Override
 	    public void onUsingTick(ItemStack stack, EntityLivingBase player, int count)
 	    {
@@ -111,7 +107,7 @@ public class WateringCanBase extends Item {
 	    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
 	    {
 	    	 playerIn.setActiveHand(hand);
-	    	 return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
+	    	 return new ActionResult(EnumActionResult.PASS, itemStackIn);
 	    }
 	    
 	    @Override
@@ -197,7 +193,6 @@ public class WateringCanBase extends Item {
 		                return true;
 		            }
 		        }
-
 		        return false;
 		    }
 }

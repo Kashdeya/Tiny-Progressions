@@ -13,6 +13,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -82,10 +84,10 @@ public class ReinforcedGlass extends BlockGlass
         return MapColor.BLACK;
     }
     
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean advanced)
+    @Override
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
     {
-      tooltip.add("Blast Resistant Glass");
-      super.addInformation(stack, player, tooltip, advanced);
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.glass_1").getFormattedText());
     }
 }

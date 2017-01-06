@@ -21,6 +21,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -203,15 +205,18 @@ public class BlockGrowthUpgrade extends Block {
         }
     }
 	
+	@Override
 	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean advanced)
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
     {
-      tooltip.add("Can be used as a water source!");
-      tooltip.add("Keep away from sponges!");
-      tooltip.add("");
-      tooltip.add("for a 9x9 farm!");
-      tooltip.add("Can also be used under Blocks!");
-      super.addInformation(stack, player, tooltip, advanced);
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_1").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_3").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_4").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_5").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_6").getFormattedText());
     }
 
 }

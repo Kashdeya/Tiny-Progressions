@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.events.EventDrops;
+import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
@@ -40,6 +41,7 @@ public class CommonProxy {
     	
     	// Events
     	MinecraftForge.EVENT_BUS.register(new EventDrops());
+    	MinecraftForge.EVENT_BUS.register(new SpongeBlockPlacement());
     	
     	// FuelHandler
     	GameRegistry.registerFuelHandler(new FuelHandler());

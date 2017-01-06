@@ -58,11 +58,4 @@ public class DirtyGlass extends BlockGlass
     {
         return MapColor.AIR;
     }
-    
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean advanced)
-    {
-      tooltip.add("Dirty Glass");
-      super.addInformation(stack, player, tooltip, advanced);
-    }
 }

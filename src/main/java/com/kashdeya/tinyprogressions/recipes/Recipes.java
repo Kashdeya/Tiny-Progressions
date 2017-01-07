@@ -40,7 +40,8 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.DirtyGlass == true){
-			GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(TechBlocks.DirtyGlass), 0.5F);
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.DirtyGlass, 8), new Object[] {"ggg", "gsg", "ggg", 'g', new ItemStack(Blocks.GLASS), 's', new ItemStack(Blocks.SOUL_SAND)});
+			//GameRegistry.addSmelting(Blocks.SOUL_SAND, new ItemStack(TechBlocks.DirtyGlass), 0.5F);
 		}
 		
 		if (ConfigHandler.BoneBlock == true){

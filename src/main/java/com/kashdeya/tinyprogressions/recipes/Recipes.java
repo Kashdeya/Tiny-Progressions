@@ -108,7 +108,7 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.BlockGrowth == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {"CBC", "BEB", "CBC", 'C', new ItemStack(Items.IRON_INGOT), 'B', new ItemStack(TechBlocks.BoneBlock), 'E', new ItemStack(Blocks.REDSTONE_BLOCK)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {"CBC", "BEB", "CBC", 'C', new ItemStack(Items.IRON_INGOT), 'B', new ItemStack(TechBlocks.BoneBlock), 'E', new ItemStack(Blocks.GLOWSTONE)});
 		}
 		
 		if (ConfigHandler.BlockGrowthUpgrade == true){

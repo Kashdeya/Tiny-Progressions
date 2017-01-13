@@ -16,7 +16,6 @@ public class CharcoalBlock extends Block{
 	public CharcoalBlock() {
 		super(Material.ROCK);
 	    this.setHardness(1F);
-	    this.setHarvestLevel("pickaxe", 1);
 		this.setResistance(10.0F);
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(blockSoundType.STONE);

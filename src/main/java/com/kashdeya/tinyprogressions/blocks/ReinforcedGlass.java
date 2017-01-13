@@ -30,7 +30,7 @@ public class ReinforcedGlass extends BlockGlass
         super(Material.GLASS, false);
         this.setHardness(20.0F);
         this.setResistance(2000.0F);
-        this.setHarvestLevel("pickaxe", 2);
+        this.setHarvestLevel("pickaxe", 0);
         this.setSoundType(blockSoundType.GLASS);
         this.setCreativeTab(tinyprogressions.tabTP);
         this.setUnlocalizedName("ReinforcedGlass");

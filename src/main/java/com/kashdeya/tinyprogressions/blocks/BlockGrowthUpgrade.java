@@ -35,15 +35,13 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BlockGrowthUpgrade extends Block {
-	
-	//public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
 	public BlockGrowthUpgrade(){
 	// Turns block into a water source.	
     super(Material.WATER);
     this.setTickRandomly(true);
     this.setHardness(1.25F);
-    this.setHarvestLevel("pickaxe", 1);
+    this.setHarvestLevel("pickaxe", 0);
     this.setLightLevel(1.0F);
     this.setResistance(2000.0F);
 	this.setLightOpacity(1);
@@ -87,6 +85,7 @@ public class BlockGrowthUpgrade extends Block {
     }
     
     // Get the Item that this Block should drop when harvested.
+	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
     	return Item.getItemFromBlock(TechBlocks.growth_upgrade);
@@ -97,9 +96,9 @@ public class BlockGrowthUpgrade extends Block {
         int yO = pos.getY();
         int zO = pos.getZ();
 
-        for (int xD = -10; xD <= 10; xD++) {
-            for (int yD = -2; yD <= 5; yD++) {
-                for (int zD = -10; zD <= 10; zD++) {
+        for (int xD = -5; xD <= 5; xD++) {
+            for (int yD = -6; yD <= 6; yD++) {
+                for (int zD = -5; zD <= 5; zD++) {
                     int x = xO + xD;
                     int y = yO + yD;
                     int z = zO + zD;
@@ -123,11 +122,13 @@ public class BlockGrowthUpgrade extends Block {
         world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthUpgradeTicks * 2, 1);
     }
 	
+	@Override
 	public int quantityDropped(Random random)
     {
         return 1;
     }
 	
+	@Override
 	public boolean canDropFromExplosion(Explosion explosionIn)
     {
         return false;
@@ -173,6 +174,12 @@ public class BlockGrowthUpgrade extends Block {
     {
         return false;
     }
+	
+	@Override
+	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos)
+	{
+	    return true;
+	}
 	
 	/**
      * Whether this Block is solid on the given Side

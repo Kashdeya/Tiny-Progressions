@@ -28,7 +28,7 @@ public class Cobblegen extends Block implements ITileEntityProvider{
 	public Cobblegen(){
 		
     super(Material.IRON);
-    this.setHardness(1F);
+    this.setHardness(1.0F);
     this.setHarvestLevel("pickaxe", 0);
     this.setResistance(1000.0F);
     this.setLightLevel(0.5F);

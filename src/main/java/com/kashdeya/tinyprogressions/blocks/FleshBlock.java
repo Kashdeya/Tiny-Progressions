@@ -19,7 +19,6 @@ public class FleshBlock extends Block{
 	public FleshBlock() {
 		super(Material.SAND);
 		this.setHardness(0.5F);
-		this.setHarvestLevel("shovel",0);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.SAND);
 		this.setCreativeTab(tinyprogressions.tabTP);

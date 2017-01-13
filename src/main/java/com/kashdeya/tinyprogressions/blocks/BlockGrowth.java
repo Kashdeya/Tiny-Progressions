@@ -33,8 +33,8 @@ public class BlockGrowth extends Block {
 		
     super(Material.GROUND);
     this.setTickRandomly(true);
-    this.setHardness(1F);
-    this.setHarvestLevel("pickaxe", 1);
+    this.setHardness(1.0F);
+    this.setHarvestLevel("pickaxe", 0);
     this.setResistance(2000.0F);
     this.setLightLevel(1.0F);
 	this.setLightOpacity(1);
@@ -75,7 +75,7 @@ public class BlockGrowth extends Block {
         int zO = pos.getZ();
 
         for (int xD = -5; xD <= 5; xD++) {
-            for (int yD = -1; yD <= 5; yD++) {
+            for (int yD = -3; yD <= 3; yD++) {
                 for (int zD = -5; zD <= 5; zD++) {
                     int x = xO + xD;
                     int y = yO + yD;

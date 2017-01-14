@@ -116,7 +116,7 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.BlockGrowthUpgrade == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "SES", "CWC", 'C', new ItemStack(Blocks.OBSIDIAN), 'S', new ItemStack(Blocks.SEA_LANTERN), 'E', new ItemStack(TechBlocks.growth_block), 'W', new ItemStack(Items.WATER_BUCKET)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "SES", "CNC", 'W', new ItemStack(Items.WATER_BUCKET), 'N', new ItemStack(TechBlocks.NetherStarBlock), 'C', new ItemStack(Blocks.OBSIDIAN), 'S', new ItemStack(Items.END_CRYSTAL), 'E', new ItemStack(TechBlocks.growth_block)});
 		}
 		
 		if (ConfigHandler.Cobblegen == true){

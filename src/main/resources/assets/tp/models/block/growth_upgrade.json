@@ -43,6 +43,6 @@
 		"t4": "tp:blocks/growth_upgrade_south",
 		"t5": "tp:blocks/growth_upgrade_west",
 		"t6": "tp:blocks/growth_upgrade_east",
-        "t7": "blocks/sea_lantern"
+        "t7": "tp:blocks/NetherStarBlockBackground"
     }
 }

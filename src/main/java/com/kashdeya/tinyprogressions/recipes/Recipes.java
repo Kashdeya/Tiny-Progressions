@@ -17,6 +17,10 @@ public class Recipes {
 	
 	public static void registerRecipes(){
 		
+		if (ConfigHandler.NetherStarBlock == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.NetherStarBlock), new Object[]{"nnn", "nnn", "nnn", 'n', new ItemStack(Items.NETHER_STAR)});
+		}
+		
 		if (ConfigHandler.MedKit == true){
 			GameRegistry.addShapedRecipe(new ItemStack(TechItems.MedKit), new Object[]{"prp", "rgr", "lrl", 'p', new ItemStack(Items.PAPER), 'r', new ItemStack(Items.DYE, 1, 1), 'g', new ItemStack(Items.SPECKLED_MELON), 'l', new ItemStack(Items.LEATHER)});
 		}

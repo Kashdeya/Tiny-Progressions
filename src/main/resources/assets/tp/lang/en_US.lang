@@ -21,6 +21,7 @@ tile.AndesiteBrick.name=Andesite Brick
 #Compressed Blocks
 tile.FleshBlock.name=Compressed Flesh Block
 tile.BoneBlock.name=Compressed Bone Block
+tile.NetherStarBlock.name=Compressed Nether Star Block
 
 #Tech Items
 item.WateringCan.name=Watering Can
@@ -56,6 +57,9 @@ tooltip.upgrade_3=Can also be used as just a Growth Crystal
 tooltip.upgrade_4=under blocks!
 tooltip.upgrade_5=Prevents Sponges from being 
 tooltip.upgrade_6=placed within 8 blocks!
+
+#Nether Star Block Tooltips
+tooltip.netherstar_1=Can be used as a Base block for Beacons.
 
 #Armor Tooltip
 tooltip.armor_1=Gives you Slowness!

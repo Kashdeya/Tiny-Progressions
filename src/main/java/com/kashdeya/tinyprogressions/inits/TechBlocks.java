@@ -19,6 +19,7 @@ import com.kashdeya.tinyprogressions.blocks.EmeraldCobblegen;
 import com.kashdeya.tinyprogressions.blocks.FleshBlock;
 import com.kashdeya.tinyprogressions.blocks.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.IronCobblegen;
+import com.kashdeya.tinyprogressions.blocks.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
@@ -45,6 +46,7 @@ public class TechBlocks {
 	// Compressed Blocks
 	public static Block FleshBlock;
 	public static Block BoneBlock;
+	public static Block NetherStarBlock;
 	
 	public static void init(){
 		
@@ -104,6 +106,10 @@ public class TechBlocks {
 		if (ConfigHandler.BoneBlock){
 			BoneBlock = new BoneBlock();
 			registerBlock(BoneBlock, "BoneBlock", true);
+		}
+		if (ConfigHandler.NetherStarBlock){
+			NetherStarBlock = new NetherStarBlock();
+			registerBlock(NetherStarBlock, "NetherStarBlock", true);
 		}
 		if (ConfigHandler.DioriteBrick){
 			DioriteBrick = new DioriteBrick();

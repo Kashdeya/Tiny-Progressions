@@ -1,15 +1,27 @@
 package com.kashdeya.tinyprogressions.tiles;
 
+import java.util.List;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockChest;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
@@ -21,7 +33,7 @@ public class TileEntityEmeraldCobblegen extends TileEntity implements ISidedInve
 	ItemStack stack = null;
 	int cycle = 0;
 	
-	@Override
+    @Override
 	public int getSizeInventory()
 	{
 		return 1;
@@ -179,11 +191,6 @@ public class TileEntityEmeraldCobblegen extends TileEntity implements ISidedInve
 			this.markDirty();
 		}
 	}
-	
-    @Override
-    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
-    }
 
     @SuppressWarnings("unchecked")
     @Override
@@ -192,6 +199,11 @@ public class TileEntityEmeraldCobblegen extends TileEntity implements ISidedInve
             return (T) new InvWrapper(this);
         }
         return super.getCapability(capability, facing);
-        
+    }
+		
+    @Override
+    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ||
+        super.hasCapability(capability, facing);
     }
 }

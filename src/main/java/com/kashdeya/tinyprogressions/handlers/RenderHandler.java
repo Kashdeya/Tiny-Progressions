@@ -33,6 +33,7 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.GraniteBrick, "GraniteBrick");
 	    InventoryBlockRender(TechBlocks.DioriteBrick, "DioriteBrick");
 	    InventoryBlockRender(TechBlocks.AndesiteBrick, "AndesiteBrick");
+	    InventoryBlockRender(TechBlocks.NetherStarBlock, "NetherStarBlock");
 	}
 	
 	public static void preInitBlocks(){

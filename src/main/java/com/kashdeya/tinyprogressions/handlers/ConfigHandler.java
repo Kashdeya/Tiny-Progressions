@@ -46,6 +46,7 @@ public class ConfigHandler {
 	// Compressed Blocks
 	public static boolean FleshBlock = false;
 	public static boolean BoneBlock = false;
+	public static boolean NetherStarBlock = false;
 	
 	// Armor
 	public static boolean StoneArmor = false;

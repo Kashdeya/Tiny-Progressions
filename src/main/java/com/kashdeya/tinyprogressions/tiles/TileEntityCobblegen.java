@@ -180,11 +180,6 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 		}
 	}
 
-    @Override
-    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
-    }
-
     @SuppressWarnings("unchecked")
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
@@ -192,6 +187,11 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
             return (T) new InvWrapper(this);
         }
         return super.getCapability(capability, facing);
-        
+    }
+		
+    @Override
+    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ||
+        super.hasCapability(capability, facing);
     }
 }

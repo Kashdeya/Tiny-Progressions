@@ -149,15 +149,15 @@ public class BirthdayPickaxe extends ItemTool {
     @Override
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-    	boolean flag = worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos);
-        BlockPos blockpos = flag ? pos : pos.offset(facing);
-
         if (!playerIn.canPlayerEdit(pos, facing, stack))
         {
             return EnumActionResult.FAIL;
         }
         else
         {
+        	boolean flag = worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos);
+            BlockPos blockpos = flag ? pos : pos.offset(facing);
+            
         	if (!worldIn.isRemote && playerIn.getName().equalsIgnoreCase("dark" + "osto"))
             {
                 worldIn.setBlockState(blockpos, Blocks.CAKE.getDefaultState());

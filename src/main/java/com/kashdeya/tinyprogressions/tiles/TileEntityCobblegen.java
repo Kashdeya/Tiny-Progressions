@@ -164,6 +164,9 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 	@Override
 	public void update()
 	{
+		if(worldObj.isRemote)
+			return;
+
 		cycle++;
 		
 		if(cycle >= 40)

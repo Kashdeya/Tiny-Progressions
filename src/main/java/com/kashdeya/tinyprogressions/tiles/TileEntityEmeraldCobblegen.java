@@ -25,6 +25,10 @@ public class TileEntityEmeraldCobblegen extends TileEntityCobblegen {
 
 	@Override
 	public void update() {
+
+		if(worldObj.isRemote)
+			return;
+
 		cycle++;
 
 		if (cycle >= 1) {

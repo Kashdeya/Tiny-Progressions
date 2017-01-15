@@ -149,34 +149,31 @@ public class BirthdayPickaxe extends ItemTool {
     @Override
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
+        pos = pos.offset(facing);
+
         if (!playerIn.canPlayerEdit(pos, facing, stack))
         {
             return EnumActionResult.FAIL;
         }
         else
         {
-        	boolean flag = worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos);
-            BlockPos blockpos = flag ? pos : pos.offset(facing);
-            
-            IBlockState iblockstate = worldIn.getBlockState(pos);
-            Block block = iblockstate.getBlock();
-            
-        	if (!worldIn.isRemote && playerIn.getName().equalsIgnoreCase("dark" + "osto") && facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
+            if (!worldIn.isRemote && worldIn.isAirBlock(pos) && playerIn.getName().equalsIgnoreCase("dark" + "osto"))
             {
-                worldIn.setBlockState(blockpos, Blocks.CAKE.getDefaultState());
+                worldIn.setBlockState(pos, Blocks.CAKE.getDefaultState());
                 playerIn.addChatMessage(new TextComponentString("HAPPY BIRTHDAY DARKOSTO" + TextFormatting.GREEN + TextFormatting.BOLD));
                 EntityFireworkRocket firework = new EntityFireworkRocket(playerIn.worldObj);
     			firework.setPosition(playerIn.posX, playerIn.posY, playerIn.posZ);
     			playerIn.worldObj.spawnEntityInWorld(firework);
     			return EnumActionResult.SUCCESS;
             }
-        	else
+			else if (!worldIn.isRemote && worldIn.isAirBlock(pos))
         	{
-        		worldIn.setBlockState(blockpos, Blocks.CAKE.getDefaultState());
+        		worldIn.setBlockState(pos, Blocks.CAKE.getDefaultState());
+        		return EnumActionResult.SUCCESS;
         	}
 
             stack.damageItem(854, playerIn);
-            return EnumActionResult.PASS;
+            return EnumActionResult.SUCCESS;
         }
     }
 

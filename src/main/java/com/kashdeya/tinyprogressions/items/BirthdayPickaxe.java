@@ -158,13 +158,17 @@ public class BirthdayPickaxe extends ItemTool {
         	boolean flag = worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos);
             BlockPos blockpos = flag ? pos : pos.offset(facing);
             
-        	if (!worldIn.isRemote && playerIn.getName().equalsIgnoreCase("dark" + "osto"))
+            IBlockState iblockstate = worldIn.getBlockState(pos);
+            Block block = iblockstate.getBlock();
+            
+        	if (!worldIn.isRemote && playerIn.getName().equalsIgnoreCase("dark" + "osto") && facing != EnumFacing.DOWN && worldIn.isAirBlock(pos.up()))
             {
                 worldIn.setBlockState(blockpos, Blocks.CAKE.getDefaultState());
                 playerIn.addChatMessage(new TextComponentString("HAPPY BIRTHDAY DARKOSTO" + TextFormatting.GREEN + TextFormatting.BOLD));
                 EntityFireworkRocket firework = new EntityFireworkRocket(playerIn.worldObj);
     			firework.setPosition(playerIn.posX, playerIn.posY, playerIn.posZ);
     			playerIn.worldObj.spawnEntityInWorld(firework);
+    			return EnumActionResult.SUCCESS;
             }
         	else
         	{
@@ -172,7 +176,7 @@ public class BirthdayPickaxe extends ItemTool {
         	}
 
             stack.damageItem(854, playerIn);
-            return EnumActionResult.SUCCESS;
+            return EnumActionResult.PASS;
         }
     }
 

@@ -1,7 +1,10 @@
 package com.kashdeya.tinyprogressions.tiles;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -176,11 +179,115 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 			}
 			
 			this.setInventorySlotContents(0, stack);
-			this.markDirty();
+			
+			TileEntity tile = worldObj.getTileEntity(pos.offset(EnumFacing.UP));
+			if (tile instanceof IInventory) {
+				IInventory iinventory = (IInventory) tile;
+				if (isInventoryFull(iinventory, EnumFacing.UP)) {
+					return;
+				} else {
+					if (getStackInSlot(0) != null) {
+						ItemStack stack = getStackInSlot(0).copy();
+						ItemStack stack1 = putStackInInventoryAllSlots(iinventory, decrStackSize(0, 1), EnumFacing.UP);
+						if (stack1 == null || stack1.stackSize == 0)
+							iinventory.markDirty();
+						else
+							setInventorySlotContents(0, stack);
+					}
+				}
+			}
+			markDirty();
 		}
 	}
 
-    @SuppressWarnings("unchecked")
+	protected boolean isInventoryFull(IInventory inventoryIn, EnumFacing side) {
+		if (inventoryIn instanceof ISidedInventory) {
+			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
+			int[] aint = isidedinventory.getSlotsForFace(side);
+
+			for (int k : aint) {
+				ItemStack itemstack1 = isidedinventory.getStackInSlot(k);
+
+				if (itemstack1 == null || itemstack1.stackSize != itemstack1.getMaxStackSize())
+					return false;
+			}
+		} else {
+			int i = inventoryIn.getSizeInventory();
+
+			for (int j = 0; j < i; ++j) {
+				ItemStack itemstack = inventoryIn.getStackInSlot(j);
+
+				if (itemstack == null || itemstack.stackSize != itemstack.getMaxStackSize())
+					return false;
+			}
+		}
+
+		return true;
+	}
+
+	public static ItemStack putStackInInventoryAllSlots(IInventory inventoryIn, ItemStack stack,
+			@Nullable EnumFacing side) {
+		if (inventoryIn instanceof ISidedInventory && side != null && !(inventoryIn instanceof TileEntityCobblegen) && inventoryIn.isItemValidForSlot(0, stack.copy())) {
+			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
+			int[] aint = isidedinventory.getSlotsForFace(side);
+
+			for (int k = 0; k < aint.length && stack != null && stack.stackSize > 0; ++k)
+				stack = insertStack(inventoryIn, stack, aint[k], side);
+		} else {
+			int i = inventoryIn.getSizeInventory();
+
+			for (int j = 0; j < i && stack != null && stack.stackSize > 0; ++j)
+				stack = insertStack(inventoryIn, stack, j, side);
+		}
+
+		if (stack != null && stack.stackSize == 0)
+			stack = null;
+
+		return stack;
+	}
+
+	private static ItemStack insertStack(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
+		ItemStack itemstack = inventoryIn.getStackInSlot(index);
+
+		if (canInsertItemInSlot(inventoryIn, stack, index, side)) {
+			boolean flag = false;
+
+			if (itemstack == null) {
+				// Forge: BUGFIX: Again, make things respect max stack sizes.
+				int max = Math.min(stack.getMaxStackSize(), inventoryIn.getInventoryStackLimit());
+				if (max >= stack.stackSize) {
+					inventoryIn.setInventorySlotContents(index, stack);
+					stack = null;
+				} else
+					inventoryIn.setInventorySlotContents(index, stack.splitStack(max));
+
+				flag = true;
+
+			} else if (canCombine(itemstack, stack)) {
+				// Forge: BUGFIX: Again, make things respect max stack sizes.
+				int max = Math.min(stack.getMaxStackSize(), inventoryIn.getInventoryStackLimit());
+				if (max > itemstack.stackSize) {
+					int i = max - itemstack.stackSize;
+					int j = Math.min(stack.stackSize, i);
+					stack.stackSize -= j;
+					itemstack.stackSize += j;
+					flag = j > 0;
+				}
+			}
+		}
+
+		return stack;
+	}
+
+	private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
+		return !inventoryIn.isItemValidForSlot(index, stack) ? false : !(inventoryIn instanceof ISidedInventory) || ((ISidedInventory) inventoryIn).canInsertItem(index, stack, side);
+	}
+
+	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
+		return stack1.getItem() != stack2.getItem() ? false : (stack1.getMetadata() != stack2.getMetadata() ? false : (stack1.stackSize > stack1.getMaxStackSize() ? false : ItemStack.areItemStackTagsEqual(stack1, stack2)));
+	}
+
+	@SuppressWarnings("unchecked")
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
         if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {

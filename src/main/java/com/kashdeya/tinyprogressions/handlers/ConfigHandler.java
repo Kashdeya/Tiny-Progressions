@@ -17,9 +17,9 @@ public class ConfigHandler {
 	
 	// Growth Crystals
 	public static boolean BlockGrowth = false;
-	public static int BlockGrowthTicks = 100;
+	public static int BlockGrowthTicks = 30;
 	public static boolean BlockGrowthUpgrade = false;
-	public static int BlockGrowthUpgradeTicks = 10;
+	public static int BlockGrowthUpgradeTicks = 15;
 	
 	// Quartz Dust & Knife
 	public static boolean QuartzDust = false;

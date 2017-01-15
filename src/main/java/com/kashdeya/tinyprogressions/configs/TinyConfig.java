@@ -40,9 +40,9 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Growth Crystal", "True or False");
 		ConfigHandler.BlockGrowth = config.getBoolean("Growth Crystal Tier 1", category + " Growth Crystal", true, "Enable Growth Crystal Tier 1?");
-		ConfigHandler.BlockGrowthTicks = config.getInt("Growth Crystal Tier 1 Speed", category + " Growth Crystal", 100, 100, 1000, "Amount of seconds between each growth ticks. (Lower = faster)");
+		ConfigHandler.BlockGrowthTicks = config.getInt("Growth Crystal Tier 1 Speed", category + " Growth Crystal", 30, 1, 60, "Number of Ticks between Growth Ticks. (1 = 20 Ticks = 1 Second)");
 		ConfigHandler.BlockGrowthUpgrade = config.getBoolean("Growth Crystal Tier 2", category + " Growth Crystal", true, "Enable Growth Crystal Tier 2? (Requires Tier 1 to be Enabled)");
-		ConfigHandler.BlockGrowthUpgradeTicks = config.getInt("Growth Crystal Tier 2 Speed", category + " Growth Crystal", 10, 10, 500, "Amount of seconds between each growth ticks. (Lower = faster)");
+		ConfigHandler.BlockGrowthUpgradeTicks = config.getInt("Growth Crystal Tier 2 Speed", category + " Growth Crystal", 15, 1, 60, "Number of Ticks between Growth Ticks. (1 = 10 Ticks = 0.5 Second)");
 		
 		config.addCustomCategoryComment(category + " Watering Cans", "True or False");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");

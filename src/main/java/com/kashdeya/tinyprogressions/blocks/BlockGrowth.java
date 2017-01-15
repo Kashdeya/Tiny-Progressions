@@ -61,9 +61,8 @@ public class BlockGrowth extends Block {
         this.growCropsNearby(world, pos, state);
     }
     
-    /**
-     * Get the Item that this Block should drop when harvested.
-     */
+    // Get the Item that this Block should drop when harvested.
+	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
     	return Item.getItemFromBlock(TechBlocks.growth_block);
@@ -100,11 +99,13 @@ public class BlockGrowth extends Block {
         world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthTicks * 20, 1);
     }
 	
+	@Override
 	public int quantityDropped(Random random)
     {
         return 1;
     }
 	
+	@Override
 	public boolean canDropFromExplosion(Explosion explosionIn)
     {
         return false;

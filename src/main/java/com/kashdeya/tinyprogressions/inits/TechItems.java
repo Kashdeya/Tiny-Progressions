@@ -18,21 +18,32 @@ import com.kashdeya.tinyprogressions.main.Reference;
 
 public class TechItems {
 	
-	// Tech Items
+	// Watering Cans
 	public static Item WateringCan;
 	public static Item WateringCanUpgrade;
+	// Quartz Items
 	public static Item QuartzKnife;
 	public static Item QuartzDust;
+	// Pickaxe
 	public static Item BirthdayPickaxe;
+	// Misc Items
 	public static Item MyceliumSeeds;
 	public static Item DiamondApple;
 	public static Item MedKit;
+	// Flint Items
+	public static Item flint_ingot;
+	// Flint Tool & Weapon Heads
+	public static Item flint_pickaxe_head;
+	public static Item flint_axe_head;
+	public static Item flint_spade_head;
+	public static Item flint_sword_head;
+	public static Item flint_hoe_head;
 	
 	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 45.0F, 4.0F, 25);
 	
 	public static void init(){
 		
-		// Tech Items
+		// Watering Cans
 		if (ConfigHandler.WateringCan){
 			WateringCan = new WateringCan();
 			registerItem(WateringCan, "WateringCan");
@@ -41,6 +52,7 @@ public class TechItems {
 			WateringCanUpgrade = new WateringCanUpgrade();
 			registerItem(WateringCanUpgrade, "WateringCanUpgrade");
 		}
+		// Quartz Items
 	    if (ConfigHandler.QuartzKnife){
 	    	QuartzKnife = new QuartzKnife();
 	    	registerItem(QuartzKnife, "QuartzKnife");
@@ -49,10 +61,12 @@ public class TechItems {
 	    	QuartzDust = new QuartzDust();
 	    	registerItem(QuartzDust, "QuartzDust");
 	    }
+	    // Pickaxe
 	    if (ConfigHandler.BirthdayPickaxe){
 	    	BirthdayPickaxe = new BirthdayPickaxe(BIRTHDAY);
 			registerItem(BirthdayPickaxe, "BirthdayPickaxe");
 		}
+	    // Misc Items
 	    if (ConfigHandler.MyceliumSeeds){
 	    	MyceliumSeeds = new MyceliumSeeds();
 	    	registerItem(MyceliumSeeds, "MyceliumSeeds");
@@ -65,6 +79,8 @@ public class TechItems {
 	    	MedKit = new MedKit();
 	    	registerItem(MedKit, "MedKit");
 	    }
+	    // Flint Items
+	    
 	}
 	
 	static void registerItem(Item item, String name){

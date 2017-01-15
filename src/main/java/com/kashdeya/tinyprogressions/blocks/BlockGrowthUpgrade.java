@@ -112,14 +112,14 @@ public class BlockGrowthUpgrade extends Block {
 
                     if (cropBlock instanceof IPlantable || cropBlock instanceof IGrowable) {
                         if (!(cropBlock instanceof BlockGrowth)) {
-                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthUpgradeTicks * 2), 1);
+                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthUpgradeTicks * 10), 1);
                             cropBlock.updateTick(world, new BlockPos(x, y, z), cropState, world.rand);
                         }
                     }
                 }
             }
         }
-        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthUpgradeTicks * 2, 1);
+        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthUpgradeTicks * 10, 1);
     }
 	
 	@Override

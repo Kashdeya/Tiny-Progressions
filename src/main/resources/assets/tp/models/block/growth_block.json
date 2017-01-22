@@ -43,6 +43,6 @@
 		"t4": "tp:blocks/growth_block_south",
 		"t5": "tp:blocks/growth_block_west",
 		"t6": "tp:blocks/growth_block_east",
-        "t7": "blocks/glowstone"
+        "t7": "blocks/sea_lantern"
     }
 }

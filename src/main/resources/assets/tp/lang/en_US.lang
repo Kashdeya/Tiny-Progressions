@@ -17,6 +17,8 @@ tile.DirtyGlass.name=Dirty Glass
 tile.DioriteBrick.name=Diorite Brick
 tile.GraniteBrick.name=Granite Brick
 tile.AndesiteBrick.name=Andesite Brick
+tile.FlintBlock.name=Flint Block
+tile.SmoothEndStone.name=Smooth EndStone
 
 #Compressed Blocks
 tile.FleshBlock.name=Compressed Flesh Block
@@ -93,7 +95,28 @@ tooltip.can_2=Waters a 3x3 area!
 tooltip.canupgrade_1=A better way to water things!
 tooltip.canupgrade_2=Waters a 5x5 area!
 
+#Flint
+tile.flint_block.name=Flint Block
 
+item.flint_pickaxe.name=Flint Pickaxe
+item.flint_spade.name=Flint Shovel
+item.flint_axe.name=Flint Axe
+item.flint_sword.name=Flint Sword
+item.flint_hoe.name=Flint Hoe
+item.flint_shears.name=Flint Shears
+
+item.flint_pickaxe_head.name=Flint Pickaxe Head
+item.flint_spade_head.name=Flint Shovel Head
+item.flint_axe_head.name=Flint Axe Head
+item.flint_sword_head.name=Flint Sword Blade
+item.flint_hoe_head.name=Flint Hoe Head
+
+item.flint_ingot.name=Flint Ingot
+
+item.flint_helmet.name=Flint Helmet
+item.flint_chestplate.name=Flint Chestplate
+item.flint_leggings.name=Flint Leggings
+item.flint_boots.name=Flint Boots
 
 
 

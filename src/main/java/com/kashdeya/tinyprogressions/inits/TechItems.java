@@ -31,13 +31,13 @@ public class TechItems {
 	public static Item DiamondApple;
 	public static Item MedKit;
 	// Flint Items
-	public static Item flint_ingot;
+	public static Item FlintIngot;
 	// Flint Tool & Weapon Heads
-	public static Item flint_pickaxe_head;
-	public static Item flint_axe_head;
-	public static Item flint_spade_head;
-	public static Item flint_sword_head;
-	public static Item flint_hoe_head;
+	public static Item FlintPickaxeHead;
+	public static Item FlintAxeHead;
+	public static Item FlintSpadeHead;
+	public static Item FlintSwordHead;
+	public static Item FlintHoeHead;
 	
 	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 45.0F, 4.0F, 25);
 	
@@ -80,7 +80,7 @@ public class TechItems {
 	    	registerItem(MedKit, "MedKit");
 	    }
 	    // Flint Items
-	    
+
 	}
 	
 	static void registerItem(Item item, String name){

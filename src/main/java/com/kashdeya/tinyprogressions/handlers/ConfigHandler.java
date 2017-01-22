@@ -33,6 +33,7 @@ public class ConfigHandler {
 	public static boolean AndesiteBrick = false;
 	public static boolean DioriteBrick = false;
 	public static boolean GraniteBrick = false;
+	public static boolean SmoothEndStone = false;
 	
 	// Reinforced Blocks
 	public static boolean ReinforcedGlass = false;
@@ -71,5 +72,15 @@ public class ConfigHandler {
 	public static boolean DiamondApple = false;
 	public static boolean MedKit = false;
 	public static int healDuration = 300;
+	
+	// Flint
+	public static boolean FlintBlock = false;
+	public static boolean FlintIngot = false;
+	public static boolean FlintPickaxeHead = false;
+	public static boolean FlintAxeHead = false;
+	public static boolean FlintSpadeHead = false;
+	public static boolean FlintSwordHead = false;
+	public static boolean FlintHoeHead = false;
+	
 
 }

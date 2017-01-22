@@ -14,6 +14,9 @@ public class OreDictHandler {
 		OreDictionary.registerOre("stoneAndesiteBrick", new ItemStack(TechBlocks.AndesiteBrick));
 		OreDictionary.registerOre("stoneDioriteBrick", new ItemStack(TechBlocks.DioriteBrick));
 		OreDictionary.registerOre("stoneGraniteBrick", new ItemStack(TechBlocks.GraniteBrick));
+		OreDictionary.registerOre("blockFlint", new ItemStack(TechBlocks.FlintBlock));
+		OreDictionary.registerOre("smoothEndstone", new ItemStack(TechBlocks.SmoothEndStone));
+		
 	}
 
 }

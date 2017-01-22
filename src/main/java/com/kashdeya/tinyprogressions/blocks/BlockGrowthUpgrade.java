@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -210,6 +211,22 @@ public class BlockGrowthUpgrade extends Block {
                 collidingBoxes.add(axisalignedbb);
             }
         }
+    }
+	
+	/**
+     * Determines if a specified mob type can spawn on this block, returning false will
+     * prevent any mob from spawning on the block.
+     *
+     * @param state The current state
+     * @param world The current world
+     * @param pos Block position in world
+     * @param type The Mob Category Type
+     * @return True to allow a mob of the specified category to spawn, false to prevent it.
+     */
+	@Override
+    public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, net.minecraft.entity.EntityLiving.SpawnPlacementType type)
+    {
+        return type != SpawnPlacementType.IN_WATER && super.canCreatureSpawn(state, world, pos, type);
     }
 	
 	@Override

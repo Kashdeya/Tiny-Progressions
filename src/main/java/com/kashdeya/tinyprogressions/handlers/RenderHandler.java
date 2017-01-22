@@ -34,6 +34,8 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.DioriteBrick, "DioriteBrick");
 	    InventoryBlockRender(TechBlocks.AndesiteBrick, "AndesiteBrick");
 	    InventoryBlockRender(TechBlocks.NetherStarBlock, "NetherStarBlock");
+	    InventoryBlockRender(TechBlocks.FlintBlock, "FlintBlock");
+	    InventoryBlockRender(TechBlocks.SmoothEndStone, "SmoothEndStone");
 	}
 	
 	public static void preInitBlocks(){
@@ -50,7 +52,7 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.BirthdayPickaxe, "BirthdayPickaxe");
 		InventoryItemRender(TechItems.MyceliumSeeds, "MyceliumSeeds");
 		InventoryItemRender(TechItems.DiamondApple, "DiamondApple");
-		InventoryItemRender(TechItems.MedKit, "MedKit");
+		InventoryItemRender(TechItems.MedKit, "MedKit");	
 	}
 	
 	public static void initArmor(){

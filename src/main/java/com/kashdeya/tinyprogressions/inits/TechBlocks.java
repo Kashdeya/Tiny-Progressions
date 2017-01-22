@@ -17,11 +17,13 @@ import com.kashdeya.tinyprogressions.blocks.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.EmeraldCobblegen;
 import com.kashdeya.tinyprogressions.blocks.FleshBlock;
+import com.kashdeya.tinyprogressions.blocks.FlintBlock;
 import com.kashdeya.tinyprogressions.blocks.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.IronCobblegen;
 import com.kashdeya.tinyprogressions.blocks.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.ReinforcedObsidian;
+import com.kashdeya.tinyprogressions.blocks.SmoothEndStone;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
@@ -47,6 +49,10 @@ public class TechBlocks {
 	public static Block FleshBlock;
 	public static Block BoneBlock;
 	public static Block NetherStarBlock;
+	// Flint Block
+	public static Block FlintBlock;
+	// End Stones
+	public static Block SmoothEndStone;
 	
 	public static void init(){
 		
@@ -122,6 +128,18 @@ public class TechBlocks {
 		if (ConfigHandler.AndesiteBrick){
 			AndesiteBrick = new AndesiteBrick();
 			registerBlock(AndesiteBrick, "AndesiteBrick", true);
+		}
+		
+		// Flint Block
+		if (ConfigHandler.FlintBlock){
+			FlintBlock = new FlintBlock();
+			registerBlock(FlintBlock, "FlintBlock", true);
+		}
+		
+		// Smooth EndStone
+		if (ConfigHandler.SmoothEndStone){
+			SmoothEndStone = new SmoothEndStone();
+			registerBlock(SmoothEndStone, "SmoothEndStone", true);
 		}
 	}
 	

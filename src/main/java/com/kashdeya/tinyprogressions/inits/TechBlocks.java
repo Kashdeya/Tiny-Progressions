@@ -9,6 +9,7 @@ import com.kashdeya.tinyprogressions.blocks.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.BlazeCobblegen;
 import com.kashdeya.tinyprogressions.blocks.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgrade;
+import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.BoneBlock;
 import com.kashdeya.tinyprogressions.blocks.CharcoalBlock;
 import com.kashdeya.tinyprogressions.blocks.Cobblegen;
@@ -32,6 +33,7 @@ public class TechBlocks {
 	// Tech Blocks
 	public static Block growth_block;
 	public static Block growth_upgrade;
+	public static Block growth_upgrade_two;
 	public static Block cobblegen_block;
 	public static Block iron_cobblegen_block;
 	public static Block diamond_cobblegen_block;
@@ -64,6 +66,10 @@ public class TechBlocks {
 		if (ConfigHandler.BlockGrowthUpgrade){
 			growth_upgrade = new BlockGrowthUpgrade();
 			registerBlock(growth_upgrade, "growth_upgrade", true);
+		}
+		if (ConfigHandler.BlockGrowthUpgradeTwo){
+			growth_upgrade_two = new BlockGrowthUpgradeTwo();
+			registerBlock(growth_upgrade_two, "growth_upgrade_two", true);
 		}
 		if (ConfigHandler.Cobblegen){
 			cobblegen_block = new Cobblegen();

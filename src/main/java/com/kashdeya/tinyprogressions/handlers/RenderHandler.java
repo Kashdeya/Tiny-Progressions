@@ -19,6 +19,7 @@ public class RenderHandler {
 	public static void initBlocks(){
 	    InventoryBlockRender(TechBlocks.growth_block, "growth_block");
 	    InventoryBlockRender(TechBlocks.growth_upgrade, "growth_upgrade");
+	    InventoryBlockRender(TechBlocks.growth_upgrade_two, "growth_upgrade_two");
 	    InventoryBlockRender(TechBlocks.cobblegen_block, "cobblegen_block");
 	    InventoryBlockRender(TechBlocks.iron_cobblegen_block, "iron_cobblegen_block");
 	    InventoryBlockRender(TechBlocks.diamond_cobblegen_block, "diamond_cobblegen_block");
@@ -39,8 +40,8 @@ public class RenderHandler {
 	}
 	
 	public static void preInitBlocks(){
-		if (ConfigHandler.BlockGrowthUpgrade == true){
-			setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+		if (ConfigHandler.BlockGrowthUpgradeTwo == true){
+			setCustomStateMap(TechBlocks.growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
 		}
 	}
 	

@@ -8,6 +8,7 @@ tile.emerald_cobblegen_block.name=Cobblestone Generator Tier 5
 #Growth Blocks
 tile.growth_block.name=Growth Crystal
 tile.growth_upgrade.name=Growth Crystal Tier 2
+tile.growth_upgrade_two.name=Growth Crystal Tier 3
 
 #Deco Blocks
 tile.CharcoalBlock.name=Charcoal Block
@@ -52,13 +53,19 @@ item.DiamondApple.name=Diamond Apple
 #Medkit
 item.MedKit.name=Medkit
 
+#Growth Crystal Tooltips
+tooltip.upgrade_1=Works in a 9x9 farm!
+tooltip.upgrade_2=Checks up to 2 block away up or down!
+
 #Growth Crystal Upgrade Tooltips
-tooltip.upgrade_1=Can be used as a Water Source and
-tooltip.upgrade_2=Growth Crystal in a 9x9 farm!
-tooltip.upgrade_3=Can also be used as just a Growth Crystal
-tooltip.upgrade_4=under blocks!
-tooltip.upgrade_5=Prevents Sponges from being 
-tooltip.upgrade_6=placed within 8 blocks!
+tooltip.upgrade_1=Works in a 9x9 farm!
+tooltip.upgrade_2=Checks up to 5 block away up or down!
+
+#Growth Crystal Upgrade Two Tooltips
+tooltip.upgrade2_1=Can be used as a Water Source!
+tooltip.upgrade2_2=Works in a 9x9 farm!
+tooltip.upgrade2_3=Checks up to 10 block away up or down!
+tooltip.upgrade2_4=Sponges can not be placed around! 
 
 #Nether Star Block Tooltips
 tooltip.netherstar_1=Can be used as a Base block for Beacons.
@@ -67,7 +74,7 @@ tooltip.netherstar_1=Can be used as a Base block for Beacons.
 tooltip.armor_1=Gives you Slowness!
 
 #Reinforced Blocks Tooltips
-tooltip.glass_1=Wither Proof Glass!
+tooltip.glass_1=Wither Proof!
 tooltip.obsidian_1=Wither Proof!
 
 #Birthday Pickaxe Tooltip

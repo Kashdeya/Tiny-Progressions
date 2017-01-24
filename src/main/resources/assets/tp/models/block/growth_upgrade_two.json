@@ -1,0 +1,48 @@
+{
+    "parent": "block/block",
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "texture": "#t1", "cullface": "down" },
+                "up":    { "texture": "#t2", "cullface": "up" },
+                "north": { "texture": "#t3", "cullface": "north" },
+                "south": { "texture": "#t4", "cullface": "south" },
+                "west":  { "texture": "#t5", "cullface": "west" },
+                "east":  { "texture": "#t6", "cullface": "east" }
+            }
+        },
+		{   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "texture": "#t7", "cullface": "down" },
+                "up":    { "texture": "#t7", "cullface": "up" },
+                "north": { "texture": "#t7", "cullface": "north" },
+                "south": { "texture": "#t7", "cullface": "south" },
+                "west":  { "texture": "#t7", "cullface": "west" },
+                "east":  { "texture": "#t7", "cullface": "east" }
+            }
+        },
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "texture": "#t1", "cullface": "down" },
+                "up":    { "texture": "#t2", "cullface": "up" },
+                "north": { "texture": "#t3", "cullface": "north" },
+                "south": { "texture": "#t4", "cullface": "south" },
+                "west":  { "texture": "#t5", "cullface": "west" },
+                "east":  { "texture": "#t6", "cullface": "east" }
+            }
+        }
+    ],
+    "textures": {
+        "particle": "tp:blocks/growth_upgrade",
+        "t1": "tp:blocks/growth_upgrade_down",
+		"t2": "tp:blocks/growth_upgrade_up",
+		"t3": "tp:blocks/growth_upgrade_north",
+		"t4": "tp:blocks/growth_upgrade_south",
+		"t5": "tp:blocks/growth_upgrade_west",
+		"t6": "tp:blocks/growth_upgrade_east",
+        "t7": "blocks/dragon_egg"
+    }
+}

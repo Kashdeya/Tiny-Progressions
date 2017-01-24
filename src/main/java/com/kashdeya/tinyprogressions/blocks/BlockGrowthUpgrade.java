@@ -6,13 +6,9 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -36,38 +32,23 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BlockGrowthUpgrade extends Block {
+	
+	private int range = 4;
 
 	public BlockGrowthUpgrade(){
-	// Turns block into a water source.	
-    super(Material.WATER);
-    this.setTickRandomly(true);
-    this.setHardness(1.25F);
-    this.setHarvestLevel("pickaxe", 0);
-    this.setLightLevel(1.0F);
-    this.setResistance(2000.0F);
-	this.setLightOpacity(1);
-	this.setCreativeTab(tinyprogressions.tabTP);
-	this.setSoundType(blockSoundType.METAL);
-	setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
-	this.setUnlocalizedName("growth_upgrade");
+		super(Material.GROUND);
+		this.setTickRandomly(true);
+		this.setHardness(1.25F);
+		this.setHarvestLevel("pickaxe", 0);
+		this.setLightLevel(1.0F);
+		this.setResistance(2000.0F);
+		this.setLightOpacity(1);
+		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setSoundType(blockSoundType.METAL);
+		this.setUnlocalizedName("growth_upgrade");
 	}
 	
-	@Override
-	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] { BlockLiquid.LEVEL });
-	}
-
-	@Override
-	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(meta));
-	}
-
-	@Override
-	public int getMetaFromState(IBlockState state) {
-		return ((Integer) state.getValue(BlockLiquid.LEVEL)).intValue();
-	}
-    
-    @SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer()
 	{
 		return BlockRenderLayer.CUTOUT_MIPPED;
@@ -97,9 +78,9 @@ public class BlockGrowthUpgrade extends Block {
         int yO = pos.getY();
         int zO = pos.getZ();
 
-        for (int xD = -5; xD <= 5; xD++) {
-            for (int yD = -6; yD <= 6; yD++) {
-                for (int zD = -5; zD <= 5; zD++) {
+        for (int xD = -4; xD <= 4; xD++) {
+            for (int yD = -5; yD <= 5; yD++) {
+                for (int zD = -4; zD <= 4; zD++) {
                     int x = xO + xD;
                     int y = yO + yD;
                     int z = zO + zD;
@@ -140,27 +121,32 @@ public class BlockGrowthUpgrade extends Block {
     {
         super.randomDisplayTick(worldIn, pos, state, rand);
 
-        for (int i = -2; i <= 2; ++i)
+        for (int i = -4; i <= 4; ++i)
         {
-            for (int j = -2; j <= 2; ++j)
+            for (int j = -4; j <= 4; ++j)
             {
-                if (i > -2 && i < 2 && j == -1)
+                if (i > -4 && i < 4 && j == -4)
                 {
-                    j = 2;
+                    j = 4;
                 }
 
                 if (rand.nextInt(16) == 0)
                 {
-                    for (int k = 0; k <= 1; ++k)
-                    {
-                        BlockPos blockpos = state.add(i, k, j);
+                    for (int k = 0; k <= 1; ++k){
+                    	for (int xAxis = -range; xAxis <= range; xAxis++) {
+        		            for (int zAxis = -range; zAxis <= range; zAxis++) {
+        		            	for (int yAxis = -range; yAxis <= range; yAxis++)
+        		            	{
+        		            		BlockPos blockpos = state.add(i, k, j);
+        		            		Block checkBlock = pos.getBlockState(blockpos.add(xAxis, yAxis, zAxis)).getBlock();
 
-                        if (pos.getBlockState(blockpos).getBlock() == Blocks.AIR)
-                        {
-
-                            pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
-                            pos.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, (double)state.getX() + 0.5D + rand.nextGaussian() / 4, (double)state.getY() +1.0D, (double)state.getZ() + 0.5D + rand.nextGaussian() / 4, 0.0D, 0.9D, 0.5D, new int[0]);
-                        }
+        		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
+        		            		{
+        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+        		            		}
+        		            	}
+        		            }
+                    	}
                     }
                 }
             }
@@ -213,34 +199,12 @@ public class BlockGrowthUpgrade extends Block {
         }
     }
 	
-	/**
-     * Determines if a specified mob type can spawn on this block, returning false will
-     * prevent any mob from spawning on the block.
-     *
-     * @param state The current state
-     * @param world The current world
-     * @param pos Block position in world
-     * @param type The Mob Category Type
-     * @return True to allow a mob of the specified category to spawn, false to prevent it.
-     */
-	@Override
-    public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, net.minecraft.entity.EntityLiving.SpawnPlacementType type)
-    {
-        return type != SpawnPlacementType.IN_WATER && super.canCreatureSpawn(state, world, pos, type);
-    }
-	
 	@Override
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
     {
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_1").getFormattedText());
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_2").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_3").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_4").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_5").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_6").getFormattedText());
     }
 
 }

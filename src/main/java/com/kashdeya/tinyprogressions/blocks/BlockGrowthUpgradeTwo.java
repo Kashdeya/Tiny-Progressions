@@ -6,9 +6,13 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -31,21 +35,38 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
-public class BlockGrowth extends Block {
+public class BlockGrowthUpgradeTwo extends Block {
 	
 	private int range = 4;
 
-	public BlockGrowth(){
-		super(Material.GROUND);
+	public BlockGrowthUpgradeTwo(){
+		// Turns block into a water source.	
+		super(Material.WATER);
 		this.setTickRandomly(true);
-		this.setHardness(1.0F);
+		this.setHardness(1.5F);
 		this.setHarvestLevel("pickaxe", 0);
-		this.setResistance(2000.0F);
 		this.setLightLevel(1.0F);
+		this.setResistance(2000.0F);
 		this.setLightOpacity(1);
 		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setSoundType(blockSoundType.METAL);
-		this.setUnlocalizedName("growth_block");
+		setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
+		this.setUnlocalizedName("growth_upgrade_two");
+	}
+	
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] { BlockLiquid.LEVEL });
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(meta));
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((Integer) state.getValue(BlockLiquid.LEVEL)).intValue();
 	}
     
     @SideOnly(Side.CLIENT)
@@ -53,7 +74,7 @@ public class BlockGrowth extends Block {
 	{
 		return BlockRenderLayer.CUTOUT_MIPPED;
 	}
-
+	
 	@Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
     {
@@ -70,7 +91,7 @@ public class BlockGrowth extends Block {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-    	return Item.getItemFromBlock(TechBlocks.growth_block);
+    	return Item.getItemFromBlock(TechBlocks.growth_upgrade_two);
     }
 	
 	public void growCropsNearby(World world, BlockPos pos, IBlockState state) {        
@@ -79,7 +100,7 @@ public class BlockGrowth extends Block {
         int zO = pos.getZ();
 
         for (int xD = -4; xD <= 4; xD++) {
-            for (int yD = -2; yD <= 2; yD++) {
+            for (int yD = -10; yD <= 10; yD++) {
                 for (int zD = -4; zD <= 4; zD++) {
                     int x = xO + xD;
                     int y = yO + yD;
@@ -94,14 +115,14 @@ public class BlockGrowth extends Block {
 
                     if (cropBlock instanceof IPlantable || cropBlock instanceof IGrowable) {
                         if (!(cropBlock instanceof BlockGrowth)) {
-                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthTicks * 20), 1);
+                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthUpgradeTwoTicks * 5), 1);
                             cropBlock.updateTick(world, new BlockPos(x, y, z), cropState, world.rand);
                         }
                     }
                 }
             }
         }
-        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthTicks * 20, 1);
+        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthUpgradeTwoTicks * 5, 1);
     }
 	
 	@Override
@@ -130,9 +151,9 @@ public class BlockGrowth extends Block {
                     j = 4;
                 }
 
-                if (rand.nextInt(32) == 0)
+                if (rand.nextInt(16) == 0)
                 {
-                    for (int k = -1; k <= 0; ++k){
+                    for (int k = 0; k <= 1; ++k){
                     	for (int xAxis = -range; xAxis <= range; xAxis++) {
         		            for (int zAxis = -range; zAxis <= range; zAxis++) {
         		            	for (int yAxis = -range; yAxis <= range; yAxis++)
@@ -143,6 +164,7 @@ public class BlockGrowth extends Block {
         		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
         		            		{
         		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+        	                            pos.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
         		            		}
         		            	}
         		            }
@@ -161,6 +183,12 @@ public class BlockGrowth extends Block {
     {
         return false;
     }
+	
+	@Override
+	public boolean isNormalCube(IBlockState state, IBlockAccess world, BlockPos pos)
+	{
+	    return true;
+	}
 	
 	/**
      * Whether this Block is solid on the given Side
@@ -193,12 +221,31 @@ public class BlockGrowth extends Block {
         }
     }
 	
+	/**
+     * Determines if a specified mob type can spawn on this block, returning false will
+     * prevent any mob from spawning on the block.
+     *
+     * @param state The current state
+     * @param world The current world
+     * @param pos Block position in world
+     * @param type The Mob Category Type
+     * @return True to allow a mob of the specified category to spawn, false to prevent it.
+     */
+	@Override
+    public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, net.minecraft.entity.EntityLiving.SpawnPlacementType type)
+    {
+        return type != SpawnPlacementType.IN_WATER && super.canCreatureSpawn(state, world, pos, type);
+    }
+	
 	@Override
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
     {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_1").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_1").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_3").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_4").getFormattedText());
     }
-	
+
 }

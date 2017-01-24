@@ -29,7 +29,7 @@ public class NetherStarBlock extends Block {
 	
 	public NetherStarBlock() {
 		super(Material.IRON);
-		this.setHardness(1.0F);
+		this.setHardness(2.0F);
 	    this.setHarvestLevel("pickaxe", 0);
 	    this.setResistance(2000.0F);
 		this.setLightOpacity(1);

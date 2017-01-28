@@ -1,5 +1,12 @@
 package com.kashdeya.tinyprogressions.handlers;
 
+import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRenderer;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.main.Reference;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.properties.IProperty;
@@ -8,11 +15,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.main.Reference;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 public class RenderHandler {
 	
@@ -37,6 +40,9 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.NetherStarBlock, "NetherStarBlock");
 	    InventoryBlockRender(TechBlocks.FlintBlock, "FlintBlock");
 	    InventoryBlockRender(TechBlocks.SmoothEndStone, "SmoothEndStone");
+
+	    //Tile Entity Render
+	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthUpgradeTwo.class, new TileEntityGrowthUpgradeTwoRenderer());
 	}
 	
 	public static void preInitBlocks(){

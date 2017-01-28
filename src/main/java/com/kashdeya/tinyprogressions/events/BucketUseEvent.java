@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.events;
 
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -12,7 +12,7 @@ public class BucketUseEvent {
     @SubscribeEvent
     public void onPlayerUsingBucket(FillBucketEvent event) {
     	if (ConfigHandler.BlockGrowthUpgrade){
-    		if (event.getEntity() instanceof EntityPlayerMP) {
+    		if (event.getEntity() instanceof EntityPlayer) {
     			IBlockState state = event.getWorld().getBlockState(event.getTarget().getBlockPos());
     			if (state != null) {
     				if (state.getBlock() instanceof BlockGrowthUpgrade) {

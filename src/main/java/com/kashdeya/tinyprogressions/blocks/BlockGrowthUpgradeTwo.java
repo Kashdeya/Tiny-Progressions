@@ -5,11 +5,6 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
@@ -38,9 +33,15 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
+
 public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider {
 	
 	private int range = 4;
+	private int rangeY = 10;
 
 	public BlockGrowthUpgradeTwo(){
 		// Turns block into a water source.	
@@ -80,8 +81,20 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
     @SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer()
 	{
-		return BlockRenderLayer.CUTOUT_MIPPED;
+		return BlockRenderLayer.CUTOUT;
 	}
+    
+    @Override
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
+    
+    @Override
+    public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
 	
 	@Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
@@ -95,8 +108,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
         this.growCropsNearby(world, pos, state);
     }
     
-    // Get the Item that this Block should drop when harvested.
-	@Override
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
     	return Item.getItemFromBlock(TechBlocks.growth_upgrade_two);
@@ -116,21 +128,21 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 
                     double distance = Math.sqrt(Math.pow(x-xO,2) + Math.pow(y - yO,2) + Math.pow(z - zO,2));
                     distance = Math.min(1D, distance);
-                    double distanceCoefficient = 1D - (distance / 5);
+                    double distanceCoefficient = 1D - (distance);
 
                     IBlockState cropState = world.getBlockState(new BlockPos(x, y, z));
                     Block cropBlock = cropState.getBlock();
 
                     if (cropBlock instanceof IPlantable || cropBlock instanceof IGrowable) {
                         if (!(cropBlock instanceof BlockGrowth)) {
-                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthUpgradeTwoTicks * 5), 1);
+                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthUpgradeTwoTicks * 10), 1);
                             cropBlock.updateTick(world, new BlockPos(x, y, z), cropState, world.rand);
                         }
                     }
                 }
             }
         }
-        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthUpgradeTwoTicks * 5, 1);
+        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthUpgradeTwoTicks * 10, 1);
     }
 	
 	@Override
@@ -164,7 +176,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
                     for (int k = 0; k <= 1; ++k){
                     	for (int xAxis = -range; xAxis <= range; xAxis++) {
         		            for (int zAxis = -range; zAxis <= range; zAxis++) {
-        		            	for (int yAxis = -range; yAxis <= range; yAxis++)
+        		            	for (int yAxis = -rangeY; yAxis <= rangeY; yAxis++)
         		            	{
         		            		BlockPos blockpos = state.add(i, k, j);
         		            		Block checkBlock = pos.getBlockState(blockpos.add(xAxis, yAxis, zAxis)).getBlock();
@@ -172,8 +184,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
         		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
         		            		{
         		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
-        	                            pos.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
-        		            		}
+        	                        }
         		            	}
         		            }
                     	}
@@ -183,9 +194,6 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
         }
     }
 	
-	/**
-     * Whether this Block can be replaced directly by other blocks (true for e.g. tall grass)
-     */
 	@Override
     public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
     {
@@ -198,18 +206,12 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 	    return true;
 	}
 	
-	/**
-     * Whether this Block is solid on the given Side
-     */
 	@Override
     public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
     {
         return worldIn.getBlockState(pos).getMaterial().isSolid();
     }
 	
-	/**
-     * Check whether this Block can be placed on the given side
-     */
 	@Override
     public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
     {
@@ -229,16 +231,6 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
         }
     }
 	
-	/**
-     * Determines if a specified mob type can spawn on this block, returning false will
-     * prevent any mob from spawning on the block.
-     *
-     * @param state The current state
-     * @param world The current world
-     * @param pos Block position in world
-     * @param type The Mob Category Type
-     * @return True to allow a mob of the specified category to spawn, false to prevent it.
-     */
 	@Override
     public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, net.minecraft.entity.EntityLiving.SpawnPlacementType type)
     {

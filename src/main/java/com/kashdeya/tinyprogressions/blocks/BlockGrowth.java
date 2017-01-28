@@ -34,6 +34,7 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 public class BlockGrowth extends Block {
 	
 	private int range = 4;
+	private int rangeY = 2;
 
 	public BlockGrowth(){
 		super(Material.GROUND);
@@ -66,8 +67,7 @@ public class BlockGrowth extends Block {
         this.growCropsNearby(world, pos, state);
     }
     
-    // Get the Item that this Block should drop when harvested.
-	@Override
+    @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
     	return Item.getItemFromBlock(TechBlocks.growth_block);
@@ -87,21 +87,21 @@ public class BlockGrowth extends Block {
 
                     double distance = Math.sqrt(Math.pow(x-xO,2) + Math.pow(y - yO,2) + Math.pow(z - zO,2));
                     distance = Math.min(1D, distance);
-                    double distanceCoefficient = 1D - (distance / 5);
+                    double distanceCoefficient = 1D - (distance);
 
                     IBlockState cropState = world.getBlockState(new BlockPos(x, y, z));
                     Block cropBlock = cropState.getBlock();
 
                     if (cropBlock instanceof IPlantable || cropBlock instanceof IGrowable) {
                         if (!(cropBlock instanceof BlockGrowth)) {
-                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthTicks * 20), 1);
+                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthTicks * 40), 1);
                             cropBlock.updateTick(world, new BlockPos(x, y, z), cropState, world.rand);
                         }
                     }
                 }
             }
         }
-        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthTicks * 20, 1);
+        world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthTicks * 40, 1);
     }
 	
 	@Override
@@ -135,7 +135,7 @@ public class BlockGrowth extends Block {
                     for (int k = -1; k <= 0; ++k){
                     	for (int xAxis = -range; xAxis <= range; xAxis++) {
         		            for (int zAxis = -range; zAxis <= range; zAxis++) {
-        		            	for (int yAxis = -range; yAxis <= range; yAxis++)
+        		            	for (int yAxis = -rangeY; yAxis <= rangeY; yAxis++)
         		            	{
         		            		BlockPos blockpos = state.add(i, k, j);
         		            		Block checkBlock = pos.getBlockState(blockpos.add(xAxis, yAxis, zAxis)).getBlock();
@@ -153,27 +153,18 @@ public class BlockGrowth extends Block {
         }
     }
 	
-	/**
-     * Whether this Block can be replaced directly by other blocks (true for e.g. tall grass)
-     */
 	@Override
     public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
     {
         return false;
     }
 	
-	/**
-     * Whether this Block is solid on the given Side
-     */
 	@Override
     public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
     {
         return worldIn.getBlockState(pos).getMaterial().isSolid();
     }
 	
-	/**
-     * Check whether this Block can be placed on the given side
-     */
 	@Override
     public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
     {

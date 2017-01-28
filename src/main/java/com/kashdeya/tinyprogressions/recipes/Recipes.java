@@ -100,7 +100,7 @@ public class Recipes {
 			ItemStack BirthdayPickaxe;
 			BirthdayPickaxe  = new ItemStack(TechItems.BirthdayPickaxe);
 			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 1);
-			GameRegistry.addShapedRecipe(BirthdayPickaxe, new Object[] {"rrr", " i ", " i ", 'r', new ItemStack(TechBlocks.ReinforcedObsidian), 'i', new ItemStack(Items.STICK)});
+			GameRegistry.addShapedRecipe(BirthdayPickaxe, new Object[] {"rdr", " i ", " i ", 'r', new ItemStack(TechBlocks.ReinforcedObsidian), 'i', new ItemStack(Items.STICK), 'd', new ItemStack(Items.DIAMOND)});
 		}
 		
 		if (ConfigHandler.ReinforcedGlass == true){
@@ -130,6 +130,10 @@ public class Recipes {
 		
 		if (ConfigHandler.BlockGrowthUpgrade == true){
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "SES", "CNC", 'W', new ItemStack(TechItems.WateringCanUpgrade), 'N', new ItemStack(TechBlocks.NetherStarBlock), 'C', new ItemStack(TechBlocks.ReinforcedObsidian), 'S', new ItemStack(Items.END_CRYSTAL), 'E', new ItemStack(TechBlocks.growth_block)});
+		}
+		
+		if (ConfigHandler.BlockGrowthUpgradeTwo == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade_two), new Object[] {" g ", "gdg", " g ", 'g', new ItemStack(TechBlocks.growth_upgrade), 'd', new ItemStack(Blocks.DRAGON_EGG)});
 		}
 		
 		if (ConfigHandler.Cobblegen == true){

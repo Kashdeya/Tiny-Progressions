@@ -12,18 +12,18 @@
                 "east":  { "texture": "#t6", "cullface": "east" }
             }
         },
-		{   "from": [ 0, 0, 0 ],
-            "to": [ 16, 16, 16 ],
+		{   "from": [ 0.01, 0.01, 0.01 ],
+            "to": [ 15.99, 5.56, 15.99 ],
             "faces": {
                 "down":  { "texture": "#t7", "cullface": "down" },
-                "up":    { "texture": "#t7", "cullface": "up" },
+				"up":    { "texture": "#t7", "cullface": "up" },
                 "north": { "texture": "#t7", "cullface": "north" },
                 "south": { "texture": "#t7", "cullface": "south" },
                 "west":  { "texture": "#t7", "cullface": "west" },
                 "east":  { "texture": "#t7", "cullface": "east" }
             }
         },
-        {   "from": [ 0, 0, 0 ],
+		{   "from": [ 0, 0, 0 ],
             "to": [ 16, 16, 16 ],
             "faces": {
                 "down":  { "texture": "#t1", "cullface": "down" },
@@ -43,6 +43,6 @@
 		"t4": "tp:blocks/growth_upgrade_south",
 		"t5": "tp:blocks/growth_upgrade_west",
 		"t6": "tp:blocks/growth_upgrade_east",
-        "t7": "blocks/dragon_egg"
+        "t7": "blocks/water_still"
     }
 }

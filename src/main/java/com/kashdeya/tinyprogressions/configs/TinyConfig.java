@@ -40,22 +40,22 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Growth Crystal", "True or False");
 		ConfigHandler.BlockGrowth = config.getBoolean("Growth Crystal Tier 1", category + " Growth Crystal", true, "Enable Growth Crystal Tier 1?");
-		ConfigHandler.BlockGrowthTicks = config.getInt("Growth Crystal Tier 1 Speed", category + " Growth Crystal", 120, 1, 360, "Number of Ticks between Growth Ticks. (1 = 20 Ticks or 1 Second)");
-		ConfigHandler.BlockGrowthUpgrade = config.getBoolean("Growth Crystal Tier 2", category + " Growth Crystal", true, "Enable Growth Crystal Tier 2? (Requires Tier 1 to be Enabled)");
-		ConfigHandler.BlockGrowthUpgradeTicks = config.getInt("Growth Crystal Tier 2 Speed", category + " Growth Crystal", 60, 1, 360, "Number of Ticks between Growth Ticks. (1 = 10 Ticks or 1/2 Second)");
-		ConfigHandler.BlockGrowthUpgradeTwo = config.getBoolean("Growth Crystal Tier 3", category + " Growth Crystal", true, "Enable Growth Crystal Tier 3? (Requires Tier 2 to be Enabled)");
-		ConfigHandler.BlockGrowthUpgradeTwoTicks = config.getInt("Growth Crystal Tier 3 Speed", category + " Growth Crystal", 30, 1, 360, "Number of Ticks between Growth Ticks. (1 = 5 Ticks or 1/4 Second)");
+		ConfigHandler.BlockGrowthTicks = config.getInt("Growth Crystal Tier 1 Speed", category + " Growth Crystal", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 40 Ticks = 2 Seconds]\n[Default*40=1200 Ticks]");
+		ConfigHandler.BlockGrowthUpgrade = config.getBoolean("Growth Crystal Tier 2", category + " Growth Crystal", true, "Enable Growth Crystal Tier 2?\n[Requires Tier 1 to be Enabled]");
+		ConfigHandler.BlockGrowthUpgradeTicks = config.getInt("Growth Crystal Tier 2 Speed", category + " Growth Crystal", 40, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 20 Ticks = 1 Second]\n[Default*20=800 Ticks]");
+		ConfigHandler.BlockGrowthUpgradeTwo = config.getBoolean("Growth Crystal Tier 3", category + " Growth Crystal", true, "Enable Growth Crystal Tier 3?\n[Requires Tier 2 to be Enabled]");
+		ConfigHandler.BlockGrowthUpgradeTwoTicks = config.getInt("Growth Crystal Tier 3 Speed", category + " Growth Crystal", 40, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 10 Ticks = 1/2 a Second]\n[Default*10=400 Ticks]");
 		
 		config.addCustomCategoryComment(category + " Watering Cans", "True or False");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");
-		ConfigHandler.WateringCanUpgrade = config.getBoolean("Reinforced Watering Can", category + " Watering Cans", true, "Enable Reinforced Watering Can? (Requires Watering Can to be Enabled)");
+		ConfigHandler.WateringCanUpgrade = config.getBoolean("Reinforced Watering Can", category + " Watering Cans", true, "Enable Reinforced Watering Can?\n[Requires Watering Can to be Enabled]");
 		
 		config.addCustomCategoryComment(category + " Cobblegen Crystals", "True or False");
 		ConfigHandler.Cobblegen = config.getBoolean("Cobblegen Crystal Tier 1", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 1?");
-		ConfigHandler.IronCobblegen = config.getBoolean("Cobblegen Crystal Tier 2", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 2? (Requires Cobblegen Crystal Tier 1 to be Enabled)");
-		ConfigHandler.DiamondCobblegen = config.getBoolean("Cobblegen Crystal Tier 3", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 3? (Requires Cobblegen Crystal Tier 2 to be Enabled)");
-		ConfigHandler.BlazeCobblegen = config.getBoolean("Cobblegen Crystal Tier 4", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 4? (Requires Cobblegen Crystal Tier 3 to be Enabled)");
-		ConfigHandler.EmeraldCobblegen = config.getBoolean("Cobblegen Crystal Tier 5", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 5? (Requires Cobblegen Crystal Tier 4 to be Enabled)");
+		ConfigHandler.IronCobblegen = config.getBoolean("Cobblegen Crystal Tier 2", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 2?\n[Requires Cobblegen Crystal Tier 1 to be Enabled]");
+		ConfigHandler.DiamondCobblegen = config.getBoolean("Cobblegen Crystal Tier 3", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 3?\n[Requires Cobblegen Crystal Tier 2 to be Enabled]");
+		ConfigHandler.BlazeCobblegen = config.getBoolean("Cobblegen Crystal Tier 4", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 4?\n[Requires Cobblegen Crystal Tier 3 to be Enabled]");
+		ConfigHandler.EmeraldCobblegen = config.getBoolean("Cobblegen Crystal Tier 5", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 5?\n[Requires Cobblegen Crystal Tier 4 to be Enabled]");
 		
 		config.addCustomCategoryComment(category + " Extra Stuff", "True or False");
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Extra Stuff", true, "Enable the Charcoal Block?");
@@ -80,12 +80,12 @@ public class TinyConfig {
 		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
 		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
 		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", category + " Drops", true, "Enable Skull to drop from Dirt? (Bone Drops must be enabled!)");
-		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Skull Dropped from Dirt. (Skulls Have the same Drop Chance as Bones)");
+		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Skull Dropped from Dirt.\n[Skulls Have the same Drop Chance as Bones]");
 		
 		config.addCustomCategoryComment(category + " Quartz", "True or False");
-		ConfigHandler.QuartzDust = config.getBoolean("Quartz Dust", category + " Quartz", true, "Enable Quartz Dust?");
+		ConfigHandler.QuartzDust = config.getBoolean("Quartz Dust", category + " Quartz", false, "Enable Quartz Dust?");
 		ConfigHandler.QuartzDustRecipe = config.getBoolean("Quartz Dust Recipe", category + " Quartz", false, "Enable vanilla style Quartz Dust Recipe?");
-		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", true, "Enable the Quartz Knife and Dust Recipe?");
+		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", false, "Enable the Quartz Knife and Dust Recipe?");
 		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		
 		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False");

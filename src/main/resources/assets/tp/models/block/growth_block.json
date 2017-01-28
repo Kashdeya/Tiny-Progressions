@@ -37,12 +37,12 @@
     ],
     "textures": {
         "particle": "tp:blocks/growth_block",
-        "t1": "tp:blocks/growth_block_down",
-		"t2": "tp:blocks/growth_block_up",
-		"t3": "tp:blocks/growth_block_north",
-		"t4": "tp:blocks/growth_block_south",
-		"t5": "tp:blocks/growth_block_west",
-		"t6": "tp:blocks/growth_block_east",
+        "t1": "tp:blocks/DirtyGlass",
+		"t2": "tp:blocks/DirtyGlass",
+		"t3": "tp:blocks/DirtyGlass",
+		"t4": "tp:blocks/DirtyGlass",
+		"t5": "tp:blocks/DirtyGlass",
+		"t6": "tp:blocks/DirtyGlass",
         "t7": "blocks/sea_lantern"
     }
 }

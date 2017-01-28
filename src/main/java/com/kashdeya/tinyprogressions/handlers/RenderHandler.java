@@ -1,10 +1,12 @@
 package com.kashdeya.tinyprogressions.handlers;
 
+import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRenderer;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.Reference;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 
 import net.minecraft.block.Block;
@@ -42,6 +44,7 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.SmoothEndStone, "SmoothEndStone");
 
 	    //Tile Entity Render
+	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthUpgrade.class, new TileEntityGrowthUpgradeRenderer());
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthUpgradeTwo.class, new TileEntityGrowthUpgradeTwoRenderer());
 	}
 	

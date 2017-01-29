@@ -14,6 +14,7 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityBlazeCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityDiamondCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityEmeraldCobblegen;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
 
@@ -55,6 +56,7 @@ public class CommonProxy {
     	GameRegistry.registerTileEntity(TileEntityDiamondCobblegen.class, "tileEntityDiamondCobblegen");
     	GameRegistry.registerTileEntity(TileEntityEmeraldCobblegen.class, "tileEntityEmeraldCobblegen");
     	GameRegistry.registerTileEntity(TileEntityBlazeCobblegen.class, "tileEntityBlazeCobblegen");
+    	GameRegistry.registerTileEntity(TileEntityGrowthUpgrade.class, "tileEntityGrowthUpgrade");
     	GameRegistry.registerTileEntity(TileEntityGrowthUpgradeTwo.class, "tileEntityGrowthUpgradeTwo");
     	// Load WorldGeneration
 

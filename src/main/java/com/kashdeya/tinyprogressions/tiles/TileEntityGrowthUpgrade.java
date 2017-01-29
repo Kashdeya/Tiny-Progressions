@@ -5,7 +5,7 @@ import net.minecraft.util.ITickable;
 
 public class TileEntityGrowthUpgrade extends TileEntity implements ITickable {
 
-	public int animationTicks;
+	public int animationTicks, prevAnimationTicks;
 
 	public TileEntityGrowthUpgrade() {
 	}
@@ -13,10 +13,13 @@ public class TileEntityGrowthUpgrade extends TileEntity implements ITickable {
 	@Override
 	public void update() {
 		if (worldObj.isRemote) {
-			if (animationTicks < 720)
-				animationTicks += 1;
-			if (animationTicks >= 720)
-				animationTicks = 0;
+			prevAnimationTicks = animationTicks;
+			if (animationTicks < 360)
+				animationTicks += 2;
+			if (animationTicks >= 360) {
+				animationTicks -= 360;
+				prevAnimationTicks -= 360;
+			}
 		}
 	}
 }

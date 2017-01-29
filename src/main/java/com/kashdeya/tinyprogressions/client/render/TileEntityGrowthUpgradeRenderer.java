@@ -31,8 +31,8 @@ public class TileEntityGrowthUpgradeRenderer extends TileEntitySpecialRenderer<T
 		Render renderer = Minecraft.getMinecraft().getRenderManager().getEntityRenderObject(entity);
 
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(x + 0.5D, y + 0.1D, z + 0.5D);
-		GlStateManager.scale(0.4, 0.4, 0.4);
+		GlStateManager.translate(x + 0.5D, y + 0.31D, z + 0.5D);
+		GlStateManager.scale(0.3, 0.3, 0.3);
 		GlStateManager.pushAttrib();
 		renderer.doRender(entity, 0, 0, 0, 0, 0);
 		GlStateManager.popAttrib();

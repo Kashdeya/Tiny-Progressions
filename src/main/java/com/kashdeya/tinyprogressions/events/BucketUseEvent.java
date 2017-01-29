@@ -12,7 +12,7 @@ public class BucketUseEvent {
     @SubscribeEvent
     public void onPlayerUsingBucket(FillBucketEvent event) {
     	if (ConfigHandler.BlockGrowthUpgrade){
-    		if (event.getEntity() instanceof EntityPlayer) {
+    		if (event.getEntity() != null && event.getEntity() instanceof EntityPlayer) {
     			IBlockState state = event.getWorld().getBlockState(event.getTarget().getBlockPos());
     			if (state != null) {
     				if (state.getBlock() instanceof BlockGrowthUpgrade) {

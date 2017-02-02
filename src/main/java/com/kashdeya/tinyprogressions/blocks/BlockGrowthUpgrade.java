@@ -236,6 +236,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
     {
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_1").getFormattedText());
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_3").getFormattedText());
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_4").getFormattedText());
     }

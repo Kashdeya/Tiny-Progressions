@@ -5,6 +5,7 @@ import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRen
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
@@ -49,8 +50,9 @@ public class RenderHandler {
 	}
 	
 	public static void preInitBlocks(){
-		if (ConfigHandler.BlockGrowthUpgradeTwo == true){
+		if (ConfigHandler.BlockGrowthUpgradeTwo == true || ConfigHandler.BlockGrowthUpgrade){
 			setCustomStateMap(TechBlocks.growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+			setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
 		}
 	}
 	
@@ -63,6 +65,31 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.MyceliumSeeds, "MyceliumSeeds");
 		InventoryItemRender(TechItems.DiamondApple, "DiamondApple");
 		InventoryItemRender(TechItems.MedKit, "MedKit");	
+		InventoryItemRender(TechItems.StoneDust, "StoneDust");
+		InventoryItemRender(TechItems.FlintIngot, "FlintIngot");
+	}
+	
+	public static void initTools(){
+		InventoryItemRender(TechTools.BoneAxe, "BoneAxe");
+		InventoryItemRender(TechTools.BoneAxeHead, "BoneAxeHead");
+		InventoryItemRender(TechTools.BoneHoe, "BoneHoe");
+		InventoryItemRender(TechTools.BoneHoeHead, "BoneHoeHead");
+		InventoryItemRender(TechTools.BonePickaxe, "BonePickaxe");
+		InventoryItemRender(TechTools.BonePickaxeHead, "BonePickaxeHead");
+		InventoryItemRender(TechTools.BoneSpade, "BoneSpade");
+		InventoryItemRender(TechTools.BoneSpadeHead, "BoneSpadeHead");
+		InventoryItemRender(TechTools.BoneSword, "BoneSword");
+		InventoryItemRender(TechTools.BoneSwordHead, "BoneSwordHead");
+		InventoryItemRender(TechTools.FlintAxe, "FlintAxe");
+		InventoryItemRender(TechTools.FlintAxeHead, "FlintAxeHead");
+		InventoryItemRender(TechTools.FlintHoe, "FlintHoe");
+		InventoryItemRender(TechTools.FlintHoeHead, "FlintHoeHead");
+		InventoryItemRender(TechTools.FlintPickaxe, "FlintPickaxe");
+		InventoryItemRender(TechTools.FlintPickaxeHead, "FlintPickaxeHead");
+		InventoryItemRender(TechTools.FlintSpade, "FlintSpade");
+		InventoryItemRender(TechTools.FlintSpadeHead, "FlintSpadeHead");
+		InventoryItemRender(TechTools.FlintSword, "FlintSword");
+		InventoryItemRender(TechTools.FlintSwordHead, "FlintSwordHead");
 	}
 	
 	public static void initArmor(){
@@ -70,6 +97,14 @@ public class RenderHandler {
 		InventoryItemRender(TechArmor.stoneChestplate, "stoneChestplate");
 		InventoryItemRender(TechArmor.stoneLeggings, "stoneLeggings");
 		InventoryItemRender(TechArmor.stoneBoots, "stoneBoots");
+		InventoryItemRender(TechArmor.flintHelmet, "flintHelmet");
+		InventoryItemRender(TechArmor.flintChestplate, "flintChestplate");
+		InventoryItemRender(TechArmor.flintLeggings, "flintLeggings");
+		InventoryItemRender(TechArmor.flintBoots, "flintBoots");
+		InventoryItemRender(TechArmor.boneHelmet, "boneHelmet");
+		InventoryItemRender(TechArmor.boneChestplate, "boneChestplate");
+		InventoryItemRender(TechArmor.boneLeggings, "boneLeggings");
+		InventoryItemRender(TechArmor.boneBoots, "boneBoots");
 	}
 	
 	public static void InventoryBlockRender(Block block, String blockName){

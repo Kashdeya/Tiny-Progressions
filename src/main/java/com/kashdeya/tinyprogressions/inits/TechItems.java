@@ -8,10 +8,12 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.DiamondApple;
+import com.kashdeya.tinyprogressions.items.FlintIngot;
 import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.QuartzDust;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
+import com.kashdeya.tinyprogressions.items.StoneDust;
 import com.kashdeya.tinyprogressions.items.WateringCan;
 import com.kashdeya.tinyprogressions.items.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -30,14 +32,10 @@ public class TechItems {
 	public static Item MyceliumSeeds;
 	public static Item DiamondApple;
 	public static Item MedKit;
-	// Flint Items
+	// Stone Dust
+	public static Item StoneDust;
+	// Flint Armor Ingot
 	public static Item FlintIngot;
-	// Flint Tool & Weapon Heads
-	public static Item FlintPickaxeHead;
-	public static Item FlintAxeHead;
-	public static Item FlintSpadeHead;
-	public static Item FlintSwordHead;
-	public static Item FlintHoeHead;
 	
 	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 45.0F, 4.0F, 25);
 	
@@ -56,8 +54,6 @@ public class TechItems {
 	    if (ConfigHandler.QuartzKnife){
 	    	QuartzKnife = new QuartzKnife();
 	    	registerItem(QuartzKnife, "QuartzKnife");
-	    }
-	    if (ConfigHandler.QuartzDust){
 	    	QuartzDust = new QuartzDust();
 	    	registerItem(QuartzDust, "QuartzDust");
 	    }
@@ -79,7 +75,16 @@ public class TechItems {
 	    	MedKit = new MedKit();
 	    	registerItem(MedKit, "MedKit");
 	    }
-	    // Flint Items
+	    // Stone Dust
+	    if (ConfigHandler.StoneDust){
+	    	StoneDust = new StoneDust();
+			registerItem(StoneDust, "StoneDust");
+		}
+	    // Flint Armor Ingot
+	    if (ConfigHandler.FlintArmor){
+	    	FlintIngot = new FlintIngot();
+			registerItem(FlintIngot, "FlintIngot");
+		}
 
 	}
 	

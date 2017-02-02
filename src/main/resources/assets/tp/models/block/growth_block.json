@@ -15,17 +15,6 @@
 		{   "from": [ 0, 0, 0 ],
             "to": [ 16, 16, 16 ],
             "faces": {
-                "down":  { "texture": "#t7", "cullface": "down" },
-                "up":    { "texture": "#t7", "cullface": "up" },
-                "north": { "texture": "#t7", "cullface": "north" },
-                "south": { "texture": "#t7", "cullface": "south" },
-                "west":  { "texture": "#t7", "cullface": "west" },
-                "east":  { "texture": "#t7", "cullface": "east" }
-            }
-        },
-        {   "from": [ 0, 0, 0 ],
-            "to": [ 16, 16, 16 ],
-            "faces": {
                 "down":  { "texture": "#t1", "cullface": "down" },
                 "up":    { "texture": "#t2", "cullface": "up" },
                 "north": { "texture": "#t3", "cullface": "north" },
@@ -42,7 +31,6 @@
 		"t3": "tp:blocks/DirtyGlass",
 		"t4": "tp:blocks/DirtyGlass",
 		"t5": "tp:blocks/DirtyGlass",
-		"t6": "tp:blocks/DirtyGlass",
-        "t7": "blocks/sea_lantern"
+		"t6": "tp:blocks/DirtyGlass"
     }
 }

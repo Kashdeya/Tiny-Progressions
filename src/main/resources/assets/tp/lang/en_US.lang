@@ -31,6 +31,10 @@ item.WateringCan.name=Watering Can
 item.WateringCanUpgrade.name=Reinforced Watering Can
 item.QuartzDust.name=Quartz Enriched Iron Dust
 item.QuartzKnife.name=Quartz Knife
+item.FlintIngot.name=Flint Ingot
+
+#Stone Dust
+item.StoneDust.name=Stone Dust
 
 #Goodies
 item.BirthdayPickaxe.name=Party Pickaxe
@@ -40,7 +44,7 @@ itemGroup.tiny_progressions=Tiny Progressions
 
 #Armor
 item.stoneHelmet.name=Stone Helmet
-item.stoneChestplate.name=Stone Helmet
+item.stoneChestplate.name=Stone Chestplate
 item.stoneLeggings.name=Stone Leggings
 item.stoneBoots.name=Stone Boots
 
@@ -60,11 +64,13 @@ tooltip.upgrade_2=Checks up to 2 blocks up or down!
 #Growth Crystal Upgrade Tooltips
 tooltip.upgrade_1=Works in a 9x9 farm!
 tooltip.upgrade_2=Checks up to 5 blocks up or down!
+tooltip.upgrade_3=Can be used as a Water Source!
+tooltip.upgrade_4=Sponges can not be placed around!
 
 #Growth Crystal Upgrade Two Tooltips
-tooltip.upgrade2_1=Can be used as a Water Source!
-tooltip.upgrade2_2=Works in a 9x9 farm!
-tooltip.upgrade2_3=Checks up to 10 blocks up or down!
+tooltip.upgrade2_1=Works in a 9x9 farm!
+tooltip.upgrade2_2=Checks up to 10 blocks up or down!
+tooltip.upgrade2_3=Can be used as a Water Source!
 tooltip.upgrade2_4=Sponges can not be placed around! 
 
 #Nether Star Block Tooltips
@@ -103,27 +109,38 @@ tooltip.canupgrade_1=A better way to water things!
 tooltip.canupgrade_2=Waters a 5x5 area!
 
 #Flint
-tile.flint_block.name=Flint Block
+tile.FlintBlock.name=Flint Block
+item.FlintPickaxe.name=Flint Pickaxe
+item.FlintSpade.name=Flint Shovel
+item.FlintAxe.name=Flint Axe
+item.FlintSword.name=Flint Sword
+item.FlintHoe.name=Flint Hoe
+item.FlintPickaxeHead.name=Flint Pickaxe Head
+item.FlintSpadeHead.name=Flint Shovel Head
+item.FlintAxeHead.name=Flint Axe Head
+item.FlintSwordHead.name=Flint Sword Blade
+item.FlintHoeHead.name=Flint Hoe Head
 
-item.flint_pickaxe.name=Flint Pickaxe
-item.flint_spade.name=Flint Shovel
-item.flint_axe.name=Flint Axe
-item.flint_sword.name=Flint Sword
-item.flint_hoe.name=Flint Hoe
-item.flint_shears.name=Flint Shears
+item.flintHelmet.name=Flint Helmet
+item.flintChestplate.name=Flint Chestplate
+item.flintLeggings.name=Flint Leggings
+item.flintBoots.name=Flint Boots
 
-item.flint_pickaxe_head.name=Flint Pickaxe Head
-item.flint_spade_head.name=Flint Shovel Head
-item.flint_axe_head.name=Flint Axe Head
-item.flint_sword_head.name=Flint Sword Blade
-item.flint_hoe_head.name=Flint Hoe Head
+#Bone
+tile.BoneBlock.name=Bone Block
+item.BonePickaxe.name=Bone Pickaxe
+item.BoneSpade.name=Bone Shovel
+item.BoneAxe.name=Bone Axe
+item.BoneSword.name=Bone Sword
+item.BoneHoe.name=Bone Hoe
+item.BonePickaxeHead.name=Bone Pickaxe Head
+item.BoneSpadeHead.name=Bone Shovel Head
+item.BoneAxeHead.name=Bone Axe Head
+item.BoneSwordHead.name=Bone Sword Blade
+item.BoneHoeHead.name=Bone Hoe Head
 
-item.flint_ingot.name=Flint Ingot
-
-item.flint_helmet.name=Flint Helmet
-item.flint_chestplate.name=Flint Chestplate
-item.flint_leggings.name=Flint Leggings
-item.flint_boots.name=Flint Boots
-
-
+item.boneHelmet.name=Bone Helmet
+item.boneChestplate.name=Bone Chestplate
+item.boneLeggings.name=Bone Leggings
+item.boneBoots.name=Bone Boots
 

@@ -8,6 +8,9 @@ public class ConfigHandler {
 	// Birthday Pickaxe
 	public static boolean BirthdayPickaxe = false;
 	
+	// Stone Dust
+	public static boolean StoneDust = false;
+	
 	// Cobblegens
 	public static boolean Cobblegen = false;
 	public static boolean IronCobblegen = false;
@@ -24,8 +27,6 @@ public class ConfigHandler {
 	public static int BlockGrowthUpgradeTwoTicks = 40;
 	
 	// Quartz Dust & Knife
-	public static boolean QuartzDust = false;
-	public static boolean QuartzDustRecipe = false;
 	public static boolean QuartzKnife = false;
 	public static int QuartzKnifeDamage = 128;
 	
@@ -48,7 +49,6 @@ public class ConfigHandler {
 	
 	// Compressed Blocks
 	public static boolean FleshBlock = false;
-	public static boolean BoneBlock = false;
 	public static boolean NetherStarBlock = false;
 	
 	// Armor
@@ -62,11 +62,8 @@ public class ConfigHandler {
 	public static float BoneDropsChance = 1.0F;
 	public static int BoneAmmount = 1;
 	public static boolean SkullDrops = false;
+	public static float SkullDropsChance = 1.0F;
 	public static int SkullAmmount = 1;
-	
-	// Shears
-	public static boolean WoodenShears = false;
-	public static boolean FlintShears = false;
 	
 	// MISC
 	public static boolean AllowRightClick = false;
@@ -75,14 +72,16 @@ public class ConfigHandler {
 	public static boolean MedKit = false;
 	public static int healDuration = 300;
 	
-	// Flint
+	// Flint Items & More
+	public static boolean FlintTools = false;
 	public static boolean FlintBlock = false;
-	public static boolean FlintIngot = false;
-	public static boolean FlintPickaxeHead = false;
-	public static boolean FlintAxeHead = false;
-	public static boolean FlintSpadeHead = false;
-	public static boolean FlintSwordHead = false;
-	public static boolean FlintHoeHead = false;
+	public static boolean FlintArmor = false;
 	
-
+	// Bone Items & More
+	public static boolean BoneTools = false;
+	public static boolean BoneBlock = false;
+	public static boolean BoneArmor = false;
+	
+	// Remove Items
+	public static boolean RemoveItems = false;
 }

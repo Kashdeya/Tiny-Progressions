@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.client.render;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelEnderCrystal;
@@ -14,6 +11,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 
 @SideOnly(Side.CLIENT)
 public class TileEntityGrowthUpgradeRenderer extends TileEntitySpecialRenderer<TileEntityGrowthUpgrade> {

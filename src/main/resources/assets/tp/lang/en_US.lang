@@ -12,19 +12,21 @@ tile.growth_upgrade_two.name=Growth Crystal Tier 3
 
 #Deco Blocks
 tile.CharcoalBlock.name=Charcoal Block
-tile.ReinforcedGlass.name=Reinforced Glass
-tile.ReinforcedObsidian.name=Reinforced Obsidian
 tile.DirtyGlass.name=Dirty Glass
 tile.DioriteBrick.name=Diorite Brick
 tile.GraniteBrick.name=Granite Brick
 tile.AndesiteBrick.name=Andesite Brick
-tile.FlintBlock.name=Flint Block
 tile.SmoothEndStone.name=Smooth EndStone
+
+#Reinforced Blocks
+tile.ReinforcedGlass.name=Reinforced Glass
+tile.ReinforcedObsidian.name=Reinforced Obsidian
 
 #Compressed Blocks
 tile.FleshBlock.name=Compressed Flesh Block
 tile.BoneBlock.name=Compressed Bone Block
 tile.NetherStarBlock.name=Compressed Nether Star Block
+tile.FlintBlock.name=Compressed Flint Block
 
 #Tech Items
 item.WateringCan.name=Watering Can
@@ -56,6 +58,54 @@ item.DiamondApple.name=Diamond Apple
 
 #Medkit
 item.MedKit.name=Medkit
+
+#Flint Weapons & Tools
+item.FlintPickaxe.name=Flint Pickaxe
+item.FlintSpade.name=Flint Shovel
+item.FlintAxe.name=Flint Axe
+item.FlintSword.name=Flint Sword
+item.FlintHoe.name=Flint Hoe
+item.FlintPickaxeHead.name=Flint Pickaxe Head
+item.FlintSpadeHead.name=Flint Shovel Head
+item.FlintAxeHead.name=Flint Axe Head
+item.FlintSwordHead.name=Flint Sword Blade
+item.FlintHoeHead.name=Flint Hoe Head
+
+#Flint Armor
+item.flintHelmet.name=Flint Helmet
+item.flintChestplate.name=Flint Chestplate
+item.flintLeggings.name=Flint Leggings
+item.flintBoots.name=Flint Boots
+
+#Bone Block
+tile.BoneBlock.name=Bone Block
+
+#Bone Weapons & Tools
+item.BonePickaxe.name=Bone Pickaxe
+item.BoneSpade.name=Bone Shovel
+item.BoneAxe.name=Bone Axe
+item.BoneSword.name=Bone Sword
+item.BoneHoe.name=Bone Hoe
+item.BonePickaxeHead.name=Bone Pickaxe Head
+item.BoneSpadeHead.name=Bone Shovel Head
+item.BoneAxeHead.name=Bone Axe Head
+item.BoneSwordHead.name=Bone Sword Blade
+item.BoneHoeHead.name=Bone Hoe Head
+
+#Bone Armor
+item.boneHelmet.name=Bone Helmet
+item.boneChestplate.name=Bone Chestplate
+item.boneLeggings.name=Bone Leggings
+item.boneBoots.name=Bone Boots
+
+#Simple Items
+item.ItemHammer.name=Simple Hammer
+item.ItemJuicer.name=Simple Juicer
+item.ItemKnife.name=Simple Knife
+item.MixingBowl.name=Simple Mixing Bowl
+item.MortarPestle.name=Simple MortarPestle
+item.UnfiredMortar.name=Simple Unfired Mortar
+item.FiredMortar.name=Simple Fired Mortar
 
 #Growth Crystal Tooltips
 tooltip.upgrade_1=Works in a 9x9 farm!
@@ -108,39 +158,18 @@ tooltip.can_2=Waters a 3x3 area!
 tooltip.canupgrade_1=A better way to water things!
 tooltip.canupgrade_2=Waters a 5x5 area!
 
-#Flint
-tile.FlintBlock.name=Flint Block
-item.FlintPickaxe.name=Flint Pickaxe
-item.FlintSpade.name=Flint Shovel
-item.FlintAxe.name=Flint Axe
-item.FlintSword.name=Flint Sword
-item.FlintHoe.name=Flint Hoe
-item.FlintPickaxeHead.name=Flint Pickaxe Head
-item.FlintSpadeHead.name=Flint Shovel Head
-item.FlintAxeHead.name=Flint Axe Head
-item.FlintSwordHead.name=Flint Sword Blade
-item.FlintHoeHead.name=Flint Hoe Head
+#MortarPestle
+tooltip.mortarpestle=I can make flour.
 
-item.flintHelmet.name=Flint Helmet
-item.flintChestplate.name=Flint Chestplate
-item.flintLeggings.name=Flint Leggings
-item.flintBoots.name=Flint Boots
+#Mixing Bowl
+tooltip.mixingbowl=You can mix things in me.
 
-#Bone
-tile.BoneBlock.name=Bone Block
-item.BonePickaxe.name=Bone Pickaxe
-item.BoneSpade.name=Bone Shovel
-item.BoneAxe.name=Bone Axe
-item.BoneSword.name=Bone Sword
-item.BoneHoe.name=Bone Hoe
-item.BonePickaxeHead.name=Bone Pickaxe Head
-item.BoneSpadeHead.name=Bone Shovel Head
-item.BoneAxeHead.name=Bone Axe Head
-item.BoneSwordHead.name=Bone Sword Blade
-item.BoneHoeHead.name=Bone Hoe Head
+#Simple Knife
+tooltip.simpleknife=Very sharp, Handle with care.
 
-item.boneHelmet.name=Bone Helmet
-item.boneChestplate.name=Bone Chestplate
-item.boneLeggings.name=Bone Leggings
-item.boneBoots.name=Bone Boots
+#Juicer
+tooltip.juicer=I make Healthy Drinks.
 
+#Hammer
+tooltip.hammer=I hammer things.
+tooltip.hammer_1=Used for crafting only.

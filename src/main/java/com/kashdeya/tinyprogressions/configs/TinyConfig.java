@@ -10,6 +10,7 @@ import net.minecraftforge.common.config.Configuration;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
+import com.kashdeya.tinyprogressions.handlers.SimpleHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
@@ -109,7 +110,14 @@ public class TinyConfig {
 		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
 		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
 		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");
-    
+		
+		config.addCustomCategoryComment(category + " Simple Items", "Only enable if Simple Upgrades is installed or You wish to make your own recipes to Include these items.");
+		SimpleHandler.ItemHammer = config.getBoolean("Simple Hammer", category + " Simple Items", true, "Enable Simple Hammer?");
+		SimpleHandler.ItemJuicer = config.getBoolean("Simple Juicer", category + " Simple Items", true, "Enable Simple Juicer?");
+		SimpleHandler.ItemKnife = config.getBoolean("Simple Knife", category + " Simple Items", true, "Enable Simple Knife?");
+		SimpleHandler.MixingBowl = config.getBoolean("Simple Mixing Bowl", category + " Simple Items", true, "Enable Simple Mixing Bowl?");
+		SimpleHandler.MortarPestle = config.getBoolean("Simple MortarPestle", category + " Simple Items", true, "Enable Simple MortarPestle?");
+		
 		if (config.hasChanged())
         config.save();    
 	}

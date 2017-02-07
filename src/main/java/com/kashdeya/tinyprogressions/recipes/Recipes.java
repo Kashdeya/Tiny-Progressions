@@ -1,18 +1,14 @@
 package com.kashdeya.tinyprogressions.recipes;
 
-import java.util.ArrayList;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.handlers.SimpleHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -21,6 +17,29 @@ import com.kashdeya.tinyprogressions.inits.TechTools;
 public class Recipes {
 	
 	public static void registerRecipes(){
+		
+		if (SimpleHandler.MortarPestle == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.UnfiredMortar), new Object[] {"C C", "C C", " C ", 'C', new ItemStack(Items.CLAY_BALL)});
+			GameRegistry.addSmelting(TechItems.UnfiredMortar, new ItemStack(TechItems.FiredMortar), 0);
+			GameRegistry.addShapelessRecipe(new ItemStack(TechItems.MortarPestle), new Object[] {new ItemStack(TechItems.FiredMortar), new ItemStack(Items.STICK)});
+		}
+		
+		if (SimpleHandler.ItemHammer == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.ItemHammer), new Object[] {"DTI", " S ", 'I', new ItemStack(Items.IRON_INGOT), 'S', new ItemStack(Items.STICK), 'T', new ItemStack(Items.STRING), 'D', new ItemStack(Items.DIAMOND)});
+		}
+		
+		if (SimpleHandler.ItemJuicer == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.ItemJuicer), new Object[] {"P", "S", 'S', new ItemStack(Blocks.STONE, 0, 0), 'P', new ItemStack(Blocks.STONE_PRESSURE_PLATE)});
+		}
+		
+		if (SimpleHandler.ItemKnife == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.ItemKnife), new Object[] {"  I", " E ", "S  ",'I', new ItemStack(Items.IRON_INGOT), 'S', new ItemStack(Items.STICK), 'E', new ItemStack(Items.STRING)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.ItemKnife), new Object[] {"I  ", " E ", "  S",'I', new ItemStack(Items.IRON_INGOT), 'S', new ItemStack(Items.STICK), 'E', new ItemStack(Items.STRING)});
+		}
+		
+		if (SimpleHandler.MixingBowl == true){
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.MixingBowl), new Object[] {"B B", "BBB", 'B', new ItemStack(Items.BRICK)});
+		}
 		
 		if (ConfigHandler.SmoothEndStone == true){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.SmoothEndStone, 4), "nn", "nn", 'n', "endstone"));
@@ -100,11 +119,11 @@ public class Recipes {
 			GameRegistry.addRecipe(new ItemStack(TechTools.FlintSpade), "r", "s", 'r', new ItemStack(TechTools.FlintSpadeHead), 's', new ItemStack(Items.STICK));
 			GameRegistry.addRecipe(new ItemStack(TechTools.FlintPickaxe), "r", "s", 'r', new ItemStack(TechTools.FlintPickaxeHead), 's', new ItemStack(Items.STICK));
 			
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintHoeHead), new Object[]{"E "," E", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintPickaxeHead), new Object[]{"EE", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintHoeHead), new Object[]{"EE", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintPickaxeHead), new Object[]{" E", "EE", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.FLINT)});
 			
 			GameRegistry.addSmelting(TechBlocks.FlintBlock, new ItemStack(TechItems.FlintIngot), 1.0F);
 		}
@@ -116,11 +135,11 @@ public class Recipes {
 			GameRegistry.addRecipe(new ItemStack(TechTools.BoneSpade), "r", "s", 'r', new ItemStack(TechTools.BoneSpadeHead), 's', new ItemStack(Items.STICK));
 			GameRegistry.addRecipe(new ItemStack(TechTools.BonePickaxe), "r", "s", 'r', new ItemStack(TechTools.BonePickaxeHead), 's', new ItemStack(Items.STICK));
 			
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneHoeHead), new Object[]{"E "," E", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BonePickaxeHead), new Object[]{"EE", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneHoeHead), new Object[]{"EE", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BonePickaxeHead), new Object[]{" E","EE", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.BONE)});
 		}
 		
 		if (ConfigHandler.FleshBlock == true){

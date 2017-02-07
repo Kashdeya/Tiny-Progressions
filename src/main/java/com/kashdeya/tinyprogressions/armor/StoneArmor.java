@@ -37,7 +37,7 @@ public class StoneArmor extends ItemArmor {
         return super.getIsRepairable(toRepair, repair);
     }
     
-    @SideOnly(Side.CLIENT)
+    @Override
     public void onArmorTick(World world, EntityPlayer entity, ItemStack itemStack) {
     	if (entity instanceof EntityLivingBase)
     		if (entity.inventory.armorItemInSlot(3) != null && entity.inventory.armorItemInSlot(3).getItem() == TechArmor.stoneHelmet){

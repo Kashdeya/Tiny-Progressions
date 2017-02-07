@@ -1,14 +1,11 @@
 package com.kashdeya.tinyprogressions.blocks;
 
-import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

@@ -3,9 +3,6 @@ package com.kashdeya.tinyprogressions.items;
 import java.util.List;
 import java.util.Set;
 
-import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -25,6 +22,9 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.google.common.collect.Sets;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BirthdayPickaxe extends ItemTool {
 	

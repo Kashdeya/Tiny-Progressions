@@ -1,5 +1,15 @@
 package com.kashdeya.tinyprogressions.handlers;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRenderer;
@@ -11,16 +21,6 @@ import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 public class RenderHandler {
 	
@@ -70,6 +70,13 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.MedKit, "MedKit");	
 		InventoryItemRender(TechItems.StoneDust, "StoneDust");
 		InventoryItemRender(TechItems.FlintIngot, "FlintIngot");
+		InventoryItemRender(TechItems.FiredMortar, "FiredMortar");
+		InventoryItemRender(TechItems.ItemHammer, "ItemHammer");
+		InventoryItemRender(TechItems.ItemJuicer, "ItemJuicer");
+		InventoryItemRender(TechItems.ItemKnife, "ItemKnife");
+		InventoryItemRender(TechItems.MixingBowl, "MixingBowl");
+		InventoryItemRender(TechItems.MortarPestle, "MortarPestle");
+		InventoryItemRender(TechItems.UnfiredMortar, "UnfiredMortar");
 	}
 	
 	public static void initTools(){

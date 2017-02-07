@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.inits;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +12,6 @@ import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.FlintIngot;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 public class TechArmor {

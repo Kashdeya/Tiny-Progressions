@@ -10,20 +10,21 @@ import net.minecraftforge.event.world.BlockEvent.PlaceEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgrade;
+import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 public class SpongeBlockPlacement {
 	
     @SubscribeEvent
     public void onPlayerSpongePlacement(PlaceEvent event) {
-    	if (ConfigHandler.BlockGrowthUpgrade){
+    	if (ConfigHandler.BlockGrowthUpgrade || ConfigHandler.BlockGrowthUpgradeTwo){
             ItemStack itemstack = event.getItemInHand();
             if (itemstack != null && itemstack.getItem() == Item.getItemFromBlock(Blocks.SPONGE)) {
                 for (int x = -8; x <= 8; x++) {
                     for (int y = -8; y <= 8; y++) {
                         for (int z = -8; z <= 8; z++) {
                             IBlockState state = event.getWorld().getBlockState(new BlockPos(event.getPos().getX() + x, event.getPos().getY() + y, event.getPos().getZ() + z));
-                            if (state.getBlock() instanceof BlockGrowthUpgrade) {
+                            if (state.getBlock() instanceof BlockGrowthUpgrade || state.getBlock() instanceof BlockGrowthUpgradeTwo) {
                                 event.setCanceled(true);
                                 event.getPlayer().addChatMessage(new TextComponentString("Cant place a sponge near a Growth Crystal"));
                             }

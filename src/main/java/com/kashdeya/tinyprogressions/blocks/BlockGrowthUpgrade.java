@@ -11,9 +11,12 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -40,7 +43,8 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 	private int rangeY = 5;
 
 	public BlockGrowthUpgrade(){
-		super(Material.GROUND);
+		// Turns block into a water source.
+		super(Material.WATER);
 		this.setTickRandomly(true);
 		this.setHardness(1.25F);
 		this.setHarvestLevel("pickaxe", 0);
@@ -49,12 +53,28 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 		this.setLightOpacity(1);
 		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setSoundType(blockSoundType.METAL);
+		setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 		this.setUnlocalizedName("growth_upgrade");
 	}
 	
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntityGrowthUpgrade();
+	}
+	
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] { BlockLiquid.LEVEL });
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(meta));
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((Integer) state.getValue(BlockLiquid.LEVEL)).intValue();
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -106,8 +126,8 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
                     int z = zO + zD;
 
                     double distance = Math.sqrt(Math.pow(x-xO,2) + Math.pow(y - yO,2) + Math.pow(z - zO,2));
-                    distance = Math.min(1D, distance);
-                    double distanceCoefficient = 1D - (distance);
+                    distance = Math.max(1D, distance);
+                    double distanceCoefficient = 1D - (1D/distance);
 
                     IBlockState cropState = world.getBlockState(new BlockPos(x, y, z));
                     Block cropBlock = cropState.getBlock();
@@ -216,6 +236,9 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
     {
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_1").getFormattedText());
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_3").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_4").getFormattedText());
     }
 
 }

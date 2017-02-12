@@ -33,7 +33,7 @@ public class EventDrops {
 					if(CHANCE.nextFloat()<ConfigHandler.BoneDropsChance)
 					{
 						event.getDrops().add(new ItemStack(Items.BONE,AMOUNT.nextInt(ConfigHandler.BoneAmmount)));
-						if (ConfigHandler.SkullDrops == true)
+						if (CHANCE.nextFloat()<ConfigHandler.SkullDropsChance && ConfigHandler.SkullDrops == true)
 						{
 							event.getDrops().add(new ItemStack(Items.SKULL,AMOUNT.nextInt(ConfigHandler.SkullAmmount)));
 							

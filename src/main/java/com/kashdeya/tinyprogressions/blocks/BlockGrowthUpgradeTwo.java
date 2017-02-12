@@ -127,8 +127,8 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
                     int z = zO + zD;
 
                     double distance = Math.sqrt(Math.pow(x-xO,2) + Math.pow(y - yO,2) + Math.pow(z - zO,2));
-                    distance = Math.min(1D, distance);
-                    double distanceCoefficient = 1D - (distance);
+                    distance = Math.max(1D, distance);
+                    double distanceCoefficient = 1D - (1D/distance);;
 
                     IBlockState cropState = world.getBlockState(new BlockPos(x, y, z));
                     Block cropBlock = cropState.getBlock();

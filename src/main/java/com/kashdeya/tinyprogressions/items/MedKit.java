@@ -35,7 +35,7 @@ public class MedKit extends Item {
 	    if (!playerIn.capabilities.isCreativeMode) {
 	      itemStackIn.stackSize -= 1;
 	    }
-	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration, 0));
+	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
 	    
 	    return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
 	  }

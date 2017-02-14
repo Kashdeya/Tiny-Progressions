@@ -70,13 +70,6 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.MedKit, "MedKit");	
 		InventoryItemRender(TechItems.StoneDust, "StoneDust");
 		InventoryItemRender(TechItems.FlintIngot, "FlintIngot");
-		InventoryItemRender(TechItems.FiredMortar, "FiredMortar");
-		InventoryItemRender(TechItems.ItemHammer, "ItemHammer");
-		InventoryItemRender(TechItems.ItemJuicer, "ItemJuicer");
-		InventoryItemRender(TechItems.ItemKnife, "ItemKnife");
-		InventoryItemRender(TechItems.MixingBowl, "MixingBowl");
-		InventoryItemRender(TechItems.MortarPestle, "MortarPestle");
-		InventoryItemRender(TechItems.UnfiredMortar, "UnfiredMortar");
 	}
 	
 	public static void initTools(){

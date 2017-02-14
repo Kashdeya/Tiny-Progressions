@@ -13,14 +13,19 @@
             }
         },
         {   "from": [ 0.01, 0.01, 0.01 ],
-            "to": [ 15.99, 3.98, 15.99 ],
+            "to": [ 15.99, 15.99, 15.99 ],
             "faces": {
-                "down":  { "texture": "#t7", "cullface": "down" },
-                "up":    { "texture": "#t7", "cullface": "up" },
-                "north": { "texture": "#t7", "cullface": "north" },
-                "south": { "texture": "#t7", "cullface": "south" },
-                "west":  { "texture": "#t7", "cullface": "west" },
-                "east":  { "texture": "#t7", "cullface": "east" }
+                "down":  { "texture": "#t2", "cullface": "down" },
+                "up":    { "texture": "#t2", "cullface": "up" }
+            }
+        },
+		{   "from": [ 0.01, 0.01, 0.01 ],
+            "to": [ 15.99, 15.99, 15.99 ],
+            "faces": {
+				"north": { "texture": "#t3", "cullface": "north" },
+                "south": { "texture": "#t3", "cullface": "south" },
+                "west":  { "texture": "#t3", "cullface": "west" },
+                "east":  { "texture": "#t3", "cullface": "east" }
             }
         },
         {   "from": [ 0, 0, 0 ],
@@ -38,6 +43,7 @@
     "textures": {
         "particle": "tp:blocks/growth_upgrade",
         "t1": "tp:blocks/growth_upgrade",
-		"t7": "tp:blocks/NetherStarBlockBackground"
+		"t2": "tp:blocks/NetherStarBlockBackground",
+		"t3": "blocks/water_flow"
     }
 }

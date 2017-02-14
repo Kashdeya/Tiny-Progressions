@@ -98,30 +98,54 @@ item.boneChestplate.name=Bone Chestplate
 item.boneLeggings.name=Bone Leggings
 item.boneBoots.name=Bone Boots
 
-#Simple Items
-item.ItemHammer.name=Simple Hammer
-item.ItemJuicer.name=Simple Juicer
-item.ItemKnife.name=Simple Knife
-item.MixingBowl.name=Simple Mixing Bowl
-item.MortarPestle.name=Simple MortarPestle
-item.UnfiredMortar.name=Simple Unfired Mortar
-item.FiredMortar.name=Simple Fired Mortar
+#Cobblegen
+tooltip.cobblegen_1=Only Holds 32 Blocks!
+tooltip.cobblegen_2=Makes 1 Cobblestone Block every 40 Ticks!
+tooltip.cobblegen_3=Can output to a Inventory Above!
+tooltip.cobblegen_4=Can output to Hopper Below!
+
+#IronCobblegen
+tooltip.ironcobblegen_1=Only Holds 64 Blocks!
+tooltip.ironcobblegen_2=Makes 1 Cobblestone Block every 20 Ticks!
+tooltip.ironcobblegen_3=Can output to a Inventory Above!
+tooltip.ironcobblegen_4=Can output to Hopper Below!
+
+#DiamondCobblegen
+tooltip.diamondcobblegen_1=Only Holds 64 Blocks!
+tooltip.diamondcobblegen_2=Makes 1 Cobblestone Block every 10 Ticks!
+tooltip.diamondcobblegen_3=Can output to a Inventory Above!
+tooltip.diamondcobblegen_4=Can output to Hopper Below!
+
+#BlazeCobblegen
+tooltip.blazecobblegen_1=Only Holds 64 Blocks!
+tooltip.blazecobblegen_2=Makes 1 Cobblestone Block every 5 Ticks!
+tooltip.blazecobblegen_3=Can output to a Inventory Above!
+tooltip.blazecobblegen_4=Can output to Hopper Below!
+
+#EmeraldCobblegen
+tooltip.emeraldcobblegen_1=Only Holds 64 Blocks!
+tooltip.emeraldcobblegen_2=Makes 1 Cobblestone Block every Tick!
+tooltip.emeraldcobblegen_3=Can output to a Inventory Above!
+tooltip.emeraldcobblegen_4=Can output to Hopper Below!
 
 #Growth Crystal Tooltips
-tooltip.upgrade_1=Works in a 9x9 farm!
-tooltip.upgrade_2=Checks up to 2 blocks up or down!
+tooltip.growth_1=Slow Growth!
+tooltip.growth_2=Works in a 9x9 farm!
+tooltip.growth_3=Checks up to 2 blocks up or down!
 
 #Growth Crystal Upgrade Tooltips
-tooltip.upgrade_1=Works in a 9x9 farm!
-tooltip.upgrade_2=Checks up to 5 blocks up or down!
-tooltip.upgrade_3=Can be used as a Water Source!
-tooltip.upgrade_4=Sponges can not be placed around!
+tooltip.growthupgrade_1=Fast Growth!
+tooltip.growthupgrade_2=Works in a 9x9 farm!
+tooltip.growthupgrade_3=Checks up to 5 blocks up or down!
+tooltip.growthupgrade_4=Can be used as a Water Source!
+tooltip.growthupgrade_5=Sponges can not be placed around!
 
 #Growth Crystal Upgrade Two Tooltips
-tooltip.upgrade2_1=Works in a 9x9 farm!
-tooltip.upgrade2_2=Checks up to 10 blocks up or down!
-tooltip.upgrade2_3=Can be used as a Water Source!
-tooltip.upgrade2_4=Sponges can not be placed around! 
+tooltip.growthupgrade2_1=Fastest Growth!
+tooltip.growthupgrade2_2=Works in a 9x9 farm!
+tooltip.growthupgrade2_3=Checks up to 10 blocks up or down!
+tooltip.growthupgrade2_4=Can be used as a Water Source!
+tooltip.growthupgrade2_5=Sponges can not be placed around! 
 
 #Nether Star Block Tooltips
 tooltip.netherstar_1=Can be used as a Base block for Beacons.
@@ -169,6 +193,12 @@ tooltip.simpleknife=Very sharp, Handle with care.
 
 #Juicer
 tooltip.juicer=I make Healthy Drinks.
+
+#Baking Dish
+tooltip.bakingdish=I bake things.
+
+#Frying Pan
+tooltip.fryingpan=I cook things.
 
 #Hammer
 tooltip.hammer=I hammer things.

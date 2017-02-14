@@ -166,12 +166,12 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
         {
             for (int j = -4; j <= 4; ++j)
             {
-                if (i > -4 && i < 4 && j == -4)
+                if (i > -4 && i < 4 && j == -2)
                 {
                     j = 4;
                 }
 
-                if (rand.nextInt(16) == 0)
+                if (rand.nextInt(8) == 0)
                 {
                     for (int k = 0; k <= 1; ++k){
                     	for (int xAxis = -range; xAxis <= range; xAxis++) {
@@ -183,7 +183,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 
         		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
         		            		{
-        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 3.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
         	                        }
         		            	}
         		            }
@@ -241,11 +241,11 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
     {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_1").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_2").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_3").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade2_4").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade2_1").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade2_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade2_3").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade2_4").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade2_5").getFormattedText());
     }
 
 }

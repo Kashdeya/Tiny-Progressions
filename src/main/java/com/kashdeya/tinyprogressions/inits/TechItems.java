@@ -52,7 +52,7 @@ public class TechItems {
 	    if (ConfigHandler.QuartzKnife){
 	    	QuartzKnife = new QuartzKnife();
 	    	registerItem(QuartzKnife, "QuartzKnife");
-	    	QuartzDust = new ItemBase().setUnlocalizedName("QuartzDust");;
+	    	QuartzDust = new ItemBase().setUnlocalizedName("QuartzDust");
 	    	registerItem(QuartzDust, "QuartzDust");
 	    }
 	    // Pickaxe
@@ -75,12 +75,12 @@ public class TechItems {
 	    }
 	    // Stone Dust
 	    if (ConfigHandler.StoneDust){
-	    	StoneDust = new ItemBase().setUnlocalizedName("StoneDust");;
+	    	StoneDust = new ItemBase().setUnlocalizedName("StoneDust");
 			registerItem(StoneDust, "StoneDust");
 		}
 	    // Flint Armor Ingot
 	    if (ConfigHandler.FlintArmor){
-	    	FlintIngot = new ItemBase().setUnlocalizedName("FlintIngot");;
+	    	FlintIngot = new ItemBase().setUnlocalizedName("FlintIngot");
 			registerItem(FlintIngot, "FlintIngot");
 		}
 	}

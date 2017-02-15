@@ -53,9 +53,11 @@ public class RenderHandler {
 	}
 	
 	public static void preInitBlocks(){
-		if (ConfigHandler.BlockGrowthUpgradeTwo == true || ConfigHandler.BlockGrowthUpgrade){
-			setCustomStateMap(TechBlocks.growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+		if (ConfigHandler.BlockGrowthUpgrade == true){
 			setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+		}
+		if (ConfigHandler.BlockGrowthUpgradeTwo == true){
+			setCustomStateMap(TechBlocks.growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
 		}
 	}
 	

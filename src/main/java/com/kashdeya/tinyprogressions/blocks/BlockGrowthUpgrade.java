@@ -170,7 +170,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
                     j = 4;
                 }
 
-                if (rand.nextInt(16) == 0)
+                if (rand.nextInt(ConfigHandler.GrowthUpgradeParticalTicks) == 0)
                 {
                     for (int k = 0; k <= 1; ++k){
                     	for (int xAxis = -range; xAxis <= range; xAxis++) {

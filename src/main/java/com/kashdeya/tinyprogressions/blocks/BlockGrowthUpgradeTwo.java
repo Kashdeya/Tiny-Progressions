@@ -171,7 +171,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
                     j = 4;
                 }
 
-                if (rand.nextInt(8) == 0)
+                if (rand.nextInt(ConfigHandler.GrowthUpgradeTwoParticalTicks) == 0)
                 {
                     for (int k = 0; k <= 1; ++k){
                     	for (int xAxis = -range; xAxis <= range; xAxis++) {

@@ -13,14 +13,19 @@
             }
         },
 		{   "from": [ 0.01, 0.01, 0.01 ],
-            "to": [ 15.99, 5.56, 15.99 ],
+            "to": [ 15.99, 15.99, 15.99 ],
             "faces": {
                 "down":  { "texture": "#t7", "cullface": "down" },
-				"up":    { "texture": "#t7", "cullface": "up" },
-                "north": { "texture": "#t7", "cullface": "north" },
-                "south": { "texture": "#t7", "cullface": "south" },
-                "west":  { "texture": "#t7", "cullface": "west" },
-                "east":  { "texture": "#t7", "cullface": "east" }
+                "up":    { "texture": "#t7", "cullface": "up" }
+            }
+        },
+		{   "from": [ 0.01, 0.01, 0.01 ],
+            "to": [ 15.99, 15.99, 15.99 ],
+            "faces": {
+                "north": { "texture": "#t8", "cullface": "north" },
+                "south": { "texture": "#t8", "cullface": "south" },
+                "west":  { "texture": "#t8", "cullface": "west" },
+                "east":  { "texture": "#t8", "cullface": "east" }
             }
         },
 		{   "from": [ 0, 0, 0 ],
@@ -43,6 +48,7 @@
 		"t4": "tp:blocks/growth_upgrade_south",
 		"t5": "tp:blocks/growth_upgrade_west",
 		"t6": "tp:blocks/growth_upgrade_east",
-        "t7": "blocks/water_still"
+		"t7": "blocks/water_still",
+        "t8": "blocks/water_flow"
     }
 }

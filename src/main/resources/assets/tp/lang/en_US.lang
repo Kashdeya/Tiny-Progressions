@@ -12,19 +12,21 @@ tile.growth_upgrade_two.name=Growth Crystal Tier 3
 
 #Deco Blocks
 tile.CharcoalBlock.name=Charcoal Block
-tile.ReinforcedGlass.name=Reinforced Glass
-tile.ReinforcedObsidian.name=Reinforced Obsidian
 tile.DirtyGlass.name=Dirty Glass
 tile.DioriteBrick.name=Diorite Brick
 tile.GraniteBrick.name=Granite Brick
 tile.AndesiteBrick.name=Andesite Brick
-tile.FlintBlock.name=Flint Block
 tile.SmoothEndStone.name=Smooth EndStone
+
+#Reinforced Blocks
+tile.ReinforcedGlass.name=Reinforced Glass
+tile.ReinforcedObsidian.name=Reinforced Obsidian
 
 #Compressed Blocks
 tile.FleshBlock.name=Compressed Flesh Block
 tile.BoneBlock.name=Compressed Bone Block
 tile.NetherStarBlock.name=Compressed Nether Star Block
+tile.FlintBlock.name=Compressed Flint Block
 
 #Tech Items
 item.WateringCan.name=Watering Can
@@ -57,21 +59,93 @@ item.DiamondApple.name=Diamond Apple
 #Medkit
 item.MedKit.name=Medkit
 
+#Flint Weapons & Tools
+item.FlintPickaxe.name=Flint Pickaxe
+item.FlintSpade.name=Flint Shovel
+item.FlintAxe.name=Flint Axe
+item.FlintSword.name=Flint Sword
+item.FlintHoe.name=Flint Hoe
+item.FlintPickaxeHead.name=Flint Pickaxe Head
+item.FlintSpadeHead.name=Flint Shovel Head
+item.FlintAxeHead.name=Flint Axe Head
+item.FlintSwordHead.name=Flint Sword Blade
+item.FlintHoeHead.name=Flint Hoe Head
+
+#Flint Armor
+item.flintHelmet.name=Flint Helmet
+item.flintChestplate.name=Flint Chestplate
+item.flintLeggings.name=Flint Leggings
+item.flintBoots.name=Flint Boots
+
+#Bone Block
+tile.BoneBlock.name=Bone Block
+
+#Bone Weapons & Tools
+item.BonePickaxe.name=Bone Pickaxe
+item.BoneSpade.name=Bone Shovel
+item.BoneAxe.name=Bone Axe
+item.BoneSword.name=Bone Sword
+item.BoneHoe.name=Bone Hoe
+item.BonePickaxeHead.name=Bone Pickaxe Head
+item.BoneSpadeHead.name=Bone Shovel Head
+item.BoneAxeHead.name=Bone Axe Head
+item.BoneSwordHead.name=Bone Sword Blade
+item.BoneHoeHead.name=Bone Hoe Head
+
+#Bone Armor
+item.boneHelmet.name=Bone Helmet
+item.boneChestplate.name=Bone Chestplate
+item.boneLeggings.name=Bone Leggings
+item.boneBoots.name=Bone Boots
+
+#Cobblegen
+tooltip.cobblegen_1=Only Holds 32 Blocks!
+tooltip.cobblegen_2=Makes 1 Cobblestone Block every 40 Ticks!
+tooltip.cobblegen_3=Can output to a Inventory Above!
+tooltip.cobblegen_4=Can output to Hopper Below!
+
+#IronCobblegen
+tooltip.ironcobblegen_1=Only Holds 64 Blocks!
+tooltip.ironcobblegen_2=Makes 1 Cobblestone Block every 20 Ticks!
+tooltip.ironcobblegen_3=Can output to a Inventory Above!
+tooltip.ironcobblegen_4=Can output to Hopper Below!
+
+#DiamondCobblegen
+tooltip.diamondcobblegen_1=Only Holds 64 Blocks!
+tooltip.diamondcobblegen_2=Makes 1 Cobblestone Block every 10 Ticks!
+tooltip.diamondcobblegen_3=Can output to a Inventory Above!
+tooltip.diamondcobblegen_4=Can output to Hopper Below!
+
+#BlazeCobblegen
+tooltip.blazecobblegen_1=Only Holds 64 Blocks!
+tooltip.blazecobblegen_2=Makes 1 Cobblestone Block every 5 Ticks!
+tooltip.blazecobblegen_3=Can output to a Inventory Above!
+tooltip.blazecobblegen_4=Can output to Hopper Below!
+
+#EmeraldCobblegen
+tooltip.emeraldcobblegen_1=Only Holds 64 Blocks!
+tooltip.emeraldcobblegen_2=Makes 1 Cobblestone Block every Tick!
+tooltip.emeraldcobblegen_3=Can output to a Inventory Above!
+tooltip.emeraldcobblegen_4=Can output to Hopper Below!
+
 #Growth Crystal Tooltips
-tooltip.upgrade_1=Works in a 9x9 farm!
-tooltip.upgrade_2=Checks up to 2 blocks up or down!
+tooltip.growth_1=Slow Growth!
+tooltip.growth_2=Works in a 9x9 farm!
+tooltip.growth_3=Checks up to 2 blocks up or down!
 
 #Growth Crystal Upgrade Tooltips
-tooltip.upgrade_1=Works in a 9x9 farm!
-tooltip.upgrade_2=Checks up to 5 blocks up or down!
-tooltip.upgrade_3=Can be used as a Water Source!
-tooltip.upgrade_4=Sponges can not be placed around!
+tooltip.growthupgrade_1=Fast Growth!
+tooltip.growthupgrade_2=Works in a 9x9 farm!
+tooltip.growthupgrade_3=Checks up to 5 blocks up or down!
+tooltip.growthupgrade_4=Can be used as a Water Source!
+tooltip.growthupgrade_5=Sponges can not be placed around!
 
 #Growth Crystal Upgrade Two Tooltips
-tooltip.upgrade2_1=Works in a 9x9 farm!
-tooltip.upgrade2_2=Checks up to 10 blocks up or down!
-tooltip.upgrade2_3=Can be used as a Water Source!
-tooltip.upgrade2_4=Sponges can not be placed around! 
+tooltip.growthupgrade2_1=Fastest Growth!
+tooltip.growthupgrade2_2=Works in a 9x9 farm!
+tooltip.growthupgrade2_3=Checks up to 10 blocks up or down!
+tooltip.growthupgrade2_4=Can be used as a Water Source!
+tooltip.growthupgrade2_5=Sponges can not be placed around! 
 
 #Nether Star Block Tooltips
 tooltip.netherstar_1=Can be used as a Base block for Beacons.
@@ -108,39 +182,24 @@ tooltip.can_2=Waters a 3x3 area!
 tooltip.canupgrade_1=A better way to water things!
 tooltip.canupgrade_2=Waters a 5x5 area!
 
-#Flint
-tile.FlintBlock.name=Flint Block
-item.FlintPickaxe.name=Flint Pickaxe
-item.FlintSpade.name=Flint Shovel
-item.FlintAxe.name=Flint Axe
-item.FlintSword.name=Flint Sword
-item.FlintHoe.name=Flint Hoe
-item.FlintPickaxeHead.name=Flint Pickaxe Head
-item.FlintSpadeHead.name=Flint Shovel Head
-item.FlintAxeHead.name=Flint Axe Head
-item.FlintSwordHead.name=Flint Sword Blade
-item.FlintHoeHead.name=Flint Hoe Head
+#MortarPestle
+tooltip.mortarpestle=I can make flour.
 
-item.flintHelmet.name=Flint Helmet
-item.flintChestplate.name=Flint Chestplate
-item.flintLeggings.name=Flint Leggings
-item.flintBoots.name=Flint Boots
+#Mixing Bowl
+tooltip.mixingbowl=You can mix things in me.
 
-#Bone
-tile.BoneBlock.name=Bone Block
-item.BonePickaxe.name=Bone Pickaxe
-item.BoneSpade.name=Bone Shovel
-item.BoneAxe.name=Bone Axe
-item.BoneSword.name=Bone Sword
-item.BoneHoe.name=Bone Hoe
-item.BonePickaxeHead.name=Bone Pickaxe Head
-item.BoneSpadeHead.name=Bone Shovel Head
-item.BoneAxeHead.name=Bone Axe Head
-item.BoneSwordHead.name=Bone Sword Blade
-item.BoneHoeHead.name=Bone Hoe Head
+#Simple Knife
+tooltip.simpleknife=Very sharp, Handle with care.
 
-item.boneHelmet.name=Bone Helmet
-item.boneChestplate.name=Bone Chestplate
-item.boneLeggings.name=Bone Leggings
-item.boneBoots.name=Bone Boots
+#Juicer
+tooltip.juicer=I make Healthy Drinks.
 
+#Baking Dish
+tooltip.bakingdish=I bake things.
+
+#Frying Pan
+tooltip.fryingpan=I cook things.
+
+#Hammer
+tooltip.hammer=I hammer things.
+tooltip.hammer_1=Used for crafting only.

@@ -1,9 +1,9 @@
 package com.kashdeya.tinyprogressions.tools.hoe;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
+
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BoneHoe extends ItemHoe {
 	

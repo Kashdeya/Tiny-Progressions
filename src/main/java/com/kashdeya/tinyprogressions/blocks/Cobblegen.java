@@ -108,5 +108,15 @@ public class Cobblegen extends Block implements ITileEntityProvider{
 	{
 		return new TileEntityCobblegen();
 	}
+    
+	@Override
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
+    {
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_1").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_3").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_4").getFormattedText());
+    }
 
 }

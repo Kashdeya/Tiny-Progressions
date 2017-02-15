@@ -1,16 +1,16 @@
-package com.kashdeya.tinyprogressions.recipes;
 
-import java.util.ArrayList;
+
+
+
+
+package com.kashdeya.tinyprogressions.recipes;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
@@ -84,6 +84,8 @@ public class Recipes {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flintChestplate), "s s", "sss", "sss", 's', "ingotFlint"));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flintHelmet), "sss", "s s", 's', "ingotFlint"));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flintLeggings), "sss","s s", "s s", 's', "ingotFlint"));
+			
+			GameRegistry.addSmelting(TechBlocks.FlintBlock, new ItemStack(TechItems.FlintIngot), 1.0F);
 		}
 		
 		if (ConfigHandler.BoneArmor == true){
@@ -100,13 +102,11 @@ public class Recipes {
 			GameRegistry.addRecipe(new ItemStack(TechTools.FlintSpade), "r", "s", 'r', new ItemStack(TechTools.FlintSpadeHead), 's', new ItemStack(Items.STICK));
 			GameRegistry.addRecipe(new ItemStack(TechTools.FlintPickaxe), "r", "s", 'r', new ItemStack(TechTools.FlintPickaxeHead), 's', new ItemStack(Items.STICK));
 			
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintHoeHead), new Object[]{"E "," E", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintPickaxeHead), new Object[]{"EE", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.FLINT)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.FlintSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.FLINT)});
-			
-			GameRegistry.addSmelting(TechBlocks.FlintBlock, new ItemStack(TechItems.FlintIngot), 1.0F);
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintHoeHead), new Object[]{"EE", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintPickaxeHead), new Object[]{" E", "EE", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.FLINT)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.FlintSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.FLINT)});
 		}
 		
 		if (ConfigHandler.BoneTools == true){
@@ -116,11 +116,11 @@ public class Recipes {
 			GameRegistry.addRecipe(new ItemStack(TechTools.BoneSpade), "r", "s", 'r', new ItemStack(TechTools.BoneSpadeHead), 's', new ItemStack(Items.STICK));
 			GameRegistry.addRecipe(new ItemStack(TechTools.BonePickaxe), "r", "s", 'r', new ItemStack(TechTools.BonePickaxeHead), 's', new ItemStack(Items.STICK));
 			
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneHoeHead), new Object[]{"E "," E", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BonePickaxeHead), new Object[]{"EE", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.BONE)});
-			GameRegistry.addRecipe(new ItemStack(TechTools.BoneSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneAxeHead), new Object[]{"EE","E ", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneHoeHead), new Object[]{"EE", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BonePickaxeHead), new Object[]{" E","EE", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneSpadeHead), new Object[]{"E","E", 'E', new ItemStack(Items.BONE)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.BoneSwordHead), new Object[]{" E","E ", 'E', new ItemStack(Items.BONE)});
 		}
 		
 		if (ConfigHandler.FleshBlock == true){
@@ -133,7 +133,7 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.CharcoalBlock == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.CharcoalBlock), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(Items.COAL, 1, 1)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.GraniteBrick, 4), "ccc", "ccc", "ccc", 'c', "itemCharcoal"));
 			GameRegistry.addShapelessRecipe(new ItemStack(Items.COAL, 9, 1), new Object[] {new ItemStack(TechBlocks.CharcoalBlock)});
 		}
 		
@@ -141,15 +141,15 @@ public class Recipes {
 			ItemStack BirthdayPickaxe;
 			BirthdayPickaxe  = new ItemStack(TechItems.BirthdayPickaxe);
 			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 1);
-			GameRegistry.addShapedRecipe(BirthdayPickaxe, new Object[] {"rdr", " i ", " i ", 'r', new ItemStack(TechBlocks.ReinforcedObsidian), 'i', new ItemStack(Items.STICK), 'd', new ItemStack(Items.DIAMOND)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(BirthdayPickaxe, "rdr", " i ", " i ", 'r', "blockReinforcedObsidian", 'i', "stickWood", 'd', "gemDiamond"));
 		}
 		
 		if (ConfigHandler.ReinforcedGlass == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.ReinforcedGlass, 4), "ogo", "gog", "ogo", 'g', new ItemStack(TechBlocks.DirtyGlass), 'o', new ItemStack(Blocks.OBSIDIAN));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.ReinforcedGlass, 4), "ogo", "gog", "ogo", 'g', "blockGlassDirty", 'o', "obsidian"));
 		}
 		
 		if (ConfigHandler.ReinforcedObsidian == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.ReinforcedObsidian, 4), "ioi", "oio", "ioi", 'o', new ItemStack(Blocks.OBSIDIAN), 'i', new ItemStack(Blocks.IRON_BARS));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.ReinforcedObsidian, 4), "ioi", "oio", "ioi", 'i', "barsIron", 'o', "obsidian"));
 		}
 		
 		if (ConfigHandler.QuartzKnife == true){
@@ -158,15 +158,15 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.WateringCan == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechItems.WateringCan), new Object[]{"ID ", "IWI", " I ", 'I', new ItemStack(Items.IRON_INGOT), 'D', new ItemStack(Items.DYE, 1, 15), 'W', new ItemStack(Items.WATER_BUCKET)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.WateringCan), "id ", "iwi", " i ", 'i', "ingotIron", 'o', "dyeWhite", 'w', new ItemStack(Items.WATER_BUCKET)));
 		}
 		
 		if (ConfigHandler.WateringCanUpgrade == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechItems.WateringCanUpgrade), new Object[]{"ON ", "OWO", " O ", 'O', new ItemStack(Blocks.OBSIDIAN), 'W', new ItemStack(TechItems.WateringCan), 'N', new ItemStack(Items.NETHER_STAR)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.WateringCanUpgrade), "on ", "owo", " o ", 'o', "obsidian", 'w', new ItemStack(TechItems.WateringCan), 'n', "netherStar"));
 		}
 		
 		if (ConfigHandler.BlockGrowth == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {"IBI", "DED", "IBI", 'I', new ItemStack(Items.IRON_INGOT), 'B', new ItemStack(TechBlocks.BoneBlock), 'E', new ItemStack(Blocks.SEA_LANTERN), 'D', new ItemStack(TechBlocks.DirtyGlass)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.growth_block), "ibi", "ded", "ibi", 'i', "ingotIron", 'b', "blockBone", 'e', new ItemStack(Blocks.SEA_LANTERN), 'd', "blockGlassDirty"));
 		}
 		
 		if (ConfigHandler.BlockGrowthUpgrade == true){
@@ -174,27 +174,27 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.BlockGrowthUpgradeTwo == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade_two), new Object[] {" g ", "gdg", " g ", 'g', new ItemStack(TechBlocks.growth_upgrade), 'd', new ItemStack(Blocks.DRAGON_EGG)});
+			GameRegistry.addShapelessRecipe(new ItemStack(TechBlocks.growth_upgrade_two), new Object[]{new ItemStack(TechBlocks.growth_upgrade), new ItemStack(Blocks.DRAGON_EGG)});
 		}
 		
 		if (ConfigHandler.Cobblegen == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.cobblegen_block), new Object[] {"CCC", "WGL", "CCC", 'C', new ItemStack(Blocks.COBBLESTONE), 'G', new ItemStack(Blocks.GLASS), 'W', new ItemStack(Items.WATER_BUCKET), 'L', new ItemStack(Items.LAVA_BUCKET)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.cobblegen_block), "ccc", "wgl", "ccc", 'c', "cobblestone", 'g', "blockGlass", 'w', "listAllwater", 'l', new ItemStack(Items.LAVA_BUCKET)));
 		}
 		
 		if (ConfigHandler.IronCobblegen == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.iron_cobblegen_block), new Object[] {"III", "IGI", "III", 'I', new ItemStack(Items.IRON_INGOT), 'G', new ItemStack(TechBlocks.cobblegen_block)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.iron_cobblegen_block), "iii", "igi", "iii", 'i', "ingotIron", 'g', new ItemStack(TechBlocks.cobblegen_block)));
 		}
 		
 		if (ConfigHandler.DiamondCobblegen == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.diamond_cobblegen_block), new Object[] {"DDD", "DGD", "DDD", 'D', new ItemStack(Items.DIAMOND), 'G', new ItemStack(TechBlocks.iron_cobblegen_block)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.diamond_cobblegen_block), "ddd", "dgd", "ddd", 'd', "gemDiamond", 'g', new ItemStack(TechBlocks.iron_cobblegen_block)));
 		}
 		
 		if (ConfigHandler.BlazeCobblegen == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.blaze_cobblegen_block), new Object[] {"DDD", "DGD", "DDD", 'D', new ItemStack(Items.BLAZE_ROD), 'G', new ItemStack(TechBlocks.diamond_cobblegen_block)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.blaze_cobblegen_block), "bbb", "bgb", "bbb", 'b', "itemBlazeRod", 'g', new ItemStack(TechBlocks.diamond_cobblegen_block)));
 		}
 		
 		if (ConfigHandler.EmeraldCobblegen == true){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.emerald_cobblegen_block), new Object[] {"DDD", "DGD", "DDD", 'D', new ItemStack(Items.EMERALD), 'G', new ItemStack(TechBlocks.blaze_cobblegen_block)});
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.emerald_cobblegen_block), "eee", "ebe", "eee", 'e', "gemEmerald", 'b', new ItemStack(TechBlocks.blaze_cobblegen_block)));
 		}
 	}
 

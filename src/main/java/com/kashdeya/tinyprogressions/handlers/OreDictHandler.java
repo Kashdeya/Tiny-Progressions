@@ -10,8 +10,9 @@ public class OreDictHandler {
 	
 	public static void init(){
 		OreDictionary.registerOre("blockCharcoal", new ItemStack(TechBlocks.CharcoalBlock));
-		OreDictionary.registerOre("blockGlass", new ItemStack(TechBlocks.DirtyGlass));
+		OreDictionary.registerOre("blockGlassDirty", new ItemStack(TechBlocks.DirtyGlass));
 		OreDictionary.registerOre("blockReinforcedGlass", new ItemStack(TechBlocks.ReinforcedGlass));
+		OreDictionary.registerOre("blockReinforcedObsidian", new ItemStack(TechBlocks.ReinforcedObsidian));
 		OreDictionary.registerOre("stoneAndesiteBrick", new ItemStack(TechBlocks.AndesiteBrick));
 		OreDictionary.registerOre("stoneDioriteBrick", new ItemStack(TechBlocks.DioriteBrick));
 		OreDictionary.registerOre("stoneGraniteBrick", new ItemStack(TechBlocks.GraniteBrick));

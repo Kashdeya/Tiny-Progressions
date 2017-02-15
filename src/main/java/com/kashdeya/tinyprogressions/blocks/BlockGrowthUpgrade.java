@@ -5,11 +5,6 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
@@ -36,6 +31,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 
 public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 	
@@ -165,12 +165,12 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
         {
             for (int j = -4; j <= 4; ++j)
             {
-                if (i > -4 && i < 4 && j == -4)
+                if (i > -4 && i < 4 && j == -2)
                 {
                     j = 4;
                 }
 
-                if (rand.nextInt(16) == 0)
+                if (rand.nextInt(ConfigHandler.GrowthUpgradeParticalTicks) == 0)
                 {
                     for (int k = 0; k <= 1; ++k){
                     	for (int xAxis = -range; xAxis <= range; xAxis++) {
@@ -182,7 +182,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 
         		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
         		            		{
-        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 0.5F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 3.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
         		            		}
         		            	}
         		            }
@@ -234,11 +234,11 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
     {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_1").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_2").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_3").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.upgrade_4").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_1").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_3").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_4").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_5").getFormattedText());
     }
 
 }

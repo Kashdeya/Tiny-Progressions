@@ -1,9 +1,9 @@
 package com.kashdeya.tinyprogressions.tools.pickaxe;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
+
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class FlintPickaxe extends ItemPickaxe {
 	

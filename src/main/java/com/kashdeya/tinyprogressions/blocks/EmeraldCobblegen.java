@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.blocks;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -14,6 +16,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
@@ -104,5 +108,15 @@ public class EmeraldCobblegen extends Block implements ITileEntityProvider{
 	{
 		return new TileEntityEmeraldCobblegen();
 	}
+    
+	@Override
+	@SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
+    {
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_1").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_2").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_3").getFormattedText());
+		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_4").getFormattedText());
+    }
 
 }

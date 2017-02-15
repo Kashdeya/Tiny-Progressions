@@ -6,7 +6,8 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.Itembase;
+import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.items.ToolHeads;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tools.axe.BoneAxe;
 import com.kashdeya.tinyprogressions.tools.axe.FlintAxe;
@@ -84,29 +85,29 @@ public class TechTools {
 		
 		// Flint Tool & Weapon Heads
 		if (ConfigHandler.FlintTools){
-			FlintPickaxeHead = new Itembase().setUnlocalizedName("FlintPickaxeHead");;
+			FlintPickaxeHead = new ToolHeads().setUnlocalizedName("FlintPickaxeHead");;
 			registerItem(FlintPickaxeHead, "FlintPickaxeHead");
-			FlintAxeHead = new Itembase().setUnlocalizedName("FlintAxeHead");;
+			FlintAxeHead = new ToolHeads().setUnlocalizedName("FlintAxeHead");;
 			registerItem(FlintAxeHead, "FlintAxeHead");
-			FlintSpadeHead = new Itembase().setUnlocalizedName("FlintSpadeHead");;
+			FlintSpadeHead = new ToolHeads().setUnlocalizedName("FlintSpadeHead");;
 			registerItem(FlintSpadeHead, "FlintSpadeHead");
-			FlintSwordHead = new Itembase().setUnlocalizedName("FlintSwordHead");;
+			FlintSwordHead = new ToolHeads().setUnlocalizedName("FlintSwordHead");;
 			registerItem(FlintSwordHead, "FlintSwordHead");
-			FlintHoeHead = new Itembase().setUnlocalizedName("FlintHoeHead");;
+			FlintHoeHead = new ToolHeads().setUnlocalizedName("FlintHoeHead");;
 			registerItem(FlintHoeHead, "FlintHoeHead");
 		}
 		
 		// Bone Tool & Weapon Heads
 		if (ConfigHandler.BoneTools){
-			BonePickaxeHead = new Itembase().setUnlocalizedName("BonePickaxeHead");;
+			BonePickaxeHead = new ItemBase().setUnlocalizedName("BonePickaxeHead");;
 			registerItem(BonePickaxeHead, "BonePickaxeHead");
-			BoneAxeHead = new Itembase().setUnlocalizedName("BoneAxeHead");;
+			BoneAxeHead = new ItemBase().setUnlocalizedName("BoneAxeHead");;
 			registerItem(BoneAxeHead, "BoneAxeHead");
-			BoneSpadeHead = new Itembase().setUnlocalizedName("BoneSpadeHead");;
+			BoneSpadeHead = new ItemBase().setUnlocalizedName("BoneSpadeHead");;
 			registerItem(BoneSpadeHead, "BoneSpadeHead");
-			BoneSwordHead = new Itembase().setUnlocalizedName("BoneSwordHead");;
+			BoneSwordHead = new ItemBase().setUnlocalizedName("BoneSwordHead");;
 			registerItem(BoneSwordHead, "BoneSwordHead");
-			BoneHoeHead = new Itembase().setUnlocalizedName("BoneHoeHead");;
+			BoneHoeHead = new ItemBase().setUnlocalizedName("BoneHoeHead");;
 			registerItem(BoneHoeHead, "BoneHoeHead");
 		}
 	}

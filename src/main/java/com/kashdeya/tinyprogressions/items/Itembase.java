@@ -4,11 +4,10 @@ import net.minecraft.item.Item;
 
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
-public class Itembase extends Item {
-
-	public Itembase() {
+public class ItemBase extends Item{
+	
+	public ItemBase() {
 		super();
-		this.setMaxStackSize(1);
 		this.setCreativeTab(tinyprogressions.tabTP);
 	}
 }

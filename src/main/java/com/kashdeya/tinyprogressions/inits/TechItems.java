@@ -8,12 +8,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.DiamondApple;
-import com.kashdeya.tinyprogressions.items.FlintIngot;
+import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
-import com.kashdeya.tinyprogressions.items.QuartzDust;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
-import com.kashdeya.tinyprogressions.items.StoneDust;
 import com.kashdeya.tinyprogressions.items.WateringCan;
 import com.kashdeya.tinyprogressions.items.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -54,7 +52,7 @@ public class TechItems {
 	    if (ConfigHandler.QuartzKnife){
 	    	QuartzKnife = new QuartzKnife();
 	    	registerItem(QuartzKnife, "QuartzKnife");
-	    	QuartzDust = new QuartzDust();
+	    	QuartzDust = new ItemBase().setUnlocalizedName("QuartzDust");
 	    	registerItem(QuartzDust, "QuartzDust");
 	    }
 	    // Pickaxe
@@ -77,15 +75,14 @@ public class TechItems {
 	    }
 	    // Stone Dust
 	    if (ConfigHandler.StoneDust){
-	    	StoneDust = new StoneDust();
+	    	StoneDust = new ItemBase().setUnlocalizedName("StoneDust");
 			registerItem(StoneDust, "StoneDust");
 		}
 	    // Flint Armor Ingot
 	    if (ConfigHandler.FlintArmor){
-	    	FlintIngot = new FlintIngot();
+	    	FlintIngot = new ItemBase().setUnlocalizedName("FlintIngot");
 			registerItem(FlintIngot, "FlintIngot");
 		}
-
 	}
 	
 	static void registerItem(Item item, String name){

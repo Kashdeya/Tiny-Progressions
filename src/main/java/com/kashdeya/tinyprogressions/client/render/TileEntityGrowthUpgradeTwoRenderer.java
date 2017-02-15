@@ -31,7 +31,7 @@ public class TileEntityGrowthUpgradeTwoRenderer extends TileEntitySpecialRendere
 		float ticks = tile.animationTicks + (tile.animationTicks - tile.prevAnimationTicks)  * partialTick;
 		
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(x + 0.5D, y + 0.65D, z + 0.5D);
+		GlStateManager.translate(x + 0.5D, y + 1.4D, z + 0.5D);
 		GlStateManager.scale(0.625, 0.625, 0.625);
 		GlStateManager.rotate(ticks, 0F, 1F, 0F);
 		Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);

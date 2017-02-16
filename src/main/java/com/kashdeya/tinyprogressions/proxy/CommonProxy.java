@@ -1,21 +1,9 @@
 package com.kashdeya.tinyprogressions.proxy;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
-import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.recipes.Recipes;
 import com.kashdeya.tinyprogressions.tiles.TileEntityBlazeCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
@@ -27,22 +15,25 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 public class CommonProxy {
-	
-	public void preInit(FMLPreInitializationEvent e) {
-		// Configs
-		TinyConfig.initMainConfigs();
+
+	public void registerTileEntities() {
+    	// Tile Entities
+    	GameRegistry.registerTileEntity(TileEntityCobblegen.class, "tileEntityCobblegen");
+    	GameRegistry.registerTileEntity(TileEntityIronCobblegen.class, "tileEntityIronCobblegen");
+    	GameRegistry.registerTileEntity(TileEntityDiamondCobblegen.class, "tileEntityDiamondCobblegen");
+    	GameRegistry.registerTileEntity(TileEntityEmeraldCobblegen.class, "tileEntityEmeraldCobblegen");
+    	GameRegistry.registerTileEntity(TileEntityBlazeCobblegen.class, "tileEntityBlazeCobblegen");
+    	GameRegistry.registerTileEntity(TileEntityGrowth.class, "tileEntityGrowth");
+    	GameRegistry.registerTileEntity(TileEntityGrowthUpgrade.class, "tileEntityGrowthUpgrade");
+    	GameRegistry.registerTileEntity(TileEntityGrowthUpgradeTwo.class, "tileEntityGrowthUpgradeTwo");
 		
-    	// Load everything else
-		TechItems.init();
-		TechBlocks.init();
-		TechArmor.init();
-		TechTools.init();
-		OreDictHandler.init();
+	}
 
-    }
-
-    public void init(FMLInitializationEvent e) {
+    public void init() {
     	// Recipes
     	Recipes.registerRecipes();
     	RemoveItems.initRemove();
@@ -55,22 +46,12 @@ public class CommonProxy {
     	// FuelHandler
     	GameRegistry.registerFuelHandler(new FuelHandler());
     	
-    	// Tile Entities
-    	GameRegistry.registerTileEntity(TileEntityCobblegen.class, "tileEntityCobblegen");
-    	GameRegistry.registerTileEntity(TileEntityIronCobblegen.class, "tileEntityIronCobblegen");
-    	GameRegistry.registerTileEntity(TileEntityDiamondCobblegen.class, "tileEntityDiamondCobblegen");
-    	GameRegistry.registerTileEntity(TileEntityEmeraldCobblegen.class, "tileEntityEmeraldCobblegen");
-    	GameRegistry.registerTileEntity(TileEntityBlazeCobblegen.class, "tileEntityBlazeCobblegen");
-    	GameRegistry.registerTileEntity(TileEntityGrowth.class, "tileEntityGrowth");
-    	GameRegistry.registerTileEntity(TileEntityGrowthUpgrade.class, "tileEntityGrowthUpgrade");
-    	GameRegistry.registerTileEntity(TileEntityGrowthUpgradeTwo.class, "tileEntityGrowthUpgradeTwo");
     	// Load WorldGeneration
 
     }
 
-    public void postInit(FMLPostInitializationEvent e) {
-
-    }
-
+	public void registerRenderers() {
+		//unused - only called clientside
+	}
 
 }

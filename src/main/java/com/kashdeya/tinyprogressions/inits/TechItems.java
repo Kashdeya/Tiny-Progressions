@@ -1,10 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.DiamondApple;
@@ -15,6 +10,11 @@ import com.kashdeya.tinyprogressions.items.QuartzKnife;
 import com.kashdeya.tinyprogressions.items.WateringCan;
 import com.kashdeya.tinyprogressions.items.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.main.Reference;
+
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TechItems {
 	

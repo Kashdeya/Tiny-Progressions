@@ -1,15 +1,5 @@
 package com.kashdeya.tinyprogressions.handlers;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRenderer;
@@ -22,6 +12,18 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+@SideOnly(Side.CLIENT)
 public class RenderHandler {
 	
 	public static void initBlocks(){
@@ -53,10 +55,10 @@ public class RenderHandler {
 	}
 	
 	public static void preInitBlocks(){
-		if (ConfigHandler.BlockGrowthUpgrade == true){
+		if (ConfigHandler.BlockGrowthUpgrade){
 			setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
 		}
-		if (ConfigHandler.BlockGrowthUpgradeTwo == true){
+		if (ConfigHandler.BlockGrowthUpgradeTwo){
 			setCustomStateMap(TechBlocks.growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
 		}
 	}
@@ -112,12 +114,14 @@ public class RenderHandler {
 		InventoryItemRender(TechArmor.boneBoots, "boneBoots");
 	}
 	
-	public static void InventoryBlockRender(Block block, String blockName){
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.MOD_ID + ":" + blockName, "inventory"));
+	public static void InventoryBlockRender(Block block, String blockName) {
+		if(block != null)
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.MOD_ID + ":" + blockName, "inventory"));
 	}
 	  
-	public static void InventoryItemRender(Item item, String itemName){
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + itemName, "inventory"));
+	public static void InventoryItemRender(Item item, String itemName) {
+		if(item != null)
+			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + itemName, "inventory"));
 	}
 	
 	public static void setCustomStateMap(Block block, StateMap stateMap){

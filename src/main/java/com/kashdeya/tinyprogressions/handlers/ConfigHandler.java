@@ -26,7 +26,7 @@ public class ConfigHandler {
 	public static int BlockGrowthUpgradeTicks = 40;
 	public static int GrowthUpgradeParticalTicks = 250;
 	public static boolean BlockGrowthUpgradeTwo = false;
-	public static int BlockGrowthUpgradeTwoTicks = 40;
+	public static int BlockGrowthUpgradeTwoTicks = 30;
 	public static int GrowthUpgradeTwoParticalTicks = 250;
 	
 	// Quartz Dust & Knife

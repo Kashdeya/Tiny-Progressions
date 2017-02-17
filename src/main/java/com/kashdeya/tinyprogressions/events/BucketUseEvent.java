@@ -13,11 +13,13 @@ public class BucketUseEvent {
     @SubscribeEvent
     public void onPlayerUsingBucket(FillBucketEvent event) {
     	if (ConfigHandler.BlockGrowthUpgrade || ConfigHandler.BlockGrowthUpgradeTwo){
-    		if (event.getEntity() != null && event.getEntity() instanceof EntityPlayer) {
-    			IBlockState state = event.getWorld().getBlockState(event.getTarget().getBlockPos());
-    			if (state != null) {
-    				if (state.getBlock() instanceof BlockGrowthUpgrade || state.getBlock() instanceof BlockGrowthUpgradeTwo) {
-    					event.setCanceled(true);
+    		if(event.getWorld() !=null){
+    			if (event.getEntity() != null && event.getEntity() instanceof EntityPlayer) {
+    				IBlockState state = event.getWorld().getBlockState(event.getTarget().getBlockPos());
+    				if (state != null) {
+    					if (state.getBlock() instanceof BlockGrowthUpgrade || state.getBlock() instanceof BlockGrowthUpgradeTwo) {
+    						event.setCanceled(true);
+    					}
     				}
     			}
     		}

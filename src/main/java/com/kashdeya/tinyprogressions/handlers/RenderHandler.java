@@ -26,6 +26,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderHandler {
 	
+	public static void preInitBlocks(){
+		if (ConfigHandler.BlockGrowthUpgrade){
+			setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+		}
+		if (ConfigHandler.BlockGrowthUpgradeTwo){
+			setCustomStateMap(TechBlocks.growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
+		}
+	}
+	
 	public static void initBlocks(){
 	    InventoryBlockRender(TechBlocks.growth_block, "growth_block");
 	    InventoryBlockRender(TechBlocks.growth_upgrade, "growth_upgrade");
@@ -47,20 +56,13 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.NetherStarBlock, "NetherStarBlock");
 	    InventoryBlockRender(TechBlocks.FlintBlock, "FlintBlock");
 	    InventoryBlockRender(TechBlocks.SmoothEndStone, "SmoothEndStone");
-
+	}
+	
+	public static void initBlockRenders(){
 	    //Tile Entity Render
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowth.class, new TileEntityGrowthRenderer());
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthUpgrade.class, new TileEntityGrowthUpgradeRenderer());
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthUpgradeTwo.class, new TileEntityGrowthUpgradeTwoRenderer());
-	}
-	
-	public static void preInitBlocks(){
-		if (ConfigHandler.BlockGrowthUpgrade){
-			setCustomStateMap(TechBlocks.growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
-		}
-		if (ConfigHandler.BlockGrowthUpgradeTwo){
-			setCustomStateMap(TechBlocks.growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
-		}
 	}
 	
 	public static void initItems(){

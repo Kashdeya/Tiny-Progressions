@@ -53,8 +53,8 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 		this.setLightOpacity(1);
 		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setSoundType(blockSoundType.METAL);
-		setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 		this.setUnlocalizedName("growth_upgrade");
+		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 	}
 	
 	@Override

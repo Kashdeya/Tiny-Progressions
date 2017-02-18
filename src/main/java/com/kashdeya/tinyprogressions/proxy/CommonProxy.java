@@ -1,8 +1,7 @@
 package com.kashdeya.tinyprogressions.proxy;
 
-import com.kashdeya.tinyprogressions.events.BucketUseEvent;
-import com.kashdeya.tinyprogressions.events.EventDrops;
-import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.recipes.Recipes;
 import com.kashdeya.tinyprogressions.tiles.TileEntityBlazeCobblegen;
@@ -14,9 +13,6 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
-
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 
@@ -37,11 +33,6 @@ public class CommonProxy {
     	// Recipes
     	Recipes.registerRecipes();
     	RemoveItems.initRemove();
-    	
-    	// Events
-    	MinecraftForge.EVENT_BUS.register(new EventDrops());
-    	MinecraftForge.EVENT_BUS.register(new SpongeBlockPlacement());
-    	MinecraftForge.EVENT_BUS.register(new BucketUseEvent());
     	
     	// FuelHandler
     	GameRegistry.registerFuelHandler(new FuelHandler());

@@ -54,8 +54,8 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 		this.setLightOpacity(1);
 		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setSoundType(blockSoundType.METAL);
-		setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 		this.setUnlocalizedName("growth_upgrade_two");
+		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 	}
 	
 	@Override

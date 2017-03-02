@@ -6,6 +6,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ToolHeads;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -23,11 +24,11 @@ import com.kashdeya.tinyprogressions.tools.sword.FlintSword;
 public class TechTools {
 	
 	// Flint Tool & Weapon Heads
-	public static Item FlintPickaxeHead;
-	public static Item FlintAxeHead;
-	public static Item FlintSpadeHead;
-	public static Item FlintSwordHead;
-	public static Item FlintHoeHead;
+	// public static Item FlintPickaxeHead;
+	// public static Item FlintAxeHead;
+	// public static Item FlintSpadeHead;
+	// public static Item FlintSwordHead;
+	// public static Item FlintHoeHead;
 	
 	// Flint Tools & Weapons
 	public static Item FlintPickaxe;
@@ -37,11 +38,11 @@ public class TechTools {
 	public static Item FlintHoe;
 	
 	// Bone Tool & Weapon Heads
-	public static Item BonePickaxeHead;
-	public static Item BoneAxeHead;
-	public static Item BoneSpadeHead;
-	public static Item BoneSwordHead;
-	public static Item BoneHoeHead;
+	// public static Item BonePickaxeHead;
+	// public static Item BoneAxeHead;
+	// public static Item BoneSpadeHead;
+	// public static Item BoneSwordHead;
+	// public static Item BoneHoeHead;
 	
 	// Bone Tools & Weapons
 	public static Item BonePickaxe;
@@ -83,7 +84,7 @@ public class TechTools {
 			registerItem(BoneHoe, "BoneHoe");
 		}
 		
-		// Flint Tool & Weapon Heads
+		/** Flint Tool & Weapon Heads
 		if (ConfigHandler.FlintTools){
 			FlintPickaxeHead = new ToolHeads().setUnlocalizedName("FlintPickaxeHead");;
 			registerItem(FlintPickaxeHead, "FlintPickaxeHead");
@@ -109,7 +110,7 @@ public class TechTools {
 			registerItem(BoneSwordHead, "BoneSwordHead");
 			BoneHoeHead = new ItemBase().setUnlocalizedName("BoneHoeHead");;
 			registerItem(BoneHoeHead, "BoneHoeHead");
-		}
+		}*/
 	}
 	
 	static void registerItem(Item item, String name){

@@ -51,7 +51,7 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Watering Cans", "Remember to water those plants!");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");
-		ConfigHandler.WateringCanUpgrade = config.getBoolean("Reinforced Watering Can", category + " Watering Cans", true, "Enable Reinforced Watering Can?\n[Requires Watering Can to be Enabled]");
+		ConfigHandler.WateringCanUpgrade = config.getBoolean("Watering Can Reinforced", category + " Watering Cans", true, "Enable Reinforced Watering Can?\n[Requires Watering Can to be Enabled]");
 		
 		config.addCustomCategoryComment(category + " Cobblegen Crystals", "Everyone needs a little cobblestone!");
 		ConfigHandler.Cobblegen = config.getBoolean("Cobblegen Crystal Tier 1", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 1?");
@@ -64,16 +64,15 @@ public class TinyConfig {
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Extra Stuff", true, "Enable the Charcoal Block?");
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Extra Stuff", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
 		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Extra Stuff", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
-		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Extra Stuff", true, "Bring back the Notch Apple Recipe?");
-		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Extra Stuff", true, "Enable Andesite Bricks?");
-		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Extra Stuff", true, "Enable Diorite Bricks?");
-		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Extra Stuff", true, "Enable Granite Bricks?");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Extra Stuff", true, "Enable Mycelium Seeds?");
-		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Extra Stuff", true, "Enable Diamond Apple?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Extra Stuff", true, "Enable Medkit?");
 		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
 		ConfigHandler.SmoothEndStone = config.getBoolean("Smooth EndStone", category + " Extra Stuff", true, "Enable Smooth EndStone?");
-		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " Extra Stuff", false, "Enable Stone Dust?\n[If you enable please make a recipe]/n[Other wise it does nothing.]");
+		
+		config.addCustomCategoryComment(category + " RageCraft", "Added for RageCraft - If you enable please make a recipe for them, Other wise they do nothing.");
+		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " RageCraft", false, "Enable Flint Knife?");
+		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " RageCraft", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
+		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " RageCraft", false, "Enable Stone Dust?");
 		
 		config.addCustomCategoryComment(category + " Drops", "Extra Drops");
 		ConfigHandler.LeafDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
@@ -97,6 +96,11 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Goodies", "Fun Stuff");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Goodies", true, "Enable Party Pickaxe?");
 		
+		config.addCustomCategoryComment(category + " Apples", "Just Because");
+		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
+		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", true, "Bring back the Notch Apple Recipe?");
+		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Apples", true, "Enable Diamond Apple?");
+		
 		config.addCustomCategoryComment(category + " Armor", "Why not");
 		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
 		ConfigHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", false, "Enable Flint Armor?");
@@ -112,6 +116,11 @@ public class TinyConfig {
 		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Enable Bone Tools & Weapons?");
 		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Enable Flint Tools & Weapons?");
 		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");
+		
+		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
+		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
+		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
+		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
 		
 		if (config.hasChanged())
         config.save();    
@@ -171,13 +180,23 @@ public class TinyConfig {
 			
 			addToMovePropertyList("tiny progressions birthday pickaxe", "Birthday Pickaxe", "tiny progressions goodies");
 			addToMovePropertyList("tiny progressions misc blocks", "Flesh Block", "tiny progressions compressed blocks");
+			addToMovePropertyList("tiny progressions extra stuff", "Diamond Apple", "tiny progressions apples");
+			addToMovePropertyList("tiny progressions extra stuff", "Notch Apple", "tiny progressions apples");
+			addToMovePropertyList("tiny progressions extra stuff", "Andesite Bricks", "tiny progressions bricks");
+			addToMovePropertyList("tiny progressions extra stuff", "Diorite Bricks", "tiny progressions bricks");
+			addToMovePropertyList("tiny progressions extra stuff", "Granite Bricks", "tiny progressions bricks");
+			addToMovePropertyList("tiny progressions flint knife", "Flint Knife", "tiny progressions ragecraft");
+			addToMovePropertyList("tiny progressions flint knife", "Flint Knife Durability", "tiny progressions ragecraft");
+			addToMovePropertyList("tiny progressions extra stuff", "Stone Dust", "tiny progressions ragecraft");
 			
 			addToRenamePropertyList("tiny progressions goodies" , "Birthday Pickaxe", "Party Pickaxe");
 			addToRenamePropertyList("tiny progressions compressed blocks" , "Flesh Block", "Compressed Flesh Block");
+			addToRenamePropertyList("tiny progressions watering cans" , "Reinforced Watering Can", "Watering Can Reinforced");
 			
 			addToRemoveCategoryList("tiny progressions birthday pickaxe");
 			addToRemoveCategoryList("tiny progressions buckets");
 			addToRemoveCategoryList("tiny progressions misc blocks");
+			addToRemoveCategoryList("tiny progressions flint knife");
 			
 			//addToRemoveProperties(category, propName);
 		}

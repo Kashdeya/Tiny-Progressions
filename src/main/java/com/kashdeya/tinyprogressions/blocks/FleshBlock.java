@@ -16,7 +16,8 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class FleshBlock extends Block{
 	
-	public FleshBlock() {
+	public FleshBlock()
+	{
 		super(Material.SAND);
 		this.setHardness(0.5F);
 		this.setResistance(5.0F);

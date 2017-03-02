@@ -27,8 +27,7 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 public class NetherStarBlock extends Block {
 	
 	
-	public NetherStarBlock()
-	{
+	public NetherStarBlock() {
 		super(Material.IRON);
 		this.setHardness(2.0F);
 	    this.setHarvestLevel("pickaxe", 0);

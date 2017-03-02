@@ -3,8 +3,6 @@ package com.kashdeya.tinyprogressions.inits;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.DiamondApple;
-import com.kashdeya.tinyprogressions.items.EmeraldApple;
-import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
@@ -31,14 +29,11 @@ public class TechItems {
 	// Misc Items
 	public static Item MyceliumSeeds;
 	public static Item DiamondApple;
-	public static Item EmeraldApple;
 	public static Item MedKit;
 	// Stone Dust
 	public static Item StoneDust;
 	// Flint Armor Ingot
 	public static Item FlintIngot;
-	// Flint Knife
-	public static Item FlintKnife;
 	
 	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 45.0F, 4.0F, 25);
 	
@@ -74,10 +69,6 @@ public class TechItems {
 	    	DiamondApple = new DiamondApple(4, 1.2F, false);
 	    	registerItem(DiamondApple, "DiamondApple");
 	    }
-	    if (ConfigHandler.EmeraldApple){
-	    	EmeraldApple = new EmeraldApple(4, 1.2F, false);
-	    	registerItem(EmeraldApple, "EmeraldApple");
-	    }
 	    if (ConfigHandler.MedKit){
 	    	MedKit = new MedKit();
 	    	registerItem(MedKit, "MedKit");
@@ -92,11 +83,6 @@ public class TechItems {
 	    	FlintIngot = new ItemBase().setUnlocalizedName("FlintIngot");
 			registerItem(FlintIngot, "FlintIngot");
 		}
-	    // Flint Knife
-	    if (ConfigHandler.FlintKnife){
-			FlintKnife = new FlintKnife();
-			registerItem(FlintKnife, "FlintKnife");
-	    }
 	}
 	
 	static void registerItem(Item item, String name){

@@ -29,17 +29,17 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityDiamondCobblegen;
 
 public class DiamondCobblegen extends Block implements ITileEntityProvider{
 
-	public DiamondCobblegen()
-	{
-		super(Material.IRON);
-		this.setHardness(1.5F);
-		this.setHarvestLevel("pickaxe", 0);
-		this.setResistance(1000.0F);
-		this.setLightLevel(0.5F);
-		this.setLightOpacity(1);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setSoundType(blockSoundType.METAL);
-		this.setUnlocalizedName("diamond_cobblegen_block");
+	public DiamondCobblegen(){
+		
+    super(Material.IRON);
+    this.setHardness(1.5F);
+    this.setHarvestLevel("pickaxe", 0);
+    this.setResistance(1000.0F);
+    this.setLightLevel(0.5F);
+	this.setLightOpacity(1);
+	this.setCreativeTab(tinyprogressions.tabTP);
+	this.setSoundType(blockSoundType.METAL);
+	this.setUnlocalizedName("diamond_cobblegen_block");
 	}
 	
 	@SideOnly(Side.CLIENT)

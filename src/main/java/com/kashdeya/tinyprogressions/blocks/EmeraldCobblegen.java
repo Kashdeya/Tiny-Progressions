@@ -29,17 +29,17 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityEmeraldCobblegen;
 
 public class EmeraldCobblegen extends Block implements ITileEntityProvider{
 
-	public EmeraldCobblegen()
-	{
-		super(Material.IRON);
-		this.setHardness(2.5F);
-		this.setHarvestLevel("pickaxe", 0);
-		this.setResistance(1000.0F);
-		this.setLightLevel(0.5F);
-		this.setLightOpacity(1);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setSoundType(blockSoundType.METAL);
-		this.setUnlocalizedName("emerald_cobblegen_block");
+	public EmeraldCobblegen(){
+		
+    super(Material.IRON);
+    this.setHardness(2.5F);
+    this.setHarvestLevel("pickaxe", 0);
+    this.setResistance(1000.0F);
+    this.setLightLevel(0.5F);
+	this.setLightOpacity(1);
+	this.setCreativeTab(tinyprogressions.tabTP);
+	this.setSoundType(blockSoundType.METAL);
+	this.setUnlocalizedName("emerald_cobblegen_block");
 	}
 	
 	@SideOnly(Side.CLIENT)

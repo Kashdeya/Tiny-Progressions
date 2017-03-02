@@ -10,7 +10,7 @@ public class FlintSword extends ItemSword {
 	public FlintSword(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintSword");
+		this.setUnlocalizedName("FlintAxe");
 		this.setMaxStackSize(1);
 	}
 }

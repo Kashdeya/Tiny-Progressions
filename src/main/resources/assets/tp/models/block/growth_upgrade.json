@@ -13,14 +13,14 @@
             }
         },
         {   "from": [ 0.01, 0.01, 0.01 ],
-            "to": [ 15.99, 4.99, 15.99 ],
+            "to": [ 15.99, 15.99, 15.99 ],
             "faces": {
                 "down":  { "texture": "#t2", "cullface": "down" },
                 "up":    { "texture": "#t2", "cullface": "up" }
             }
         },
 		{   "from": [ 0.01, 0.01, 0.01 ],
-            "to": [ 15.99, 4.99, 15.99 ],
+            "to": [ 15.99, 15.99, 15.99 ],
             "faces": {
 				"north": { "texture": "#t3", "cullface": "north" },
                 "south": { "texture": "#t3", "cullface": "south" },

@@ -13,8 +13,7 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class CharcoalBlock extends Block{
 	
-	public CharcoalBlock()
-	{
+	public CharcoalBlock() {
 		super(Material.ROCK);
 	    this.setHardness(1F);
 		this.setResistance(10.0F);
@@ -22,6 +21,7 @@ public class CharcoalBlock extends Block{
 		this.setSoundType(blockSoundType.STONE);
 		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setUnlocalizedName("CharcoalBlock");
+		
 	}
 	
 	/**

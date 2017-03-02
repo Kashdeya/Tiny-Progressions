@@ -16,8 +16,7 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BoneBlock extends Block{
 	
-	public BoneBlock()
-	{
+	public BoneBlock() {
 		super(Material.GROUND);
 		this.setHardness(0.5F);
 		this.setResistance(5.0F);

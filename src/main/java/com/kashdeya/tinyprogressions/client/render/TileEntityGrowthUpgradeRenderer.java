@@ -31,10 +31,11 @@ public class TileEntityGrowthUpgradeRenderer extends TileEntitySpecialRenderer<T
 
 		float ticks = tile.animationTicks + (tile.animationTicks - tile.prevAnimationTicks) * partialTick;
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(x + 0.5D, y + 0.45D, z + 0.5D);
-		GlStateManager.scale(0.4D, 0.35D, 0.4D);
+		GlStateManager.translate(x + 0.5D, y + 1.20D, z + 0.5D);
+		GlStateManager.scale(0.5D, 0.5D, 0.5D);
 		bindTexture(ENDER_CRYSTAL_TEXTURES);
 		modelEnderCrystalNoBase.render(entity, 0.0F, ticks * 3.0F, 0F, 0.0F, 0.0F, 0.0625F);
 		GlStateManager.popMatrix();
 	}
+
 }

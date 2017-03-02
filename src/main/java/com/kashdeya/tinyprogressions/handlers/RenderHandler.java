@@ -73,34 +73,32 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.BirthdayPickaxe, "BirthdayPickaxe");
 		InventoryItemRender(TechItems.MyceliumSeeds, "MyceliumSeeds");
 		InventoryItemRender(TechItems.DiamondApple, "DiamondApple");
-		InventoryItemRender(TechItems.EmeraldApple, "EmeraldApple");
 		InventoryItemRender(TechItems.MedKit, "MedKit");	
 		InventoryItemRender(TechItems.StoneDust, "StoneDust");
 		InventoryItemRender(TechItems.FlintIngot, "FlintIngot");
-		InventoryItemRender(TechItems.FlintKnife, "FlintKnife");
 	}
 	
 	public static void initTools(){
 		InventoryItemRender(TechTools.BoneAxe, "BoneAxe");
-		//InventoryItemRender(TechTools.BoneAxeHead, "BoneAxeHead");
+		InventoryItemRender(TechTools.BoneAxeHead, "BoneAxeHead");
 		InventoryItemRender(TechTools.BoneHoe, "BoneHoe");
-		//InventoryItemRender(TechTools.BoneHoeHead, "BoneHoeHead");
+		InventoryItemRender(TechTools.BoneHoeHead, "BoneHoeHead");
 		InventoryItemRender(TechTools.BonePickaxe, "BonePickaxe");
-		//InventoryItemRender(TechTools.BonePickaxeHead, "BonePickaxeHead");
+		InventoryItemRender(TechTools.BonePickaxeHead, "BonePickaxeHead");
 		InventoryItemRender(TechTools.BoneSpade, "BoneSpade");
-		//InventoryItemRender(TechTools.BoneSpadeHead, "BoneSpadeHead");
+		InventoryItemRender(TechTools.BoneSpadeHead, "BoneSpadeHead");
 		InventoryItemRender(TechTools.BoneSword, "BoneSword");
-		//InventoryItemRender(TechTools.BoneSwordHead, "BoneSwordHead");
+		InventoryItemRender(TechTools.BoneSwordHead, "BoneSwordHead");
 		InventoryItemRender(TechTools.FlintAxe, "FlintAxe");
-		//InventoryItemRender(TechTools.FlintAxeHead, "FlintAxeHead");
+		InventoryItemRender(TechTools.FlintAxeHead, "FlintAxeHead");
 		InventoryItemRender(TechTools.FlintHoe, "FlintHoe");
-		//InventoryItemRender(TechTools.FlintHoeHead, "FlintHoeHead");
+		InventoryItemRender(TechTools.FlintHoeHead, "FlintHoeHead");
 		InventoryItemRender(TechTools.FlintPickaxe, "FlintPickaxe");
-		//InventoryItemRender(TechTools.FlintPickaxeHead, "FlintPickaxeHead");
+		InventoryItemRender(TechTools.FlintPickaxeHead, "FlintPickaxeHead");
 		InventoryItemRender(TechTools.FlintSpade, "FlintSpade");
-		//InventoryItemRender(TechTools.FlintSpadeHead, "FlintSpadeHead");
+		InventoryItemRender(TechTools.FlintSpadeHead, "FlintSpadeHead");
 		InventoryItemRender(TechTools.FlintSword, "FlintSword");
-		//InventoryItemRender(TechTools.FlintSwordHead, "FlintSwordHead");
+		InventoryItemRender(TechTools.FlintSwordHead, "FlintSwordHead");
 	}
 	
 	public static void initArmor(){

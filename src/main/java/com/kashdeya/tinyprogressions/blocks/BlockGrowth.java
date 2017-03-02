@@ -39,7 +39,8 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
 	private int range = 4;
 	private int rangeY = 2;
 
-	public BlockGrowth(){
+	public BlockGrowth()
+	{
 		super(Material.GROUND);
 		this.setTickRandomly(true);
 		this.setHardness(1.0F);

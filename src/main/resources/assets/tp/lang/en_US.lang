@@ -55,6 +55,7 @@ item.MyceliumSeeds.name=Mycelium Seed
 
 #Apple
 item.DiamondApple.name=Diamond Apple
+item.EmeraldApple.name=Emerald Apple
 
 #Medkit
 item.MedKit.name=Medkit
@@ -70,6 +71,7 @@ item.FlintSpadeHead.name=Flint Shovel Head
 item.FlintAxeHead.name=Flint Axe Head
 item.FlintSwordHead.name=Flint Sword Blade
 item.FlintHoeHead.name=Flint Hoe Head
+item.FlintKnife.name=Flint Knife
 
 #Flint Armor
 item.flintHelmet.name=Flint Helmet
@@ -78,7 +80,7 @@ item.flintLeggings.name=Flint Leggings
 item.flintBoots.name=Flint Boots
 
 #Bone Block
-tile.BoneBlock.name=Bone Block
+tile.BoneBlock.name=Compressed Bone Block
 
 #Bone Weapons & Tools
 item.BonePickaxe.name=Bone Pickaxe
@@ -172,6 +174,11 @@ tooltip.apple_1=Fire Resistance
 tooltip.apple_2=Regeneration
 tooltip.apple_3=Resistance
 tooltip.apple_4=Speed
+
+#Emerald Apple Tooltips
+tooltip.EmeraldApple_1=Absorption
+tooltip.EmeraldApple_2=Speed
+tooltip.EmeraldApple_3=Saturation
 
 #Knife Tooltip
 tooltip.knife=Very Sharp, Handle with care!

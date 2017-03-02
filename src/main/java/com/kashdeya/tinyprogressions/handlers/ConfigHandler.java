@@ -72,6 +72,7 @@ public class ConfigHandler {
 	public static boolean AllowRightClick = false;
 	public static boolean MyceliumSeeds = false;
 	public static boolean DiamondApple = false;
+	public static boolean EmeraldApple = false;
 	public static boolean MedKit = false;
 	public static int healDuration = 300;
 	
@@ -79,6 +80,10 @@ public class ConfigHandler {
 	public static boolean FlintTools = false;
 	public static boolean FlintBlock = false;
 	public static boolean FlintArmor = false;
+	
+	// Flint Knife
+	public static boolean FlintKnife = false;
+	public static int FlintKnifeDamage = 128;
 	
 	// Bone Items & More
 	public static boolean BoneTools = false;

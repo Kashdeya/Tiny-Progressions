@@ -101,6 +101,11 @@ public class RenderHandler {
 		//InventoryItemRender(TechTools.FlintSpadeHead, "FlintSpadeHead");
 		InventoryItemRender(TechTools.FlintSword, "FlintSword");
 		//InventoryItemRender(TechTools.FlintSwordHead, "FlintSwordHead");
+		InventoryItemRender(TechTools.WoodenPaxel, "WoodenPaxel");
+		InventoryItemRender(TechTools.StonePaxel, "StonePaxel");
+		InventoryItemRender(TechTools.GoldenPaxel, "GoldenPaxel");
+		InventoryItemRender(TechTools.IronPaxel, "IronPaxel");
+		InventoryItemRender(TechTools.DiamondPaxel, "DiamondPaxel");
 	}
 	
 	public static void initArmor(){

@@ -17,6 +17,14 @@ public class Recipes {
 	
 	public static void registerRecipes(){
 		
+		if (ConfigHandler.EnablePaxels){
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.WoodenPaxel), new Object[] {"pwa", " s ", " s ", 'p', new ItemStack(Items.WOODEN_PICKAXE), 'w', new ItemStack(Items.WOODEN_SHOVEL),  'a', new ItemStack(Items.WOODEN_AXE), 's', new ItemStack(Items.STICK)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.StonePaxel), new Object[] {"pwa", " s ", " s ", 'p', new ItemStack(Items.STONE_PICKAXE), 'w', new ItemStack(Items.STONE_SHOVEL),  'a', new ItemStack(Items.STONE_AXE), 's', new ItemStack(Items.STICK)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.GoldenPaxel), new Object[] {"pwa", " s ", " s ", 'p', new ItemStack(Items.GOLDEN_PICKAXE), 'w', new ItemStack(Items.GOLDEN_SHOVEL),  'a', new ItemStack(Items.GOLDEN_AXE), 's', new ItemStack(Items.STICK)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.IronPaxel), new Object[] {"pwa", " s ", " s ", 'p', new ItemStack(Items.IRON_PICKAXE), 'w', new ItemStack(Items.IRON_SHOVEL),  'a', new ItemStack(Items.IRON_AXE), 's', new ItemStack(Items.STICK)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechTools.DiamondPaxel), new Object[] {"pwa", " s ", " s ", 'p', new ItemStack(Items.DIAMOND_PICKAXE), 'w', new ItemStack(Items.DIAMOND_SHOVEL),  'a', new ItemStack(Items.DIAMOND_AXE), 's', new ItemStack(Items.STICK)});
+		}
+		
 		if (ConfigHandler.SmoothEndStone){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.SmoothEndStone, 4), "nn", "nn", 'n', "endstone"));
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.END_BRICKS, 4), new Object[] {"CC", "CC", 'C', new ItemStack(TechBlocks.SmoothEndStone)});			
@@ -35,8 +43,13 @@ public class Recipes {
 		if (ConfigHandler.MedKit){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.MedKit), "prp", "rgr", "lrl", 'p', "paper", 'r', "dyeRed", 'g', new ItemStack(Items.SPECKLED_MELON), 'l', "leather"));
 		}
+		
 		if (ConfigHandler.DiamondApple){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.DiamondApple), "ddd", "dad", "ddd", 'd', "gemDiamond", 'a', new ItemStack(Items.APPLE)));
+		}
+		
+		if (ConfigHandler.EmeraldApple){
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.EmeraldApple), "ddd", "dad", "ddd", 'd', "gemEmerald", 'a', new ItemStack(Items.APPLE)));
 		}
 		
 		if (ConfigHandler.AndesiteBrick){
@@ -99,7 +112,7 @@ public class Recipes {
 		}
 		
 		if (ConfigHandler.FlintKnife){
-			GameRegistry.addRecipe(new ItemStack(TechItems.FlintKnife), "f ", " f", 'f', new ItemStack(Items.FLINT));
+			GameRegistry.addShapelessRecipe(new ItemStack(TechItems.FlintKnife), new Object[] {new ItemStack(Items.FLINT), new ItemStack(Items.FLINT), new ItemStack(Items.STICK)});
 		}
 		
 		if (ConfigHandler.BoneTools){

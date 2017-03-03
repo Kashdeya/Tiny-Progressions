@@ -122,6 +122,9 @@ public class TinyConfig {
 		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
 		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
 		
+		config.addCustomCategoryComment(category + " Paxels", "Because People Love Multi Tools");
+		ConfigHandler.EnablePaxels = config.getBoolean("Paxels", category + " Paxels", true, "Enable paxels?");
+		
 		if (config.hasChanged())
         config.save();    
 	}

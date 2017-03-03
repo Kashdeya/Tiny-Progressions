@@ -73,6 +73,13 @@ item.FlintSwordHead.name=Flint Sword Blade
 item.FlintHoeHead.name=Flint Hoe Head
 item.FlintKnife.name=Flint Knife
 
+# Paxels
+item.WoodenPaxel.item=Wooden Paxel
+item.StonePaxel.name=Stone Paxel
+item.goldenPaxel.name=Golden Paxel
+item.IronPaxel.name=Iron Paxel
+item.DiamondPaxel.name=Diamond Paxel
+
 #Flint Armor
 item.flintHelmet.name=Flint Helmet
 item.flintChestplate.name=Flint Chestplate

@@ -1,6 +1,7 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -14,6 +15,11 @@ import com.kashdeya.tinyprogressions.tools.axe.BoneAxe;
 import com.kashdeya.tinyprogressions.tools.axe.FlintAxe;
 import com.kashdeya.tinyprogressions.tools.hoe.BoneHoe;
 import com.kashdeya.tinyprogressions.tools.hoe.FlintHoe;
+import com.kashdeya.tinyprogressions.tools.paxels.DiamondPaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.GoldenPaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.IronPaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.StonePaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.WoodenPaxel;
 import com.kashdeya.tinyprogressions.tools.pickaxe.BonePickaxe;
 import com.kashdeya.tinyprogressions.tools.pickaxe.FlintPickaxe;
 import com.kashdeya.tinyprogressions.tools.spade.BoneSpade;
@@ -51,6 +57,14 @@ public class TechTools {
 	public static Item BoneSword;
 	public static Item BoneHoe;
 	
+	// Paxels
+	public static Item WoodenPaxel;
+	public static Item StonePaxel;
+	public static Item GoldenPaxel;
+	public static Item IronPaxel;
+	public static Item DiamondPaxel;
+	
+	
 	public static final Item.ToolMaterial BONE = EnumHelper.addToolMaterial("boneToolMaterial", 0, 29, 1.0F, 0.0F, 10);
 	public static final Item.ToolMaterial FLINT = EnumHelper.addToolMaterial("flintToolMaterial", 0, 100, 3.0F, 0.5F, 15);
 	
@@ -82,6 +96,19 @@ public class TechTools {
 			registerItem(BoneSword, "BoneSword");
 			BoneHoe = new BoneHoe(BONE);
 			registerItem(BoneHoe, "BoneHoe");
+		}
+		
+		if (ConfigHandler.EnablePaxels){
+			WoodenPaxel = new WoodenPaxel(ToolMaterial.WOOD);
+			registerItem(WoodenPaxel, "WoodenPaxel");
+			StonePaxel = new StonePaxel(ToolMaterial.STONE);
+			registerItem(StonePaxel, "StonePaxel");
+			IronPaxel = new IronPaxel(ToolMaterial.IRON);
+			registerItem(IronPaxel, "IronPaxel");
+			GoldenPaxel = new GoldenPaxel(ToolMaterial.GOLD);
+			registerItem(GoldenPaxel, "GoldenPaxel");
+			DiamondPaxel = new DiamondPaxel(ToolMaterial.DIAMOND);
+			registerItem(DiamondPaxel, "DiamondPaxel");
 		}
 		
 		/** Flint Tool & Weapon Heads

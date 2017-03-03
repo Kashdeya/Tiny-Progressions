@@ -92,4 +92,7 @@ public class ConfigHandler {
 	
 	// Remove Items
 	public static boolean RemoveItems = false;
+	
+	// Paxels
+	public static boolean EnablePaxels = false;
 }

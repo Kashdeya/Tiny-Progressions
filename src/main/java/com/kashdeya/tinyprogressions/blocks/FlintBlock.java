@@ -16,7 +16,8 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class FlintBlock extends Block{
 	
-	public FlintBlock() {
+	public FlintBlock()
+	{
 		super(Material.GROUND);
 		this.setHardness(1.0F);
 		this.setResistance(5.0F);

@@ -23,7 +23,7 @@ public class Paxel extends ItemPickaxe{
 	}
 	
 	public Set<String> getToolClasses(ItemStack stack) {
-		return ImmutableSet.of("pickaxe", "spade", "axe", "hoe");
+		return ImmutableSet.of("pickaxe", "spade", "axe");
 	}
 	
 	private static HashSet<Block> effectiveAgainst = Sets.newHashSet(new Block[] {

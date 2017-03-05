@@ -25,7 +25,7 @@ public class MyceliumSeeds extends Item {
 	public MyceliumSeeds(){
 		super();
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("MyceliumSeeds");
+		this.setUnlocalizedName("mycelium_seeds");
 	}
 	
 	@Override

@@ -23,7 +23,7 @@ public class MedKit extends Item {
 	  public MedKit()
 	  {
 		  this.setCreativeTab(tinyprogressions.tabTP);
-		  this.setUnlocalizedName("MedKit");
+		  this.setUnlocalizedName("med_kit");
 		  this.setMaxStackSize(1);
 	  }
 	  

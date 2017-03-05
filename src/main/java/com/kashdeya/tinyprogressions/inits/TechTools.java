@@ -1,31 +1,23 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.FlintKnife;
-import com.kashdeya.tinyprogressions.items.ItemBase;
-import com.kashdeya.tinyprogressions.items.ToolHeads;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tools.axe.BoneAxe;
 import com.kashdeya.tinyprogressions.tools.axe.FlintAxe;
 import com.kashdeya.tinyprogressions.tools.hoe.BoneHoe;
 import com.kashdeya.tinyprogressions.tools.hoe.FlintHoe;
-import com.kashdeya.tinyprogressions.tools.paxels.DiamondPaxel;
-import com.kashdeya.tinyprogressions.tools.paxels.GoldenPaxel;
-import com.kashdeya.tinyprogressions.tools.paxels.IronPaxel;
-import com.kashdeya.tinyprogressions.tools.paxels.StonePaxel;
-import com.kashdeya.tinyprogressions.tools.paxels.WoodenPaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.*;
 import com.kashdeya.tinyprogressions.tools.pickaxe.BonePickaxe;
 import com.kashdeya.tinyprogressions.tools.pickaxe.FlintPickaxe;
 import com.kashdeya.tinyprogressions.tools.spade.BoneSpade;
 import com.kashdeya.tinyprogressions.tools.spade.FlintSpade;
 import com.kashdeya.tinyprogressions.tools.sword.BoneSword;
 import com.kashdeya.tinyprogressions.tools.sword.FlintSword;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TechTools {
 	
@@ -73,42 +65,42 @@ public class TechTools {
 		// Flint Tools & Weapons
 		if (ConfigHandler.FlintTools){
 			FlintPickaxe = new FlintPickaxe(FLINT);
-			registerItem(FlintPickaxe, "FlintPickaxe");
+			registerItem(FlintPickaxe, "flint_pickaxe");
 			FlintAxe = new FlintAxe(FLINT, 7.0F, -3.2F);
-			registerItem(FlintAxe, "FlintAxe");
+			registerItem(FlintAxe, "flint_axe");
 			FlintSpade = new FlintSpade(FLINT);
-			registerItem(FlintSpade, "FlintSpade");
+			registerItem(FlintSpade, "flint_spade");
 			FlintSword = new FlintSword(FLINT);
-			registerItem(FlintSword, "FlintSword");
+			registerItem(FlintSword, "flint_sword");
 			FlintHoe = new FlintHoe(FLINT);
-			registerItem(FlintHoe, "FlintHoe");
+			registerItem(FlintHoe, "flint_hoe");
 		}
 		
 		// Bone Tools & Weapons
 		if (ConfigHandler.BoneTools){
 			BonePickaxe = new BonePickaxe(BONE);
-			registerItem(BonePickaxe, "BonePickaxe");
+			registerItem(BonePickaxe, "bone_pickaxe");
 			BoneAxe = new BoneAxe(BONE, 5.0F, -3.2F);
-			registerItem(BoneAxe, "BoneAxe");
+			registerItem(BoneAxe, "bone_axe");
 			BoneSpade = new BoneSpade(BONE);
-			registerItem(BoneSpade, "BoneSpade");
+			registerItem(BoneSpade, "bone_spade");
 			BoneSword = new BoneSword(BONE);
-			registerItem(BoneSword, "BoneSword");
+			registerItem(BoneSword, "bone_sword");
 			BoneHoe = new BoneHoe(BONE);
-			registerItem(BoneHoe, "BoneHoe");
+			registerItem(BoneHoe, "bone_hoe");
 		}
 		
 		if (ConfigHandler.EnablePaxels){
 			WoodenPaxel = new WoodenPaxel(ToolMaterial.WOOD);
-			registerItem(WoodenPaxel, "WoodenPaxel");
+			registerItem(WoodenPaxel, "wooden_paxel");
 			StonePaxel = new StonePaxel(ToolMaterial.STONE);
-			registerItem(StonePaxel, "StonePaxel");
+			registerItem(StonePaxel, "stone_paxel");
 			IronPaxel = new IronPaxel(ToolMaterial.IRON);
-			registerItem(IronPaxel, "IronPaxel");
+			registerItem(IronPaxel, "iron_paxel");
 			GoldenPaxel = new GoldenPaxel(ToolMaterial.GOLD);
-			registerItem(GoldenPaxel, "GoldenPaxel");
+			registerItem(GoldenPaxel, "golden_paxel");
 			DiamondPaxel = new DiamondPaxel(ToolMaterial.DIAMOND);
-			registerItem(DiamondPaxel, "DiamondPaxel");
+			registerItem(DiamondPaxel, "diamond_paxel");
 		}
 		
 		/** Flint Tool & Weapon Heads

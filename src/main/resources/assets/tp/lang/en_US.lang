@@ -29,83 +29,83 @@ tile.nether_star_block.name=Compressed Nether Star Block
 tile.flint_block.name=Compressed Flint Block
 
 #Tech Items
-item.WateringCan.name=Watering Can
-item.WateringCanUpgrade.name=Reinforced Watering Can
-item.QuartzDust.name=Quartz Enriched Iron Dust
-item.QuartzKnife.name=Quartz Knife
-item.FlintIngot.name=Flint Ingot
+item.watering_can.name=Watering Can
+item.watering_can_upgrade.name=Reinforced Watering Can
+item.quartz_dust.name=Quartz Enriched Iron Dust
+item.quartz_knife.name=Quartz Knife
+item.flint_ingot.name=Flint Ingot
 
 #Stone Dust
-item.StoneDust.name=Stone Dust
+item.stone_dust.name=Stone Dust
 
 #Goodies
-item.BirthdayPickaxe.name=Party Pickaxe
+item.birthday_pickaxe.name=Party Pickaxe
 
 #Creative Tabs
 itemGroup.tiny_progressions=Tiny Progressions
 
 #Armor
-item.stoneHelmet.name=Stone Helmet
-item.stoneChestplate.name=Stone Chestplate
-item.stoneLeggings.name=Stone Leggings
-item.stoneBoots.name=Stone Boots
+item.stone_helmet.name=Stone Helmet
+item.stone_chestplate.name=Stone Chestplate
+item.stone_leggings.name=Stone Leggings
+item.stone_boots.name=Stone Boots
 
 #MISC
-item.MyceliumSeeds.name=Mycelium Seed
+item.mycelium_seeds.name=Mycelium Seed
 
 #Apple
-item.DiamondApple.name=Diamond Apple
-item.EmeraldApple.name=Emerald Apple
+item.diamond_apple.name=Diamond Apple
+item.emerald_apple.name=Emerald Apple
 
 #Medkit
-item.MedKit.name=Medkit
+item.med_kit.name=Medkit
 
 #Flint Weapons & Tools
-item.FlintPickaxe.name=Flint Pickaxe
-item.FlintSpade.name=Flint Shovel
-item.FlintAxe.name=Flint Axe
-item.FlintSword.name=Flint Sword
-item.FlintHoe.name=Flint Hoe
-item.FlintPickaxeHead.name=Flint Pickaxe Head
-item.FlintSpadeHead.name=Flint Shovel Head
-item.FlintAxeHead.name=Flint Axe Head
-item.FlintSwordHead.name=Flint Sword Blade
-item.FlintHoeHead.name=Flint Hoe Head
-item.FlintKnife.name=Flint Knife
+item.flint_pickaxe.name=Flint Pickaxe
+item.flint_spade.name=Flint Shovel
+item.flint_axe.name=Flint Axe
+item.flint_sword.name=Flint Sword
+item.flint_hoe.name=Flint Hoe
+item.flint_pickaxe_head.name=Flint Pickaxe Head
+item.flint_spade_head.name=Flint Shovel Head
+item.flint_axe_head.name=Flint Axe Head
+item.flint_sword_head.name=Flint Sword Blade
+item.flint_hoe_head.name=Flint Hoe Head
+item.flint_knife.name=Flint Knife
 
 # Paxels
-item.WoodenPaxel.item=Wooden Paxel
-item.StonePaxel.name=Stone Paxel
-item.goldenPaxel.name=Golden Paxel
-item.IronPaxel.name=Iron Paxel
-item.DiamondPaxel.name=Diamond Paxel
+item.wooden_paxel.name=Wooden Paxel
+item.stone_paxel.name=Stone Paxel
+item.golden_paxel.name=Golden Paxel
+item.iron_paxel.name=Iron Paxel
+item.diamond_paxel.name=Diamond Paxel
 
 #Flint Armor
-item.flintHelmet.name=Flint Helmet
-item.flintChestplate.name=Flint Chestplate
-item.flintLeggings.name=Flint Leggings
-item.flintBoots.name=Flint Boots
+item.flint_helmet.name=Flint Helmet
+item.flint_chestplate.name=Flint Chestplate
+item.flint_leggings.name=Flint Leggings
+item.flint_boots.name=Flint Boots
 
 #Bone Block
-tile.BoneBlock.name=Compressed Bone Block
+tile.bone_block.name=Compressed Bone Block
 
 #Bone Weapons & Tools
-item.BonePickaxe.name=Bone Pickaxe
-item.BoneSpade.name=Bone Shovel
-item.BoneAxe.name=Bone Axe
-item.BoneSword.name=Bone Sword
-item.BoneHoe.name=Bone Hoe
-item.BonePickaxeHead.name=Bone Pickaxe Head
-item.BoneSpadeHead.name=Bone Shovel Head
-item.BoneAxeHead.name=Bone Axe Head
-item.BoneSwordHead.name=Bone Sword Blade
-item.BoneHoeHead.name=Bone Hoe Head
+item.bone_pickaxe.name=Bone Pickaxe
+item.bone_spade.name=Bone Shovel
+item.bone_axe.name=Bone Axe
+item.bone_sword.name=Bone Sword
+item.bone_hoe.name=Bone Hoe
+item.bone_pickaxe_head.name=Bone Pickaxe Head
+item.bone_spade_head.name=Bone Shovel Head
+item.bone_axe_head.name=Bone Axe Head
+item.bone_sword_head.name=Bone Sword Blade
+item.bone_hoe_head.name=Bone Hoe Head
 
 #Bone Armor
-item.boneHelmet.name=Bone Helmet
-item.boneChestplate.name=Bone Chestplate
-item.boneLeggings.name=Bone Leggings
-item.boneBoots.name=Bone Boots
+item.bone_helmet.name=Bone Helmet
+item.bone_chestplate.name=Bone Chestplate
+item.bone_leggings.name=Bone Leggings
+item.bone_boots.name=Bone Boots
 
 #Cobblegen
 tooltip.cobblegen_1=Only Holds 32 Blocks!
@@ -183,9 +183,9 @@ tooltip.apple_3=Resistance
 tooltip.apple_4=Speed
 
 #Emerald Apple Tooltips
-tooltip.EmeraldApple_1=Absorption
-tooltip.EmeraldApple_2=Speed
-tooltip.EmeraldApple_3=Saturation
+tooltip.emerald_apple_1=Absorption
+tooltip.emerald_apple_2=Speed
+tooltip.emerald_apple_3=Saturation
 
 #Knife Tooltip
 tooltip.knife=Very Sharp, Handle with care!

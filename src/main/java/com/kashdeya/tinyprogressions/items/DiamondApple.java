@@ -1,7 +1,6 @@
 package com.kashdeya.tinyprogressions.items;
 
-import java.util.List;
-
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
@@ -14,7 +13,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.List;
 
 public class DiamondApple extends ItemFood
 {
@@ -23,7 +22,7 @@ public class DiamondApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(tinyprogressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("DiamondApple");
+	    this.setUnlocalizedName("diamond_apple");
 	  }
 	  
 	  @Override

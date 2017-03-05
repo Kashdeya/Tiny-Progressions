@@ -1,18 +1,8 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
-import com.kashdeya.tinyprogressions.items.DiamondApple;
-import com.kashdeya.tinyprogressions.items.EmeraldApple;
-import com.kashdeya.tinyprogressions.items.FlintKnife;
-import com.kashdeya.tinyprogressions.items.ItemBase;
-import com.kashdeya.tinyprogressions.items.MedKit;
-import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
-import com.kashdeya.tinyprogressions.items.QuartzKnife;
-import com.kashdeya.tinyprogressions.items.WateringCan;
-import com.kashdeya.tinyprogressions.items.WateringCanUpgrade;
+import com.kashdeya.tinyprogressions.items.*;
 import com.kashdeya.tinyprogressions.main.Reference;
-
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
@@ -47,55 +37,55 @@ public class TechItems {
 		// Watering Cans
 		if (ConfigHandler.WateringCan){
 			WateringCan = new WateringCan();
-			registerItem(WateringCan, "WateringCan");
+			registerItem(WateringCan, "watering_can");
 		}
 		if (ConfigHandler.WateringCanUpgrade){
 			WateringCanUpgrade = new WateringCanUpgrade();
-			registerItem(WateringCanUpgrade, "WateringCanUpgrade");
+			registerItem(WateringCanUpgrade, "watering_can_upgrade");
 		}
 		// Quartz Items
 	    if (ConfigHandler.QuartzKnife){
 	    	QuartzKnife = new QuartzKnife();
-	    	registerItem(QuartzKnife, "QuartzKnife");
-	    	QuartzDust = new ItemBase().setUnlocalizedName("QuartzDust");
-	    	registerItem(QuartzDust, "QuartzDust");
+	    	registerItem(QuartzKnife, "quartz_knife");
+	    	QuartzDust = new ItemBase().setUnlocalizedName("quartz_dust");
+	    	registerItem(QuartzDust, "quartz_dust");
 	    }
 	    // Pickaxe
 	    if (ConfigHandler.BirthdayPickaxe){
 	    	BirthdayPickaxe = new BirthdayPickaxe(BIRTHDAY);
-			registerItem(BirthdayPickaxe, "BirthdayPickaxe");
+			registerItem(BirthdayPickaxe, "birthday_pickaxe");
 		}
 	    // Misc Items
 	    if (ConfigHandler.MyceliumSeeds){
 	    	MyceliumSeeds = new MyceliumSeeds();
-	    	registerItem(MyceliumSeeds, "MyceliumSeeds");
+	    	registerItem(MyceliumSeeds, "mycelium_seeds");
 	    }
 	    if (ConfigHandler.DiamondApple){
 	    	DiamondApple = new DiamondApple(4, 1.2F, false);
-	    	registerItem(DiamondApple, "DiamondApple");
+	    	registerItem(DiamondApple, "diamond_apple");
 	    }
 	    if (ConfigHandler.EmeraldApple){
 	    	EmeraldApple = new EmeraldApple(4, 1.2F, false);
-	    	registerItem(EmeraldApple, "EmeraldApple");
+	    	registerItem(EmeraldApple, "emerald_apple");
 	    }
 	    if (ConfigHandler.MedKit){
 	    	MedKit = new MedKit();
-	    	registerItem(MedKit, "MedKit");
+	    	registerItem(MedKit, "med_kit");
 	    }
 	    // Stone Dust
 	    if (ConfigHandler.StoneDust){
-	    	StoneDust = new ItemBase().setUnlocalizedName("StoneDust");
-			registerItem(StoneDust, "StoneDust");
+	    	StoneDust = new ItemBase().setUnlocalizedName("stone_dust");
+			registerItem(StoneDust, "stone_dust");
 		}
 	    // Flint Armor Ingot
 	    if (ConfigHandler.FlintArmor){
-	    	FlintIngot = new ItemBase().setUnlocalizedName("FlintIngot");
-			registerItem(FlintIngot, "FlintIngot");
+	    	FlintIngot = new ItemBase().setUnlocalizedName("flint_ingot");
+			registerItem(FlintIngot, "flint_ingot");
 		}
 	    // Flint Knife
 	    if (ConfigHandler.FlintKnife){
 			FlintKnife = new FlintKnife();
-			registerItem(FlintKnife, "FlintKnife");
+			registerItem(FlintKnife, "flint_knife");
 	    }
 	}
 	

@@ -65,61 +65,61 @@ public class RenderHandler {
 	}
 	
 	public static void initItems(){
-		InventoryItemRender(TechItems.WateringCan, "WateringCan");
-		InventoryItemRender(TechItems.WateringCanUpgrade, "WateringCanUpgrade");
-		InventoryItemRender(TechItems.QuartzDust, "QuartzDust");
-		InventoryItemRender(TechItems.QuartzKnife, "QuartzKnife");
-		InventoryItemRender(TechItems.BirthdayPickaxe, "BirthdayPickaxe");
-		InventoryItemRender(TechItems.MyceliumSeeds, "MyceliumSeeds");
-		InventoryItemRender(TechItems.DiamondApple, "DiamondApple");
-		InventoryItemRender(TechItems.EmeraldApple, "EmeraldApple");
-		InventoryItemRender(TechItems.MedKit, "MedKit");	
-		InventoryItemRender(TechItems.StoneDust, "StoneDust");
-		InventoryItemRender(TechItems.FlintIngot, "FlintIngot");
-		InventoryItemRender(TechItems.FlintKnife, "FlintKnife");
+		InventoryItemRender(TechItems.WateringCan, "watering_can");
+		InventoryItemRender(TechItems.WateringCanUpgrade, "watering_can_upgrade");
+		InventoryItemRender(TechItems.QuartzDust, "quartz_dust");
+		InventoryItemRender(TechItems.QuartzKnife, "quartz_knife");
+		InventoryItemRender(TechItems.BirthdayPickaxe, "birthday_pickaxe");
+		InventoryItemRender(TechItems.MyceliumSeeds, "mycelium_seeds");
+		InventoryItemRender(TechItems.DiamondApple, "diamond_apple");
+		InventoryItemRender(TechItems.EmeraldApple, "emerald_apple");
+		InventoryItemRender(TechItems.MedKit, "med_kit");
+		InventoryItemRender(TechItems.StoneDust, "stone_dust");
+		InventoryItemRender(TechItems.FlintIngot, "flint_ingot");
+		InventoryItemRender(TechItems.FlintKnife, "flint_knife");
 	}
 	
 	public static void initTools(){
-		InventoryItemRender(TechTools.BoneAxe, "BoneAxe");
+		InventoryItemRender(TechTools.BoneAxe, "bone_axe");
 		//InventoryItemRender(TechTools.BoneAxeHead, "BoneAxeHead");
-		InventoryItemRender(TechTools.BoneHoe, "BoneHoe");
+		InventoryItemRender(TechTools.BoneHoe, "bone_hoe");
 		//InventoryItemRender(TechTools.BoneHoeHead, "BoneHoeHead");
-		InventoryItemRender(TechTools.BonePickaxe, "BonePickaxe");
+		InventoryItemRender(TechTools.BonePickaxe, "bone_pickaxe");
 		//InventoryItemRender(TechTools.BonePickaxeHead, "BonePickaxeHead");
-		InventoryItemRender(TechTools.BoneSpade, "BoneSpade");
+		InventoryItemRender(TechTools.BoneSpade, "bone_spade");
 		//InventoryItemRender(TechTools.BoneSpadeHead, "BoneSpadeHead");
-		InventoryItemRender(TechTools.BoneSword, "BoneSword");
+		InventoryItemRender(TechTools.BoneSword, "bone_sword");
 		//InventoryItemRender(TechTools.BoneSwordHead, "BoneSwordHead");
-		InventoryItemRender(TechTools.FlintAxe, "FlintAxe");
+		InventoryItemRender(TechTools.FlintAxe, "flint_axe");
 		//InventoryItemRender(TechTools.FlintAxeHead, "FlintAxeHead");
-		InventoryItemRender(TechTools.FlintHoe, "FlintHoe");
+		InventoryItemRender(TechTools.FlintHoe, "flint_hoe");
 		//InventoryItemRender(TechTools.FlintHoeHead, "FlintHoeHead");
-		InventoryItemRender(TechTools.FlintPickaxe, "FlintPickaxe");
+		InventoryItemRender(TechTools.FlintPickaxe, "flint_pickaxe");
 		//InventoryItemRender(TechTools.FlintPickaxeHead, "FlintPickaxeHead");
-		InventoryItemRender(TechTools.FlintSpade, "FlintSpade");
+		InventoryItemRender(TechTools.FlintSpade, "flint_spade");
 		//InventoryItemRender(TechTools.FlintSpadeHead, "FlintSpadeHead");
-		InventoryItemRender(TechTools.FlintSword, "FlintSword");
+		InventoryItemRender(TechTools.FlintSword, "flint_sword");
 		//InventoryItemRender(TechTools.FlintSwordHead, "FlintSwordHead");
-		InventoryItemRender(TechTools.WoodenPaxel, "WoodenPaxel");
-		InventoryItemRender(TechTools.StonePaxel, "StonePaxel");
-		InventoryItemRender(TechTools.GoldenPaxel, "GoldenPaxel");
-		InventoryItemRender(TechTools.IronPaxel, "IronPaxel");
-		InventoryItemRender(TechTools.DiamondPaxel, "DiamondPaxel");
+		InventoryItemRender(TechTools.WoodenPaxel, "wooden_paxel");
+		InventoryItemRender(TechTools.StonePaxel, "stone_paxel");
+		InventoryItemRender(TechTools.GoldenPaxel, "golden_paxel");
+		InventoryItemRender(TechTools.IronPaxel, "iron_paxel");
+		InventoryItemRender(TechTools.DiamondPaxel, "diamond_paxel");
 	}
 	
 	public static void initArmor(){
-		InventoryItemRender(TechArmor.stoneHelmet, "stoneHelmet");
-		InventoryItemRender(TechArmor.stoneChestplate, "stoneChestplate");
-		InventoryItemRender(TechArmor.stoneLeggings, "stoneLeggings");
-		InventoryItemRender(TechArmor.stoneBoots, "stoneBoots");
-		InventoryItemRender(TechArmor.flintHelmet, "flintHelmet");
-		InventoryItemRender(TechArmor.flintChestplate, "flintChestplate");
-		InventoryItemRender(TechArmor.flintLeggings, "flintLeggings");
-		InventoryItemRender(TechArmor.flintBoots, "flintBoots");
-		InventoryItemRender(TechArmor.boneHelmet, "boneHelmet");
-		InventoryItemRender(TechArmor.boneChestplate, "boneChestplate");
-		InventoryItemRender(TechArmor.boneLeggings, "boneLeggings");
-		InventoryItemRender(TechArmor.boneBoots, "boneBoots");
+		InventoryItemRender(TechArmor.stoneHelmet, "stone_helmet");
+		InventoryItemRender(TechArmor.stoneChestplate, "stone_chestplate");
+		InventoryItemRender(TechArmor.stoneLeggings, "stone_leggings");
+		InventoryItemRender(TechArmor.stoneBoots, "stone_boots");
+		InventoryItemRender(TechArmor.flintHelmet, "flint_helmet");
+		InventoryItemRender(TechArmor.flintChestplate, "flint_chestplate");
+		InventoryItemRender(TechArmor.flintLeggings, "flint_leggings");
+		InventoryItemRender(TechArmor.flintBoots, "flint_boots");
+		InventoryItemRender(TechArmor.boneHelmet, "bone_helmet");
+		InventoryItemRender(TechArmor.boneChestplate, "bone_chestplate");
+		InventoryItemRender(TechArmor.boneLeggings, "bone_leggings");
+		InventoryItemRender(TechArmor.boneBoots, "bone_boots");
 	}
 	
 	public static void InventoryBlockRender(Block block, String blockName) {

@@ -20,7 +20,7 @@ public class QuartzKnife extends Item {
 		this.setMaxDamage(ConfigHandler.QuartzKnifeDamage);
 		super.setContainerItem(this);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("QuartzKnife");
+		this.setUnlocalizedName("quartz_knife");
 	}
 	
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)

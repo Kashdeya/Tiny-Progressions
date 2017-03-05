@@ -1,7 +1,5 @@
 package com.kashdeya.tinyprogressions.items;
 
-import java.util.List;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -9,11 +7,13 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.List;
+
 public class WateringCanUpgrade extends WateringCanBase {
 	
 	public WateringCanUpgrade(){
 		super();
-		this.setUnlocalizedName("WateringCanUpgrade");
+		this.setUnlocalizedName("watering_can_upgrade");
 		this.setWateringRange(2);
 		this.setWateringChance(75);
 	}

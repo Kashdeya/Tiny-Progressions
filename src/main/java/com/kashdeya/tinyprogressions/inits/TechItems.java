@@ -91,6 +91,8 @@ public class TechItems {
 	
 	static void registerItem(Item item, String name){
 	    GameRegistry.register(item, new ResourceLocation(Reference.MOD_ID + ":" + name));
+
+	    TPMigration.addUnderscoreNameToMapUnderscorelessName(name);
 	}
 
 }

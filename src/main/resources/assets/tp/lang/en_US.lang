@@ -16,7 +16,7 @@ tile.dirty_glass.name=Dirty Glass
 tile.diorite_brick.name=Diorite Brick
 tile.granite_brick.name=Granite Brick
 tile.andesite_brick.name=Andesite Brick
-tile.smooth_end_stone.name=Smooth EndStone
+tile.smooth_end_stone.name=Smooth End Stone
 
 #Reinforced Blocks
 tile.reinforced_glass.name=Reinforced Glass
@@ -45,10 +45,10 @@ item.birthday_pickaxe.name=Party Pickaxe
 itemGroup.tiny_progressions=Tiny Progressions
 
 #Armor
-item.stone_helmet.name=Stone Helmet
-item.stone_chestplate.name=Stone Chestplate
-item.stone_leggings.name=Stone Leggings
-item.stone_boots.name=Stone Boots
+item.stoneHelmet.name=Stone Helmet
+item.stoneChestplate.name=Stone Chestplate
+item.stoneLeggings.name=Stone Leggings
+item.stoneBoots.name=Stone Boots
 
 #MISC
 item.mycelium_seeds.name=Mycelium Seed
@@ -81,10 +81,10 @@ item.iron_paxel.name=Iron Paxel
 item.diamond_paxel.name=Diamond Paxel
 
 #Flint Armor
-item.flint_helmet.name=Flint Helmet
-item.flint_chestplate.name=Flint Chestplate
-item.flint_leggings.name=Flint Leggings
-item.flint_boots.name=Flint Boots
+item.flintHelmet.name=Flint Helmet
+item.flintChestplate.name=Flint Chestplate
+item.flintLeggings.name=Flint Leggings
+item.flintBoots.name=Flint Boots
 
 #Bone Block
 tile.bone_block.name=Compressed Bone Block
@@ -102,10 +102,10 @@ item.bone_sword_head.name=Bone Sword Blade
 item.bone_hoe_head.name=Bone Hoe Head
 
 #Bone Armor
-item.bone_helmet.name=Bone Helmet
-item.bone_chestplate.name=Bone Chestplate
-item.bone_leggings.name=Bone Leggings
-item.bone_boots.name=Bone Boots
+item.boneHelmet.name=Bone Helmet
+item.boneChestplate.name=Bone Chestplate
+item.boneLeggings.name=Bone Leggings
+item.boneBoots.name=Bone Boots
 
 #Cobblegen
 tooltip.cobblegen_1=Only Holds 32 Blocks!

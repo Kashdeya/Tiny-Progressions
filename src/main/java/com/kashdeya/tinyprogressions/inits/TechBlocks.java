@@ -134,6 +134,8 @@ public class TechBlocks {
 		if (itemblock){
 			GameRegistry.register(new ItemBlock(block), new ResourceLocation(Reference.MOD_ID + ":" + name));
 		}
+
+		TPMigration.addUnderscoreNameToMapUnderscorelessName(name);
 	}
 
 }

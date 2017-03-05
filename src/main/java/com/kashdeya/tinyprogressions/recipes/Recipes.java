@@ -131,7 +131,7 @@ public class Recipes {
 		
 		if (ConfigHandler.BirthdayPickaxe){
 			ItemStack BirthdayPickaxe;
-			BirthdayPickaxe  = new ItemStack(TechItems.BirthdayPickaxe);
+			BirthdayPickaxe  = new ItemStack(TechTools.BirthdayPickaxe);
 			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 2);
 			GameRegistry.addRecipe(new ShapedOreRecipe(BirthdayPickaxe, "rdr", " i ", " i ", 'r', "blockReinforcedObsidian", 'i', "stickWood", 'd', "gemDiamond"));
 		}

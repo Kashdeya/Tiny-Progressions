@@ -1,17 +1,16 @@
 package com.kashdeya.tinyprogressions.configs;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class TinyConfig {
 	
@@ -121,10 +120,7 @@ public class TinyConfig {
 		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
 		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
 		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
-		
-		config.addCustomCategoryComment(category + " Paxels", "Because People Love Multi Tools");
-		ConfigHandler.EnablePaxels = config.getBoolean("Paxels", category + " Paxels", true, "Enable paxels?");
-		
+
 		if (config.hasChanged())
         config.save();    
 	}

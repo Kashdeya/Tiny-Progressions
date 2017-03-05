@@ -66,11 +66,7 @@ item.flint_spade.name=Flint Shovel
 item.flint_axe.name=Flint Axe
 item.flint_sword.name=Flint Sword
 item.flint_hoe.name=Flint Hoe
-item.flint_pickaxe_head.name=Flint Pickaxe Head
-item.flint_spade_head.name=Flint Shovel Head
-item.flint_axe_head.name=Flint Axe Head
 item.flint_sword_head.name=Flint Sword Blade
-item.flint_hoe_head.name=Flint Hoe Head
 item.flint_knife.name=Flint Knife
 
 # Paxels
@@ -95,11 +91,6 @@ item.bone_spade.name=Bone Shovel
 item.bone_axe.name=Bone Axe
 item.bone_sword.name=Bone Sword
 item.bone_hoe.name=Bone Hoe
-item.bone_pickaxe_head.name=Bone Pickaxe Head
-item.bone_spade_head.name=Bone Shovel Head
-item.bone_axe_head.name=Bone Axe Head
-item.bone_sword_head.name=Bone Sword Blade
-item.bone_hoe_head.name=Bone Hoe Head
 
 #Bone Armor
 item.boneHelmet.name=Bone Helmet

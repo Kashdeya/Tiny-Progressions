@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.armor;
 
-import java.util.List;
-
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -16,8 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.List;
 
 public class StoneArmor extends ItemArmor {
 	
@@ -38,9 +37,8 @@ public class StoneArmor extends ItemArmor {
     }
     
     @Override
-    @SideOnly(Side.SERVER)
     public void onArmorTick(World world, EntityPlayer entity, ItemStack itemStack) {
-    	if (entity instanceof EntityLivingBase)
+    	if (!world.isRemote && entity instanceof EntityLivingBase)
     		if (entity.inventory.armorItemInSlot(3) != null && entity.inventory.armorItemInSlot(3).getItem() == TechArmor.stoneHelmet){
     			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
     	else if (entity.inventory.armorItemInSlot(2) != null && entity.inventory.armorItemInSlot(2).getItem() == TechArmor.stoneChestplate){

@@ -69,7 +69,6 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.WateringCanUpgrade, "watering_can_upgrade");
 		InventoryItemRender(TechItems.QuartzDust, "quartz_dust");
 		InventoryItemRender(TechItems.QuartzKnife, "quartz_knife");
-		InventoryItemRender(TechItems.BirthdayPickaxe, "birthday_pickaxe");
 		InventoryItemRender(TechItems.MyceliumSeeds, "mycelium_seeds");
 		InventoryItemRender(TechItems.DiamondApple, "diamond_apple");
 		InventoryItemRender(TechItems.EmeraldApple, "emerald_apple");
@@ -81,30 +80,16 @@ public class RenderHandler {
 	
 	public static void initTools(){
 		InventoryItemRender(TechTools.BoneAxe, "bone_axe");
-		//InventoryItemRender(TechTools.BoneAxeHead, "BoneAxeHead");
 		InventoryItemRender(TechTools.BoneHoe, "bone_hoe");
-		//InventoryItemRender(TechTools.BoneHoeHead, "BoneHoeHead");
 		InventoryItemRender(TechTools.BonePickaxe, "bone_pickaxe");
-		//InventoryItemRender(TechTools.BonePickaxeHead, "BonePickaxeHead");
 		InventoryItemRender(TechTools.BoneSpade, "bone_spade");
-		//InventoryItemRender(TechTools.BoneSpadeHead, "BoneSpadeHead");
 		InventoryItemRender(TechTools.BoneSword, "bone_sword");
-		//InventoryItemRender(TechTools.BoneSwordHead, "BoneSwordHead");
 		InventoryItemRender(TechTools.FlintAxe, "flint_axe");
-		//InventoryItemRender(TechTools.FlintAxeHead, "FlintAxeHead");
 		InventoryItemRender(TechTools.FlintHoe, "flint_hoe");
-		//InventoryItemRender(TechTools.FlintHoeHead, "FlintHoeHead");
 		InventoryItemRender(TechTools.FlintPickaxe, "flint_pickaxe");
-		//InventoryItemRender(TechTools.FlintPickaxeHead, "FlintPickaxeHead");
 		InventoryItemRender(TechTools.FlintSpade, "flint_spade");
-		//InventoryItemRender(TechTools.FlintSpadeHead, "FlintSpadeHead");
 		InventoryItemRender(TechTools.FlintSword, "flint_sword");
-		//InventoryItemRender(TechTools.FlintSwordHead, "FlintSwordHead");
-		InventoryItemRender(TechTools.WoodenPaxel, "wooden_paxel");
-		InventoryItemRender(TechTools.StonePaxel, "stone_paxel");
-		InventoryItemRender(TechTools.GoldenPaxel, "golden_paxel");
-		InventoryItemRender(TechTools.IronPaxel, "iron_paxel");
-		InventoryItemRender(TechTools.DiamondPaxel, "diamond_paxel");
+		InventoryItemRender(TechTools.BirthdayPickaxe, "birthday_pickaxe");
 	}
 	
 	public static void initArmor(){

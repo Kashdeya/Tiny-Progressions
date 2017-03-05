@@ -1,15 +1,14 @@
 package com.kashdeya.tinyprogressions.blocks;
 
-import java.util.Random;
-
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.world.Explosion;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.Random;
 
 public class CharcoalBlock extends Block{
 	
@@ -21,7 +20,7 @@ public class CharcoalBlock extends Block{
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(blockSoundType.STONE);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("CharcoalBlock");
+		this.setUnlocalizedName("charcoal_block");
 	}
 	
 	/**

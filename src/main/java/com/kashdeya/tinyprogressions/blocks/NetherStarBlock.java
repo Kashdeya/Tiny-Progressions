@@ -1,8 +1,7 @@
 package com.kashdeya.tinyprogressions.blocks;
 
-import java.util.List;
-import java.util.Random;
-
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -21,8 +20,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.List;
+import java.util.Random;
 
 public class NetherStarBlock extends Block {
 	
@@ -36,7 +35,7 @@ public class NetherStarBlock extends Block {
 		this.setLightOpacity(1);
 		this.setSoundType(blockSoundType.STONE);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("NetherStarBlock");
+		this.setUnlocalizedName("nether_star_block");
 	}
 	
 	@SideOnly(Side.CLIENT)

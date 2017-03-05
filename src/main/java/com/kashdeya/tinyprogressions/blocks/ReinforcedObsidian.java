@@ -1,7 +1,6 @@
 package com.kashdeya.tinyprogressions.blocks;
 
-import java.util.List;
-
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -19,7 +18,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.List;
 
 public class ReinforcedObsidian extends Block {
 	
@@ -31,7 +30,7 @@ public class ReinforcedObsidian extends Block {
         this.setHarvestLevel("pickaxe", 2);
         this.setSoundType(blockSoundType.ANVIL);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("ReinforcedObsidian");
+        this.setUnlocalizedName("reinforced_obsidian");
     }
 	
 	@Override

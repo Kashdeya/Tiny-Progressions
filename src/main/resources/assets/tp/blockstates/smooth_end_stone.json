@@ -3,10 +3,10 @@
     "variants": {
         "inventory": [
             {
-                "model": "tp:cobblegen_block",
+                "model": "tp:smooth_end_stone",
                 "transform": "forge:default-block"
             }
         ],
-        "normal": {"model": "tp:cobblegen_block"}
+        "normal": {"model": "tp:smooth_end_stone"}
     }
 }

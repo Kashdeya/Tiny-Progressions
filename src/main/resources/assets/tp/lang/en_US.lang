@@ -11,22 +11,22 @@ tile.growth_upgrade.name=Growth Crystal Tier 2
 tile.growth_upgrade_two.name=Growth Crystal Tier 3
 
 #Deco Blocks
-tile.CharcoalBlock.name=Charcoal Block
-tile.DirtyGlass.name=Dirty Glass
-tile.DioriteBrick.name=Diorite Brick
-tile.GraniteBrick.name=Granite Brick
-tile.AndesiteBrick.name=Andesite Brick
-tile.SmoothEndStone.name=Smooth EndStone
+tile.charcoal_block.name=Charcoal Block
+tile.dirty_glass.name=Dirty Glass
+tile.diorite_brick.name=Diorite Brick
+tile.granite_brick.name=Granite Brick
+tile.andesite_brick.name=Andesite Brick
+tile.smooth_end_stone.name=Smooth EndStone
 
 #Reinforced Blocks
-tile.ReinforcedGlass.name=Reinforced Glass
-tile.ReinforcedObsidian.name=Reinforced Obsidian
+tile.reinforced_glass.name=Reinforced Glass
+tile.reinforced_obsidian.name=Reinforced Obsidian
 
 #Compressed Blocks
-tile.FleshBlock.name=Compressed Flesh Block
-tile.BoneBlock.name=Compressed Bone Block
-tile.NetherStarBlock.name=Compressed Nether Star Block
-tile.FlintBlock.name=Compressed Flint Block
+tile.flesh_block.name=Compressed Flesh Block
+tile.bone_block.name=Compressed Bone Block
+tile.nether_star_block.name=Compressed Nether Star Block
+tile.flint_block.name=Compressed Flint Block
 
 #Tech Items
 item.WateringCan.name=Watering Can

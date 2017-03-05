@@ -11,7 +11,6 @@ import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.properties.IProperty;
@@ -44,18 +43,18 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.diamond_cobblegen_block, "diamond_cobblegen_block");
 	    InventoryBlockRender(TechBlocks.emerald_cobblegen_block, "emerald_cobblegen_block");
 	    InventoryBlockRender(TechBlocks.blaze_cobblegen_block, "blaze_cobblegen_block");
-	    InventoryBlockRender(TechBlocks.CharcoalBlock, "CharcoalBlock");
-	    InventoryBlockRender(TechBlocks.FleshBlock, "FleshBlock");
-	    InventoryBlockRender(TechBlocks.ReinforcedGlass, "ReinforcedGlass");
-	    InventoryBlockRender(TechBlocks.ReinforcedObsidian, "ReinforcedObsidian");
-	    InventoryBlockRender(TechBlocks.BoneBlock, "BoneBlock");
-	    InventoryBlockRender(TechBlocks.DirtyGlass, "DirtyGlass");
-	    InventoryBlockRender(TechBlocks.GraniteBrick, "GraniteBrick");
-	    InventoryBlockRender(TechBlocks.DioriteBrick, "DioriteBrick");
-	    InventoryBlockRender(TechBlocks.AndesiteBrick, "AndesiteBrick");
-	    InventoryBlockRender(TechBlocks.NetherStarBlock, "NetherStarBlock");
-	    InventoryBlockRender(TechBlocks.FlintBlock, "FlintBlock");
-	    InventoryBlockRender(TechBlocks.SmoothEndStone, "SmoothEndStone");
+	    InventoryBlockRender(TechBlocks.CharcoalBlock, "charcoal_block");
+	    InventoryBlockRender(TechBlocks.FleshBlock, "flesh_block");
+	    InventoryBlockRender(TechBlocks.ReinforcedGlass, "reinforced_glass");
+	    InventoryBlockRender(TechBlocks.ReinforcedObsidian, "reinforced_obsidian");
+	    InventoryBlockRender(TechBlocks.BoneBlock, "bone_block");
+	    InventoryBlockRender(TechBlocks.DirtyGlass, "dirty_glass");
+	    InventoryBlockRender(TechBlocks.GraniteBrick, "granite_brick");
+	    InventoryBlockRender(TechBlocks.DioriteBrick, "diorite_brick");
+	    InventoryBlockRender(TechBlocks.AndesiteBrick, "andesite_brick");
+	    InventoryBlockRender(TechBlocks.NetherStarBlock, "nether_star_block");
+	    InventoryBlockRender(TechBlocks.FlintBlock, "flint_block");
+	    InventoryBlockRender(TechBlocks.SmoothEndStone, "smooth_end_stone");
 	}
 	
 	public static void initBlockRenders(){

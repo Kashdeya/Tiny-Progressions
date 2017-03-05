@@ -23,8 +23,8 @@
         }
     ],
     "textures": {
-        "particle": "tp:blocks/NetherStarBlockBackground",
-        "t1": "tp:blocks/NetherStarBlockBackground",
-        "t2": "tp:blocks/NetherStarBlock"
+        "particle": "tp:blocks/nether_star_block_background",
+        "t1": "tp:blocks/nether_star_block_background",
+        "t2": "tp:blocks/nether_star_block"
     }
 }

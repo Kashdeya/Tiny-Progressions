@@ -3,10 +3,10 @@
     "variants": {
         "inventory": [
             {
-                "model": "tp:cobblegen_block",
+                "model": "tp:diorite_brick",
                 "transform": "forge:default-block"
             }
         ],
-        "normal": {"model": "tp:cobblegen_block"}
+        "normal": {"model": "tp:diorite_brick"}
     }
 }

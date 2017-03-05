@@ -1,32 +1,12 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import com.kashdeya.tinyprogressions.blocks.*;
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.main.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import com.kashdeya.tinyprogressions.blocks.AndesiteBrick;
-import com.kashdeya.tinyprogressions.blocks.BlazeCobblegen;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowth;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgrade;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgradeTwo;
-import com.kashdeya.tinyprogressions.blocks.BoneBlock;
-import com.kashdeya.tinyprogressions.blocks.CharcoalBlock;
-import com.kashdeya.tinyprogressions.blocks.Cobblegen;
-import com.kashdeya.tinyprogressions.blocks.DiamondCobblegen;
-import com.kashdeya.tinyprogressions.blocks.DioriteBrick;
-import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
-import com.kashdeya.tinyprogressions.blocks.EmeraldCobblegen;
-import com.kashdeya.tinyprogressions.blocks.FleshBlock;
-import com.kashdeya.tinyprogressions.blocks.FlintBlock;
-import com.kashdeya.tinyprogressions.blocks.GraniteBrick;
-import com.kashdeya.tinyprogressions.blocks.IronCobblegen;
-import com.kashdeya.tinyprogressions.blocks.NetherStarBlock;
-import com.kashdeya.tinyprogressions.blocks.ReinforcedGlass;
-import com.kashdeya.tinyprogressions.blocks.ReinforcedObsidian;
-import com.kashdeya.tinyprogressions.blocks.SmoothEndStone;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.Reference;
 
 public class TechBlocks {
 	
@@ -95,57 +75,57 @@ public class TechBlocks {
 		// Deco Blocks
 		if (ConfigHandler.CharcoalBlock){
 			CharcoalBlock = new CharcoalBlock();
-			registerBlock(CharcoalBlock, "CharcoalBlock", true);
+			registerBlock(CharcoalBlock, "charcoal_block", true);
 		}
 		if (ConfigHandler.ReinforcedGlass){
 			ReinforcedGlass = new ReinforcedGlass();
-			registerBlock(ReinforcedGlass, "ReinforcedGlass", true);
+			registerBlock(ReinforcedGlass, "reinforced_glass", true);
 		}
 		if (ConfigHandler.ReinforcedObsidian){
 			ReinforcedObsidian = new ReinforcedObsidian();
-			registerBlock(ReinforcedObsidian, "ReinforcedObsidian", true);
+			registerBlock(ReinforcedObsidian, "reinforced_obsidian", true);
 		}
 		if (ConfigHandler.DirtyGlass){
 			DirtyGlass = new DirtyGlass();
-			registerBlock(DirtyGlass, "DirtyGlass", true);
+			registerBlock(DirtyGlass, "dirty_glass", true);
 		}
 		
 		// Compressed Blocks
 		if (ConfigHandler.FleshBlock){
 			FleshBlock = new FleshBlock();
-			registerBlock(FleshBlock, "FleshBlock", true);
+			registerBlock(FleshBlock, "flesh_block", true);
 		}
 		if (ConfigHandler.BoneBlock){
 			BoneBlock = new BoneBlock();
-			registerBlock(BoneBlock, "BoneBlock", true);
+			registerBlock(BoneBlock, "bone_block", true);
 		}
 		if (ConfigHandler.NetherStarBlock){
 			NetherStarBlock = new NetherStarBlock();
-			registerBlock(NetherStarBlock, "NetherStarBlock", true);
+			registerBlock(NetherStarBlock, "nether_star_block", true);
 		}
 		if (ConfigHandler.DioriteBrick){
 			DioriteBrick = new DioriteBrick();
-			registerBlock(DioriteBrick, "DioriteBrick", true);
+			registerBlock(DioriteBrick, "diorite_brick", true);
 		}
 		if (ConfigHandler.GraniteBrick){
 			GraniteBrick = new GraniteBrick();
-			registerBlock(GraniteBrick, "GraniteBrick", true);
+			registerBlock(GraniteBrick, "granite_brick", true);
 		}
 		if (ConfigHandler.AndesiteBrick){
 			AndesiteBrick = new AndesiteBrick();
-			registerBlock(AndesiteBrick, "AndesiteBrick", true);
+			registerBlock(AndesiteBrick, "andesite_brick", true);
 		}
 		
 		// Flint Block
 		if (ConfigHandler.FlintBlock){
 			FlintBlock = new FlintBlock();
-			registerBlock(FlintBlock, "FlintBlock", true);
+			registerBlock(FlintBlock, "flint_block", true);
 		}
 		
 		// Smooth EndStone
 		if (ConfigHandler.SmoothEndStone){
 			SmoothEndStone = new SmoothEndStone();
-			registerBlock(SmoothEndStone, "SmoothEndStone", true);
+			registerBlock(SmoothEndStone, "smooth_end_stone", true);
 		}
 	}
 	

@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "tp:blocks/AndesiteBrick"
+        "all": "tp:blocks/reinforced_glass"
     }
 }

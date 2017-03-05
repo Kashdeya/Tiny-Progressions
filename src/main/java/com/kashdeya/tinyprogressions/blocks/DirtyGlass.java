@@ -1,7 +1,6 @@
 package com.kashdeya.tinyprogressions.blocks;
 
-import java.util.Random;
-
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -10,7 +9,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.Random;
 
 public class DirtyGlass extends BlockGlass
 {
@@ -20,7 +19,7 @@ public class DirtyGlass extends BlockGlass
         this.setHardness(0.3F);
         this.setSoundType(blockSoundType.GLASS);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("DirtyGlass");
+        this.setUnlocalizedName("dirty_glass");
     }
     
     @SideOnly(Side.CLIENT)

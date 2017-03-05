@@ -3,10 +3,10 @@
     "variants": {
         "inventory": [
             {
-                "model": "tp:cobblegen_block",
+                "model": "tp:flesh_block",
                 "transform": "forge:default-block"
             }
         ],
-        "normal": {"model": "tp:cobblegen_block"}
+        "normal": {"model": "tp:flesh_block"}
     }
 }

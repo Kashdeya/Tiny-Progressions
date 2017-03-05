@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "tp:blocks/BoneBlock"
+        "all": "tp:blocks/dirty_glass"
     }
 }

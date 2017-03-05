@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.handlers;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;

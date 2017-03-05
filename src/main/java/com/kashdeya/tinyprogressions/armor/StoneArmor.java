@@ -38,9 +38,8 @@ public class StoneArmor extends ItemArmor {
     }
     
     @Override
-    @SideOnly(Side.SERVER)
     public void onArmorTick(World world, EntityPlayer entity, ItemStack itemStack) {
-    	if (entity instanceof EntityLivingBase)
+    	if (!world.isRemote && entity instanceof EntityLivingBase)
     		if (entity.inventory.armorItemInSlot(3) != null && entity.inventory.armorItemInSlot(3).getItem() == TechArmor.stoneHelmet){
     			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
     	else if (entity.inventory.armorItemInSlot(2) != null && entity.inventory.armorItemInSlot(2).getItem() == TechArmor.stoneChestplate){

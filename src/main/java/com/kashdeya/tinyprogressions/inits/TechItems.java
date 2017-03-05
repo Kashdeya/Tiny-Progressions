@@ -1,7 +1,10 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.DiamondApple;
 import com.kashdeya.tinyprogressions.items.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
@@ -13,11 +16,6 @@ import com.kashdeya.tinyprogressions.items.WateringCan;
 import com.kashdeya.tinyprogressions.items.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.main.Reference;
 
-import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 public class TechItems {
 	
 	// Watering Cans
@@ -26,8 +24,6 @@ public class TechItems {
 	// Quartz Items
 	public static Item QuartzKnife;
 	public static Item QuartzDust;
-	// Pickaxe
-	public static Item BirthdayPickaxe;
 	// Misc Items
 	public static Item MyceliumSeeds;
 	public static Item DiamondApple;
@@ -39,8 +35,6 @@ public class TechItems {
 	public static Item FlintIngot;
 	// Flint Knife
 	public static Item FlintKnife;
-	
-	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 45.0F, 4.0F, 25);
 	
 	public static void init(){
 		
@@ -60,11 +54,6 @@ public class TechItems {
 	    	QuartzDust = new ItemBase().setUnlocalizedName("QuartzDust");
 	    	registerItem(QuartzDust, "QuartzDust");
 	    }
-	    // Pickaxe
-	    if (ConfigHandler.BirthdayPickaxe){
-	    	BirthdayPickaxe = new BirthdayPickaxe(BIRTHDAY);
-			registerItem(BirthdayPickaxe, "BirthdayPickaxe");
-		}
 	    // Misc Items
 	    if (ConfigHandler.MyceliumSeeds){
 	    	MyceliumSeeds = new MyceliumSeeds();

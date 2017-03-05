@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.client.render;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -13,6 +10,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 
 @SideOnly(Side.CLIENT)
 public class TileEntityGrowthUpgradeTwoRenderer extends TileEntitySpecialRenderer<TileEntityGrowthUpgradeTwo> {

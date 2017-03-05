@@ -1,5 +1,16 @@
 package com.kashdeya.tinyprogressions.handlers;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRenderer;
@@ -11,17 +22,6 @@ import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderHandler {
@@ -70,7 +70,6 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.WateringCanUpgrade, "WateringCanUpgrade");
 		InventoryItemRender(TechItems.QuartzDust, "QuartzDust");
 		InventoryItemRender(TechItems.QuartzKnife, "QuartzKnife");
-		InventoryItemRender(TechItems.BirthdayPickaxe, "BirthdayPickaxe");
 		InventoryItemRender(TechItems.MyceliumSeeds, "MyceliumSeeds");
 		InventoryItemRender(TechItems.DiamondApple, "DiamondApple");
 		InventoryItemRender(TechItems.EmeraldApple, "EmeraldApple");
@@ -82,30 +81,16 @@ public class RenderHandler {
 	
 	public static void initTools(){
 		InventoryItemRender(TechTools.BoneAxe, "BoneAxe");
-		//InventoryItemRender(TechTools.BoneAxeHead, "BoneAxeHead");
 		InventoryItemRender(TechTools.BoneHoe, "BoneHoe");
-		//InventoryItemRender(TechTools.BoneHoeHead, "BoneHoeHead");
 		InventoryItemRender(TechTools.BonePickaxe, "BonePickaxe");
-		//InventoryItemRender(TechTools.BonePickaxeHead, "BonePickaxeHead");
 		InventoryItemRender(TechTools.BoneSpade, "BoneSpade");
-		//InventoryItemRender(TechTools.BoneSpadeHead, "BoneSpadeHead");
 		InventoryItemRender(TechTools.BoneSword, "BoneSword");
-		//InventoryItemRender(TechTools.BoneSwordHead, "BoneSwordHead");
 		InventoryItemRender(TechTools.FlintAxe, "FlintAxe");
-		//InventoryItemRender(TechTools.FlintAxeHead, "FlintAxeHead");
 		InventoryItemRender(TechTools.FlintHoe, "FlintHoe");
-		//InventoryItemRender(TechTools.FlintHoeHead, "FlintHoeHead");
 		InventoryItemRender(TechTools.FlintPickaxe, "FlintPickaxe");
-		//InventoryItemRender(TechTools.FlintPickaxeHead, "FlintPickaxeHead");
 		InventoryItemRender(TechTools.FlintSpade, "FlintSpade");
-		//InventoryItemRender(TechTools.FlintSpadeHead, "FlintSpadeHead");
 		InventoryItemRender(TechTools.FlintSword, "FlintSword");
-		//InventoryItemRender(TechTools.FlintSwordHead, "FlintSwordHead");
-		InventoryItemRender(TechTools.WoodenPaxel, "WoodenPaxel");
-		InventoryItemRender(TechTools.StonePaxel, "StonePaxel");
-		InventoryItemRender(TechTools.GoldenPaxel, "GoldenPaxel");
-		InventoryItemRender(TechTools.IronPaxel, "IronPaxel");
-		InventoryItemRender(TechTools.DiamondPaxel, "DiamondPaxel");
+		InventoryItemRender(TechTools.BirthdayPickaxe, "BirthdayPickaxe");
 	}
 	
 	public static void initArmor(){

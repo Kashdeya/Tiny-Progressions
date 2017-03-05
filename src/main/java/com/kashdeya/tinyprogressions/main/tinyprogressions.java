@@ -38,7 +38,7 @@ public class tinyprogressions {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-    	logger = e.getModLog();;
+    	logger = e.getModLog();
     	
 		// Configs
 		TinyConfig.initMainConfigs();

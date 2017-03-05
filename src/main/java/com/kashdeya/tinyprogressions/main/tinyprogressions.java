@@ -66,6 +66,9 @@ public class tinyprogressions {
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {}
 
+	/**
+	 * @author Ellpeck
+	 */
 	@EventHandler
 	public void missingMapping(FMLMissingMappingsEvent event){
 		int totalRemaps = 0;

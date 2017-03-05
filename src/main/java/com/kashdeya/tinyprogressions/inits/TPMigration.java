@@ -13,6 +13,7 @@ import java.util.Map;
 /**
  * This class handles the migration to MC 1.11 naming conventions.
  * This ensures worlds from MC 1.10 are still compatible.
+ * @author Ellpeck
  */
 public class TPMigration {
     private static final Map<String, String> UNDERSCORELESS_TO_UNDERSCORED_NAMES = new HashMap<String, String>();

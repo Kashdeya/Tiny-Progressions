@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.client.render;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelEnderCrystal;
@@ -12,15 +14,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
-
 @SideOnly(Side.CLIENT)
 public class TileEntityGrowthUpgradeRenderer extends TileEntitySpecialRenderer<TileEntityGrowthUpgrade> {
 
 	private static final ResourceLocation ENDER_CRYSTAL_TEXTURES = new ResourceLocation("textures/entity/endercrystal/endercrystal.png");
 	private final ModelBase modelEnderCrystalNoBase = new ModelEnderCrystal(0.0F, false);
-	private final Entity entity = EntityList.createEntityByName("EnderCrystal", (World)null);
+	private final Entity entity = EntityList.createEntityByIDFromName(new ResourceLocation("minecraft:EnderCrystal"), (World)null);
 
 	@Override
 	public void renderTileEntityAt(TileEntityGrowthUpgrade tile, double x, double y, double z, float partialTick, int destroyStage) {

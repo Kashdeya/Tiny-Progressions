@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.items;
 
-import java.util.Random;
-
+import com.kashdeya.tinyprogressions.handlers.CanHandler;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
 import net.minecraft.block.IGrowable;
@@ -20,8 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
-import com.kashdeya.tinyprogressions.handlers.CanHandler;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.Random;
 
 public class WateringCanBase extends Item {
 	
@@ -68,9 +67,10 @@ public class WateringCanBase extends Item {
 	    }
 	    
 	    int clicks = 0;
-	    @Override
-	    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	    {
+
+	@Override
+	public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			ItemStack stack = player.getHeldItem(hand);
 		    
 			if (!player.canPlayerEdit(pos.offset(facing), facing, stack)) 
 		    {
@@ -147,7 +147,7 @@ public class WateringCanBase extends Item {
 		                        igrowable.grow(worldIn, worldIn.rand, target, iblockstate);
 		                    }
 
-		                    stack.stackSize -= 1;
+		                    stack.shrink(1);
 		                }
 
 		                return true;

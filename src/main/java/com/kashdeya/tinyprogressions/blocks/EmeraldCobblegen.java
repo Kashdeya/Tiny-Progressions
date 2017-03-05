@@ -1,7 +1,8 @@
 package com.kashdeya.tinyprogressions.blocks;
 
-import java.util.List;
-
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
+import com.kashdeya.tinyprogressions.tiles.TileEntityEmeraldCobblegen;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -24,8 +25,7 @@ import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-import com.kashdeya.tinyprogressions.tiles.TileEntityEmeraldCobblegen;
+import java.util.List;
 
 public class EmeraldCobblegen extends Block implements ITileEntityProvider{
 
@@ -53,55 +53,58 @@ public class EmeraldCobblegen extends Block implements ITileEntityProvider{
     {
         return false;
     }
-	
+
 	@Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
-    {
-    	if(world.isRemote)
-    	{
-    		return true;
-    	}
-    	
-    	TileEntity tile = world.getTileEntity(pos);
-    	
-    	if(tile != null && tile instanceof TileEntityEmeraldCobblegen)
-    	{
-    		TileEntityEmeraldCobblegen ttest = (TileEntityEmeraldCobblegen)tile;
-    		
-    		if(!player.isSneaking())
-    		{
-        		ItemStack stack = ttest.removeStackFromSlot(0);
-        		
-	    		if(stack != null)
-	    		{
-		    		if(!player.inventory.addItemStackToInventory(stack))
-		    		{
-		    			//player.dropItem(stack, false);
-		    			ForgeHooks.onPlayerTossEvent(player, stack, false);
-		    		}
-	    		}
-    		} else
-    		{
-        		ItemStack stack = ttest.getStackInSlot(0);
-    			player.addChatComponentMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack == null? 0 : stack.stackSize)));
-    		}
-    	}
-    	
-        return true;
-    }
-    
-    @Override
-    public void breakBlock(World world, BlockPos pos, IBlockState state)
-    {
-        TileEntity tile = world.getTileEntity(pos);
-        
-        if (tile != null && tile instanceof TileEntityEmeraldCobblegen)
-        {
-            InventoryHelper.dropInventoryItems(world, pos, (TileEntityEmeraldCobblegen)tile);
-        }
-        
-        super.breakBlock(world, pos, state);
-    }
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
+	{
+		if(world.isRemote)
+		{
+			return true;
+		}
+
+		TileEntity tile = world.getTileEntity(pos);
+
+		if(tile != null && tile instanceof TileEntityCobblegen)
+		{
+			TileEntityCobblegen ttest = (TileEntityCobblegen)tile;
+
+			if(!player.isSneaking())
+			{
+				ItemStack stack = ttest.inv.extractItem(0, 64, false);
+
+				if(!stack.isEmpty())
+				{
+					if(!player.inventory.addItemStackToInventory(stack))
+					{
+						//player.dropItem(stack, false);
+						ForgeHooks.onPlayerTossEvent(player, stack, false);
+					}
+				}
+			} else
+			{
+				ItemStack stack = ttest.inv.getStackInSlot(0);
+				player.sendMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack.isEmpty() ? 0 : stack.getCount())));
+			}
+		}
+
+		return true;
+	}
+
+	@Override
+	public void breakBlock(World world, BlockPos pos, IBlockState state)
+	{
+		TileEntity tile = world.getTileEntity(pos);
+
+		if (tile != null && tile instanceof TileEntityCobblegen)
+		{
+			ItemStack s = ((TileEntityCobblegen)tile).inv.getStackInSlot(0);
+			if (!s.isEmpty()) {
+				InventoryHelper.spawnItemStack(world, pos.getX(), pos.getY(), pos.getZ(), s);
+			}
+		}
+
+		super.breakBlock(world, pos, state);
+	}
     
     @Override
 	public TileEntity createNewTileEntity(World worldIn, int meta)

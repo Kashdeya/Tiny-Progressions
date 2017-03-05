@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.blocks;
 
-import java.util.List;
-
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -24,8 +24,7 @@ import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
+import java.util.List;
 
 public class Cobblegen extends Block implements ITileEntityProvider{
 
@@ -55,7 +54,7 @@ public class Cobblegen extends Block implements ITileEntityProvider{
     }
 	
 	@Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
     {
     	if(world.isRemote)
     	{
@@ -70,9 +69,9 @@ public class Cobblegen extends Block implements ITileEntityProvider{
     		
     		if(!player.isSneaking())
     		{
-        		ItemStack stack = ttest.removeStackFromSlot(0);
+        		ItemStack stack = ttest.inv.extractItem(0, 64, false);
         		
-	    		if(stack != null)
+	    		if(!stack.isEmpty())
 	    		{
 		    		if(!player.inventory.addItemStackToInventory(stack))
 		    		{		    			
@@ -82,8 +81,8 @@ public class Cobblegen extends Block implements ITileEntityProvider{
 	    		}
     		} else
     		{
-        		ItemStack stack = ttest.getStackInSlot(0);
-    			player.addChatComponentMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack == null? 0 : stack.stackSize)));
+        		ItemStack stack = ttest.inv.getStackInSlot(0);
+    			player.sendMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack.isEmpty() ? 0 : stack.getCount())));
     		}
     	}
     	
@@ -97,7 +96,10 @@ public class Cobblegen extends Block implements ITileEntityProvider{
         
         if (tile != null && tile instanceof TileEntityCobblegen)
         {
-            InventoryHelper.dropInventoryItems(world, pos, (TileEntityCobblegen)tile);
+        	ItemStack s = ((TileEntityCobblegen)tile).inv.getStackInSlot(0);
+        	if (!s.isEmpty()) {
+				InventoryHelper.spawnItemStack(world, pos.getX(), pos.getY(), pos.getZ(), s);
+			}
         }
         
         super.breakBlock(world, pos, state);

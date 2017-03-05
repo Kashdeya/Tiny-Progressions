@@ -1,15 +1,5 @@
 package com.kashdeya.tinyprogressions.main;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
@@ -21,11 +11,20 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
 import com.kashdeya.tinyprogressions.tabs.TabTP;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
 public class tinyprogressions {
-	
+
 	@Instance(Reference.MOD_ID)
     public static tinyprogressions instance;
 	
@@ -38,7 +37,7 @@ public class tinyprogressions {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-    	logger = e.getModLog();;
+    	logger = e.getModLog();
     	
 		// Configs
 		TinyConfig.initMainConfigs();

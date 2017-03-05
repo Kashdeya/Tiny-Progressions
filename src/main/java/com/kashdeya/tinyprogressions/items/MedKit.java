@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.items;
 
-import java.util.List;
-
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -16,8 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import java.util.List;
 
 public class MedKit extends Item {
 	
@@ -29,14 +28,14 @@ public class MedKit extends Item {
 	  }
 	  
 	  @Override
-	  public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
+	  public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand)
 	  {
 	    if (!playerIn.capabilities.isCreativeMode) {
-	      itemStackIn.stackSize -= 1;
+			playerIn.getHeldItem(hand).shrink(1);
 	    }
 	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
 	    
-	    return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
+	    return new ActionResult(EnumActionResult.SUCCESS, playerIn.getHeldItem(hand));
 	  }
 	  
 	  @Override

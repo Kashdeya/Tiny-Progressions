@@ -10,7 +10,7 @@ public class BoneHoe extends ItemHoe {
 	public BoneHoe(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("BoneHoe");
+		this.setUnlocalizedName("bone_hoe");
 		this.setMaxStackSize(1);
 	}
 }

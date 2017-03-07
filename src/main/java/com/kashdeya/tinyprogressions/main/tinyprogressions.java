@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -15,6 +16,7 @@ import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
+import com.kashdeya.tinyprogressions.inits.TPMigration;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -25,7 +27,7 @@ import com.kashdeya.tinyprogressions.tabs.TabTP;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
 public class tinyprogressions {
-	
+
 	@Instance(Reference.MOD_ID)
     public static tinyprogressions instance;
 	
@@ -68,4 +70,25 @@ public class tinyprogressions {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {}
+
+	/**
+	 * @author Ellpeck
+	 */
+	@EventHandler
+	public void missingMapping(FMLMissingMappingsEvent event){
+		int totalRemaps = 0;
+		int workedRemaps = 0;
+
+		for(FMLMissingMappingsEvent.MissingMapping mapping : event.getAll()) {
+			totalRemaps++;
+
+			if(TPMigration.remapName(mapping)) {
+				workedRemaps++;
+			}
+		}
+
+		if(totalRemaps > 0) {
+			logger.info("Successfully remapped " + workedRemaps + " out of " + totalRemaps + " blocks and items to match the 1.11 naming conventions.");
+		}
+	}
 }

@@ -24,7 +24,7 @@ public class AndesiteBrick extends Block {
         this.setResistance(10.0F);
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("AndesiteBrick");
+        this.setUnlocalizedName("andesite_brick");
     }
 	
 	/**

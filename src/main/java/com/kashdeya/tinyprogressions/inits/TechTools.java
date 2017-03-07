@@ -6,7 +6,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
-import com.kashdeya.tinyprogressions.items.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tools.axe.BoneAxe;
 import com.kashdeya.tinyprogressions.tools.axe.FlintAxe;
@@ -20,62 +19,59 @@ import com.kashdeya.tinyprogressions.tools.sword.BoneSword;
 import com.kashdeya.tinyprogressions.tools.sword.FlintSword;
 
 public class TechTools {
-	
+
 	// Flint Tools & Weapons
 	public static Item FlintPickaxe;
 	public static Item FlintAxe;
 	public static Item FlintSpade;
 	public static Item FlintSword;
 	public static Item FlintHoe;
+	
 	// Bone Tools & Weapons
 	public static Item BonePickaxe;
 	public static Item BoneAxe;
 	public static Item BoneSpade;
 	public static Item BoneSword;
 	public static Item BoneHoe;
+
 	// Pickaxe
 	public static Item BirthdayPickaxe;
-	
+
 	public static void init(){
 		
 		// Flint Tools & Weapons
 		if (ConfigHandler.FlintTools){
 			FlintPickaxe = new FlintPickaxe(MaterialHandler.FLINT);
-			registerItem(FlintPickaxe, "FlintPickaxe");
+			registerItem(FlintPickaxe, "flint_pickaxe");
 			FlintAxe = new FlintAxe(MaterialHandler.FLINT, 7.0F, -3.2F);
-			registerItem(FlintAxe, "FlintAxe");
+			registerItem(FlintAxe, "flint_axe");
 			FlintSpade = new FlintSpade(MaterialHandler.FLINT);
-			registerItem(FlintSpade, "FlintSpade");
+			registerItem(FlintSpade, "flint_spade");
 			FlintSword = new FlintSword(MaterialHandler.FLINT);
-			registerItem(FlintSword, "FlintSword");
+			registerItem(FlintSword, "flint_sword");
 			FlintHoe = new FlintHoe(MaterialHandler.FLINT);
-			registerItem(FlintHoe, "FlintHoe");
+			registerItem(FlintHoe, "flint_hoe");
 		}
 		
 		// Bone Tools & Weapons
 		if (ConfigHandler.BoneTools){
 			BonePickaxe = new BonePickaxe(MaterialHandler.BONE);
-			registerItem(BonePickaxe, "BonePickaxe");
+			registerItem(BonePickaxe, "bone_pickaxe");
 			BoneAxe = new BoneAxe(MaterialHandler.BONE, 5.0F, -3.2F);
-			registerItem(BoneAxe, "BoneAxe");
+			registerItem(BoneAxe, "bone_axe");
 			BoneSpade = new BoneSpade(MaterialHandler.BONE);
-			registerItem(BoneSpade, "BoneSpade");
+			registerItem(BoneSpade, "bone_spade");
 			BoneSword = new BoneSword(MaterialHandler.BONE);
-			registerItem(BoneSword, "BoneSword");
+			registerItem(BoneSword, "bone_sword");
 			BoneHoe = new BoneHoe(MaterialHandler.BONE);
-			registerItem(BoneHoe, "BoneHoe");
+			registerItem(BoneHoe, "bone_hoe");
 		}
-		
-		// Pickaxe
-	    if (ConfigHandler.BirthdayPickaxe){
-	    	BirthdayPickaxe = new BirthdayPickaxe(MaterialHandler.BIRTHDAY);
-			registerItem(BirthdayPickaxe, "BirthdayPickaxe");
-		}
-	    
 	}
 	
 	static void registerItem(Item item, String name){
 	    GameRegistry.register(item, new ResourceLocation(Reference.MOD_ID + ":" + name));
+
+		TPMigration.addUnderscoreNameToMapUnderscorelessName(name);
 	}
 
 }

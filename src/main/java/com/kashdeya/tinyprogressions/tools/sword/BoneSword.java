@@ -10,7 +10,7 @@ public class BoneSword extends ItemSword {
 	public BoneSword(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("BoneSword");
+		this.setUnlocalizedName("bone_sword");
 		this.setMaxStackSize(1);
 	}
 }

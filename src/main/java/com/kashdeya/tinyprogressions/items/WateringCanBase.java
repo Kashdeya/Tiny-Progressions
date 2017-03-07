@@ -68,9 +68,10 @@ public class WateringCanBase extends Item {
 	    }
 	    
 	    int clicks = 0;
-	    @Override
-	    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	    {
+
+	@Override
+	public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			ItemStack stack = player.getHeldItem(hand);
 		    
 			if (!player.canPlayerEdit(pos.offset(facing), facing, stack)) 
 		    {
@@ -147,7 +148,7 @@ public class WateringCanBase extends Item {
 		                        igrowable.grow(worldIn, worldIn.rand, target, iblockstate);
 		                    }
 
-		                    stack.stackSize -= 1;
+		                    stack.shrink(1);
 		                }
 
 		                return true;

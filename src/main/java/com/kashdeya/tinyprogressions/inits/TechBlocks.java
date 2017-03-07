@@ -95,57 +95,57 @@ public class TechBlocks {
 		// Deco Blocks
 		if (ConfigHandler.CharcoalBlock){
 			CharcoalBlock = new CharcoalBlock();
-			registerBlock(CharcoalBlock, "CharcoalBlock", true);
+			registerBlock(CharcoalBlock, "charcoal_block", true);
 		}
 		if (ConfigHandler.ReinforcedGlass){
 			ReinforcedGlass = new ReinforcedGlass();
-			registerBlock(ReinforcedGlass, "ReinforcedGlass", true);
+			registerBlock(ReinforcedGlass, "reinforced_glass", true);
 		}
 		if (ConfigHandler.ReinforcedObsidian){
 			ReinforcedObsidian = new ReinforcedObsidian();
-			registerBlock(ReinforcedObsidian, "ReinforcedObsidian", true);
+			registerBlock(ReinforcedObsidian, "reinforced_obsidian", true);
 		}
 		if (ConfigHandler.DirtyGlass){
 			DirtyGlass = new DirtyGlass();
-			registerBlock(DirtyGlass, "DirtyGlass", true);
+			registerBlock(DirtyGlass, "dirty_glass", true);
 		}
 		
 		// Compressed Blocks
 		if (ConfigHandler.FleshBlock){
 			FleshBlock = new FleshBlock();
-			registerBlock(FleshBlock, "FleshBlock", true);
+			registerBlock(FleshBlock, "flesh_block", true);
 		}
 		if (ConfigHandler.BoneBlock){
 			BoneBlock = new BoneBlock();
-			registerBlock(BoneBlock, "BoneBlock", true);
+			registerBlock(BoneBlock, "bone_block", true);
 		}
 		if (ConfigHandler.NetherStarBlock){
 			NetherStarBlock = new NetherStarBlock();
-			registerBlock(NetherStarBlock, "NetherStarBlock", true);
+			registerBlock(NetherStarBlock, "nether_star_block", true);
 		}
 		if (ConfigHandler.DioriteBrick){
 			DioriteBrick = new DioriteBrick();
-			registerBlock(DioriteBrick, "DioriteBrick", true);
+			registerBlock(DioriteBrick, "diorite_brick", true);
 		}
 		if (ConfigHandler.GraniteBrick){
 			GraniteBrick = new GraniteBrick();
-			registerBlock(GraniteBrick, "GraniteBrick", true);
+			registerBlock(GraniteBrick, "granite_brick", true);
 		}
 		if (ConfigHandler.AndesiteBrick){
 			AndesiteBrick = new AndesiteBrick();
-			registerBlock(AndesiteBrick, "AndesiteBrick", true);
+			registerBlock(AndesiteBrick, "andesite_brick", true);
 		}
 		
 		// Flint Block
 		if (ConfigHandler.FlintBlock){
 			FlintBlock = new FlintBlock();
-			registerBlock(FlintBlock, "FlintBlock", true);
+			registerBlock(FlintBlock, "flint_block", true);
 		}
 		
 		// Smooth EndStone
 		if (ConfigHandler.SmoothEndStone){
 			SmoothEndStone = new SmoothEndStone();
-			registerBlock(SmoothEndStone, "SmoothEndStone", true);
+			registerBlock(SmoothEndStone, "smooth_end_stone", true);
 		}
 	}
 	
@@ -154,6 +154,8 @@ public class TechBlocks {
 		if (itemblock){
 			GameRegistry.register(new ItemBlock(block), new ResourceLocation(Reference.MOD_ID + ":" + name));
 		}
+
+		TPMigration.addUnderscoreNameToMapUnderscorelessName(name);
 	}
 
 }

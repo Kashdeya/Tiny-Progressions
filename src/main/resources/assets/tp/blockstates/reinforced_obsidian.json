@@ -1,0 +1,12 @@
+{
+    "forge_marker": 1,
+    "variants": {
+        "inventory": [
+            {
+                "model": "tp:reinforced_obsidian",
+                "transform": "forge:default-block"
+            }
+        ],
+        "normal": {"model": "tp:reinforced_obsidian"}
+    }
+}

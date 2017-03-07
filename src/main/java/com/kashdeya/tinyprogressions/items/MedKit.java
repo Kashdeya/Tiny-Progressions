@@ -24,19 +24,19 @@ public class MedKit extends Item {
 	  public MedKit()
 	  {
 		  this.setCreativeTab(tinyprogressions.tabTP);
-		  this.setUnlocalizedName("MedKit");
+		  this.setUnlocalizedName("med_kit");
 		  this.setMaxStackSize(1);
 	  }
 	  
 	  @Override
-	  public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
+	  public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand)
 	  {
 	    if (!playerIn.capabilities.isCreativeMode) {
-	      itemStackIn.stackSize -= 1;
+			playerIn.getHeldItem(hand).shrink(1);
 	    }
 	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
 	    
-	    return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
+	    return new ActionResult(EnumActionResult.SUCCESS, playerIn.getHeldItem(hand));
 	  }
 	  
 	  @Override

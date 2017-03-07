@@ -26,11 +26,11 @@
     ],
     "textures": {
         "particle": "tp:blocks/growth_block",
-        "t1": "tp:blocks/DirtyGlass",
-		"t2": "tp:blocks/DirtyGlass",
-		"t3": "tp:blocks/DirtyGlass",
-		"t4": "tp:blocks/DirtyGlass",
-		"t5": "tp:blocks/DirtyGlass",
-		"t6": "tp:blocks/DirtyGlass"
+        "t1": "tp:blocks/dirty_glass",
+		"t2": "tp:blocks/dirty_glass",
+		"t3": "tp:blocks/dirty_glass",
+		"t4": "tp:blocks/dirty_glass",
+		"t5": "tp:blocks/dirty_glass",
+		"t6": "tp:blocks/dirty_glass"
     }
 }

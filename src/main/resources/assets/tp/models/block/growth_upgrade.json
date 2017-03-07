@@ -43,7 +43,7 @@
     "textures": {
         "particle": "tp:blocks/growth_upgrade",
         "t1": "tp:blocks/growth_upgrade",
-		"t2": "tp:blocks/NetherStarBlockBackground",
+		"t2": "tp:blocks/nether_star_block_background",
 		"t3": "blocks/water_flow"
     }
 }

@@ -10,7 +10,7 @@ public class FlintPickaxe extends ItemPickaxe {
 	public FlintPickaxe(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintPickaxe");
+		this.setUnlocalizedName("flint_pickaxe");
 		this.setMaxStackSize(1);
 	}
 }

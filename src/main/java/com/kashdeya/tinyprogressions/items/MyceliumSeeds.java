@@ -20,22 +20,21 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
-import com.kashdeya.tinyprogressions.util.InventoryHelper;
 
 public class MyceliumSeeds extends Item {
 	
 	public MyceliumSeeds(){
 		super();
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("MyceliumSeeds");
+		this.setUnlocalizedName("mycelium_seeds");
 	}
 	
 	@Override
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
+	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
 		if (worldIn.getBlockState(pos).getBlock() == Blocks.DIRT && worldIn.getBlockState(pos).getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.DIRT) {
 			worldIn.setBlockState(pos, Blocks.MYCELIUM.getDefaultState(), 2);
 			worldIn.playSound(null, pos, SoundEvents.BLOCK_GRASS_HIT, SoundCategory.BLOCKS, 0.3f, 1.5f);
-			InventoryHelper.consumeItem(playerIn, stack);
+			playerIn.getHeldItem(hand).shrink(1);
 			return EnumActionResult.SUCCESS;
 		}
 		return EnumActionResult.PASS;

@@ -21,7 +21,7 @@ public class CharcoalBlock extends Block{
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(blockSoundType.STONE);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("CharcoalBlock");
+		this.setUnlocalizedName("charcoal_block");
 	}
 	
 	/**

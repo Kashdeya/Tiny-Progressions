@@ -44,18 +44,18 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.diamond_cobblegen_block, "diamond_cobblegen_block");
 	    InventoryBlockRender(TechBlocks.emerald_cobblegen_block, "emerald_cobblegen_block");
 	    InventoryBlockRender(TechBlocks.blaze_cobblegen_block, "blaze_cobblegen_block");
-	    InventoryBlockRender(TechBlocks.CharcoalBlock, "CharcoalBlock");
-	    InventoryBlockRender(TechBlocks.FleshBlock, "FleshBlock");
-	    InventoryBlockRender(TechBlocks.ReinforcedGlass, "ReinforcedGlass");
-	    InventoryBlockRender(TechBlocks.ReinforcedObsidian, "ReinforcedObsidian");
-	    InventoryBlockRender(TechBlocks.BoneBlock, "BoneBlock");
-	    InventoryBlockRender(TechBlocks.DirtyGlass, "DirtyGlass");
-	    InventoryBlockRender(TechBlocks.GraniteBrick, "GraniteBrick");
-	    InventoryBlockRender(TechBlocks.DioriteBrick, "DioriteBrick");
-	    InventoryBlockRender(TechBlocks.AndesiteBrick, "AndesiteBrick");
-	    InventoryBlockRender(TechBlocks.NetherStarBlock, "NetherStarBlock");
-	    InventoryBlockRender(TechBlocks.FlintBlock, "FlintBlock");
-	    InventoryBlockRender(TechBlocks.SmoothEndStone, "SmoothEndStone");
+	    InventoryBlockRender(TechBlocks.CharcoalBlock, "charcoal_block");
+	    InventoryBlockRender(TechBlocks.FleshBlock, "flesh_block");
+	    InventoryBlockRender(TechBlocks.ReinforcedGlass, "reinforced_glass");
+	    InventoryBlockRender(TechBlocks.ReinforcedObsidian, "reinforced_obsidian");
+	    InventoryBlockRender(TechBlocks.BoneBlock, "bone_block");
+	    InventoryBlockRender(TechBlocks.DirtyGlass, "dirty_glass");
+	    InventoryBlockRender(TechBlocks.GraniteBrick, "granite_brick");
+	    InventoryBlockRender(TechBlocks.DioriteBrick, "diorite_brick");
+	    InventoryBlockRender(TechBlocks.AndesiteBrick, "andesite_brick");
+	    InventoryBlockRender(TechBlocks.NetherStarBlock, "nether_star_block");
+	    InventoryBlockRender(TechBlocks.FlintBlock, "flint_block");
+	    InventoryBlockRender(TechBlocks.SmoothEndStone, "smooth_end_stone");
 	}
 	
 	public static void initBlockRenders(){
@@ -66,46 +66,46 @@ public class RenderHandler {
 	}
 	
 	public static void initItems(){
-		InventoryItemRender(TechItems.WateringCan, "WateringCan");
-		InventoryItemRender(TechItems.WateringCanUpgrade, "WateringCanUpgrade");
-		InventoryItemRender(TechItems.QuartzDust, "QuartzDust");
-		InventoryItemRender(TechItems.QuartzKnife, "QuartzKnife");
-		InventoryItemRender(TechItems.MyceliumSeeds, "MyceliumSeeds");
-		InventoryItemRender(TechItems.DiamondApple, "DiamondApple");
-		InventoryItemRender(TechItems.EmeraldApple, "EmeraldApple");
-		InventoryItemRender(TechItems.MedKit, "MedKit");	
-		InventoryItemRender(TechItems.StoneDust, "StoneDust");
-		InventoryItemRender(TechItems.FlintIngot, "FlintIngot");
-		InventoryItemRender(TechItems.FlintKnife, "FlintKnife");
+		InventoryItemRender(TechItems.WateringCan, "watering_can");
+		InventoryItemRender(TechItems.WateringCanUpgrade, "watering_can_upgrade");
+		InventoryItemRender(TechItems.QuartzDust, "quartz_dust");
+		InventoryItemRender(TechItems.QuartzKnife, "quartz_knife");
+		InventoryItemRender(TechItems.MyceliumSeeds, "mycelium_seeds");
+		InventoryItemRender(TechItems.DiamondApple, "diamond_apple");
+		InventoryItemRender(TechItems.EmeraldApple, "emerald_apple");
+		InventoryItemRender(TechItems.MedKit, "med_kit");
+		InventoryItemRender(TechItems.StoneDust, "stone_dust");
+		InventoryItemRender(TechItems.FlintIngot, "flint_ingot");
+		InventoryItemRender(TechItems.FlintKnife, "flint_knife");
 	}
 	
 	public static void initTools(){
-		InventoryItemRender(TechTools.BoneAxe, "BoneAxe");
-		InventoryItemRender(TechTools.BoneHoe, "BoneHoe");
-		InventoryItemRender(TechTools.BonePickaxe, "BonePickaxe");
-		InventoryItemRender(TechTools.BoneSpade, "BoneSpade");
-		InventoryItemRender(TechTools.BoneSword, "BoneSword");
-		InventoryItemRender(TechTools.FlintAxe, "FlintAxe");
-		InventoryItemRender(TechTools.FlintHoe, "FlintHoe");
-		InventoryItemRender(TechTools.FlintPickaxe, "FlintPickaxe");
-		InventoryItemRender(TechTools.FlintSpade, "FlintSpade");
-		InventoryItemRender(TechTools.FlintSword, "FlintSword");
-		InventoryItemRender(TechTools.BirthdayPickaxe, "BirthdayPickaxe");
+		InventoryItemRender(TechTools.BoneAxe, "bone_axe");
+		InventoryItemRender(TechTools.BoneHoe, "bone_hoe");
+		InventoryItemRender(TechTools.BonePickaxe, "bone_pickaxe");
+		InventoryItemRender(TechTools.BoneSpade, "bone_spade");
+		InventoryItemRender(TechTools.BoneSword, "bone_sword");
+		InventoryItemRender(TechTools.FlintAxe, "flint_axe");
+		InventoryItemRender(TechTools.FlintHoe, "flint_hoe");
+		InventoryItemRender(TechTools.FlintPickaxe, "flint_pickaxe");
+		InventoryItemRender(TechTools.FlintSpade, "flint_spade");
+		InventoryItemRender(TechTools.FlintSword, "flint_sword");
+		InventoryItemRender(TechTools.BirthdayPickaxe, "birthday_pickaxe");
 	}
 	
 	public static void initArmor(){
-		InventoryItemRender(TechArmor.stoneHelmet, "stoneHelmet");
-		InventoryItemRender(TechArmor.stoneChestplate, "stoneChestplate");
-		InventoryItemRender(TechArmor.stoneLeggings, "stoneLeggings");
-		InventoryItemRender(TechArmor.stoneBoots, "stoneBoots");
-		InventoryItemRender(TechArmor.flintHelmet, "flintHelmet");
-		InventoryItemRender(TechArmor.flintChestplate, "flintChestplate");
-		InventoryItemRender(TechArmor.flintLeggings, "flintLeggings");
-		InventoryItemRender(TechArmor.flintBoots, "flintBoots");
-		InventoryItemRender(TechArmor.boneHelmet, "boneHelmet");
-		InventoryItemRender(TechArmor.boneChestplate, "boneChestplate");
-		InventoryItemRender(TechArmor.boneLeggings, "boneLeggings");
-		InventoryItemRender(TechArmor.boneBoots, "boneBoots");
+		InventoryItemRender(TechArmor.stoneHelmet, "stone_helmet");
+		InventoryItemRender(TechArmor.stoneChestplate, "stone_chestplate");
+		InventoryItemRender(TechArmor.stoneLeggings, "stone_leggings");
+		InventoryItemRender(TechArmor.stoneBoots, "stone_boots");
+		InventoryItemRender(TechArmor.flintHelmet, "flint_helmet");
+		InventoryItemRender(TechArmor.flintChestplate, "flint_chestplate");
+		InventoryItemRender(TechArmor.flintLeggings, "flint_leggings");
+		InventoryItemRender(TechArmor.flintBoots, "flint_boots");
+		InventoryItemRender(TechArmor.boneHelmet, "bone_helmet");
+		InventoryItemRender(TechArmor.boneChestplate, "bone_chestplate");
+		InventoryItemRender(TechArmor.boneLeggings, "bone_leggings");
+		InventoryItemRender(TechArmor.boneBoots, "bone_boots");
 	}
 	
 	public static void InventoryBlockRender(Block block, String blockName) {

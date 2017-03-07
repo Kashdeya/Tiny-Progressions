@@ -36,7 +36,7 @@ public class NetherStarBlock extends Block {
 		this.setLightOpacity(1);
 		this.setSoundType(blockSoundType.STONE);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("NetherStarBlock");
+		this.setUnlocalizedName("nether_star_block");
 	}
 	
 	@SideOnly(Side.CLIENT)

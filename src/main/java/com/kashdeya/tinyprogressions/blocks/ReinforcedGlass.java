@@ -33,7 +33,7 @@ public class ReinforcedGlass extends BlockGlass
         this.setHarvestLevel("pickaxe", 0);
         this.setSoundType(blockSoundType.GLASS);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("ReinforcedGlass");
+        this.setUnlocalizedName("reinforced_glass");
     }
     
     @Override

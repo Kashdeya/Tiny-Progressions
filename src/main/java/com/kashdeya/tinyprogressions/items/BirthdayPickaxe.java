@@ -39,7 +39,7 @@ public class BirthdayPickaxe extends ItemTool {
         this.material = material;
         this.maxStackSize = 1;
         this.setHarvestLevel("pickaxe", 4);
-		this.setUnlocalizedName("BirthdayPickaxe");
+		this.setUnlocalizedName("birthday_pickaxe");
 		this.attackDamage = 1.5F + material.getDamageVsEntity();
 	    this.setCreativeTab(tinyprogressions.tabTP);
 	}
@@ -147,20 +147,20 @@ public class BirthdayPickaxe extends ItemTool {
     }
     
 	@Override
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (!worldIn.isRemote) {
 			pos = pos.offset(facing);
-			if (!playerIn.canPlayerEdit(pos, facing, stack)) {
+			if (!playerIn.canPlayerEdit(pos, facing, playerIn.getHeldItem(hand))) {
 				return EnumActionResult.FAIL;
 			} else if (worldIn.isAirBlock(pos)) {
 				if (playerIn.getName().equalsIgnoreCase("dark" + "osto")) {
-					playerIn.addChatMessage(new TextComponentString("HAPPY BIRTHDAY DARKOSTO" + TextFormatting.GREEN + TextFormatting.BOLD));
-					EntityFireworkRocket firework = new EntityFireworkRocket(playerIn.worldObj);
+					playerIn.sendMessage(new TextComponentString("HAPPY BIRTHDAY DARKOSTO" + TextFormatting.GREEN + TextFormatting.BOLD));
+					EntityFireworkRocket firework = new EntityFireworkRocket(playerIn.getEntityWorld());
 					firework.setPosition(playerIn.posX, playerIn.posY, playerIn.posZ);
-					playerIn.worldObj.spawnEntityInWorld(firework);
+					playerIn.getEntityWorld().spawnEntity(firework);
 				}
 				worldIn.setBlockState(pos, Blocks.CAKE.getDefaultState());
-				stack.damageItem(854, playerIn);
+				playerIn.getHeldItem(hand).damageItem(854, playerIn);
 				return EnumActionResult.SUCCESS;
 			}
 		}

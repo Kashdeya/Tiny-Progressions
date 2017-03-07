@@ -10,7 +10,7 @@ public class FlintAxe extends ItemAxe{
 	public FlintAxe(Item.ToolMaterial material, float damage, float speed){
 		super(material, damage, speed);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintAxe");
+		this.setUnlocalizedName("flint_axe");
 		this.setMaxStackSize(1);
 	}
 	

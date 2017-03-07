@@ -21,7 +21,7 @@ public class FlintKnife extends Item {
 		this.setMaxDamage(ConfigHandler.FlintKnifeDamage);
 		super.setContainerItem(this);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintKnife");
+		this.setUnlocalizedName("flint_knife");
 	}
 	
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
@@ -33,7 +33,7 @@ public class FlintKnife extends Item {
 	public ItemStack getContainerItem(ItemStack itemStack)
 	{
 		ItemStack stack = itemStack.copy();
-		stack.stackSize = 1;
+		stack.setCount(1);
 
 		return stack;
 	}

@@ -10,7 +10,7 @@ public class FlintHoe extends ItemHoe {
 	public FlintHoe(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintHoe");
+		this.setUnlocalizedName("flint_hoe");
 		this.setMaxStackSize(1);
 	}
 }

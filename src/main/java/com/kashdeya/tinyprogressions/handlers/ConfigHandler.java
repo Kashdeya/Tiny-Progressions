@@ -92,5 +92,4 @@ public class ConfigHandler {
 	
 	// Remove Items
 	public static boolean RemoveItems = false;
-
 }

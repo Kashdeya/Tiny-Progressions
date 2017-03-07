@@ -24,7 +24,7 @@ public class SmoothEndStone extends Block {
         this.setResistance(15.0F);
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("SmoothEndStone");
+        this.setUnlocalizedName("smooth_end_stone");
     }
 	
 	/**

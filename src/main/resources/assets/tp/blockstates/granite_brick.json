@@ -1,0 +1,12 @@
+{
+    "forge_marker": 1,
+    "variants": {
+        "inventory": [
+            {
+                "model": "tp:granite_brick",
+                "transform": "forge:default-block"
+            }
+        ],
+        "normal": {"model": "tp:granite_brick"}
+    }
+}

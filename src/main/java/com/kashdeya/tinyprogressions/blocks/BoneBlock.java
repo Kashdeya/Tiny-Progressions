@@ -23,7 +23,7 @@ public class BoneBlock extends Block{
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.GROUND);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("BoneBlock");
+		this.setUnlocalizedName("bone_block");
 	}
 	
 	/**

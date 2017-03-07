@@ -23,7 +23,7 @@ public class FleshBlock extends Block{
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.SAND);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FleshBlock");
+		this.setUnlocalizedName("flesh_block");
 	}
 	
 	/**

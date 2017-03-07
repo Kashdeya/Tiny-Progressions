@@ -10,7 +10,7 @@ public class BoneAxe extends ItemAxe{
 	public BoneAxe(Item.ToolMaterial material, float damage, float speed){
 		super(material, damage, speed);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("BoneAxe");
+		this.setUnlocalizedName("bone_axe");
 		this.setMaxStackSize(1);
 	}
 

@@ -23,7 +23,7 @@ public class EmeraldApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(tinyprogressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("EmeraldApple");
+	    this.setUnlocalizedName("emerald_apple");
 	  }
 	  
 	  @Override
@@ -53,8 +53,8 @@ public class EmeraldApple extends ItemFood
 	  @SideOnly(Side.CLIENT)
 	  @SuppressWarnings({ "unchecked", "rawtypes" })
 	  public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.EmeraldApple_1").getFormattedText());
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.EmeraldApple_2").getFormattedText());
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.EmeraldApple_3").getFormattedText());
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emerald_apple_1").getFormattedText());
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emerald_apple_2").getFormattedText());
+		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emerald_apple_3").getFormattedText());
 	  }
 }

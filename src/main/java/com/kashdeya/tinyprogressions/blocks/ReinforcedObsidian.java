@@ -31,7 +31,7 @@ public class ReinforcedObsidian extends Block {
         this.setHarvestLevel("pickaxe", 2);
         this.setSoundType(blockSoundType.ANVIL);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("ReinforcedObsidian");
+        this.setUnlocalizedName("reinforced_obsidian");
     }
 	
 	@Override

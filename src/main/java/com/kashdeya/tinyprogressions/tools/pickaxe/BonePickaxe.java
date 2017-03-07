@@ -10,7 +10,7 @@ public class BonePickaxe extends ItemPickaxe {
 	public BonePickaxe(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("BonePickaxe");
+		this.setUnlocalizedName("bone_pickaxe");
 		this.setMaxStackSize(1);
 	}
 }

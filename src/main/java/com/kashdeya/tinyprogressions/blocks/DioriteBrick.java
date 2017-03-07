@@ -24,7 +24,7 @@ public class DioriteBrick extends Block {
         this.setResistance(10.0F);
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("DioriteBrick");
+        this.setUnlocalizedName("diorite_brick");
     }
 	
 	/**

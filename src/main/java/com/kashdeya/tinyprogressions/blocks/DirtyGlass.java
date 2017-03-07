@@ -20,7 +20,7 @@ public class DirtyGlass extends BlockGlass
         this.setHardness(0.3F);
         this.setSoundType(blockSoundType.GLASS);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("DirtyGlass");
+        this.setUnlocalizedName("dirty_glass");
     }
     
     @SideOnly(Side.CLIENT)

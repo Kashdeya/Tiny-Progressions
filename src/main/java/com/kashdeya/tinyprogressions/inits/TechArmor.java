@@ -13,7 +13,6 @@ import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 public class TechArmor {
-	
 	// Stone Armor
 	public static ItemArmor stoneHelmet;
 	public static ItemArmor stoneChestplate;

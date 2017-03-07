@@ -23,7 +23,7 @@ public class FlintBlock extends Block{
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.STONE);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintBlock");
+		this.setUnlocalizedName("flint_block");
 	}
 	
 	/**

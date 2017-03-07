@@ -1,5 +1,12 @@
 {
+    "forge_marker": 1,
     "variants": {
+        "inventory": [
+            {
+                "model": "tp:cobblegen_block",
+                "transform": "forge:default-block"
+            }
+        ],
         "normal": {"model": "tp:cobblegen_block"}
     }
 }

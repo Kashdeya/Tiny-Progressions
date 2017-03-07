@@ -10,7 +10,7 @@ public class FlintSpade extends ItemSpade {
 	public FlintSpade(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintSpade");
+		this.setUnlocalizedName("flint_spade");
 		this.setMaxStackSize(1);
 	}
 }

@@ -10,7 +10,7 @@ public class BoneSpade extends ItemSpade {
 	public BoneSpade(Item.ToolMaterial material){
 		super(material);
 		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("BoneSpade");
+		this.setUnlocalizedName("bone_spade");
 		this.setMaxStackSize(1);
 	}
 }

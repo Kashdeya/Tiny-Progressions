@@ -4,9 +4,9 @@ import net.minecraft.item.Item;
 
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
-public class ItemBase extends Item{
+public class Itembase extends Item{
 	
-	public ItemBase() {
+	public Itembase() {
 		super();
 		this.setCreativeTab(tinyprogressions.tabTP);
 	}

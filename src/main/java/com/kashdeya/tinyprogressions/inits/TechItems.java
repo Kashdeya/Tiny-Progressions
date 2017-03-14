@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -15,6 +16,7 @@ import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
 import com.kashdeya.tinyprogressions.items.WateringCan;
 import com.kashdeya.tinyprogressions.items.WateringCanUpgrade;
+import com.kashdeya.tinyprogressions.items.WoodenBucket;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 public class TechItems {
@@ -39,6 +41,9 @@ public class TechItems {
 	public static Item FlintKnife;
 	// Stone Stick
 	public static Item StoneStick;
+	// Wooden Bucket
+	public static Item WoodenBucket;
+	public static Item WoodenBucketFull;
 	
 	public static void init(){
 		
@@ -63,6 +68,12 @@ public class TechItems {
 	    	StoneStick = new ItemBase().setUnlocalizedName("StoneStick");
 	    	registerItem(StoneStick, "StoneStick");
 	    }
+	    
+	    	WoodenBucket = new WoodenBucket(Blocks.AIR);
+	    	registerItem(WoodenBucket, "WoodenBucket");
+	    	WoodenBucketFull = new WoodenBucket(Blocks.WATER);
+	    	registerItem(WoodenBucketFull, "WoodenBucketFull");
+	    	
 	    if (ConfigHandler.MyceliumSeeds){
 	    	MyceliumSeeds = new MyceliumSeeds();
 	    	registerItem(MyceliumSeeds, "MyceliumSeeds");

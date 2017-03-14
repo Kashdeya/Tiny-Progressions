@@ -80,6 +80,8 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.FlintKnife, "FlintKnife");
 		InventoryItemRender(TechItems.StoneStick, "StoneStick");
 		InventoryItemRender(TechItems.GoldenApple, "GoldenApple");
+		InventoryItemRender(TechItems.WoodenBucket, "WoodenBucket");
+		InventoryItemRender(TechItems.WoodenBucketFull, "WoodenBucketFull");
 	}
 	
 	public static void initTools(){

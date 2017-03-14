@@ -11,6 +11,9 @@ public class ConfigHandler {
 	// Stone Dust
 	public static boolean StoneDust = false;
 	
+	// Stone Torch
+	public static boolean StoneTorch = false;
+	
 	// Cobblegens
 	public static boolean Cobblegen = false;
 	public static boolean IronCobblegen = false;
@@ -56,9 +59,15 @@ public class ConfigHandler {
 	
 	// Armor
 	public static boolean StoneArmor = false;
+	public static boolean FlintArmor = false;
+	public static boolean BoneArmor = false;
+	public static boolean WoodArmor = false;
 	
 	// Notch Apple
 	public static boolean NotchApple = false;
+	
+	// Golden Apple Progression
+	public static boolean ApplePro = false;
 	
 	// Drops
 	public static boolean BoneDrops = false;
@@ -79,7 +88,6 @@ public class ConfigHandler {
 	// Flint Items & More
 	public static boolean FlintTools = false;
 	public static boolean FlintBlock = false;
-	public static boolean FlintArmor = false;
 	
 	// Flint Knife
 	public static boolean FlintKnife = false;
@@ -88,9 +96,11 @@ public class ConfigHandler {
 	// Bone Items & More
 	public static boolean BoneTools = false;
 	public static boolean BoneBlock = false;
-	public static boolean BoneArmor = false;
 	
 	// Remove Items
 	public static boolean RemoveItems = false;
+	
+	// Scythe
+	public static boolean ScytheEnable = false;
 
 }

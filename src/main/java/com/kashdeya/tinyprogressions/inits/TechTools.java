@@ -1,6 +1,7 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -14,6 +15,7 @@ import com.kashdeya.tinyprogressions.tools.hoe.BoneHoe;
 import com.kashdeya.tinyprogressions.tools.hoe.FlintHoe;
 import com.kashdeya.tinyprogressions.tools.pickaxe.BonePickaxe;
 import com.kashdeya.tinyprogressions.tools.pickaxe.FlintPickaxe;
+import com.kashdeya.tinyprogressions.tools.scythe.ScytheMain;
 import com.kashdeya.tinyprogressions.tools.spade.BoneSpade;
 import com.kashdeya.tinyprogressions.tools.spade.FlintSpade;
 import com.kashdeya.tinyprogressions.tools.sword.BoneSword;
@@ -35,6 +37,12 @@ public class TechTools {
 	public static Item BoneHoe;
 	// Pickaxe
 	public static Item BirthdayPickaxe;
+	// Scythe
+	public static Item WoodenScythe;
+	public static Item StoneScythe;
+	public static Item GoldenScythe;
+	public static Item IronScythe;
+	public static Item DiamondScythe;
 	
 	public static void init(){
 		
@@ -71,6 +79,20 @@ public class TechTools {
 	    	BirthdayPickaxe = new BirthdayPickaxe(MaterialHandler.BIRTHDAY);
 			registerItem(BirthdayPickaxe, "BirthdayPickaxe");
 		}
+	    
+	    // Scythe
+	    if (ConfigHandler.ScytheEnable){
+	    	WoodenScythe = new ScytheMain(ToolMaterial.WOOD).setUnlocalizedName("WoodenScythe").setMaxDamage(59);
+			registerItem(WoodenScythe, "WoodenScythe");
+			StoneScythe = new ScytheMain(ToolMaterial.STONE).setUnlocalizedName("StoneScythe").setMaxDamage(131);
+			registerItem(StoneScythe, "StoneScythe");
+			GoldenScythe = new ScytheMain(ToolMaterial.GOLD).setUnlocalizedName("GoldenScythe").setMaxDamage(32);
+			registerItem(GoldenScythe, "GoldenScythe");
+			IronScythe = new ScytheMain(ToolMaterial.IRON).setUnlocalizedName("IronScythe").setMaxDamage(250);
+			registerItem(IronScythe, "IronScythe");
+			DiamondScythe = new ScytheMain(ToolMaterial.DIAMOND).setUnlocalizedName("DiamondScythe").setMaxDamage(1561);
+			registerItem(DiamondScythe, "DiamondScythe");
+	    }
 	    
 	}
 	

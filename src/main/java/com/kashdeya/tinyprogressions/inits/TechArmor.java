@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
+import com.kashdeya.tinyprogressions.armor.WoodArmor;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -31,6 +32,12 @@ public class TechArmor {
 	public static ItemArmor boneChestplate;
 	public static ItemArmor boneLeggings;
 	public static ItemArmor boneBoots;
+	
+	// Wood Armor
+	public static ItemArmor woodHelmet;
+	public static ItemArmor woodChestplate;
+	public static ItemArmor woodLeggings;
+	public static ItemArmor woodBoots;
 	
 	public static void init(){
 		// Stone Armor
@@ -67,6 +74,18 @@ public class TechArmor {
 			registerItem(boneLeggings, "boneLeggings");
 			boneBoots = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("boneBoots");
 			registerItem(boneBoots, "boneBoots");
+		}
+		
+		// Flint Armor
+		if (ConfigHandler.WoodArmor){
+			woodHelmet = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("woodHelmet");
+			registerItem(woodHelmet, "woodHelmet");
+			woodChestplate = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("woodChestplate");
+			registerItem(woodChestplate, "woodChestplate");
+			woodLeggings = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("woodLeggings");
+			registerItem(woodLeggings, "woodLeggings");
+			woodBoots = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("woodBoots");
+			registerItem(woodBoots, "woodBoots");
 		}
 	}
 	

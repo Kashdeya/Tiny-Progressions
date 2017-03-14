@@ -56,6 +56,7 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.NetherStarBlock, "NetherStarBlock");
 	    InventoryBlockRender(TechBlocks.FlintBlock, "FlintBlock");
 	    InventoryBlockRender(TechBlocks.SmoothEndStone, "SmoothEndStone");
+	    InventoryBlockRender(TechBlocks.StoneTorch, "StoneTorch");
 	}
 	
 	public static void initBlockRenders(){
@@ -77,6 +78,8 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.StoneDust, "StoneDust");
 		InventoryItemRender(TechItems.FlintIngot, "FlintIngot");
 		InventoryItemRender(TechItems.FlintKnife, "FlintKnife");
+		InventoryItemRender(TechItems.StoneStick, "StoneStick");
+		InventoryItemRender(TechItems.GoldenApple, "GoldenApple");
 	}
 	
 	public static void initTools(){
@@ -91,6 +94,11 @@ public class RenderHandler {
 		InventoryItemRender(TechTools.FlintSpade, "FlintSpade");
 		InventoryItemRender(TechTools.FlintSword, "FlintSword");
 		InventoryItemRender(TechTools.BirthdayPickaxe, "BirthdayPickaxe");
+		InventoryItemRender(TechTools.WoodenScythe, "WoodenScythe");
+		InventoryItemRender(TechTools.StoneScythe, "StoneScythe");
+		InventoryItemRender(TechTools.GoldenScythe, "GoldenScythe");
+		InventoryItemRender(TechTools.IronScythe, "IronScythe");
+		InventoryItemRender(TechTools.DiamondScythe, "DiamondScythe");
 	}
 	
 	public static void initArmor(){
@@ -106,6 +114,10 @@ public class RenderHandler {
 		InventoryItemRender(TechArmor.boneChestplate, "boneChestplate");
 		InventoryItemRender(TechArmor.boneLeggings, "boneLeggings");
 		InventoryItemRender(TechArmor.boneBoots, "boneBoots");
+		InventoryItemRender(TechArmor.woodHelmet, "woodHelmet");
+		InventoryItemRender(TechArmor.woodChestplate, "woodChestplate");
+		InventoryItemRender(TechArmor.woodLeggings, "woodLeggings");
+		InventoryItemRender(TechArmor.woodBoots, "woodBoots");
 	}
 	
 	public static void InventoryBlockRender(Block block, String blockName) {

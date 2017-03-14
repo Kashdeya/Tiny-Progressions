@@ -25,6 +25,7 @@ import com.kashdeya.tinyprogressions.blocks.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.blocks.SmoothEndStone;
+import com.kashdeya.tinyprogressions.blocks.StoneTorch;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
@@ -55,6 +56,8 @@ public class TechBlocks {
 	public static Block FlintBlock;
 	// End Stones
 	public static Block SmoothEndStone;
+	// Stone Torch
+	public static Block StoneTorch;
 	
 	public static void init(){
 		
@@ -93,6 +96,10 @@ public class TechBlocks {
 		}
 		
 		// Deco Blocks
+		if (ConfigHandler.StoneTorch){
+	    	StoneTorch = new StoneTorch();
+	    	registerBlock(StoneTorch, "StoneTorch", true);
+	    }
 		if (ConfigHandler.CharcoalBlock){
 			CharcoalBlock = new CharcoalBlock();
 			registerBlock(CharcoalBlock, "CharcoalBlock", true);

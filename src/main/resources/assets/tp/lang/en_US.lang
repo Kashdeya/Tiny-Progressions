@@ -18,6 +18,10 @@ tile.GraniteBrick.name=Granite Brick
 tile.AndesiteBrick.name=Andesite Brick
 tile.SmoothEndStone.name=Smooth EndStone
 
+#Stone Torch
+tile.StoneTorch.name=Stone Torch
+item.StoneStick.name=Stone Stick
+
 #Reinforced Blocks
 tile.ReinforcedGlass.name=Reinforced Glass
 tile.ReinforcedObsidian.name=Reinforced Obsidian
@@ -50,12 +54,20 @@ item.stoneChestplate.name=Stone Chestplate
 item.stoneLeggings.name=Stone Leggings
 item.stoneBoots.name=Stone Boots
 
+item.woodHelmet.name=Oak Helmet
+item.woodChestplate.name=Oak Chestplate
+item.woodLeggings.name=Oak Leggings
+item.woodBoots.name=Oak Boots
+
 #MISC
 item.MyceliumSeeds.name=Mycelium Seed
 
 #Apple
 item.DiamondApple.name=Diamond Apple
 item.EmeraldApple.name=Emerald Apple
+
+#AppleProgression
+item.GoldenApple.name=Gold Apple
 
 #Medkit
 item.MedKit.name=Medkit
@@ -172,6 +184,13 @@ tooltip.EmeraldApple_3=Saturation
 
 #Knife Tooltip
 tooltip.knife=Very Sharp, Handle with care!
+
+#Scythes
+item.WoodenScythe.name=Wooden Scythe
+item.StoneScythe.name=Stone Scythe
+item.GoldenScythe.name=Golden Scythe
+item.IronScythe.name= Iron Scythe
+item.DiamondScythe.name=Diamond Scythe
 
 #Watering Cans Tooltips
 tooltip.can_1=Used to water things!

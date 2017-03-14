@@ -17,9 +17,24 @@ public class Recipes {
 	
 	public static void registerRecipes(){
 		
+		if (ConfigHandler.WoodArmor){
+			GameRegistry.addRecipe(new ItemStack(TechArmor.woodHelmet), "fff", "f f", 'f', new ItemStack(Blocks.PLANKS, 1, 0));
+			GameRegistry.addRecipe(new ItemStack(TechArmor.woodChestplate), "f f", "fff", "fff", 'f', new ItemStack(Blocks.PLANKS, 1, 0));
+			GameRegistry.addRecipe(new ItemStack(TechArmor.woodLeggings), "fff", "f f", "f f", 'f', new ItemStack(Blocks.PLANKS, 1, 0));
+			GameRegistry.addRecipe(new ItemStack(TechArmor.woodBoots), "f f", "f f", 'f', new ItemStack(Blocks.PLANKS, 1, 0));
+		}
+		
 		if (ConfigHandler.SmoothEndStone){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.SmoothEndStone, 4), "nn", "nn", 'n', "endstone"));
 			GameRegistry.addShapedRecipe(new ItemStack(Blocks.END_BRICKS, 4), new Object[] {"CC", "CC", 'C', new ItemStack(TechBlocks.SmoothEndStone)});			
+		}
+		
+		if (ConfigHandler.ScytheEnable){
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechTools.WoodenScythe), " p ", "  p", "sp ", 'p', "logWood", 's', "stickWood"));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechTools.StoneScythe), " s ", "  s", "ts ", 's', "stone", 't', "stickWood"));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechTools.GoldenScythe), " g ", "  g", "sg ", 'g', "ingotGold", 's', "stickWood"));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechTools.IronScythe), " i ", "  i", "si ", 'i', "ingotIron", 's', "stickWood"));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechTools.DiamondScythe), " d ", "  d", "sd ", 'd', "gemDiamond", 's', "stickWood"));
 		}
 		
 		if (ConfigHandler.FlintBlock){
@@ -124,8 +139,14 @@ public class Recipes {
 			GameRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 1), new Object[] {"ggg", "gag", "ggg", 'a', new ItemStack(Items.APPLE), 'g', new ItemStack(Blocks.GOLD_BLOCK)});
 		}
 		
+		if (ConfigHandler.ApplePro){
+			GameRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 0), new Object[] {"ggg", "gag", "ggg", 'a', new ItemStack(Items.APPLE), 'g', new ItemStack(Items.GOLD_NUGGET)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechItems.GoldenApple), new Object[] {"ggg", "gag", "ggg", 'a', new ItemStack(Items.APPLE), 'g', new ItemStack(Items.GOLD_INGOT)});
+			GameRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 1), new Object[] {"ggg", "gag", "ggg", 'a', new ItemStack(Items.APPLE), 'g', new ItemStack(Blocks.GOLD_BLOCK)});
+		}
+		
 		if (ConfigHandler.CharcoalBlock){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.CharcoalBlock), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(Items.COAL, 0, 1)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.CharcoalBlock), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(Items.COAL, 1, 1)});
 			GameRegistry.addShapelessRecipe(new ItemStack(Items.COAL, 9, 1), new Object[] {new ItemStack(TechBlocks.CharcoalBlock)});
 		}
 		

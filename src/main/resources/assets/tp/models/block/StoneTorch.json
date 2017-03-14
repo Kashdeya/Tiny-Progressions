@@ -1,0 +1,6 @@
+{
+    "parent": "block/torch",
+    "textures": {
+        "torch": "tp:blocks/StoneTorch"
+    }
+}

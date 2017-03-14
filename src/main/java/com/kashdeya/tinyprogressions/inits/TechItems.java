@@ -8,6 +8,7 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.DiamondApple;
 import com.kashdeya.tinyprogressions.items.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
+import com.kashdeya.tinyprogressions.items.GoldenApple;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
@@ -26,6 +27,7 @@ public class TechItems {
 	public static Item QuartzDust;
 	// Misc Items
 	public static Item MyceliumSeeds;
+	public static Item GoldenApple;
 	public static Item DiamondApple;
 	public static Item EmeraldApple;
 	public static Item MedKit;
@@ -35,6 +37,8 @@ public class TechItems {
 	public static Item FlintIngot;
 	// Flint Knife
 	public static Item FlintKnife;
+	// Stone Stick
+	public static Item StoneStick;
 	
 	public static void init(){
 		
@@ -55,6 +59,10 @@ public class TechItems {
 	    	registerItem(QuartzDust, "QuartzDust");
 	    }
 	    // Misc Items
+	    if (ConfigHandler.StoneTorch){
+	    	StoneStick = new ItemBase().setUnlocalizedName("StoneStick");
+	    	registerItem(StoneStick, "StoneStick");
+	    }
 	    if (ConfigHandler.MyceliumSeeds){
 	    	MyceliumSeeds = new MyceliumSeeds();
 	    	registerItem(MyceliumSeeds, "MyceliumSeeds");
@@ -66,6 +74,10 @@ public class TechItems {
 	    if (ConfigHandler.EmeraldApple){
 	    	EmeraldApple = new EmeraldApple(4, 1.2F, false);
 	    	registerItem(EmeraldApple, "EmeraldApple");
+	    }
+	    if (ConfigHandler.ApplePro){
+	    	GoldenApple = new GoldenApple(4, 1.2F, false);
+	    	registerItem(GoldenApple, "GoldenApple");
 	    }
 	    if (ConfigHandler.MedKit){
 	    	MedKit = new MedKit();

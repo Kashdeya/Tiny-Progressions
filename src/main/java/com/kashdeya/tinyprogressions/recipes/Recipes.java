@@ -125,7 +125,7 @@ public class Recipes {
 		}
 
 		if (ConfigHandler.CharcoalBlock){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.CharcoalBlock), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(Items.COAL, 0, 1)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.CharcoalBlock), new Object[] {"CCC", "CCC", "CCC", 'C', new ItemStack(Items.COAL, 1, 1)});
 			GameRegistry.addShapelessRecipe(new ItemStack(Items.COAL, 9, 1), new Object[] {new ItemStack(TechBlocks.CharcoalBlock)});
 		}
 

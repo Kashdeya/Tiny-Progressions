@@ -103,8 +103,8 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Armor", "Why not");
 		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
-		ConfigHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", false, "Enable Flint Armor?");
-		ConfigHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", false, "Enable Bone Armor?");
+		ConfigHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
+		ConfigHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
 		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");

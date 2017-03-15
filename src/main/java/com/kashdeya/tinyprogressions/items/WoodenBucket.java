@@ -129,7 +129,7 @@ public class WoodenBucket extends ItemBucket {
 	  }
 	  
 	@Override
-	public boolean tryPlaceContainedLiquid(EntityPlayer worldIn, World pos, BlockPos posIn)
+	public boolean tryPlaceContainedLiquid(EntityPlayer playerIn, World worldIn, BlockPos posIn)
 	  {
 	    if (this.isFull == Blocks.AIR) 
 	    {
@@ -137,39 +137,39 @@ public class WoodenBucket extends ItemBucket {
 	    }
 	    else
 	    {
-	    	IBlockState iblockstate = pos.getBlockState(posIn);
+	    	IBlockState iblockstate = worldIn.getBlockState(posIn);
 	    	Material material = iblockstate.getMaterial();
 	    	boolean flag = !material.isSolid();
-	    	boolean flag1 = iblockstate.getBlock().isReplaceable(pos, posIn);
+	    	boolean flag1 = iblockstate.getBlock().isReplaceable(worldIn, posIn);
 	    
-	    	if (!pos.isAirBlock(posIn) && !flag && !flag1) 
+	    	if (!worldIn.isAirBlock(posIn) && !flag && !flag1) 
 	    	{
 	    		return false;
 	    	}
 	    	else
 	    	{
-	    		if (pos.provider.doesWaterVaporize() && this.isFull == Blocks.FLOWING_WATER)
+	    		if (worldIn.provider.doesWaterVaporize() && this.isFull == Blocks.FLOWING_WATER)
 	    		{
 	    			int l = posIn.getX();
 	    			int i = posIn.getY();
 	    			int j = posIn.getZ();
-	    			pos.playSound(worldIn, posIn, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (pos.rand.nextFloat() - pos.rand.nextFloat()) * 0.8F);
+	    			worldIn.playSound(playerIn, posIn, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
 
                     for (int k = 0; k < 8; k++) 
                     {
-                    	pos.spawnParticle(EnumParticleTypes.SMOKE_LARGE, l + Math.random(), i + Math.random(), j + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
+                    	worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, l + Math.random(), i + Math.random(), j + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
                     }
 	    		}
 	    		else
                 {
-                    if (!pos.isRemote && (flag || flag1) && !material.isLiquid())
+                    if (!worldIn.isRemote && (flag || flag1) && !material.isLiquid())
                     {
-                    	pos.destroyBlock(posIn, true);
+                    	worldIn.destroyBlock(posIn, true);
                     }
 
                     SoundEvent soundevent = this.isFull == Blocks.FLOWING_LAVA ? SoundEvents.ITEM_BUCKET_EMPTY_LAVA : SoundEvents.ITEM_BUCKET_EMPTY;
-                    pos.playSound(worldIn, posIn, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                    pos.setBlockState(posIn, this.isFull.getDefaultState(), 11);
+                    worldIn.playSound(playerIn, posIn, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                    worldIn.setBlockState(posIn, this.isFull.getDefaultState(), 11);
                 }
 	    		return true;
 	    	}

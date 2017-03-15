@@ -68,7 +68,7 @@ public class TinyConfig {
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Extra Stuff", true, "Enable Medkit?");
 		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
 		ConfigHandler.SmoothEndStone = config.getBoolean("Smooth EndStone", category + " Extra Stuff", true, "Enable Smooth EndStone?");
-		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?");
+		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE is Tinkers is installed.]");
 		
 		config.addCustomCategoryComment(category + " RageCraft", "Added for RageCraft - If you enable please make a recipe for them, Other wise they do nothing.");
 		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " RageCraft", false, "Enable Flint Knife?");

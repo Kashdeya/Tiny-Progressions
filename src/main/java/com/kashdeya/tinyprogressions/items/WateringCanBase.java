@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
 import com.kashdeya.tinyprogressions.handlers.CanHandler;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class WateringCanBase extends Item {
 	
@@ -35,7 +35,7 @@ public class WateringCanBase extends Item {
 		
 		public WateringCanBase(){
 			this.setMaxStackSize(1);
-			this.setCreativeTab(tinyprogressions.tabTP);
+			this.setCreativeTab(TinyProgressions.tabTP);
 		}
 		
 		protected void setWateringRange(int newRange)

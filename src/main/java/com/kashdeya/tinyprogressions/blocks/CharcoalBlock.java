@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.world.Explosion;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class CharcoalBlock extends Block{
 	
@@ -20,8 +20,8 @@ public class CharcoalBlock extends Block{
 		this.setResistance(10.0F);
 		this.setHarvestLevel("pickaxe", 0);
 		this.setSoundType(blockSoundType.STONE);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("CharcoalBlock");
+		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setUnlocalizedName("charcoal_block");
 	}
 	
 	/**
@@ -30,7 +30,7 @@ public class CharcoalBlock extends Block{
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.CharcoalBlock);
+        return Item.getItemFromBlock(TechBlocks.charcoal_block);
     }
 	
 	@Override

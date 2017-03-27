@@ -5,14 +5,14 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
 import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class FlintArmor extends ItemArmor {
 	
 	public FlintArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
 		super(material, renderIndex, equipmentSlotIn);
 		this.maxStackSize = 1;
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	
     /**
@@ -20,7 +20,7 @@ public class FlintArmor extends ItemArmor {
      */
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
     {
-        ItemStack mat = new ItemStack(TechItems.FlintIngot);
+        ItemStack mat = new ItemStack(TechItems.flint_ingot);
         if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
         return super.getIsRepairable(toRepair, repair);
     }

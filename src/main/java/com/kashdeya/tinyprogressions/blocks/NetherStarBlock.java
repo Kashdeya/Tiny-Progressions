@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class NetherStarBlock extends Block {
 	
@@ -35,8 +35,8 @@ public class NetherStarBlock extends Block {
 	    this.setResistance(2000.0F);
 		this.setLightOpacity(1);
 		this.setSoundType(blockSoundType.STONE);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("NetherStarBlock");
+		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setUnlocalizedName("netherstar_block");
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -60,7 +60,7 @@ public class NetherStarBlock extends Block {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.NetherStarBlock);
+        return Item.getItemFromBlock(TechBlocks.netherstar_block);
     }
 	
 	@Override

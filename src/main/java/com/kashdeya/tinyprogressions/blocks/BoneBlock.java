@@ -12,7 +12,7 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class BoneBlock extends Block{
 	
@@ -22,8 +22,8 @@ public class BoneBlock extends Block{
 		this.setHardness(0.5F);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.GROUND);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("BoneBlock");
+		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setUnlocalizedName("bone_block");
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class BoneBlock extends Block{
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.BoneBlock);
+        return Item.getItemFromBlock(TechBlocks.bone_block);
     }
 	
 	@Override

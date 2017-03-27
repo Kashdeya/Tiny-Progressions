@@ -2,7 +2,7 @@ package com.kashdeya.tinyprogressions.blocks;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -12,9 +12,9 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-public class FleshBlock extends Block{
+public class FleshBlock extends BlockFalling{
 	
 	public FleshBlock()
 	{
@@ -22,8 +22,8 @@ public class FleshBlock extends Block{
 		this.setHardness(0.5F);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.SAND);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FleshBlock");
+		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setUnlocalizedName("flesh_block");
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class FleshBlock extends Block{
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.FleshBlock);
+        return Item.getItemFromBlock(TechBlocks.flesh_block);
     }
 	
 	@Override

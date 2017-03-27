@@ -17,15 +17,15 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class MedKit extends Item {
 	
 	  public MedKit()
 	  {
-		  this.setCreativeTab(tinyprogressions.tabTP);
-		  this.setUnlocalizedName("MedKit");
-		  this.setMaxStackSize(1);
+		  this.setCreativeTab(TinyProgressions.tabTP);
+		  this.setUnlocalizedName("med_kit");
+		  this.setMaxStackSize(16);
 	  }
 	  
 	  @Override

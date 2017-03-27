@@ -17,6 +17,7 @@ import com.kashdeya.tinyprogressions.blocks.DiamondCobblegen;
 import com.kashdeya.tinyprogressions.blocks.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.EmeraldCobblegen;
+import com.kashdeya.tinyprogressions.blocks.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.FleshBlock;
 import com.kashdeya.tinyprogressions.blocks.FlintBlock;
 import com.kashdeya.tinyprogressions.blocks.GraniteBrick;
@@ -41,23 +42,24 @@ public class TechBlocks {
 	public static Block emerald_cobblegen_block;
 	public static Block blaze_cobblegen_block;
 	// Deco Blocks
-	public static Block CharcoalBlock;
-	public static Block ReinforcedGlass;
-	public static Block ReinforcedObsidian;
-	public static Block DirtyGlass;
-	public static Block DioriteBrick;
-	public static Block GraniteBrick;
-	public static Block AndesiteBrick;
+	public static Block charcoal_block;
+	public static Block reinforced_glass;
+	public static Block reinforced_obsidian;
+	public static Block dirty_glass;
+	public static Block diorite_brick;
+	public static Block granite_brick;
+	public static Block andesite_brick;
 	// Compressed Blocks
-	public static Block FleshBlock;
-	public static Block BoneBlock;
-	public static Block NetherStarBlock;
-	// Flint Block
-	public static Block FlintBlock;
+	public static Block flesh_block;
+	public static Block bone_block;
+	public static Block netherstar_block;
+	public static Block flint_block;
 	// End Stones
-	public static Block SmoothEndStone;
+	public static Block smooth_endstone;
 	// Stone Torch
-	public static Block StoneTorch;
+	public static Block stone_torch;
+	// EnderOre
+	public static Block ender_ore;
 	
 	public static void init(){
 		
@@ -97,62 +99,68 @@ public class TechBlocks {
 		
 		// Deco Blocks
 		if (ConfigHandler.StoneTorch){
-	    	StoneTorch = new StoneTorch();
-	    	registerBlock(StoneTorch, "StoneTorch", true);
+			stone_torch = new StoneTorch();
+	    	registerBlock(stone_torch, "stone_torch", true);
 	    }
 		if (ConfigHandler.CharcoalBlock){
-			CharcoalBlock = new CharcoalBlock();
-			registerBlock(CharcoalBlock, "CharcoalBlock", true);
+			charcoal_block = new CharcoalBlock();
+			registerBlock(charcoal_block, "charcoal_block", true);
 		}
 		if (ConfigHandler.ReinforcedGlass){
-			ReinforcedGlass = new ReinforcedGlass();
-			registerBlock(ReinforcedGlass, "ReinforcedGlass", true);
+			reinforced_glass = new ReinforcedGlass();
+			registerBlock(reinforced_glass, "reinforced_glass", true);
 		}
 		if (ConfigHandler.ReinforcedObsidian){
-			ReinforcedObsidian = new ReinforcedObsidian();
-			registerBlock(ReinforcedObsidian, "ReinforcedObsidian", true);
+			reinforced_obsidian = new ReinforcedObsidian();
+			registerBlock(reinforced_obsidian, "reinforced_obsidian", true);
 		}
 		if (ConfigHandler.DirtyGlass){
-			DirtyGlass = new DirtyGlass();
-			registerBlock(DirtyGlass, "DirtyGlass", true);
+			dirty_glass = new DirtyGlass();
+			registerBlock(dirty_glass, "dirty_glass", true);
 		}
 		
 		// Compressed Blocks
 		if (ConfigHandler.FleshBlock){
-			FleshBlock = new FleshBlock();
-			registerBlock(FleshBlock, "FleshBlock", true);
+			flesh_block = new FleshBlock();
+			registerBlock(flesh_block, "flesh_block", true);
 		}
 		if (ConfigHandler.BoneBlock){
-			BoneBlock = new BoneBlock();
-			registerBlock(BoneBlock, "BoneBlock", true);
+			bone_block = new BoneBlock();
+			registerBlock(bone_block, "bone_block", true);
 		}
 		if (ConfigHandler.NetherStarBlock){
-			NetherStarBlock = new NetherStarBlock();
-			registerBlock(NetherStarBlock, "NetherStarBlock", true);
+			netherstar_block = new NetherStarBlock();
+			registerBlock(netherstar_block, "netherstar_block", true);
 		}
 		if (ConfigHandler.DioriteBrick){
-			DioriteBrick = new DioriteBrick();
-			registerBlock(DioriteBrick, "DioriteBrick", true);
+			diorite_brick = new DioriteBrick();
+			registerBlock(diorite_brick, "diorite_brick", true);
 		}
 		if (ConfigHandler.GraniteBrick){
-			GraniteBrick = new GraniteBrick();
-			registerBlock(GraniteBrick, "GraniteBrick", true);
+			granite_brick = new GraniteBrick();
+			registerBlock(granite_brick, "granite_brick", true);
 		}
 		if (ConfigHandler.AndesiteBrick){
-			AndesiteBrick = new AndesiteBrick();
-			registerBlock(AndesiteBrick, "AndesiteBrick", true);
+			andesite_brick = new AndesiteBrick();
+			registerBlock(andesite_brick, "andesite_brick", true);
 		}
 		
 		// Flint Block
 		if (ConfigHandler.FlintBlock){
-			FlintBlock = new FlintBlock();
-			registerBlock(FlintBlock, "FlintBlock", true);
+			flint_block = new FlintBlock();
+			registerBlock(flint_block, "flint_block", true);
 		}
 		
 		// Smooth EndStone
 		if (ConfigHandler.SmoothEndStone){
-			SmoothEndStone = new SmoothEndStone();
-			registerBlock(SmoothEndStone, "SmoothEndStone", true);
+			smooth_endstone = new SmoothEndStone();
+			registerBlock(smooth_endstone, "smooth_endstone", true);
+		}
+		
+		// Ender Ore
+		if (ConfigHandler.ender_ore){
+			ender_ore = new EnderOre();
+			registerBlock(ender_ore, "ender_ore", true);
 		}
 	}
 	

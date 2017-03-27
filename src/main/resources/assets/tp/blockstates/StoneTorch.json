@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "facing=up": { "model": "tp:StoneTorch" },
-        "facing=east": { "model": "tp:StoneTorchWall" },
-        "facing=south": { "model": "tp:StoneTorchWall", "y": 90 },
-        "facing=west": { "model": "tp:StoneTorchWall", "y": 180 },
-        "facing=north": { "model": "tp:StoneTorchWall", "y": 270 }
-    }
-}

@@ -14,16 +14,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class DiamondApple extends ItemFood
 {
 	  public DiamondApple(int amount, float saturation, boolean isWolfFood)
 	  {
 	    super(amount, saturation, isWolfFood);
-	    this.setCreativeTab(tinyprogressions.tabTP);
+	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("DiamondApple");
+	    this.setUnlocalizedName("diamond_apple");
 	  }
 	  
 	  @Override

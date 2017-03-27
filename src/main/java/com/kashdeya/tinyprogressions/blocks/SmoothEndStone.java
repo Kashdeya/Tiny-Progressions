@@ -12,7 +12,7 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class SmoothEndStone extends Block {
 	
@@ -23,8 +23,8 @@ public class SmoothEndStone extends Block {
         this.setHarvestLevel("pickaxe", 1);
         this.setResistance(15.0F);
         this.setSoundType(blockSoundType.STONE);
-        this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("SmoothEndStone");
+        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setUnlocalizedName("smooth_endstone");
     }
 	
 	/**
@@ -33,7 +33,7 @@ public class SmoothEndStone extends Block {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.SmoothEndStone);
+        return Item.getItemFromBlock(TechBlocks.smooth_endstone);
     }
 	
 	@Override

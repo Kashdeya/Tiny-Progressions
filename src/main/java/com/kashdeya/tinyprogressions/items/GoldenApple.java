@@ -1,30 +1,23 @@
 package com.kashdeya.tinyprogressions.items;
 
-import java.util.List;
-
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class GoldenApple extends ItemFood
 {
 	  public GoldenApple(int amount, float saturation, boolean isWolfFood)
 	  {
 	    super(amount, saturation, isWolfFood);
-	    this.setCreativeTab(tinyprogressions.tabTP);
+	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("GoldenApple");
+	    this.setUnlocalizedName("golden_apple");
 	  }
 	  
 	  @Override

@@ -10,6 +10,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
@@ -21,7 +22,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class ReinforcedGlass extends BlockGlass
 {
@@ -32,8 +34,8 @@ public class ReinforcedGlass extends BlockGlass
         this.setResistance(2000.0F);
         this.setHarvestLevel("pickaxe", 0);
         this.setSoundType(blockSoundType.GLASS);
-        this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("ReinforcedGlass");
+        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setUnlocalizedName("reinforced_glass");
     }
     
     @Override
@@ -73,6 +75,12 @@ public class ReinforcedGlass extends BlockGlass
     public int quantityDropped(Random rand)
     {
         return 1;
+    }
+    
+	@Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    {
+        return Item.getItemFromBlock(TechBlocks.reinforced_glass);
     }
     
     /**

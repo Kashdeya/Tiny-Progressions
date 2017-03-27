@@ -10,7 +10,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class DirtyGlass extends BlockGlass
 {
@@ -19,8 +19,8 @@ public class DirtyGlass extends BlockGlass
         super(Material.GLASS, false);
         this.setHardness(0.3F);
         this.setSoundType(blockSoundType.GLASS);
-        this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("DirtyGlass");
+        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setUnlocalizedName("dirty_glass");
     }
     
     @SideOnly(Side.CLIENT)

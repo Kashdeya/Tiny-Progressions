@@ -5,14 +5,14 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class WoodArmor extends ItemArmor {
 	
 	public WoodArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
 		super(material, renderIndex, equipmentSlotIn);
 		this.maxStackSize = 1;
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	
 	/**

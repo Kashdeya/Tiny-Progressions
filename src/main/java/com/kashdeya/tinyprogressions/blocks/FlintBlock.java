@@ -12,7 +12,7 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class FlintBlock extends Block{
 	
@@ -22,8 +22,8 @@ public class FlintBlock extends Block{
 		this.setHardness(1.0F);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.STONE);
-		this.setCreativeTab(tinyprogressions.tabTP);
-		this.setUnlocalizedName("FlintBlock");
+		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setUnlocalizedName("flint_block");
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class FlintBlock extends Block{
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.FlintBlock);
+        return Item.getItemFromBlock(TechBlocks.flint_block);
     }
 	
 	@Override

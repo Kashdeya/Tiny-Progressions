@@ -12,7 +12,7 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 public class AndesiteBrick extends Block {
 	
@@ -23,8 +23,8 @@ public class AndesiteBrick extends Block {
         this.setHarvestLevel("pickaxe", 0);
         this.setResistance(10.0F);
         this.setSoundType(blockSoundType.STONE);
-        this.setCreativeTab(tinyprogressions.tabTP);
-        this.setUnlocalizedName("AndesiteBrick");
+        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setUnlocalizedName("andesite_brick");
     }
 	
 	/**
@@ -33,7 +33,7 @@ public class AndesiteBrick extends Block {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.AndesiteBrick);
+        return Item.getItemFromBlock(TechBlocks.andesite_brick);
     }
 	
 	@Override

@@ -19,6 +19,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -34,7 +35,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 
 public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
@@ -52,7 +53,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 		this.setLightLevel(1.0F);
 		this.setResistance(2000.0F);
 		this.setLightOpacity(1);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(blockSoundType.METAL);
 		this.setUnlocalizedName("growth_upgrade");
 		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
@@ -89,7 +90,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
     {
         return false;
     }
-    
+	
     @Override
     public boolean isFullCube(IBlockState state)
     {
@@ -100,6 +101,12 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
     {
         return false;
+    }
+	
+	@Override
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
     }
 	
 	@Override

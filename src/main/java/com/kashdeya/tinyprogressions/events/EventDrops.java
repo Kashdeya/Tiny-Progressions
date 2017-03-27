@@ -25,14 +25,14 @@ public class EventDrops {
 		if(!world.isRemote)
 		{
 			Block target = event.getState().getBlock();
-			if (ConfigHandler.BoneDrops == true)
+			if (ConfigHandler.BoneDrops)
 			{
 				if(target == Blocks.DIRT)
 				{
 					if(CHANCE.nextFloat()<ConfigHandler.BoneDropsChance)
 					{
 						event.getDrops().add(new ItemStack(Items.BONE,AMOUNT.nextInt(ConfigHandler.BoneAmmount)));
-						if (CHANCE.nextFloat()<ConfigHandler.SkullDropsChance && ConfigHandler.SkullDrops == true)
+						if (CHANCE.nextFloat()<ConfigHandler.SkullDropsChance && ConfigHandler.SkullDrops)
 						{
 							event.getDrops().add(new ItemStack(Items.SKULL,AMOUNT.nextInt(ConfigHandler.SkullAmmount)));
 							
@@ -42,13 +42,13 @@ public class EventDrops {
 			}
 			
 			// Stick Drops
-			if (ConfigHandler.LeafDrops == true)
+			if (ConfigHandler.stickDrops)
 			{
 				if(target == Blocks.LEAVES || target == Blocks.LEAVES2)
 				{
-					if(CHANCE.nextFloat()<ConfigHandler.LeafDropsChance)
+					if(CHANCE.nextFloat()<ConfigHandler.stickDropsChance)
 					{
-						event.getDrops().add(new ItemStack(Items.STICK,AMOUNT.nextInt(ConfigHandler.LeafDropsAmmount)));
+						event.getDrops().add(new ItemStack(Items.STICK,AMOUNT.nextInt(ConfigHandler.stickDropsAmmount)));
 					}
 				}
 			}

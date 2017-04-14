@@ -19,14 +19,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import com.kashdeya.tinyprogressions.util.InventoryHelper;
 
 public class MyceliumSeeds extends Item {
 	
 	public MyceliumSeeds(){
 		super();
-		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setUnlocalizedName("mycelium_seeds");
 	}
 	

@@ -9,8 +9,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.world.BlockEvent.PlaceEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgrade;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgradeTwo;
+import com.kashdeya.tinyprogressions.blocks.growth.BlockGrowthUpgrade;
+import com.kashdeya.tinyprogressions.blocks.growth.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 public class SpongeBlockPlacement {

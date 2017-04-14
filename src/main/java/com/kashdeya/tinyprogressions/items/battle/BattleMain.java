@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 
 import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BattleMain extends ItemTool {
 
@@ -21,7 +21,7 @@ public class BattleMain extends ItemTool {
         super(material, EFFECTIVE_ON);
         this.damageVsEntity = damage;
         this.attackSpeed = speed;
-        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setCreativeTab(tinyprogressions.tabTP);
 		this.setMaxStackSize(1);
     }
 

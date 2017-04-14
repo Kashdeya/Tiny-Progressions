@@ -3,13 +3,13 @@ package com.kashdeya.tinyprogressions.items.spears;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class EmeraldSpear extends SpearMain{
 	
 	public EmeraldSpear(ToolMaterial material) {
 		super(material);
-        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setCreativeTab(tinyprogressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 

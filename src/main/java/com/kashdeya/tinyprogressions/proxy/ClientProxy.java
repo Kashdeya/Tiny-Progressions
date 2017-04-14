@@ -17,6 +17,7 @@ public class ClientProxy extends CommonProxy {
         RenderHandler.initItems();
         RenderHandler.initArmor();
         RenderHandler.initTools();
+        RenderHandler.initFoods();
 	}
     
     public EntityPlayerMP getPlayerEntityFromContext(MessageContext ctx)

@@ -15,10 +15,10 @@
 		{   "from": [ 0, 0, 0 ],
             "to": [ 16, 16, 16 ],
             "faces": {
-                "north": { "texture": "#t5", "cullface": "north" },
-                "south": { "texture": "#t5", "cullface": "south" },
-                "west":  { "texture": "#t3", "cullface": "west" },
-                "east":  { "texture": "#t4", "cullface": "east" }
+                "north": { "texture": "#t3", "cullface": "north" },
+                "south": { "texture": "#t4", "cullface": "south" },
+                "west":  { "texture": "#t5", "cullface": "west" },
+                "east":  { "texture": "#t5", "cullface": "east" }
             }
         },
         {   "from": [ 0, 0, 0 ],
@@ -35,8 +35,8 @@
         "particle": "tp:blocks/iron_cobblegen_block_generic",
         "t1": "tp:blocks/iron_cobblegen_block_generic",
         "t2": "tp:blocks/iron_cobblegen_block_glass",
-        "t3": "blocks/lava_still",
-        "t4": "blocks/water_still",
+        "t3": "blocks/lava_flow",
+        "t4": "blocks/water_flow",
         "t5": "blocks/cobblestone"
     }
 }

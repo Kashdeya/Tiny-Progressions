@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import com.kashdeya.tinyprogressions.util.IExtendedReach;
 import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
 
@@ -50,7 +50,7 @@ public class IReachEvent {
 	            if (mov != null) {
 	              if ((mov.entityHit != null) && (mov.entityHit.hurtResistantTime == 0)) {
 	                if (mov.entityHit != thePlayer) {
-	                  TinyProgressions.network.sendToServer(new MessageExtendedReachAttack(mov.entityHit
+	                  tinyprogressions.network.sendToServer(new MessageExtendedReachAttack(mov.entityHit
 	                    .getEntityId()));
 	                }
 	              }

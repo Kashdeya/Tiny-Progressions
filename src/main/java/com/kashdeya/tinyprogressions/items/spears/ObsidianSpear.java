@@ -3,13 +3,13 @@ package com.kashdeya.tinyprogressions.items.spears;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class ObsidianSpear extends SpearMain{
 	
 	public ObsidianSpear(ToolMaterial material) {
 		super(material);
-        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setCreativeTab(tinyprogressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 

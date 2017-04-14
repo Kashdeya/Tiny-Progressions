@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BirthdayPickaxe extends ItemTool {
 	
@@ -41,7 +41,7 @@ public class BirthdayPickaxe extends ItemTool {
         this.setHarvestLevel("pickaxe", 4);
 		this.setUnlocalizedName("BirthdayPickaxe");
 		this.attackDamage = 1.5F + material.getDamageVsEntity();
-	    this.setCreativeTab(TinyProgressions.tabTP);
+	    this.setCreativeTab(tinyprogressions.tabTP);
 	}
 	 
 	public boolean canHarvest(IBlockState blockIn)

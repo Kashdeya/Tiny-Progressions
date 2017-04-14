@@ -12,13 +12,13 @@ import net.minecraft.item.ItemStack;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class MultiMain extends ItemPickaxe {
 	
 	public MultiMain(ToolMaterial material) {
 		super(material);
-		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 	public Set<String> getToolClasses(ItemStack stack) {

@@ -3,13 +3,13 @@ package com.kashdeya.tinyprogressions.items.battle;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class EmeraldBattle extends BattleMain{
 	
 	public EmeraldBattle(ToolMaterial material, float damage, float speed) {
 		super(material, damage, speed);
-        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setCreativeTab(tinyprogressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 

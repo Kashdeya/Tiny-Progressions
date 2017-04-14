@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
 import com.kashdeya.tinyprogressions.handlers.CanHandler;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class WateringCanBase extends Item {
 	
@@ -35,7 +35,7 @@ public class WateringCanBase extends Item {
 		
 		public WateringCanBase(){
 			this.setMaxStackSize(1);
-			this.setCreativeTab(TinyProgressions.tabTP);
+			this.setCreativeTab(tinyprogressions.tabTP);
 		}
 		
 		protected void setWateringRange(int newRange)
@@ -113,7 +113,7 @@ public class WateringCanBase extends Item {
 		              {
 		            	  Block checkBlock = world.getBlockState(pos.add(xAxis, yAxis, zAxis)).getBlock();
 		            	  
-		            	  if(checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
+		            	  if(checkBlock instanceof IGrowable || checkBlock == Blocks.GRASS || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
 		            	  {
 		            		  world.scheduleBlockUpdate(pos.add(xAxis, yAxis, zAxis), checkBlock, 0, 1);
 		            	  }

@@ -8,14 +8,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class GoldenApple extends ItemFood
 {
 	  public GoldenApple(int amount, float saturation, boolean isWolfFood)
 	  {
 	    super(amount, saturation, isWolfFood);
-	    this.setCreativeTab(TinyProgressions.tabTP);
+	    this.setCreativeTab(tinyprogressions.tabTP);
 	    this.setAlwaysEdible();
 	    this.setUnlocalizedName("golden_apple");
 	  }

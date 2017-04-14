@@ -19,6 +19,7 @@ import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
@@ -26,10 +27,10 @@ import com.kashdeya.tinyprogressions.tabs.TabTP;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
-public class TinyProgressions {
+public class tinyprogressions {
 	
 	@Instance(Reference.MOD_ID)
-    public static TinyProgressions instance;
+    public static tinyprogressions instance;
 	
 	@SidedProxy(clientSide=Reference.PROXY_CLIENT, serverSide=Reference.PROXY_COMMON)
 	public static CommonProxy PROXY;
@@ -52,6 +53,7 @@ public class TinyProgressions {
 		TechBlocks.init();
 		TechArmor.init();
 		TechTools.init();
+		TechFoods.init();
 		OreDictHandler.init();
 		
 		// Renders

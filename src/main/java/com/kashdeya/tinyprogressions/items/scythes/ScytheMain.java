@@ -7,6 +7,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.EnumActionResult;
@@ -16,27 +17,26 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class ScytheMain extends ItemSword {
 	
 	public ScytheMain(ToolMaterial material){
 		super(material);
-		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 	
-	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	@Override
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	  {
-		ItemStack itemstack = playerIn.getHeldItem(hand);
-
-        if (!playerIn.canPlayerEdit(pos.offset(facing), facing, itemstack))
+        if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
         {
             return EnumActionResult.FAIL;
         }
         else
         {
-            int hook = net.minecraftforge.event.ForgeEventFactory.onHoeUse(itemstack, playerIn, worldIn, pos);
+            int hook = net.minecraftforge.event.ForgeEventFactory.onHoeUse(stack, playerIn, worldIn, pos);
             if (hook != 0) return hook > 0 ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
         	
             IBlockState iblockstate = worldIn.getBlockState(pos);
@@ -46,13 +46,13 @@ public class ScytheMain extends ItemSword {
             {
                 if (block == Blocks.GRASS || block == Blocks.GRASS_PATH)
                 {
-                    this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
+                    this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
                     return EnumActionResult.SUCCESS;
                 }
                 
                 if (block == Blocks.MYCELIUM)
                 {
-                    this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
+                    this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
                     return EnumActionResult.SUCCESS;
                 }
 
@@ -61,13 +61,13 @@ public class ScytheMain extends ItemSword {
                     switch ((BlockDirt.DirtType)iblockstate.getValue(BlockDirt.VARIANT))
                     {
                         case DIRT:
-                            this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
+                            this.setBlock(stack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
                             return EnumActionResult.SUCCESS;
                         case COARSE_DIRT:
-                            this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
+                            this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
                             return EnumActionResult.SUCCESS;
                         case PODZOL:
-                        	this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
+                        	this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
                             return EnumActionResult.SUCCESS;
                         default:
                         	break;
@@ -87,17 +87,17 @@ public class ScytheMain extends ItemSword {
     		          {
     		            worldIn.destroyBlock(blockState, true);
     		            worldIn.setBlockState(blockState, cropState.getBlock().getDefaultState());
-    		            itemstack.setItemDamage(itemstack.getItemDamage() + 1);
-    		            if (itemstack.getItemDamage() >= itemstack.getMaxDamage())
+    		            stack.setItemDamage(stack.getItemDamage() + 1);
+    		            if (stack.getItemDamage() >= stack.getMaxDamage())
     		            {
     		              playerIn.setHeldItem(hand, null);
-    		              return super.onItemUse(itemstack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+    		              return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
     		            }
     		          }
     		        }
     		      }
     		    }
-    		    return super.onItemUse(itemstack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+    		    return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
     		  }
         }
 	

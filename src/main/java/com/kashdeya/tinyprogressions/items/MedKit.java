@@ -17,13 +17,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class MedKit extends Item {
 	
 	  public MedKit()
 	  {
-		  this.setCreativeTab(TinyProgressions.tabTP);
+		  this.setCreativeTab(tinyprogressions.tabTP);
 		  this.setUnlocalizedName("med_kit");
 		  this.setMaxStackSize(16);
 	  }
@@ -34,7 +34,7 @@ public class MedKit extends Item {
 	    if (!playerIn.capabilities.isCreativeMode) {
 	      itemStackIn.stackSize -= 1;
 	    }
-	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
+	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.HealDuration * 20, 0));
 	    
 	    return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
 	  }

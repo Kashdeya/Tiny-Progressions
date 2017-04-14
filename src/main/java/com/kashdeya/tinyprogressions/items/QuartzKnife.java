@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class QuartzKnife extends Item {
 	
@@ -20,7 +20,7 @@ public class QuartzKnife extends Item {
 		super.setMaxStackSize(1);
 		this.setMaxDamage(ConfigHandler.QuartzKnifeDamage);
 		super.setContainerItem(this);
-		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setUnlocalizedName("quartz_knife");
 	}
 	

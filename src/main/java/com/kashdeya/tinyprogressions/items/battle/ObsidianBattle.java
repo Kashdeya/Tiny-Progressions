@@ -3,13 +3,13 @@ package com.kashdeya.tinyprogressions.items.battle;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class ObsidianBattle extends BattleMain{
 	
 	public ObsidianBattle(ToolMaterial material, float damage, float speed) {
 		super(material, damage, speed);
-        this.setCreativeTab(TinyProgressions.tabTP);
+        this.setCreativeTab(tinyprogressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 

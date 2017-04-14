@@ -5,14 +5,14 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
 import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class FlintArmor extends ItemArmor {
 	
 	public FlintArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
 		super(material, renderIndex, equipmentSlotIn);
 		this.maxStackSize = 1;
-		this.setCreativeTab(TinyProgressions.tabTP);
+		this.setCreativeTab(tinyprogressions.tabTP);
 	}
 	
     /**

@@ -14,14 +14,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class EmeraldApple extends ItemFood
 {
 	  public EmeraldApple(int amount, float saturation, boolean isWolfFood)
 	  {
 	    super(amount, saturation, isWolfFood);
-	    this.setCreativeTab(TinyProgressions.tabTP);
+	    this.setCreativeTab(tinyprogressions.tabTP);
 	    this.setAlwaysEdible();
 	    this.setUnlocalizedName("emerald_apple");
 	  }

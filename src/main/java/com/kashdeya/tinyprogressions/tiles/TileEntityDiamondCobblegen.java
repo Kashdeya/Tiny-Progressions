@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.tiles;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -7,9 +9,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.wrapper.InvWrapper;
-
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 public class TileEntityDiamondCobblegen extends TileEntityCobblegen {
 
@@ -42,7 +44,22 @@ public class TileEntityDiamondCobblegen extends TileEntityCobblegen {
 			setInventorySlotContents(0, stack);
 
 			TileEntity tile = worldObj.getTileEntity(pos.offset(EnumFacing.UP));
-			if (tile instanceof IInventory) {
+
+			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
+				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
+
+				if (getStackInSlot(0) != null) {
+					ItemStack stack = getStackInSlot(0).copy();
+					stack.stackSize = 1;
+					ItemStack stack1 = ItemHandlerHelper.insertItem(handler, stack, true);
+					if (stack1 == null || stack1.stackSize == 0) {
+						ItemHandlerHelper.insertItem(handler, this.decrStackSize(0, 1), false);
+						markDirty();
+					}
+				}
+			}
+
+			else if (tile instanceof IInventory) {
 				IInventory iinventory = (IInventory) tile;
 				if (isInventoryFull(iinventory, EnumFacing.UP)) {
 					return;

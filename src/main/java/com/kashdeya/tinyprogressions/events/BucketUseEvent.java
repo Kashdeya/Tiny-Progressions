@@ -1,26 +1,39 @@
 package com.kashdeya.tinyprogressions.events;
 
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgrade;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgradeTwo;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 public class BucketUseEvent {
     @SubscribeEvent
-    public void onPlayerUsingBucket(FillBucketEvent event) {
-    	if (ConfigHandler.BlockGrowthUpgrade || ConfigHandler.BlockGrowthUpgradeTwo){
-    		if (event.getEntity() != null && event.getEntity() instanceof EntityPlayer) {
-    			IBlockState state = event.getWorld().getBlockState(event.getTarget().getBlockPos());
-    			if (state != null) {
-    				if (state.getBlock() instanceof BlockGrowthUpgrade || state.getBlock() instanceof BlockGrowthUpgradeTwo) {
-    					event.setCanceled(true);
-    				}
-    			}
-    		}
-    	}
+    public static void onBucketUse(FillBucketEvent event)
+    {
+        if (event.getTarget() != null)
+        {
+            if (event.getTarget().typeOfHit == RayTraceResult.Type.BLOCK)
+            {
+                if (event.getWorld().getBlockState(event.getTarget().getBlockPos()).getBlock() == TechBlocks.growth_upgrade)
+                {
+                    event.setCanceled(true);
+                }
+            }
+        }
+    }
+    
+    @SubscribeEvent
+    public static void onBucket(FillBucketEvent event)
+    {
+        if (event.getTarget() != null)
+        {
+            if (event.getTarget().typeOfHit == RayTraceResult.Type.BLOCK)
+            {
+                if (event.getWorld().getBlockState(event.getTarget().getBlockPos()).getBlock() == TechBlocks.growth_upgrade_two)
+                {
+                    event.setCanceled(true);
+                }
+            }
+        }
     }
 }

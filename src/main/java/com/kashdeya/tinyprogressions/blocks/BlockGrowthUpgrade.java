@@ -42,7 +42,8 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 	private int range = 4;
 	private int rangeY = 5;
 
-	public BlockGrowthUpgrade(){
+	public BlockGrowthUpgrade()
+	{
 		// Turns block into a water source.
 		super(Material.WATER);
 		this.setTickRandomly(true);
@@ -53,8 +54,8 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 		this.setLightOpacity(1);
 		this.setCreativeTab(tinyprogressions.tabTP);
 		this.setSoundType(blockSoundType.METAL);
-		setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 		this.setUnlocalizedName("growth_upgrade");
+		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 	}
 	
 	@Override
@@ -182,7 +183,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 
         		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
         		            		{
-        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 3.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
         		            		}
         		            	}
         		            }

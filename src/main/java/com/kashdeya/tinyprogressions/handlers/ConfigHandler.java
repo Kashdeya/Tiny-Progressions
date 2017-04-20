@@ -26,7 +26,7 @@ public class ConfigHandler {
 	public static int BlockGrowthUpgradeTicks = 40;
 	public static int GrowthUpgradeParticalTicks = 250;
 	public static boolean BlockGrowthUpgradeTwo = false;
-	public static int BlockGrowthUpgradeTwoTicks = 40;
+	public static int BlockGrowthUpgradeTwoTicks = 30;
 	public static int GrowthUpgradeTwoParticalTicks = 250;
 	
 	// Quartz Dust & Knife
@@ -72,6 +72,7 @@ public class ConfigHandler {
 	public static boolean AllowRightClick = false;
 	public static boolean MyceliumSeeds = false;
 	public static boolean DiamondApple = false;
+	public static boolean EmeraldApple = false;
 	public static boolean MedKit = false;
 	public static int healDuration = 300;
 	
@@ -80,6 +81,10 @@ public class ConfigHandler {
 	public static boolean FlintBlock = false;
 	public static boolean FlintArmor = false;
 	
+	// Flint Knife
+	public static boolean FlintKnife = false;
+	public static int FlintKnifeDamage = 128;
+	
 	// Bone Items & More
 	public static boolean BoneTools = false;
 	public static boolean BoneBlock = false;
@@ -87,4 +92,7 @@ public class ConfigHandler {
 	
 	// Remove Items
 	public static boolean RemoveItems = false;
+	
+	// Paxels
+	public static boolean EnablePaxels = false;
 }

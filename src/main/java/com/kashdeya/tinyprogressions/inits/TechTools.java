@@ -1,11 +1,13 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ToolHeads;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -13,6 +15,11 @@ import com.kashdeya.tinyprogressions.tools.axe.BoneAxe;
 import com.kashdeya.tinyprogressions.tools.axe.FlintAxe;
 import com.kashdeya.tinyprogressions.tools.hoe.BoneHoe;
 import com.kashdeya.tinyprogressions.tools.hoe.FlintHoe;
+import com.kashdeya.tinyprogressions.tools.paxels.DiamondPaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.GoldenPaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.IronPaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.StonePaxel;
+import com.kashdeya.tinyprogressions.tools.paxels.WoodenPaxel;
 import com.kashdeya.tinyprogressions.tools.pickaxe.BonePickaxe;
 import com.kashdeya.tinyprogressions.tools.pickaxe.FlintPickaxe;
 import com.kashdeya.tinyprogressions.tools.spade.BoneSpade;
@@ -23,11 +30,11 @@ import com.kashdeya.tinyprogressions.tools.sword.FlintSword;
 public class TechTools {
 	
 	// Flint Tool & Weapon Heads
-	public static Item FlintPickaxeHead;
-	public static Item FlintAxeHead;
-	public static Item FlintSpadeHead;
-	public static Item FlintSwordHead;
-	public static Item FlintHoeHead;
+	// public static Item FlintPickaxeHead;
+	// public static Item FlintAxeHead;
+	// public static Item FlintSpadeHead;
+	// public static Item FlintSwordHead;
+	// public static Item FlintHoeHead;
 	
 	// Flint Tools & Weapons
 	public static Item FlintPickaxe;
@@ -37,11 +44,11 @@ public class TechTools {
 	public static Item FlintHoe;
 	
 	// Bone Tool & Weapon Heads
-	public static Item BonePickaxeHead;
-	public static Item BoneAxeHead;
-	public static Item BoneSpadeHead;
-	public static Item BoneSwordHead;
-	public static Item BoneHoeHead;
+	// public static Item BonePickaxeHead;
+	// public static Item BoneAxeHead;
+	// public static Item BoneSpadeHead;
+	// public static Item BoneSwordHead;
+	// public static Item BoneHoeHead;
 	
 	// Bone Tools & Weapons
 	public static Item BonePickaxe;
@@ -49,6 +56,14 @@ public class TechTools {
 	public static Item BoneSpade;
 	public static Item BoneSword;
 	public static Item BoneHoe;
+	
+	// Paxels
+	public static Item WoodenPaxel;
+	public static Item StonePaxel;
+	public static Item GoldenPaxel;
+	public static Item IronPaxel;
+	public static Item DiamondPaxel;
+	
 	
 	public static final Item.ToolMaterial BONE = EnumHelper.addToolMaterial("boneToolMaterial", 0, 29, 1.0F, 0.0F, 10);
 	public static final Item.ToolMaterial FLINT = EnumHelper.addToolMaterial("flintToolMaterial", 0, 100, 3.0F, 0.5F, 15);
@@ -83,7 +98,20 @@ public class TechTools {
 			registerItem(BoneHoe, "BoneHoe");
 		}
 		
-		// Flint Tool & Weapon Heads
+		if (ConfigHandler.EnablePaxels){
+			WoodenPaxel = new WoodenPaxel(ToolMaterial.WOOD);
+			registerItem(WoodenPaxel, "WoodenPaxel");
+			StonePaxel = new StonePaxel(ToolMaterial.STONE);
+			registerItem(StonePaxel, "StonePaxel");
+			IronPaxel = new IronPaxel(ToolMaterial.IRON);
+			registerItem(IronPaxel, "IronPaxel");
+			GoldenPaxel = new GoldenPaxel(ToolMaterial.GOLD);
+			registerItem(GoldenPaxel, "GoldenPaxel");
+			DiamondPaxel = new DiamondPaxel(ToolMaterial.DIAMOND);
+			registerItem(DiamondPaxel, "DiamondPaxel");
+		}
+		
+		/** Flint Tool & Weapon Heads
 		if (ConfigHandler.FlintTools){
 			FlintPickaxeHead = new ToolHeads().setUnlocalizedName("FlintPickaxeHead");;
 			registerItem(FlintPickaxeHead, "FlintPickaxeHead");
@@ -109,7 +137,7 @@ public class TechTools {
 			registerItem(BoneSwordHead, "BoneSwordHead");
 			BoneHoeHead = new ItemBase().setUnlocalizedName("BoneHoeHead");;
 			registerItem(BoneHoeHead, "BoneHoeHead");
-		}
+		}*/
 	}
 	
 	static void registerItem(Item item, String name){

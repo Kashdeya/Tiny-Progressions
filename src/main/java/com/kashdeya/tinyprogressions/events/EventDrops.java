@@ -25,7 +25,6 @@ public class EventDrops {
 		if(!world.isRemote)
 		{
 			Block target = event.getState().getBlock();
-			// Bone Drops
 			if (ConfigHandler.BoneDrops == true)
 			{
 				if(target == Blocks.DIRT)

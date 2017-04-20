@@ -13,7 +13,7 @@ public class WateringCan extends WateringCanBase {
 	
 	public WateringCan(){
 		super();
-		this.setUnlocalizedName("WateringCan");
+		this.setUnlocalizedName("watering_can");
 		this.setWateringRange(1);
 		this.setWateringChance(25);
 	}

@@ -9,14 +9,17 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
+import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
@@ -34,11 +37,13 @@ public class tinyprogressions {
 	
 	public static final CreativeTabs tabTP = new TabTP("tiny_progressions");
 	
+	public static SimpleNetworkWrapper network;
+	
     public static org.apache.logging.log4j.Logger logger;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-    	logger = e.getModLog();;
+    	logger = e.getModLog();
     	
 		// Configs
 		TinyConfig.initMainConfigs();
@@ -48,6 +53,7 @@ public class tinyprogressions {
 		TechBlocks.init();
 		TechArmor.init();
 		TechTools.init();
+		TechFoods.init();
 		OreDictHandler.init();
 		
 		// Renders
@@ -56,6 +62,7 @@ public class tinyprogressions {
     	
     	// Events
     	MinecraftForge.EVENT_BUS.register(instance);
+    	MinecraftForge.EVENT_BUS.register(new IReachEvent());
     	MinecraftForge.EVENT_BUS.register(EventDrops.class);
     	MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
     	MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);

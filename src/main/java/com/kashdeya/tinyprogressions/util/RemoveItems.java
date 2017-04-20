@@ -22,8 +22,12 @@ public class RemoveItems {
 			removeRecipe(new ItemStack(Items.WOODEN_PICKAXE));	
 		}
 		
-		if (ConfigHandler.SmoothEndStone == true){
+		if (ConfigHandler.SmoothEndStone){
 			removeRecipe(new ItemStack(Blocks.END_BRICKS));			
+		}
+		
+		if (ConfigHandler.ApplePro){
+			removeRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 0));
 		}
 		
 	}

@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.client.render;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -13,6 +10,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
 
 @SideOnly(Side.CLIENT)
 public class TileEntityGrowthRenderer extends TileEntitySpecialRenderer<TileEntityGrowth> {
@@ -29,8 +29,8 @@ public class TileEntityGrowthRenderer extends TileEntitySpecialRenderer<TileEnti
 		float ticks = tile.animationTicks + (tile.animationTicks - tile.prevAnimationTicks)  * partialTick;
 
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(x + 0.5D, y + 0.5D, z + 0.5D);
-		GlStateManager.scale(0.65, 0.65, 0.65);
+		GlStateManager.translate(x + 0.5D, y + 0.509D, z + 0.5D);
+		GlStateManager.scale(0.65D, 0.65D, 0.65D);
 		GlStateManager.rotate(ticks, 0F, 1F, 0F);
 		Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
 		Minecraft.getMinecraft().getTextureManager().getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).setBlurMipmap(false, false);

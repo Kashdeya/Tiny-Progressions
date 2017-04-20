@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraftforge.common.config.ConfigCategory;
+import net.minecraftforge.common.config.Configuration;
+
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
-import net.minecraftforge.common.config.ConfigCategory;
-import net.minecraftforge.common.config.Configuration;
 
 public class TinyConfig {
 	
@@ -66,18 +66,20 @@ public class TinyConfig {
 		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Extra Stuff", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Extra Stuff", true, "Enable Mycelium Seeds?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Extra Stuff", true, "Enable Medkit?");
-		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
+		ConfigHandler.HealDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
 		ConfigHandler.SmoothEndStone = config.getBoolean("Smooth EndStone", category + " Extra Stuff", true, "Enable Smooth EndStone?");
+		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE is Tinkers is installed.]");
+		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?");
 		
-		config.addCustomCategoryComment(category + " RageCraft", "Added for RageCraft - If you enable please make a recipe for them, Other wise they do nothing.");
-		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " RageCraft", false, "Enable Flint Knife?");
-		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " RageCraft", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
-		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " RageCraft", false, "Enable Stone Dust?");
+		config.addCustomCategoryComment(category + " CUS", "Added for Can_U_Survive.");
+		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", true, "Enable Flint Knife?\n[Needed for Food Items.]\n[If disabled you will need to make recipes for Food Items.]");
+		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
+		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", false, "Enable Stone Dust?");
 		
 		config.addCustomCategoryComment(category + " Drops", "Extra Drops");
-		ConfigHandler.LeafDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
-		ConfigHandler.LeafDropsChance = config.getFloat("Stick Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
-		ConfigHandler.LeafDropsAmmount = config.getInt("Stick Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
+		ConfigHandler.StickDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
+		ConfigHandler.StickDropsChance = config.getFloat("Stick Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
+		ConfigHandler.StickDropsAmmount = config.getInt("Stick Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
 		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Drops", true, "Enable Bones to drop from Dirt?");
 		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Drops", 0.01F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
 		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
@@ -89,7 +91,7 @@ public class TinyConfig {
 		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", false, "Enable the Quartz Knife and Dust Recipe?");
 		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		
-		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False");
+		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
 		ConfigHandler.ReinforcedGlass = config.getBoolean("Reinforced Glass Block", category + " Reinforced Blocks", true, "Enable Reinforced Glass Block?");
 		ConfigHandler.ReinforcedObsidian = config.getBoolean("Reinforced Obsidian Block", category + " Reinforced Blocks", true, "Enable Reinforced Obsidian Block?");
 		
@@ -98,23 +100,25 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Apples", "Just Because");
 		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
-		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", true, "Bring back the Notch Apple Recipe?");
+		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", false, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
 		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Apples", true, "Enable Diamond Apple?");
+		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", true, "Enable Golden Apple Progression?\n[If you do not want Golden Apple Progression DISABLE and enable the Notch Apple.]");
 		
 		config.addCustomCategoryComment(category + " Armor", "Why not");
 		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
-		ConfigHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", false, "Enable Flint Armor?");
-		ConfigHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", false, "Enable Bone Armor?");
+		ConfigHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
+		ConfigHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
+		ConfigHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
 		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
 		ConfigHandler.FleshBlock = config.getBoolean("Compressed Flesh Block", category + " Compressed Blocks", true, "Enable Compressed Flesh Block?");
-		ConfigHandler.NetherStarBlock = config.getBoolean("Compressed Nether Star Block", category + " Compressed Blocks", true, "Enable Compressed Nether Star Block?");
+		ConfigHandler.NetherStarBlock = config.getBoolean("Compressed Nether Star Block", category + " Compressed Blocks", true, "Enable Compressed Nether Star Block?\n[Can also be used for Beacon Base Blocks.]");
 		ConfigHandler.FlintBlock = config.getBoolean("Compressed Flint Block", category + " Compressed Blocks", true, "Enable Compressed Flint Block?");
 		
 		config.addCustomCategoryComment(category + " Flint and Bone Tools & Weapons", "Cause Progression!");
-		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Enable Bone Tools & Weapons?");
-		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Enable Flint Tools & Weapons?");
+		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
+		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
 		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");
 		
 		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
@@ -122,8 +126,65 @@ public class TinyConfig {
 		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
 		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
 		
-		config.addCustomCategoryComment(category + " Paxels", "Because People Love Multi Tools");
-		ConfigHandler.EnablePaxels = config.getBoolean("Paxels", category + " Paxels", true, "Enable paxels?");
+		config.addCustomCategoryComment(category + " Scythes", "Because I love to farm and stuff");
+		ConfigHandler.WoodenScythe = config.getBoolean("Wooden Scythe", category + " Scythes", true, "Enable Wooden Scythe?");
+		ConfigHandler.StoneScythe = config.getBoolean("Stone Scythe", category + " Scythes", true, "Enable Stone Scythe?");
+		ConfigHandler.GoldenScythe = config.getBoolean("Golden Scythe", category + " Scythes", true, "Enable Golden Scythe?");
+		ConfigHandler.IronScythe = config.getBoolean("Iron Scythe", category + " Scythes", true, "Enable Iron Scythe?");
+		ConfigHandler.DiamondScythe = config.getBoolean("Diamond Scythe", category + " Scythes", true, "Enable Diamond Scythe?");
+		ConfigHandler.EmeraldScythe = config.getBoolean("Emerald Scythe", category + " Scythes", true, "Enable Emerald Scythe?");
+		ConfigHandler.ObsidianScythe = config.getBoolean("Obsidian Scythe", category + " Scythes", true, "Enable Obsidian Scythe?");
+		
+		config.addCustomCategoryComment(category + " MultiTools", "Because I love weird stuff\n[Requires Other Items in this mod.]\n[If Other Items are Disabled you will have to make your own recipes.]");
+		ConfigHandler.WoodenMulti = config.getBoolean("Wooden MultiTool", category + " MultiTools", true, "Enable Wooden MultiTool?");
+		ConfigHandler.StoneMulti = config.getBoolean("Stone MultiTool", category + " MultiTools", true, "Enable Stone MultiTool?");
+		ConfigHandler.GoldenMulti = config.getBoolean("Golden MultiTool", category + " MultiTools", true, "Enable Golden MultiTool?");
+		ConfigHandler.IronMulti = config.getBoolean("Iron MultiTool", category + " MultiTools", true, "Enable Iron MultiTool?");
+		ConfigHandler.DiamondMulti = config.getBoolean("Diamond MultiTool", category + " MultiTools", true, "Enable Diamond MultiTool?");
+		ConfigHandler.EmeraldMulti = config.getBoolean("Emerald MultiTool", category + " MultiTools", true, "Enable Emerald MultiTool?");
+		ConfigHandler.ObsidianMulti = config.getBoolean("Obsidian MultiTool", category + " MultiTools", true, "Enable Obsidian MultiTool?");
+		
+		config.addCustomCategoryComment(category + " Spears", "Because I love weird stuff");
+		ConfigHandler.SpearReach = config.getInt("A Spears Extended Reach", category + " Spears", 7, 5, 10, "Sets the Reach of a Spear.\n[Vanilla is 5 blocks!]");
+		ConfigHandler.WoodenSpear = config.getBoolean("Wooden Spear", category + " Spears", true, "Enable Wooden Spear?");
+		ConfigHandler.StoneSpear = config.getBoolean("Stone Spear", category + " Spears", true, "Enable Stone Spear?");
+		ConfigHandler.GoldenSpear = config.getBoolean("Golden Spear", category + " Spears", true, "Enable Golden Spear?");
+		ConfigHandler.IronSpear = config.getBoolean("Iron Spear", category + " Spears", true, "Enable Iron Spear?");
+		ConfigHandler.DiamondSpear = config.getBoolean("Diamond Spear", category + " Spears", true, "Enable Diamond Spear?");
+		ConfigHandler.EmeraldSpear = config.getBoolean("Emerald Spear", category + " Spears", true, "Enable Emerald Spear?");
+		ConfigHandler.ObsidianSpear = config.getBoolean("Obsidian Spear", category + " Spears", true, "Enable Obsidian Spear?");
+		
+		config.addCustomCategoryComment(category + " BattleAxes", "Because I love weird stuff");
+		ConfigHandler.WoodenBattle = config.getBoolean("Wooden BattleAxe", category + " BattleAxes", true, "Enable Wooden BattleAxe?");
+		ConfigHandler.StoneBattle = config.getBoolean("Stone BattleAxe", category + " BattleAxes", true, "Enable Stone BattleAxe?");
+		ConfigHandler.GoldenBattle = config.getBoolean("Golden BattleAxe", category + " BattleAxes", true, "Enable Golden BattleAxe?");
+		ConfigHandler.IronBattle = config.getBoolean("Iron BattleAxe", category + " BattleAxes", true, "Enable Iron BattleAxe?");
+		ConfigHandler.DiamondBattle = config.getBoolean("Diamond BattleAxe", category + " BattleAxes", true, "Enable Diamond BattleAxe?");
+		ConfigHandler.EmeraldBattle = config.getBoolean("Emerald BattleAxe", category + " BattleAxes", true, "Enable Emerald BattleAxe?");
+		ConfigHandler.ObsidianBattle = config.getBoolean("Obsidian BattleAxe", category + " BattleAxes", true, "Enable Obsidian BattleAxe?");
+		
+		config.addCustomCategoryComment(category + " Obsidian", "Because I love weird stuff\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
+		ConfigHandler.ObsidianAxe = config.getBoolean("Obsidian Axe", category + " Obsidian", true, "Enable Obsidian Axe?");
+		ConfigHandler.ObsidianPickaxe = config.getBoolean("Obsidian Pickaxe", category + " Obsidian", true, "Enable Obsidian Pickaxe?");
+		ConfigHandler.ObsidianHoe = config.getBoolean("Obsidian Hoe", category + " Obsidian", true, "Enable Obsidian Hoe?");
+		ConfigHandler.ObsidianSpade = config.getBoolean("Obsidian Shovel", category + " Obsidian", true, "Enable Obsidian Shovel?");
+		ConfigHandler.ObsidianSword = config.getBoolean("Obsidian Sword", category + " Obsidian", true, "Enable Obsidian Sword?");
+		
+		config.addCustomCategoryComment(category + " Emerald", "Because I love weird stuff\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
+		ConfigHandler.EmeraldAxe = config.getBoolean("Emerald Axe", category + " Emerald", true, "Enable Emerald Axe?");
+		ConfigHandler.EmeraldPickaxe = config.getBoolean("Emerald Pickaxe", category + " Emerald", true, "Enable Emerald Pickaxe?");
+		ConfigHandler.EmeraldHoe = config.getBoolean("Emerald Hoe", category + " Emerald", true, "Enable Emerald Hoe?");
+		ConfigHandler.EmeraldSpade = config.getBoolean("Emerald Shovel", category + " Emerald", true, "Enable Emerald Shovel?");
+		ConfigHandler.EmeraldSword = config.getBoolean("Emerald Sword", category + " Emerald", true, "Enable Emerald Sword?");
+		
+		config.addCustomCategoryComment(category + " Ender Ore", "Might as well add this");
+		ConfigHandler.EnderOre = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable  Ender Ore?");
+		ConfigHandler.EnderMite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable  Endermite spawn?");
+		ConfigHandler.EndermiteSpawn = config.getFloat("Endermite Spawn", category + " Ender Ore", 0.25F, 0.0F, 1.0F, "Sets the Chance of Endermites to spawn when Ore is mined.");
+		ConfigHandler.EnderOreFrequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 5, 1, 64, "Sets the Chance of Ender ore.");
+		ConfigHandler.EnderOreMin = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 1, "Sets the min Y level.");
+		ConfigHandler.EnderOreMax = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.EnderOreSize = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 1, 64, "Sets the Ender Ore Vein Size.");
 		
 		if (config.hasChanged())
         config.save();    
@@ -181,26 +242,9 @@ public class TinyConfig {
 		private static void initLegacyHander()
 		{
 			
-			addToMovePropertyList("tiny progressions birthday pickaxe", "Birthday Pickaxe", "tiny progressions goodies");
-			addToMovePropertyList("tiny progressions misc blocks", "Flesh Block", "tiny progressions compressed blocks");
-			addToMovePropertyList("tiny progressions extra stuff", "Diamond Apple", "tiny progressions apples");
-			addToMovePropertyList("tiny progressions extra stuff", "Notch Apple", "tiny progressions apples");
-			addToMovePropertyList("tiny progressions extra stuff", "Andesite Bricks", "tiny progressions bricks");
-			addToMovePropertyList("tiny progressions extra stuff", "Diorite Bricks", "tiny progressions bricks");
-			addToMovePropertyList("tiny progressions extra stuff", "Granite Bricks", "tiny progressions bricks");
-			addToMovePropertyList("tiny progressions flint knife", "Flint Knife", "tiny progressions ragecraft");
-			addToMovePropertyList("tiny progressions flint knife", "Flint Knife Durability", "tiny progressions ragecraft");
-			addToMovePropertyList("tiny progressions extra stuff", "Stone Dust", "tiny progressions ragecraft");
-			
-			addToRenamePropertyList("tiny progressions goodies" , "Birthday Pickaxe", "Party Pickaxe");
-			addToRenamePropertyList("tiny progressions compressed blocks" , "Flesh Block", "Compressed Flesh Block");
-			addToRenamePropertyList("tiny progressions watering cans" , "Reinforced Watering Can", "Watering Can Reinforced");
-			
-			addToRemoveCategoryList("tiny progressions birthday pickaxe");
-			addToRemoveCategoryList("tiny progressions buckets");
-			addToRemoveCategoryList("tiny progressions misc blocks");
-			addToRemoveCategoryList("tiny progressions flint knife");
-			
+			//addToMovePropertyList("tiny progressions birthday pickaxe", "Birthday Pickaxe", "tiny progressions goodies");
+			//addToRenamePropertyList("tiny progressions goodies" , "Birthday Pickaxe", "Party Pickaxe");
+			//addToRemoveCategoryList("tiny progressions birthday pickaxe");			
 			//addToRemoveProperties(category, propName);
 		}
 		

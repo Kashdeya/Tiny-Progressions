@@ -20,7 +20,7 @@ public class FlintArmor extends ItemArmor {
      */
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
     {
-        ItemStack mat = new ItemStack(TechItems.FlintIngot);
+        ItemStack mat = new ItemStack(TechItems.flint_ingot);
         if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
         return super.getIsRepairable(toRepair, repair);
     }

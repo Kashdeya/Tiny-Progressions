@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -38,17 +37,23 @@ public class StoneArmor extends ItemArmor {
     }
     
     @Override
-    @SideOnly(Side.SERVER)
     public void onArmorTick(World world, EntityPlayer entity, ItemStack itemStack) {
-    	if (entity instanceof EntityLivingBase)
-    		if (entity.inventory.armorItemInSlot(3) != null && entity.inventory.armorItemInSlot(3).getItem() == TechArmor.stoneHelmet){
-    			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
-    	else if (entity.inventory.armorItemInSlot(2) != null && entity.inventory.armorItemInSlot(2).getItem() == TechArmor.stoneChestplate){
-    		((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
-    	else if (entity.inventory.armorItemInSlot(1) != null && entity.inventory.armorItemInSlot(1).getItem() == TechArmor.stoneLeggings){
-    		((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
-    	else if (entity.inventory.armorItemInSlot(0) != null && entity.inventory.armorItemInSlot(0).getItem() == TechArmor.stoneBoots){
-    		((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));}
+    	ItemStack chest = entity.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
+    	ItemStack feet = entity.getItemStackFromSlot(EntityEquipmentSlot.FEET);
+    	ItemStack head = entity.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
+    	ItemStack legs = entity.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+    	if ((head != null) && (head.getItem() == TechArmor.stone_helmet) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
+    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+    	}
+    	if ((chest != null) && (chest.getItem() == TechArmor.stone_chestplate) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
+    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+    	}
+    	if ((legs != null) && (legs.getItem() == TechArmor.stone_leggings) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
+    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+    	}
+    	if ((feet != null) && (feet.getItem() == TechArmor.stone_boots) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
+    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+    	}
     }
     
     @Override

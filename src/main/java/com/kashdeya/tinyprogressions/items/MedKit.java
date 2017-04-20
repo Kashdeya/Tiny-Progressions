@@ -24,8 +24,8 @@ public class MedKit extends Item {
 	  public MedKit()
 	  {
 		  this.setCreativeTab(tinyprogressions.tabTP);
-		  this.setUnlocalizedName("MedKit");
-		  this.setMaxStackSize(1);
+		  this.setUnlocalizedName("med_kit");
+		  this.setMaxStackSize(16);
 	  }
 	  
 	  @Override
@@ -34,7 +34,7 @@ public class MedKit extends Item {
 	    if (!playerIn.capabilities.isCreativeMode) {
 	      itemStackIn.stackSize -= 1;
 	    }
-	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
+	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.HealDuration * 20, 0));
 	    
 	    return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
 	  }

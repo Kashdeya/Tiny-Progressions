@@ -2,13 +2,9 @@ package com.kashdeya.tinyprogressions.items;
 
 import java.util.List;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -18,6 +14,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
+
 public class EmeraldApple extends ItemFood
 {
 	  public EmeraldApple(int amount, float saturation, boolean isWolfFood)
@@ -25,7 +23,7 @@ public class EmeraldApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(tinyprogressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("EmeraldApple");
+	    this.setUnlocalizedName("emerald_apple");
 	  }
 	  
 	  @Override

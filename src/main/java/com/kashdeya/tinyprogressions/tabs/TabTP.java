@@ -13,7 +13,7 @@ public class TabTP extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-		return TechItems.WateringCan;
+		return TechItems.watering_can;
 	}
 
 }

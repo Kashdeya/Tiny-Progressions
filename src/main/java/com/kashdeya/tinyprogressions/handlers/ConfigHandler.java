@@ -1,6 +1,13 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	// Tool Levels
+	public static int BoneLevel = 0;
+	public static int FlintLevel = 0;
+	public static int BirthdayLevel = 4;
+	public static int ObsidianLevel = 4;
+	public static int EmeraldLevel = 4;
+	
 	// Watering cans
 	public static boolean WateringCan = true;
 	public static boolean WateringCanUpgrade = true;

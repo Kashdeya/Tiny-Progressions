@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.EnumActionResult;
@@ -20,6 +21,8 @@ import net.minecraft.world.World;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class ScytheMain extends ItemSword {
+	
+	protected Item.ToolMaterial toolMaterial;
 	
 	public ScytheMain(ToolMaterial material){
 		super(material);
@@ -110,5 +113,13 @@ public class ScytheMain extends ItemSword {
             worldIn.setBlockState(pos, state, 11);
             stack.damageItem(1, player);
         }
+    }
+	
+	@Override
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+    {
+        ItemStack mat = this.toolMaterial.getRepairItemStack();
+        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
+        return super.getIsRepairable(toRepair, repair);
     }
 }

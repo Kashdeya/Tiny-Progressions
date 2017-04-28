@@ -1,16 +1,5 @@
 package com.kashdeya.tinyprogressions.handlers;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeRenderer;
 import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRenderer;
@@ -23,6 +12,17 @@ import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderHandler {
@@ -75,6 +75,7 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.silver_lamp, "silver_lamp");
 	    InventoryBlockRender(TechBlocks.white_lamp, "white_lamp");
 	    InventoryBlockRender(TechBlocks.yellow_lamp, "yellow_lamp");
+	    InventoryBlockRender(TechBlocks.base_lamp, "base_lamp");
 	    InventoryBlockRender(TechBlocks.black_glowstone, "black_glowstone");
 	    InventoryBlockRender(TechBlocks.blue_glowstone, "blue_glowstone");
 	    InventoryBlockRender(TechBlocks.brown_glowstone, "brown_glowstone");
@@ -123,14 +124,10 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.quartz_dust, "quartz_dust");
 		InventoryItemRender(TechItems.quartz_knife, "quartz_knife");
 		InventoryItemRender(TechItems.mycelium_seeds, "mycelium_seeds");
-		InventoryItemRender(TechItems.diamond_apple, "diamond_apple");
-		InventoryItemRender(TechItems.emerald_apple, "emerald_apple");
 		InventoryItemRender(TechItems.med_kit, "med_kit");	
 		InventoryItemRender(TechItems.stone_dust, "stone_dust");
-		InventoryItemRender(TechItems.flint_ingot, "flint_ingot");
 		InventoryItemRender(TechItems.flint_knife, "flint_knife");
 		InventoryItemRender(TechItems.stone_stick, "stone_stick");
-		InventoryItemRender(TechItems.golden_apple, "golden_apple");
 		InventoryItemRender(TechItems.ender_dust, "ender_dust");
 		InventoryItemRender(TechItems.rotten_leather, "rotten_leather");
 		InventoryItemRender(TechItems.old_reed, "old_reed");
@@ -160,6 +157,9 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.witherRib, "witherRib");
 		InventoryItemRender(TechItems.dragon_scale, "dragon_scale");
 		InventoryItemRender(TechItems.lava_crystal, "lava_crystal");
+		InventoryItemRender(TechItems.diamond_apple, "diamond_apple");
+		InventoryItemRender(TechItems.emerald_apple, "emerald_apple");
+		InventoryItemRender(TechItems.golden_apple, "golden_apple");
 	}
 	
 	public static void initFoods(){

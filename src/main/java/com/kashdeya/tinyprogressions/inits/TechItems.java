@@ -29,6 +29,8 @@ public class TechItems {
 	public static Item golden_apple;
 	public static Item diamond_apple;
 	public static Item emerald_apple;
+	public static Item iron_apple;
+	public static Item redstone_apple;
 	// Misc Items
 	public static Item mycelium_seeds;
 	public static Item med_kit;
@@ -36,8 +38,6 @@ public class TechItems {
 	public static Item old_reed;
 	// Stone Dust
 	public static Item stone_dust;
-	// Ingots
-	public static Item flint_ingot;
 	// Flint Knife
 	public static Item flint_knife;
 	// Stone Stick
@@ -76,7 +76,18 @@ public class TechItems {
 	public static Item lava_crystal;
 	
 	public static void init(){
-		
+	    if (ConfigHandler.DiamondApple){
+	    	diamond_apple = new DiamondApple(4, 1.2F, false);
+	    	registerItem(diamond_apple, "diamond_apple");
+	    }
+	    if (ConfigHandler.EmeraldApple){
+	    	emerald_apple = new EmeraldApple(4, 1.2F, false);
+	    	registerItem(emerald_apple, "emerald_apple");
+	    }
+	    if (ConfigHandler.ApplePro){
+	    	golden_apple = new GoldenApple(4, 1.2F, false);
+	    	registerItem(golden_apple, "golden_apple");
+	    }
 		// Watering Cans
 		if (ConfigHandler.WateringCan){
 			watering_can = new WateringCan();
@@ -103,18 +114,6 @@ public class TechItems {
 	    if (ConfigHandler.MyceliumSeeds){
 	    	mycelium_seeds = new MyceliumSeeds();
 	    	registerItem(mycelium_seeds, "mycelium_seeds");
-	    }
-	    if (ConfigHandler.DiamondApple){
-	    	diamond_apple = new DiamondApple(4, 1.2F, false);
-	    	registerItem(diamond_apple, "diamond_apple");
-	    }
-	    if (ConfigHandler.EmeraldApple){
-	    	emerald_apple = new EmeraldApple(4, 1.2F, false);
-	    	registerItem(emerald_apple, "emerald_apple");
-	    }
-	    if (ConfigHandler.ApplePro){
-	    	golden_apple = new GoldenApple(4, 1.2F, false);
-	    	registerItem(golden_apple, "golden_apple");
 	    }
 	    if (ConfigHandler.MedKit){
 	    	med_kit = new MedKit();
@@ -158,10 +157,6 @@ public class TechItems {
 		}
 	    
 	    // Metals
-	    if (ConfigHandler.FlintArmor){
-	    	flint_ingot = new ItemBase().setUnlocalizedName("flint_ingot");
-			registerItem(flint_ingot, "flint_ingot");
-		}
 	    if (ConfigHandler.ChainLinks){
 	    	chain_links = new ItemBase().setUnlocalizedName("chain_links");
 	    	registerItem(chain_links, "chain_links");

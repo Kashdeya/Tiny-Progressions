@@ -47,8 +47,8 @@
         }
     ],
     "textures": {
-        "particle": "blocks/glass_orange",
-        "t1": "blocks/glass_orange",
+        "particle": "blocks/glass",
+        "t1": "blocks/glass",
 		"t7": "blocks/torch_on"
     }
 }

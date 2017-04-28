@@ -7,6 +7,12 @@ import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class LampBase extends Block{
 	
@@ -29,12 +35,25 @@ public class LampBase extends Block{
 		this.setCreativeTab(tinyprogressions.tabTP);
 	}
 	
+	@SideOnly(Side.CLIENT)
+	public BlockRenderLayer getBlockLayer()
+	{
+		return BlockRenderLayer.CUTOUT_MIPPED;
+	}
+	
+	@Override
+    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		return false;
+    }
+	
 	@Override
 	public boolean isFullCube(IBlockState state)
     {
         return false;
     }
 
+	@Override
     protected boolean canSilkHarvest()
     {
         return true;
@@ -47,6 +66,12 @@ public class LampBase extends Block{
 	protected LampBase(String unlocalizedName, Material mat, Block drop) {
 		this(unlocalizedName, mat, drop, 1, 1);
 	}
+	
+	@Override
+	public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
 
 	@Override
 	public int damageDropped(IBlockState blockstate) {

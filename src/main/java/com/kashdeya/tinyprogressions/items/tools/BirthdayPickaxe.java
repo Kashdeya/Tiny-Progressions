@@ -24,6 +24,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.google.common.collect.Sets;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BirthdayPickaxe extends ItemTool {
@@ -49,7 +50,7 @@ public class BirthdayPickaxe extends ItemTool {
 	    Block block = blockIn.getBlock();
 	    return block == Blocks.OBSIDIAN;
 	}
-	  
+	
 	public float getStr(ItemStack stack, IBlockState state)
 	{
 	    Block block = state.getBlock();
@@ -59,20 +60,15 @@ public class BirthdayPickaxe extends ItemTool {
 	    return 0.0F;
 	}
 	
-	/**
-     * Returns the amount of damage this item will deal. One heart of damage is equal to 2 damage points.
-     */
-    public float getDamageVsEntity()
+	public float getDamageVsEntity()
     {
         return this.material.getDamageVsEntity();
     }
     
-    /**
-     * Return whether this item is repairable in an anvil.
-     */
+    @Override
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
     {
-        ItemStack mat = new ItemStack(Blocks.OBSIDIAN);
+        ItemStack mat = new ItemStack(TechBlocks.reinforced_obsidian);
         if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
         return super.getIsRepairable(toRepair, repair);
     }
@@ -85,9 +81,6 @@ public class BirthdayPickaxe extends ItemTool {
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_2").getFormattedText());
 	}
     
-    /**
-     * Check whether this Item can harvest the given Block
-     */
     @Override
     public boolean canHarvestBlock(IBlockState blockIn)
     {

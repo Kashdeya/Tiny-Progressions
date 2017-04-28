@@ -30,4 +30,12 @@ public class BattleMain extends ItemTool {
         Material material = state.getMaterial();
         return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
     }
+	
+	@Override
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+    {
+        ItemStack mat = this.toolMaterial.getRepairItemStack();
+        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
+        return super.getIsRepairable(toRepair, repair);
+    }
 }

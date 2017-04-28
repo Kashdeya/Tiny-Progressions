@@ -1,6 +1,9 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.items.DiamondApple;
+import com.kashdeya.tinyprogressions.items.EmeraldApple;
+import com.kashdeya.tinyprogressions.items.GoldenApple;
 import com.kashdeya.tinyprogressions.items.food.DrinkBase;
 import com.kashdeya.tinyprogressions.items.food.FoodBase;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -39,22 +42,22 @@ public class TechFoods {
 		// Drinks
 		if (ConfigHandler.Juicer){
 			// Apple
-			apple_juice = new DrinkBase(6, false).setUnlocalizedName("apple_juice");
+			apple_juice = new DrinkBase(2, false).setUnlocalizedName("apple_juice");
 		    registerItem(apple_juice, "apple_juice");
 		    // Carrot
-			carrot_juice = new DrinkBase(4, false).setUnlocalizedName("carrot_juice");
+			carrot_juice = new DrinkBase(2, false).setUnlocalizedName("carrot_juice");
 		    registerItem(carrot_juice, "carrot_juice");
 		    // Cactus
-	    	cactus_juice = new DrinkBase(4, false).setUnlocalizedName("cactus_juice");
+	    	cactus_juice = new DrinkBase(2, false).setUnlocalizedName("cactus_juice");
 		    registerItem(cactus_juice, "cactus_juice");
 		    // Slim
 	    	slim_juice = new DrinkBase(2, false).setUnlocalizedName("slim_juice");
 		    registerItem(slim_juice, "slim_juice");
 		    // Watermelon
-	    	watermelon_juice = new DrinkBase(4, false).setUnlocalizedName("watermelon_juice");
+	    	watermelon_juice = new DrinkBase(2, false).setUnlocalizedName("watermelon_juice");
 	    	registerItem(watermelon_juice, "watermelon_juice");
 	    	// Beet
-	    	beet_juice = new DrinkBase(3, false).setUnlocalizedName("beet_juice");
+	    	beet_juice = new DrinkBase(2, false).setUnlocalizedName("beet_juice");
 	    	registerItem(beet_juice, "beet_juice");
 	    }
 		if (ConfigHandler.CookedBacon){

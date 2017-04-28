@@ -50,4 +50,12 @@ public class MultiMain extends ItemPickaxe {
 		        return this.efficiencyOnProperMaterial;
 		 return effectiveAgainst.contains(state) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, state);
 	}
+	
+	@Override
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+    {
+        ItemStack mat = this.toolMaterial.getRepairItemStack();
+        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
+        return super.getIsRepairable(toRepair, repair);
+    }
 }

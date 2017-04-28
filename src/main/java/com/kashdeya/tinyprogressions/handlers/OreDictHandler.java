@@ -18,7 +18,6 @@ public class OreDictHandler {
 		OreDictionary.registerOre("blockFlint", TechBlocks.flint_block);
 		OreDictionary.registerOre("blockBone", TechBlocks.bone_block);
 		OreDictionary.registerOre("smoothEndstone", TechBlocks.smooth_endstone);
-		OreDictionary.registerOre("ingotFlint", TechItems.flint_ingot);
 		OreDictionary.registerOre("stickStone", TechItems.stone_stick);
 		OreDictionary.registerOre("torch", TechBlocks.stone_torch);
 		OreDictionary.registerOre("dustEnder", TechItems.ender_dust);

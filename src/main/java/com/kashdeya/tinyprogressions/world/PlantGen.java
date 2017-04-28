@@ -17,12 +17,12 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 public class PlantGen implements IWorldGenerator{
 
     @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-    	int xCh = chunkX * 16 + random.nextInt(16) + 8;
-        int zCh = chunkZ * 16 + random.nextInt(16) + 8;
+    public void generate(Random random, int chunk_X, int chunk_Z, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+    	int x = chunk_X * 16 + random.nextInt(16) + 8;
+        int z = chunk_Z * 16 + random.nextInt(16) + 8;
         
-        final Biome biome = world.getBiomeForCoordsBody(new BlockPos(xCh, 0, zCh));
-        final BlockPos blockPos = world.getHeight(new BlockPos(xCh, 0, zCh));
+        final Biome biome = world.getBiomeForCoordsBody(new BlockPos(x, 0, z));
+        final BlockPos blockPos = world.getHeight(new BlockPos(x, 0, z));
         
         if (ConfigHandler.BrokenReed && (BiomeDictionary.isBiomeOfType(biome, BiomeDictionary.Type.SANDY)) && (BiomeDictionary.isBiomeOfType(biome, BiomeDictionary.Type.BEACH)) && (BiomeDictionary.isBiomeOfType(biome, BiomeDictionary.Type.MESA))) {
         	generatePlant(TechBlocks.broken_reed, world, blockPos);

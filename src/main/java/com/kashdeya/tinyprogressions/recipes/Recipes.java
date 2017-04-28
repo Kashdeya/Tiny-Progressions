@@ -36,8 +36,6 @@ public class Recipes {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flint_chestplate), "s s", "sss", "sss", 's', new ItemStack(Items.FLINT)));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flint_helmet), "sss", "s s", 's', new ItemStack(Items.FLINT)));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flint_leggings), "sss","s s", "s s", 's', new ItemStack(Items.FLINT)));
-			
-			GameRegistry.addSmelting(TechBlocks.flint_block, new ItemStack(TechItems.flint_ingot), 1.0F);
 		}
 		if (ConfigHandler.BoneArmor){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.bone_boots), "s s", "s s", 's', "bone"));
@@ -105,7 +103,6 @@ public class Recipes {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.reinforced_helmet), "sss", "s s", 's', "ingotReinforcedDiamond"));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.reinforced_leggings), "sss","s s", "s s", 's', "ingotReinforcedDiamond"));
 			
-			//GameRegistry.addSmelting(new ItemStack(Items.DIAMOND), new ItemStack(TechItems.reinforced_diamond), 1.0F);
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.reinforced_diamond, 4), "odo", "dod", "odo", 'o', new ItemStack(TechBlocks.reinforced_obsidian), 'd', "gemDiamond"));
 		}
 		if (ConfigHandler.WitherArmor){
@@ -369,7 +366,7 @@ public class Recipes {
 			ItemStack BirthdayPickaxe;
 			BirthdayPickaxe  = new ItemStack(TechTools.birthday_pickaxe);
 			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 2);
-			GameRegistry.addRecipe(new ShapedOreRecipe(BirthdayPickaxe, "rdr", " i ", " i ", 'r', "blockReinforcedObsidian", 'i', "stickWood", 'd', "gemDiamond"));
+			GameRegistry.addRecipe(new ShapedOreRecipe(BirthdayPickaxe, "rrr", " i ", " i ", 'r', new ItemStack(TechItems.reinforced_diamond), 'i', "stickWood"));
 		}
 		
 		// Reinforced
@@ -402,7 +399,7 @@ public class Recipes {
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "SES", "CNC", 'W', new ItemStack(TechItems.watering_can_upgrade), 'N', new ItemStack(TechBlocks.netherstar_block), 'C', new ItemStack(TechBlocks.reinforced_obsidian), 'S', new ItemStack(Items.END_CRYSTAL), 'E', new ItemStack(TechBlocks.growth_block)});
 		}
 		if (ConfigHandler.BlockGrowthUpgradeTwo){
-			GameRegistry.addShapelessRecipe(new ItemStack(TechBlocks.growth_upgrade_two), new Object[]{new ItemStack(TechBlocks.growth_upgrade), new ItemStack(Blocks.DRAGON_EGG)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade_two), new Object[] {"ab ", 'a', new ItemStack(TechBlocks.growth_upgrade), 'b', new ItemStack(Blocks.DRAGON_EGG)});
 		}
 		
 		// Cobblegens
@@ -490,6 +487,31 @@ public class Recipes {
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.red_glowstone), new Object[] {"aa", "aa", 'a', new ItemStack(TechItems.red_dust)});
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.silver_glowstone), new Object[] {"aa", "aa", 'a', new ItemStack(TechItems.silver_dust)});
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.white_glowstone), new Object[] {"aa", "aa", 'a', new ItemStack(TechItems.white_dust)});
+		}
+		
+		if (ConfigHandler.CryingObsidian){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.crying_obsidian, 4), new Object[] {"lol", "olo", "lol", 'l', new ItemStack(Items.DYE, 1, 15), 'o', new ItemStack(Blocks.OBSIDIAN)});
+		}
+		
+		// Lamps
+		if (ConfigHandler.ColorLamps){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.base_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.GLASS), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.black_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 15), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.blue_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 11), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.brown_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 12), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.cyan_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 9), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.gray_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 7), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.green_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 13), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.lightblue_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 3), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.lime_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 5), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.magenta_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 2), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.orange_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 1), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.pink_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 6), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.purple_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 10), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.red_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 14), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.silver_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 8), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.white_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 0), 't', new ItemStack(Blocks.TORCH)});
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.yellow_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 4), 't', new ItemStack(Blocks.TORCH)});
 		}
 		
 	}

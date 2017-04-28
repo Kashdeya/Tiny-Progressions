@@ -1,11 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import com.kashdeya.tinyprogressions.blocks.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.bricks.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.bricks.DioriteBrick;
@@ -63,6 +57,12 @@ import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 public class TechBlocks {
 	
 	// Tech Blocks
@@ -109,6 +109,7 @@ public class TechBlocks {
 	public static Block silver_lamp;
 	public static Block white_lamp;
 	public static Block yellow_lamp;
+	public static Block base_lamp;
 	// Glowstone Blocks
 	public static Block black_glowstone;
 	public static Block blue_glowstone;
@@ -146,6 +147,7 @@ public class TechBlocks {
 	public static Block sapphire_ore;
 	public static Block ruby_ore;
 	public static Block amethyst_ore;
+	// Furnaces
 	
 	public static void init(){
 		
@@ -317,6 +319,8 @@ public class TechBlocks {
 		
 		// Lamps
 		if (ConfigHandler.ColorLamps){
+			base_lamp = new LampBase("base_lamp", Material.GLASS, TechBlocks.base_lamp, 1, 1);
+			registerBlock(base_lamp, "base_lamp", true);
 			black_lamp = new LampBase("black_lamp", Material.GLASS, TechBlocks.black_lamp, 1, 1);
 			registerBlock(black_lamp, "black_lamp", true);
 			blue_lamp = new LampBase("blue_lamp", Material.GLASS, TechBlocks.blue_lamp, 1, 1);

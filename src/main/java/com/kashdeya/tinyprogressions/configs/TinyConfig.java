@@ -117,6 +117,8 @@ public class TinyConfig {
 		ConfigHandler.FlintBlock = config.getBoolean("Compressed Flint Block", category + " Compressed Blocks", true, "Enable Compressed Flint Block?");
 		
 		config.addCustomCategoryComment(category + " Flint and Bone Tools & Weapons", "Cause Progression!");
+		ConfigHandler.FlintLevel = config.getInt("Flint  Tools & Weapons Levels", category + " Flint and Bone Tools & Weapons", 1, 0, 3, "Wood/Gold 0, Stone 1, Iron 2, Diamond 3");
+		ConfigHandler.BoneLevel = config.getInt("Bone Tools & Weapons Levels", category + " Flint and Bone Tools & Weapons", 0, 0, 3, "Wood/Gold 0, Stone 1, Iron 2, Diamond 3");
 		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
 		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
 		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");

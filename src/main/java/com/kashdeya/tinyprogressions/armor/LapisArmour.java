@@ -2,6 +2,10 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.main.tinyprogressions;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -13,11 +17,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class LapisArmour extends ItemArmor {
 	

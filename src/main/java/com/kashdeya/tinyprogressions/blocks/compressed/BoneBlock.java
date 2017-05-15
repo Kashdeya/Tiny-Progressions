@@ -19,7 +19,7 @@ public class BoneBlock extends Block{
 	public BoneBlock()
 	{
 		super(Material.GROUND);
-		this.setHardness(0.5F);
+		this.setHardness(0.3F);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.GROUND);
 		this.setCreativeTab(tinyprogressions.tabTP);

@@ -23,7 +23,7 @@ public class RubyOre extends Block {
     {
         super(Material.GROUND);
         this.setHardness(3.0F);
-        this.setResistance(15.0F);
+        this.setResistance(5.0F);
         this.setHarvestLevel("pickaxe", 2);
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(tinyprogressions.tabTP);

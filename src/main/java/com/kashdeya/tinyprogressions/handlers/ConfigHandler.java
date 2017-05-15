@@ -1,12 +1,21 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	// Diamond Saw
+	public static boolean glowstone_lamps = true;
+	public static int diamond_saw_damage = 120;
+	// Water Source
+	public static boolean water_source = true;
 	// Tool Levels
 	public static int BoneLevel = 0;
 	public static int FlintLevel = 0;
 	public static int BirthdayLevel = 4;
 	public static int ObsidianLevel = 4;
 	public static int EmeraldLevel = 4;
+	
+	// Ore Gravel
+	public static boolean oreGravel = true;
+	public static int gravelCoalRarity = 5;
 	
 	// Watering cans
 	public static boolean WateringCan = true;
@@ -206,21 +215,21 @@ public class ConfigHandler {
 	public static float EndermiteSpawn = 0.25F;
 	public static int EnderOreFrequency = 5;
 	public static int EnderOreMin = 1;
-	public static int EnderOreMax = 32;
+	public static int EnderOreMax = 127;
 	public static int EnderOreSize = 7;
 	
 	// Lava Blocks
 	public static boolean LavaBlock = true;
 	public static int LavaBlockFrequency = 5;
 	public static int LavaBlockMin = 1;
-	public static int LavaBlockMax = 32;
+	public static int LavaBlockMax = 127;
 	public static int LavaBlockSize = 7;
 	
 	// Nether Lava Block
 	public static boolean NetherLavaBlock = true;
 	public static int NetherLavaBlockFrequency = 5;
 	public static int NetherLavaBlockMin = 1;
-	public static int NetherLavaBlockMax = 250;
+	public static int NetherLavaBlockMax = 127;
 	public static int NetherLavaBlockSize = 7;
 	
 	// Lava Crystal
@@ -228,62 +237,62 @@ public class ConfigHandler {
 	public static boolean LavaCrystal = true;
 	public static int LavaCrystalFrequency = 5;
 	public static int LavaCrystalMin = 1;
-	public static int LavaCrystalMax = 32;
+	public static int LavaCrystalMax = 127;
 	public static int LavaCrystalSize = 4;
 	
 	// Water Block
 	public static boolean WaterBlock = true;
 	public static int WaterBlockFrequency = 5;
 	public static int WaterBlockMin = 1;
-	public static int WaterBlockMax = 250;
+	public static int WaterBlockMax = 127;
 	public static int WaterBlockSize = 7;
 	
 	public static boolean MoltenDirtBlock = true;
 	public static int MoltenDirtFrequency = 5;
 	public static int MoltenDirtMin = 1;
-	public static int MoltenDirtMax = 250;
+	public static int MoltenDirtMax = 124;
 	public static int MoltenDirtSize = 7;	
 	
 	public static boolean MoltenDirtNetherBlock = true;
 	public static int MoltenDirtNetherFrequency = 5;
 	public static int MoltenDirtNetherMin = 1;
-	public static int MoltenDirtNetherMax = 250;
+	public static int MoltenDirtNetherMax = 127;
 	public static int MoltenDirtNetherSize = 7;
 	
 	public static boolean AntimatterBlock = true;
 	public static int AntimatterFrequency = 5;
 	public static int AntimatterMin = 1;
-	public static int AntimatterMax = 250;
+	public static int AntimatterMax = 127;
 	public static int AntimatterSize = 7;
 	
 	public static boolean BloodBlock = true;
 	public static int BloodFrequency = 5;
 	public static int BloodMin = 1;
-	public static int BloodMax = 250;
+	public static int BloodMax = 127;
 	public static int BloodSize = 7;
 	
 	public static boolean CoraliumBlock = true;
 	public static int CoraliumFrequency = 5;
 	public static int CoraliumMin = 1;
-	public static int CoraliumMax = 250;
+	public static int CoraliumMax = 127;
 	public static int CoraliumSize = 7;
 	
 	public static boolean SapphireOre = true;
 	public static int SapphireFrequency = 5;
 	public static int SapphireMin = 1;
-	public static int SapphireMax = 250;
+	public static int SapphireMax = 127;
 	public static int SapphireSize = 7;
 	
 	public static boolean RubyOre = true;
 	public static int RubyFrequency = 5;
 	public static int RubyMin = 1;
-	public static int RubyMax = 250;
+	public static int RubyMax = 127;
 	public static int RubySize = 7;
 	
 	public static boolean AmethystOre = true;
 	public static int AmethystFrequency = 5;
 	public static int AmethystMin = 1;
-	public static int AmethystMax = 250;
+	public static int AmethystMax = 127;
 	public static int AmethystSize = 7;
 	
 	// Lamps

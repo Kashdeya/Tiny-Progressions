@@ -17,7 +17,7 @@ public class RubyBlock extends Block {
     {
         super(Material.ROCK);
         this.setHardness(3.0F);
-        this.setResistance(15.0F);
+        this.setResistance(5.0F);
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(tinyprogressions.tabTP);
         this.setUnlocalizedName("ruby_block");

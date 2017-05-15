@@ -109,6 +109,15 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.sapphire_ore, "sapphire_ore");
 	    InventoryBlockRender(TechBlocks.ruby_ore, "ruby_ore");
 	    InventoryBlockRender(TechBlocks.amethyst_ore, "amethyst_ore");
+	    InventoryBlockRender(TechBlocks.coal_gravel, "coal_gravel");
+	    InventoryBlockRender(TechBlocks.diamond_gravel, "diamond_gravel");
+	    InventoryBlockRender(TechBlocks.emerald_gravel, "emerald_gravel");
+	    InventoryBlockRender(TechBlocks.gold_gravel, "gold_gravel");
+	    InventoryBlockRender(TechBlocks.iron_gravel, "iron_gravel");
+	    InventoryBlockRender(TechBlocks.lapis_gravel, "lapis_gravel");
+	    InventoryBlockRender(TechBlocks.quartz_gravel, "quartz_gravel");
+	    InventoryBlockRender(TechBlocks.redstone_gravel, "redstone_gravel");
+	    InventoryBlockRender(TechBlocks.water_source, "water_source");
 	}
 	
 	public static void initBlockRenders(){
@@ -160,6 +169,7 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.diamond_apple, "diamond_apple");
 		InventoryItemRender(TechItems.emerald_apple, "emerald_apple");
 		InventoryItemRender(TechItems.golden_apple, "golden_apple");
+		InventoryItemRender(TechItems.diamond_saw, "diamond_saw");
 	}
 	
 	public static void initFoods(){

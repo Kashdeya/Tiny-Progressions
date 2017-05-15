@@ -27,7 +27,7 @@ public class LampBase extends Block{
 		this.meta = meta;
 		this.least_quantity = least_quantity;
 		this.most_quantity = most_quantity;
-		this.setHardness(0.5f);
+		this.setHardness(0.3f);
 		this.setLightLevel(1.0F);
 		this.setLightOpacity(1);
 		this.setUnlocalizedName(unlocalizedName);
@@ -38,7 +38,7 @@ public class LampBase extends Block{
 	@SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer()
 	{
-		return BlockRenderLayer.CUTOUT_MIPPED;
+		return BlockRenderLayer.TRANSLUCENT;
 	}
 	
 	@Override

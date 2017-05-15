@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.DiamondApple;
+import com.kashdeya.tinyprogressions.items.DiamondSaw;
 import com.kashdeya.tinyprogressions.items.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.GoldenApple;
@@ -18,7 +19,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TechItems {
-	
+	// Diamond Saw
+	public static Item diamond_saw;
 	// Watering Cans
 	public static Item watering_can;
 	public static Item watering_can_upgrade;
@@ -76,6 +78,7 @@ public class TechItems {
 	public static Item lava_crystal;
 	
 	public static void init(){
+		// Apples
 	    if (ConfigHandler.DiamondApple){
 	    	diamond_apple = new DiamondApple(4, 1.2F, false);
 	    	registerItem(diamond_apple, "diamond_apple");
@@ -88,6 +91,7 @@ public class TechItems {
 	    	golden_apple = new GoldenApple(4, 1.2F, false);
 	    	registerItem(golden_apple, "golden_apple");
 	    }
+	    
 		// Watering Cans
 		if (ConfigHandler.WateringCan){
 			watering_can = new WateringCan();
@@ -97,6 +101,12 @@ public class TechItems {
 			watering_can_upgrade = new WateringCanUpgrade();
 			registerItem(watering_can_upgrade, "watering_can_upgrade");
 		}
+		
+		// Diamond Saw
+	    if (ConfigHandler.glowstone_lamps){
+	    	diamond_saw = new DiamondSaw();
+	    	registerItem(diamond_saw, "diamond_saw");
+	    }
 		
 		// Quartz Items
 	    if (ConfigHandler.QuartzKnife){

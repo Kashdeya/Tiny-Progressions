@@ -514,6 +514,12 @@ public class Recipes {
 			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.yellow_lamp), new Object[] {"g", "t", 'g', new ItemStack(Blocks.STAINED_GLASS, 1, 4), 't', new ItemStack(Blocks.TORCH)});
 		}
 		
+		if (ConfigHandler.water_source){
+			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.water_source), new Object[] {"ggg", "t t", "ggg", 'g', new ItemStack(Blocks.STONE, 1, 0), 't', new ItemStack(Items.WATER_BUCKET)});
+		}
+		
+		
+		
 	}
 
 }

@@ -29,8 +29,8 @@ public class EnderOre extends Block {
     public EnderOre()
     {
         super(Material.ROCK);
-        this.setHardness(8.0F);
-        this.setResistance(10.0F);
+        this.setHardness(3.0F);
+        this.setResistance(5.0F);
         this.setHarvestLevel("pickaxe", 2);
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(tinyprogressions.tabTP);

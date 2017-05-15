@@ -48,7 +48,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 		// Turns block into a water source.
 		super(Material.WATER);
 		this.setTickRandomly(true);
-		this.setHardness(1.25F);
+		this.setHardness(1.5F);
 		this.setHarvestLevel("pickaxe", 0);
 		this.setLightLevel(1.0F);
 		this.setResistance(2000.0F);

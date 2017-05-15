@@ -1,11 +1,5 @@
 package com.kashdeya.tinyprogressions.proxy;
 
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
 import com.kashdeya.tinyprogressions.recipes.Recipes;
@@ -19,8 +13,15 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
 import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
+import com.kashdeya.tinyprogressions.world.GravelGen;
 import com.kashdeya.tinyprogressions.world.PlantGen;
 import com.kashdeya.tinyprogressions.world.WorldGen;
+
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class CommonProxy {
 
@@ -48,6 +49,7 @@ public class CommonProxy {
     	// Load WorldGeneration
     	GameRegistry.registerWorldGenerator(new WorldGen(), 0);
     	GameRegistry.registerWorldGenerator(new PlantGen(), 0);
+    	GameRegistry.registerWorldGenerator(new GravelGen(), 0);
     	
     	// register messages from client to server
     	tinyprogressions.network = NetworkRegistry.INSTANCE.newSimpleChannel("network");

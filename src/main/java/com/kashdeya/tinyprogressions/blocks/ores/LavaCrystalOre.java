@@ -40,6 +40,7 @@ public class LavaCrystalOre extends Block {
         this.setResistance(5.0F);
         this.setLightLevel(0.05F);
         this.setSoundType(blockSoundType.STONE);
+        this.setHarvestLevel("pickaxe", 3);
         this.setCreativeTab(tinyprogressions.tabTP);
         this.setUnlocalizedName("lava_crystal_ore");
     }

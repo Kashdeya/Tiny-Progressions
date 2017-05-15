@@ -19,7 +19,7 @@ public class FleshBlock extends BlockFalling{
 	public FleshBlock()
 	{
 		super(Material.SAND);
-		this.setHardness(0.5F);
+		this.setHardness(0.3F);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.SAND);
 		this.setCreativeTab(tinyprogressions.tabTP);

@@ -47,11 +47,20 @@ import com.kashdeya.tinyprogressions.blocks.misc.RubyBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.SapphireBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.SmoothEndStone;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterBlock;
+import com.kashdeya.tinyprogressions.blocks.misc.WaterSource;
 import com.kashdeya.tinyprogressions.blocks.ores.AmethystOre;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaCrystalOre;
 import com.kashdeya.tinyprogressions.blocks.ores.RubyOre;
 import com.kashdeya.tinyprogressions.blocks.ores.SapphireOre;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.CoalGravel;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.DiamondGravel;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.EmeraldGravel;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.GoldGravel;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.IronGravel;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.LapisGravel;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.QuartzGravel;
+import com.kashdeya.tinyprogressions.blocks.ores.gravel.RedstoneGravel;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
@@ -147,11 +156,25 @@ public class TechBlocks {
 	public static Block sapphire_ore;
 	public static Block ruby_ore;
 	public static Block amethyst_ore;
-	// Furnaces
+	// Ore Gravels
+	public static Block coal_gravel;
+	public static Block iron_gravel;
+	public static Block gold_gravel;
+	public static Block diamond_gravel;
+	public static Block lapis_gravel;
+	public static Block redstone_gravel;
+	public static Block emerald_gravel;
+	public static Block quartz_gravel;
+	// Water Block
+	public static Block water_source;
 	
 	public static void init(){
 		
 		// Tech Blocks
+		if (ConfigHandler.water_source){
+			water_source = new WaterSource();
+			registerBlock(water_source, "water_source", true);
+		}
 		if (ConfigHandler.BlockGrowth){
 			growth_block = new BlockGrowth();
 			registerBlock(growth_block, "growth_block", true);
@@ -387,6 +410,26 @@ public class TechBlocks {
 			registerBlock(silver_glowstone, "silver_glowstone", true);
 			white_glowstone = new White();
 			registerBlock(white_glowstone, "white_glowstone", true);
+		}
+		
+		// Ore Gravels
+		if (ConfigHandler.oreGravel){
+			coal_gravel = new CoalGravel();
+			registerBlock(coal_gravel, "coal_gravel", true);
+			iron_gravel = new IronGravel();
+			registerBlock(iron_gravel, "iron_gravel", true);
+			gold_gravel = new GoldGravel();
+			registerBlock(gold_gravel, "gold_gravel", true);
+			diamond_gravel = new DiamondGravel();
+			registerBlock(diamond_gravel, "diamond_gravel", true);
+			lapis_gravel = new LapisGravel();
+			registerBlock(lapis_gravel, "lapis_gravel", true);
+			redstone_gravel = new RedstoneGravel();
+			registerBlock(redstone_gravel, "redstone_gravel", true);
+			emerald_gravel = new EmeraldGravel();
+			registerBlock(emerald_gravel, "emerald_gravel", true);
+			quartz_gravel = new QuartzGravel();
+			registerBlock(quartz_gravel, "quartz_gravel", true);
 		}
 	}
 	

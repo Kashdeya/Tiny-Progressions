@@ -17,6 +17,7 @@ tile.diorite_brick.name=Diorite Brick
 tile.granite_brick.name=Granite Brick
 tile.andesite_brick.name=Andesite Brick
 tile.smooth_endstone.name=Smooth EndStone
+tile.water_source.name=Water Crystal
 
 #Stone Torch
 tile.stone_torch.name=Stone Torch

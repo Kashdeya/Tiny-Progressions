@@ -30,22 +30,10 @@ public class Black extends Block
         this.setUnlocalizedName("black_glowstone");
     }
     
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.CUTOUT_MIPPED;
-	}
-	
 	@Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
     {
 		return false;
-    }
-	
-	@Override
-	public boolean isFullCube(IBlockState state)
-    {
-        return false;
     }
 	
 	@Override

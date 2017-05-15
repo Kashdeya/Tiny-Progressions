@@ -18,7 +18,7 @@ public class LitRedstone extends Block{
 	
 	public LitRedstone(){
 		super(Material.REDSTONE_LIGHT);
-		this.setHardness(1.5F);
+		this.setHardness(0.3F);
         this.setSoundType(blockSoundType.GLASS);
         this.setLightLevel(1.0F);
         this.setCreativeTab(tinyprogressions.tabTP);

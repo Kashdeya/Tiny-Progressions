@@ -26,7 +26,7 @@ public class BrokenReed extends BlockBush implements net.minecraftforge.common.I
     {
         super(Material.VINE);
         this.setCreativeTab(tinyprogressions.tabTP);
-        this.setHardness(0.0F);
+        this.setHardness(0.6F);
         this.setSoundType(SoundType.PLANT);
         this.setUnlocalizedName("broken_reed");
     }

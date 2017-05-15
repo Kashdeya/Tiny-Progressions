@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraftforge.common.config.ConfigCategory;
-import net.minecraftforge.common.config.Configuration;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.main.tinyprogressions;
+
+import net.minecraftforge.common.config.ConfigCategory;
+import net.minecraftforge.common.config.Configuration;
 
 public class TinyConfig {
 	
@@ -53,6 +53,9 @@ public class TinyConfig {
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");
 		ConfigHandler.WateringCanUpgrade = config.getBoolean("Watering Can Reinforced", category + " Watering Cans", true, "Enable Reinforced Watering Can?\n[Requires Watering Can to be Enabled]");
 		
+		config.addCustomCategoryComment(category + " Water Tank", "Extra water never hurt!");
+		ConfigHandler.water_source = config.getBoolean("Water Tank", category + " Water Tank", true, "Enable Water Tank Recipe?\n(Only works with Buckets not pipes!)");
+		
 		config.addCustomCategoryComment(category + " Cobblegen Crystals", "Everyone needs a little cobblestone!");
 		ConfigHandler.Cobblegen = config.getBoolean("Cobblegen Crystal Tier 1", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 1?");
 		ConfigHandler.IronCobblegen = config.getBoolean("Cobblegen Crystal Tier 2", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 2?\n[Requires Cobblegen Crystal Tier 1 to be Enabled for recipe]");
@@ -70,7 +73,7 @@ public class TinyConfig {
 		ConfigHandler.SmoothEndStone = config.getBoolean("Smooth EndStone", category + " Extra Stuff", true, "Enable Smooth EndStone?");
 		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE is Tinkers is installed.]");
 		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?");
-		
+				
 		config.addCustomCategoryComment(category + " CUS", "Added for Can_U_Survive.");
 		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", true, "Enable Flint Knife?\n[Needed for Food Items.]\n[If disabled you will need to make recipes for Food Items.]");
 		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");

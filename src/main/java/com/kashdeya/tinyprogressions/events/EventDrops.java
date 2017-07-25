@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.events;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -9,8 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 public class EventDrops {
 	
@@ -42,13 +42,13 @@ public class EventDrops {
 			}
 			
 			// Stick Drops
-			if (ConfigHandler.LeafDrops == true)
+			if (ConfigHandler.stickDrops == true)
 			{
 				if(target == Blocks.LEAVES || target == Blocks.LEAVES2)
 				{
-					if(CHANCE.nextFloat()<ConfigHandler.LeafDropsChance)
+					if(CHANCE.nextFloat()<ConfigHandler.stickDropsChance)
 					{
-						event.getDrops().add(new ItemStack(Items.STICK,AMOUNT.nextInt(ConfigHandler.LeafDropsAmmount)));
+						event.getDrops().add(new ItemStack(Items.STICK,AMOUNT.nextInt(ConfigHandler.stickDropsAmmount)));
 					}
 				}
 			}

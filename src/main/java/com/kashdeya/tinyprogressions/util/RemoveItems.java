@@ -1,14 +1,14 @@
 package com.kashdeya.tinyprogressions.util;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
-
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 public class RemoveItems {
 	
@@ -22,15 +22,19 @@ public class RemoveItems {
 			removeRecipe(new ItemStack(Items.WOODEN_PICKAXE));	
 		}
 		
-		if (ConfigHandler.SmoothEndStone == true){
+		if (ConfigHandler.SmoothEndStone){
 			removeRecipe(new ItemStack(Blocks.END_BRICKS));			
+		}
+		
+		if (ConfigHandler.ApplePro){
+			removeRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 0));
 		}
 		
 	}
 	
 	private static void removeRecipe(ItemStack resultItem){
 		ItemStack recipeResult;
-		ArrayList recipes = (ArrayList) CraftingManager.getInstance().getRecipeList();
+		List<IRecipe> recipes = (List) CraftingManager.getInstance().getRecipeList();
 		for(int scan = 0;scan < recipes.size();scan++){
 			IRecipe tmpRecipe = (IRecipe) recipes.get(scan);
 			recipeResult = tmpRecipe.getRecipeOutput();

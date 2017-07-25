@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.tiles;
 
 import javax.annotation.Nonnull;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -15,8 +17,6 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.ItemStackHandler;
-
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 public class TileEntityCobblegen extends TileEntity implements ITickable
 {

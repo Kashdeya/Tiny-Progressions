@@ -1,32 +1,34 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
+import com.kashdeya.tinyprogressions.blocks.EnderOre;
+import com.kashdeya.tinyprogressions.blocks.cobblegen.BlazeCobblegen;
+import com.kashdeya.tinyprogressions.blocks.cobblegen.Cobblegen;
+import com.kashdeya.tinyprogressions.blocks.cobblegen.DiamondCobblegen;
+import com.kashdeya.tinyprogressions.blocks.cobblegen.EmeraldCobblegen;
+import com.kashdeya.tinyprogressions.blocks.cobblegen.IronCobblegen;
+import com.kashdeya.tinyprogressions.blocks.compressed.BoneBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.CharcoalBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.FleshBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.FlintBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
+import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.SmoothEndStone;
+import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
+import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
+import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
+import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
+import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
+import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.main.Reference;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import com.kashdeya.tinyprogressions.blocks.AndesiteBrick;
-import com.kashdeya.tinyprogressions.blocks.BlazeCobblegen;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowth;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgrade;
-import com.kashdeya.tinyprogressions.blocks.BlockGrowthUpgradeTwo;
-import com.kashdeya.tinyprogressions.blocks.BoneBlock;
-import com.kashdeya.tinyprogressions.blocks.CharcoalBlock;
-import com.kashdeya.tinyprogressions.blocks.Cobblegen;
-import com.kashdeya.tinyprogressions.blocks.DiamondCobblegen;
-import com.kashdeya.tinyprogressions.blocks.DioriteBrick;
-import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
-import com.kashdeya.tinyprogressions.blocks.EmeraldCobblegen;
-import com.kashdeya.tinyprogressions.blocks.FleshBlock;
-import com.kashdeya.tinyprogressions.blocks.FlintBlock;
-import com.kashdeya.tinyprogressions.blocks.GraniteBrick;
-import com.kashdeya.tinyprogressions.blocks.IronCobblegen;
-import com.kashdeya.tinyprogressions.blocks.NetherStarBlock;
-import com.kashdeya.tinyprogressions.blocks.ReinforcedGlass;
-import com.kashdeya.tinyprogressions.blocks.ReinforcedObsidian;
-import com.kashdeya.tinyprogressions.blocks.SmoothEndStone;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.Reference;
 
 public class TechBlocks {
 	
@@ -40,21 +42,24 @@ public class TechBlocks {
 	public static Block emerald_cobblegen_block;
 	public static Block blaze_cobblegen_block;
 	// Deco Blocks
-	public static Block CharcoalBlock;
-	public static Block ReinforcedGlass;
-	public static Block ReinforcedObsidian;
-	public static Block DirtyGlass;
-	public static Block DioriteBrick;
-	public static Block GraniteBrick;
-	public static Block AndesiteBrick;
+	public static Block charcoal_block;
+	public static Block reinforced_glass;
+	public static Block reinforced_obsidian;
+	public static Block dirty_glass;
+	public static Block diorite_brick;
+	public static Block granite_brick;
+	public static Block andesite_brick;
 	// Compressed Blocks
-	public static Block FleshBlock;
-	public static Block BoneBlock;
-	public static Block NetherStarBlock;
-	// Flint Block
-	public static Block FlintBlock;
+	public static Block flesh_block;
+	public static Block bone_block;
+	public static Block netherstar_block;
+	public static Block flint_block;
 	// End Stones
-	public static Block SmoothEndStone;
+	public static Block smooth_endstone;
+	// Stone Torch
+	public static Block stone_torch;
+	// EnderOre
+	public static Block ender_ore;
 	
 	public static void init(){
 		
@@ -93,59 +98,69 @@ public class TechBlocks {
 		}
 		
 		// Deco Blocks
+		if (ConfigHandler.StoneTorch){
+			stone_torch = new StoneTorch();
+	    	registerBlock(stone_torch, "stone_torch", true);
+	    }
 		if (ConfigHandler.CharcoalBlock){
-			CharcoalBlock = new CharcoalBlock();
-			registerBlock(CharcoalBlock, "charcoal_block", true);
+			charcoal_block = new CharcoalBlock();
+			registerBlock(charcoal_block, "charcoal_block", true);
 		}
 		if (ConfigHandler.ReinforcedGlass){
-			ReinforcedGlass = new ReinforcedGlass();
-			registerBlock(ReinforcedGlass, "reinforced_glass", true);
+			reinforced_glass = new ReinforcedGlass();
+			registerBlock(reinforced_glass, "reinforced_glass", true);
 		}
 		if (ConfigHandler.ReinforcedObsidian){
-			ReinforcedObsidian = new ReinforcedObsidian();
-			registerBlock(ReinforcedObsidian, "reinforced_obsidian", true);
+			reinforced_obsidian = new ReinforcedObsidian();
+			registerBlock(reinforced_obsidian, "reinforced_obsidian", true);
 		}
 		if (ConfigHandler.DirtyGlass){
-			DirtyGlass = new DirtyGlass();
-			registerBlock(DirtyGlass, "dirty_glass", true);
+			dirty_glass = new DirtyGlass();
+			registerBlock(dirty_glass, "dirty_glass", true);
 		}
 		
 		// Compressed Blocks
 		if (ConfigHandler.FleshBlock){
-			FleshBlock = new FleshBlock();
-			registerBlock(FleshBlock, "flesh_block", true);
+			flesh_block = new FleshBlock();
+			registerBlock(flesh_block, "flesh_block", true);
 		}
 		if (ConfigHandler.BoneBlock){
-			BoneBlock = new BoneBlock();
-			registerBlock(BoneBlock, "bone_block", true);
+			bone_block = new BoneBlock();
+			registerBlock(bone_block, "bone_block", true);
 		}
 		if (ConfigHandler.NetherStarBlock){
-			NetherStarBlock = new NetherStarBlock();
-			registerBlock(NetherStarBlock, "nether_star_block", true);
+			netherstar_block = new NetherStarBlock();
+			registerBlock(netherstar_block, "netherstar_block", true);
 		}
 		if (ConfigHandler.DioriteBrick){
-			DioriteBrick = new DioriteBrick();
-			registerBlock(DioriteBrick, "diorite_brick", true);
+			diorite_brick = new DioriteBrick();
+			registerBlock(diorite_brick, "diorite_brick", true);
 		}
 		if (ConfigHandler.GraniteBrick){
-			GraniteBrick = new GraniteBrick();
-			registerBlock(GraniteBrick, "granite_brick", true);
+			granite_brick = new GraniteBrick();
+			registerBlock(granite_brick, "granite_brick", true);
 		}
 		if (ConfigHandler.AndesiteBrick){
-			AndesiteBrick = new AndesiteBrick();
-			registerBlock(AndesiteBrick, "andesite_brick", true);
+			andesite_brick = new AndesiteBrick();
+			registerBlock(andesite_brick, "andesite_brick", true);
 		}
 		
 		// Flint Block
 		if (ConfigHandler.FlintBlock){
-			FlintBlock = new FlintBlock();
-			registerBlock(FlintBlock, "flint_block", true);
+			flint_block = new FlintBlock();
+			registerBlock(flint_block, "flint_block", true);
 		}
 		
 		// Smooth EndStone
 		if (ConfigHandler.SmoothEndStone){
-			SmoothEndStone = new SmoothEndStone();
-			registerBlock(SmoothEndStone, "smooth_end_stone", true);
+			smooth_endstone = new SmoothEndStone();
+			registerBlock(smooth_endstone, "smooth_endstone", true);
+		}
+		
+		// Ender Ore
+		if (ConfigHandler.ender_ore){
+			ender_ore = new EnderOre();
+			registerBlock(ender_ore, "ender_ore", true);
 		}
 	}
 	
@@ -154,8 +169,6 @@ public class TechBlocks {
 		if (itemblock){
 			GameRegistry.register(new ItemBlock(block), new ResourceLocation(Reference.MOD_ID + ":" + name));
 		}
-
-		TPMigration.addUnderscoreNameToMapUnderscorelessName(name);
 	}
 
 }

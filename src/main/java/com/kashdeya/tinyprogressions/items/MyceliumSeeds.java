@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.items;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.BlockDirt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -19,13 +21,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class MyceliumSeeds extends Item {
 	
 	public MyceliumSeeds(){
 		super();
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("mycelium_seeds");
 	}
 	

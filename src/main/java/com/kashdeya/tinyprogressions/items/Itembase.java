@@ -1,13 +1,13 @@
 package com.kashdeya.tinyprogressions.items;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.item.Item;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
-public class Itembase extends Item{
+public class ItemBase extends Item {
 	
-	public Itembase() {
+	public ItemBase() {
 		super();
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 }

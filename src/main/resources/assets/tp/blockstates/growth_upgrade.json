@@ -1,12 +1,5 @@
 {
-    "forge_marker": 1,
     "variants": {
-        "inventory": [
-            {
-                "model": "tp:growth_upgrade",
-                "transform": "forge:default-block"
-            }
-        ],
         "normal": {"model": "tp:growth_upgrade"}
     }
 }

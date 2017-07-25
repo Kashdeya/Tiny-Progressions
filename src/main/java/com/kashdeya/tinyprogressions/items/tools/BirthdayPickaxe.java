@@ -3,6 +3,9 @@ package com.kashdeya.tinyprogressions.items.tools;
 import java.util.List;
 import java.util.Set;
 
+import com.google.common.collect.Sets;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -23,10 +26,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class BirthdayPickaxe extends ItemTool {
 	
 	private static final Set effective_against = Sets.newHashSet(new Block[] {Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE, Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.DOUBLE_STONE_SLAB, Blocks.GOLDEN_RAIL, Blocks.GOLD_BLOCK, Blocks.GOLD_ORE, Blocks.ICE, Blocks.IRON_BLOCK, Blocks.IRON_ORE, Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.MOSSY_COBBLESTONE, Blocks.NETHERRACK, Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE});
@@ -42,7 +41,7 @@ public class BirthdayPickaxe extends ItemTool {
         this.setHarvestLevel("pickaxe", 4);
 		this.setUnlocalizedName("BirthdayPickaxe");
 		this.attackDamage = 1.5F + material.getDamageVsEntity();
-	    this.setCreativeTab(tinyprogressions.tabTP);
+	    this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	 
 	public boolean canHarvest(IBlockState blockIn)
@@ -50,7 +49,7 @@ public class BirthdayPickaxe extends ItemTool {
 	    Block block = blockIn.getBlock();
 	    return block == Blocks.OBSIDIAN;
 	}
-	
+	  
 	public float getStr(ItemStack stack, IBlockState state)
 	{
 	    Block block = state.getBlock();
@@ -60,15 +59,20 @@ public class BirthdayPickaxe extends ItemTool {
 	    return 0.0F;
 	}
 	
-	public float getDamageVsEntity()
+	/**
+     * Returns the amount of damage this item will deal. One heart of damage is equal to 2 damage points.
+     */
+    public float getDamageVsEntity()
     {
         return this.material.getDamageVsEntity();
     }
     
-    @Override
+    /**
+     * Return whether this item is repairable in an anvil.
+     */
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
     {
-        ItemStack mat = new ItemStack(TechBlocks.reinforced_obsidian);
+        ItemStack mat = new ItemStack(Blocks.OBSIDIAN);
         if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
         return super.getIsRepairable(toRepair, repair);
     }
@@ -81,6 +85,9 @@ public class BirthdayPickaxe extends ItemTool {
 		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_2").getFormattedText());
 	}
     
+    /**
+     * Check whether this Item can harvest the given Block
+     */
     @Override
     public boolean canHarvestBlock(IBlockState blockIn)
     {

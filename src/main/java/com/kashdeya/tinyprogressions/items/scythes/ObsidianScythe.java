@@ -1,15 +1,15 @@
 package com.kashdeya.tinyprogressions.items.scythes;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class ObsidianScythe extends ScytheMain{
 	
 	public ObsidianScythe(ToolMaterial material){
 		super(material);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 	

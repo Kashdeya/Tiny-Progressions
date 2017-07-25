@@ -2,6 +2,9 @@ package com.kashdeya.tinyprogressions.items;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -16,14 +19,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class MedKit extends Item {
 	
 	  public MedKit()
 	  {
-		  this.setCreativeTab(tinyprogressions.tabTP);
+		  this.setCreativeTab(TinyProgressions.tabTP);
 		  this.setUnlocalizedName("med_kit");
 		  this.setMaxStackSize(16);
 	  }
@@ -34,7 +34,7 @@ public class MedKit extends Item {
 	    if (!playerIn.capabilities.isCreativeMode) {
 	      itemStackIn.stackSize -= 1;
 	    }
-	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.HealDuration * 20, 0));
+	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
 	    
 	    return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
 	  }

@@ -2,6 +2,9 @@ package com.kashdeya.tinyprogressions.blocks.compressed;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -11,18 +14,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class FleshBlock extends BlockFalling{
 	
 	public FleshBlock()
 	{
 		super(Material.SAND);
-		this.setHardness(0.3F);
+		this.setHardness(0.5F);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.SAND);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("flesh_block");
 	}
 	

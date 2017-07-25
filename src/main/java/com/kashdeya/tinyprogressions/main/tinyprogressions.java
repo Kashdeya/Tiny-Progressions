@@ -1,5 +1,18 @@
 package com.kashdeya.tinyprogressions.main;
 
+import com.kashdeya.tinyprogressions.configs.TinyConfig;
+import com.kashdeya.tinyprogressions.events.BucketUseEvent;
+import com.kashdeya.tinyprogressions.events.EventDrops;
+import com.kashdeya.tinyprogressions.events.IReachEvent;
+import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
+import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.inits.TechTools;
+import com.kashdeya.tinyprogressions.proxy.CommonProxy;
+import com.kashdeya.tinyprogressions.tabs.TabTP;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -11,26 +24,12 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
-import com.kashdeya.tinyprogressions.configs.TinyConfig;
-import com.kashdeya.tinyprogressions.events.BucketUseEvent;
-import com.kashdeya.tinyprogressions.events.EventDrops;
-import com.kashdeya.tinyprogressions.events.IReachEvent;
-import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
-import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechFoods;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.inits.TechTools;
-import com.kashdeya.tinyprogressions.proxy.CommonProxy;
-import com.kashdeya.tinyprogressions.tabs.TabTP;
-
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
-public class tinyprogressions {
+public class TinyProgressions {
 	
 	@Instance(Reference.MOD_ID)
-    public static tinyprogressions instance;
+    public static TinyProgressions instance;
 	
 	@SidedProxy(clientSide=Reference.PROXY_CLIENT, serverSide=Reference.PROXY_COMMON)
 	public static CommonProxy PROXY;
@@ -53,7 +52,6 @@ public class tinyprogressions {
 		TechBlocks.init();
 		TechArmor.init();
 		TechTools.init();
-		TechFoods.init();
 		OreDictHandler.init();
 		
 		// Renders

@@ -2,6 +2,9 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -15,15 +18,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class StoneArmor extends ItemArmor {
 	
 	public StoneArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
 		super(material, renderIndex, equipmentSlotIn);
 		this.maxStackSize = 1;
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	
 	/**

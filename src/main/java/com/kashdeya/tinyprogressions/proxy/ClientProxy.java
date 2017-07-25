@@ -1,10 +1,10 @@
 package com.kashdeya.tinyprogressions.proxy;
 
+import com.kashdeya.tinyprogressions.handlers.RenderHandler;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-
-import com.kashdeya.tinyprogressions.handlers.RenderHandler;
 
 public class ClientProxy extends CommonProxy {
 
@@ -17,7 +17,6 @@ public class ClientProxy extends CommonProxy {
         RenderHandler.initItems();
         RenderHandler.initArmor();
         RenderHandler.initTools();
-        RenderHandler.initFoods();
 	}
     
     public EntityPlayerMP getPlayerEntityFromContext(MessageContext ctx)

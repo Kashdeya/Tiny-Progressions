@@ -2,6 +2,9 @@ package com.kashdeya.tinyprogressions.blocks.cobblegen;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -24,9 +27,6 @@ import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
-
 public class IronCobblegen extends Block implements ITileEntityProvider{
 
 	public IronCobblegen()
@@ -37,7 +37,7 @@ public class IronCobblegen extends Block implements ITileEntityProvider{
 		this.setResistance(1000.0F);
 		this.setLightLevel(0.5F);
 		this.setLightOpacity(1);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(blockSoundType.METAL);
 		this.setUnlocalizedName("iron_cobblegen_block");
 	}

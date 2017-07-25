@@ -186,7 +186,6 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 			this.setInventorySlotContents(0, stack);
 			
 			TileEntity tile = worldObj.getTileEntity(pos.offset(EnumFacing.UP));
-			
 			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
 				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
 

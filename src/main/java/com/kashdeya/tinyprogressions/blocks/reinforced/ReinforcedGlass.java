@@ -3,6 +3,9 @@ package com.kashdeya.tinyprogressions.blocks.reinforced;
 import java.util.List;
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -22,9 +25,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class ReinforcedGlass extends BlockGlass
 {
     public ReinforcedGlass()
@@ -34,7 +34,7 @@ public class ReinforcedGlass extends BlockGlass
         this.setResistance(2000.0F);
         this.setHarvestLevel("pickaxe", 0);
         this.setSoundType(blockSoundType.GLASS);
-        this.setCreativeTab(tinyprogressions.tabTP);
+        this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("reinforced_glass");
     }
     

@@ -2,6 +2,9 @@ package com.kashdeya.tinyprogressions.blocks.compressed;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -11,9 +14,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class FlintBlock extends Block{
 	
 	public FlintBlock()
@@ -22,7 +22,7 @@ public class FlintBlock extends Block{
 		this.setHardness(1.0F);
 		this.setResistance(5.0F);
 		this.setSoundType(blockSoundType.STONE);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("flint_block");
 	}
 	

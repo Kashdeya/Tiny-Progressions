@@ -1,10 +1,10 @@
 package com.kashdeya.tinyprogressions.events;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 public class BucketUseEvent {
     @SubscribeEvent

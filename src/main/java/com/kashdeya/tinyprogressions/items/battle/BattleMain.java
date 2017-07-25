@@ -2,15 +2,15 @@ package com.kashdeya.tinyprogressions.items.battle;
 
 import java.util.Set;
 
+import com.google.common.collect.Sets;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
-
-import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class BattleMain extends ItemTool {
 
@@ -21,7 +21,7 @@ public class BattleMain extends ItemTool {
         super(material, EFFECTIVE_ON);
         this.damageVsEntity = damage;
         this.attackSpeed = speed;
-        this.setCreativeTab(tinyprogressions.tabTP);
+        this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
     }
 
@@ -29,13 +29,5 @@ public class BattleMain extends ItemTool {
     {
         Material material = state.getMaterial();
         return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
-    }
-	
-	@Override
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
-        ItemStack mat = this.toolMaterial.getRepairItemStack();
-        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
-        return super.getIsRepairable(toRepair, repair);
     }
 }

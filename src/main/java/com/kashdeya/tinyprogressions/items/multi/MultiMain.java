@@ -3,6 +3,10 @@ package com.kashdeya.tinyprogressions.items.multi;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -10,15 +14,11 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
-
 public class MultiMain extends ItemPickaxe {
 	
 	public MultiMain(ToolMaterial material) {
 		super(material);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 	public Set<String> getToolClasses(ItemStack stack) {
@@ -50,12 +50,4 @@ public class MultiMain extends ItemPickaxe {
 		        return this.efficiencyOnProperMaterial;
 		 return effectiveAgainst.contains(state) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, state);
 	}
-	
-	@Override
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
-        ItemStack mat = this.toolMaterial.getRepairItemStack();
-        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
-        return super.getIsRepairable(toRepair, repair);
-    }
 }

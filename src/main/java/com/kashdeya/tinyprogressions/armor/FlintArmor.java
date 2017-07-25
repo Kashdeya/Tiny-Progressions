@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.armor;
 
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -12,7 +12,7 @@ public class FlintArmor extends ItemArmor {
 	public FlintArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
 		super(material, renderIndex, equipmentSlotIn);
 		this.maxStackSize = 1;
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	
     /**

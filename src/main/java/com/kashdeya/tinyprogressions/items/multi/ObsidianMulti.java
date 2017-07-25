@@ -1,15 +1,15 @@
 package com.kashdeya.tinyprogressions.items.multi;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-
-import com.kashdeya.tinyprogressions.main.tinyprogressions;
 
 public class ObsidianMulti extends MultiMain{
 	
 	public ObsidianMulti(ToolMaterial material){
 		super(material);
-		this.setCreativeTab(tinyprogressions.tabTP);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
 	}
 	

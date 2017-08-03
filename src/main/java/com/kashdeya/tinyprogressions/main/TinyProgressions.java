@@ -59,9 +59,9 @@ public class TinyProgressions {
 		OreDictHandler.init();
 		
 		// Renders
-		PROXY.registerTileEntities();
+    	PROXY.registerTileEntities();
     	PROXY.registerRenderers();
-    	
+		
     	// Events
     	MinecraftForge.EVENT_BUS.register(instance);
     	MinecraftForge.EVENT_BUS.register(new IReachEvent());
@@ -73,6 +73,7 @@ public class TinyProgressions {
     @EventHandler
     public void init(FMLInitializationEvent e) {
     	PROXY.init();
+    	PROXY.registerWorldRenderers();
     }
 
     @EventHandler

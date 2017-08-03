@@ -19,6 +19,12 @@ public class ClientProxy extends CommonProxy {
         RenderHandler.initTools();
 	}
     
+    @Override
+    public void registerWorldRenderers() {
+    	RenderHandler.initBlockWorldRenders();
+    	RenderHandler.initItemHandRenders();
+    }
+    
     public EntityPlayerMP getPlayerEntityFromContext(MessageContext ctx)
     {
       return (EntityPlayerMP)(ctx.side.isClient() ? Minecraft.getMinecraft().player : ctx.getServerHandler().player);

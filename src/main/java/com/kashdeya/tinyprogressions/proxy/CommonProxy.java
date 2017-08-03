@@ -59,6 +59,10 @@ public class CommonProxy {
 		//unused - only called clientside
 	}
 	
+	public void registerWorldRenderers() {
+		//unused - only called clientside
+	}
+	
 	public EntityPlayerMP getPlayerEntityFromContext(MessageContext ctx) {
 	    return null;
 	}

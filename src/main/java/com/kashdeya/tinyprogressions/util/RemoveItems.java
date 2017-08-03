@@ -1,14 +1,10 @@
 package com.kashdeya.tinyprogressions.util;
 
-import java.util.List;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.item.crafting.IRecipe;
 
 public class RemoveItems {
 	
@@ -33,6 +29,7 @@ public class RemoveItems {
 	}
 	
 	private static void removeRecipe(ItemStack resultItem){
+		/* TODO
 		ItemStack recipeResult;
 		List<IRecipe> recipes = (List) CraftingManager.getInstance().getRecipeList();
 		for(int scan = 0;scan < recipes.size();scan++){
@@ -45,6 +42,7 @@ public class RemoveItems {
 				}
 			}
 		}
+		*/
 	}
 
 }

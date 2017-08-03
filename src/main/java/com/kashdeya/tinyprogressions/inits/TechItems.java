@@ -1,5 +1,9 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.util.Iterator;
+import java.util.Set;
+
+import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
@@ -15,9 +19,11 @@ import com.kashdeya.tinyprogressions.main.Reference;
 
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.event.RegistryEvent;
 
 public class TechItems {
+	
+	static Set<Item> items = Sets.newHashSet();
 	
 	// Watering Cans
 	public static Item watering_can;
@@ -112,8 +118,19 @@ public class TechItems {
 		}
 	}
 	
+	public static void registerItems(RegistryEvent.Register<Item> event)
+	{
+		Iterator<Item> i = items.iterator();
+		
+		while(i.hasNext())
+		{
+			event.getRegistry().register(i.next());
+		}
+	}
+	
 	static void registerItem(Item item, String name){
-	    GameRegistry.register(item, new ResourceLocation(Reference.MOD_ID + ":" + name));
+	    item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+	    items.add(item);
 	}
 
 }

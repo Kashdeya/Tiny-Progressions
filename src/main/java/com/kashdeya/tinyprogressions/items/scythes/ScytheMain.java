@@ -91,13 +91,13 @@ public class ScytheMain extends ItemSword {
     		            if (itemstack.getItemDamage() >= itemstack.getMaxDamage())
     		            {
     		              playerIn.setHeldItem(hand, null);
-    		              return super.onItemUse(itemstack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+    		              return super.onItemUse(playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
     		            }
     		          }
     		        }
     		      }
     		    }
-    		    return super.onItemUse(itemstack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+    		    return super.onItemUse(playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
     		  }
         }
 	

@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -22,7 +23,7 @@ public class SmoothEndStone extends Block {
         this.setHardness(3.0F);
         this.setHarvestLevel("pickaxe", 1);
         this.setResistance(15.0F);
-        this.setSoundType(blockSoundType.STONE);
+        this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("smooth_endstone");
     }

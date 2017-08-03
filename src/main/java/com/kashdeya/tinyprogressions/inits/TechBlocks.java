@@ -1,5 +1,9 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.util.Iterator;
+import java.util.Set;
+
+import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.BlazeCobblegen;
@@ -26,11 +30,15 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.event.RegistryEvent;
 
 public class TechBlocks {
+	
+	static Set<Block> blocks = Sets.newHashSet();
+	static Set<ItemBlock> itemblocks = Sets.newHashSet();
 	
 	// Tech Blocks
 	public static Block growth_block;
@@ -164,10 +172,33 @@ public class TechBlocks {
 		}
 	}
 	
+	public static void registerBlocks(RegistryEvent.Register<Block> event)
+	{
+		Iterator<Block> b = blocks.iterator();
+		
+		while(b.hasNext())
+		{
+			event.getRegistry().register(b.next());
+		}
+	}
+	
+	public static void registerItemBlocks(RegistryEvent.Register<Item> event)
+	{
+		Iterator<ItemBlock> ib = itemblocks.iterator();
+		
+		while(ib.hasNext())
+		{
+			event.getRegistry().register(ib.next());
+		}
+	}
+	
 	public static void registerBlock(Block block, String name, boolean itemblock){
-		GameRegistry.register(block, new ResourceLocation(Reference.MOD_ID + ":" + name));
+		block.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+		
+		blocks.add(block);
+		
 		if (itemblock){
-			GameRegistry.register(new ItemBlock(block), new ResourceLocation(Reference.MOD_ID + ":" + name));
+			itemblocks.add((ItemBlock)new ItemBlock(block).setRegistryName(block.getRegistryName()));
 		}
 	}
 

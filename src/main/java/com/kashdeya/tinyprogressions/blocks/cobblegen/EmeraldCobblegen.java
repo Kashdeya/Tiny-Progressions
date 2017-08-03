@@ -7,8 +7,10 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityEmeraldCobblegen;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryHelper;
@@ -38,7 +40,7 @@ public class EmeraldCobblegen extends Block implements ITileEntityProvider{
 		this.setLightLevel(0.5F);
 		this.setLightOpacity(1);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setSoundType(blockSoundType.METAL);
+		this.setSoundType(SoundType.METAL);
 		this.setUnlocalizedName("emerald_cobblegen_block");
 	}
 	
@@ -55,7 +57,7 @@ public class EmeraldCobblegen extends Block implements ITileEntityProvider{
     }
 	
 	@Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
     {
     	if(world.isRemote)
     	{
@@ -83,7 +85,7 @@ public class EmeraldCobblegen extends Block implements ITileEntityProvider{
     		} else
     		{
         		ItemStack stack = ttest.getStackInSlot(0);
-    			player.addChatComponentMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack == null? 0 : stack.stackSize)));
+    			player.sendMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack == null? 0 : stack.getCount())));
     		}
     	}
     	
@@ -109,14 +111,14 @@ public class EmeraldCobblegen extends Block implements ITileEntityProvider{
 		return new TileEntityEmeraldCobblegen();
 	}
     
-	@Override
+    @Override
 	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
+    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
     {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_1").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_2").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_3").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_4").getFormattedText());
+    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_1").getFormattedText());
+    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_2").getFormattedText());
+    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_3").getFormattedText());
+    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.emeraldcobblegen_4").getFormattedText());
     }
 
 }

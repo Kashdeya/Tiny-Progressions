@@ -5,6 +5,7 @@ import java.util.List;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -29,20 +30,19 @@ public class MedKit extends Item {
 	  }
 	  
 	  @Override
-	  public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
-	  {
+	  public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 	    if (!playerIn.capabilities.isCreativeMode) {
-	      itemStackIn.stackSize -= 1;
+	      playerIn.getHeldItem(handIn).setCount(playerIn.getHeldItem(handIn).getCount() - 1);
 	    }
+	    
 	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
 	    
-	    return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
+	    return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
 	  }
 	  
 	  @Override
 	  @SideOnly(Side.CLIENT)
-	  @SuppressWarnings({ "unchecked", "rawtypes" })
-	  public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.medkit").getFormattedText());
+	  public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+		  tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.medkit").getFormattedText());
 	  }
 }

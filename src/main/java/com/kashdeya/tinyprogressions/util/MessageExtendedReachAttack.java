@@ -44,7 +44,7 @@ public class MessageExtendedReachAttack implements IMessage
 		  {
 			  System.out.println("Message received");
 	      
-			  final EntityPlayerMP thePlayer = (EntityPlayerMP) ctx.getServerHandler().playerEntity;
+			  final EntityPlayerMP thePlayer = (EntityPlayerMP) ctx.getServerHandler().player;
 			  thePlayer.getServer().addScheduledTask(new Runnable()
 			  {
 				  @Override

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
@@ -52,11 +53,10 @@ public class DiamondApple extends ItemFood
 	  
 	  @Override
 	  @SideOnly(Side.CLIENT)
-	  @SuppressWarnings({ "unchecked", "rawtypes" })
-	  public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_1").getFormattedText());
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_2").getFormattedText());
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_3").getFormattedText());
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_4").getFormattedText());
+	  public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+		  tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_1").getFormattedText());
+		  tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_2").getFormattedText());
+		  tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_3").getFormattedText());
+		  tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.apple_4").getFormattedText());
 	  }
 }

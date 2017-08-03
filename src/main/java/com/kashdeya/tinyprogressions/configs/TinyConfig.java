@@ -1,10 +1,10 @@
 package com.kashdeya.tinyprogressions.configs;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.google.common.collect.Lists;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -201,10 +201,10 @@ public class TinyConfig {
 	protected static class LegacyHandler
 	{
 		
-		private static List<String> removeCategoryList = new ArrayList();
-		private static List<List<String>> removePropertiesList = new ArrayList();
-		private static List<List<String>> moveKeyList = new ArrayList();
-		private static List<List<String>> renameKeyList = new ArrayList();
+		private static List<String> removeCategoryList = Lists.newArrayList();
+		private static List<List<String>> removePropertiesList = Lists.newArrayList();
+		private static List<List<String>> moveKeyList = Lists.newArrayList();
+		private static List<List<String>> renameKeyList = Lists.newArrayList();
 		
 		private static org.apache.logging.log4j.Logger logger;
 		
@@ -395,11 +395,7 @@ public class TinyConfig {
 		}
 		
 		
-		/**
-		 * Use this to 
-		 * @param Category
-		 * @return ConfigCategory
-		 */
+		@SuppressWarnings("unused")
 		private static ConfigCategory getCategory(String Category)
 		{
 			return config.getCategory(Category);

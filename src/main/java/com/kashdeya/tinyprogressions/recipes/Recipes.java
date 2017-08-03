@@ -1,22 +1,9 @@
 package com.kashdeya.tinyprogressions.recipes;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.inits.TechTools;
-
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-
 public class Recipes {
 	
 	public static void registerRecipes(){
-		
+		/* TODO
 		// Armor
 		if (ConfigHandler.WoodArmor){
 			GameRegistry.addRecipe(new ItemStack(TechArmor.wooden_helmet), "fff", "f f", 'f', new ItemStack(Blocks.LOG, 1, 0));
@@ -342,6 +329,7 @@ public class Recipes {
 		if (ConfigHandler.EmeraldCobblegen){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.emerald_cobblegen_block), "eee", "ebe", "eee", 'e', "gemEmerald", 'b', new ItemStack(TechBlocks.blaze_cobblegen_block)));
 		}
+		*/
 	}
 
 }

@@ -1,14 +1,74 @@
 package com.kashdeya.tinyprogressions.util;
 
+import java.util.Iterator;
+import java.util.Set;
+
+import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.util.ResourceLocation;
 
 public class RemoveItems {
 	
 	public static void initRemove() {
+		
+		if (!ConfigHandler.WoodArmor)
+		{
+			removeRecipe(new ItemStack(TechArmor.wooden_helmet));
+			removeRecipe(new ItemStack(TechArmor.wooden_chestplate));
+			removeRecipe(new ItemStack(TechArmor.wooden_leggings));
+			removeRecipe(new ItemStack(TechArmor.wooden_boots));
+		}
+		
+		if (!ConfigHandler.StoneArmor)
+		{
+			removeRecipe(new ItemStack(TechArmor.stone_helmet));
+			removeRecipe(new ItemStack(TechArmor.stone_chestplate));
+			removeRecipe(new ItemStack(TechArmor.stone_leggings));
+			removeRecipe(new ItemStack(TechArmor.stone_boots));
+		}
+		
+		if (!ConfigHandler.FlintArmor)
+		{
+			removeRecipe(new ItemStack(TechArmor.flint_helmet));
+			removeRecipe(new ItemStack(TechArmor.flint_chestplate));
+			removeRecipe(new ItemStack(TechArmor.flint_leggings));
+			removeRecipe(new ItemStack(TechArmor.flint_boots));
+		}
+		
+		if (!ConfigHandler.BoneArmor)
+		{
+			removeRecipe(new ItemStack(TechArmor.bone_helmet));
+			removeRecipe(new ItemStack(TechArmor.bone_chestplate));
+			removeRecipe(new ItemStack(TechArmor.bone_leggings));
+			removeRecipe(new ItemStack(TechArmor.bone_boots));
+		}
+		
+		if (!ConfigHandler.FlintRecipe)
+		{
+			removeRecipe(new ItemStack(Items.FLINT));
+		}
+		
+		if (!ConfigHandler.BlockGrowth)
+		{
+			removeRecipe(new ItemStack(TechBlocks.growth_block));
+		}
+		
+		if (!ConfigHandler.BlockGrowthUpgrade)
+		{
+			removeRecipe(new ItemStack(TechBlocks.growth_upgrade));
+		}
+		
+		if (!ConfigHandler.BlockGrowthUpgradeTwo)
+		{
+			removeRecipe(new ItemStack(TechBlocks.growth_upgrade_two));
+		}
 		
 		if (ConfigHandler.RemoveItems){
 			removeRecipe(new ItemStack(Items.WOODEN_AXE));
@@ -29,20 +89,21 @@ public class RemoveItems {
 	}
 	
 	private static void removeRecipe(ItemStack resultItem){
-		/* TODO
-		ItemStack recipeResult;
-		List<IRecipe> recipes = (List) CraftingManager.getInstance().getRecipeList();
-		for(int scan = 0;scan < recipes.size();scan++){
-			IRecipe tmpRecipe = (IRecipe) recipes.get(scan);
-			recipeResult = tmpRecipe.getRecipeOutput();
-			if(recipeResult != null){
-				if(recipeResult.getItem() == resultItem.getItem() && recipeResult.getItemDamage() == resultItem.getItemDamage()){
-					recipes.remove(scan);
-					scan--;
-				}
+		Set<ResourceLocation> recipes = Sets.newHashSet();
+		
+		CraftingManager.REGISTRY.forEach((recipe) -> {
+			if(ItemStack.areItemsEqual(recipe.getRecipeOutput(), resultItem))
+			{
+				recipes.add(recipe.getRegistryName());
 			}
-		}
-		*/
+		});
+		
+//		Iterator<ResourceLocation> iterator = recipes.iterator();
+//		
+//		while(iterator.hasNext())
+//		{
+//			CraftingManager.REGISTRY.putObject(iterator.next(), null);
+//		}
 	}
 
 }

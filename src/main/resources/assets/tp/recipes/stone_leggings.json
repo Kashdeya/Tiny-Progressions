@@ -1,0 +1,24 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"fff",
+		"f f",
+		"f f"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:stone",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:stone_leggings",
+		"count"	: 1
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"ibi",
+		"ded",
+		"ibi"
+	],
+	"key"		:
+	{
+		"i":
+		[
+			{
+				"item":	"minecraft:iron_ingot",
+				"data": 0
+			}
+		],
+		"b":
+		[
+			{
+				"item":	"minecraft:bone_block",
+				"data": 0
+			}
+		],
+		"e":
+		[
+			{
+				"item":	"minecraft:sea_lantern",
+				"data": 0
+			}
+		],
+		"d":
+		[
+			{
+				"item":	"tp:dirty_glass",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:growth_block",
+		"count"	: 1
+	}
+}

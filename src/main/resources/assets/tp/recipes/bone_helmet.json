@@ -1,0 +1,23 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"fff",
+		"f f"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:bone",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:bone_helmet",
+		"count"	: 1
+	}
+}

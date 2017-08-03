@@ -1,42 +1,24 @@
 package com.kashdeya.tinyprogressions.recipes;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 public class Recipes {
 	
-	public static void registerRecipes(){
-		/* TODO
-		// Armor
-		if (ConfigHandler.WoodArmor){
-			GameRegistry.addRecipe(new ItemStack(TechArmor.wooden_helmet), "fff", "f f", 'f', new ItemStack(Blocks.LOG, 1, 0));
-			GameRegistry.addRecipe(new ItemStack(TechArmor.wooden_chestplate), "f f", "fff", "fff", 'f', new ItemStack(Blocks.LOG, 1, 0));
-			GameRegistry.addRecipe(new ItemStack(TechArmor.wooden_leggings), "fff", "f f", "f f", 'f', new ItemStack(Blocks.LOG, 1, 0));
-			GameRegistry.addRecipe(new ItemStack(TechArmor.wooden_boots), "f f", "f f", 'f', new ItemStack(Blocks.LOG, 1, 0));
-		}
-		if (ConfigHandler.StoneArmor){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.stone_boots), "s s", "s s", 's', "stone"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.stone_chestplate), "s s", "sss", "sss", 's', "stone"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.stone_helmet), "sss", "s s", 's', "stone"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.stone_leggings), "sss","s s", "s s", 's', "stone"));
-		}
-		if (ConfigHandler.FlintArmor){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flint_boots), "s s", "s s", 's', new ItemStack(Items.FLINT)));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flint_chestplate), "s s", "sss", "sss", 's', new ItemStack(Items.FLINT)));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flint_helmet), "sss", "s s", 's', new ItemStack(Items.FLINT)));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.flint_leggings), "sss","s s", "s s", 's', new ItemStack(Items.FLINT)));
-			
+	public static void registerRecipes() {
+		if (ConfigHandler.FlintArmor) {
 			GameRegistry.addSmelting(TechBlocks.flint_block, new ItemStack(TechItems.flint_ingot), 1.0F);
 		}
-		if (ConfigHandler.BoneArmor){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.bone_boots), "s s", "s s", 's', "bone"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.bone_chestplate), "s s", "sss", "sss", 's', "bone"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.bone_helmet), "sss", "s s", 's', "bone"));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechArmor.bone_leggings), "sss","s s", "s s", 's', "bone"));
+		
+		if (ConfigHandler.ReinforcedObsidian) {
+			GameRegistry.addSmelting(TechBlocks.reinforced_obsidian, new ItemStack(TechItems.reinforced_obsidian_ingot), 1.0F);
 		}
 		
-		// Flint Recipe
-		if (ConfigHandler.FlintRecipe){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.FLINT), "ss ","s  ", 's', "gravel"));
-		}
-		
+		/*
 		// Smooth End Stone
 		if (ConfigHandler.SmoothEndStone){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.smooth_endstone, 4), "nn", "nn", 'n', "endstone"));
@@ -283,8 +265,6 @@ public class Recipes {
 		}
 		if (ConfigHandler.ReinforcedObsidian){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.reinforced_obsidian, 4), "ioi", "oio", "ioi", 'i', new ItemStack(Blocks.IRON_BARS), 'o', "obsidian"));
-			
-			GameRegistry.addSmelting(TechBlocks.reinforced_obsidian, new ItemStack(TechItems.reinforced_obsidian_ingot), 1.0F);
 		}
 		
 		// Quartz
@@ -299,17 +279,6 @@ public class Recipes {
 		}
 		if (ConfigHandler.WateringCanUpgrade){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.watering_can_upgrade), "on ", "owo", " o ", 'o', "obsidian", 'w', new ItemStack(TechItems.watering_can), 'n', "netherStar"));
-		}
-		
-		// Growth Blocks
-		if (ConfigHandler.BlockGrowth){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.growth_block), "ibi", "ded", "ibi", 'i', "ingotIron", 'b', "blockBone", 'e', new ItemStack(Blocks.SEA_LANTERN), 'd', "blockGlassDirty"));
-		}
-		if (ConfigHandler.BlockGrowthUpgrade){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {"CWC", "SES", "CNC", 'W', new ItemStack(TechItems.watering_can_upgrade), 'N', new ItemStack(TechBlocks.netherstar_block), 'C', new ItemStack(TechBlocks.reinforced_obsidian), 'S', new ItemStack(Items.END_CRYSTAL), 'E', new ItemStack(TechBlocks.growth_block)});
-		}
-		if (ConfigHandler.BlockGrowthUpgradeTwo){
-			GameRegistry.addShapelessRecipe(new ItemStack(TechBlocks.growth_upgrade_two), new Object[]{new ItemStack(TechBlocks.growth_upgrade), new ItemStack(Blocks.DRAGON_EGG)});
 		}
 		
 		// Cobblegens

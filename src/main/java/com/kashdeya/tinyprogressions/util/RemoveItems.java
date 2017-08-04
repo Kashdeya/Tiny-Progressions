@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.util;
 
-import java.util.Iterator;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
@@ -15,6 +14,8 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RemoveItems {
+	
+	public static Set<ResourceLocation> recipes = Sets.newHashSet();
 	
 	public static void initRemove() {
 		
@@ -89,8 +90,6 @@ public class RemoveItems {
 	}
 	
 	private static void removeRecipe(ItemStack resultItem){
-		Set<ResourceLocation> recipes = Sets.newHashSet();
-		
 		CraftingManager.REGISTRY.forEach((recipe) -> {
 			if(ItemStack.areItemsEqual(recipe.getRecipeOutput(), resultItem))
 			{

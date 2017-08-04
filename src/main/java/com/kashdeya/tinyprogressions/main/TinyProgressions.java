@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.main;
 
+import java.util.Iterator;
+
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
@@ -12,10 +14,13 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
 import com.kashdeya.tinyprogressions.tabs.TabTP;
+import com.kashdeya.tinyprogressions.util.RemoveItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +32,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.MINECRAFT)
 
@@ -93,5 +99,17 @@ public class TinyProgressions {
     	
     	TechArmor.registerItems(event);
     	TechTools.registerItems(event);
+    }
+    
+    @SubscribeEvent
+    public void registerRecipes(RegistryEvent.Register<IRecipe> event)
+    {
+    	IForgeRegistryModifiable<IRecipe> registry = (IForgeRegistryModifiable<IRecipe>) event.getRegistry();
+    	Iterator<ResourceLocation> iterator = RemoveItems.recipes.iterator();
+    	
+    	while(iterator.hasNext())
+    	{
+    		registry.remove(iterator.next());
+    	}
     }
 }

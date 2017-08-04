@@ -32,7 +32,7 @@
 	},
 	"result"	:
 	{
-		"item"	: "tp:watering_can",
+		"item"	: "tp:watering_can_upgrade",
 		"count"	: 1
 	}
 }

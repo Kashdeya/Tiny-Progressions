@@ -25,7 +25,7 @@
 	},
 	"result"	:
 	{
-		"item"	: "tp:med_kit",
-		"count"	: 1
+		"item"	: "tp:dirty_glass,
+		"count"	: 4
 	}
 }

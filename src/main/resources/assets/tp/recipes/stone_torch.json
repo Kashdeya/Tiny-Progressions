@@ -3,7 +3,6 @@
 	"pattern"	:
 	[
 		"c",
-		"s",
 		"s"
 	],
 	"key"		:
@@ -30,6 +29,6 @@
 	"result"	:
 	{
 		"item"	: "tp:stone_torch",
-		"count"	: 1
+		"count"	: 4
 	}
 }

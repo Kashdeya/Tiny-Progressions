@@ -17,6 +17,7 @@ import com.kashdeya.tinyprogressions.util.RemoveItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
@@ -30,6 +31,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
@@ -112,5 +114,12 @@ public class TinyProgressions {
 	@SubscribeEvent
 	public void registerOre(OreRegisterEvent event) {
 		logger.debug(event.getOre().getDisplayName());
+	}
+	
+	@SubscribeEvent
+	public void itemCrafted(ItemCraftedEvent event)
+	{
+		if (event.crafting.getItem() == TechTools.birthday_pickaxe)
+			event.crafting.addEnchantment(Enchantments.MENDING, 2);
 	}
 }

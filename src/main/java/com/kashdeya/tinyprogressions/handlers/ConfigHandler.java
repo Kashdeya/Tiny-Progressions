@@ -2,161 +2,161 @@ package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
 	// Watering cans
-	public static boolean WateringCan = false;
+	public static boolean WateringCan = true;
 	public static int WateringCanChance = 25;
-	public static boolean WateringCanUpgrade = false;
+	public static boolean WateringCanUpgrade = true;
 	public static int WateringCanUpgradeChance = 75;
 	
 	// Birthday Pickaxe
-	public static boolean BirthdayPickaxe = false;
+	public static boolean BirthdayPickaxe = true;
 	
 	// Flint Recipe
-	public static boolean FlintRecipe = false;
+	public static boolean FlintRecipe = true;
 	
 	// Stone Dust
-	public static boolean StoneDust = false;
+	public static boolean StoneDust = true;
 	
 	// Stone Torch
-	public static boolean StoneTorch = false;
+	public static boolean StoneTorch = true;
 	
 	// Cobblegens
-	public static boolean Cobblegen = false;
-	public static boolean IronCobblegen = false;
-	public static boolean DiamondCobblegen = false;
-	public static boolean EmeraldCobblegen = false;
-	public static boolean BlazeCobblegen = false;
+	public static boolean Cobblegen = true;
+	public static boolean IronCobblegen = true;
+	public static boolean DiamondCobblegen = true;
+	public static boolean EmeraldCobblegen = true;
+	public static boolean BlazeCobblegen = true;
 	
 	// Growth Crystals
-	public static boolean BlockGrowth = false;
+	public static boolean BlockGrowth = true;
 	public static int BlockGrowthTicks = 30;
 	public static int GrowthParticalTicks = 250;
-	public static boolean BlockGrowthUpgrade = false;
+	public static boolean BlockGrowthUpgrade = true;
 	public static int BlockGrowthUpgradeTicks = 40;
 	public static int GrowthUpgradeParticalTicks = 250;
-	public static boolean BlockGrowthUpgradeTwo = false;
+	public static boolean BlockGrowthUpgradeTwo = true;
 	public static int BlockGrowthUpgradeTwoTicks = 30;
 	public static int GrowthUpgradeTwoParticalTicks = 250;
 	
 	// Quartz Dust & Knife
-	public static boolean QuartzKnife = false;
+	public static boolean QuartzKnife = true;
 	public static int QuartzKnifeDamage = 128;
 	
 	// Deco Blocks
-	public static boolean CharcoalBlock = false;
-	public static boolean DirtyGlass = false;
-	public static boolean AndesiteBrick = false;
-	public static boolean DioriteBrick = false;
-	public static boolean GraniteBrick = false;
-	public static boolean SmoothEndStone = false;
+	public static boolean CharcoalBlock = true;
+	public static boolean DirtyGlass = true;
+	public static boolean AndesiteBrick = true;
+	public static boolean DioriteBrick = true;
+	public static boolean GraniteBrick = true;
+	public static boolean SmoothEndStone = true;
 	
 	// Reinforced Blocks
-	public static boolean ReinforcedGlass = false;
-	public static boolean ReinforcedObsidian =  false;
+	public static boolean ReinforcedGlass = true;
+	public static boolean ReinforcedObsidian =  true;
 	
 	// Compressed Blocks
-	public static boolean FleshBlock = false;
-	public static boolean NetherStarBlock = false;
+	public static boolean FleshBlock = true;
+	public static boolean NetherStarBlock = true;
 	
 	// Armor
-	public static boolean StoneArmor = false;
-	public static boolean FlintArmor = false;
-	public static boolean BoneArmor = false;
-	public static boolean WoodArmor = false;
+	public static boolean StoneArmor = true;
+	public static boolean FlintArmor = true;
+	public static boolean BoneArmor = true;
+	public static boolean WoodArmor = true;
 	
 	// Notch Apple
-	public static boolean NotchApple = false;
+	public static boolean NotchApple = true;
 	
 	// Golden Apple Progression
-	public static boolean ApplePro = false;
+	public static boolean ApplePro = true;
 	
 	// Drops
-	public static boolean BoneDrops = false;
+	public static boolean BoneDrops = true;
 	public static float BoneDropsChance = 1.0F;
 	public static int BoneAmmount = 1;
-	public static boolean SkullDrops = false;
+	public static boolean SkullDrops = true;
 	public static float SkullDropsChance = 1.0F;
 	public static int SkullAmmount = 1;
-	public static boolean stickDrops = false;
+	public static boolean stickDrops = true;
 	public static float stickDropsChance = 1.0F;
 	public static int stickDropsAmmount = 1;
 	
 	// MISC
-	public static boolean AllowRightClick = false;
-	public static boolean MyceliumSeeds = false;
-	public static boolean DiamondApple = false;
-	public static boolean EmeraldApple = false;
-	public static boolean MedKit = false;
+	public static boolean AllowRightClick = true;
+	public static boolean MyceliumSeeds = true;
+	public static boolean DiamondApple = true;
+	public static boolean EmeraldApple = true;
+	public static boolean MedKit = true;
 	public static int healDuration = 300;
 	
 	// Flint Items & More
-	public static boolean FlintTools = false;
-	public static boolean FlintBlock = false;
+	public static boolean FlintTools = true;
+	public static boolean FlintBlock = true;
 	
 	// Flint Knife
-	public static boolean FlintKnife = false;
+	public static boolean FlintKnife = true;
 	public static int FlintKnifeDamage = 128;
 	
 	// Bone Items & More
-	public static boolean BoneTools = false;
-	public static boolean BoneBlock = false;
+	public static boolean BoneTools = true;
+	public static boolean BoneBlock = true;
 	
 	// Remove Items
-	public static boolean RemoveItems = false;
+	public static boolean RemoveItems = true;
 	
 	// Emerald
-	public static boolean emerald_axe = false;
-	public static boolean emerald_pickaxe = false;
-	public static boolean emerald_spade = false;
-	public static boolean emerald_hoe = false;
-	public static boolean emerald_sword = false;
+	public static boolean emerald_axe = true;
+	public static boolean emerald_pickaxe = true;
+	public static boolean emerald_spade = true;
+	public static boolean emerald_hoe = true;
+	public static boolean emerald_sword = true;
 	
 	// Obsidian
-	public static boolean obsidian_axe = false;
-	public static boolean obsidian_pickaxe = false;
-	public static boolean obsidian_spade = false;
-	public static boolean obsidian_hoe = false;
-	public static boolean obsidian_sword = false;
+	public static boolean obsidian_axe = true;
+	public static boolean obsidian_pickaxe = true;
+	public static boolean obsidian_spade = true;
+	public static boolean obsidian_hoe = true;
+	public static boolean obsidian_sword = true;
 	
 	// Scythe
-	public static boolean wooden_scythe = false;
-	public static boolean stone_scythe = false;
-	public static boolean golden_scythe = false;
-	public static boolean iron_scythe = false;
-	public static boolean emerald_scythe = false;
-	public static boolean diamond_scythe = false;
-	public static boolean obsidian_scythe = false;
+	public static boolean wooden_scythe = true;
+	public static boolean stone_scythe = true;
+	public static boolean golden_scythe = true;
+	public static boolean iron_scythe = true;
+	public static boolean emerald_scythe = true;
+	public static boolean diamond_scythe = true;
+	public static boolean obsidian_scythe = true;
 	
 	// Multi
-	public static boolean wooden_multi = false;
-	public static boolean stone_multi = false;
-	public static boolean golden_multi = false;
-	public static boolean iron_multi = false;
-	public static boolean emerald_multi = false;
-	public static boolean diamond_multi = false;
-	public static boolean obsidian_multi = false;
+	public static boolean wooden_multi = true;
+	public static boolean stone_multi = true;
+	public static boolean golden_multi = true;
+	public static boolean iron_multi = true;
+	public static boolean emerald_multi = true;
+	public static boolean diamond_multi = true;
+	public static boolean obsidian_multi = true;
 	
 	// Battle
-	public static boolean wooden_battle = false;
-	public static boolean stone_battle = false;
-	public static boolean golden_battle = false;
-	public static boolean iron_battle = false;
-	public static boolean emerald_battle = false;
-	public static boolean diamond_battle = false;
-	public static boolean obsidian_battle = false;
+	public static boolean wooden_battle = true;
+	public static boolean stone_battle = true;
+	public static boolean golden_battle = true;
+	public static boolean iron_battle = true;
+	public static boolean emerald_battle = true;
+	public static boolean diamond_battle = true;
+	public static boolean obsidian_battle = true;
 	
 	// Spear
-	public static boolean wooden_spear = false;
-	public static boolean stone_spear = false;
-	public static boolean golden_spear = false;
-	public static boolean iron_spear = false;
-	public static boolean emerald_spear = false;
-	public static boolean diamond_spear = false;
-	public static boolean obsidian_spear = false;
+	public static boolean wooden_spear = true;
+	public static boolean stone_spear = true;
+	public static boolean golden_spear = true;
+	public static boolean iron_spear = true;
+	public static boolean emerald_spear = true;
+	public static boolean diamond_spear = true;
+	public static boolean obsidian_spear = true;
 	public static float spear_reach = 7.0F;
 	
 	// Ender Ore
-	public static boolean ender_ore = false;
-	public static boolean ender_mite = false;
+	public static boolean ender_ore = true;
+	public static boolean ender_mite = true;
 	public static float endermite_spawn = 0.25F;
 	public static int ender_ore_frequency = 5;
 	public static int ender_ore_min = 1;

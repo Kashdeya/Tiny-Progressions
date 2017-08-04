@@ -1,0 +1,35 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"c",
+		"s",
+		"s"
+	],
+	"key"		:
+	{
+		"s":
+		[
+			{
+				"item":	"tp:stone_stick",
+				"data": 0
+			}
+		],
+		"c":
+		[
+			{
+				"item":	"minecraft:coal",
+				"data": 0
+			},
+			{
+				"item":	"minecraft:coal",
+				"data": 1
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:stone_torch",
+		"count"	: 1
+	}
+}

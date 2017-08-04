@@ -1,24 +1,24 @@
 {
-	"type"		: "forge:ore_shaped",
+	"type"		: "minecraft:crafting_shaped",
 	"pattern"	:
 	[
 		"ccc",
 		"wgl",
-		"ccc
+		"ccc"
 	],
 	"key"		:
 	{
 		"c":
 		[
 			{
-				"type":	"forge_oredict",
+				"type":	"forge:ore_dict",
 				"ore" : "cobblestone"
 			}
 		],
 		"g":
 		[
 			{
-				"type":	"forge_oredict",
+				"type":	"forge:ore_dict",
 				"ore" : "blockGlass"
 			}
 		],

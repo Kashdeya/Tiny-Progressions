@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"ogo",
+		"gog",
+		"ogo"
+	],
+	"key"		:
+	{
+		"o":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "obsidian"
+			}
+		],
+		"g":
+		[
+			{
+				"item":	"tp:dirty_glass",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:reinforced_glass",
+		"count"	: 4
+	}
+}

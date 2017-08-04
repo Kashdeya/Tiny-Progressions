@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"ppp",
+		" s ",
+		"s  "
+	],
+	"key"		:
+	{
+		"p":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "gemDiamond"
+			}
+		],
+		"s":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "stickWood"
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:diamond_scythe",
+		"count"	: 1
+	}
+}

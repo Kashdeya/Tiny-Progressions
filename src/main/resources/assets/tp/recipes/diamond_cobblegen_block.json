@@ -1,17 +1,17 @@
 {
-	"type"		: "forge:ore_shaped",
+	"type"		: "minecraft:crafting_shaped",
 	"pattern"	:
 	[
 		"ddd",
 		"dgd",
-		"ddd
+		"ddd"
 	],
 	"key"		:
 	{
 		"d":
 		[
 			{
-				"type":	"forge_oredict",
+				"type":	"forge:ore_dict",
 				"ore" : "gemDiamond"
 			}
 		],

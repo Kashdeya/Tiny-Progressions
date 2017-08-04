@@ -1,17 +1,17 @@
 {
-	"type"		: "forge:ore_shaped",
+	"type"		: "minecraft:crafting_shaped",
 	"pattern"	:
 	[
 		"iii",
 		"igi",
-		"iii
+		"iii"
 	],
 	"key"		:
 	{
 		"i":
 		[
 			{
-				"type":	"forge_oredict",
+				"type":	"forge:ore_dict",
 				"ore" : "ingotIron"
 			}
 		],

@@ -1,17 +1,17 @@
 {
-	"type"		: "forge:ore_shaped",
+	"type"		: "minecraft:crafting_shaped",
 	"pattern"	:
 	[
 		"eee",
 		"ege",
-		"eee
+		"eee"
 	],
 	"key"		:
 	{
 		"e":
 		[
 			{
-				"type":	"forge_oredict",
+				"type":	"forge:ore_dict",
 				"ore" : "gemEmerald"
 			}
 		],

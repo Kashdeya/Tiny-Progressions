@@ -1,0 +1,22 @@
+{
+	"type"		: "minecraft:crafting_shapeless",
+	"group"		: "tp:flint_knife",
+	
+	"ingredients"	:
+	[
+		{
+			"item"	: "minecraft:flint"
+		},
+		{
+			"item"	: "minecraft:flint"
+		},
+		{
+			"item"	: "minecraft:stick"
+		}
+	],
+	"result"	:
+	{
+		"item"	: "tp:flint_knife",
+		"count"	: 1
+	}
+}

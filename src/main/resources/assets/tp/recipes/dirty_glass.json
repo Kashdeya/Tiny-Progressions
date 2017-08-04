@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"sgs",
+		"gsg",
+		"sgs"
+	],
+	"key"		:
+	{
+		"g":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "blockGlass"
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:soul_sand",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:med_kit",
+		"count"	: 1
+	}
+}

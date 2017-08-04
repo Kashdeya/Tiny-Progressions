@@ -11,14 +11,14 @@
 		"i":
 		[
 			{
-				"item":	"minecraft:iron_ingot",
-				"data": 0
+				"type":	"forge:ore_dict",
+				"ore" : "ingotIron"
 			}
 		],
 		"b":
 		[
 			{
-				"item":	"minecraft:bone_block",
+				"item":	"tp:bone_block",
 				"data": 0
 			}
 		],

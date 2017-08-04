@@ -68,11 +68,11 @@ public class WateringCanBase extends Item {
 	    }
 	    
 	    int clicks = 0;
+	    
 	    @Override
-	    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	    {
-		    
-			if (!player.canPlayerEdit(pos.offset(facing), facing, stack)) 
+			if (!player.canPlayerEdit(pos.offset(facing), facing, player.getHeldItem(hand)))
 		    {
 		      return EnumActionResult.FAIL;
 		    }
@@ -127,11 +127,11 @@ public class WateringCanBase extends Item {
 		      return EnumActionResult.FAIL;
 		    }
 		
-		public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player){
+		public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player, EnumHand hand){
 			
 		        IBlockState iblockstate = worldIn.getBlockState(target);
 
-		        int hook = ForgeEventFactory.onApplyBonemeal(player, worldIn, target, iblockstate, stack);
+		        int hook = ForgeEventFactory.onApplyBonemeal(player, worldIn, target, iblockstate, stack, hand);
 		        if (hook != 0) return hook > 0;
 
 		        if ((iblockstate.getBlock() instanceof IGrowable && iblockstate.getBlock() != Blocks.GRASS))
@@ -147,7 +147,7 @@ public class WateringCanBase extends Item {
 		                        igrowable.grow(worldIn, worldIn.rand, target, iblockstate);
 		                    }
 
-		                    stack.stackSize -= 1;
+		                    stack.setCount(stack.getCount() - 1);
 		                }
 
 		                return true;

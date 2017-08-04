@@ -12,7 +12,6 @@ public class FuelHandler implements IFuelHandler {
 	
 	@Override
     public int getBurnTime(ItemStack fuel) {
-        ItemStack itemStack = fuel;
         if (fuel.getItem() == Item.getItemFromBlock(TechBlocks.charcoal_block)) { return CharcoalBlockBurn; }
         
         return 0;

@@ -1,0 +1,45 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"asp",
+		" d ",
+		" d "
+	],
+	"key"		:
+	{
+		"a":
+		[
+			{
+				"item":	"minecraft:stone_axe",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:stone_shovel",
+				"data": 0
+			}
+		],
+		"p":
+		[
+			{
+				"item":	"minecraft:stone_pickaxe",
+				"data": 0
+			}
+		],
+		"d":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:stone_multi",
+		"count"	: 1
+	}
+}

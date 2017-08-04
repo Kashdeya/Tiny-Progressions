@@ -41,13 +41,13 @@ public class MultiMain extends ItemPickaxe {
 
 	@Override
 	public boolean canHarvestBlock(IBlockState blockIn) {
-			return effectiveAgainst.contains(blockIn) ? true : super.canHarvestBlock(blockIn);
+			return effectiveAgainst.contains(blockIn.getBlock()) ? true : super.canHarvestBlock(blockIn);
 	}
 
 	@Override
 	public float getStrVsBlock(ItemStack stack, IBlockState state) {
 		 if (state.getMaterial() == Material.WOOD || state.getMaterial() == Material.VINE || state.getMaterial() == Material.PLANTS || state.getMaterial() == Material.GROUND || state.getMaterial() == Material.GRASS || state.getMaterial() == Material.SAND)
 		        return this.efficiencyOnProperMaterial;
-		 return effectiveAgainst.contains(state) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, state);
+		 return effectiveAgainst.contains(state.getBlock()) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, state);
 	}
 }

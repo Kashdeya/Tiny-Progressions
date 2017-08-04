@@ -1,5 +1,9 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.util.Iterator;
+import java.util.Set;
+
+import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
@@ -9,11 +13,14 @@ import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.event.RegistryEvent;
 
 public class TechArmor {
+	
+	static Set<Item> items = Sets.newHashSet();
 	
 	// Stone Armor
 	public static ItemArmor stone_helmet;
@@ -89,7 +96,18 @@ public class TechArmor {
 		}
 	}
 	
+	public static void registerItems(RegistryEvent.Register<Item> event)
+	{
+		Iterator<Item> i = items.iterator();
+		
+		while(i.hasNext())
+		{
+			event.getRegistry().register(i.next());
+		}
+	}
+	
 	static void registerItem(ItemArmor item, String name){
-	    GameRegistry.register(item, new ResourceLocation(Reference.MOD_ID + ":" + name));
+	    item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+	    items.add(item);
 	}
 }

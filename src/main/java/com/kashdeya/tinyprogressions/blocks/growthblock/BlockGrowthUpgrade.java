@@ -14,11 +14,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -54,7 +55,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 		this.setResistance(2000.0F);
 		this.setLightOpacity(1);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setSoundType(blockSoundType.METAL);
+		this.setSoundType(SoundType.METAL);
 		this.setUnlocalizedName("growth_upgrade");
 		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
 	}
@@ -214,10 +215,16 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 	}
 	
 	@Override
-    public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
-    {
-        return worldIn.getBlockState(pos).getMaterial().isSolid();
-    }
+	public boolean isSideSolid(IBlockState base_state, IBlockAccess world, BlockPos pos, EnumFacing side)
+	{
+		return world.getBlockState(pos).getMaterial().isSolid();
+	}
+	
+	@Override
+	public boolean isTopSolid(IBlockState state)
+	{
+		return state.getMaterial().isSolid();
+	}
 	
 	@Override
     public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
@@ -231,7 +238,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
         {
             AxisAlignedBB axisalignedbb = blockBox.offset(pos);
 
-            if (entityBox.intersectsWith(axisalignedbb))
+            if (entityBox.intersects(axisalignedbb))
             {
                 collidingBoxes.add(axisalignedbb);
             }
@@ -240,13 +247,13 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
     {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_1").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_2").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_3").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_4").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_5").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_1").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_2").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_3").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_4").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growthupgrade_5").getFormattedText());
     }
 
 }

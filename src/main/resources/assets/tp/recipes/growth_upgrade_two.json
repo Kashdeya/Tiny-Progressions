@@ -1,0 +1,19 @@
+{
+	"type"		: "minecraft:crafting_shapeless",
+	"group"		: "tp:growth_upgrade_two",
+	
+	"ingredients"	:
+	[
+		{
+			"item"	: "tp:growth_upgrade"
+		},
+		{
+			"item"	: "minecraft:dragon_egg"
+		}
+	],
+	"result"	:
+	{
+		"item"	: "tp:growth_upgrade_two",
+		"count"	: 1
+	}
+}

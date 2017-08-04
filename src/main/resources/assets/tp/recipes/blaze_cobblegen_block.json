@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"bbb",
+		"bgb",
+		"bbb"
+	],
+	"key"		:
+	{
+		"b":
+		[
+			{
+				"item":	"minecraft:blaze_rod",
+				"data": 0
+			}
+		],
+		"g":
+		[
+			{
+				"item":	"tp:diamond_cobblegen_block",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:blaze_cobblegen_block",
+		"count"	: 1
+	}
+}

@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.InventoryHelper;
 
 import net.minecraft.block.BlockDirt;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -31,11 +32,11 @@ public class MyceliumSeeds extends Item {
 	}
 	
 	@Override
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
+	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
 		if (worldIn.getBlockState(pos).getBlock() == Blocks.DIRT && worldIn.getBlockState(pos).getValue(BlockDirt.VARIANT) == BlockDirt.DirtType.DIRT) {
 			worldIn.setBlockState(pos, Blocks.MYCELIUM.getDefaultState(), 2);
 			worldIn.playSound(null, pos, SoundEvents.BLOCK_GRASS_HIT, SoundCategory.BLOCKS, 0.3f, 1.5f);
-			InventoryHelper.consumeItem(playerIn, stack);
+			InventoryHelper.consumeItem(playerIn, playerIn.getHeldItem(hand));
 			return EnumActionResult.SUCCESS;
 		}
 		return EnumActionResult.PASS;
@@ -43,9 +44,8 @@ public class MyceliumSeeds extends Item {
 	
 	  @Override
 	  @SideOnly(Side.CLIENT)
-	  @SuppressWarnings({ "unchecked", "rawtypes" })
-	  public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
-		  list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.seeds").getFormattedText());
+	  public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+		  tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.seeds").getFormattedText());
 	  }
 
 

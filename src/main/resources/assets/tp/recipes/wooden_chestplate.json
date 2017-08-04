@@ -1,0 +1,24 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"f f",
+		"fff",
+		"fff"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:log",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:wooden_chestplate",
+		"count"	: 1
+	}
+}

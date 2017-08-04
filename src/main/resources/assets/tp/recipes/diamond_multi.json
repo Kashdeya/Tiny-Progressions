@@ -1,0 +1,45 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"asp",
+		" d ",
+		" d "
+	],
+	"key"		:
+	{
+		"a":
+		[
+			{
+				"item":	"minecraft:diamond_axe",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:diamond_shovel",
+				"data": 0
+			}
+		],
+		"p":
+		[
+			{
+				"item":	"minecraft:diamond_pickaxe",
+				"data": 0
+			}
+		],
+		"d":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:diamond_multi",
+		"count"	: 1
+	}
+}

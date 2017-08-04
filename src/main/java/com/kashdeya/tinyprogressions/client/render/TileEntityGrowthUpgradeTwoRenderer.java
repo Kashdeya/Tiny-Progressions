@@ -20,7 +20,7 @@ public class TileEntityGrowthUpgradeTwoRenderer extends TileEntitySpecialRendere
 	private final ItemStack stack = new ItemStack(Item.getItemFromBlock(Blocks.DRAGON_EGG));
 
 	@Override
-	public void renderTileEntityAt(TileEntityGrowthUpgradeTwo tile, double x, double y, double z, float partialTick, int destroyStage) {
+	public void render(TileEntityGrowthUpgradeTwo tile, double x, double y, double z, float partialTick, int destroyStage, float alpha) {
 		IBlockState state = tile.getWorld().getBlockState(tile.getPos());
 
 		if(state == null || state.getBlock() != TechBlocks.growth_upgrade_two)

@@ -7,12 +7,13 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +33,7 @@ public class ReinforcedObsidian extends Block {
         this.setHardness(30.0F);
         this.setResistance(2000.0F);
         this.setHarvestLevel("pickaxe", 2);
-        this.setSoundType(blockSoundType.ANVIL);
+        this.setSoundType(SoundType.ANVIL);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("reinforced_obsidian");
     }
@@ -64,20 +65,16 @@ public class ReinforcedObsidian extends Block {
         return Item.getItemFromBlock(TechBlocks.reinforced_obsidian);
     }
 
-    /**
-     * Get the MapColor for this Block and the given BlockState
-     */
-    @Override
-    public MapColor getMapColor(IBlockState state)
-    {
+	@Override
+	public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         return MapColor.BLACK;
     }
     
 	@Override
 	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
     {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.obsidian_1").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.obsidian_1").getFormattedText());
     }
 
 }

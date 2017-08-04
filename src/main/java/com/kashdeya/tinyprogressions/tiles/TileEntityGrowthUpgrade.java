@@ -12,7 +12,7 @@ public class TileEntityGrowthUpgrade extends TileEntity implements ITickable {
 
 	@Override
 	public void update() {
-		if (worldObj.isRemote) {
+		if (world.isRemote) {
 			prevAnimationTicks = animationTicks;
 			if (animationTicks < 360)
 				animationTicks += 2;

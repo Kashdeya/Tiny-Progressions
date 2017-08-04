@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"psp",
+		"psp",
+		" s "
+	],
+	"key"		:
+	{
+		"p":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "logWood"
+			}
+		],
+		"s":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "stickWood"
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:wooden_battle",
+		"count"	: 1
+	}
+}

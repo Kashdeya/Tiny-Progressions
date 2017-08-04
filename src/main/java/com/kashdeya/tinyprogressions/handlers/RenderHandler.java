@@ -15,6 +15,7 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
@@ -65,6 +66,32 @@ public class RenderHandler {
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowth.class, new TileEntityGrowthRenderer());
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthUpgrade.class, new TileEntityGrowthUpgradeRenderer());
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowthUpgradeTwo.class, new TileEntityGrowthUpgradeTwoRenderer());
+	}
+	
+	public static void initBlockWorldRenders()
+	{
+		WorldBlockRender(TechBlocks.growth_block);
+	    WorldBlockRender(TechBlocks.growth_upgrade);
+	    WorldBlockRender(TechBlocks.growth_upgrade_two);
+	    WorldBlockRender(TechBlocks.cobblegen_block);
+	    WorldBlockRender(TechBlocks.iron_cobblegen_block);
+	    WorldBlockRender(TechBlocks.diamond_cobblegen_block);
+	    WorldBlockRender(TechBlocks.emerald_cobblegen_block);
+	    WorldBlockRender(TechBlocks.blaze_cobblegen_block);
+	    WorldBlockRender(TechBlocks.charcoal_block);
+	    WorldBlockRender(TechBlocks.flesh_block);
+	    WorldBlockRender(TechBlocks.reinforced_glass);
+	    WorldBlockRender(TechBlocks.reinforced_obsidian);
+	    WorldBlockRender(TechBlocks.bone_block);
+	    WorldBlockRender(TechBlocks.dirty_glass);
+	    WorldBlockRender(TechBlocks.granite_brick);
+	    WorldBlockRender(TechBlocks.diorite_brick);
+	    WorldBlockRender(TechBlocks.andesite_brick);
+	    WorldBlockRender(TechBlocks.netherstar_block);
+	    WorldBlockRender(TechBlocks.flint_block);
+	    WorldBlockRender(TechBlocks.smooth_endstone);
+	    WorldBlockRender(TechBlocks.stone_torch);
+	    WorldBlockRender(TechBlocks.ender_ore);
 	}
 	
 	public static void initItems(){
@@ -165,14 +192,124 @@ public class RenderHandler {
 		InventoryItemRender(TechArmor.wooden_boots, "wooden_boots");
 	}
 	
+	public static void initItemHandRenders()
+	{
+		HandItemRender(TechItems.watering_can, "watering_can");
+		HandItemRender(TechItems.watering_can_upgrade, "watering_can_upgrade");
+		HandItemRender(TechItems.quartz_dust, "quartz_dust");
+		HandItemRender(TechItems.quartz_knife, "quartz_knife");
+		HandItemRender(TechItems.mycelium_seeds, "mycelium_seeds");
+		HandItemRender(TechItems.diamond_apple, "diamond_apple");
+		HandItemRender(TechItems.emerald_apple, "emerald_apple");
+		HandItemRender(TechItems.med_kit, "med_kit");	
+		HandItemRender(TechItems.stone_dust, "stone_dust");
+		HandItemRender(TechItems.flint_ingot, "flint_ingot");
+		HandItemRender(TechItems.flint_knife, "flint_knife");
+		HandItemRender(TechItems.stone_stick, "stone_stick");
+		HandItemRender(TechItems.golden_apple, "golden_apple");
+		HandItemRender(TechItems.ender_dust, "ender_dust");
+		HandItemRender(TechItems.reinforced_obsidian_ingot, "reinforced_obsidian_ingot");
+		
+		// Bone
+		HandItemRender(TechTools.bone_axe, "bone_axe");
+		HandItemRender(TechTools.bone_hoe, "bone_hoe");
+		HandItemRender(TechTools.bone_pickaxe, "bone_pickaxe");
+		HandItemRender(TechTools.bone_spade, "bone_spade");
+		HandItemRender(TechTools.bone_sword, "bone_sword");
+		// Flint
+		HandItemRender(TechTools.flint_axe, "flint_axe");
+		HandItemRender(TechTools.flint_hoe, "flint_hoe");
+		HandItemRender(TechTools.flint_pickaxe, "flint_pickaxe");
+		HandItemRender(TechTools.flint_spade, "flint_spade");
+		HandItemRender(TechTools.flint_sword, "flint_sword");
+		// Birthday
+		HandItemRender(TechTools.birthday_pickaxe, "birthday_pickaxe");
+		// Emerald
+		HandItemRender(TechTools.emerald_axe, "emerald_axe");
+		HandItemRender(TechTools.emerald_hoe, "emerald_hoe");
+		HandItemRender(TechTools.emerald_pickaxe, "emerald_pickaxe");
+		HandItemRender(TechTools.emerald_spade, "emerald_spade");
+		HandItemRender(TechTools.emerald_sword, "emerald_sword");
+		// Obsidian
+		HandItemRender(TechTools.obsidian_axe, "obsidian_axe");
+		HandItemRender(TechTools.obsidian_hoe, "obsidian_hoe");
+		HandItemRender(TechTools.obsidian_pickaxe, "obsidian_pickaxe");
+		HandItemRender(TechTools.obsidian_spade, "obsidian_spade");
+		HandItemRender(TechTools.obsidian_sword, "obsidian_sword");
+		// Scythe
+		HandItemRender(TechTools.wooden_scythe, "wooden_scythe");
+		HandItemRender(TechTools.diamond_scythe, "diamond_scythe");
+		HandItemRender(TechTools.emerald_scythe, "emerald_scythe");
+		HandItemRender(TechTools.golden_scythe, "golden_scythe");
+		HandItemRender(TechTools.iron_scythe, "iron_scythe");
+		HandItemRender(TechTools.obsidian_scythe, "obsidian_scythe");
+		HandItemRender(TechTools.stone_scythe, "stone_scythe");
+		// Multi
+		HandItemRender(TechTools.wooden_multi, "wooden_multi");
+		HandItemRender(TechTools.diamond_multi, "diamond_multi");
+		HandItemRender(TechTools.emerald_multi, "emerald_multi");
+		HandItemRender(TechTools.golden_multi, "golden_multi");
+		HandItemRender(TechTools.iron_multi, "iron_multi");
+		HandItemRender(TechTools.obsidian_multi, "obsidian_multi");
+		HandItemRender(TechTools.stone_multi, "stone_multi");
+		// Battle
+		HandItemRender(TechTools.wooden_battle, "wooden_battle");
+		HandItemRender(TechTools.diamond_battle, "diamond_battle");
+		HandItemRender(TechTools.emerald_battle, "emerald_battle");
+		HandItemRender(TechTools.golden_battle, "golden_battle");
+		HandItemRender(TechTools.iron_battle, "iron_battle");
+		HandItemRender(TechTools.obsidian_battle, "obsidian_battle");
+		HandItemRender(TechTools.stone_battle, "stone_battle");
+		// Spear
+		HandItemRender(TechTools.wooden_spear, "wooden_spear");
+		HandItemRender(TechTools.diamond_spear, "diamond_spear");
+		HandItemRender(TechTools.emerald_spear, "emerald_spear");
+		HandItemRender(TechTools.golden_spear, "golden_spear");
+		HandItemRender(TechTools.iron_spear, "iron_spear");
+		HandItemRender(TechTools.obsidian_spear, "obsidian_spear");
+		HandItemRender(TechTools.stone_spear, "stone_spear");
+		
+		HandItemRender(TechArmor.stone_helmet, "stone_helmet");
+		HandItemRender(TechArmor.stone_chestplate, "stone_chestplate");
+		HandItemRender(TechArmor.stone_leggings, "stone_leggings");
+		HandItemRender(TechArmor.stone_boots, "stone_boots");
+		HandItemRender(TechArmor.flint_helmet, "flint_helmet");
+		HandItemRender(TechArmor.flint_chestplate, "flint_chestplate");
+		HandItemRender(TechArmor.flint_leggings, "flint_leggings");
+		HandItemRender(TechArmor.flint_boots, "flint_boots");
+		HandItemRender(TechArmor.bone_helmet, "bone_helmet");
+		HandItemRender(TechArmor.bone_chestplate, "bone_chestplate");
+		HandItemRender(TechArmor.bone_leggings, "bone_leggings");
+		HandItemRender(TechArmor.bone_boots, "bone_boots");
+		HandItemRender(TechArmor.wooden_helmet, "wooden_helmet");
+		HandItemRender(TechArmor.wooden_chestplate, "wooden_chestplate");
+		HandItemRender(TechArmor.wooden_leggings, "wooden_leggings");
+		HandItemRender(TechArmor.wooden_boots, "wooden_boots");
+	}
+	
 	public static void InventoryBlockRender(Block block, String blockName) {
 		if(block != null)
 			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.MOD_ID + ":" + blockName, "inventory"));
+	}
+	
+	public static void WorldBlockRender(Block block)
+	{
+		if(block == null)
+			return;	
+		
+		Item item = Item.getItemFromBlock(block);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 	  
 	public static void InventoryItemRender(Item item, String itemName) {
 		if(item != null)
 			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + itemName, "inventory"));
+	}
+	
+	public static void HandItemRender(Item item, String unusedName)
+	{
+		if(item != null)
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 	
 	public static void setCustomStateMap(Block block, StateMap stateMap){

@@ -1,0 +1,16 @@
+{
+	"type"		: "minecraft:crafting_shapeless",
+	"group"		: "minecraft:bone",
+	
+	"ingredients"	:
+	[
+		{
+			"item"	: "tp:bone_block"
+		}
+	],
+	"result"	:
+	{
+		"item"	: "minecraft:bone",
+		"count"	: 9
+	}
+}

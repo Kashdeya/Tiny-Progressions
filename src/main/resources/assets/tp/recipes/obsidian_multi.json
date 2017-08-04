@@ -1,0 +1,45 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"asp",
+		" d ",
+		" d "
+	],
+	"key"		:
+	{
+		"a":
+		[
+			{
+				"item":	"tp:obsidian_axe",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"tp:obsidian_spade",
+				"data": 0
+			}
+		],
+		"p":
+		[
+			{
+				"item":	"tp:obsidian_pickaxe",
+				"data": 0
+			}
+		],
+		"d":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:obsidian_multi",
+		"count"	: 1
+	}
+}

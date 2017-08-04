@@ -20,10 +20,11 @@ public class TileEntityGrowthUpgradeRenderer extends TileEntitySpecialRenderer<T
 
 	private static final ResourceLocation ENDER_CRYSTAL_TEXTURES = new ResourceLocation("textures/entity/endercrystal/endercrystal.png");
 	private final ModelBase modelEnderCrystalNoBase = new ModelEnderCrystal(0.0F, false);
-	private final Entity entity = EntityList.createEntityByName("EnderCrystal", (World)null);
+	private final Entity entity = EntityList.createEntityByIDFromName(new ResourceLocation("ender_crystal"), (World)null);
 
+	
 	@Override
-	public void renderTileEntityAt(TileEntityGrowthUpgrade tile, double x, double y, double z, float partialTick, int destroyStage) {
+	public void render(TileEntityGrowthUpgrade tile, double x, double y, double z, float partialTick, int destroyStage, float alpha) {
 		IBlockState state = tile.getWorld().getBlockState(tile.getPos());
 
 		if(state == null || state.getBlock() != TechBlocks.growth_upgrade)

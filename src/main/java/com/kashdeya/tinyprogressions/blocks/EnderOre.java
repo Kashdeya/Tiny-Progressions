@@ -7,6 +7,7 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -31,7 +32,7 @@ public class EnderOre extends Block {
         this.setHardness(8.0F);
         this.setResistance(10.0F);
         this.setHarvestLevel("pickaxe", 2);
-        this.setSoundType(blockSoundType.STONE);
+        this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("ender_ore");
     }
@@ -54,7 +55,7 @@ public class EnderOre extends Block {
                 Entity entity = new EntityEndermite(world);
                 if (entity != null && !world.isRemote) {
                     entity.setLocationAndAngles(x + (0.5), y + (1), z + (0.5), world.rand.nextFloat() * 360F, 0.0F);
-                    world.spawnEntityInWorld(entity);
+                    world.spawnEntity(entity);
                     ((EntityLiving) entity).playLivingSound();
                 }
             }
@@ -107,7 +108,7 @@ public class EnderOre extends Block {
     
     @Override
     public int quantityDroppedWithBonus(int fortune, Random rand) {
-    	return MathHelper.clamp_int(this.quantityDropped(rand) + rand.nextInt(fortune + 1), 1, 6);
+    	return MathHelper.clamp(this.quantityDropped(rand) + rand.nextInt(fortune + 1), 1, 6);
     }
     
 

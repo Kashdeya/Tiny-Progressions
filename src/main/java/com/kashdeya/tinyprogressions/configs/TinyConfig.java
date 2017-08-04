@@ -1,10 +1,10 @@
 package com.kashdeya.tinyprogressions.configs;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.google.common.collect.Lists;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -74,9 +74,9 @@ public class TinyConfig {
 		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?");
 		
 		config.addCustomCategoryComment(category + " CUS", "Added for Can_U_Survive - If you enable please make a recipe for them, Other wise they do nothing.");
-		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", false, "Enable Flint Knife?");
+		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", true, "Enable Flint Knife?");
 		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
-		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", false, "Enable Stone Dust?");
+		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", true, "Enable Stone Dust?");
 		
 		config.addCustomCategoryComment(category + " Drops", "Extra Drops");
 		ConfigHandler.stickDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
@@ -90,7 +90,7 @@ public class TinyConfig {
 		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Skulls Dropped from Dirt.");
 		
 		config.addCustomCategoryComment(category + " Quartz", "Added for Sky Factory 3 - If you enable please make a recipe for it, Other wise it does nothing.");
-		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", false, "Enable the Quartz Knife and Dust Recipe?");
+		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", true, "Enable the Quartz Knife and Dust Recipe?");
 		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		
 		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
@@ -201,10 +201,10 @@ public class TinyConfig {
 	protected static class LegacyHandler
 	{
 		
-		private static List<String> removeCategoryList = new ArrayList();
-		private static List<List<String>> removePropertiesList = new ArrayList();
-		private static List<List<String>> moveKeyList = new ArrayList();
-		private static List<List<String>> renameKeyList = new ArrayList();
+		private static List<String> removeCategoryList = Lists.newArrayList();
+		private static List<List<String>> removePropertiesList = Lists.newArrayList();
+		private static List<List<String>> moveKeyList = Lists.newArrayList();
+		private static List<List<String>> renameKeyList = Lists.newArrayList();
 		
 		private static org.apache.logging.log4j.Logger logger;
 		
@@ -395,11 +395,7 @@ public class TinyConfig {
 		}
 		
 		
-		/**
-		 * Use this to 
-		 * @param Category
-		 * @return ConfigCategory
-		 */
+		@SuppressWarnings("unused")
 		private static ConfigCategory getCategory(String Category)
 		{
 			return config.getCategory(Category);

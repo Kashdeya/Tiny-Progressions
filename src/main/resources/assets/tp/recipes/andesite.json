@@ -1,0 +1,17 @@
+{
+	"type"		: "minecraft:crafting_shapeless",
+	"group"		: "minecraft:stone",
+	
+	"ingredients"	:
+	[
+		{
+			"item"	: "tp:andesite_brick"
+		}
+	],
+	"result"	:
+	{
+		"item"	: "minecraft:stone",
+		"data"	: 6,
+		"count"	: 1
+	}
+}

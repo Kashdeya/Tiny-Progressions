@@ -1,0 +1,45 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"asp",
+		" d ",
+		" d "
+	],
+	"key"		:
+	{
+		"a":
+		[
+			{
+				"item":	"tp:emerald_axe",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"tp:emerald_spade",
+				"data": 0
+			}
+		],
+		"p":
+		[
+			{
+				"item":	"tp:emerald_pickaxe",
+				"data": 0
+			}
+		],
+		"d":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:emerald_multi",
+		"count"	: 1
+	}
+}

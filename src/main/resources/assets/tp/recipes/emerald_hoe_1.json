@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"ff ",
+		" s ",
+		" s "
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "gemEmerald"
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:emerald_hoe",
+		"count"	: 1
+	}
+}

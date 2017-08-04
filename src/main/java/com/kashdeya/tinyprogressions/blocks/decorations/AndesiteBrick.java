@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -22,7 +23,7 @@ public class AndesiteBrick extends Block {
         this.setHardness(1.5F);
         this.setHarvestLevel("pickaxe", 0);
         this.setResistance(10.0F);
-        this.setSoundType(blockSoundType.STONE);
+        this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("andesite_brick");
     }

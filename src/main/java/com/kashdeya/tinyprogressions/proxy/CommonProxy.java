@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.proxy;
 
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-import com.kashdeya.tinyprogressions.recipes.Recipes;
 import com.kashdeya.tinyprogressions.tiles.TileEntityBlazeCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityDiamondCobblegen;
@@ -38,7 +37,6 @@ public class CommonProxy {
 
     public void init() {
     	// Recipes
-    	Recipes.registerRecipes();
     	RemoveItems.initRemove();
     	
     	// FuelHandler
@@ -56,6 +54,10 @@ public class CommonProxy {
     }
 
 	public void registerRenderers() {
+		//unused - only called clientside
+	}
+	
+	public void registerWorldRenderers() {
 		//unused - only called clientside
 	}
 	

@@ -26,7 +26,6 @@ public class RemoveItems {
 			removeRecipe(new ItemStack(TechArmor.wooden_leggings));
 			removeRecipe(new ItemStack(TechArmor.wooden_boots));
 		}
-		
 		if (!ConfigHandler.StoneArmor)
 		{
 			removeRecipe(new ItemStack(TechArmor.stone_helmet));
@@ -34,7 +33,6 @@ public class RemoveItems {
 			removeRecipe(new ItemStack(TechArmor.stone_leggings));
 			removeRecipe(new ItemStack(TechArmor.stone_boots));
 		}
-		
 		if (!ConfigHandler.FlintArmor)
 		{
 			removeRecipe(new ItemStack(TechArmor.flint_helmet));
@@ -42,7 +40,6 @@ public class RemoveItems {
 			removeRecipe(new ItemStack(TechArmor.flint_leggings));
 			removeRecipe(new ItemStack(TechArmor.flint_boots));
 		}
-		
 		if (!ConfigHandler.BoneArmor)
 		{
 			removeRecipe(new ItemStack(TechArmor.bone_helmet));
@@ -60,15 +57,40 @@ public class RemoveItems {
 		{
 			removeRecipe(new ItemStack(TechBlocks.growth_block));
 		}
-		
 		if (!ConfigHandler.BlockGrowthUpgrade)
 		{
 			removeRecipe(new ItemStack(TechBlocks.growth_upgrade));
 		}
-		
 		if (!ConfigHandler.BlockGrowthUpgradeTwo)
 		{
 			removeRecipe(new ItemStack(TechBlocks.growth_upgrade_two));
+		}
+		
+		if (!ConfigHandler.SmoothEndStone)
+		{
+			removeRecipe(new ItemStack(TechBlocks.smooth_endstone, 4));
+			removeRecipe(new ItemStack(Blocks.END_BRICKS, 4));
+		}
+		
+		if (!ConfigHandler.Cobblegen)
+		{
+			removeRecipe(new ItemStack(TechBlocks.cobblegen_block));
+		}
+		if (!ConfigHandler.IronCobblegen)
+		{
+			removeRecipe(new ItemStack(TechBlocks.iron_cobblegen_block));
+		}
+		if (!ConfigHandler.DiamondCobblegen)
+		{
+			removeRecipe(new ItemStack(TechBlocks.diamond_cobblegen_block));
+		}
+		if (!ConfigHandler.BlazeCobblegen)
+		{
+			removeRecipe(new ItemStack(TechBlocks.blaze_cobblegen_block));
+		}
+		if (!ConfigHandler.EmeraldCobblegen)
+		{
+			removeRecipe(new ItemStack(TechBlocks.emerald_cobblegen_block));
 		}
 		
 		if (ConfigHandler.RemoveItems){

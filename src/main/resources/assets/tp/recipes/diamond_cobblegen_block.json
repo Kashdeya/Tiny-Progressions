@@ -1,0 +1,31 @@
+{
+	"type"		: "forge:ore_shaped",
+	"pattern"	:
+	[
+		"ddd",
+		"dgd",
+		"ddd
+	],
+	"key"		:
+	{
+		"d":
+		[
+			{
+				"type":	"forge_oredict",
+				"ore" : "gemDiamond"
+			}
+		],
+		"g":
+		[
+			{
+				"item":	"tp:iron_cobblegen_block",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:diamond_cobblegen_block",
+		"count"	: 1
+	}
+}

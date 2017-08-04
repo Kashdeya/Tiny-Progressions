@@ -1,0 +1,45 @@
+{
+	"type"		: "forge:ore_shaped",
+	"pattern"	:
+	[
+		"ccc",
+		"wgl",
+		"ccc
+	],
+	"key"		:
+	{
+		"c":
+		[
+			{
+				"type":	"forge_oredict",
+				"ore" : "cobblestone"
+			}
+		],
+		"g":
+		[
+			{
+				"type":	"forge_oredict",
+				"ore" : "blockGlass"
+			}
+		],
+		"w":
+		[
+			{
+				"item":	"minecraft:water_bucket",
+				"data": 0
+			}
+		],
+		"l":
+		[
+			{
+				"item":	"minecraft:lava_bucket",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:cobblegen_block",
+		"count"	: 1
+	}
+}

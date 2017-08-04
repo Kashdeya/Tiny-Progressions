@@ -19,12 +19,6 @@ public class Recipes {
 		}
 		
 		/*
-		// Smooth End Stone
-		if (ConfigHandler.SmoothEndStone){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.smooth_endstone, 4), "nn", "nn", 'n', "endstone"));
-			GameRegistry.addShapedRecipe(new ItemStack(Blocks.END_BRICKS, 4), new Object[] {"CC", "CC", 'C', new ItemStack(TechBlocks.smooth_endstone)});			
-		}
-		
 		// Scythes
 		if (ConfigHandler.wooden_scythe){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechTools.wooden_scythe), "ppp", " s ", "s  ", 'p', "logWood", 's', "stickWood"));
@@ -279,24 +273,6 @@ public class Recipes {
 		}
 		if (ConfigHandler.WateringCanUpgrade){
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechItems.watering_can_upgrade), "on ", "owo", " o ", 'o', "obsidian", 'w', new ItemStack(TechItems.watering_can), 'n', "netherStar"));
-		}
-		
-		// Cobblegens
-		if (ConfigHandler.Cobblegen){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.cobblegen_block), "ccc", "wgl", "ccc", 'c', "cobblestone", 'g', "blockGlass", 'w', new ItemStack(Items.WATER_BUCKET), 'l', new ItemStack(Items.LAVA_BUCKET)));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.cobblegen_block), "ccc", "lgw", "ccc", 'c', "cobblestone", 'g', "blockGlass", 'w', new ItemStack(Items.WATER_BUCKET), 'l', new ItemStack(Items.LAVA_BUCKET)));
-		}
-		if (ConfigHandler.IronCobblegen){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.iron_cobblegen_block), "iii", "igi", "iii", 'i', "ingotIron", 'g', new ItemStack(TechBlocks.cobblegen_block)));
-		}
-		if (ConfigHandler.DiamondCobblegen){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.diamond_cobblegen_block), "ddd", "dgd", "ddd", 'd', "gemDiamond", 'g', new ItemStack(TechBlocks.iron_cobblegen_block)));
-		}
-		if (ConfigHandler.BlazeCobblegen){
-			GameRegistry.addShapedRecipe(new ItemStack(TechBlocks.blaze_cobblegen_block), new Object[] {"bbb", "bgb", "bbb", 'b', new ItemStack(Items.BLAZE_ROD), 'g', new ItemStack(TechBlocks.diamond_cobblegen_block)});
-		}
-		if (ConfigHandler.EmeraldCobblegen){
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TechBlocks.emerald_cobblegen_block), "eee", "ebe", "eee", 'e', "gemEmerald", 'b', new ItemStack(TechBlocks.blaze_cobblegen_block)));
 		}
 		*/
 	}

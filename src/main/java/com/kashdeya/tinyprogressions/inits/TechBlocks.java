@@ -1,8 +1,10 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.EnderOre;
@@ -34,12 +36,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class TechBlocks {
-	
+
 	static Set<Block> blocks = Sets.newHashSet();
 	static Set<ItemBlock> itemblocks = Sets.newHashSet();
-	
+	static Map<String, Block> oreDict = Maps.newHashMap();
+
 	// Tech Blocks
 	public static Block growth_block;
 	public static Block growth_upgrade;
@@ -68,137 +72,147 @@ public class TechBlocks {
 	public static Block stone_torch;
 	// EnderOre
 	public static Block ender_ore;
-	
-	public static void init(){
-		
+
+	public static void init() {
+
 		// Tech Blocks
-		if (ConfigHandler.BlockGrowth){
+		if (ConfigHandler.BlockGrowth) {
 			growth_block = new BlockGrowth();
 			registerBlock(growth_block, "growth_block", true);
 		}
-		if (ConfigHandler.BlockGrowthUpgrade){
+		if (ConfigHandler.BlockGrowthUpgrade) {
 			growth_upgrade = new BlockGrowthUpgrade();
 			registerBlock(growth_upgrade, "growth_upgrade", true);
 		}
-		if (ConfigHandler.BlockGrowthUpgradeTwo){
+		if (ConfigHandler.BlockGrowthUpgradeTwo) {
 			growth_upgrade_two = new BlockGrowthUpgradeTwo();
 			registerBlock(growth_upgrade_two, "growth_upgrade_two", true);
 		}
-		if (ConfigHandler.Cobblegen){
+		if (ConfigHandler.Cobblegen) {
 			cobblegen_block = new Cobblegen();
 			registerBlock(cobblegen_block, "cobblegen_block", true);
 		}
-		if (ConfigHandler.IronCobblegen){
+		if (ConfigHandler.IronCobblegen) {
 			iron_cobblegen_block = new IronCobblegen();
 			registerBlock(iron_cobblegen_block, "iron_cobblegen_block", true);
 		}
-		if (ConfigHandler.DiamondCobblegen){
+		if (ConfigHandler.DiamondCobblegen) {
 			diamond_cobblegen_block = new DiamondCobblegen();
 			registerBlock(diamond_cobblegen_block, "diamond_cobblegen_block", true);
 		}
-		if (ConfigHandler.BlazeCobblegen){
+		if (ConfigHandler.BlazeCobblegen) {
 			blaze_cobblegen_block = new BlazeCobblegen();
 			registerBlock(blaze_cobblegen_block, "blaze_cobblegen_block", true);
 		}
-		if (ConfigHandler.EmeraldCobblegen){
+		if (ConfigHandler.EmeraldCobblegen) {
 			emerald_cobblegen_block = new EmeraldCobblegen();
 			registerBlock(emerald_cobblegen_block, "emerald_cobblegen_block", true);
 		}
-		
+
 		// Deco Blocks
-		if (ConfigHandler.StoneTorch){
+		if (ConfigHandler.StoneTorch) {
 			stone_torch = new StoneTorch();
-	    	registerBlock(stone_torch, "stone_torch", true);
-	    }
-		if (ConfigHandler.CharcoalBlock){
+			registerBlock(stone_torch, "stone_torch", true, "torch");
+		}
+		if (ConfigHandler.CharcoalBlock) {
 			charcoal_block = new CharcoalBlock();
-			registerBlock(charcoal_block, "charcoal_block", true);
+			registerBlock(charcoal_block, "charcoal_block", true, "blockCharcoal");
 		}
-		if (ConfigHandler.ReinforcedGlass){
+		if (ConfigHandler.ReinforcedGlass) {
 			reinforced_glass = new ReinforcedGlass();
-			registerBlock(reinforced_glass, "reinforced_glass", true);
+			registerBlock(reinforced_glass, "reinforced_glass", true, "blockReinforcedGlass");
 		}
-		if (ConfigHandler.ReinforcedObsidian){
+		if (ConfigHandler.ReinforcedObsidian) {
 			reinforced_obsidian = new ReinforcedObsidian();
-			registerBlock(reinforced_obsidian, "reinforced_obsidian", true);
+			registerBlock(reinforced_obsidian, "reinforced_obsidian", true, "blockReinforcedObsidian");
 		}
-		if (ConfigHandler.DirtyGlass){
+		if (ConfigHandler.DirtyGlass) {
 			dirty_glass = new DirtyGlass();
-			registerBlock(dirty_glass, "dirty_glass", true);
+			registerBlock(dirty_glass, "dirty_glass", true, "blockGlassDirty");
 		}
-		
+
 		// Compressed Blocks
-		if (ConfigHandler.FleshBlock){
+		if (ConfigHandler.FleshBlock) {
 			flesh_block = new FleshBlock();
 			registerBlock(flesh_block, "flesh_block", true);
 		}
-		if (ConfigHandler.BoneBlock){
+		if (ConfigHandler.BoneBlock) {
 			bone_block = new BoneBlock();
-			registerBlock(bone_block, "bone_block", true);
+			registerBlock(bone_block, "bone_block", true, "blockBone");
 		}
-		if (ConfigHandler.NetherStarBlock){
+		if (ConfigHandler.NetherStarBlock) {
 			netherstar_block = new NetherStarBlock();
 			registerBlock(netherstar_block, "netherstar_block", true);
 		}
-		if (ConfigHandler.DioriteBrick){
+		if (ConfigHandler.DioriteBrick) {
 			diorite_brick = new DioriteBrick();
-			registerBlock(diorite_brick, "diorite_brick", true);
+			registerBlock(diorite_brick, "diorite_brick", true, "stoneDioriteBrick");
 		}
-		if (ConfigHandler.GraniteBrick){
+		if (ConfigHandler.GraniteBrick) {
 			granite_brick = new GraniteBrick();
-			registerBlock(granite_brick, "granite_brick", true);
+			registerBlock(granite_brick, "granite_brick", true, "stoneGraniteBrick");
 		}
-		if (ConfigHandler.AndesiteBrick){
+		if (ConfigHandler.AndesiteBrick) {
 			andesite_brick = new AndesiteBrick();
-			registerBlock(andesite_brick, "andesite_brick", true);
+			registerBlock(andesite_brick, "andesite_brick", true, "stoneAndesiteBrick");
 		}
-		
+
 		// Flint Block
-		if (ConfigHandler.FlintBlock){
+		if (ConfigHandler.FlintBlock) {
 			flint_block = new FlintBlock();
-			registerBlock(flint_block, "flint_block", true);
+			registerBlock(flint_block, "flint_block", true, "blockFlint");
 		}
-		
+
 		// Smooth EndStone
-		if (ConfigHandler.SmoothEndStone){
+		if (ConfigHandler.SmoothEndStone) {
 			smooth_endstone = new SmoothEndStone();
-			registerBlock(smooth_endstone, "smooth_endstone", true);
+			registerBlock(smooth_endstone, "smooth_endstone", true, "smoothEndstone");
 		}
-		
+
 		// Ender Ore
-		if (ConfigHandler.ender_ore){
+		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
 			registerBlock(ender_ore, "ender_ore", true);
 		}
 	}
-	
-	public static void registerBlocks(RegistryEvent.Register<Block> event)
-	{
+
+	public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		Iterator<Block> b = blocks.iterator();
-		
-		while(b.hasNext())
-		{
+
+		while (b.hasNext()) {
 			event.getRegistry().register(b.next());
 		}
+
+		Iterator<Map.Entry<String, Block>> o = oreDict.entrySet().iterator();
+
+		while (o.hasNext()) {
+			Map.Entry<String, Block> ore = o.next();
+			OreDictionary.registerOre(ore.getKey(), ore.getValue());
+		}
 	}
-	
-	public static void registerItemBlocks(RegistryEvent.Register<Item> event)
-	{
+
+	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
 		Iterator<ItemBlock> ib = itemblocks.iterator();
-		
-		while(ib.hasNext())
-		{
+
+		while (ib.hasNext()) {
 			event.getRegistry().register(ib.next());
 		}
 	}
-	
-	public static void registerBlock(Block block, String name, boolean itemblock){
+
+	public static void registerBlock(Block block, String name, boolean itemblock) {
+		registerBlock(block, name, itemblock, null);
+	}
+
+	public static void registerBlock(Block block, String name, boolean itemblock, String oreDictName) {
 		block.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
-		
 		blocks.add(block);
-		
-		if (itemblock){
-			itemblocks.add((ItemBlock)new ItemBlock(block).setRegistryName(block.getRegistryName()));
+
+		if (itemblock) {
+			itemblocks.add((ItemBlock) new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		}
+
+		if (oreDictName != null) {
+			oreDict.put(oreDictName, block);
 		}
 	}
 

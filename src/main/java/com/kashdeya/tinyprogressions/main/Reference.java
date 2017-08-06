@@ -4,7 +4,10 @@ public class Reference {
 	// Mod Constants
 	public static final String MOD_ID = "tp";
 	public static final String MOD_NAME = "Tiny Progressions";
-	public static final String VERSION = "1.2.3";
+	public static final String VERSION = "3.2.4";
+	
+	// Minecraft
+	public static final String MINECRAFT = "[1.12]";
 	
 	// Proxy Constants
 	public static final String PROXY_CLIENT = "com.kashdeya.tinyprogressions.proxy.ClientProxy";

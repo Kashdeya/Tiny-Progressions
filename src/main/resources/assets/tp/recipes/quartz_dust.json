@@ -1,0 +1,30 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"s",
+		"q"
+	],
+	"key"		:
+	{
+		"s":
+		[
+			{
+				"item":	"tp:quartz_knife",
+				"data": 0
+			}
+		],
+		"q":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "gemQuartz"
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:quartz_dust",
+		"count"	: 1
+	}
+}

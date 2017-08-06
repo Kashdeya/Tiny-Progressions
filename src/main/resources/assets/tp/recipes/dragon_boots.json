@@ -1,0 +1,23 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"f f",
+		"f f"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"tp:dragon_scale",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:dragon_boots",
+		"count"	: 1
+	}
+}

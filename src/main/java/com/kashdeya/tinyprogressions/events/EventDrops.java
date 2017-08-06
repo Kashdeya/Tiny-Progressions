@@ -3,13 +3,22 @@ package com.kashdeya.tinyprogressions.events;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechItems;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.boss.EntityDragon;
+import net.minecraft.entity.boss.EntityWither;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EventDrops {
@@ -53,5 +62,22 @@ public class EventDrops {
 				}
 			}
 		}
-	}	
+	}
+	
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onLivingDrops(LivingDropsEvent event) {
+		int min = 0;
+		int max = 4;
+        if (event.getEntity() instanceof EntityDragon) {
+            registerMobDrop(event, event.getEntity(), ConfigHandler.dragon_armor, new ItemStack(TechItems.dragon_scale, AMOUNT.nextInt(16)));
+        } else if (event.getEntity() instanceof EntityWither) {
+            registerMobDrop(event, event.getEntity(), ConfigHandler.wither_armor, new ItemStack(TechItems.wither_rib, AMOUNT.nextInt(max - min + 1) + min));
+        }
+    }
+
+    private static void registerMobDrop(LivingDropsEvent event, Entity entity, boolean enableDrop, ItemStack drop) {
+        if (enableDrop) {
+            event.getEntityLiving().entityDropItem(drop, 0.0f);
+        }
+    }
 }

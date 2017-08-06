@@ -1,10 +1,10 @@
 package com.kashdeya.tinyprogressions.configs;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.google.common.collect.Lists;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -41,13 +41,14 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Growth Crystal", "These like to grow things!");
 		ConfigHandler.BlockGrowth = config.getBoolean("Growth Crystal Tier 1", category + " Growth Crystal", true, "Enable Growth Crystal Tier 1?");
 		ConfigHandler.BlockGrowthTicks = config.getInt("Growth Crystal Tier 1 Speed", category + " Growth Crystal", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 40 Ticks or 2 Seconds]\n[Default*40=1200 Ticks]");
-		ConfigHandler.GrowthParticalTicks = config.getInt("Growth Crystal Tier 1 Particles", category + " Growth Crystal", 250, 50, 750, "Lower Number gives more Particles");
+		ConfigHandler.GrowthParticalTicks = config.getInt("Growth Crystal Tier 1 Particles", category + " Growth Crystal", 750, 50, 750, "Lower Number gives more Particles");
 		ConfigHandler.BlockGrowthUpgrade = config.getBoolean("Growth Crystal Tier 2", category + " Growth Crystal", true, "Enable Growth Crystal Tier 2?\n[Requires Tier 1 to be Enabled]");
 		ConfigHandler.BlockGrowthUpgradeTicks = config.getInt("Growth Crystal Tier 2 Speed", category + " Growth Crystal", 40, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 20 Ticks or 1 Second]\n[Default*20=800 Ticks]");
-		ConfigHandler.GrowthUpgradeParticalTicks = config.getInt("Growth Crystal Tier 2 Particles", category + " Growth Crystal", 250, 50, 750, "Lower Number gives more Particles");
+		ConfigHandler.GrowthUpgradeParticalTicks = config.getInt("Growth Crystal Tier 2 Particles", category + " Growth Crystal", 750, 50, 750, "Lower Number gives more Particles");
 		ConfigHandler.BlockGrowthUpgradeTwo = config.getBoolean("Growth Crystal Tier 3", category + " Growth Crystal", true, "Enable Growth Crystal Tier 3?\n[Requires Tier 2 to be Enabled]");
 		ConfigHandler.BlockGrowthUpgradeTwoTicks = config.getInt("Growth Crystal Tier 3 Speed", category + " Growth Crystal", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 10 Ticks or 1/2 a Second]\n[Default*10=400 Ticks]");
-		ConfigHandler.GrowthUpgradeTwoParticalTicks = config.getInt("Growth Crystal Tier 3 Particles", category + " Growth Crystal", 250, 50, 750, "Lower Number gives more Particles");
+		ConfigHandler.GrowthUpgradeTwoParticalTicks = config.getInt("Growth Crystal Tier 3 Particles", category + " Growth Crystal", 750, 50, 750, "Lower Number gives more Particles");
+		ConfigHandler.ParticalTicks = config.getBoolean("Growth Crystal Particals", category + " Growth Crystal", true, "Enable Growth Crystal Particals?");
 		
 		config.addCustomCategoryComment(category + " Watering Cans", "Remember to water those plants!");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");
@@ -74,9 +75,9 @@ public class TinyConfig {
 		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?");
 		
 		config.addCustomCategoryComment(category + " CUS", "Added for Can_U_Survive - If you enable please make a recipe for them, Other wise they do nothing.");
-		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", false, "Enable Flint Knife?");
+		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", true, "Enable Flint Knife?");
 		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
-		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", false, "Enable Stone Dust?");
+		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", true, "Enable Stone Dust?");
 		
 		config.addCustomCategoryComment(category + " Drops", "Extra Drops");
 		ConfigHandler.stickDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
@@ -90,7 +91,7 @@ public class TinyConfig {
 		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Skulls Dropped from Dirt.");
 		
 		config.addCustomCategoryComment(category + " Quartz", "Added for Sky Factory 3 - If you enable please make a recipe for it, Other wise it does nothing.");
-		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", false, "Enable the Quartz Knife and Dust Recipe?");
+		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", true, "Enable the Quartz Knife and Dust Recipe?");
 		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		
 		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
@@ -104,13 +105,15 @@ public class TinyConfig {
 		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
 		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", false, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
 		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Apples", true, "Enable Diamond Apple?");
-		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", true, "Enable Golden Apple Progression?\n[If you do not want Golden Apple Progression DISABLE and enable the Notch Apple.]");
+		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", false, "Enable Golden Apple Progression?\n[If you do not want Golden Apple Progression DISABLE and enable the Notch Apple.]");
 		
 		config.addCustomCategoryComment(category + " Armor", "Why not");
 		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
 		ConfigHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
 		ConfigHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
 		ConfigHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
+		ConfigHandler.wither_armor = config.getBoolean("Wither Armor", category + " Armor", true, "Enable Wither Armor?");
+		ConfigHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Armor", true, "Enable Dragon Armor?");
 		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
@@ -121,7 +124,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Flint and Bone Tools & Weapons", "Cause Progression!");
 		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
 		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
-		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Remove Wooden Tools & Weapons?");
+		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");
 		
 		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
 		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
@@ -184,9 +187,16 @@ public class TinyConfig {
 		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable  Endermite spawn?");
 		ConfigHandler.endermite_spawn = config.getFloat("Endermite Spawn", category + " Ender Ore", 0.25F, 0.0F, 1.0F, "Sets the Chance of Endermites to spawn when Ore is mined.");
 		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 5, 1, 64, "Sets the Chance of Ender ore.");
-		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 1, "Sets the min Y level.");
+		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 10, "Sets the min Y level.");
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 1, 64, "Sets the Ender Ore Vein Size.");
+		
+		config.addCustomCategoryComment(category + " Lava Ore", "May also include Lava Armour!");
+		ConfigHandler.ender_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable  Lava Ore?");
+		ConfigHandler.ender_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 5, 1, 64, "Sets the Chance of Lava ore.");
+		ConfigHandler.ender_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.ender_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.ender_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 2, 1, 64, "Sets the Lava Ore Vein Size.");
 		
 		if (config.hasChanged())
         config.save();    
@@ -201,10 +211,10 @@ public class TinyConfig {
 	protected static class LegacyHandler
 	{
 		
-		private static List<String> removeCategoryList = new ArrayList();
-		private static List<List<String>> removePropertiesList = new ArrayList();
-		private static List<List<String>> moveKeyList = new ArrayList();
-		private static List<List<String>> renameKeyList = new ArrayList();
+		private static List<String> removeCategoryList = Lists.newArrayList();
+		private static List<List<String>> removePropertiesList = Lists.newArrayList();
+		private static List<List<String>> moveKeyList = Lists.newArrayList();
+		private static List<List<String>> renameKeyList = Lists.newArrayList();
 		
 		private static org.apache.logging.log4j.Logger logger;
 		
@@ -394,12 +404,6 @@ public class TinyConfig {
 			}
 		}
 		
-		
-		/**
-		 * Use this to 
-		 * @param Category
-		 * @return ConfigCategory
-		 */
 		private static ConfigCategory getCategory(String Category)
 		{
 			return config.getCategory(Category);

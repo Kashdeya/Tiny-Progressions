@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -21,7 +22,7 @@ public class FlintBlock extends Block{
 		super(Material.GROUND);
 		this.setHardness(1.0F);
 		this.setResistance(5.0F);
-		this.setSoundType(blockSoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("flint_block");
 	}

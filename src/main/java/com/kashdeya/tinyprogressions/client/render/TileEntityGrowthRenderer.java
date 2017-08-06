@@ -20,7 +20,7 @@ public class TileEntityGrowthRenderer extends TileEntitySpecialRenderer<TileEnti
 	private final ItemStack stack = new ItemStack(Item.getItemFromBlock(Blocks.SEA_LANTERN));
 
 	@Override
-	public void renderTileEntityAt(TileEntityGrowth tile, double x, double y, double z, float partialTick, int destroyStage) {
+	public void render(TileEntityGrowth tile, double x, double y, double z, float partialTick, int destroyStage, float alpha) {
 		IBlockState state = tile.getWorld().getBlockState(tile.getPos());
 
 		if(state == null || state.getBlock() != TechBlocks.growth_block)

@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -21,7 +22,7 @@ public class FleshBlock extends BlockFalling{
 		super(Material.SAND);
 		this.setHardness(0.5F);
 		this.setResistance(5.0F);
-		this.setSoundType(blockSoundType.SAND);
+		this.setSoundType(SoundType.SAND);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("flesh_block");
 	}

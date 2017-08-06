@@ -1,0 +1,17 @@
+{
+	"type"		: "minecraft:crafting_shapeless",
+	"group"		: "minecraft:stone",
+	
+	"ingredients"	:
+	[
+		{
+			"item"	: "tp:granite_brick"
+		}
+	],
+	"result"	:
+	{
+		"item"	: "minecraft:stone",
+		"data"	: 2,
+		"count"	: 1
+	}
+}

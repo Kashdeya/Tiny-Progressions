@@ -1,0 +1,23 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"fff",
+		"f f"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"tp:dragon_scale",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:dragon_helmet",
+		"count"	: 1
+	}
+}

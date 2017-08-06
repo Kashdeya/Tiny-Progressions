@@ -1,0 +1,52 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"cwc",
+		"ses",
+		"cnc"
+	],
+	"key"		:
+	{
+		"w":
+		[
+			{
+				"item":	"tp:watering_can_upgrade",
+				"data": 0
+			}
+		],
+		"n":
+		[
+			{
+				"item":	"tp:netherstar_block",
+				"data": 0
+			}
+		],
+		"c":
+		[
+			{
+				"item":	"tp:reinforced_obsidian",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:end_crystal",
+				"data": 0
+			}
+		],
+		"e":
+		[
+			{
+				"item":	"tp:growth_block",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:growth_upgrade",
+		"count"	: 1
+	}
+}

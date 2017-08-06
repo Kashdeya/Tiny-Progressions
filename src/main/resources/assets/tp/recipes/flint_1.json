@@ -1,0 +1,23 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"ff ",
+		"f  "
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:gravel",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "minecraft:flint",
+		"count"	: 1
+	}
+}

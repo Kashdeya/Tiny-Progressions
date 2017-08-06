@@ -9,6 +9,7 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityFireworkRocket;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -28,9 +29,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BirthdayPickaxe extends ItemTool {
 	
-	private static final Set effective_against = Sets.newHashSet(new Block[] {Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE, Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.DOUBLE_STONE_SLAB, Blocks.GOLDEN_RAIL, Blocks.GOLD_BLOCK, Blocks.GOLD_ORE, Blocks.ICE, Blocks.IRON_BLOCK, Blocks.IRON_ORE, Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.MOSSY_COBBLESTONE, Blocks.NETHERRACK, Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE});
+	private static final Set<Block> effective_against = Sets.newHashSet(new Block[] {Blocks.ACTIVATOR_RAIL, Blocks.COAL_ORE, Blocks.COBBLESTONE, Blocks.DETECTOR_RAIL, Blocks.DIAMOND_BLOCK, Blocks.DIAMOND_ORE, Blocks.DOUBLE_STONE_SLAB, Blocks.GOLDEN_RAIL, Blocks.GOLD_BLOCK, Blocks.GOLD_ORE, Blocks.ICE, Blocks.IRON_BLOCK, Blocks.IRON_ORE, Blocks.LAPIS_BLOCK, Blocks.LAPIS_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.MOSSY_COBBLESTONE, Blocks.NETHERRACK, Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE});
 	private final Item.ToolMaterial material;
-	private final float attackDamage;
     
 	public BirthdayPickaxe(Item.ToolMaterial material)
 	{
@@ -40,7 +40,6 @@ public class BirthdayPickaxe extends ItemTool {
         this.maxStackSize = 1;
         this.setHarvestLevel("pickaxe", 4);
 		this.setUnlocalizedName("BirthdayPickaxe");
-		this.attackDamage = 1.5F + material.getDamageVsEntity();
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	 
@@ -79,10 +78,9 @@ public class BirthdayPickaxe extends ItemTool {
     
     @Override
 	@SideOnly(Side.CLIENT)
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag) {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_1").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_2").getFormattedText());
+    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_1").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.birthday_2").getFormattedText());
 	}
     
     /**
@@ -147,20 +145,20 @@ public class BirthdayPickaxe extends ItemTool {
     }
     
 	@Override
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (!worldIn.isRemote) {
 			pos = pos.offset(facing);
-			if (!playerIn.canPlayerEdit(pos, facing, stack)) {
+			if (!playerIn.canPlayerEdit(pos, facing, playerIn.getHeldItem(hand))) {
 				return EnumActionResult.FAIL;
 			} else if (worldIn.isAirBlock(pos)) {
 				if (playerIn.getName().equalsIgnoreCase("dark" + "osto")) {
-					playerIn.addChatMessage(new TextComponentString("HAPPY BIRTHDAY DARKOSTO" + TextFormatting.GREEN + TextFormatting.BOLD));
-					EntityFireworkRocket firework = new EntityFireworkRocket(playerIn.worldObj);
+					playerIn.sendMessage(new TextComponentString("HAPPY BIRTHDAY DARKOSTO" + TextFormatting.GREEN + TextFormatting.BOLD));
+					EntityFireworkRocket firework = new EntityFireworkRocket(playerIn.world);
 					firework.setPosition(playerIn.posX, playerIn.posY, playerIn.posZ);
-					playerIn.worldObj.spawnEntityInWorld(firework);
+					playerIn.world.spawnEntity(firework);
 				}
 				worldIn.setBlockState(pos, Blocks.CAKE.getDefaultState());
-				stack.damageItem(854, playerIn);
+				playerIn.getHeldItem(hand).damageItem(854, playerIn);
 				return EnumActionResult.SUCCESS;
 			}
 		}

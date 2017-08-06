@@ -1,0 +1,31 @@
+{
+	"type"		: "forge:ore_shaped",
+	"pattern"	:
+	[
+		"psp",
+		"psp",
+		" s "
+	],
+	"key"		:
+	{
+		"p":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "gemEmerald"
+			}
+		],
+		"s":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "stickWood"
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:emerald_battle",
+		"count"	: 1
+	}
+}

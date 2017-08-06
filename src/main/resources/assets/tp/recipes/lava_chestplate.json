@@ -1,0 +1,24 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"f f",
+		"fff",
+		"fff"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"tp:lava_crystal",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:lava_chestplate",
+		"count"	: 1
+	}
+}

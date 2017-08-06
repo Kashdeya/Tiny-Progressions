@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"ff ",
+		"fs ",
+		" s "
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:bone",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:bone_axe",
+		"count"	: 1
+	}
+}

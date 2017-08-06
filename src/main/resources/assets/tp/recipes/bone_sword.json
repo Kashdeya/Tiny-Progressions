@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"f",
+		"f",
+		"s"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:bone",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:bone_sword",
+		"count"	: 1
+	}
+}

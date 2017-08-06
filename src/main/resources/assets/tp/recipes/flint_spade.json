@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"f",
+		"s",
+		"s"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:flint",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"item":	"minecraft:stick",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:flint_spade",
+		"count"	: 1
+	}
+}

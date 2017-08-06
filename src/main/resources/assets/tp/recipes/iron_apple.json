@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"ddd",
+		"dad",
+		"ddd"
+	],
+	"key"		:
+	{
+		"d":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "ingotIron"
+			}
+		],
+		"a":
+		[
+			{
+				"item":	"minecraft:apple",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:iron_apple",
+		"count"	: 1
+	}
+}

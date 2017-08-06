@@ -1,0 +1,23 @@
+{
+	"type"		: "forge:ore_shaped",
+	"pattern"	:
+	[
+		"cc",
+		"cc"
+	],
+	"key"		:
+	{
+		"c":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "stoneAndesitePolished"
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:andesite_brick",
+		"count"	: 4
+	}
+}

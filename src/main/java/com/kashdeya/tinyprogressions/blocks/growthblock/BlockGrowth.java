@@ -13,9 +13,10 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -50,7 +51,7 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
 		this.setLightLevel(1.0F);
 		this.setLightOpacity(1);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setSoundType(blockSoundType.METAL);
+		this.setSoundType(SoundType.METAL);
 		this.setUnlocalizedName("growth_block");
 	}
     
@@ -147,38 +148,41 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(IBlockState worldIn, World pos, BlockPos state, Random rand)
     {
-        super.randomDisplayTick(worldIn, pos, state, rand);
+		if (ConfigHandler.ParticalTicks) 
+		{
+			super.randomDisplayTick(worldIn, pos, state, rand);
 
-        for (int i = -4; i <= 4; ++i)
-        {
-            for (int j = -4; j <= 4; ++j)
-            {
-                if (i > -4 && i < 4 && j == -2)
-                {
-                    j = 4;
-                }
+	        for (int i = -4; i <= 4; ++i)
+	        {
+	            for (int j = -4; j <= 4; ++j)
+	            {
+	                if (i > -4 && i < 4 && j == -2)
+	                {
+	                    j = 4;
+	                }
 
-                if (rand.nextInt(ConfigHandler.GrowthParticalTicks) == 0)
-                {
-                    for (int k = 0; k <= 1; ++k){
-                    	for (int xAxis = -range; xAxis <= range; xAxis++) {
-        		            for (int zAxis = -range; zAxis <= range; zAxis++) {
-        		            	for (int yAxis = -rangeY; yAxis <= rangeY; yAxis++)
-        		            	{
-        		            		BlockPos blockpos = state.add(i, k, j);
-        		            		Block checkBlock = pos.getBlockState(blockpos.add(xAxis, yAxis, zAxis)).getBlock();
+	                if (rand.nextInt(ConfigHandler.GrowthParticalTicks) == 0)
+	                {
+	                    for (int k = 0; k <= 1; ++k){
+	                    	for (int xAxis = -range; xAxis <= range; xAxis++) {
+	        		            for (int zAxis = -range; zAxis <= range; zAxis++) {
+	        		            	for (int yAxis = -rangeY; yAxis <= rangeY; yAxis++)
+	        		            	{
+	        		            		BlockPos blockpos = state.add(i, k, j);
+	        		            		Block checkBlock = pos.getBlockState(blockpos.add(xAxis, yAxis, zAxis)).getBlock();
 
-        		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
-        		            		{
-        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
-        		            		}
-        		            	}
-        		            }
-                    	}
-                    }
-                }
-            }
-        }
+	        		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
+	        		            		{
+	        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+	        		            		}
+	        		            	}
+	        		            }
+	                    	}
+	                    }
+	                }
+	            }
+	        }
+		}
     }
 	
 	@Override
@@ -194,10 +198,16 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
 	}
 	
 	@Override
-    public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
-    {
-        return worldIn.getBlockState(pos).getMaterial().isSolid();
-    }
+	public boolean isSideSolid(IBlockState base_state, IBlockAccess world, BlockPos pos, EnumFacing side)
+	{
+		return world.getBlockState(pos).getMaterial().isSolid();
+	}
+	
+	@Override
+	public boolean isTopSolid(IBlockState state)
+	{
+		return state.getMaterial().isSolid();
+	}
 	
 	@Override
     public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side)
@@ -211,7 +221,7 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
         {
             AxisAlignedBB axisalignedbb = blockBox.offset(pos);
 
-            if (entityBox.intersectsWith(axisalignedbb))
+            if (entityBox.intersects(axisalignedbb))
             {
                 collidingBoxes.add(axisalignedbb);
             }
@@ -220,11 +230,11 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
-    {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growth_1").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growth_2").getFormattedText());
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growth_3").getFormattedText());
-    }
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
+	{
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growth_1").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growth_2").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.growth_3").getFormattedText());
+	}
 	
 }

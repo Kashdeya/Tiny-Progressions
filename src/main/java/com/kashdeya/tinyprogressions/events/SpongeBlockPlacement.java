@@ -26,7 +26,7 @@ public class SpongeBlockPlacement {
                             IBlockState state = event.getWorld().getBlockState(new BlockPos(event.getPos().getX() + x, event.getPos().getY() + y, event.getPos().getZ() + z));
                             if (state.getBlock() instanceof BlockGrowthUpgrade || state.getBlock() instanceof BlockGrowthUpgradeTwo) {
                                 event.setCanceled(true);
-                                event.getPlayer().addChatMessage(new TextComponentString("Cant place a sponge near a Growth Crystal"));
+                                event.getPlayer().sendMessage(new TextComponentString("Cant place a sponge near a Growth Crystal"));
                             }
                         }
                     }

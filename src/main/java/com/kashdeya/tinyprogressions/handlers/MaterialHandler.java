@@ -15,8 +15,10 @@ public class MaterialHandler {
 	public static final Item.ToolMaterial EMERALD = EnumHelper.addToolMaterial("emeraldToolMaterial", 4, 1961, 50.0F, 5.0F, 10);
 	// Armor
 	public static final ArmorMaterial stoneArmourMaterial = EnumHelper.addArmorMaterial("stoneArmourMaterial", "tp:stone", 15, new int[]{1, 3, 4, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F);
-	public static final ArmorMaterial flintArmourMaterial = EnumHelper.addArmorMaterial("flintArmourMaterial", "tp:flint", 12, new int[]{2, 3, 2, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F);
+	public static final ArmorMaterial flintArmourMaterial = EnumHelper.addArmorMaterial("flintArmourMaterial", "tp:flint", 12, new int[]{2, 3, 5, 2}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F);
 	public static final ArmorMaterial boneArmourMaterial = EnumHelper.addArmorMaterial("boneArmourMaterial", "tp:bone", 8, new int[]{1, 1, 1, 1}, 8, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F);
 	public static final ArmorMaterial woodArmourMaterial = EnumHelper.addArmorMaterial("woodArmourMaterial", "tp:wood", 5, new int[]{1, 2, 1, 1}, 5, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F);
-
+	public static final ArmorMaterial lavaArmorMaterial = EnumHelper.addArmorMaterial("lavaArmorMaterial", "tp:lava", 50, new int[] {5, 7, 8, 5}, 35, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+	public static final ArmorMaterial witherArmorMaterial = EnumHelper.addArmorMaterial("witherArmorMaterial", "tp:wither", 60, new int[]{5, 6, 8, 5}, 40, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+	public static final ArmorMaterial dragonArmorMaterial = EnumHelper.addArmorMaterial("dragonArmorMaterial", "tp:dragon", 200, new int[]{10, 10, 10, 10}, 75, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 }

@@ -1,0 +1,38 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"rdr",
+		" s ",
+		" s "
+	],
+	"key"		:
+	{
+		"d":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "gemDiamond"
+			}
+		],
+		"r":
+		[
+			{
+				"item":	"tp:reinforced_obsidian",
+				"data": 0
+			}
+		],
+		"s":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "stickWood"
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:flint_pickaxe",
+		"count"	: 1
+	}
+}

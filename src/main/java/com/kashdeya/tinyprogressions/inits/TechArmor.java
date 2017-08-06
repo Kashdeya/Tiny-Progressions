@@ -1,19 +1,29 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.util.Iterator;
+import java.util.Set;
+
+import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
+import com.kashdeya.tinyprogressions.armor.DragonArmour;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
+import com.kashdeya.tinyprogressions.armor.LavaArmour;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
+import com.kashdeya.tinyprogressions.armor.WitherArmour;
 import com.kashdeya.tinyprogressions.armor.WoodArmor;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.event.RegistryEvent;
 
 public class TechArmor {
+	
+	static Set<Item> items = Sets.newHashSet();
 	
 	// Stone Armor
 	public static ItemArmor stone_helmet;
@@ -38,6 +48,24 @@ public class TechArmor {
 	public static ItemArmor wooden_chestplate;
 	public static ItemArmor wooden_leggings;
 	public static ItemArmor wooden_boots;
+	
+	// Lava
+	public static ItemArmor lava_helmet;
+	public static ItemArmor lava_chestplate;
+	public static ItemArmor lava_leggings;
+	public static ItemArmor lava_boots;
+	
+	// Wither
+	public static ItemArmor wither_helmet;
+	public static ItemArmor wither_chestplate;
+	public static ItemArmor wither_leggings;
+	public static ItemArmor wither_boots;
+	
+	// Dragon
+	public static ItemArmor dragon_helmet;
+	public static ItemArmor dragon_chestplate;
+	public static ItemArmor dragon_leggings;
+	public static ItemArmor dragon_boots;
 	
 	public static void init(){
 		// Stone Armor
@@ -87,9 +115,56 @@ public class TechArmor {
 			wooden_boots = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("wooden_boots");
 			registerItem(wooden_boots, "wooden_boots");
 		}
+		
+		// Lava
+		if (ConfigHandler.lava_ore){
+			lava_helmet = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("lava_helmet");
+		   	registerItem(lava_helmet, "lava_helmet");
+		   	lava_chestplate = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("lava_chestplate");
+		   	registerItem(lava_chestplate, "lava_chestplate");
+		   	lava_leggings = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("lava_leggings");
+		   	registerItem(lava_leggings, "lava_leggings");
+		   	lava_boots = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("lava_boots");
+		   	registerItem(lava_boots, "lava_boots");
+		}
+		
+		// Wither
+		if (ConfigHandler.wither_armor){
+			wither_helmet = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("wither_helmet");
+		   	registerItem(wither_helmet, "wither_helmet");
+		   	wither_chestplate = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("wither_chestplate");
+		   	registerItem(wither_chestplate, "wither_chestplate");
+		   	wither_leggings = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("wither_leggings");
+		   	registerItem(wither_leggings, "wither_leggings");
+		   	wither_boots = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("wither_boots");
+		   	registerItem(wither_boots, "wither_boots");
+		}
+		
+		// Dragon
+		if (ConfigHandler.dragon_armor){
+			dragon_helmet = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("dragon_helmet");
+		   	registerItem(dragon_helmet, "dragon_helmet");
+		   	dragon_chestplate = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("dragon_chestplate");
+		   	registerItem(dragon_chestplate, "dragon_chestplate");
+		   	dragon_leggings = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("dragon_leggings");
+		   	registerItem(dragon_leggings, "dragon_leggings");
+		   	dragon_boots = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("dragon_boots");
+		   	registerItem(dragon_boots, "dragon_boots");
+		}
+	}
+	
+	public static void registerItems(RegistryEvent.Register<Item> event)
+	{
+		Iterator<Item> i = items.iterator();
+		
+		while(i.hasNext())
+		{
+			event.getRegistry().register(i.next());
+		}
 	}
 	
 	static void registerItem(ItemArmor item, String name){
-	    GameRegistry.register(item, new ResourceLocation(Reference.MOD_ID + ":" + name));
+	    item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+	    items.add(item);
 	}
 }

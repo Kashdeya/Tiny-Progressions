@@ -30,7 +30,7 @@ public class IReachEvent {
 	    if ((event.getButton() == 0) && (event.isButtonstate()))
 	    {
 	      Minecraft mc = Minecraft.getMinecraft();
-	      EntityPlayer thePlayer = mc.thePlayer;
+	      EntityPlayer thePlayer = mc.player;
 	      if (thePlayer != null)
 	      {
 	        ItemStack itemstack = thePlayer.getHeldItem(EnumHand.MAIN_HAND);
@@ -68,7 +68,7 @@ public class IReachEvent {
 	    AxisAlignedBB theViewBoundingBox = new AxisAlignedBB(theRenderViewEntity.posX - 0.5D, theRenderViewEntity.posY - 0.0D, theRenderViewEntity.posZ - 0.5D, theRenderViewEntity.posX + 0.5D, theRenderViewEntity.posY + 1.5D, theRenderViewEntity.posZ + 0.5D);
 	    
 	    RayTraceResult returnMOP = null;
-	    if (mc.theWorld != null)
+	    if (mc.world != null)
 	    {
 	      double var2 = dist;
 	      returnMOP = theRenderViewEntity.rayTrace(var2, 0.0F);
@@ -79,14 +79,13 @@ public class IReachEvent {
 	        calcdist = returnMOP.hitVec.distanceTo(pos);
 	      }
 	      Vec3d lookvec = theRenderViewEntity.getLook(0.0F);
-	      Vec3d var8 = pos.addVector(lookvec.xCoord * var2, lookvec.yCoord * var2, lookvec.zCoord * var2);
+	      Vec3d var8 = pos.addVector(lookvec.x * var2, lookvec.y * var2, lookvec.z * var2);
 	      
 	      Entity pointedEntity = null;
 	      float var9 = 1.0F;
+	      List<Entity> list = mc.world.getEntitiesWithinAABBExcludingEntity(theRenderViewEntity, theViewBoundingBox
 	      
-	      List<Entity> list = mc.theWorld.getEntitiesWithinAABBExcludingEntity(theRenderViewEntity, theViewBoundingBox
-	      
-	        .addCoord(lookvec.xCoord * var2, lookvec.yCoord * var2, lookvec.zCoord * var2)
+	        .offset(lookvec.x * var2, lookvec.y * var2, lookvec.z * var2)
 	        
 	        .expand(var9, var9, var9));
 	      double d = calcdist;
@@ -98,7 +97,7 @@ public class IReachEvent {
 	          
 	          aabb.expand(bordersize, bordersize, bordersize);
 	          RayTraceResult mop0 = aabb.calculateIntercept(pos, var8);
-	          if (aabb.isVecInside(pos))
+	          if (aabb.contains(pos))
 	          {
 	            if ((0.0D < d) || (d == 0.0D))
 	            {

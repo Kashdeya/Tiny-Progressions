@@ -5,10 +5,13 @@ import java.util.Random;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.BlockGlass;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -18,7 +21,7 @@ public class DirtyGlass extends BlockGlass
     {
         super(Material.GLASS, false);
         this.setHardness(0.3F);
-        this.setSoundType(blockSoundType.GLASS);
+        this.setSoundType(SoundType.GLASS);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("dirty_glass");
     }
@@ -47,11 +50,8 @@ public class DirtyGlass extends BlockGlass
         return 0;
     }
     
-    /**
-     * Get the MapColor for this Block and the given BlockState
-     */
     @Override
-    public MapColor getMapColor(IBlockState state)
+    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
         return MapColor.AIR;
     }

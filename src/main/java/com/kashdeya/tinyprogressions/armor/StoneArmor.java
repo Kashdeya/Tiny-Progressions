@@ -5,6 +5,7 @@ import java.util.List;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -15,8 +16,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class StoneArmor extends ItemArmor {
 	
@@ -55,11 +54,9 @@ public class StoneArmor extends ItemArmor {
     		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
     	}
     }
-    
+
     @Override
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
-    {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.armor_1").getFormattedText());
+    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.armor_1").getFormattedText());
     }
 }

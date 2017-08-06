@@ -1,0 +1,31 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"iii",
+		"igi",
+		"iii"
+	],
+	"key"		:
+	{
+		"i":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "ingotIron"
+			}
+		],
+		"g":
+		[
+			{
+				"item":	"tp:cobblegen_block",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:iron_cobblegen_block",
+		"count"	: 1
+	}
+}

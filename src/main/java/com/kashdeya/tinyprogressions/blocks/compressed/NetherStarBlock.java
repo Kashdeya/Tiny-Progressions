@@ -7,10 +7,11 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -34,7 +35,7 @@ public class NetherStarBlock extends Block {
 	    this.setHarvestLevel("pickaxe", 0);
 	    this.setResistance(2000.0F);
 		this.setLightOpacity(1);
-		this.setSoundType(blockSoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("netherstar_block");
 	}
@@ -77,9 +78,9 @@ public class NetherStarBlock extends Block {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean flag)
-    {
-		list.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.netherstar_1").getFormattedText());
-    }
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
+	{
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.netherstar_1").getFormattedText());
+	}
 
 }

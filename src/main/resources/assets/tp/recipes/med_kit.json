@@ -1,0 +1,45 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"prp",
+		"rgr",
+		"lrl"
+	],
+	"key"		:
+	{
+		"p":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "paper"
+			}
+		],
+		"r":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "dyeRed"
+			}
+		],
+		"l":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "leather"
+			}
+		],
+		"g":
+		[
+			{
+				"item":	"minecraft:speckled_melon",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:med_kit",
+		"count"	: 1
+	}
+}

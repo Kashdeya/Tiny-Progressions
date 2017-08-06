@@ -7,8 +7,8 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
@@ -16,11 +16,15 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 public class WorldGen implements IWorldGenerator {
 	
     private WorldGenerator ender_ore;
+    private WorldGenerator lava_ore;
     
     public WorldGen()
     {
     	if (ConfigHandler.ender_ore){
     		this.ender_ore = new WorldGenMinable(TechBlocks.ender_ore.getDefaultState(), ConfigHandler.ender_ore_size);
+    	}
+    	if (ConfigHandler.lava_ore){
+    		this.lava_ore = new WorldGenMinable(TechBlocks.lava_ore.getDefaultState(), ConfigHandler.lava_ore_size);
     	}
     }
     
@@ -39,6 +43,7 @@ public class WorldGen implements IWorldGenerator {
       }
     }
     
+    @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
       switch (world.provider.getDimension())
@@ -46,6 +51,9 @@ public class WorldGen implements IWorldGenerator {
       case 0:
     	  if (ConfigHandler.ender_ore){
     		  runGenerator(this.ender_ore, world, random, chunkX, chunkZ, ConfigHandler.ender_ore_frequency, ConfigHandler.ender_ore_min, ConfigHandler.ender_ore_max);
+    	  }
+    	  if (ConfigHandler.lava_ore){
+    		  runGenerator(this.lava_ore, world, random, chunkX, chunkZ, ConfigHandler.lava_ore_frequency, ConfigHandler.lava_ore_min, ConfigHandler.lava_ore_max);
     	  }
     	  break;
       case 1:

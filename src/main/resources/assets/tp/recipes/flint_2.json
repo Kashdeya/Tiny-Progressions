@@ -1,0 +1,16 @@
+{
+	"type"		: "minecraft:crafting_shapeless",
+	"group"		: "minecraft:flint",
+	
+	"ingredients"	:
+	[
+		{
+			"item"	: "tp:flint_block"
+		}
+	],
+	"result"	:
+	{
+		"item"	: "minecraft:flint",
+		"count"	: 9
+	}
+}

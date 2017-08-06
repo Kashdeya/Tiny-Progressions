@@ -1,0 +1,38 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"on ",
+		"owo",
+		" o "
+	],
+	"key"		:
+	{
+		"o":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "obsidian"
+			}
+		],
+		"n":
+		[
+			{
+				"type":	"forge:ore_dict",
+				"ore" : "netherStar"
+			}
+		],
+		"w":
+		[
+			{
+				"item":	"tp:watering_can",
+				"data": 0
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:watering_can_upgrade",
+		"count"	: 1
+	}
+}

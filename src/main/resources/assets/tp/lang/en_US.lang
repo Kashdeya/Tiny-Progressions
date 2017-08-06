@@ -72,6 +72,8 @@ item.mycelium_seeds.name=Mycelium Seed
 #Apple
 item.diamond_apple.name=Diamond Apple
 item.emerald_apple.name=Emerald Apple
+item.iron_apple.name=Iron Apple
+item.redstone_apple.name=Redstone Apple
 
 #AppleProgression
 item.golden_apple.name=Gold Apple
@@ -186,6 +188,14 @@ tooltip.emerald_apple_1=Absorption
 tooltip.emerald_apple_2=Speed
 tooltip.emerald_apple_3=Saturation
 
+#Iron Apple Tooltips
+tooltip.iron_apple_1=Saturation
+tooltip.iron_apple_2=Resistance
+
+#Redstone Apple Tooltips
+tooltip.redstone_apple_1=Haste
+tooltip.redstone_apple_2=Saturation
+
 #Knife Tooltip
 tooltip.knife=Very Sharp, Handle with care!
 
@@ -244,3 +254,50 @@ item.iron_spear.name=Iron Spear
 item.diamond_spear.name=Diamond Spear
 item.emerald_spear.name=Emerald Spear
 item.obsidian_spear.name=Obsidian Spear
+
+#Lava Armor
+item.lava_helmet.name=Lava Helmet
+item.lava_chestplate.name=Lava Chestplate
+item.lava_leggings.name=Lava Leggings
+item.lava_boots.name=Lava Boots
+
+#Lava Ore
+tile.lava_ore.name=Lava Ore
+
+#Lava Crystal
+item.lava_crystal.name=Lava Crystal
+
+#Lava Armor Tooltip
+tooltip.lavaarmor_1=When wearing full suit!
+tooltip.lavaarmor_2=Fire Resistance 2
+tooltip.lavaarmor_3=Resistance 2
+
+#Wither Armor
+item.wither_helmet.name=Wither Helmet
+item.wither_chestplate.name=Wither Chestplate
+item.wither_leggings.name=Wither Leggings
+item.wither_boots.name=Wither Boots
+
+#Dragon Armor
+item.dragon_helmet.name=Dragon Helmet
+item.dragon_chestplate.name=Dragon Chestplate
+item.dragon_leggings.name=Dragon Leggings
+item.dragon_boots.name=Dragon Boots
+
+#Mob Drops
+item.dragon_scale.name=Dragon Scale
+item.wither_rib.name=Rib of the Wither
+
+#Wither Tooltips
+tooltip.witherarmor_1=Full set gives you
+tooltip.witherarmor_2=Strenght
+tooltip.witherarmor_3=Absorption
+tooltip.witherarmor_4=Resistance 4
+tooltip.witherarmor_5=Fire Resistance 4
+
+#Dragon Tooltips
+tooltip.dragonarmor_1=Full set gives you Flight
+tooltip.dragonarmor_2=Strength 1
+tooltip.dragonarmor_3=Absorption 1
+tooltip.dragonarmor_4=Resistance 5
+tooltip.dragonarmor_5=Fire Resistance 5

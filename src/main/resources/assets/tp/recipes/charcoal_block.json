@@ -1,0 +1,24 @@
+{
+	"type"		: "minecraft:crafting_shaped",
+	"pattern"	:
+	[
+		"fff",
+		"fff",
+		"fff"
+	],
+	"key"		:
+	{
+		"f":
+		[
+			{
+				"item":	"minecraft:coal",
+				"data": 1
+			}
+		]
+	},
+	"result"	:
+	{
+		"item"	: "tp:charcoal_block",
+		"count"	: 1
+	}
+}

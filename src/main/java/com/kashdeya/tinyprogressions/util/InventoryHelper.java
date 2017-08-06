@@ -10,9 +10,10 @@ public class InventoryHelper {
 	
 	public static void consumeItem(@Nullable EntityPlayer player, @Nonnull ItemStack item) {
 		if (player == null || !player.capabilities.isCreativeMode) {
-			--item.stackSize;
-			if (item.stackSize < 0)
-				item.stackSize = 0;
+			item.setCount(item.getCount() - 1);
+			
+			if (item.getCount() < 0)
+				item.setCount(0);
 		}
 	}
 

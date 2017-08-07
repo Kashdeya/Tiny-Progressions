@@ -1,31 +1,47 @@
 {
-	"type"		: "minecraft:crafting_shaped",
-	"pattern"	:
+	"conditions"			:
 	[
-		"f",
-		"s",
-		"s"
+		{
+			"type"		: "tp:config_enabled",
+			"config"		: "emerald_spade"
+		},
+		{
+			"type"		: "minecraft:item_exists",
+			"item"		: "tp:emerald_spade"
+		}
 	],
-	"key"		:
+	
+	"type"				: "minecraft:crafting_shaped",
+	"group"				: "tp:emerald_spade",
+	
+	"pattern"			:
+	[
+		" i ",
+		" s ",
+		" s "
+	],
+	
+	"key"				:
 	{
-		"f":
+		"i"				:
 		[
 			{
-				"type":	"forge:ore_dict",
-				"ore" : "gemEmerald"
+				"type"	: "forge:ore_dict",
+				"ore"	: "gemEmerald"
 			}
 		],
-		"s":
+		"s"				:
 		[
 			{
-				"item":	"minecraft:stick",
-				"data": 0
+				"type"	: "forge:ore_dict",
+				"ore"	: "stickWood"
 			}
 		]
 	},
-	"result"	:
+	
+	"result"				:
 	{
-		"item"	: "tp:emerald_spade",
-		"count"	: 1
+		"item"			: "tp:emerald_spade",
+		"count"			: 1
 	}
 }

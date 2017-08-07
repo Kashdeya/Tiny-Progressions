@@ -1,23 +1,30 @@
 {
-	"type"		: "minecraft:crafting_shaped",
-	"pattern"	:
+	"conditions"			:
 	[
-		"ff ",
-		"f  "
+		{
+			"type"		: "tp:config_enabled",
+			"config"		: "FlintBlock"
+		},
+		{
+			"type"		: "minecraft:item_exists",
+			"item"		: "tp:flint_block"
+		}
 	],
-	"key"		:
+	
+	"type"				: "minecraft:crafting_shapeless",
+	"group"				: "minecraft:flint",
+	
+	"ingredients"		:
+	[
+		{
+			"type"		: "forge:ore_dict",
+			"ore"		: "blockFlint"
+		}
+	],
+	
+	"result"				:
 	{
-		"f":
-		[
-			{
-				"item":	"minecraft:gravel",
-				"data": 0
-			}
-		]
-	},
-	"result"	:
-	{
-		"item"	: "minecraft:flint",
-		"count"	: 1
+		"item"			: "minecraft:flint",
+		"count"			: 9
 	}
 }

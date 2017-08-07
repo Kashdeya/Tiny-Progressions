@@ -3,11 +3,16 @@ package com.kashdeya.tinyprogressions.handlers;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictHandler {
 	public static void init()
 	{
+		OreDictionary.registerOre("flint", Items.FLINT);
+		OreDictionary.registerOre("blockGravel", Blocks.GRAVEL);
+		
 		OreDictionary.registerOre("blockCharcoal", TechBlocks.charcoal_block);
 		OreDictionary.registerOre("blockGlassDirty", TechBlocks.dirty_glass);
 		OreDictionary.registerOre("blockReinforcedGlass", TechBlocks.reinforced_glass);

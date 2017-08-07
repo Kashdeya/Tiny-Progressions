@@ -1,31 +1,47 @@
 {
-	"type"		: "minecraft:crafting_shaped",
-	"pattern"	:
+	"conditions"			:
 	[
-		" ff",
-		" sf",
+		{
+			"type"		: "tp:config_enabled",
+			"config"		: "obsidian_axe"
+		},
+		{
+			"type"		: "minecraft:item_exists",
+			"item"		: "tp:obsidian_axe"
+		}
+	],
+	
+	"type"				: "minecraft:crafting_shaped",
+	"group"				: "tp:obsidian_axe",
+	
+	"pattern"			:
+	[
+		" ii",
+		" si",
 		" s "
 	],
-	"key"		:
+	
+	"key"				:
 	{
-		"f":
+		"i"				:
 		[
 			{
-				"type":	"forge:ore_dict",
-				"ore" : "obsidian"
+				"type"	: "forge:ore_dict",
+				"ore"	: "obsidian"
 			}
 		],
-		"s":
+		"s"				:
 		[
 			{
-				"item":	"minecraft:stick",
-				"data": 0
+				"type"	: "forge:ore_dict",
+				"ore"	: "stickWood"
 			}
 		]
 	},
-	"result"	:
+	
+	"result"				:
 	{
-		"item"	: "tp:obsidian_axe",
-		"count"	: 1
+		"item"			: "tp:obsidian_axe",
+		"count"			: 1
 	}
 }

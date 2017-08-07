@@ -1,16 +1,31 @@
 {
-	"type"		: "minecraft:crafting_shapeless",
-	"group"		: "minecraft:flint",
-	
-	"ingredients"	:
+	"conditions"			:
 	[
-		{
-			"item"	: "tp:flint_block"
-		}
 	],
-	"result"	:
+	
+	"type"				: "minecraft:crafting_shaped",
+	"group"				: "minecraft:flint",
+	
+	"pattern"			:
+	[
+		"ii ",
+		"i  "
+	],
+	
+	"key"				:
 	{
-		"item"	: "minecraft:flint",
-		"count"	: 9
+		"i"				:
+		[
+			{
+				"type"	: "forge:ore_dict",
+				"ore"	: "blockGravel"
+			}
+		]
+	},
+	
+	"result"				:
+	{
+		"item"			: "minecraft:flint",
+		"count"			: 1
 	}
 }

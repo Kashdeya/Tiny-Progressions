@@ -1,31 +1,47 @@
 {
-	"type"		: "minecraft:crafting_shaped",
-	"pattern"	:
+	"conditions"			:
 	[
-		" ff",
+		{
+			"type"		: "tp:config_enabled",
+			"config"		: "obsidian_hoe"
+		},
+		{
+			"type"		: "minecraft:item_exists",
+			"item"		: "tp:obsidian_hoe"
+		}
+	],
+	
+	"type"				: "minecraft:crafting_shaped",
+	"group"				: "tp:obsidian_hoe",
+	
+	"pattern"			:
+	[
+		" ii",
 		" s ",
 		" s "
 	],
-	"key"		:
+	
+	"key"				:
 	{
-		"f":
+		"i"				:
 		[
 			{
-				"type":	"forge:ore_dict",
-				"ore" : "obsidian"
+				"type"	: "forge:ore_dict",
+				"ore"	: "obsidian"
 			}
 		],
-		"s":
+		"s"				:
 		[
 			{
-				"item":	"minecraft:stick",
-				"data": 0
+				"type"	: "forge:ore_dict",
+				"ore"	: "stickWood"
 			}
 		]
 	},
-	"result"	:
+	
+	"result"				:
 	{
-		"item"	: "tp:obsidian_hoe",
-		"count"	: 1
+		"item"			: "tp:obsidian_hoe",
+		"count"			: 1
 	}
 }

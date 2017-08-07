@@ -1,24 +1,40 @@
 {
-	"type"		: "minecraft:crafting_shaped",
-	"pattern"	:
+	"conditions"			:
 	[
-		"fff",
-		"f f",
-		"f f"
+		{
+			"type"		: "tp:config_enabled",
+			"config"		: "FlintArmor"
+		},
+		{
+			"type"		: "minecraft:item_exists",
+			"item"		: "tp:flint_leggings"
+		}
 	],
-	"key"		:
+	
+	"type"				: "minecraft:crafting_shaped",
+	"group"				: "tp:flint_leggings",
+	
+	"pattern"			:
+	[
+		"iii",
+		"i i",
+		"i i"
+	],
+	
+	"key"				:
 	{
-		"f":
+		"i"				:
 		[
 			{
-				"item":	"minecraft:flint",
-				"data": 0
+				"type"	: "forge:ore_dict",
+				"ore"	: "flint"
 			}
 		]
 	},
-	"result"	:
+	
+	"result"				:
 	{
-		"item"	: "tp:flint_leggings",
-		"count"	: 1
+		"item"			: "tp:flint_leggings",
+		"count"			: 1
 	}
 }

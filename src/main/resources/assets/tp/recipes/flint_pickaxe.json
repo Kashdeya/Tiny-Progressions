@@ -1,31 +1,47 @@
 {
-	"type"		: "minecraft:crafting_shaped",
-	"pattern"	:
+	"conditions"			:
 	[
-		"fff",
+		{
+			"type"		: "tp:config_enabled",
+			"config"		: "FlintTools"
+		},
+		{
+			"type"		: "minecraft:item_exists",
+			"item"		: "tp:flint_pickaxe"
+		}
+	],
+	
+	"type"				: "minecraft:crafting_shaped",
+	"group"				: "tp:flint_pickaxe",
+	
+	"pattern"			:
+	[
+		"iii",
 		" s ",
 		" s "
 	],
-	"key"		:
+	
+	"key"				:
 	{
-		"f":
+		"i"				:
 		[
 			{
-				"item":	"minecraft:flint",
-				"data": 0
+				"type"	: "forge:ore_dict",
+				"ore"	: "flint"
 			}
 		],
-		"s":
+		"s"				:
 		[
 			{
-				"item":	"minecraft:stick",
-				"data": 0
+				"type"	: "forge:ore_dict",
+				"ore"	: "stickWood"
 			}
 		]
 	},
-	"result"	:
+	
+	"result"				:
 	{
-		"item"	: "tp:flint_pickaxe",
-		"count"	: 1
+		"item"			: "tp:flint_pickaxe",
+		"count"			: 1
 	}
 }

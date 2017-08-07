@@ -7,6 +7,7 @@ import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
+import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -83,6 +84,8 @@ public class TinyProgressions {
 	public void init(FMLInitializationEvent e) {
 		PROXY.init();
 		PROXY.registerWorldRenderers();
+		
+		OreDictHandler.init();
 		
 		GameRegistry.addSmelting(TechBlocks.flint_block, new ItemStack(TechItems.flint_ingot), 1.0F);
 		GameRegistry.addSmelting(TechBlocks.reinforced_obsidian, new ItemStack(TechItems.reinforced_obsidian_ingot), 1.0F);

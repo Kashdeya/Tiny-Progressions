@@ -182,5 +182,27 @@ public class ConfigHandler {
 	public static int ender_ore_min = 1;
 	public static int ender_ore_max = 32;
 	public static int ender_ore_size = 7;
+	
+	public static boolean parse(String key)
+	{
+		Object value = false;
+		
+		try
+		{
+			value = ConfigHandler.class.getField(key).get(null);
+		}
+		catch(Exception e)
+		{
+		}
+		
+		try
+		{
+			return (boolean)value;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
 
 }

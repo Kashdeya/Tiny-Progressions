@@ -1,10 +1,8 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.EnderOre;
@@ -37,13 +35,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class TechBlocks {
 
 	static Set<Block> blocks = Sets.newHashSet();
 	static Set<ItemBlock> itemblocks = Sets.newHashSet();
-	static Map<String, Block> oreDict = Maps.newHashMap();
 
 	// Tech Blocks
 	public static Block growth_block;
@@ -115,23 +111,23 @@ public class TechBlocks {
 		// Deco Blocks
 		if (ConfigHandler.StoneTorch) {
 			stone_torch = new StoneTorch();
-			registerBlock(stone_torch, "stone_torch", true, "torch");
+			registerBlock(stone_torch, "stone_torch", true);
 		}
 		if (ConfigHandler.CharcoalBlock) {
 			charcoal_block = new CharcoalBlock();
-			registerBlock(charcoal_block, "charcoal_block", true, "blockCharcoal");
+			registerBlock(charcoal_block, "charcoal_block", true);
 		}
 		if (ConfigHandler.ReinforcedGlass) {
 			reinforced_glass = new ReinforcedGlass();
-			registerBlock(reinforced_glass, "reinforced_glass", true, "blockReinforcedGlass");
+			registerBlock(reinforced_glass, "reinforced_glass", true);
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
 			reinforced_obsidian = new ReinforcedObsidian();
-			registerBlock(reinforced_obsidian, "reinforced_obsidian", true, "blockReinforcedObsidian");
+			registerBlock(reinforced_obsidian, "reinforced_obsidian", true);
 		}
 		if (ConfigHandler.DirtyGlass) {
 			dirty_glass = new DirtyGlass();
-			registerBlock(dirty_glass, "dirty_glass", true, "blockGlassDirty");
+			registerBlock(dirty_glass, "dirty_glass", true);
 		}
 
 		// Compressed Blocks
@@ -141,7 +137,7 @@ public class TechBlocks {
 		}
 		if (ConfigHandler.BoneBlock) {
 			bone_block = new BoneBlock();
-			registerBlock(bone_block, "bone_block", true, "blockBone");
+			registerBlock(bone_block, "bone_block", true);
 		}
 		if (ConfigHandler.NetherStarBlock) {
 			netherstar_block = new NetherStarBlock();
@@ -149,27 +145,27 @@ public class TechBlocks {
 		}
 		if (ConfigHandler.DioriteBrick) {
 			diorite_brick = new DioriteBrick();
-			registerBlock(diorite_brick, "diorite_brick", true, "stoneDioriteBrick");
+			registerBlock(diorite_brick, "diorite_brick", true);
 		}
 		if (ConfigHandler.GraniteBrick) {
 			granite_brick = new GraniteBrick();
-			registerBlock(granite_brick, "granite_brick", true, "stoneGraniteBrick");
+			registerBlock(granite_brick, "granite_brick", true);
 		}
 		if (ConfigHandler.AndesiteBrick) {
 			andesite_brick = new AndesiteBrick();
-			registerBlock(andesite_brick, "andesite_brick", true, "stoneAndesiteBrick");
+			registerBlock(andesite_brick, "andesite_brick", true);
 		}
 
 		// Flint Block
 		if (ConfigHandler.FlintBlock) {
 			flint_block = new FlintBlock();
-			registerBlock(flint_block, "flint_block", true, "blockFlint");
+			registerBlock(flint_block, "flint_block", true);
 		}
 
 		// Smooth EndStone
 		if (ConfigHandler.SmoothEndStone) {
 			smooth_endstone = new SmoothEndStone();
-			registerBlock(smooth_endstone, "smooth_endstone", true, "smoothEndstone");
+			registerBlock(smooth_endstone, "smooth_endstone", true);
 		}
 
 		// Ender Ore
@@ -189,13 +185,6 @@ public class TechBlocks {
 		while (b.hasNext()) {
 			event.getRegistry().register(b.next());
 		}
-
-		Iterator<Map.Entry<String, Block>> o = oreDict.entrySet().iterator();
-
-		while (o.hasNext()) {
-			Map.Entry<String, Block> ore = o.next();
-			OreDictionary.registerOre(ore.getKey(), ore.getValue());
-		}
 	}
 
 	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
@@ -207,19 +196,11 @@ public class TechBlocks {
 	}
 
 	public static void registerBlock(Block block, String name, boolean itemblock) {
-		registerBlock(block, name, itemblock, null);
-	}
-
-	public static void registerBlock(Block block, String name, boolean itemblock, String oreDictName) {
 		block.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
 		blocks.add(block);
 
 		if (itemblock) {
 			itemblocks.add((ItemBlock) new ItemBlock(block).setRegistryName(block.getRegistryName()));
-		}
-
-		if (oreDictName != null) {
-			oreDict.put(oreDictName, block);
 		}
 	}
 

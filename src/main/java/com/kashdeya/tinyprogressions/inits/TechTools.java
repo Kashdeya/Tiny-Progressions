@@ -139,12 +139,12 @@ public class TechTools {
 		}
 		// Birthday
 	    if (ConfigHandler.BirthdayPickaxe){
-	    	birthday_pickaxe = new BirthdayPickaxe(MaterialHandler.BIRTHDAY);
+	    		birthday_pickaxe = new BirthdayPickaxe(MaterialHandler.BIRTHDAY);
 			registerItem(birthday_pickaxe, "birthday_pickaxe");
 		}
 	    // Scythe
 	    if (ConfigHandler.wooden_scythe){
-	    	wooden_scythe = new ScytheMain(ToolMaterial.WOOD).setUnlocalizedName("wooden_scythe").setMaxDamage(DamageHandler.wooden_scythe);
+	    		wooden_scythe = new ScytheMain(ToolMaterial.WOOD).setUnlocalizedName("wooden_scythe").setMaxDamage(DamageHandler.wooden_scythe);
 			registerItem(wooden_scythe, "wooden_scythe");
 	    }
 	    if (ConfigHandler.stone_scythe){

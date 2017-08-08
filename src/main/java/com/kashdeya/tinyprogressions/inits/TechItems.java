@@ -1,10 +1,8 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
@@ -24,12 +22,10 @@ import com.kashdeya.tinyprogressions.main.Reference;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class TechItems {
 
 	static Set<Item> items = Sets.newHashSet();
-	static Map<String, Item> oreDict = Maps.newHashMap();
 
 	// Watering Cans
 	public static Item watering_can;
@@ -92,7 +88,7 @@ public class TechItems {
 		// Misc Items
 		if (ConfigHandler.StoneTorch) {
 			stone_stick = new ItemBase().setUnlocalizedName("stone_stick");
-			registerItem(stone_stick, "stone_stick", "stickStone");
+			registerItem(stone_stick, "stone_stick");
 		}
 		if (ConfigHandler.MyceliumSeeds) {
 			mycelium_seeds = new MyceliumSeeds();
@@ -110,7 +106,7 @@ public class TechItems {
 			iron_apple = new IronApple(4, 1.2F, false);
 			registerItem(iron_apple, "iron_apple");
 		}
-		if (ConfigHandler.redstone_apple) {
+ 		if (ConfigHandler.redstone_apple) {
 			redstone_apple = new RedstoneApple(4, 1.2F, false);
 			registerItem(redstone_apple, "redstone_apple");
 		}
@@ -130,11 +126,11 @@ public class TechItems {
 		// Ingot
 		if (ConfigHandler.FlintArmor) {
 			flint_ingot = new ItemBase().setUnlocalizedName("flint_ingot");
-			registerItem(flint_ingot, "flint_ingot", "ingotFlint");
+			registerItem(flint_ingot, "flint_ingot");
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
 			reinforced_obsidian_ingot = new ItemBase().setUnlocalizedName("reinforced_obsidian_ingot");
-			registerItem(reinforced_obsidian_ingot, "reinforced_obsidian_ingot", "ingotObsidian");
+			registerItem(reinforced_obsidian_ingot, "reinforced_obsidian_ingot");
 		}
 		// Flint Knife
 		if (ConfigHandler.FlintKnife) {
@@ -144,11 +140,11 @@ public class TechItems {
 		// Ender Dust
 		if (ConfigHandler.ender_ore) {
 			ender_dust = new ItemBase().setUnlocalizedName("ender_dust");
-			registerItem(ender_dust, "ender_dust", "dustEnder");
+			registerItem(ender_dust, "ender_dust");
 		}
 		if (ConfigHandler.lava_ore) {
 			lava_crystal = new ItemBase().setUnlocalizedName("lava_crystal");
-			registerItem(lava_crystal, "lava_crystal", "lavaCrystal");
+			registerItem(lava_crystal, "lava_crystal");
 		}
 	}
 
@@ -158,26 +154,11 @@ public class TechItems {
 		while (i.hasNext()) {
 			event.getRegistry().register(i.next());
 		}
-
-		Iterator<Map.Entry<String, Item>> o = oreDict.entrySet().iterator();
-
-		while (o.hasNext()) {
-			Map.Entry<String, Item> ore = o.next();
-			OreDictionary.registerOre(ore.getKey(), ore.getValue());
-		}
 	}
 
 	static void registerItem(Item item, String name) {
-		registerItem(item, name, null);
-	}
-
-	static void registerItem(Item item, String name, String oreDictName) {
 		item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
 		items.add(item);
-
-		if (oreDictName != null) {
-			oreDict.put(oreDictName, item);
-		}
 	}
 
 }

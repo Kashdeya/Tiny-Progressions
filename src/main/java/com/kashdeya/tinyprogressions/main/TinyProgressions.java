@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.main;
 import java.util.Iterator;
 
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
+import com.kashdeya.tinyprogressions.crafting.Recipes;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
@@ -83,6 +84,7 @@ public class TinyProgressions {
 		PROXY.init();
 		PROXY.registerWorldRenderers();
 		
+		Recipes.init();
 		OreDictHandler.init();
 	}
 

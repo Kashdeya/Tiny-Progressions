@@ -92,7 +92,7 @@ public class TechArmor {
 			registerItem(flint_boots, "flint_boots");
 		}
 		
-		// Flint Armor
+		// Bone Armor
 		if (ConfigHandler.BoneArmor){
 			bone_helmet = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("bone_helmet");
 			registerItem(bone_helmet, "bone_helmet");
@@ -104,7 +104,7 @@ public class TechArmor {
 			registerItem(bone_boots, "bone_boots");
 		}
 		
-		// Flint Armor
+		// Wood Armor
 		if (ConfigHandler.WoodArmor){
 			wooden_helmet = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("wooden_helmet");
 			registerItem(wooden_helmet, "wooden_helmet");
@@ -131,7 +131,7 @@ public class TechArmor {
 		// Wither
 		if (ConfigHandler.wither_armor){
 			wither_helmet = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("wither_helmet");
-		   	registerItem(wither_helmet, "wither_helmet");
+		   	registerItem(lava_boots, "wither_helmet");
 		   	wither_chestplate = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("wither_chestplate");
 		   	registerItem(wither_chestplate, "wither_chestplate");
 		   	wither_leggings = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("wither_leggings");
@@ -164,7 +164,9 @@ public class TechArmor {
 	}
 	
 	static void registerItem(ItemArmor item, String name){
-	    item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+		if(item.getRegistryName() == null)
+			item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+		
 	    items.add(item);
 	}
 }

@@ -344,8 +344,18 @@ public class RenderHandler {
 	
 	public static void HandItemRender(Item item, String unusedName)
 	{
-		if(item != null)
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		if(item == null)
+			return;
+		
+		if(item.getRegistryName() == null)
+		{
+			System.out.println("===== Tiny-Progressions Error =====");
+			System.out.println(String.format("Unable to register ItemModelMesher for %s as it has no registry name!", item.getUnlocalizedName()));
+			System.out.println("===== End Tiny-Progressions Error =====");
+			return;
+		}
+		
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 	
 	public static void setCustomStateMap(Block block, StateMap stateMap){

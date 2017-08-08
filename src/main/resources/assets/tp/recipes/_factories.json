@@ -1,6 +1,0 @@
-{
-	"conditions":
-	{
-		"config_enabled": "com.kashdeya.tinyprogressions.crafting.ConfigEnabledCondition"
-	}
-}

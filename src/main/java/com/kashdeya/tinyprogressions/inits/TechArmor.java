@@ -11,13 +11,16 @@ import com.kashdeya.tinyprogressions.armor.LavaArmour;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
 import com.kashdeya.tinyprogressions.armor.WitherArmour;
 import com.kashdeya.tinyprogressions.armor.WoodArmor;
+import com.kashdeya.tinyprogressions.crafting.Recipes;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 
@@ -72,84 +75,287 @@ public class TechArmor {
 		if (ConfigHandler.StoneArmor){
 			stone_helmet = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("stone_helmet");
 			registerItem(stone_helmet, "stone_helmet");
+			
+			Recipes.addShapedRecipe("stone_helmet", new ItemStack(stone_helmet), new Object[] {
+					"sss",
+					"s s",
+						Character.valueOf('s'), "stone"
+			});
+			
 			stone_chestplate = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("stone_chestplate");
 			registerItem(stone_chestplate, "stone_chestplate");
+			
+			Recipes.addShapedRecipe("stone_chestplate", new ItemStack(stone_chestplate), new Object[] {
+					"s s",
+					"sss",
+					"sss",
+						Character.valueOf('s'), "stone"
+			});
+			
 			stone_leggings = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("stone_leggings");
 			registerItem(stone_leggings, "stone_leggings");
+			
+			Recipes.addShapedRecipe("stone_leggings", new ItemStack(stone_leggings), new Object[] {
+					"sss",
+					"s s",
+					"s s",
+						Character.valueOf('s'), "stone"
+			});
+			
 			stone_boots = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("stone_boots");
 			registerItem(stone_boots, "stone_boots");
+			
+			Recipes.addShapedRecipe("stone_boots", new ItemStack(stone_boots), new Object[] {
+					"s s",
+					"s s",
+						Character.valueOf('s'), "stone"
+			});
 		}
 		
 		// Flint Armor
 		if (ConfigHandler.FlintArmor){
 			flint_helmet = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("flint_helmet");
 			registerItem(flint_helmet, "flint_helmet");
+			
+			Recipes.addShapedRecipe("flint_helmet", new ItemStack(flint_helmet), new Object[] {
+					"fff",
+					"f f",
+						Character.valueOf('f'), "ingotFlint"
+			});
+			
 			flint_chestplate = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("flint_chestplate");
 			registerItem(flint_chestplate, "flint_chestplate");
+			
+			Recipes.addShapedRecipe("flint_chestplate", new ItemStack(flint_chestplate), new Object[] {
+					"f f",
+					"fff",
+					"fff",
+						Character.valueOf('f'), "ingotFlint"
+			});
+			
 			flint_leggings = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("flint_leggings");
 			registerItem(flint_leggings, "flint_leggings");
+			
+			Recipes.addShapedRecipe("flint_leggings", new ItemStack(flint_leggings), new Object[] {
+					"fff",
+					"f f",
+					"f f",
+						Character.valueOf('f'), "ingotFlint"
+			});
+			
 			flint_boots = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("flint_boots");
 			registerItem(flint_boots, "flint_boots");
+			
+			Recipes.addShapedRecipe("flint_boots", new ItemStack(flint_boots), new Object[] {
+					"f f",
+					"f f",
+						Character.valueOf('f'), "ingotFlint"
+			});
 		}
 		
-		// Flint Armor
+		// Bone Armor
 		if (ConfigHandler.BoneArmor){
 			bone_helmet = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("bone_helmet");
 			registerItem(bone_helmet, "bone_helmet");
+			
+			Recipes.addShapedRecipe("bone_helmet", new ItemStack(bone_helmet), new Object[] {
+					"bbb",
+					"b b",
+						Character.valueOf('b'), "bone"
+			});
+			
 			bone_chestplate = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("bone_chestplate");
 			registerItem(bone_chestplate, "bone_chestplate");
+			
+			Recipes.addShapedRecipe("bone_chestplate", new ItemStack(bone_chestplate), new Object[] {
+					"b b",
+					"bbb",
+					"bbb",
+						Character.valueOf('b'), "bone"
+			});
+			
 			bone_leggings = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("bone_leggings");
 			registerItem(bone_leggings, "bone_leggings");
+			
+			Recipes.addShapedRecipe("bone_leggings", new ItemStack(bone_leggings), new Object[] {
+					"bbb",
+					"b b",
+					"b b",
+						Character.valueOf('b'), "bone"
+			});
+			
 			bone_boots = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("bone_boots");
 			registerItem(bone_boots, "bone_boots");
+			
+			Recipes.addShapedRecipe("bone_boots", new ItemStack(bone_boots), new Object[] {
+					"b b",
+					"b b",
+						Character.valueOf('b'), "bone"
+			});
 		}
 		
-		// Flint Armor
+		// Wood Armor
 		if (ConfigHandler.WoodArmor){
 			wooden_helmet = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("wooden_helmet");
 			registerItem(wooden_helmet, "wooden_helmet");
+			
+			Recipes.addShapedRecipe("wooden_helmet", new ItemStack(wooden_helmet), new Object[] {
+					"lll",
+					"l l",
+						Character.valueOf('l'), Blocks.LOG
+			});
+			
 			wooden_chestplate = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("wooden_chestplate");
 			registerItem(wooden_chestplate, "wooden_chestplate");
+			
+			Recipes.addShapedRecipe("wooden_chestplate", new ItemStack(wooden_chestplate), new Object[] {
+					"l l",
+					"lll",
+					"lll",
+						Character.valueOf('l'), Blocks.LOG
+			});
+			
 			wooden_leggings = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("wooden_leggings");
 			registerItem(wooden_leggings, "wooden_leggings");
+			
+			Recipes.addShapedRecipe("wooden_leggings", new ItemStack(wooden_leggings), new Object[] {
+					"lll",
+					"l l",
+					"l l",
+						Character.valueOf('l'), Blocks.LOG
+			});
+			
 			wooden_boots = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("wooden_boots");
 			registerItem(wooden_boots, "wooden_boots");
+			
+			Recipes.addShapedRecipe("wooden_boots", new ItemStack(wooden_boots), new Object[] {
+					"l l",
+					"l l",
+						Character.valueOf('l'), Blocks.LOG
+			});
 		}
 		
 		// Lava
 		if (ConfigHandler.lava_ore){
 			lava_helmet = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("lava_helmet");
 		   	registerItem(lava_helmet, "lava_helmet");
+		   	
+		   	Recipes.addShapedRecipe("lava_helmet", new ItemStack(lava_helmet), new Object[] {
+					"lll",
+					"l l",
+						Character.valueOf('l'), TechItems.lava_crystal
+			});
+		   	
 		   	lava_chestplate = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("lava_chestplate");
 		   	registerItem(lava_chestplate, "lava_chestplate");
+		   	
+		   	Recipes.addShapedRecipe("lava_chestplate", new ItemStack(lava_chestplate), new Object[] {
+					"l l",
+					"lll",
+					"lll",
+						Character.valueOf('l'), TechItems.lava_crystal
+			});
+		   	
 		   	lava_leggings = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("lava_leggings");
 		   	registerItem(lava_leggings, "lava_leggings");
+		   	
+		   	Recipes.addShapedRecipe("lava_leggings", new ItemStack(lava_leggings), new Object[] {
+					"lll",
+					"l l",
+					"l l",
+						Character.valueOf('l'), TechItems.lava_crystal
+			});
+		   	
 		   	lava_boots = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("lava_boots");
 		   	registerItem(lava_boots, "lava_boots");
+		   	
+		   	Recipes.addShapedRecipe("lava_boots", new ItemStack(lava_boots), new Object[] {
+					"l l",
+					"l l",
+						Character.valueOf('l'), TechItems.lava_crystal
+			});
 		}
 		
 		// Wither
 		if (ConfigHandler.wither_armor){
 			wither_helmet = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("wither_helmet");
-		   	registerItem(wither_helmet, "wither_helmet");
+		   	registerItem(lava_boots, "wither_helmet");
+		   	
+		   	Recipes.addShapedRecipe("wither_helmet", new ItemStack(wither_helmet), new Object[] {
+					"www",
+					"w w",
+						Character.valueOf('w'), TechItems.wither_rib
+			});
+		   	
 		   	wither_chestplate = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("wither_chestplate");
 		   	registerItem(wither_chestplate, "wither_chestplate");
+		   	
+		   	Recipes.addShapedRecipe("wither_chestplate", new ItemStack(wither_chestplate), new Object[] {
+					"w w",
+					"www",
+					"www",
+						Character.valueOf('w'), TechItems.wither_rib
+			});
+		   	
 		   	wither_leggings = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("wither_leggings");
 		   	registerItem(wither_leggings, "wither_leggings");
+		   	
+		   	Recipes.addShapedRecipe("wither_leggings", new ItemStack(wither_leggings), new Object[] {
+					"www",
+					"w w",
+					"w w",
+						Character.valueOf('w'), TechItems.wither_rib
+			});
+		   	
 		   	wither_boots = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("wither_boots");
 		   	registerItem(wither_boots, "wither_boots");
+		   	
+		   	Recipes.addShapedRecipe("wither_boots", new ItemStack(wither_boots), new Object[] {
+					"w w",
+					"w w",
+						Character.valueOf('w'), TechItems.wither_rib
+			});
 		}
 		
 		// Dragon
 		if (ConfigHandler.dragon_armor){
 			dragon_helmet = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("dragon_helmet");
 		   	registerItem(dragon_helmet, "dragon_helmet");
+		   	
+		   	Recipes.addShapedRecipe("dragon_helmet", new ItemStack(dragon_helmet), new Object[] {
+					"ddd",
+					"d d",
+						Character.valueOf('d'), TechItems.dragon_scale
+			});
+		   	
 		   	dragon_chestplate = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("dragon_chestplate");
 		   	registerItem(dragon_chestplate, "dragon_chestplate");
+		   	
+		   	Recipes.addShapedRecipe("dragon_chestplate", new ItemStack(dragon_chestplate), new Object[] {
+					"d d",
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), TechItems.dragon_scale
+			});
+		   	
 		   	dragon_leggings = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("dragon_leggings");
 		   	registerItem(dragon_leggings, "dragon_leggings");
+		   	
+		   	Recipes.addShapedRecipe("dragon_leggings", new ItemStack(dragon_leggings), new Object[] {
+					"ddd",
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.dragon_scale
+			});
+		   	
 		   	dragon_boots = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("dragon_boots");
 		   	registerItem(dragon_boots, "dragon_boots");
+		   	
+		   	Recipes.addShapedRecipe("dragon_boots", new ItemStack(dragon_boots), new Object[] {
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.dragon_scale
+			});
 		}
 	}
 	
@@ -164,7 +370,9 @@ public class TechArmor {
 	}
 	
 	static void registerItem(ItemArmor item, String name){
-	    item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+		if(item.getRegistryName() == null)
+			item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+		
 	    items.add(item);
 	}
 }

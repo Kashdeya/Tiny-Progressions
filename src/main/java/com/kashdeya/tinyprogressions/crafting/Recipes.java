@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.crafting;
 
+import java.util.List;
+
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
@@ -16,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class Recipes
 {
@@ -807,7 +810,7 @@ public class Recipes
 					"eee",
 					"e e",
 					"eee",
-						Character.valueOf('e'), "enderDust"
+						Character.valueOf('e'), "dustEnder"
 			});
 		}
 		
@@ -1103,7 +1106,18 @@ public class Recipes
 				itemstack = new ItemStack((Item)input);
 			}
 			
-			ingredients[i] = Ingredient.fromStacks(itemstack);
+			if(itemstack == ItemStack.EMPTY)
+			{
+				if(input instanceof String)
+				{
+					List<ItemStack> oreDictList = OreDictionary.getOres((String)input);
+					ingredients[i] = Ingredient.fromStacks(oreDictList.toArray(new ItemStack[oreDictList.size()]));
+				}
+			}
+			else
+			{
+				ingredients[i] = Ingredient.fromStacks(itemstack);
+			}
 		}
 		
 		GameRegistry.addShapelessRecipe(new ResourceLocation(name), new ResourceLocation(group), output, ingredients);

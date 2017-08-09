@@ -84,8 +84,8 @@ public class TinyProgressions {
 		PROXY.init();
 		PROXY.registerWorldRenderers();
 		
-		Recipes.init();
 		OreDictHandler.init();
+		Recipes.init();
 	}
 
 	@EventHandler

@@ -8,6 +8,7 @@ import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
+import com.kashdeya.tinyprogressions.handlers.GuiHandler;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
@@ -34,6 +35,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
@@ -84,6 +86,7 @@ public class TinyProgressions {
 		PROXY.init();
 		PROXY.registerWorldRenderers();
 		
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		OreDictHandler.init();
 		Recipes.init();
 	}

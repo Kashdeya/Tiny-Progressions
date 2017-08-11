@@ -24,6 +24,7 @@ public class HoldingBag extends Item
     public HoldingBag()
     {
         setMaxStackSize(1);
+        setCreativeTab(TinyProgressions.tabTP);
     }
     
     @Override

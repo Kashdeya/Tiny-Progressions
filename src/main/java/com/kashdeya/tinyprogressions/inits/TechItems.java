@@ -150,7 +150,7 @@ public class TechItems {
 			registerItem(lava_crystal, "lava_crystal");
 		}
 		
-		holding_bag = new HoldingBag();
+		holding_bag = new HoldingBag().setUnlocalizedName("holding_bag");
 		registerItem(holding_bag, "holding_bag");
 	}
 

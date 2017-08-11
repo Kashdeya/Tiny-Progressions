@@ -1077,6 +1077,18 @@ public class Recipes
 						Character.valueOf('e'), "smoothEndstone"
 			});
 		}
+		
+		// Pouch
+		if (ConfigHandler.pouch) {
+		    Recipes.addShapedRecipe("pouch", new ItemStack(TechItems.pouch), new Object[] {
+		            "ssl",
+		            "lcl",
+		            "lll",
+		                Character.valueOf('s'), Items.STRING,
+		                Character.valueOf('l'), Items.LEATHER,
+		                Character.valueOf('c'), Blocks.CHEST
+		    });
+		}
 
 		Recipes.addShapedRecipe("flint", new ItemStack(Items.FLINT), new Object[] {
 				"gg ",

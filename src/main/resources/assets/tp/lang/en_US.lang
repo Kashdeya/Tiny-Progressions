@@ -310,3 +310,6 @@ tooltip.dragonarmor_5=Fire Resistance
 #Obsidian Tooltips
 tooltip.obsidianarmor_1=Full set gives you
 tooltip.obsidianarmor_2=Resistance
+
+#Pouch
+item.pouch.name=Pouch

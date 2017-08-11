@@ -2,12 +2,16 @@ package com.kashdeya.tinyprogressions.main;
 
 import java.util.Iterator;
 
+import com.kashdeya.tinyprogressions.capabilities.IStorage;
+import com.kashdeya.tinyprogressions.capabilities.Storage;
+import com.kashdeya.tinyprogressions.capabilities.StorageProvider;
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.crafting.Recipes;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
+import com.kashdeya.tinyprogressions.handlers.GuiHandler;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
@@ -24,6 +28,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -34,6 +39,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
@@ -77,6 +83,9 @@ public class TinyProgressions {
 		MinecraftForge.EVENT_BUS.register(EventDrops.class);
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
+		
+		// Capabilities
+		CapabilityManager.INSTANCE.register(IStorage.class, new StorageProvider(), Storage.class);
 	}
 
 	@EventHandler
@@ -84,6 +93,7 @@ public class TinyProgressions {
 		PROXY.init();
 		PROXY.registerWorldRenderers();
 		
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		OreDictHandler.init();
 		Recipes.init();
 	}

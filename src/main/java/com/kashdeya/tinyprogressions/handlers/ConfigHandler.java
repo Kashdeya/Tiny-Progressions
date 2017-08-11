@@ -180,6 +180,9 @@ public class ConfigHandler {
 	public static int ender_ore_max = 32;
 	public static int ender_ore_size = 7;
 	
+	// Pouch
+	public static boolean pouch = true;
+	
 	public static boolean parse(String key)
 	{
 		Object value = false;

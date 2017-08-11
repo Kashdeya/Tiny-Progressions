@@ -7,11 +7,14 @@ public class ConfigHandler {
 	public static boolean WateringCanUpgrade = true;
 	public static int WateringCanUpgradeChance = 75;
 	
-	// Wither
+	//Armor
 	public static boolean wither_armor = true;
-	
-	// Dragon
 	public static boolean dragon_armor = true;
+	public static boolean obsidian_armor = true;
+	public static boolean StoneArmor = true;
+	public static boolean FlintArmor = true;
+	public static boolean BoneArmor = true;
+	public static boolean WoodArmor = true;
 	
 	// Iron Apple
 	public static boolean iron_apple = true;
@@ -76,12 +79,6 @@ public class ConfigHandler {
 	// Compressed Blocks
 	public static boolean FleshBlock = true;
 	public static boolean NetherStarBlock = true;
-	
-	// Armor
-	public static boolean StoneArmor = true;
-	public static boolean FlintArmor = true;
-	public static boolean BoneArmor = true;
-	public static boolean WoodArmor = true;
 	
 	// Notch Apple
 	public static boolean NotchApple = true;

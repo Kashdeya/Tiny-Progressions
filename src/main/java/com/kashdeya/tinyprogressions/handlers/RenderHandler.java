@@ -209,6 +209,10 @@ public class RenderHandler {
 		InventoryItemRender(TechArmor.wither_chestplate, "wither_chestplate");
 		InventoryItemRender(TechArmor.wither_leggings, "wither_leggings");
 		InventoryItemRender(TechArmor.wither_boots, "wither_boots");
+		InventoryItemRender(TechArmor.obsidian_helmet, "obsidian_helmet");
+		InventoryItemRender(TechArmor.obsidian_chestplate, "obsidian_chestplate");
+		InventoryItemRender(TechArmor.obsidian_leggings, "obsidian_leggings");
+		InventoryItemRender(TechArmor.obsidian_boots, "obsidian_boots");
 	}
 	
 	public static void initItemHandRenders()
@@ -292,7 +296,7 @@ public class RenderHandler {
 		HandItemRender(TechTools.iron_spear, "iron_spear");
 		HandItemRender(TechTools.obsidian_spear, "obsidian_spear");
 		HandItemRender(TechTools.stone_spear, "stone_spear");
-		
+		// Armor
 		HandItemRender(TechArmor.stone_helmet, "stone_helmet");
 		HandItemRender(TechArmor.stone_chestplate, "stone_chestplate");
 		HandItemRender(TechArmor.stone_leggings, "stone_leggings");
@@ -321,6 +325,10 @@ public class RenderHandler {
 		HandItemRender(TechArmor.wither_chestplate, "wither_chestplate");
 		HandItemRender(TechArmor.wither_leggings, "wither_leggings");
 		HandItemRender(TechArmor.wither_boots, "wither_boots");
+		HandItemRender(TechArmor.obsidian_helmet, "obsidian_helmet");
+		HandItemRender(TechArmor.obsidian_chestplate, "obsidian_chestplate");
+		HandItemRender(TechArmor.obsidian_leggings, "obsidian_leggings");
+		HandItemRender(TechArmor.obsidian_boots, "obsidian_boots");
 	}
 	
 	public static void InventoryBlockRender(Block block, String blockName) {

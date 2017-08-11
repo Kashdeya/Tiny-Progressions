@@ -21,4 +21,5 @@ public class MaterialHandler {
 	public static final ArmorMaterial lavaArmorMaterial = EnumHelper.addArmorMaterial("lavaArmorMaterial", "tp:lava", 50, new int[] {5, 7, 8, 5}, 35, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 	public static final ArmorMaterial witherArmorMaterial = EnumHelper.addArmorMaterial("witherArmorMaterial", "tp:wither", 60, new int[]{5, 6, 8, 5}, 40, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 	public static final ArmorMaterial dragonArmorMaterial = EnumHelper.addArmorMaterial("dragonArmorMaterial", "tp:dragon", 200, new int[]{10, 10, 10, 10}, 75, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+	public static final ArmorMaterial obsidianArmorMaterial = EnumHelper.addArmorMaterial("obsidianArmorMaterial", "tp:obsidian", 45, new int[] {4, 5, 7, 4}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0);
 }

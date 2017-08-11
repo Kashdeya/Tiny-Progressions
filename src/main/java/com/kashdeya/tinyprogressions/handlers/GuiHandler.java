@@ -1,15 +1,14 @@
 package com.kashdeya.tinyprogressions.handlers;
 
+import com.kashdeya.tinyprogressions.capabilities.IStorage;
+import com.kashdeya.tinyprogressions.container.PouchContainer;
+import com.kashdeya.tinyprogressions.gui.PouchGui;
 import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.items.HoldingBag;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
 
 public class GuiHandler implements IGuiHandler
 {
@@ -19,16 +18,20 @@ public class GuiHandler implements IGuiHandler
         switch(ID)
         {
         case 0:
-            ItemStack heldItem = player.getHeldItemMainhand();
-            
-            if(heldItem == null || heldItem.isEmpty() || heldItem.getItem() != TechItems.holding_bag)
+            ItemStack item = player.getHeldItemMainhand();
+     
+            if(item == null)
                 return null;
-            
-            IItemHandler handler = (IItemHandler)heldItem.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
-            if(handler == null || handler.getClass() != HoldingBag.HoldingBagItemHandler.class)
+     
+            if(item.getItem() != TechItems.pouch)
                 return null;
-            
-            return new ContainerBagHolding(player, player.inventory.currentItem, (HoldingBag.HoldingBagItemHandler)handler, player.world.isRemote ? Side.CLIENT : Side.SERVER);
+     
+            IStorage storage = item.getCapability(IStorage.INSTANCE, null);
+     
+            if(storage == null)
+                return null;
+     
+            return new PouchContainer(storage, player);
         default:
             return null;
         }
@@ -40,16 +43,20 @@ public class GuiHandler implements IGuiHandler
         switch(ID)
         {
         case 0:
-            ItemStack heldItem = player.getHeldItemMainhand();
-            
-            if(heldItem == null || heldItem.isEmpty() || heldItem.getItem() != TechItems.holding_bag)
+            ItemStack item = player.getHeldItemMainhand();
+             
+            if(item == null)
                 return null;
-            
-            IItemHandler handler = (IItemHandler)heldItem.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
-            if(handler == null || handler.getClass() != HoldingBag.HoldingBagItemHandler.class)
+     
+            if(item.getItem() != TechItems.pouch)
                 return null;
-            
-            return new GuiBagHolding(new ContainerBagHolding(player, player.inventory.currentItem, (HoldingBag.HoldingBagItemHandler)handler, player.world.isRemote ? Side.CLIENT : Side.SERVER));
+     
+            IStorage storage = item.getCapability(IStorage.INSTANCE, null);
+     
+            if(storage == null)
+                return null;
+     
+            return new PouchGui(storage, player);
         default:
             return null;
         }

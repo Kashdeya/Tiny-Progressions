@@ -201,6 +201,9 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 2, 1, 64, "Sets the Lava Ore Vein Size.");
 		
+		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
+		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
+		
 		if (config.hasChanged())
         config.save();    
 	}

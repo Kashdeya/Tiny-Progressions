@@ -6,7 +6,7 @@ import java.util.Set;
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
-import com.kashdeya.tinyprogressions.items.HoldingBag;
+import com.kashdeya.tinyprogressions.items.Pouch;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
@@ -58,8 +58,8 @@ public class TechItems {
 	// Drops
 	public static Item wither_rib;
 	public static Item dragon_scale;
-	// Holding Bag
-	public static Item holding_bag;
+	// Pouch
+	public static Item pouch;
 	
 	public static void init() {
 
@@ -149,9 +149,11 @@ public class TechItems {
 			lava_crystal = new ItemBase().setUnlocalizedName("lava_crystal");
 			registerItem(lava_crystal, "lava_crystal");
 		}
-		
-		holding_bag = new HoldingBag().setUnlocalizedName("holding_bag");
-		registerItem(holding_bag, "holding_bag");
+		// Pouch
+		if (ConfigHandler.pouch) {
+		    pouch = new Pouch().setUnlocalizedName("pouch");
+		    registerItem(pouch, "pouch");
+		}
 	}
 
 	public static void registerItems(RegistryEvent.Register<Item> event) {

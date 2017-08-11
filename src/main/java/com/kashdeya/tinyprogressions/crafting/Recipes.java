@@ -52,6 +52,34 @@ public class Recipes
 			});
 		}
 		
+		if (ConfigHandler.obsidian_armor){
+			Recipes.addShapedRecipe("obsidian_helmet", new ItemStack(TechArmor.obsidian_helmet), new Object[] {
+					"sss",
+					"s s",
+						Character.valueOf('s'), "obsidian"
+			});
+			
+			Recipes.addShapedRecipe("obsidian_chestplate", new ItemStack(TechArmor.obsidian_chestplate), new Object[] {
+					"s s",
+					"sss",
+					"sss",
+						Character.valueOf('s'), "obsidian"
+			});
+			
+			Recipes.addShapedRecipe("obsidian_leggings", new ItemStack(TechArmor.obsidian_leggings), new Object[] {
+					"sss",
+					"s s",
+					"s s",
+						Character.valueOf('s'), "obsidian"
+			});
+			
+			Recipes.addShapedRecipe("obsidian_boots", new ItemStack(TechArmor.obsidian_boots), new Object[] {
+					"s s",
+					"s s",
+						Character.valueOf('s'), "obsidian"
+			});
+		}
+		
 		if (ConfigHandler.FlintArmor){
 			Recipes.addShapedRecipe("flint_helmet", new ItemStack(TechArmor.flint_helmet), new Object[] {
 					"fff",

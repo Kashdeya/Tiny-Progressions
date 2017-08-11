@@ -66,6 +66,11 @@ item.wooden_chestplate.name=Oak Chestplate
 item.wooden_leggings.name=Oak Leggings
 item.wooden_boots.name=Oak Boots
 
+item.obsidian_helmet.name=Obsidian Helmet
+item.obsidian_chestplate.name=Obsidian Chestplate
+item.obsidian_leggings.name=Obsidian Leggings
+item.obsidian_boots.name=Obsidian Boots
+
 #MISC
 item.mycelium_seeds.name=Mycelium Seed
 
@@ -269,8 +274,8 @@ item.lava_crystal.name=Lava Crystal
 
 #Lava Armor Tooltip
 tooltip.lavaarmor_1=When wearing full suit!
-tooltip.lavaarmor_2=Fire Resistance 2
-tooltip.lavaarmor_3=Resistance 2
+tooltip.lavaarmor_2=Fire Resistance
+tooltip.lavaarmor_3=Resistance
 
 #Wither Armor
 item.wither_helmet.name=Wither Helmet
@@ -290,14 +295,18 @@ item.wither_rib.name=Rib of the Wither
 
 #Wither Tooltips
 tooltip.witherarmor_1=Full set gives you
-tooltip.witherarmor_2=Strenght
+tooltip.witherarmor_2=Strength
 tooltip.witherarmor_3=Absorption
-tooltip.witherarmor_4=Resistance 4
-tooltip.witherarmor_5=Fire Resistance 4
+tooltip.witherarmor_4=Resistance
+tooltip.witherarmor_5=Fire Resistance
 
 #Dragon Tooltips
 tooltip.dragonarmor_1=Full set gives you Flight
-tooltip.dragonarmor_2=Strength 1
-tooltip.dragonarmor_3=Absorption 1
-tooltip.dragonarmor_4=Resistance 5
-tooltip.dragonarmor_5=Fire Resistance 5
+tooltip.dragonarmor_2=Strength
+tooltip.dragonarmor_3=Absorption
+tooltip.dragonarmor_4=Resistance
+tooltip.dragonarmor_5=Fire Resistance
+
+#Obsidian Tooltips
+tooltip.obsidianarmor_1=Full set gives you
+tooltip.obsidianarmor_2=Resistance

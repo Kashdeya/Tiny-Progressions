@@ -8,6 +8,7 @@ import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.DragonArmour;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
 import com.kashdeya.tinyprogressions.armor.LavaArmour;
+import com.kashdeya.tinyprogressions.armor.ObsidianArmor;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
 import com.kashdeya.tinyprogressions.armor.WitherArmour;
 import com.kashdeya.tinyprogressions.armor.WoodArmor;
@@ -66,6 +67,12 @@ public class TechArmor {
 	public static ItemArmor dragon_chestplate;
 	public static ItemArmor dragon_leggings;
 	public static ItemArmor dragon_boots;
+	
+	// Dragon
+	public static ItemArmor obsidian_helmet;
+	public static ItemArmor obsidian_chestplate;
+	public static ItemArmor obsidian_leggings;
+	public static ItemArmor obsidian_boots;
 	
 	public static void init(){
 		// Stone Armor
@@ -131,7 +138,7 @@ public class TechArmor {
 		// Wither
 		if (ConfigHandler.wither_armor){
 			wither_helmet = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("wither_helmet");
-		   	registerItem(lava_boots, "wither_helmet");
+		   	registerItem(wither_helmet, "wither_helmet");
 		   	wither_chestplate = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("wither_chestplate");
 		   	registerItem(wither_chestplate, "wither_chestplate");
 		   	wither_leggings = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("wither_leggings");
@@ -150,6 +157,18 @@ public class TechArmor {
 		   	registerItem(dragon_leggings, "dragon_leggings");
 		   	dragon_boots = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("dragon_boots");
 		   	registerItem(dragon_boots, "dragon_boots");
+		}
+		
+		// Dragon
+		if (ConfigHandler.obsidian_armor){
+			obsidian_helmet = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("obsidian_helmet");
+		   	registerItem(obsidian_helmet, "obsidian_helmet");
+		   	obsidian_chestplate = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("obsidian_chestplate");
+		   	registerItem(obsidian_chestplate, "obsidian_chestplate");
+		   	obsidian_leggings = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("obsidian_leggings");
+		   	registerItem(obsidian_leggings, "obsidian_leggings");
+		   	obsidian_boots = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("obsidian_boots");
+		   	registerItem(obsidian_boots, "obsidian_boots");
 		}
 	}
 	

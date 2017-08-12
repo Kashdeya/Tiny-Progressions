@@ -117,6 +117,7 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.redstone_apple, "redstone_apple");
 		InventoryItemRender(TechItems.dragon_scale, "dragon_scale");
 		InventoryItemRender(TechItems.wither_rib, "wither_rib");
+		InventoryItemRender(TechItems.pouch, "pouch");
 	}
 	
 	public static void initTools(){
@@ -237,6 +238,7 @@ public class RenderHandler {
 		HandItemRender(TechItems.redstone_apple, "redstone_apple");
 		HandItemRender(TechItems.dragon_scale, "dragon_scale");
 		HandItemRender(TechItems.wither_rib, "wither_rib");
+		HandItemRender(TechItems.pouch, "pouch");
 		
 		// Bone
 		HandItemRender(TechTools.bone_axe, "bone_axe");

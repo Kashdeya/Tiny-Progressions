@@ -151,7 +151,7 @@ public class TechItems {
 		}
 		// Pouch
 		if (ConfigHandler.pouch) {
-		    pouch = new Pouch().setUnlocalizedName("pouch");
+			pouch = new Pouch().setUnlocalizedName("pouch");
 		    registerItem(pouch, "pouch");
 		}
 	}

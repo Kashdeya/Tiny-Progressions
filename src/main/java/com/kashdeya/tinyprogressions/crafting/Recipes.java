@@ -1081,8 +1081,8 @@ public class Recipes
 		// Pouch
 		if (ConfigHandler.pouch) {
 		    Recipes.addShapedRecipe("pouch", new ItemStack(TechItems.pouch), new Object[] {
-		            "ssl",
 		            "lcl",
+		            "scs",
 		            "lll",
 		                Character.valueOf('s'), Items.STRING,
 		                Character.valueOf('l'), Items.LEATHER,

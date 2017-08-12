@@ -42,6 +42,11 @@ public class PouchContainer extends Container
         if(slotId == currentSlot)
             return ItemStack.EMPTY;
         
+        Slot slot = getSlot(slotId);
+        
+        if(!slot.getHasStack())
+            return ItemStack.EMPTY;
+        
         return super.slotClick(slotId, dragType, clickTypeIn, player);
     }
     

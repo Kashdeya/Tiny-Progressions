@@ -5,11 +5,13 @@ import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.Capability.IStorage;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import net.minecraftforge.items.CapabilityItemHandler;
 
 public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>, Capability.IStorage<IStorage>
 {
-    private final Storage instance;
+    private final InventoryStorage instance;
  
     public StorageProvider()
     {
@@ -23,13 +25,13 @@ public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>,
     
     public StorageProvider(String name, int inventorySize)
     {
-        instance = new Storage(name, inventorySize);
+        instance = new InventoryStorage(name, inventorySize);
     }
     
     @Override
     public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing)
     {
-        return capability == IStorage.INSTANCE;
+        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
     }
  
     @Override

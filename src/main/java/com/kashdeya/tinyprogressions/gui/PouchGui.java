@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.gui;
 
-import com.kashdeya.tinyprogressions.capabilities.IStorage;
+import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 import com.kashdeya.tinyprogressions.container.PouchContainer;
 
 import net.minecraft.client.Minecraft;
@@ -8,17 +8,18 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraftforge.items.IItemHandler;
 
 public class PouchGui extends GuiContainer
 {
     private final ResourceLocation texture = new ResourceLocation("minecraft", "textures/gui/container/generic_54.png");
     
-    private IStorage storage;
+    private InventoryStorage storage;
  
-    public PouchGui(IStorage storage, EntityPlayer player)
+    public PouchGui(InventoryStorage storage2, EntityPlayer player)
     {
-        super(new PouchContainer(storage, player));
-        this.storage = storage;
+        super(new PouchContainer(storage2, player));
+        this.storage = storage2;
         ySize = 222;
     }
  

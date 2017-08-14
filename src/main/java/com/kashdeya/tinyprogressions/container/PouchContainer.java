@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.container;
 
-import com.kashdeya.tinyprogressions.capabilities.IStorage;
+import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ClickType;
@@ -10,10 +10,10 @@ import net.minecraft.item.ItemStack;
 
 public class PouchContainer extends Container
 {
-    private final IStorage storage;
+    private final InventoryStorage storage;
     private final int currentSlot;
     
-    public PouchContainer(IStorage storage, EntityPlayer player)
+    public PouchContainer(InventoryStorage storage, EntityPlayer player)
     {
         this.storage = storage;
         currentSlot = player.inventory.currentItem;
@@ -76,7 +76,7 @@ public class PouchContainer extends Container
             //  The player's slots are added first, so are index 0-35.
             //  We clicked in the Player's Inventory, so try and move
             //  the Item into our Inventory.
-            if(!mergeItemStack(itemstack, 36, 36 + storage.getSizeInventory(), false))
+            if(!mergeItemStack(itemstack, 36, 36 + storage.getSlots(), false))
                 return ItemStack.EMPTY;
         }
  

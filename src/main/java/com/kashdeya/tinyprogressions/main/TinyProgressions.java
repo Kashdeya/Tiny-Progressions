@@ -2,9 +2,6 @@ package com.kashdeya.tinyprogressions.main;
 
 import java.util.Iterator;
 
-import com.kashdeya.tinyprogressions.capabilities.IStorage;
-import com.kashdeya.tinyprogressions.capabilities.Storage;
-import com.kashdeya.tinyprogressions.capabilities.StorageProvider;
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.crafting.Recipes;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
@@ -28,7 +25,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -84,8 +80,6 @@ public class TinyProgressions {
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
 		
-		// Capabilities
-		CapabilityManager.INSTANCE.register(IStorage.class, new StorageProvider(), Storage.class);
 	}
 
 	@EventHandler

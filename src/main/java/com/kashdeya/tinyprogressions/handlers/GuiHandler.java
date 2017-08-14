@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.handlers;
 
-import com.kashdeya.tinyprogressions.capabilities.IStorage;
+import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 import com.kashdeya.tinyprogressions.container.PouchContainer;
 import com.kashdeya.tinyprogressions.gui.PouchGui;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
+import net.minecraftforge.items.CapabilityItemHandler;
 
 public class GuiHandler implements IGuiHandler
 {
@@ -26,7 +27,7 @@ public class GuiHandler implements IGuiHandler
             if(item.getItem() != TechItems.pouch)
                 return null;
      
-            IStorage storage = item.getCapability(IStorage.INSTANCE, null);
+            InventoryStorage storage = (InventoryStorage) item.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
      
             if(storage == null)
                 return null;
@@ -51,7 +52,7 @@ public class GuiHandler implements IGuiHandler
             if(item.getItem() != TechItems.pouch)
                 return null;
      
-            IStorage storage = item.getCapability(IStorage.INSTANCE, null);
+            InventoryStorage storage = (InventoryStorage) item.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
      
             if(storage == null)
                 return null;

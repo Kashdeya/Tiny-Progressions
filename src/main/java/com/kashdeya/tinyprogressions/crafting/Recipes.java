@@ -557,7 +557,7 @@ public class Recipes
 						Character.valueOf('s'), "stickWood"
 			});
 		}
-		if (ConfigHandler.emerald_multi){
+		if (ConfigHandler.emerald_multi && ConfigHandler.emerald_axe && ConfigHandler.emerald_spade && ConfigHandler.emerald_pickaxe){
 			Recipes.addShapedRecipe("emerald_multi", new ItemStack(TechTools.emerald_multi), new Object[] {
 					"ASP",
 					" s ",
@@ -568,7 +568,7 @@ public class Recipes
 						Character.valueOf('s'), "stickWood"
 			});
 		}
-		if (ConfigHandler.obsidian_multi){
+		if (ConfigHandler.obsidian_multi && ConfigHandler.obsidian_axe && ConfigHandler.obsidian_spade && ConfigHandler.obsidian_pickaxe){
 			Recipes.addShapedRecipe("obsidian_multi", new ItemStack(TechTools.obsidian_multi), new Object[] {
 					"ASP",
 					" s ",

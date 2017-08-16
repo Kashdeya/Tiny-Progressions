@@ -854,7 +854,7 @@ public class Recipes
 						Character.valueOf('e'), Blocks.SEA_LANTERN
 			});
 		}
-		if (ConfigHandler.BlockGrowthUpgrade) {
+		if (ConfigHandler.BlockGrowthUpgrade && ConfigHandler.WateringCanUpgrade && ConfigHandler.BlockGrowth && ConfigHandler.NetherStarBlock) {
 			Recipes.addShapedRecipe("growth_upgrade", new ItemStack(TechBlocks.growth_upgrade), new Object[] {
 					"cwc",
 					"ses",
@@ -866,7 +866,7 @@ public class Recipes
 						Character.valueOf('n'), TechBlocks.netherstar_block
 			});
 		}
-		if (ConfigHandler.BlockGrowthUpgradeTwo) {
+		if (ConfigHandler.BlockGrowthUpgradeTwo && ConfigHandler.BlockGrowthUpgrade) {
 			Recipes.addShapelessRecipe("growth_upgrade_two", new ItemStack(TechBlocks.growth_upgrade_two), new Object[] {
 					TechBlocks.growth_upgrade, Blocks.DRAGON_EGG
 			});
@@ -892,7 +892,7 @@ public class Recipes
 						Character.valueOf('g'), "blockGlass"
 			});
 		}
-		if (ConfigHandler.IronCobblegen) {
+		if (ConfigHandler.IronCobblegen && ConfigHandler.Cobblegen) {
 			Recipes.addShapedRecipe("iron_cobblegen_block", new ItemStack(TechBlocks.iron_cobblegen_block), new Object[] {
 					"iii",
 					"igi",
@@ -901,7 +901,7 @@ public class Recipes
 						Character.valueOf('g'), TechBlocks.cobblegen_block
 			});
 		}
-		if (ConfigHandler.DiamondCobblegen) {
+		if (ConfigHandler.DiamondCobblegen && ConfigHandler.IronCobblegen) {
 			Recipes.addShapedRecipe("diamond_cobblegen_block", new ItemStack(TechBlocks.diamond_cobblegen_block), new Object[] {
 					"ddd",
 					"did",
@@ -910,7 +910,7 @@ public class Recipes
 						Character.valueOf('i'), TechBlocks.iron_cobblegen_block
 			});
 		}
-		if (ConfigHandler.BlazeCobblegen) {
+		if (ConfigHandler.BlazeCobblegen && ConfigHandler.DiamondCobblegen) {
 			Recipes.addShapedRecipe("blaze_cobblegen_block", new ItemStack(TechBlocks.blaze_cobblegen_block), new Object[] {
 					"bbb",
 					"bdb",
@@ -919,7 +919,7 @@ public class Recipes
 						Character.valueOf('d'), TechBlocks.diamond_cobblegen_block
 			});
 		}
-		if (ConfigHandler.EmeraldCobblegen) {
+		if (ConfigHandler.EmeraldCobblegen && ConfigHandler.BlazeCobblegen) {
 			Recipes.addShapedRecipe("emerald_cobblegen_block", new ItemStack(TechBlocks.emerald_cobblegen_block), new Object[] {
 					"eee",
 					"ebe",

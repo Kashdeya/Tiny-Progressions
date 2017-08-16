@@ -35,6 +35,8 @@ tile.flint_block.name=Compressed Flint Block
 #Tech Items
 item.watering_can.name=Watering Can
 item.watering_can_upgrade.name=Reinforced Watering Can
+item.watering_can.invalidusage=Cannot activate with more than 1 Watering Can in your inventory!
+
 item.quartz_dust.name=Quartz Enriched Iron Dust
 item.quartz_knife.name=Quartz Knife
 item.flint_ingot.name=Flint Ingot - [WIP]

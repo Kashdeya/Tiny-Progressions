@@ -24,6 +24,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
@@ -114,8 +115,33 @@ public class WateringCanBase extends Item
     {
         if(!world.isRemote && player.isSneaking())
         {
-            forceActive = !forceActive;
-            return EnumActionResult.FAIL;
+            int wateringcanCount = 0;
+            
+            for(int i = 0; i < player.inventory.getSizeInventory(); i++)
+            {
+                ItemStack itemstack = player.inventory.getStackInSlot(i);
+                
+                if(itemstack == ItemStack.EMPTY)
+                    continue;
+                
+                Item item = itemstack.getItem();
+                
+                if(item != TechItems.watering_can && item != TechItems.watering_can_upgrade)
+                    continue;
+                
+                wateringcanCount++;
+            }
+            
+            if(wateringcanCount <= 1)
+            {
+                if(wateringcanCount == 1)   // This should always be true given the above check (we should never get a count of 0)
+                    forceActive = !forceActive;
+                
+                return EnumActionResult.FAIL;
+            }
+            
+            forceActive = false;
+            player.sendMessage(new TextComponentTranslation("item.watering_can.invalidusage"));
         }
 
         if(!player.canPlayerEdit(pos.offset(facing), facing, player.getHeldItem(hand)))

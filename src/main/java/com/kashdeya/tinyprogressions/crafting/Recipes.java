@@ -332,7 +332,7 @@ public class Recipes
 			});
 		}
 		// Birthday
-	    if (ConfigHandler.BirthdayPickaxe){
+	    if (ConfigHandler.BirthdayPickaxe && ConfigHandler.ReinforcedObsidian){
 			ItemStack BirthdayPickaxe = new ItemStack(TechTools.birthday_pickaxe);
 			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 2);
 			
@@ -719,7 +719,7 @@ public class Recipes
 						Character.valueOf('w'), Items.WATER_BUCKET
 			});
 		}
-		if (ConfigHandler.WateringCanUpgrade) {
+		if (ConfigHandler.WateringCanUpgrade && ConfigHandler.WateringCan) {
 			Recipes.addShapedRecipe("watering_can_upgrade", new ItemStack(TechItems.watering_can_upgrade), new Object[] {
 					"on ",
 					"owo",

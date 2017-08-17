@@ -26,5 +26,6 @@ public class WateringCanUpgrade extends WateringCanBase {
     public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_1").getFormattedText());
 		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_2").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_3").getFormattedText());
 	}
 }

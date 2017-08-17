@@ -232,8 +232,10 @@ item.obsidian_sword.name=Obsidian Sword
 #Watering Cans Tooltips
 tooltip.can_1=Used to water things!
 tooltip.can_2=Waters a 3x3 area!
+tooltip.can_3=Shift+RightClick to activate!
 tooltip.canupgrade_1=A better way to water things!
 tooltip.canupgrade_2=Waters a 5x5 area!
+tooltip.canupgrade_3=Shift+RightClick to activate!
 
 #MultiTools
 item.wooden_multi.name=Wooden MultiTool

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.Pouch;
 import com.kashdeya.tinyprogressions.items.ItemBase;
@@ -42,6 +43,7 @@ public class TechItems {
 	public static Item iron_apple;
 	public static Item redstone_apple;
 	public static Item med_kit;
+	public static Item dead_reed;
 	// Stone Dust
 	public static Item stone_dust;
 	// Ingots
@@ -60,8 +62,52 @@ public class TechItems {
 	public static Item dragon_scale;
 	// Pouch
 	public static Item pouch;
+	// Juices
+	public static Item juicer;
+	public static Item apple_juice;
+	public static Item carrot_juice;
+	public static Item potatoe_juice;
+	public static Item beet_juice;
+	public static Item cactus_juice;
+	public static Item slime_juice;
+	public static Item wheat_juice;
+	public static Item melon_juice;
+	public static Item pumpkin_juice;
 	
 	public static void init() {
+		
+		// Juices
+		if (ConfigHandler.all_juices){
+			juicer = new ItemBase().setUnlocalizedName("juicer");
+			registerItem(juicer, "juicer");
+			
+			apple_juice = new DrinkBase(6, false).setUnlocalizedName("apple_juice");
+			registerItem(apple_juice, "apple_juice");
+			
+			carrot_juice = new DrinkBase(4, false).setUnlocalizedName("carrot_juice");
+			registerItem(carrot_juice, "carrot_juice");
+			
+			potatoe_juice = new DrinkBase(4, false).setUnlocalizedName("potatoe_juice");
+			registerItem(potatoe_juice, "potatoe_juice");
+			
+			beet_juice = new DrinkBase(3, false).setUnlocalizedName("beet_juice");
+			registerItem(beet_juice, "beet_juice");
+			
+			cactus_juice = new DrinkBase(4, false).setUnlocalizedName("cactus_juice");
+			registerItem(cactus_juice, "cactus_juice");
+			
+			slime_juice = new DrinkBase(2, false).setUnlocalizedName("slime_juice");
+			registerItem(slime_juice, "slime_juice");
+			
+			wheat_juice = new DrinkBase(2, false).setUnlocalizedName("wheat_juice");
+			registerItem(wheat_juice, "wheat_juice");
+			
+			melon_juice = new DrinkBase(4, false).setUnlocalizedName("melon_juice");
+			registerItem(melon_juice, "melon_juice");
+			
+			pumpkin_juice = new DrinkBase(4, false).setUnlocalizedName("pumpkin_juice");
+			registerItem(pumpkin_juice, "pumpkin_juice");
+		}
 
 		// Watering Cans
 		if (ConfigHandler.WateringCan) {
@@ -72,6 +118,7 @@ public class TechItems {
 			watering_can_upgrade = new WateringCanUpgrade();
 			registerItem(watering_can_upgrade, "watering_can_upgrade");
 		}
+		
 		// Quartz Items
 		if (ConfigHandler.QuartzKnife) {
 			quartz_knife = new QuartzKnife();
@@ -79,6 +126,7 @@ public class TechItems {
 			quartz_dust = new ItemBase().setUnlocalizedName("quartz_dust");
 			registerItem(quartz_dust, "quartz_dust");
 		}
+		
 	    // Drops
 	    if (ConfigHandler.dragon_armor){
 		    dragon_scale = new ItemBase().setUnlocalizedName("dragon_scale");
@@ -88,6 +136,7 @@ public class TechItems {
 		    wither_rib = new ItemBase().setUnlocalizedName("wither_rib");
 		    registerItem(wither_rib, "wither_rib");
 	    }
+	    
 		// Misc Items
 		if (ConfigHandler.StoneTorch) {
 			stone_stick = new ItemBase().setUnlocalizedName("stone_stick");
@@ -97,6 +146,12 @@ public class TechItems {
 			mycelium_seeds = new MyceliumSeeds();
 			registerItem(mycelium_seeds, "mycelium_seeds");
 		}
+		if (ConfigHandler.old_reed){
+	    	dead_reed = new ItemBase().setUnlocalizedName("dead_reed");
+		    registerItem(dead_reed, "dead_reed");
+	    }
+		
+		// Apples
 		if (ConfigHandler.DiamondApple) {
 			diamond_apple = new DiamondApple(4, 1.2F, false);
 			registerItem(diamond_apple, "diamond_apple");
@@ -117,15 +172,19 @@ public class TechItems {
 			golden_apple = new GoldenApple(4, 1.2F, false);
 			registerItem(golden_apple, "golden_apple");
 		}
+		
+		// Medkit
 		if (ConfigHandler.MedKit) {
 			med_kit = new MedKit();
 			registerItem(med_kit, "med_kit");
 		}
+		
 		// Stone Dust
 		if (ConfigHandler.StoneDust) {
 			stone_dust = new ItemBase().setUnlocalizedName("stone_dust");
 			registerItem(stone_dust, "stone_dust");
 		}
+		
 		// Ingot
 		if (ConfigHandler.FlintArmor) {
 			flint_ingot = new ItemBase().setUnlocalizedName("flint_ingot");
@@ -135,11 +194,13 @@ public class TechItems {
 			reinforced_obsidian_ingot = new ItemBase().setUnlocalizedName("reinforced_obsidian_ingot");
 			registerItem(reinforced_obsidian_ingot, "reinforced_obsidian_ingot");
 		}
+		
 		// Flint Knife
 		if (ConfigHandler.FlintKnife) {
 			flint_knife = new FlintKnife();
 			registerItem(flint_knife, "flint_knife");
 		}
+		
 		// Ender Dust
 		if (ConfigHandler.ender_ore) {
 			ender_dust = new ItemBase().setUnlocalizedName("ender_dust");
@@ -149,6 +210,7 @@ public class TechItems {
 			lava_crystal = new ItemBase().setUnlocalizedName("lava_crystal");
 			registerItem(lava_crystal, "lava_crystal");
 		}
+		
 		// Pouch
 		if (ConfigHandler.pouch) {
 			pouch = new Pouch().setUnlocalizedName("pouch");

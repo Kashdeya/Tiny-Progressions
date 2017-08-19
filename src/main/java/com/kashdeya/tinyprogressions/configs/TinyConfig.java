@@ -73,6 +73,8 @@ public class TinyConfig {
 		ConfigHandler.SmoothEndStone = config.getBoolean("Smooth EndStone", category + " Extra Stuff", true, "Enable Smooth EndStone?");
 		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE is Tinkers is installed.]");
 		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?\n[Do not ENABLE is Tinkers is installed.]");
+		ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", category + " Extra Stuff", true, "Enable Hardened Stone?");
+		ConfigHandler.old_reed = config.getBoolean("Dead Sugar Cane", category + " Extra Stuff", true, "Enable Dead Sugar Cane?");
 		
 		config.addCustomCategoryComment(category + " CUS", "Added for Can_U_Survive - If you enable please make a recipe for them, Other wise they do nothing.");
 		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", false, "Enable Flint Knife?");
@@ -195,14 +197,17 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 1, 64, "Sets the Ender Ore Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Lava Ore", "May also include Lava Armour!");
-		ConfigHandler.ender_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable  Lava Ore?");
-		ConfigHandler.ender_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 5, 1, 64, "Sets the Chance of Lava ore.");
-		ConfigHandler.ender_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 10, "Sets the min Y level.");
-		ConfigHandler.ender_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.ender_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 2, 1, 64, "Sets the Lava Ore Vein Size.");
+		ConfigHandler.lava_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable  Lava Ore?");
+		ConfigHandler.lava_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 5, 1, 64, "Sets the Chance of Lava ore.");
+		ConfigHandler.lava_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.lava_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.lava_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 2, 1, 64, "Sets the Lava Ore Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
+		
+		config.addCustomCategoryComment(category + " Juices", "Everyone loves juice!");
+		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices", category + " Juices", true, "Enable Juices?");
 		
 		if (config.hasChanged())
         config.save();    

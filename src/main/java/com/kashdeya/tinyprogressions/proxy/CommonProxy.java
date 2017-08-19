@@ -12,6 +12,7 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
 import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
+import com.kashdeya.tinyprogressions.world.PlantGen;
 import com.kashdeya.tinyprogressions.world.WorldGen;
 
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -44,6 +45,7 @@ public class CommonProxy {
     	
     	// Load WorldGeneration
     	GameRegistry.registerWorldGenerator(new WorldGen(), 0);
+    	GameRegistry.registerWorldGenerator(new PlantGen(), 0);
     	
     	// register messages from client to server
     	TinyProgressions.network = NetworkRegistry.INSTANCE.newSimpleChannel("network");

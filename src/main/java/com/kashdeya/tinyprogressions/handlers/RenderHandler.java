@@ -60,6 +60,10 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.stone_torch, "stone_torch");
 	    InventoryBlockRender(TechBlocks.ender_ore, "ender_ore");
 	    InventoryBlockRender(TechBlocks.lava_ore, "lava_ore");
+	    InventoryBlockRender(TechBlocks.hardened_stone, "hardened_stone");
+	    InventoryBlockRender(TechBlocks.hardened_stone_bricks, "hardened_stone_bricks");
+	    InventoryBlockRender(TechBlocks.hardened_stone_smallbricks, "hardened_stone_smallbricks");
+	    InventoryBlockRender(TechBlocks.old_reed, "old_reed");
 	}
 	
 	public static void initBlockRenders(){
@@ -94,30 +98,49 @@ public class RenderHandler {
 	    WorldBlockRender(TechBlocks.stone_torch);
 	    WorldBlockRender(TechBlocks.ender_ore);
 	    WorldBlockRender(TechBlocks.lava_ore);
+	    WorldBlockRender(TechBlocks.hardened_stone);
+	    WorldBlockRender(TechBlocks.hardened_stone_bricks);
+	    WorldBlockRender(TechBlocks.hardened_stone_smallbricks);
+	    WorldBlockRender(TechBlocks.old_reed);
 	}
 	
 	public static void initItems(){
+		// Watering Can
 		InventoryItemRender(TechItems.watering_can, "watering_can");
 		InventoryItemRender(TechItems.watering_can_upgrade, "watering_can_upgrade");
+		// Apples
+		InventoryItemRender(TechItems.iron_apple, "iron_apple");
+		InventoryItemRender(TechItems.redstone_apple, "redstone_apple");
+		InventoryItemRender(TechItems.diamond_apple, "diamond_apple");
+		InventoryItemRender(TechItems.emerald_apple, "emerald_apple");
+		InventoryItemRender(TechItems.golden_apple, "golden_apple");
+		// Juices
+		InventoryItemRender(TechItems.juicer, "juicer");
+		InventoryItemRender(TechItems.apple_juice, "apple_juice");
+		InventoryItemRender(TechItems.carrot_juice, "carrot_juice");
+		InventoryItemRender(TechItems.potatoe_juice, "potatoe_juice");
+		InventoryItemRender(TechItems.beet_juice, "beet_juice");
+		InventoryItemRender(TechItems.cactus_juice, "cactus_juice");
+		InventoryItemRender(TechItems.slime_juice, "slime_juice");
+		InventoryItemRender(TechItems.wheat_juice, "wheat_juice");
+		InventoryItemRender(TechItems.melon_juice, "melon_juice");
+		InventoryItemRender(TechItems.pumpkin_juice, "pumpkin_juice");
+		// Other Shit
 		InventoryItemRender(TechItems.quartz_dust, "quartz_dust");
 		InventoryItemRender(TechItems.quartz_knife, "quartz_knife");
 		InventoryItemRender(TechItems.mycelium_seeds, "mycelium_seeds");
-		InventoryItemRender(TechItems.diamond_apple, "diamond_apple");
-		InventoryItemRender(TechItems.emerald_apple, "emerald_apple");
 		InventoryItemRender(TechItems.med_kit, "med_kit");	
 		InventoryItemRender(TechItems.stone_dust, "stone_dust");
 		InventoryItemRender(TechItems.flint_ingot, "flint_ingot");
 		InventoryItemRender(TechItems.flint_knife, "flint_knife");
 		InventoryItemRender(TechItems.stone_stick, "stone_stick");
-		InventoryItemRender(TechItems.golden_apple, "golden_apple");
 		InventoryItemRender(TechItems.ender_dust, "ender_dust");
 		InventoryItemRender(TechItems.lava_crystal, "lava_crystal");
 		InventoryItemRender(TechItems.reinforced_obsidian_ingot, "reinforced_obsidian_ingot");
-		InventoryItemRender(TechItems.iron_apple, "iron_apple");
-		InventoryItemRender(TechItems.redstone_apple, "redstone_apple");
 		InventoryItemRender(TechItems.dragon_scale, "dragon_scale");
 		InventoryItemRender(TechItems.wither_rib, "wither_rib");
 		InventoryItemRender(TechItems.pouch, "pouch");
+		InventoryItemRender(TechItems.dead_reed, "dead_reed");
 	}
 	
 	public static void initTools(){
@@ -239,6 +262,19 @@ public class RenderHandler {
 		HandItemRender(TechItems.dragon_scale, "dragon_scale");
 		HandItemRender(TechItems.wither_rib, "wither_rib");
 		HandItemRender(TechItems.pouch, "pouch");
+		HandItemRender(TechItems.dead_reed, "dead_reed");
+		
+		// Juices
+		HandItemRender(TechItems.juicer, "juicer");
+		HandItemRender(TechItems.apple_juice, "apple_juice");
+		HandItemRender(TechItems.carrot_juice, "carrot_juice");
+		HandItemRender(TechItems.potatoe_juice, "potatoe_juice");
+		HandItemRender(TechItems.beet_juice, "beet_juice");
+		HandItemRender(TechItems.cactus_juice, "cactus_juice");
+		HandItemRender(TechItems.slime_juice, "slime_juice");
+		HandItemRender(TechItems.wheat_juice, "wheat_juice");
+		HandItemRender(TechItems.melon_juice, "melon_juice");
+		HandItemRender(TechItems.pumpkin_juice, "pumpkin_juice");
 		
 		// Bone
 		HandItemRender(TechTools.bone_axe, "bone_axe");

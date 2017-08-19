@@ -20,6 +20,10 @@ import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.HardenedStone;
+import com.kashdeya.tinyprogressions.blocks.decorations.HardenedStoneBricks;
+import com.kashdeya.tinyprogressions.blocks.decorations.HardenedStoneSmallBricks;
+import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.SmoothEndStone;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
@@ -58,6 +62,7 @@ public class TechBlocks {
 	public static Block diorite_brick;
 	public static Block granite_brick;
 	public static Block andesite_brick;
+	public static Block old_reed;
 	// Compressed Blocks
 	public static Block flesh_block;
 	public static Block bone_block;
@@ -71,6 +76,10 @@ public class TechBlocks {
 	public static Block ender_ore;
 	// Lava Crystals
 	public static Block lava_ore;
+	// Hardened Stone
+	public static Block hardened_stone;
+	public static Block hardened_stone_bricks;
+	public static Block hardened_stone_smallbricks;
 
 	public static void init() {
 
@@ -129,6 +138,19 @@ public class TechBlocks {
 			dirty_glass = new DirtyGlass();
 			registerBlock(dirty_glass, "dirty_glass", true);
 		}
+		if (ConfigHandler.hardened_stone) {
+			hardened_stone = new HardenedStone();
+			registerBlock(hardened_stone, "hardened_stone", true);
+			hardened_stone_bricks = new HardenedStoneBricks();
+			registerBlock(hardened_stone_bricks, "hardened_stone_bricks", true);
+			hardened_stone_smallbricks = new HardenedStoneSmallBricks();
+			registerBlock(hardened_stone_smallbricks, "hardened_stone_smallbricks", true);
+		}
+		if (ConfigHandler.old_reed) {
+			old_reed = new OldReed();
+			registerBlock(old_reed, "old_reed", true);
+		}
+		
 
 		// Compressed Blocks
 		if (ConfigHandler.FleshBlock) {

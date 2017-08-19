@@ -13,6 +13,7 @@ public class OreDictHandler {
 		OreDictionary.registerOre("flint", Items.FLINT);
 		OreDictionary.registerOre("blockGravel", Blocks.GRAVEL);
 		
+		OreDictionary.registerOre("juicer", TechItems.juicer);
 		OreDictionary.registerOre("blockCharcoal", TechBlocks.charcoal_block);
 		OreDictionary.registerOre("blockGlassDirty", TechBlocks.dirty_glass);
 		OreDictionary.registerOre("blockReinforcedGlass", TechBlocks.reinforced_glass);

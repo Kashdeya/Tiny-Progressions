@@ -24,6 +24,69 @@ public class Recipes
 {
 	public static void init()
 	{
+		if (ConfigHandler.all_juices){
+			Recipes.addShapedRecipe("juicer", new ItemStack(TechItems.juicer), new Object[] {
+					"l",
+					"s",
+						Character.valueOf('s'), "stone",
+						Character.valueOf('l'), Blocks.STONE_BUTTON
+			});
+			
+			Recipes.addShapedRecipe("apple_juice", new ItemStack(TechItems.apple_juice), new Object[] {
+					"ja",
+						Character.valueOf('j'), "juicer",
+						Character.valueOf('a'), Items.APPLE
+			});
+			
+			Recipes.addShapedRecipe("carrot_juice", new ItemStack(TechItems.carrot_juice), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Items.CARROT
+			});
+			
+			Recipes.addShapedRecipe("potatoe_juice", new ItemStack(TechItems.potatoe_juice), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Items.POTATO
+			});
+			
+			Recipes.addShapedRecipe("beet_juice", new ItemStack(TechItems.beet_juice), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Items.BEETROOT
+			});
+			
+			Recipes.addShapedRecipe("cactus_juice", new ItemStack(TechItems.cactus_juice, 2), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Blocks.CACTUS
+			});
+			
+			Recipes.addShapedRecipe("slime_juice", new ItemStack(TechItems.slime_juice), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Items.SLIME_BALL
+			});
+			
+			Recipes.addShapedRecipe("wheat_juice", new ItemStack(TechItems.wheat_juice), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Items.WHEAT
+			});
+			
+			Recipes.addShapedRecipe("melon_juice", new ItemStack(TechItems.melon_juice), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Items.MELON
+			});
+			
+			Recipes.addShapedRecipe("pumpkin_juice", new ItemStack(TechItems.pumpkin_juice, 2), new Object[] {
+					"ja",
+					Character.valueOf('j'), "juicer",
+					Character.valueOf('a'), Blocks.PUMPKIN
+			});
+		}
+		
 		if (ConfigHandler.StoneArmor){
 			Recipes.addShapedRecipe("stone_helmet", new ItemStack(TechArmor.stone_helmet), new Object[] {
 					"sss",
@@ -1078,6 +1141,20 @@ public class Recipes
 			});
 		}
 		
+		if (ConfigHandler.hardened_stone) {
+			GameRegistry.addSmelting(Blocks.STONE, new ItemStack(TechBlocks.hardened_stone), 1.0F);
+			Recipes.addShapedRecipe("hardened_stone_bricks", new ItemStack(TechBlocks.hardened_stone_bricks), new Object[] {
+		            "ss",
+		            "ss",
+		                Character.valueOf('s'), TechBlocks.hardened_stone
+		    });
+			Recipes.addShapedRecipe("hardened_stone_smallbricks", new ItemStack(TechBlocks.hardened_stone_smallbricks), new Object[] {
+		            "ss",
+		            "ss",
+		                Character.valueOf('s'), TechBlocks.hardened_stone_bricks
+		    });
+		}
+		
 		// Pouch
 		if (ConfigHandler.pouch) {
 		    Recipes.addShapedRecipe("pouch", new ItemStack(TechItems.pouch), new Object[] {
@@ -1089,12 +1166,20 @@ public class Recipes
 		                Character.valueOf('c'), Blocks.CHEST
 		    });
 		}
-
-		Recipes.addShapedRecipe("flint", new ItemStack(Items.FLINT), new Object[] {
-				"gg ",
-				"g  ",
-					Character.valueOf('g'), "blockGravel"
-		});
+		
+		if (ConfigHandler.FlintRecipe){
+			Recipes.addShapedRecipe("flint", new ItemStack(Items.FLINT), new Object[] {
+					"gg ",
+					"g  ",
+						Character.valueOf('g'), "blockGravel"
+			});
+		}
+		
+		if (ConfigHandler.old_reed) {
+			Recipes.addShapelessRecipe("sugar", new ItemStack(Items.SUGAR), new Object[] {
+					TechItems.dead_reed
+			});
+		}
 	}
 	
 	public static void addShapedRecipe(String name, ItemStack output, Object... inputs)

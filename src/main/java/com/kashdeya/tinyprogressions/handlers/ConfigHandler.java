@@ -16,11 +16,19 @@ public class ConfigHandler {
 	public static boolean BoneArmor = true;
 	public static boolean WoodArmor = true;
 	
-	// Iron Apple
-	public static boolean iron_apple = true;
+	// Hardened Stone
+	public static boolean hardened_stone = true;
 	
-	// Redstone Apple
+	// Juices
+	public static boolean all_juices = true;
+	
+	// Apples
+	public static boolean iron_apple = true;
 	public static boolean redstone_apple = true;
+	public static boolean NotchApple = true;
+	public static boolean ApplePro = true;
+	public static boolean DiamondApple = true;
+	public static boolean EmeraldApple = true;
 	
 	// Lava
 	public static boolean lava_ore = true;
@@ -71,6 +79,7 @@ public class ConfigHandler {
 	public static boolean DioriteBrick = true;
 	public static boolean GraniteBrick = true;
 	public static boolean SmoothEndStone = true;
+	public static boolean old_reed = true;
 	
 	// Reinforced Blocks
 	public static boolean ReinforcedGlass = true;
@@ -79,12 +88,6 @@ public class ConfigHandler {
 	// Compressed Blocks
 	public static boolean FleshBlock = true;
 	public static boolean NetherStarBlock = true;
-	
-	// Notch Apple
-	public static boolean NotchApple = true;
-	
-	// Golden Apple Progression
-	public static boolean ApplePro = true;
 	
 	// Drops
 	public static boolean BoneDrops = true;
@@ -100,8 +103,8 @@ public class ConfigHandler {
 	// MISC
 	public static boolean AllowRightClick = true;
 	public static boolean MyceliumSeeds = true;
-	public static boolean DiamondApple = true;
-	public static boolean EmeraldApple = true;
+	
+	// Medkit
 	public static boolean MedKit = true;
 	public static int healDuration = 300;
 	

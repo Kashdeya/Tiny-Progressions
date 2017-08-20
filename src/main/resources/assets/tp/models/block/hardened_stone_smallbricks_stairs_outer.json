@@ -1,5 +1,5 @@
 {
-    "parent": "block/inner_stairs_outer",
+    "parent": "block/outer_stairs",
     "textures": {
         "bottom": "tp:blocks/hardened_stone_smallbricks",
         "top": "tp:blocks/hardened_stone_smallbricks",

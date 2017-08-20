@@ -139,27 +139,27 @@ public class Recipes
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.flint_helmet), new Object[] {
 					"fff",
 					"f f",
-						Character.valueOf('f'), "ingotFlint"
+						Character.valueOf('f'), "flint"
 			});
 			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.flint_chestplate), new Object[] {
 					"f f",
 					"fff",
 					"fff",
-						Character.valueOf('f'), "ingotFlint"
+						Character.valueOf('f'), "flint"
 			});
 			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.flint_leggings), new Object[] {
 					"fff",
 					"f f",
 					"f f",
-						Character.valueOf('f'), "ingotFlint"
+						Character.valueOf('f'), "flint"
 			});
 			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.flint_boots), new Object[] {
 					"f f",
 					"f f",
-						Character.valueOf('f'), "ingotFlint"
+						Character.valueOf('f'), "flint"
 			});
 		}
 		
@@ -1077,7 +1077,7 @@ public class Recipes
 						Character.valueOf('s'), "stoneDioritePolished"
 			});
 			
-			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 1, 4), new Object[] {
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 4, 4), new Object[] {
 					TechBlocks.diorite_brick
 			});
 		}
@@ -1088,7 +1088,7 @@ public class Recipes
 						Character.valueOf('s'), "stoneGranitePolished"
 			});
 			
-			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 1, 2), new Object[] {
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 4, 2), new Object[] {
 					TechBlocks.granite_brick
 			});
 		}
@@ -1099,7 +1099,7 @@ public class Recipes
 						Character.valueOf('s'), "stoneAndesitePolished"
 			});
 			
-			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 1, 6), new Object[] {
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.STONE, 4, 6), new Object[] {
 					TechBlocks.andesite_brick
 			});
 		}

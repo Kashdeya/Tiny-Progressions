@@ -347,3 +347,6 @@ tooltip.obsidianarmor_2=Resistance
 
 #Pouch
 item.pouch.name=Big Pouch
+
+#Angel Block
+tile.angel_block.name=Floaty McFloaty Block

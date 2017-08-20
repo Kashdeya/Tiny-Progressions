@@ -9,6 +9,7 @@ import com.kashdeya.tinyprogressions.blocks.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.LavaOre;
 import com.kashdeya.tinyprogressions.blocks.Slabs;
 import com.kashdeya.tinyprogressions.blocks.Stairs;
+import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.BlazeCobblegen;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.Cobblegen;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.DiamondCobblegen;
@@ -34,10 +35,13 @@ import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.items.block.AngelItemBlock;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemSlab;
@@ -97,7 +101,9 @@ public class TechBlocks {
 	
 	public static Block hardened_stone_smallbricks_slab_half;
     public static Block hardened_stone_smallbricks_slab_double;
-
+    // Angel
+    public static Block angel_block;
+    
 	public static void init() {
 
 		// Tech Blocks
@@ -239,6 +245,12 @@ public class TechBlocks {
 		if (ConfigHandler.lava_ore) {
 			lava_ore = new LavaOre();
 			registerBlock(lava_ore, "lava_ore", true);
+		}
+		
+		if(ConfigHandler.angel_block) {
+			angel_block = new StandardBlock(Material.ROCK).setUnlocalName("angel_block")
+					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0).setHardness(25F).setResistance(1000F);
+			registerBlock(angel_block, "angel_block", new AngelItemBlock(angel_block));
 		}
 	}
 

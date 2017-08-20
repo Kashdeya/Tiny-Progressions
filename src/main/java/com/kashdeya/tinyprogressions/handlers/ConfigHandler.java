@@ -186,6 +186,9 @@ public class ConfigHandler {
 	// Pouch
 	public static boolean pouch = true;
 	
+	// Angel Block
+	public static boolean angel_block = true;
+	
 	public static boolean parse(String key)
 	{
 		Object value = false;

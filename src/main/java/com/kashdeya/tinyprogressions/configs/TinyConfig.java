@@ -206,6 +206,9 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
 		
+		config.addCustomCategoryComment(category + " Angel Block", "May save you from certain death!");
+		ConfigHandler.angel_block = config.getBoolean("Angel Block", category + " Angel Block", true, "Enable Angel Block?");
+		
 		config.addCustomCategoryComment(category + " Juices", "Everyone loves juice!");
 		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices", category + " Juices", true, "Enable Juices?");
 		

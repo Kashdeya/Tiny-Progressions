@@ -7,6 +7,8 @@ import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.LavaOre;
+import com.kashdeya.tinyprogressions.blocks.Slabs;
+import com.kashdeya.tinyprogressions.blocks.Stairs;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.BlazeCobblegen;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.Cobblegen;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.DiamondCobblegen;
@@ -35,8 +37,10 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 
@@ -80,6 +84,19 @@ public class TechBlocks {
 	public static Block hardened_stone;
 	public static Block hardened_stone_bricks;
 	public static Block hardened_stone_smallbricks;
+	
+	public static Block hardened_stone_stairs;
+	public static Block hardened_stone_bricks_stairs;
+	public static Block hardened_stone_smallbricks_stairs;
+	
+	public static Block hardened_stone_slab_half;
+	public static Block hardened_stone_slab_double;
+	
+	public static Block hardened_stone_bricks_slab_half;
+	public static Block hardened_stone_bricks_slab_double;
+	
+	public static Block hardened_stone_smallbricks_slab_half;
+    public static Block hardened_stone_smallbricks_slab_double;
 
 	public static void init() {
 
@@ -145,6 +162,30 @@ public class TechBlocks {
 			registerBlock(hardened_stone_bricks, "hardened_stone_bricks", true);
 			hardened_stone_smallbricks = new HardenedStoneSmallBricks();
 			registerBlock(hardened_stone_smallbricks, "hardened_stone_smallbricks", true);
+			
+			hardened_stone_stairs = new Stairs(hardened_stone).setUnlocalizedName("hardened_stone_stairs");
+			registerBlock(hardened_stone_stairs, "hardened_stone_stairs", true);
+			
+            hardened_stone_bricks_stairs = new Stairs(hardened_stone_bricks).setUnlocalizedName("hardened_stone_bricks_stairs");
+            registerBlock(hardened_stone_bricks_stairs, "hardened_stone_bricks_stairs", true);
+            
+            hardened_stone_smallbricks_stairs = new Stairs(hardened_stone_smallbricks).setUnlocalizedName("hardened_stone_smallbricks_stairs");
+            registerBlock(hardened_stone_smallbricks_stairs, "hardened_stone_smallbricks_stairs", true);
+            
+            hardened_stone_slab_half = new Slabs(false).setUnlocalizedName("hardened_stone_slab_half");
+            hardened_stone_slab_double = new Slabs(true).setDropped(hardened_stone_slab_half).setUnlocalizedName("hardened_stone_slab_double");
+            registerBlock(hardened_stone_slab_half, "hardened_stone_slab_half", new ItemSlab(hardened_stone_slab_half, (BlockSlab)hardened_stone_slab_half, (BlockSlab)hardened_stone_slab_double));
+            registerBlock(hardened_stone_slab_double, "hardened_stone_slab_double", true);
+            
+            hardened_stone_bricks_slab_half = new Slabs(false).setUnlocalizedName("hardened_stone_bricks_slab_half");
+            hardened_stone_bricks_slab_double = new Slabs(true).setDropped(hardened_stone_bricks_slab_half).setUnlocalizedName("hardened_stone_bricks_slab_double");
+            registerBlock(hardened_stone_bricks_slab_half, "hardened_stone_bricks_slab_half", new ItemSlab(hardened_stone_bricks_slab_half, (BlockSlab)hardened_stone_bricks_slab_half, (BlockSlab)hardened_stone_bricks_slab_double));
+            registerBlock(hardened_stone_bricks_slab_double, "hardened_stone_bricks_slab_double", true);
+            
+            hardened_stone_smallbricks_slab_half = new Slabs(false).setUnlocalizedName("hardened_stone_smallbricks_slab_half");
+            hardened_stone_smallbricks_slab_double = new Slabs(true).setDropped(hardened_stone_smallbricks_slab_half).setUnlocalizedName("hardened_stone_smallbricks_slab_double");
+            registerBlock(hardened_stone_smallbricks_slab_half, "hardened_stone_smallbricks_slab_half", new ItemSlab(hardened_stone_smallbricks_slab_half, (BlockSlab)hardened_stone_smallbricks_slab_half, (BlockSlab)hardened_stone_smallbricks_slab_double));
+            registerBlock(hardened_stone_smallbricks_slab_double, "hardened_stone_smallbricks_slab_double", true);
 		}
 		if (ConfigHandler.old_reed) {
 			old_reed = new OldReed();
@@ -218,12 +259,17 @@ public class TechBlocks {
 	}
 
 	public static void registerBlock(Block block, String name, boolean itemblock) {
-		block.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
-		blocks.add(block);
-
-		if (itemblock) {
-			itemblocks.add((ItemBlock) new ItemBlock(block).setRegistryName(block.getRegistryName()));
-		}
+	    registerBlock(block, name, itemblock ? new ItemBlock(block) : null);
 	}
+	
+	public static void registerBlock(Block block, String name, ItemBlock itemblock) {
+        block.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
+        blocks.add(block);
+
+        if (itemblock != null) {
+            itemblock.setRegistryName(block.getRegistryName());
+            itemblocks.add(itemblock);
+        }
+    }
 
 }

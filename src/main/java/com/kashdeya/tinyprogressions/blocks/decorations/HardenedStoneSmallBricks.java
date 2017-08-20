@@ -24,7 +24,7 @@ public class HardenedStoneSmallBricks extends Block {
         this.setResistance(1750.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("hardened_stone_bricks");
+        this.setUnlocalizedName("hardened_stone_smallbricks");
     }
 	
 	/**
@@ -33,7 +33,7 @@ public class HardenedStoneSmallBricks extends Block {
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.hardened_stone_bricks);
+        return Item.getItemFromBlock(TechBlocks.hardened_stone_smallbricks);
     }
 	
     /**
@@ -48,7 +48,7 @@ public class HardenedStoneSmallBricks extends Block {
     {
         if (entity instanceof net.minecraft.entity.boss.EntityDragon)
         {
-            return this != TechBlocks.hardened_stone_bricks;
+            return this != TechBlocks.hardened_stone_smallbricks;
         }
         else if ((entity instanceof net.minecraft.entity.boss.EntityWither) ||
                  (entity instanceof net.minecraft.entity.projectile.EntityWitherSkull))

@@ -9,9 +9,9 @@ import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class PlantGen implements IWorldGenerator{
@@ -24,7 +24,10 @@ public class PlantGen implements IWorldGenerator{
         final Biome biome = world.getBiomeForCoordsBody(new BlockPos(x, 0, z));
         final BlockPos blockPos = world.getHeight(new BlockPos(x, 0, z));
         
-        if (ConfigHandler.old_reed && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY)) || (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MESA) || (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA)))) {
+        if(biome.getTempCategory() != TempCategory.WARM)
+            return;
+        
+        if (ConfigHandler.old_reed) {
         	generatePlant(TechBlocks.old_reed, world, blockPos);
         }
     }

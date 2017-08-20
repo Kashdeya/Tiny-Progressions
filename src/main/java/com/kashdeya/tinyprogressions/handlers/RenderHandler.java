@@ -64,6 +64,19 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.hardened_stone_bricks, "hardened_stone_bricks");
 	    InventoryBlockRender(TechBlocks.hardened_stone_smallbricks, "hardened_stone_smallbricks");
 	    InventoryBlockRender(TechBlocks.old_reed, "old_reed");
+	    
+	    InventoryBlockRender(TechBlocks.hardened_stone_stairs, "hardened_stone_stairs");
+	    InventoryBlockRender(TechBlocks.hardened_stone_bricks_stairs, "hardened_stone_bricks_stairs");
+	    InventoryBlockRender(TechBlocks.hardened_stone_smallbricks_stairs, "hardened_stone_smallbricks_stairs");
+	    
+	    InventoryBlockRender(TechBlocks.hardened_stone_slab_half, "hardened_stone_slab_half");
+	    InventoryBlockRender(TechBlocks.hardened_stone_slab_double, "hardened_stone_slab_double");
+	    
+	    InventoryBlockRender(TechBlocks.hardened_stone_bricks_slab_half, "hardened_stone_bricks_slab_half");
+        InventoryBlockRender(TechBlocks.hardened_stone_bricks_slab_double, "hardened_stone_bricks_slab_double");
+	        
+        InventoryBlockRender(TechBlocks.hardened_stone_smallbricks_slab_half, "hardened_stone_smallbricks_slab_half");
+        InventoryBlockRender(TechBlocks.hardened_stone_smallbricks_slab_double, "hardened_stone_smallbricks_slab_double");
 	}
 	
 	public static void initBlockRenders(){
@@ -102,6 +115,19 @@ public class RenderHandler {
 	    WorldBlockRender(TechBlocks.hardened_stone_bricks);
 	    WorldBlockRender(TechBlocks.hardened_stone_smallbricks);
 	    WorldBlockRender(TechBlocks.old_reed);
+	    
+	    WorldBlockRender(TechBlocks.hardened_stone_stairs);
+	    WorldBlockRender(TechBlocks.hardened_stone_bricks_stairs);
+        WorldBlockRender(TechBlocks.hardened_stone_smallbricks_stairs);
+        
+        WorldBlockRender(TechBlocks.hardened_stone_slab_half);
+        WorldBlockRender(TechBlocks.hardened_stone_slab_double);  
+        
+        WorldBlockRender(TechBlocks.hardened_stone_bricks_slab_half);
+        WorldBlockRender(TechBlocks.hardened_stone_bricks_slab_double);  
+        
+        WorldBlockRender(TechBlocks.hardened_stone_smallbricks_slab_half);
+        WorldBlockRender(TechBlocks.hardened_stone_smallbricks_slab_double);  
 	}
 	
 	public static void initItems(){

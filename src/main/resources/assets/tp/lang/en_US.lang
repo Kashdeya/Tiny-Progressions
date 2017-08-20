@@ -25,6 +25,17 @@ tile.hardened_stone.name=Hardened Stone
 tile.hardened_stone_bricks.name=Hardened Stone Bricks
 tile.hardened_stone_smallbricks.name=Hardened Stone Small Bricks
 
+tile.hardened_stone_stairs.name=Hardened Stone Stairs
+tile.hardened_stone_smallbricks_stairs.name=Hardened Stone Small Bricks Stairs
+tile.hardened_stone_bricks_stairs.name=Hardened Stone Bricks Stairs
+
+tile.hardened_stone_slab_half.name=Hardened Stone Slab
+tile.hardened_stone_slab_double.name=Hardened Stone Slab
+tile.hardened_stone_bricks_slab_half.name=Hardened Stone Bricks Slab
+tile.hardened_stone_bricks_slab_double.name=Hardened Stone Bricks Slab
+tile.hardened_stone_smallbricks_slab_half.name=Hardened Stone Small Bricks Slab
+tile.hardened_stone_smallbricks_slab_double.name=Hardened Stone Small Bricks Slab
+
 #Stone Torch
 tile.stone_torch.name=Stone Torch
 item.stone_stick.name=Stone Stick

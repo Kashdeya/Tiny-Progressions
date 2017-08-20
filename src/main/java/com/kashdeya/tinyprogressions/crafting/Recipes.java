@@ -1145,6 +1145,37 @@ public class Recipes
 		            "ss",
 		                Character.valueOf('s'), TechBlocks.hardened_stone_bricks
 		    });
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_stairs, 4), new Object[] {
+			        "  s",
+			        " ss",
+			        "sss",
+			            Character.valueOf('s'), TechBlocks.hardened_stone
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks_stairs, 4), new Object[] {
+                    "  s",
+                    " ss",
+                    "sss",
+                        Character.valueOf('s'), TechBlocks.hardened_stone_bricks
+            });
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks_stairs, 4), new Object[] {
+                    "  s",
+                    " ss",
+                    "sss",
+                        Character.valueOf('s'), TechBlocks.hardened_stone_smallbricks
+            });
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_slab_half, 6), new Object[] {
+			  "sss",
+			      Character.valueOf('s'), TechBlocks.hardened_stone
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks_slab_half, 6), new Object[] {
+		              "sss",
+		                  Character.valueOf('s'), TechBlocks.hardened_stone_bricks
+		            });
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks_slab_half, 6), new Object[] {
+		              "sss",
+		                  Character.valueOf('s'), TechBlocks.hardened_stone_smallbricks
+		            });
 		}
 		
 		// Pouch

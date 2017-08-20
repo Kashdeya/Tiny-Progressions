@@ -1,0 +1,7 @@
+{
+    "variants": {
+    	"normal": {"model": "tp:hardened_stone"},
+        "half=bottom": {"model": "tp:hardened_stone"},
+        "half=top": {"model": "tp:hardened_stone"}
+    }
+}

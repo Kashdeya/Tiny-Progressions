@@ -1203,5 +1203,15 @@ public class Recipes
 					TechItems.dead_reed
 			});
 		}
+		
+		if (ConfigHandler.angel_block) {
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.fmf_block), new Object[] {
+		            "ifi",
+		            "f f",
+		            "ifi",
+		                Character.valueOf('i'), "ingotIron",
+		                Character.valueOf('f'), "feather"
+		    });
+		}
 	}
 }

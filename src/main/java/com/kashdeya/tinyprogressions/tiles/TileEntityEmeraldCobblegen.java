@@ -36,7 +36,7 @@ public class TileEntityEmeraldCobblegen extends TileEntityCobblegen {
 		if (cycle >= 1) {
 			cycle = 0;
 
-			if (stack == null)
+			if (stack == ItemStack.EMPTY)
 				stack = new ItemStack(Blocks.COBBLESTONE);
 			else
 				stack.setCount(Math.min(64, stack.getCount() + 1));
@@ -47,11 +47,11 @@ public class TileEntityEmeraldCobblegen extends TileEntityCobblegen {
 			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
 				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
 
-				if (getStackInSlot(0) != null) {
+				if (getStackInSlot(0) != ItemStack.EMPTY) {
 					ItemStack stack = getStackInSlot(0).copy();
 					stack.setCount(1);
 					ItemStack stack1 = ItemHandlerHelper.insertItem(handler, stack, true);
-					if (stack1 == null || stack1.getCount() == 0) {
+					if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0) {
 						ItemHandlerHelper.insertItem(handler, this.decrStackSize(0, 1), false);
 						markDirty();
 					}
@@ -63,10 +63,10 @@ public class TileEntityEmeraldCobblegen extends TileEntityCobblegen {
 				if (isInventoryFull(iinventory, EnumFacing.UP)) {
 					return;
 				} else {
-					if (getStackInSlot(0) != null) {
+					if (getStackInSlot(0) != ItemStack.EMPTY) {
 						ItemStack stack = getStackInSlot(0).copy();
 						ItemStack stack1 = putStackInInventoryAllSlots(iinventory, decrStackSize(0, 1), EnumFacing.UP);
-						if (stack1 == null || stack1.getCount() == 0)
+						if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0)
 							iinventory.markDirty();
 						else
 							setInventorySlotContents(0, stack);

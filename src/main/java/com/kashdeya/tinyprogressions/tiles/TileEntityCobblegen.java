@@ -23,7 +23,7 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 
 public class TileEntityCobblegen extends TileEntity implements ISidedInventory, ITickable
 {
-	ItemStack stack = null;
+	ItemStack stack = ItemStack.EMPTY;
 	int cycle = 0;
 	
 	@Override
@@ -41,13 +41,13 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 	@Override
 	public ItemStack decrStackSize(int index, int count)
 	{
-		if(stack != null && stack.getCount() > count)
+		if(stack != ItemStack.EMPTY && stack.getCount() > count)
 		{
 			return stack.splitStack(count);
 		} else
 		{
 			ItemStack tmp = stack;
-			stack = null;
+			stack = ItemStack.EMPTY;
 			return tmp;
 		}
 	}
@@ -58,11 +58,11 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 		if(index == 0)
 		{
 			ItemStack tmp = stack;
-			stack = null;
+			stack = ItemStack.EMPTY;
 			return tmp;
 		} else
 		{
-			return null;
+			return ItemStack.EMPTY;
 		}
 	}
 	
@@ -101,7 +101,7 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack)
 	{
-		return index == 0 && stack != null && stack.getItem() == Item.getItemFromBlock(Blocks.COBBLESTONE);
+		return index == 0 && stack != ItemStack.EMPTY && stack.getItem() == Item.getItemFromBlock(Blocks.COBBLESTONE);
 	}
 
 	@Override
@@ -124,7 +124,7 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 	@Override
 	public void clear()
 	{
-		stack = null;
+		stack = ItemStack.EMPTY;
 	}
 
 	@Override
@@ -160,7 +160,7 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 	@Override
 	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction)
 	{
-		return index == 0 && stack != null && stack.getItem() == Item.getItemFromBlock(Blocks.COBBLESTONE);
+		return index == 0 && stack != ItemStack.EMPTY && stack.getItem() == Item.getItemFromBlock(Blocks.COBBLESTONE);
 	}
 
 	@Override
@@ -175,7 +175,7 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 		{
 			cycle = 0;
 			
-			if(stack == null)
+			if(stack == ItemStack.EMPTY)
 			{
 				stack = new ItemStack(Blocks.COBBLESTONE);
 			} else
@@ -189,11 +189,11 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
 				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
 
-				if (getStackInSlot(0) != null) {
+				if (getStackInSlot(0) != ItemStack.EMPTY) {
 					ItemStack stack = getStackInSlot(0).copy();
 					stack.setCount(1);
 					ItemStack stack1 = ItemHandlerHelper.insertItem(handler, stack, true);
-					if (stack1 == null || stack1.getCount() == 0) {
+					if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0) {
 						ItemHandlerHelper.insertItem(handler, this.decrStackSize(0, 1), false);
 						markDirty();
 					}
@@ -203,12 +203,13 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 			else if (tile instanceof IInventory) {
 				IInventory iinventory = (IInventory) tile;
 				if (isInventoryFull(iinventory, EnumFacing.UP)) {
+					System.out.println("Full");
 					return;
 				} else {
-					if (getStackInSlot(0) != null) {
+					if (getStackInSlot(0) != ItemStack.EMPTY) {
 						ItemStack stack = getStackInSlot(0).copy();
 						ItemStack stack1 = putStackInInventoryAllSlots(iinventory, decrStackSize(0, 1), EnumFacing.UP);
-						if (stack1 == null || stack1.getCount() == 0)
+						if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0)
 							iinventory.markDirty();
 						else
 							setInventorySlotContents(0, stack);
@@ -227,7 +228,7 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 			for (int k : aint) {
 				ItemStack itemstack1 = isidedinventory.getStackInSlot(k);
 
-				if (itemstack1 == null || itemstack1.getCount() != itemstack1.getMaxStackSize())
+				if (itemstack1 == ItemStack.EMPTY || itemstack1.getCount() != itemstack1.getMaxStackSize())
 					return false;
 			}
 		} else {
@@ -236,7 +237,7 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 			for (int j = 0; j < i; ++j) {
 				ItemStack itemstack = inventoryIn.getStackInSlot(j);
 
-				if (itemstack == null || itemstack.getCount() != itemstack.getMaxStackSize())
+				if (itemstack == ItemStack.EMPTY || itemstack.getCount() != itemstack.getMaxStackSize())
 					return false;
 			}
 		}
@@ -250,17 +251,17 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
 			int[] aint = isidedinventory.getSlotsForFace(side);
 
-			for (int k = 0; k < aint.length && stack != null && stack.getCount() > 0; ++k)
+			for (int k = 0; k < aint.length && stack != ItemStack.EMPTY && stack.getCount() > 0; ++k)
 				stack = insertStack(inventoryIn, stack, aint[k], side);
 		} else {
 			int i = inventoryIn.getSizeInventory();
 
-			for (int j = 0; j < i && stack != null && stack.getCount() > 0; ++j)
+			for (int j = 0; j < i && stack != ItemStack.EMPTY && stack.getCount() > 0; ++j)
 				stack = insertStack(inventoryIn, stack, j, side);
 		}
 
-		if (stack != null && stack.getCount() == 0)
-			stack = null;
+		if (stack != ItemStack.EMPTY && stack.getCount() == 0)
+			stack = ItemStack.EMPTY;
 
 		return stack;
 	}
@@ -269,12 +270,12 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 		ItemStack itemstack = inventoryIn.getStackInSlot(index);
 
 		if (canInsertItemInSlot(inventoryIn, stack, index, side)) {
-			if (itemstack == null) {
+			if (itemstack == ItemStack.EMPTY) {
 				// Forge: BUGFIX: Again, make things respect max stack sizes.
 				int max = Math.min(stack.getMaxStackSize(), inventoryIn.getInventoryStackLimit());
 				if (max >= stack.getCount()) {
 					inventoryIn.setInventorySlotContents(index, stack);
-					stack = null;
+					stack = ItemStack.EMPTY;
 				} else
 					inventoryIn.setInventorySlotContents(index, stack.splitStack(max));
 

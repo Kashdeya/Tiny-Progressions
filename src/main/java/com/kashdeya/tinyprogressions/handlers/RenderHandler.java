@@ -78,7 +78,7 @@ public class RenderHandler {
         InventoryBlockRender(TechBlocks.hardened_stone_smallbricks_slab_half, "hardened_stone_smallbricks_slab_half");
         InventoryBlockRender(TechBlocks.hardened_stone_smallbricks_slab_double, "hardened_stone_smallbricks_slab_double");
         
-        InventoryBlockRender(TechBlocks.angel_block, "angel_block");
+        InventoryBlockRender(TechBlocks.fmf_block, "fmf_block");
 	}
 	
 	public static void initBlockRenders(){
@@ -131,7 +131,7 @@ public class RenderHandler {
         WorldBlockRender(TechBlocks.hardened_stone_smallbricks_slab_half);
         WorldBlockRender(TechBlocks.hardened_stone_smallbricks_slab_double);  
         
-        WorldBlockRender(TechBlocks.angel_block);
+        WorldBlockRender(TechBlocks.fmf_block);
 	}
 	
 	public static void initItems(){

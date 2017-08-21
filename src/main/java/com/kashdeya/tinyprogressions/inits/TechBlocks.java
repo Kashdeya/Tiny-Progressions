@@ -102,7 +102,7 @@ public class TechBlocks {
 	public static Block hardened_stone_smallbricks_slab_half;
     public static Block hardened_stone_smallbricks_slab_double;
     // Angel
-    public static Block angel_block;
+    public static Block fmf_block;
     
 	public static void init() {
 
@@ -248,9 +248,9 @@ public class TechBlocks {
 		}
 		
 		if(ConfigHandler.angel_block) {
-			angel_block = new StandardBlock(Material.ROCK).setUnlocalName("angel_block")
+			fmf_block = new StandardBlock(Material.ROCK).setUnlocalName("fmf_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0).setHardness(25F).setResistance(1000F);
-			registerBlock(angel_block, "angel_block", new AngelItemBlock(angel_block));
+			registerBlock(fmf_block, "fmf_block", new AngelItemBlock(fmf_block));
 		}
 	}
 

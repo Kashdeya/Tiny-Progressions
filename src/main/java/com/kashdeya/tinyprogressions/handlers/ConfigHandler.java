@@ -16,6 +16,10 @@ public class ConfigHandler {
 	public static boolean BoneArmor = true;
 	public static boolean WoodArmor = true;
 	
+	// Lamps & Glowstone
+	public static boolean ColorLamps = true;
+	public static boolean ColorGlowstone = true;
+	
 	// Hardened Stone
 	public static boolean hardened_stone = true;
 	

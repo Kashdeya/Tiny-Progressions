@@ -73,6 +73,22 @@ public class TechItems {
 	public static Item wheat_juice;
 	public static Item melon_juice;
 	public static Item pumpkin_juice;
+	// Glowstone Dust
+	public static Item black_dust;
+	public static Item blue_dust;
+	public static Item brown_dust;
+	public static Item cyan_dust;
+	public static Item gray_dust;
+	public static Item green_dust;
+	public static Item lightblue_dust;
+	public static Item lime_dust;
+	public static Item magenta_dust;
+	public static Item orange_dust;
+	public static Item pink_dust;
+	public static Item purple_dust;
+	public static Item red_dust;
+	public static Item silver_dust;
+	public static Item white_dust;
 	
 	public static void init() {
 		
@@ -216,6 +232,40 @@ public class TechItems {
 			pouch = new Pouch().setUnlocalizedName("pouch");
 		    registerItem(pouch, "pouch");
 		}
+		
+	    // Glowstone Dust
+	    if (ConfigHandler.ColorGlowstone){
+		    black_dust = new ItemBase().setUnlocalizedName("black_dust");
+		    registerItem(black_dust, "black_dust");
+		    blue_dust = new ItemBase().setUnlocalizedName("blue_dust");
+		    registerItem(blue_dust, "blue_dust");
+		    brown_dust = new ItemBase().setUnlocalizedName("brown_dust");
+		    registerItem(brown_dust, "brown_dust");
+		    cyan_dust = new ItemBase().setUnlocalizedName("cyan_dust");
+		    registerItem(cyan_dust, "cyan_dust");
+		    gray_dust = new ItemBase().setUnlocalizedName("gray_dust");
+		    registerItem(gray_dust, "gray_dust");
+		    green_dust = new ItemBase().setUnlocalizedName("green_dust");
+		    registerItem(green_dust, "green_dust");
+		    lightblue_dust = new ItemBase().setUnlocalizedName("lightblue_dust");
+		    registerItem(lightblue_dust, "lightblue_dust");
+		    lime_dust = new ItemBase().setUnlocalizedName("lime_dust");
+		    registerItem(lime_dust, "lime_dust");
+		    magenta_dust = new ItemBase().setUnlocalizedName("magenta_dust");
+		    registerItem(magenta_dust, "magenta_dust");
+		    orange_dust = new ItemBase().setUnlocalizedName("orange_dust");
+		    registerItem(orange_dust, "orange_dust");
+		    pink_dust = new ItemBase().setUnlocalizedName("pink_dust");
+		    registerItem(pink_dust, "pink_dust");
+		    purple_dust = new ItemBase().setUnlocalizedName("purple_dust");
+		    registerItem(purple_dust, "purple_dust");
+		    red_dust = new ItemBase().setUnlocalizedName("red_dust");
+		    registerItem(red_dust, "red_dust");
+		    silver_dust = new ItemBase().setUnlocalizedName("silver_dust");
+		    registerItem(silver_dust, "silver_dust");
+		    white_dust = new ItemBase().setUnlocalizedName("white_dust");
+		    registerItem(white_dust, "white_dust");
+	    }
 	}
 
 	public static void registerItems(RegistryEvent.Register<Item> event) {

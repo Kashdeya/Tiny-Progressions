@@ -10,9 +10,10 @@ import net.minecraftforge.oredict.OreDictionary;
 public class OreDictHandler {
 	public static void init()
 	{
+		// Vanilla Ore Dicts
 		OreDictionary.registerOre("flint", Items.FLINT);
 		OreDictionary.registerOre("blockGravel", Blocks.GRAVEL);
-		
+		// Everything else Kappa
 		OreDictionary.registerOre("juicer", TechItems.juicer);
 		OreDictionary.registerOre("blockCharcoal", TechBlocks.charcoal_block);
 		OreDictionary.registerOre("blockGlassDirty", TechBlocks.dirty_glass);
@@ -25,9 +26,25 @@ public class OreDictHandler {
 		OreDictionary.registerOre("blockBone", TechBlocks.bone_block);
 		OreDictionary.registerOre("smoothEndstone", TechBlocks.smooth_endstone);
 		OreDictionary.registerOre("ingotFlint", TechItems.flint_ingot);
-		OreDictionary.registerOre("ingotObsidian", TechItems.reinforced_obsidian_ingot);
+		OreDictionary.registerOre("ingotReinforcedObsidian", TechItems.reinforced_obsidian_ingot);
 		OreDictionary.registerOre("stickStone", TechItems.stone_stick);
 		OreDictionary.registerOre("torch", TechBlocks.stone_torch);
 		OreDictionary.registerOre("dustEnder", TechItems.ender_dust);
+		// Glowstone Dust
+		OreDictionary.registerOre("dustBlackGlowstone", TechItems.black_dust);
+		OreDictionary.registerOre("dustBlueGlowstone", TechItems.blue_dust);
+		OreDictionary.registerOre("dustBrownGlowstone", TechItems.brown_dust);
+		OreDictionary.registerOre("dustCyanGlowstone", TechItems.cyan_dust);
+		OreDictionary.registerOre("dustGrayGlowstone", TechItems.gray_dust);
+		OreDictionary.registerOre("dustGreenGlowstone", TechItems.green_dust);
+		OreDictionary.registerOre("dustLightBlueGlowstone", TechItems.lightblue_dust);
+		OreDictionary.registerOre("dustLightGrayGlowstone", TechItems.silver_dust);
+		OreDictionary.registerOre("dustLimeGlowstone", TechItems.lime_dust);
+		OreDictionary.registerOre("dustMagentaGlowstone", TechItems.magenta_dust);
+		OreDictionary.registerOre("dustOrangeGlowstone", TechItems.orange_dust);
+		OreDictionary.registerOre("dustPinkGlowstone", TechItems.pink_dust);
+		OreDictionary.registerOre("dustPurpleGlowstone", TechItems.purple_dust);
+		OreDictionary.registerOre("dustRedGlowstone", TechItems.red_dust);
+		OreDictionary.registerOre("dustWhiteGlowstone", TechItems.white_dust);
 	}
 }

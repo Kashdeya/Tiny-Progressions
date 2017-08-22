@@ -350,3 +350,57 @@ item.pouch.name=Big Pouch
 
 #Angel Block
 tile.fmf_block.name=Floaty McFloaty Block
+
+// Glowstone Dust
+item.black_dust.name=Black Glowstone Dust
+item.blue_dust.name=Blue Glowstone Dust
+item.brown_dust.name=Brown Glowstone Dust
+item.cyan_dust.name=Cyan Glowstone Dust
+item.gray_dust.name=Gray Glowstone Dust
+item.green_dust.name=Green Glowstone Dust
+item.lightblue_dust.name=LightBlue Glowstone Dust
+item.lime_dust.name=Lime Glowstone Dust
+item.magenta_dust.name=Magenta Glowstone Dust
+item.orange_dust.name=Orange Glowstone Dust
+item.pink_dust.name=Pink Glowstone Dust
+item.purple_dust.name=Purple Glowstone Dust
+item.red_dust.name=Red Glowstone Dust
+item.silver_dust.name=LightGray Glowstone Dust
+item.white_dust.name=White Glowstone Dust
+
+// Colored Glowstone
+tile.black_dust.name=Black Glowstone
+tile.blue_dust.name=Blue Glowstone
+tile.brown_dust.name=Brown Glowstone
+tile.cyan_dust.name=Cyan Glowstone
+tile.gray_dust.name=Gray Glowstone
+tile.green_dust.name=Green Glowstone
+tile.lightblue_dust.name=LightBlue Glowstone
+tile.lime_dust.name=Lime Glowstone
+tile.magenta_dust.name=Magenta Glowstone
+tile.orange_dust.name=Orange Glowstone
+tile.pink_dust.name=Pink Glowstone
+tile.purple_dust.name=Purple Glowstone
+tile.red_dust.name=Red Glowstone
+tile.silver_dust.name=LightGray Glowstone
+tile.white_dust.name=White Glowstone
+
+// Lamps
+tile.black_lamp.name=Black Lamp
+tile.blue_lamp.name=Blue Lamp
+tile.brown_lamp.name=Brown Lamp
+tile.cyan_lamp.name=Cyan Lamp
+tile.gray_lamp.name=Gray Lamp
+tile.green_lamp.name=Green Lamp
+tile.lightblue_lamp.name=LightBlue Lamp
+tile.lime_lamp.name=Lime Lamp
+tile.magenta_lamp.name=Magenta Lamp
+tile.orange_lamp.name=Orange Lamp
+tile.pink_lamp.name=Pink Lamp
+tile.purple_lamp.name=Purple Lamp
+tile.red_lamp.name=Red Lamp
+tile.silver_lamp.name=LightGray Lamp
+tile.white_lamp.name=White Lamp
+tile.yellow_lamp.name=Yellow Lamp
+tile.base_lamp.name=Lamp
+

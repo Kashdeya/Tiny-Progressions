@@ -64,6 +64,40 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.hardened_stone_bricks, "hardened_stone_bricks");
 	    InventoryBlockRender(TechBlocks.hardened_stone_smallbricks, "hardened_stone_smallbricks");
 	    InventoryBlockRender(TechBlocks.old_reed, "old_reed");
+	    // Lamps
+	    InventoryBlockRender(TechBlocks.black_lamp, "black_lamp");
+	    InventoryBlockRender(TechBlocks.blue_lamp, "blue_lamp");
+	    InventoryBlockRender(TechBlocks.brown_lamp, "brown_lamp");
+	    InventoryBlockRender(TechBlocks.cyan_lamp, "cyan_lamp");
+	    InventoryBlockRender(TechBlocks.green_lamp, "green_lamp");
+	    InventoryBlockRender(TechBlocks.gray_lamp, "gray_lamp");
+	    InventoryBlockRender(TechBlocks.lightblue_lamp, "lightblue_lamp");
+	    InventoryBlockRender(TechBlocks.lime_lamp, "lime_lamp");
+	    InventoryBlockRender(TechBlocks.magenta_lamp, "magenta_lamp");
+	    InventoryBlockRender(TechBlocks.orange_lamp, "orange_lamp");
+	    InventoryBlockRender(TechBlocks.pink_lamp, "pink_lamp");
+	    InventoryBlockRender(TechBlocks.purple_lamp, "purple_lamp");
+	    InventoryBlockRender(TechBlocks.red_lamp, "red_lamp");
+	    InventoryBlockRender(TechBlocks.silver_lamp, "silver_lamp");
+	    InventoryBlockRender(TechBlocks.white_lamp, "white_lamp");
+	    InventoryBlockRender(TechBlocks.yellow_lamp, "yellow_lamp");
+	    InventoryBlockRender(TechBlocks.base_lamp, "base_lamp");
+	    // Glowstones
+	    InventoryBlockRender(TechBlocks.black_glowstone, "black_glowstone");
+	    InventoryBlockRender(TechBlocks.blue_glowstone, "blue_glowstone");
+	    InventoryBlockRender(TechBlocks.brown_glowstone, "brown_glowstone");
+	    InventoryBlockRender(TechBlocks.cyan_glowstone, "cyan_glowstone");
+	    InventoryBlockRender(TechBlocks.green_glowstone, "green_glowstone");
+	    InventoryBlockRender(TechBlocks.gray_glowstone, "gray_glowstone");
+	    InventoryBlockRender(TechBlocks.lightblue_glowstone, "lightblue_glowstone");
+	    InventoryBlockRender(TechBlocks.lime_glowstone, "lime_glowstone");
+	    InventoryBlockRender(TechBlocks.magenta_glowstone, "magenta_glowstone");
+	    InventoryBlockRender(TechBlocks.orange_glowstone, "orange_glowstone");
+	    InventoryBlockRender(TechBlocks.pink_glowstone, "pink_glowstone");
+	    InventoryBlockRender(TechBlocks.purple_glowstone, "purple_glowstone");
+	    InventoryBlockRender(TechBlocks.red_glowstone, "red_glowstone");
+	    InventoryBlockRender(TechBlocks.silver_glowstone, "silver_glowstone");
+	    InventoryBlockRender(TechBlocks.white_glowstone, "white_glowstone");
 	    
 	    InventoryBlockRender(TechBlocks.hardened_stone_stairs, "hardened_stone_stairs");
 	    InventoryBlockRender(TechBlocks.hardened_stone_bricks_stairs, "hardened_stone_bricks_stairs");
@@ -117,6 +151,40 @@ public class RenderHandler {
 	    WorldBlockRender(TechBlocks.hardened_stone_bricks);
 	    WorldBlockRender(TechBlocks.hardened_stone_smallbricks);
 	    WorldBlockRender(TechBlocks.old_reed);
+	    // Lamps
+	    WorldBlockRender(TechBlocks.black_lamp);
+	    WorldBlockRender(TechBlocks.blue_lamp);
+	    WorldBlockRender(TechBlocks.brown_lamp);
+	    WorldBlockRender(TechBlocks.cyan_lamp);
+	    WorldBlockRender(TechBlocks.green_lamp);
+	    WorldBlockRender(TechBlocks.gray_lamp);
+	    WorldBlockRender(TechBlocks.lightblue_lamp);
+	    WorldBlockRender(TechBlocks.lime_lamp);
+	    WorldBlockRender(TechBlocks.magenta_lamp);
+	    WorldBlockRender(TechBlocks.orange_lamp);
+	    WorldBlockRender(TechBlocks.pink_lamp);
+	    WorldBlockRender(TechBlocks.purple_lamp);
+	    WorldBlockRender(TechBlocks.red_lamp);
+	    WorldBlockRender(TechBlocks.silver_lamp);
+	    WorldBlockRender(TechBlocks.white_lamp);
+	    WorldBlockRender(TechBlocks.yellow_lamp);
+	    WorldBlockRender(TechBlocks.base_lamp);
+	    // Glowstones
+	    WorldBlockRender(TechBlocks.black_glowstone);
+	    WorldBlockRender(TechBlocks.blue_glowstone);
+	    WorldBlockRender(TechBlocks.brown_glowstone);
+	    WorldBlockRender(TechBlocks.cyan_glowstone);
+	    WorldBlockRender(TechBlocks.green_glowstone);
+	    WorldBlockRender(TechBlocks.gray_glowstone);
+	    WorldBlockRender(TechBlocks.lightblue_glowstone);
+	    WorldBlockRender(TechBlocks.lime_glowstone);
+	    WorldBlockRender(TechBlocks.magenta_glowstone);
+	    WorldBlockRender(TechBlocks.orange_glowstone);
+	    WorldBlockRender(TechBlocks.pink_glowstone);
+	    WorldBlockRender(TechBlocks.purple_glowstone);
+	    WorldBlockRender(TechBlocks.red_glowstone);
+	    WorldBlockRender(TechBlocks.silver_glowstone);
+	    WorldBlockRender(TechBlocks.white_glowstone);
 	    
 	    WorldBlockRender(TechBlocks.hardened_stone_stairs);
 	    WorldBlockRender(TechBlocks.hardened_stone_bricks_stairs);
@@ -171,6 +239,23 @@ public class RenderHandler {
 		InventoryItemRender(TechItems.wither_rib, "wither_rib");
 		InventoryItemRender(TechItems.pouch, "pouch");
 		InventoryItemRender(TechItems.dead_reed, "dead_reed");
+		// Glowstone Dust
+		InventoryItemRender(TechItems.black_dust, "black_dust");
+		InventoryItemRender(TechItems.blue_dust, "blue_dust");
+		InventoryItemRender(TechItems.brown_dust, "brown_dust");
+		InventoryItemRender(TechItems.cyan_dust, "cyan_dust");
+		InventoryItemRender(TechItems.gray_dust, "gray_dust");
+		InventoryItemRender(TechItems.green_dust, "green_dust");
+		InventoryItemRender(TechItems.white_dust, "white_dust");
+		InventoryItemRender(TechItems.lightblue_dust, "lightblue_dust");
+		InventoryItemRender(TechItems.lime_dust, "lime_dust");
+		InventoryItemRender(TechItems.magenta_dust, "magenta_dust");
+		InventoryItemRender(TechItems.orange_dust, "orange_dust");
+		InventoryItemRender(TechItems.pink_dust, "pink_dust");
+		InventoryItemRender(TechItems.purple_dust, "purple_dust");
+		InventoryItemRender(TechItems.red_dust, "red_dust");
+		InventoryItemRender(TechItems.silver_dust, "silver_dust");
+		
 	}
 	
 	public static void initTools(){
@@ -293,6 +378,23 @@ public class RenderHandler {
 		HandItemRender(TechItems.wither_rib, "wither_rib");
 		HandItemRender(TechItems.pouch, "pouch");
 		HandItemRender(TechItems.dead_reed, "dead_reed");
+		
+		// Glowstone Dust
+		HandItemRender(TechItems.black_dust, "black_dust");
+		HandItemRender(TechItems.blue_dust, "blue_dust");
+		HandItemRender(TechItems.brown_dust, "brown_dust");
+		HandItemRender(TechItems.cyan_dust, "cyan_dust");
+		HandItemRender(TechItems.gray_dust, "gray_dust");
+		HandItemRender(TechItems.green_dust, "green_dust");
+		HandItemRender(TechItems.white_dust, "white_dust");
+		HandItemRender(TechItems.lightblue_dust, "lightblue_dust");
+		HandItemRender(TechItems.lime_dust, "lime_dust");
+		HandItemRender(TechItems.magenta_dust, "magenta_dust");
+		HandItemRender(TechItems.orange_dust, "orange_dust");
+		HandItemRender(TechItems.pink_dust, "pink_dust");
+		HandItemRender(TechItems.purple_dust, "purple_dust");
+		HandItemRender(TechItems.red_dust, "red_dust");
+		HandItemRender(TechItems.silver_dust, "silver_dust");
 		
 		// Juices
 		HandItemRender(TechItems.juicer, "juicer");

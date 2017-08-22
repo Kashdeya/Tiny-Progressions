@@ -3,7 +3,11 @@ package com.kashdeya.tinyprogressions.main;
 import java.util.Iterator;
 
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
-import com.kashdeya.tinyprogressions.crafting.Recipes;
+import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
+import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
+import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
+import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
+import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
@@ -89,7 +93,11 @@ public class TinyProgressions {
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		OreDictHandler.init();
-		Recipes.init();
+		OtherRecipes.init();
+		ArmorRecipes.init();
+		BlockRecipes.init();
+		ItemRecipes.init();
+		ToolsRecipes.init();
 	}
 
 	@EventHandler

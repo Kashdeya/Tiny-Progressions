@@ -4,7 +4,7 @@
         "facing=west,half=bottom,shape=straight":  { "model": "tp:hardened_stone_stairs", "y": 180, "uvlock": true },
         "facing=south,half=bottom,shape=straight": { "model": "tp:hardened_stone_stairs", "y": 90, "uvlock": true },
         "facing=north,half=bottom,shape=straight": { "model": "tp:hardened_stone_stairs", "y": 270, "uvlock": true },
-        "facing=east,half=bottom,shape=	":  { "model": "tp:hardened_stone_stairs_outer" },
+        "facing=east,half=bottom,shape=outer_right":  { "model": "tp:hardened_stone_stairs_outer" },
         "facing=west,half=bottom,shape=outer_right":  { "model": "tp:hardened_stone_stairs_outer", "y": 180, "uvlock": true },
         "facing=south,half=bottom,shape=outer_right": { "model": "tp:hardened_stone_stairs_outer", "y": 90, "uvlock": true },
         "facing=north,half=bottom,shape=outer_right": { "model": "tp:hardened_stone_stairs_outer", "y": 270, "uvlock": true },

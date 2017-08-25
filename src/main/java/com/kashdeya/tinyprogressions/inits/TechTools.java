@@ -1,9 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import java.util.Iterator;
-import java.util.Set;
-
-import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.DamageHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
@@ -41,16 +37,13 @@ import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSpade;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSword;
 import com.kashdeya.tinyprogressions.main.Reference;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.event.RegistryEvent;
 
 public class TechTools {
-	
-	static Set<Item> items = Sets.newHashSet();
-	
 	// Flint
 	public static Item flint_pickaxe;
 	public static Item flint_axe;
@@ -302,19 +295,10 @@ public class TechTools {
 		}
 	}
 	
-	public static void registerItems(RegistryEvent.Register<Item> event)
-	{
-		Iterator<Item> i = items.iterator();
-		
-		while(i.hasNext())
-		{
-			event.getRegistry().register(i.next());
-		}
-	}
-	
 	static void registerItem(Item item, String name){
 	    item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
-	    items.add(item);
+	    TinyProgressions.REGISTRY.register(item);
+		TinyProgressions.REGISTRY.render(item);
 	}
 
 }

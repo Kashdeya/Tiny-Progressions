@@ -1,9 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import java.util.Iterator;
-import java.util.Set;
-
-import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.blocks.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.LavaOre;
@@ -22,51 +18,50 @@ import com.kashdeya.tinyprogressions.blocks.compressed.FlintBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneColored;
 import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
-import com.kashdeya.tinyprogressions.blocks.decorations.LampBase;
+import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
+import com.kashdeya.tinyprogressions.blocks.decorations.LampColored;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.SmoothEndStone;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Black;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Blue;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Brown;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Cyan;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Gray;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Green;
-import com.kashdeya.tinyprogressions.blocks.glowstone.LightBlue;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Lime;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Magneta;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Orange;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Pink;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Purple;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Red;
-import com.kashdeya.tinyprogressions.blocks.glowstone.Silver;
-import com.kashdeya.tinyprogressions.blocks.glowstone.White;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
+import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthRenderer;
+import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeRenderer;
+import com.kashdeya.tinyprogressions.client.render.TileEntityGrowthUpgradeTwoRenderer;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.block.AngelItemBlock;
+import com.kashdeya.tinyprogressions.items.block.MetaItemBlock;
 import com.kashdeya.tinyprogressions.main.Reference;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.properties.EnumGlowstoneColor;
+import com.kashdeya.tinyprogressions.properties.EnumLampColor;
+import com.kashdeya.tinyprogressions.tiles.TileEntityBlazeCobblegen;
+import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
+import com.kashdeya.tinyprogressions.tiles.TileEntityDiamondCobblegen;
+import com.kashdeya.tinyprogressions.tiles.TileEntityEmeraldCobblegen;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
+import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
+import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemSlab;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.event.RegistryEvent;
 
 public class TechBlocks {
-
-	static Set<Block> blocks = Sets.newHashSet();
-	static Set<ItemBlock> itemblocks = Sets.newHashSet();
-
 	// Tech Blocks
 	public static Block growth_block;
 	public static Block growth_upgrade;
@@ -118,39 +113,10 @@ public class TechBlocks {
     // Angel
     public static Block fmf_block;
     // Lamp Blocks
- 	public static Block black_lamp;
- 	public static Block blue_lamp;
- 	public static Block brown_lamp;
- 	public static Block cyan_lamp;
- 	public static Block green_lamp;
- 	public static Block gray_lamp;
- 	public static Block lightblue_lamp;
- 	public static Block lime_lamp;
- 	public static Block magenta_lamp;
- 	public static Block orange_lamp;
- 	public static Block pink_lamp;
- 	public static Block purple_lamp;
- 	public static Block red_lamp;
- 	public static Block silver_lamp;
- 	public static Block white_lamp;
- 	public static Block yellow_lamp;
- 	public static Block base_lamp;
+    public static Block lamp;
+    public static Block colored_lamp;
 	// Glowstone Blocks
-	public static Block black_glowstone;
-	public static Block blue_glowstone;
-	public static Block brown_glowstone;
-	public static Block cyan_glowstone;
-	public static Block green_glowstone;
-	public static Block gray_glowstone;
-	public static Block lightblue_glowstone;
-	public static Block lime_glowstone;
-	public static Block magenta_glowstone;
-	public static Block orange_glowstone;
-	public static Block pink_glowstone;
-	public static Block purple_glowstone;
-	public static Block red_glowstone;
-	public static Block silver_glowstone;
-	public static Block white_glowstone;
+    public static Block colored_glowstone;
     
 	public static void init() {
 
@@ -158,34 +124,55 @@ public class TechBlocks {
 		if (ConfigHandler.BlockGrowth) {
 			growth_block = new BlockGrowth();
 			registerBlock(growth_block, "growth_block", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityGrowth.class, "tileEntityGrowth");
+			TinyProgressions.REGISTRY.render(TileEntityGrowth.class, new TileEntityGrowthRenderer());
 		}
 		if (ConfigHandler.BlockGrowthUpgrade) {
 			growth_upgrade = new BlockGrowthUpgrade();
 			registerBlock(growth_upgrade, "growth_upgrade", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityGrowthUpgrade.class, "tileEntityGrowthUpgrade");
+		    TinyProgressions.REGISTRY.render(TileEntityGrowthUpgrade.class, new TileEntityGrowthUpgradeRenderer());
+		    TinyProgressions.REGISTRY.setCustomStateMap(growth_upgrade, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
 		}
 		if (ConfigHandler.BlockGrowthUpgradeTwo) {
 			growth_upgrade_two = new BlockGrowthUpgradeTwo();
 			registerBlock(growth_upgrade_two, "growth_upgrade_two", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityGrowthUpgradeTwo.class, "tileEntityGrowthUpgradeTwo");
+			TinyProgressions.REGISTRY.render(TileEntityGrowthUpgradeTwo.class, new TileEntityGrowthUpgradeTwoRenderer());
+			TinyProgressions.REGISTRY.setCustomStateMap(growth_upgrade_two, new StateMap.Builder().ignore(new IProperty[] { BlockLiquid.LEVEL }).build());
 		}
 		if (ConfigHandler.Cobblegen) {
 			cobblegen_block = new Cobblegen();
 			registerBlock(cobblegen_block, "cobblegen_block", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityCobblegen.class, "tileEntityCobblegen");
 		}
 		if (ConfigHandler.IronCobblegen) {
 			iron_cobblegen_block = new IronCobblegen();
 			registerBlock(iron_cobblegen_block, "iron_cobblegen_block", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityIronCobblegen.class, "tileEntityIronCobblegen");
 		}
 		if (ConfigHandler.DiamondCobblegen) {
 			diamond_cobblegen_block = new DiamondCobblegen();
 			registerBlock(diamond_cobblegen_block, "diamond_cobblegen_block", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityDiamondCobblegen.class, "tileEntityDiamondCobblegen");
 		}
 		if (ConfigHandler.BlazeCobblegen) {
 			blaze_cobblegen_block = new BlazeCobblegen();
 			registerBlock(blaze_cobblegen_block, "blaze_cobblegen_block", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityBlazeCobblegen.class, "tileEntityBlazeCobblegen");
 		}
 		if (ConfigHandler.EmeraldCobblegen) {
 			emerald_cobblegen_block = new EmeraldCobblegen();
 			registerBlock(emerald_cobblegen_block, "emerald_cobblegen_block", true);
+			
+			TinyProgressions.REGISTRY.register(TileEntityEmeraldCobblegen.class, "tileEntityEmeraldCobblegen");
 		}
 
 		// Deco Blocks
@@ -247,73 +234,22 @@ public class TechBlocks {
 		}
 		// Lamps
 		if (ConfigHandler.ColorLamps){
-			base_lamp = new LampBase("base_lamp", Material.GLASS, TechBlocks.base_lamp, 1, 1);
-			registerBlock(base_lamp, "base_lamp", true);
-			black_lamp = new LampBase("black_lamp", Material.GLASS, TechBlocks.black_lamp, 1, 1);
-			registerBlock(black_lamp, "black_lamp", true);
-			blue_lamp = new LampBase("blue_lamp", Material.GLASS, TechBlocks.blue_lamp, 1, 1);
-			registerBlock(blue_lamp, "blue_lamp", true);
-			brown_lamp = new LampBase("brown_lamp", Material.GLASS, TechBlocks.brown_lamp, 1, 1);
-			registerBlock(brown_lamp, "brown_lamp", true);
-			cyan_lamp = new LampBase("cyan_lamp", Material.GLASS, TechBlocks.cyan_lamp, 1, 1);
-			registerBlock(cyan_lamp, "cyan_lamp", true);
-			green_lamp = new LampBase("green_lamp", Material.GLASS, TechBlocks.green_lamp, 1, 1);
-			registerBlock(green_lamp, "green_lamp", true);
-			gray_lamp = new LampBase("gray_lamp", Material.GLASS, TechBlocks.gray_lamp, 1, 1);
-			registerBlock(gray_lamp, "gray_lamp", true);
-			lightblue_lamp = new LampBase("lightblue_lamp", Material.GLASS, TechBlocks.lightblue_lamp, 1, 1);
-			registerBlock(lightblue_lamp, "lightblue_lamp", true);
-			lime_lamp = new LampBase("lime_lamp", Material.GLASS, TechBlocks.lime_lamp, 1, 1);
-			registerBlock(lime_lamp, "lime_lamp", true);
-			magenta_lamp = new LampBase("magenta_lamp", Material.GLASS, TechBlocks.magenta_lamp, 1, 1);
-			registerBlock(magenta_lamp, "magenta_lamp", true);
-			orange_lamp = new LampBase("orange_lamp", Material.GLASS, TechBlocks.orange_lamp, 1, 1);
-			registerBlock(orange_lamp, "orange_lamp", true);
-			pink_lamp = new LampBase("pink_lamp", Material.GLASS, TechBlocks.pink_lamp, 1, 1);
-			registerBlock(pink_lamp, "pink_lamp", true);
-			purple_lamp = new LampBase("purple_lamp", Material.GLASS, TechBlocks.purple_lamp, 1, 1);
-			registerBlock(purple_lamp, "purple_lamp", true);
-			red_lamp = new LampBase("red_lamp", Material.GLASS, TechBlocks.red_lamp, 1, 1);
-			registerBlock(red_lamp, "red_lamp", true);
-			silver_lamp = new LampBase("silver_lamp", Material.GLASS, TechBlocks.silver_lamp, 1, 1);
-			registerBlock(silver_lamp, "silver_lamp", true);
-			white_lamp = new LampBase("white_lamp", Material.GLASS, TechBlocks.white_lamp, 1, 1);
-			registerBlock(white_lamp, "white_lamp", true);
-			yellow_lamp = new LampBase("yellow_lamp", Material.GLASS, TechBlocks.yellow_lamp, 1, 1);
-			registerBlock(yellow_lamp, "yellow_lamp", true);
+			lamp = new Lamp().setUnlocalizedName("lamp");
+			registerBlock(lamp, "lamp", true);
+			
+			colored_lamp = new LampColored();
+			registerBlock(colored_lamp, "colored_lamp", new MetaItemBlock(colored_lamp));
+			
+			for(int i = 0; i < EnumLampColor.values().length; i++)
+				TinyProgressions.REGISTRY.render(colored_lamp, i, EnumLampColor.values()[i].getName());
 		}
 		// Glowstone
 		if (ConfigHandler.ColorGlowstone){
-			black_glowstone = new Black();
-			registerBlock(black_glowstone, "black_glowstone", true);
-			blue_glowstone = new Blue();
-			registerBlock(blue_glowstone, "blue_glowstone", true);
-			brown_glowstone = new Brown();
-			registerBlock(brown_glowstone, "brown_glowstone", true);
-			cyan_glowstone = new Cyan();
-			registerBlock(cyan_glowstone, "cyan_glowstone", true);
-			green_glowstone = new Green();
-			registerBlock(green_glowstone, "green_glowstone", true);
-			gray_glowstone = new Gray();
-			registerBlock(gray_glowstone, "gray_glowstone", true);
-			lightblue_glowstone = new LightBlue();
-			registerBlock(lightblue_glowstone, "lightblue_glowstone", true);
-			lime_glowstone = new Lime();
-			registerBlock(lime_glowstone, "lime_glowstone", true);
-			magenta_glowstone = new Magneta();
-			registerBlock(magenta_glowstone, "magenta_glowstone", true);
-			orange_glowstone = new Orange();
-			registerBlock(orange_glowstone, "orange_glowstone", true);
-			pink_glowstone = new Pink();
-			registerBlock(pink_glowstone, "pink_glowstone", true);
-			purple_glowstone = new Purple();
-			registerBlock(purple_glowstone, "purple_glowstone", true);
-			red_glowstone = new Red();
-			registerBlock(red_glowstone, "red_glowstone", true);
-			silver_glowstone = new Silver();
-			registerBlock(silver_glowstone, "silver_glowstone", true);
-			white_glowstone = new White();
-			registerBlock(white_glowstone, "white_glowstone", true);
+			colored_glowstone = new GlowstoneColored();
+			registerBlock(colored_glowstone, "colored_glowstone", new MetaItemBlock(colored_glowstone));
+			
+			for(int i = 0; i < EnumGlowstoneColor.values().length; i++)
+				TinyProgressions.REGISTRY.render(colored_glowstone, i, EnumGlowstoneColor.values()[i].getName());
 		}
 		
 
@@ -372,33 +308,18 @@ public class TechBlocks {
 		}
 	}
 
-	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		Iterator<Block> b = blocks.iterator();
-
-		while (b.hasNext()) {
-			event.getRegistry().register(b.next());
-		}
-	}
-
-	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
-		Iterator<ItemBlock> ib = itemblocks.iterator();
-
-		while (ib.hasNext()) {
-			event.getRegistry().register(ib.next());
-		}
-	}
-
 	public static void registerBlock(Block block, String name, boolean itemblock) {
 	    registerBlock(block, name, itemblock ? new ItemBlock(block) : null);
 	}
 	
 	public static void registerBlock(Block block, String name, ItemBlock itemblock) {
         block.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
-        blocks.add(block);
+        TinyProgressions.REGISTRY.register(block);
+		TinyProgressions.REGISTRY.render(block);
 
         if (itemblock != null) {
             itemblock.setRegistryName(block.getRegistryName());
-            itemblocks.add(itemblock);
+            TinyProgressions.REGISTRY.register(itemblock);
         }
     }
 

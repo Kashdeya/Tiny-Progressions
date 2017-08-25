@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.blocks;
+package com.kashdeya.tinyprogressions.blocks.ores;
 
 import java.util.Random;
 

@@ -20,12 +20,11 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
 import com.kashdeya.tinyprogressions.tabs.TabTP;
+import com.kashdeya.tinyprogressions.util.Registry;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Enchantments;
-import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -53,11 +52,12 @@ public class TinyProgressions {
 
 	@SidedProxy(clientSide = Reference.PROXY_CLIENT, serverSide = Reference.PROXY_COMMON)
 	public static CommonProxy PROXY;
+	
+	public static final Registry REGISTRY = new Registry();
 
 	public static final CreativeTabs tabTP = new TabTP("tiny_progressions");
 
 	public static SimpleNetworkWrapper network;
-
 	public static org.apache.logging.log4j.Logger logger;
 
 	@EventHandler
@@ -73,23 +73,21 @@ public class TinyProgressions {
 		TechArmor.init();
 		TechTools.init();
 		
-		// Renders
-		PROXY.registerTileEntities();
-		PROXY.registerRenderers();
-
+		REGISTRY.preInit();
+		
 		// Events
 		MinecraftForge.EVENT_BUS.register(instance);
+		MinecraftForge.EVENT_BUS.register(REGISTRY);
 		MinecraftForge.EVENT_BUS.register(new IReachEvent());
 		MinecraftForge.EVENT_BUS.register(EventDrops.class);
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
-		
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		PROXY.init();
-		PROXY.registerWorldRenderers();
+		REGISTRY.init();
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		OreDictHandler.init();
@@ -104,20 +102,6 @@ public class TinyProgressions {
 	public void postInit(FMLPostInitializationEvent e) {
 	}
 
-	@SubscribeEvent
-	public void registerBlocks(RegistryEvent.Register<Block> event) {
-		TechBlocks.registerBlocks(event);
-	}
-
-	@SubscribeEvent
-	public void registerItems(RegistryEvent.Register<Item> event) {
-		TechBlocks.registerItemBlocks(event);
-		TechItems.registerItems(event);
-
-		TechArmor.registerItems(event);
-		TechTools.registerItems(event);
-	}
-	
 	@SubscribeEvent
 	public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
 		IForgeRegistryModifiable<IRecipe> registry = (IForgeRegistryModifiable<IRecipe>) event.getRegistry();

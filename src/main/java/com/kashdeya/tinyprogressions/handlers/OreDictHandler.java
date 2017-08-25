@@ -2,9 +2,11 @@ package com.kashdeya.tinyprogressions.handlers;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictHandler {
@@ -31,20 +33,7 @@ public class OreDictHandler {
 		OreDictionary.registerOre("torch", TechBlocks.stone_torch);
 		OreDictionary.registerOre("dustEnder", TechItems.ender_dust);
 		// Glowstone Dust
-		OreDictionary.registerOre("dustBlackGlowstone", TechItems.black_dust);
-		OreDictionary.registerOre("dustBlueGlowstone", TechItems.blue_dust);
-		OreDictionary.registerOre("dustBrownGlowstone", TechItems.brown_dust);
-		OreDictionary.registerOre("dustCyanGlowstone", TechItems.cyan_dust);
-		OreDictionary.registerOre("dustGrayGlowstone", TechItems.gray_dust);
-		OreDictionary.registerOre("dustGreenGlowstone", TechItems.green_dust);
-		OreDictionary.registerOre("dustLightBlueGlowstone", TechItems.lightblue_dust);
-		OreDictionary.registerOre("dustLightGrayGlowstone", TechItems.silver_dust);
-		OreDictionary.registerOre("dustLimeGlowstone", TechItems.lime_dust);
-		OreDictionary.registerOre("dustMagentaGlowstone", TechItems.magenta_dust);
-		OreDictionary.registerOre("dustOrangeGlowstone", TechItems.orange_dust);
-		OreDictionary.registerOre("dustPinkGlowstone", TechItems.pink_dust);
-		OreDictionary.registerOre("dustPurpleGlowstone", TechItems.purple_dust);
-		OreDictionary.registerOre("dustRedGlowstone", TechItems.red_dust);
-		OreDictionary.registerOre("dustWhiteGlowstone", TechItems.white_dust);
+		for(int i = 0; i < EnumDustColor.values().length; i++)
+			OreDictionary.registerOre(EnumDustColor.values()[i].getOredict(), new ItemStack(TechItems.colored_dust, 1, i));
 	}
 }

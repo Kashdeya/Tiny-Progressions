@@ -1,126 +1,30 @@
 package com.kashdeya.tinyprogressions.crafting;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemRecipes {
 	
 		public static void init() {
 			// Glowstone Dust
-			if (ConfigHandler.ColorGlowstone){
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.black_dust, 8), new Object[] {
+			if (ConfigHandler.ColorGlowstone)
+			{
+				for(int i = 0; i < EnumDustColor.values().length; i++)
+				{
+					RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.colored_dust, 8, i), new Object[] {
 						"ddd",
 						"dgd",
 						"ddd",
-							Character.valueOf('d'), "Black",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.blue_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Blue",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.brown_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Brown",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.cyan_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Cyan",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.gray_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Gray",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.green_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Green",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.lightblue_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "LightBlue",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.lime_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Lime",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.magenta_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Magenta",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.orange_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Orange",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.pink_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Pink",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.purple_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Purple",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.red_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "Red",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.silver_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "LightGray",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.white_dust, 8), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('d'), "White",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST
-				});
+							Character.valueOf('g'), Items.GLOWSTONE_DUST,
+							Character.valueOf('d'), EnumDustColor.values()[i].getCraftingOredict()
+					});
+				}
 			}
-			
 			// Juices
 			if (ConfigHandler.all_juices){
 				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.juicer), new Object[] {

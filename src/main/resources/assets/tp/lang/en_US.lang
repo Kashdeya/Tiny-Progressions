@@ -369,21 +369,21 @@ item.silver_dust.name=LightGray Glowstone Dust
 item.white_dust.name=White Glowstone Dust
 
 // Colored Glowstone
-tile.black_dust.name=Black Glowstone
-tile.blue_dust.name=Blue Glowstone
-tile.brown_dust.name=Brown Glowstone
-tile.cyan_dust.name=Cyan Glowstone
-tile.gray_dust.name=Gray Glowstone
-tile.green_dust.name=Green Glowstone
-tile.lightblue_dust.name=LightBlue Glowstone
-tile.lime_dust.name=Lime Glowstone
-tile.magenta_dust.name=Magenta Glowstone
-tile.orange_dust.name=Orange Glowstone
-tile.pink_dust.name=Pink Glowstone
-tile.purple_dust.name=Purple Glowstone
-tile.red_dust.name=Red Glowstone
-tile.silver_dust.name=LightGray Glowstone
-tile.white_dust.name=White Glowstone
+tile.black_glowstone.name=Black Glowstone
+tile.blue_glowstone.name=Blue Glowstone
+tile.brown_glowstone.name=Brown Glowstone
+tile.cyan_glowstone.name=Cyan Glowstone
+tile.gray_glowstone.name=Gray Glowstone
+tile.green_glowstone.name=Green Glowstone
+tile.lightblue_glowstone.name=LightBlue Glowstone
+tile.lime_glowstone.name=Lime Glowstone
+tile.magenta_glowstone.name=Magenta Glowstone
+tile.orange_glowstone.name=Orange Glowstone
+tile.pink_glowstone.name=Pink Glowstone
+tile.purple_glowstone.name=Purple Glowstone
+tile.red_glowstone.name=Red Glowstone
+tile.silver_glowstone.name=LightGray Glowstone
+tile.white_glowstone.name=White Glowstone
 
 // Lamps
 tile.black_lamp.name=Black Lamp
@@ -402,5 +402,5 @@ tile.red_lamp.name=Red Lamp
 tile.silver_lamp.name=LightGray Lamp
 tile.white_lamp.name=White Lamp
 tile.yellow_lamp.name=Yellow Lamp
-tile.base_lamp.name=Lamp
+tile.lamp.name=Lamp
 

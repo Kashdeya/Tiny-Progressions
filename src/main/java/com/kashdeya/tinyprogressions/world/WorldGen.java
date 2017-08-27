@@ -17,6 +17,8 @@ public class WorldGen implements IWorldGenerator {
 	
     private WorldGenerator ender_ore;
     private WorldGenerator lava_ore;
+    private WorldGenerator lava_block;
+    private WorldGenerator water_block;
     
     public WorldGen()
     {
@@ -25,6 +27,12 @@ public class WorldGen implements IWorldGenerator {
     	}
     	if (ConfigHandler.lava_ore){
     		this.lava_ore = new WorldGenMinable(TechBlocks.lava_ore.getDefaultState(), ConfigHandler.lava_ore_size);
+    	}
+    	if (ConfigHandler.lava_block){
+    		this.lava_block = new WorldGenMinable(TechBlocks.lava_block.getDefaultState(), ConfigHandler.lava_block_size);
+    	}
+    	if (ConfigHandler.water_block){
+    		this.water_block = new WorldGenMinable(TechBlocks.water_block.getDefaultState(), ConfigHandler.water_block_size);
     	}
     }
     
@@ -54,6 +62,12 @@ public class WorldGen implements IWorldGenerator {
     	  }
     	  if (ConfigHandler.lava_ore){
     		  runGenerator(this.lava_ore, world, random, chunkX, chunkZ, ConfigHandler.lava_ore_frequency, ConfigHandler.lava_ore_min, ConfigHandler.lava_ore_max);
+    	  }
+    	  if (ConfigHandler.lava_block){
+    		  runGenerator(this.lava_block, world, random, chunkX, chunkZ, ConfigHandler.lava_block_frequency, ConfigHandler.lava_block_min, ConfigHandler.lava_block_max);
+    	  }
+    	  if (ConfigHandler.water_block){
+    		  runGenerator(this.water_block, world, random, chunkX, chunkZ, ConfigHandler.water_block_frequency, ConfigHandler.water_block_min, ConfigHandler.water_block_max);
     	  }
     	  break;
       case 1:

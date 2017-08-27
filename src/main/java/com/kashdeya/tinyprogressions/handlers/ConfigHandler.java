@@ -214,5 +214,18 @@ public class ConfigHandler {
 			return false;
 		}
 	}
-
+	
+	// Lava Block
+	public static boolean lava_block = true;
+	public static int lava_block_frequency = 5;
+	public static int lava_block_min = 1;
+	public static int lava_block_max = 63;
+	public static int lava_block_size = 2;
+	
+	// Water Block
+	public static boolean water_block = true;
+	public static int water_block_frequency = 5;
+	public static int water_block_min = 1;
+	public static int water_block_max = 64;
+	public static int water_block_size = 2;
 }

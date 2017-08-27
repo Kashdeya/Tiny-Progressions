@@ -19,11 +19,13 @@ import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
 import com.kashdeya.tinyprogressions.blocks.decorations.LampColored;
+import com.kashdeya.tinyprogressions.blocks.decorations.LavaBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.Slabs;
 import com.kashdeya.tinyprogressions.blocks.decorations.SmoothEndStone;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
+import com.kashdeya.tinyprogressions.blocks.decorations.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
@@ -91,8 +93,11 @@ public class TechBlocks {
 	public static Block stone_torch;
 	// EnderOre
 	public static Block ender_ore;
-	// Lava Crystals
+	// Lava Blocks
 	public static Block lava_ore;
+	public static Block lava_block;
+	// Water Block
+	public static Block water_block;
 	// Hardened Stone
 	public static Block hardened_stone;
 	public static Block hardened_stone_bricks;
@@ -291,7 +296,7 @@ public class TechBlocks {
 			registerBlock(smooth_endstone, "smooth_endstone", true);
 		}
 
-		// Ender Ore
+		// Ore
 		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
 			registerBlock(ender_ore, "ender_ore", true);
@@ -301,10 +306,21 @@ public class TechBlocks {
 			registerBlock(lava_ore, "lava_ore", true);
 		}
 		
+		// FMF Block
 		if(ConfigHandler.angel_block) {
 			fmf_block = new StandardBlock(Material.ROCK).setUnlocalName("fmf_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0).setHardness(25F).setResistance(1000F);
 			registerBlock(fmf_block, "fmf_block", new AngelItemBlock(fmf_block));
+		}
+		
+		// Lava & Water Blocks
+		if (ConfigHandler.lava_block) {
+			lava_block = new LavaBlock();
+			registerBlock(lava_block, "lava_block", true);
+		}
+		if (ConfigHandler.water_block) {
+			water_block = new WaterBlock();
+			registerBlock(water_block, "water_block", true);
 		}
 	}
 

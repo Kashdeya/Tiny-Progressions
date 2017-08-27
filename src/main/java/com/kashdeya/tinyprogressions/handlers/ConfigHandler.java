@@ -19,6 +19,9 @@ public class ConfigHandler {
 	// Stone Torch
 	public static boolean StoneTorch = false;
 	
+	// Crops
+	public static boolean RightClickCrops = false;
+	
 	// Cobblegens
 	public static boolean Cobblegen = false;
 	public static boolean IronCobblegen = false;

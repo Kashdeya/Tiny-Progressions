@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.items.scythes;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -26,17 +27,16 @@ public class ScytheMain extends ItemSword {
 		this.setMaxStackSize(1);
 	}
 	
-	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	  {
-		ItemStack itemstack = playerIn.getHeldItem(hand);
 
-        if (!playerIn.canPlayerEdit(pos.offset(facing), facing, itemstack))
+        if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack))
         {
             return EnumActionResult.FAIL;
         }
         else
         {
-            int hook = net.minecraftforge.event.ForgeEventFactory.onHoeUse(itemstack, playerIn, worldIn, pos);
+            int hook = net.minecraftforge.event.ForgeEventFactory.onHoeUse(stack, playerIn, worldIn, pos);
             if (hook != 0) return hook > 0 ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
         	
             IBlockState iblockstate = worldIn.getBlockState(pos);
@@ -46,13 +46,13 @@ public class ScytheMain extends ItemSword {
             {
                 if (block == Blocks.GRASS || block == Blocks.GRASS_PATH)
                 {
-                    this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
+                    this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
                     return EnumActionResult.SUCCESS;
                 }
                 
                 if (block == Blocks.MYCELIUM)
                 {
-                    this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
+                    this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
                     return EnumActionResult.SUCCESS;
                 }
 
@@ -61,13 +61,13 @@ public class ScytheMain extends ItemSword {
                     switch ((BlockDirt.DirtType)iblockstate.getValue(BlockDirt.VARIANT))
                     {
                         case DIRT:
-                            this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
+                            this.setBlock(stack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());
                             return EnumActionResult.SUCCESS;
                         case COARSE_DIRT:
-                            this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
+                            this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
                             return EnumActionResult.SUCCESS;
                         case PODZOL:
-                        	this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
+                        	this.setBlock(stack, playerIn, worldIn, pos, Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.COARSE_DIRT));
                             return EnumActionResult.SUCCESS;
                         default:
                         	break;
@@ -75,30 +75,32 @@ public class ScytheMain extends ItemSword {
                 }
             }
 
-    	    for (int k = -1; k < 2; k++) {
-    		      for (int l = -1; l < 2; l++)
-    		      {
-    		        BlockPos blockState = new BlockPos(pos.add(k, 0, l));
-    		        if ((worldIn.getBlockState(blockState).getBlock() instanceof IGrowable))
-    		        {
-    		          IGrowable cropBlock = (IGrowable)worldIn.getBlockState(blockState).getBlock();
-    		          IBlockState cropState = worldIn.getBlockState(blockState);
-    		          if (!cropBlock.canGrow(worldIn, blockState, cropState, false))
-    		          {
-    		            worldIn.destroyBlock(blockState, true);
-    		            worldIn.setBlockState(blockState, cropState.getBlock().getDefaultState());
-    		            itemstack.setItemDamage(itemstack.getItemDamage() + 1);
-    		            if (itemstack.getItemDamage() >= itemstack.getMaxDamage())
-    		            {
-    		              playerIn.setHeldItem(hand, null);
-    		              return super.onItemUse(itemstack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
-    		            }
-    		          }
-    		        }
-    		      }
-    		    }
-    		    return super.onItemUse(itemstack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
-    		  }
+            if (ConfigHandler.RightClickCrops){
+            	for (int k = -1; k < 2; k++) {
+      		      for (int l = -1; l < 2; l++)
+      		      {
+      		        BlockPos blockState = new BlockPos(pos.add(k, 0, l));
+      		        if ((worldIn.getBlockState(blockState).getBlock() instanceof IGrowable))
+      		        {
+      		          IGrowable cropBlock = (IGrowable)worldIn.getBlockState(blockState).getBlock();
+      		          IBlockState cropState = worldIn.getBlockState(blockState);
+      		          if (!cropBlock.canGrow(worldIn, blockState, cropState, false))
+      		          {
+      		            worldIn.destroyBlock(blockState, true);
+      		            worldIn.setBlockState(blockState, cropState.getBlock().getDefaultState());
+      		            stack.setItemDamage(stack.getItemDamage() + 1);
+      		            if (stack.getItemDamage() >= stack.getMaxDamage())
+      		            {
+      		              playerIn.setHeldItem(hand, null);
+      		              return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+      		            }
+      		          }
+      		        }
+      		      }
+      		    }
+            }
+ 		    return super.onItemUse(stack, playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+  		  }
         }
 	
 	protected void setBlock(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, IBlockState state)

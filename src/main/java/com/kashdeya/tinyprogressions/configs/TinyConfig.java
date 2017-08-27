@@ -129,6 +129,7 @@ public class TinyConfig {
 		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
 		
 		config.addCustomCategoryComment(category + " Scythes", "Because I love to farm and stuff");
+		ConfigHandler.RightClickCrops = config.getBoolean("Allow Right+Click Crops", category + " Scythes", false, "Enable Right+Click with Scythe on Crops?\n[Doubles Mystical Agriculture seed drops if Enabled.]");
 		ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", category + " Scythes", true, "Enable Wooden Scythe?");
 		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", category + " Scythes", true, "Enable Stone Scythe?");
 		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", category + " Scythes", true, "Enable Golden Scythe?");

@@ -1,5 +1,8 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
+import java.util.Random;
+
+import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.items.block.MetaItemBlock.IBlockMetadata;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.properties.EnumGlowstoneColor;
@@ -53,6 +56,17 @@ public class GlowstoneColored extends Block implements IBlockMetadata
     {
         return MapColor.getBlockColor(EnumDyeColor.values()[state.getValue(COLOR).ordinal()]);
     }
+	
+	@Override
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+	{
+		drops.clear();
+		
+		Random random = new Random();
+		int quantity = 2 + random.nextInt(3);
+		
+		drops.add(new ItemStack(TechItems.colored_dust, quantity, getMetaFromState(state)));
+	}
 	
 	@Override
 	public int damageDropped(IBlockState state)

@@ -1,6 +1,7 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 
@@ -16,7 +17,7 @@ public class OreDictHandler {
 		OreDictionary.registerOre("flint", Items.FLINT);
 		OreDictionary.registerOre("blockGravel", Blocks.GRAVEL);
 		// Everything else Kappa
-		OreDictionary.registerOre("juicer", TechItems.juicer);
+		OreDictionary.registerOre("juicer", TechFoods.juicer);
 		OreDictionary.registerOre("blockCharcoal", TechBlocks.charcoal_block);
 		OreDictionary.registerOre("blockGlassDirty", TechBlocks.dirty_glass);
 		OreDictionary.registerOre("blockReinforcedGlass", TechBlocks.reinforced_glass);
@@ -32,6 +33,9 @@ public class OreDictHandler {
 		OreDictionary.registerOre("stickStone", TechItems.stone_stick);
 		OreDictionary.registerOre("torch", TechBlocks.stone_torch);
 		OreDictionary.registerOre("dustEnder", TechItems.ender_dust);
+		OreDictionary.registerOre("dragonScale", TechItems.dragon_scale);
+		OreDictionary.registerOre("witherRib", TechItems.wither_rib);
+		OreDictionary.registerOre("gemLava", TechItems.lava_crystal);
 		// Glowstone Dust
 		for(int i = 0; i < EnumDustColor.values().length; i++)
 			OreDictionary.registerOre(EnumDustColor.values()[i].getOredict(), new ItemStack(TechItems.colored_dust, 1, i));

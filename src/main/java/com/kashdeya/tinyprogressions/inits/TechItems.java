@@ -1,7 +1,6 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemBaseMeta;
@@ -9,11 +8,6 @@ import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.Pouch;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
-import com.kashdeya.tinyprogressions.items.apple.DiamondApple;
-import com.kashdeya.tinyprogressions.items.apple.EmeraldApple;
-import com.kashdeya.tinyprogressions.items.apple.GoldenApple;
-import com.kashdeya.tinyprogressions.items.apple.IronApple;
-import com.kashdeya.tinyprogressions.items.apple.RedstoneApple;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCan;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -32,11 +26,6 @@ public class TechItems {
 	public static Item quartz_dust;
 	// Misc Items
 	public static Item mycelium_seeds;
-	public static Item golden_apple;
-	public static Item diamond_apple;
-	public static Item emerald_apple;
-	public static Item iron_apple;
-	public static Item redstone_apple;
 	public static Item med_kit;
 	public static Item dead_reed;
 	// Stone Dust
@@ -57,54 +46,10 @@ public class TechItems {
 	public static Item dragon_scale;
 	// Pouch
 	public static Item pouch;
-	// Juices
-	public static Item juicer;
-	public static Item apple_juice;
-	public static Item carrot_juice;
-	public static Item potatoe_juice;
-	public static Item beet_juice;
-	public static Item cactus_juice;
-	public static Item slime_juice;
-	public static Item wheat_juice;
-	public static Item melon_juice;
-	public static Item pumpkin_juice;
 	// Glowstone Dust
 	public static Item colored_dust;
 	
 	public static void init() {
-		
-		// Juices
-		if (ConfigHandler.all_juices){
-			juicer = new ItemBase().setUnlocalizedName("juicer");
-			registerItem(juicer, "juicer");
-			
-			apple_juice = new DrinkBase(6, false).setUnlocalizedName("apple_juice");
-			registerItem(apple_juice, "apple_juice");
-			
-			carrot_juice = new DrinkBase(4, false).setUnlocalizedName("carrot_juice");
-			registerItem(carrot_juice, "carrot_juice");
-			
-			potatoe_juice = new DrinkBase(4, false).setUnlocalizedName("potatoe_juice");
-			registerItem(potatoe_juice, "potatoe_juice");
-			
-			beet_juice = new DrinkBase(3, false).setUnlocalizedName("beet_juice");
-			registerItem(beet_juice, "beet_juice");
-			
-			cactus_juice = new DrinkBase(4, false).setUnlocalizedName("cactus_juice");
-			registerItem(cactus_juice, "cactus_juice");
-			
-			slime_juice = new DrinkBase(2, false).setUnlocalizedName("slime_juice");
-			registerItem(slime_juice, "slime_juice");
-			
-			wheat_juice = new DrinkBase(2, false).setUnlocalizedName("wheat_juice");
-			registerItem(wheat_juice, "wheat_juice");
-			
-			melon_juice = new DrinkBase(4, false).setUnlocalizedName("melon_juice");
-			registerItem(melon_juice, "melon_juice");
-			
-			pumpkin_juice = new DrinkBase(4, false).setUnlocalizedName("pumpkin_juice");
-			registerItem(pumpkin_juice, "pumpkin_juice");
-		}
 
 		// Watering Cans
 		if (ConfigHandler.WateringCan) {
@@ -147,28 +92,6 @@ public class TechItems {
 	    	dead_reed = new ItemBase().setUnlocalizedName("dead_reed");
 		    registerItem(dead_reed, "dead_reed");
 	    }
-		
-		// Apples
-		if (ConfigHandler.DiamondApple) {
-			diamond_apple = new DiamondApple(4, 1.2F, false);
-			registerItem(diamond_apple, "diamond_apple");
-		}
-		if (ConfigHandler.EmeraldApple) {
-			emerald_apple = new EmeraldApple(4, 1.2F, false);
-			registerItem(emerald_apple, "emerald_apple");
-		}
-		if (ConfigHandler.iron_apple) {
-			iron_apple = new IronApple(4, 1.2F, false);
-			registerItem(iron_apple, "iron_apple");
-		}
- 		if (ConfigHandler.redstone_apple) {
-			redstone_apple = new RedstoneApple(4, 1.2F, false);
-			registerItem(redstone_apple, "redstone_apple");
-		}
-		if (ConfigHandler.ApplePro) {
-			golden_apple = new GoldenApple(4, 1.2F, false);
-			registerItem(golden_apple, "golden_apple");
-		}
 		
 		// Medkit
 		if (ConfigHandler.MedKit) {

@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "tp:items/cooked_mushroom_brown"
+    }
+}

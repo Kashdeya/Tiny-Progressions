@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.container;
 
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.items.CapabilityItemHandler;

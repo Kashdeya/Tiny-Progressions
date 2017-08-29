@@ -215,6 +215,25 @@ public class ConfigHandler {
 		}
 	}
 	
+	// Food and Drinks
+	public static boolean CookedBacon = true;
+	public static boolean MonsterJerky = true;
+	public static boolean ToastedBread = true;
+	public static boolean FriedEgg = true;
+	public static boolean CookedMushroomBrown = true;
+	public static boolean CookedMushroomRed = true;
+	public static boolean BaconEggs = true;
+	public static boolean RawFlour = true;
+	public static boolean LittleCandy = true;
+	public static boolean BaconSandwhich = true;
+	public static boolean BeefSandwhich = true;
+	public static boolean BreadSlice = true;
+	public static boolean ChickenSandwhich = true;
+	public static boolean CookedApple = true;
+	public static boolean FrenchFries = true;
+	public static boolean RabbitSandwhich = true;
+	public static boolean BaconEggsSandwhich = true;
+	
 	// Lava Block
 	public static boolean lava_block = true;
 	public static int lava_block_frequency = 5;

@@ -16,6 +16,7 @@ import com.kashdeya.tinyprogressions.handlers.GuiHandler;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
@@ -72,6 +73,7 @@ public class TinyProgressions {
 		TechBlocks.init();
 		TechArmor.init();
 		TechTools.init();
+		TechFoods.init();
 		
 		REGISTRY.preInit();
 		

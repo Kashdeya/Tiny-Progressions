@@ -3,7 +3,6 @@ package com.kashdeya.tinyprogressions.proxy;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
-import com.kashdeya.tinyprogressions.util.RemoveItems;
 import com.kashdeya.tinyprogressions.world.PlantGen;
 import com.kashdeya.tinyprogressions.world.WorldGen;
 
@@ -16,9 +15,6 @@ import net.minecraftforge.fml.relauncher.Side;
 public class CommonProxy {
 
 	public void init() {
-		// Recipes
-		RemoveItems.initRemove();
-
 		// FuelHandler
 		GameRegistry.registerFuelHandler(new FuelHandler());
 

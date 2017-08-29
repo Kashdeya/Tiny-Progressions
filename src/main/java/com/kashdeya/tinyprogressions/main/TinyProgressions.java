@@ -77,6 +77,7 @@ public class TinyProgressions {
 		TechFoods.init();
 		
 		REGISTRY.preInit();
+		RemoveItems.initRemove();
 		
 		// Events
 		MinecraftForge.EVENT_BUS.register(instance);
@@ -112,7 +113,9 @@ public class TinyProgressions {
 		Iterator<ResourceLocation> iterator = RemoveItems.recipes.iterator();
 
 		while (iterator.hasNext()) {
-			registry.remove(iterator.next());
+		    ResourceLocation rl = iterator.next();
+		    System.out.println("Removing: " + rl);
+			registry.remove(rl);
 		}
 	}
 

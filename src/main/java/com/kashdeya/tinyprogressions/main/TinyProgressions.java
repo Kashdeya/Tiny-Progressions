@@ -5,6 +5,7 @@ import java.util.Iterator;
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
 import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
+import com.kashdeya.tinyprogressions.crafting.FoodRecipes;
 import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
 import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
 import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
@@ -98,6 +99,7 @@ public class TinyProgressions {
 		BlockRecipes.init();
 		ItemRecipes.init();
 		ToolsRecipes.init();
+		FoodRecipes.init();
 	}
 
 	@EventHandler

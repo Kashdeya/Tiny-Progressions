@@ -25,7 +25,7 @@ public class ConfigHandler {
 	
 	// Juices
 	public static boolean all_juices = true;
-	
+	public static boolean JuiceBottles = true;
 	// Apples
 	public static boolean iron_apple = true;
 	public static boolean redstone_apple = true;

@@ -16,6 +16,7 @@ public class OreDictHandler {
 		// Vanilla Ore Dicts
 		OreDictionary.registerOre("flint", Items.FLINT);
 		OreDictionary.registerOre("blockGravel", Blocks.GRAVEL);
+		OreDictionary.registerOre("glassBottle", Items.GLASS_BOTTLE);
 		// Everything else Kappa
 		OreDictionary.registerOre("juicer", TechFoods.juicer);
 		OreDictionary.registerOre("blockCharcoal", TechBlocks.charcoal_block);

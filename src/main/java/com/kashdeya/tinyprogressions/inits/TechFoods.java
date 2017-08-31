@@ -4,6 +4,7 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FoodBase;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.items.ItemJuicer;
 import com.kashdeya.tinyprogressions.items.apple.DiamondApple;
 import com.kashdeya.tinyprogressions.items.apple.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.apple.GoldenApple;
@@ -56,7 +57,7 @@ public class TechFoods {
 	public static void init(){
 		// Juices
 		if (ConfigHandler.all_juices){
-			juicer = new ItemBase().setUnlocalizedName("juicer");
+			juicer = new ItemJuicer().setUnlocalizedName("juicer");
 			registerItem(juicer, "juicer");
 			
 			apple_juice = new DrinkBase(6, false).setUnlocalizedName("apple_juice");

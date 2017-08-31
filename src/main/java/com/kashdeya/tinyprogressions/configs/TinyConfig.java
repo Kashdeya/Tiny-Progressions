@@ -105,11 +105,11 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Apples", "Just Because");
 		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
-		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", true, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
+		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", false, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
 		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Apples", true, "Enable Diamond Apple?");
 		ConfigHandler.iron_apple = config.getBoolean("Iron Apple", category + " Apples", true, "Enable Iron Apple?");
 		ConfigHandler.redstone_apple = config.getBoolean("Redstone Apple", category + " Apples", true, "Enable Redstone Apple?");
-		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", false, "Enable Golden Apple Progression?\n[If you do not want Golden Apple Progression DISABLE and enable the Notch Apple.]");
+		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", true, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
 		
 		config.addCustomCategoryComment(category + " Armor", "Why not");
 		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
@@ -209,8 +209,9 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Angel Block", "May save you from certain death!");
 		ConfigHandler.angel_block = config.getBoolean("Angel Block", category + " Angel Block", true, "Enable Angel Block?");
 		
-		config.addCustomCategoryComment(category + " Juices", "Everyone loves juice!");
-		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices", category + " Juices", true, "Enable Juices?");
+		config.addCustomCategoryComment(category + " Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
+		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices W/O Bottles", category + " Juices", true, "Enable Juices With out bottles in the recipe?");
+		ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juices With Bottles", category + " Juices", false, "Enable Juices With bottles in the recipe?");
 		
 		if (config.hasChanged())
         config.save();    

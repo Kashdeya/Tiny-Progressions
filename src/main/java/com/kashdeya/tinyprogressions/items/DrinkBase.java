@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.items;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.advancements.CriteriaTriggers;
@@ -49,12 +50,12 @@ public class DrinkBase extends ItemFood{
             
             if (entityplayer == null || !entityplayer.capabilities.isCreativeMode)
             {
-                if (stack.isEmpty())
+                if (stack.isEmpty() && ConfigHandler.JuiceBottles)
                 {
                     return new ItemStack(Items.GLASS_BOTTLE);
                 }
 
-                if (entityplayer != null)
+                if (entityplayer != null && ConfigHandler.JuiceBottles)
                 {
                     entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
                 }

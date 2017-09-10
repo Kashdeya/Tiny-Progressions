@@ -213,6 +213,10 @@ public class TinyConfig {
 		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices W/O Bottles", category + " Juices", true, "Enable Juices With out bottles in the recipe?");
 		ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juices With Bottles", category + " Juices", false, "Enable Juices With bottles in the recipe?");
 		
+		config.addCustomCategoryComment(category + " Moist", "Change when the first rains on a world are due.");
+		ConfigHandler.custom_moist_timer = config.getBoolean("Enable Custom Moist Timer", category + " Moist", false, "Enable the ability to change how long it takes for the first rain of a world.");
+		ConfigHandler.moist_time = config.getFloat("Moist Timer", category + " Moist", 1, 0, Float.MAX_VALUE, "How long (in days) until the first rainfall");
+		
 		if (config.hasChanged())
         config.save();    
 	}

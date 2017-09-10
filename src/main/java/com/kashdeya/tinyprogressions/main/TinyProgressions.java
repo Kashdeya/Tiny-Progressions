@@ -10,6 +10,7 @@ import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
 import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
 import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
+import com.kashdeya.tinyprogressions.events.EntityEvents;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
@@ -86,6 +87,7 @@ public class TinyProgressions {
 		MinecraftForge.EVENT_BUS.register(EventDrops.class);
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
+		MinecraftForge.EVENT_BUS.register(EntityEvents.class);
 	}
 
 	@EventHandler

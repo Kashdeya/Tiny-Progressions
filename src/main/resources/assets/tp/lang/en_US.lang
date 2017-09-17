@@ -19,8 +19,9 @@ tile.andesite_brick.name=Andesite Brick
 tile.smooth_endstone.name=Smooth EndStone
 tile.old_reed.name=Dried up Reed
 item.dead_reed.name=Dried up Sugar cane
-tile.magma_block.name=Lavastone
+tile.lava_block.name=Lavastone
 tile.water_block.name=Waterstone
+
 #Hardened Stone
 tile.hardened_stone.name=Hardened Stone
 tile.hardened_stone_bricks.name=Hardened Stone Bricks
@@ -405,3 +406,20 @@ tile.white_lamp.name=White Lamp
 tile.yellow_lamp.name=Yellow Lamp
 tile.lamp.name=Lamp
 
+// Extra Food
+item.raw_bacon.name=Raw Bacon
+item.cooked_bacon.name=Cooked Bacon
+item.monster_jerky.name=Monster Jerky
+item.toasted_bread.name=Toasted Bread
+item.fried_egg.name=Fried Egg
+item.cooked_mushroom_brown.name=Cooked Brown Mushroom
+item.cooked_mushroom_red.name=Cooked Red Mushroom
+item.bacon_eggs.name=Bacon & Eggs
+item.little_candy.name=Candy
+item.cooked_apple.name=Cooked Apple
+item.bread_slice.name=Bread Slice
+item.rabbit_sandwhich.name=Rabbit Sandwich
+item.bacon_eggs_sandwhich.name=Bacon & Egg Sandwich
+item.chicken_sandwhich.name=Chicken Sandwich
+item.beef_sandwhich.name=Beef Sandwich
+item.bacon_sandwhich.name=Bacon Sandwich

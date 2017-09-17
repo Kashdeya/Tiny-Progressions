@@ -19,8 +19,8 @@ tile.andesite_brick.name=Andesite Brick
 tile.smooth_endstone.name=Smooth EndStone
 tile.old_reed.name=Dried up Reed
 item.dead_reed.name=Dried up Sugar cane
-tile.lava_block.name=Lava Crystal
-tile.water_block.name=Water Crystal
+tile.magma_block.name=Lavastone
+tile.water_block.name=Waterstone
 #Hardened Stone
 tile.hardened_stone.name=Hardened Stone
 tile.hardened_stone_bricks.name=Hardened Stone Bricks

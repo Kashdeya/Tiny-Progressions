@@ -41,14 +41,14 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Growth Crystal", "These like to grow things!");
 		ConfigHandler.BlockGrowth = config.getBoolean("Growth Crystal Tier 1", category + " Growth Crystal", true, "Enable Growth Crystal Tier 1?");
 		ConfigHandler.BlockGrowthTicks = config.getInt("Growth Crystal Tier 1 Speed", category + " Growth Crystal", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 40 Ticks or 2 Seconds]\n[Default*40=1200 Ticks]");
-		ConfigHandler.GrowthParticalTicks = config.getInt("Growth Crystal Tier 1 Particles", category + " Growth Crystal", 750, 50, 750, "Lower Number gives more Particles");
+		ConfigHandler.GrowthParticalTicks = config.getInt("Growth Crystal Tier 1 Particles", category + " Growth Crystal", 1000, 50, 1000, "Lower Number gives more Particles");
 		ConfigHandler.BlockGrowthUpgrade = config.getBoolean("Growth Crystal Tier 2", category + " Growth Crystal", true, "Enable Growth Crystal Tier 2?\n[Requires Tier 1 to be Enabled]");
 		ConfigHandler.BlockGrowthUpgradeTicks = config.getInt("Growth Crystal Tier 2 Speed", category + " Growth Crystal", 40, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 20 Ticks or 1 Second]\n[Default*20=800 Ticks]");
-		ConfigHandler.GrowthUpgradeParticalTicks = config.getInt("Growth Crystal Tier 2 Particles", category + " Growth Crystal", 750, 50, 750, "Lower Number gives more Particles");
+		ConfigHandler.GrowthUpgradeParticalTicks = config.getInt("Growth Crystal Tier 2 Particles", category + " Growth Crystal", 1000, 50, 1000, "Lower Number gives more Particles");
 		ConfigHandler.BlockGrowthUpgradeTwo = config.getBoolean("Growth Crystal Tier 3", category + " Growth Crystal", true, "Enable Growth Crystal Tier 3?\n[Requires Tier 2 to be Enabled]");
 		ConfigHandler.BlockGrowthUpgradeTwoTicks = config.getInt("Growth Crystal Tier 3 Speed", category + " Growth Crystal", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 10 Ticks or 1/2 a Second]\n[Default*10=400 Ticks]");
-		ConfigHandler.GrowthUpgradeTwoParticalTicks = config.getInt("Growth Crystal Tier 3 Particles", category + " Growth Crystal", 750, 50, 750, "Lower Number gives more Particles");
-		ConfigHandler.ParticalTicks = config.getBoolean("Growth Crystal Particals", category + " Growth Crystal", true, "Enable Growth Crystal Particals?");
+		ConfigHandler.GrowthUpgradeTwoParticalTicks = config.getInt("Growth Crystal Tier 3 Particles", category + " Growth Crystal", 1000, 50, 1000, "Lower Number gives more Particles");
+		ConfigHandler.ParticalTicks = config.getBoolean("Growth Crystal Particals", category + " Growth Crystal", false, "Enable Growth Crystal Particals?");
 		
 		config.addCustomCategoryComment(category + " Watering Cans", "Remember to water those plants!");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");
@@ -105,11 +105,11 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Apples", "Just Because");
 		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
-		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", false, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
+		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", true, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
 		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Apples", true, "Enable Diamond Apple?");
 		ConfigHandler.iron_apple = config.getBoolean("Iron Apple", category + " Apples", true, "Enable Iron Apple?");
 		ConfigHandler.redstone_apple = config.getBoolean("Redstone Apple", category + " Apples", true, "Enable Redstone Apple?");
-		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", true, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
+		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", false, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
 		
 		config.addCustomCategoryComment(category + " Armor", "Why not");
 		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
@@ -188,8 +188,8 @@ public class TinyConfig {
 		ConfigHandler.emerald_sword = config.getBoolean("Emerald Sword", category + " Emerald", true, "Enable Emerald Sword?");
 		
 		config.addCustomCategoryComment(category + " Ender Ore", "Might as well add this");
-		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable  Ender Ore?");
-		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable  Endermite spawn?");
+		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable Ender Ore?");
+		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable Endermite spawn?");
 		ConfigHandler.endermite_spawn = config.getFloat("Endermite Spawn", category + " Ender Ore", 0.25F, 0.0F, 1.0F, "Sets the Chance of Endermites to spawn when Ore is mined.");
 		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 5, 1, 64, "Sets the Chance of Ender ore.");
 		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 10, "Sets the min Y level.");
@@ -197,17 +197,29 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 1, 64, "Sets the Ender Ore Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Lava Ore", "May also include Lava Armour!");
-		ConfigHandler.lava_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable  Lava Ore?");
+		ConfigHandler.lava_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable Lava Ore?");
 		ConfigHandler.lava_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 5, 1, 64, "Sets the Chance of Lava ore.");
 		ConfigHandler.lava_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 10, "Sets the min Y level.");
 		ConfigHandler.lava_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.lava_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 2, 1, 64, "Sets the Lava Ore Vein Size.");
 		
+		config.addCustomCategoryComment(category + " Stones", "Lavastone and Waterstone!");
+		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Stones", true, "Enable Lavastone?");
+		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Stones", 5, 1, 64, "Sets the Chance of Lavastone.");
+		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Stones", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Stones", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Stones", 2, 1, 64, "Sets the Lavastone Vein Size.");
+		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Stones", true, "Enable Waterstone?");
+		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Stones", 5, 1, 64, "Sets the Chance of Waterstone.");
+		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Stones", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Stones", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Stones", 2, 1, 64, "Sets the Waterstone Vein Size.");
+		
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
 		
-		config.addCustomCategoryComment(category + " Angel Block", "May save you from certain death!");
-		ConfigHandler.angel_block = config.getBoolean("Angel Block", category + " Angel Block", true, "Enable Angel Block?");
+		config.addCustomCategoryComment(category + " Floaty Block", "May save you from certain death!");
+		ConfigHandler.angel_block = config.getBoolean("Floaty McFloaty Block", category + " Floaty Block", true, "Enable Floaty McFloaty Block?");
 		
 		config.addCustomCategoryComment(category + " Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
 		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices W/O Bottles", category + " Juices", true, "Enable Juices With out bottles in the recipe?");
@@ -216,6 +228,17 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Moist", "Change when the first rains on a world are due.");
 		ConfigHandler.custom_moist_timer = config.getBoolean("Enable Custom Moist Timer", category + " Moist", false, "Enable the ability to change how long it takes for the first rain of a world.");
 		ConfigHandler.moist_time = config.getFloat("Moist Timer", category + " Moist", 1, 0, Float.MAX_VALUE, "How long (in days) until the first rainfall");
+		
+		config.addCustomCategoryComment(category + " Extra Food", "Want more food?");
+		ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", category + "Extra Food", true, "Enable Cooked Bacon?");
+		ConfigHandler.MonsterJerky = config.getBoolean("Monster Jerky", category + "Extra Food", true, "Enable Monster jerky?");
+		ConfigHandler.ToastedBread = config.getBoolean("Toasted Bread", category + "Extra Food", true, "Enable Toasted Bread?");
+		ConfigHandler.FriedEgg = config.getBoolean("Fried Egg", category + "Extra Food", true, "Enable Fried Egg?");
+		ConfigHandler.CookedMushrooms = config.getBoolean("Cooked Mushrooms", category + "Extra Food", true, "Enable Cooked Mushrooms?");
+		ConfigHandler.BaconEggs = config.getBoolean("Bacon & Eggs", category + "Extra Food", true, "Enable Bacon & Eggs?");
+		ConfigHandler.LittleCandy = config.getBoolean("Little Candy", category + "Extra Food", true, "Enable Little Candy?");
+		ConfigHandler.Sandwiches = config.getBoolean("Sandwiches", category + "Extra Food", true, "Enable Sandwiches?");
+		ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", category + "Extra Food", true, "Enable Cooked Apple?");
 		
 		if (config.hasChanged())
         config.save();    

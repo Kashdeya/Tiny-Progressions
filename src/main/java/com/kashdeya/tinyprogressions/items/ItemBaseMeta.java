@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.items;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -11,7 +13,6 @@ public class ItemBaseMeta extends ItemBase
 	public ItemBaseMeta(String[] unlocalNames)
 	{
 		setHasSubtypes(true);
-		
 		this.unlocalNames = unlocalNames;
 	}
 	

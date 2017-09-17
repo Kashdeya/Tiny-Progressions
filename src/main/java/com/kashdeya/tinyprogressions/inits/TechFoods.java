@@ -50,7 +50,6 @@ public class TechFoods {
 	public static Item bread_slice;
 	public static Item chicken_sandwhich;
 	public static Item cooked_apple;
-	public static Item french_fries;
 	public static Item rabbit_sandwhich;
 	public static Item bacon_eggs_sandwhich;
 	
@@ -110,6 +109,7 @@ public class TechFoods {
 			registerItem(golden_apple, "golden_apple");
 		}
 		
+		// Extra Food
 		if (ConfigHandler.CookedBacon){
 		    raw_bacon = new FoodBase(1, 0.1F, true).setUnlocalizedName("raw_bacon");
 		    registerItem(raw_bacon, "raw_bacon");
@@ -128,11 +128,9 @@ public class TechFoods {
 		    fried_egg = new FoodBase(5, 0.6F, true).setUnlocalizedName("fried_egg");
 		    registerItem(fried_egg, "fried_egg");
 	    }
-	    if (ConfigHandler.CookedMushroomBrown){
+	    if (ConfigHandler.CookedMushrooms){
 		    cooked_mushroom_brown = new FoodBase(2, 03F, false).setUnlocalizedName("cooked_mushroom_brown");
 		    registerItem(cooked_mushroom_brown, "cooked_mushroom_brown");
-	    }
-	    if (ConfigHandler.CookedMushroomRed){
 		    cooked_mushroom_red = new FoodBase(2, 03F, false).setUnlocalizedName("cooked_mushroom_red");
 		    registerItem(cooked_mushroom_red, "cooked_mushroom_red");
 	    }
@@ -144,37 +142,23 @@ public class TechFoods {
 		    little_candy = new FoodBase(2, 0.6F, true).setUnlocalizedName("little_candy");
 		    registerItem(little_candy, "little_candy");
 	    }
-	    if (ConfigHandler.BaconSandwhich){
-		    bacon_sandwhich = new FoodBase(6, 2.0F, true).setUnlocalizedName("bacon_sandwhich");
-		    registerItem(bacon_sandwhich, "bacon_sandwhich");
-	    }
-	    if (ConfigHandler.BeefSandwhich){
-		    beef_sandwhich = new FoodBase(10, 2.0F, true).setUnlocalizedName("beef_sandwhich");
-		    registerItem(beef_sandwhich, "beef_sandwhich");
-	    }
-	    if (ConfigHandler.BreadSlice){
-		    bread_slice = new FoodBase(1, 0.1F, true).setUnlocalizedName("bread_slice");
-		    registerItem(bread_slice, "bread_slice");
-	    }
-	    if (ConfigHandler.ChickenSandwhich){
-		    chicken_sandwhich = new FoodBase(8, 2.0F, true).setUnlocalizedName("chicken_sandwhich");
-		    registerItem(chicken_sandwhich, "chicken_sandwhich");
-	    }
 	    if (ConfigHandler.CookedApple){
 		    cooked_apple = new FoodBase(8, 10.0F, true).setUnlocalizedName("cooked_apple");
 		    registerItem(cooked_apple, "cooked_apple");
 	    }
-	    if (ConfigHandler.FrenchFries){
-		    french_fries = new FoodBase(8, 8.2F, true).setUnlocalizedName("french_fries");
-		    registerItem(french_fries, "french_fries");
-	    }
-	    if (ConfigHandler.RabbitSandwhich){
+	    if (ConfigHandler.Sandwiches){
+	    	bread_slice = new FoodBase(1, 0.1F, true).setUnlocalizedName("bread_slice");
+		    registerItem(bread_slice, "bread_slice");
 		    rabbit_sandwhich = new FoodBase(8, 2.0F, true).setUnlocalizedName("rabbit_sandwhich");
 		    registerItem(rabbit_sandwhich, "rabbit_sandwhich");
-	    }
-	    if (ConfigHandler.BaconEggsSandwhich){
 		    bacon_eggs_sandwhich = new FoodBase(9, 11.0F, true).setUnlocalizedName("bacon_eggs_sandwhich");
 		    registerItem(bacon_eggs_sandwhich, "bacon_eggs_sandwhich");
+		    chicken_sandwhich = new FoodBase(8, 2.0F, true).setUnlocalizedName("chicken_sandwhich");
+		    registerItem(chicken_sandwhich, "chicken_sandwhich");
+		    beef_sandwhich = new FoodBase(10, 2.0F, true).setUnlocalizedName("beef_sandwhich");
+		    registerItem(beef_sandwhich, "beef_sandwhich");
+		    bacon_sandwhich = new FoodBase(6, 2.0F, true).setUnlocalizedName("bacon_sandwhich");
+		    registerItem(bacon_sandwhich, "bacon_sandwhich");
 	    }
 		
 	}

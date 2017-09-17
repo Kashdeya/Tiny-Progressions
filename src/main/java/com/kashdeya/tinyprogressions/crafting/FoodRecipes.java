@@ -1,11 +1,14 @@
 package com.kashdeya.tinyprogressions.crafting;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
+import com.kashdeya.tinyprogressions.inits.TechItems;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class FoodRecipes {
 
@@ -80,7 +83,7 @@ public class FoodRecipes {
 			});
 			
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.cactus_juice, 2), new Object[] {
-					"juicer", Blocks.CACTUS, "glassBottle"
+					"juicer", Blocks.CACTUS, "glassBottle", "glassBottle"
 			});
 			
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.slime_juice), new Object[] {
@@ -96,7 +99,7 @@ public class FoodRecipes {
 			});
 			
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.pumpkin_juice, 2), new Object[] {
-					"juicer", Blocks.PUMPKIN, "glassBottle"
+					"juicer", Blocks.PUMPKIN, "glassBottle", "glassBottle"
 			});
 		}
 		
@@ -171,6 +174,62 @@ public class FoodRecipes {
 					"ggg",
 						Character.valueOf('g'), "blockGold",
 						Character.valueOf('a'), Items.APPLE
+			});
+		}
+		
+		// Extra Food
+		if (ConfigHandler.CookedApple) {
+			GameRegistry.addSmelting(Items.APPLE, new ItemStack(TechFoods.cooked_apple), 1.0F);
+		}
+		if (ConfigHandler.CookedMushrooms) {
+			GameRegistry.addSmelting(Blocks.RED_MUSHROOM, new ItemStack(TechFoods.cooked_mushroom_red), 0.5F);
+			GameRegistry.addSmelting(Blocks.BROWN_MUSHROOM, new ItemStack(TechFoods.cooked_mushroom_brown), 0.5F);
+		}
+		if (ConfigHandler.CookedBacon) {
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.raw_bacon, 4), new Object[] {
+					Items.PORKCHOP
+			});
+			GameRegistry.addSmelting(TechFoods.raw_bacon, new ItemStack(TechFoods.cooked_bacon), 0.5F);
+		}
+		if (ConfigHandler.FriedEgg) {
+			GameRegistry.addSmelting(Items.EGG, new ItemStack(TechFoods.fried_egg), 0.5F);
+		}
+		if (ConfigHandler.MonsterJerky) {
+			GameRegistry.addSmelting(Items.ROTTEN_FLESH, new ItemStack(TechFoods.monster_jerky), 0.5F);
+		}
+		if (ConfigHandler.ToastedBread) {
+			GameRegistry.addSmelting(Items.BREAD, new ItemStack(TechFoods.toasted_bread), 0.5F);
+		}
+		if (ConfigHandler.CookedMushrooms) {
+			GameRegistry.addSmelting(Items.SUGAR, new ItemStack(TechFoods.little_candy), 0.5F);
+		}
+		if (ConfigHandler.Sandwiches) {
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.bacon_eggs), new Object[] {
+					TechFoods.cooked_bacon, TechFoods.fried_egg, TechFoods.fried_egg
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.bacon_eggs_sandwhich), new Object[] {
+					TechFoods.bread_slice, TechFoods.bacon_eggs, TechFoods.bread_slice
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.bread_slice, 10), new Object[] {
+					Items.BREAD
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.bacon_sandwhich), new Object[] {
+					TechFoods.bread_slice, TechFoods.cooked_bacon, TechFoods.cooked_bacon, TechFoods.bread_slice
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.beef_sandwhich), new Object[] {
+					TechFoods.bread_slice, Items.COOKED_BEEF, TechFoods.bread_slice
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.chicken_sandwhich), new Object[] {
+					TechFoods.bread_slice, Items.COOKED_CHICKEN, TechFoods.bread_slice
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.rabbit_sandwhich), new Object[] {
+					TechFoods.bread_slice, Items.COOKED_RABBIT, TechFoods.bread_slice
 			});
 		}
 	}

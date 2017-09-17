@@ -128,7 +128,7 @@ public class BlockGrowthUpgrade extends Block implements ITileEntityProvider {
         int zO = pos.getZ();
 
         for (int xD = -4; xD <= 4; xD++) {
-            for (int yD = -5; yD <= 5; yD++) {
+            for (int yD = -6; yD <= 6; yD++) {
                 for (int zD = -4; zD <= 4; zD++) {
                     int x = xO + xD;
                     int y = yO + yD;

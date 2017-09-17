@@ -268,7 +268,7 @@ public class BlockRecipes {
 		
 		// Hardened Stone
 		if (ConfigHandler.hardened_stone) {
-			GameRegistry.addSmelting(Blocks.STONE, new ItemStack(TechBlocks.hardened_stone), 1.0F);
+			GameRegistry.addSmelting(new ItemStack(Blocks.STONE, 1, 0), new ItemStack(TechBlocks.hardened_stone), 1.0F);
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks), new Object[] {
 		            "ss",
 		            "ss",

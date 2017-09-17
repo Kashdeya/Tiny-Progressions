@@ -37,6 +37,7 @@ public class LavaBlock extends Block {
         this.setResistance(5.0F);
         this.setLightLevel(0.1F);
         this.setTickRandomly(true);
+        this.setUnlocalizedName("lava_block");
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
     }

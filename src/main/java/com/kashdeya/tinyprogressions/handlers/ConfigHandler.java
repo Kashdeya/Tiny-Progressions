@@ -23,7 +23,9 @@ public class ConfigHandler {
 	public static boolean RightClickCrops = false;
 	
 	// Withered Block
-	public static boolean WitheredBlock = true;
+	public static boolean WitheredBlock = false;
+	public static boolean WitheredBlockParticals = false;
+	public static int WitheredBlockTime = 3;
 	
 	// Cobblegens
 	public static boolean Cobblegen = false;

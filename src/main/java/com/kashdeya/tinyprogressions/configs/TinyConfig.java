@@ -181,13 +181,18 @@ public class TinyConfig {
 		ConfigHandler.emerald_sword = config.getBoolean("Emerald Sword", category + " Emerald", true, "Enable Emerald Sword?");
 		
 		config.addCustomCategoryComment(category + " Ender Ore", "Might as well add this");
-		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable  Ender Ore?");
-		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable  Endermite spawn?");
+		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable Ender Ore?");
+		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable Endermite spawn?");
 		ConfigHandler.endermite_spawn = config.getFloat("Endermite Spawn", category + " Ender Ore", 0.25F, 0.0F, 1.0F, "Sets the Chance of Endermites to spawn when Ore is mined.");
 		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 5, 1, 64, "Sets the Chance of Ender ore.");
 		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 1, "Sets the min Y level.");
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 1, 64, "Sets the Ender Ore Vein Size.");
+		
+		config.addCustomCategoryComment(category + " Withered Bedrock", "Sink Into Madness Block");
+		ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", category + " Withered Bedrock", true, "Enable Withered Bedrock?");
+		ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered Particals", category + " Withered Bedrock", true, "Enable Player Withered Particals?");
+		ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", category + " Withered Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from standing on Withered Bedrock.\n[1 = 20Ticks]");
 		
 		if (config.hasChanged())
         config.save();    

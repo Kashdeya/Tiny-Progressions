@@ -58,6 +58,7 @@ public class RenderHandler {
 	    InventoryBlockRender(TechBlocks.smooth_endstone, "smooth_endstone");
 	    InventoryBlockRender(TechBlocks.stone_torch, "stone_torch");
 	    InventoryBlockRender(TechBlocks.ender_ore, "ender_ore");
+	    InventoryBlockRender(TechBlocks.withered_block, "withered_block");
 	}
 	
 	public static void initBlockRenders(){

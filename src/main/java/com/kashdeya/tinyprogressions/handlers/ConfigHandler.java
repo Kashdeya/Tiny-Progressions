@@ -22,6 +22,9 @@ public class ConfigHandler {
 	// Crops
 	public static boolean RightClickCrops = false;
 	
+	// Withered Block
+	public static boolean WitheredBlock = true;
+	
 	// Cobblegens
 	public static boolean Cobblegen = false;
 	public static boolean IronCobblegen = false;

@@ -17,6 +17,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.SmoothEndStone;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
+import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
@@ -60,6 +61,8 @@ public class TechBlocks {
 	public static Block stone_torch;
 	// EnderOre
 	public static Block ender_ore;
+	// WitherBlock
+	public static Block withered_block;
 	
 	public static void init(){
 		
@@ -161,6 +164,12 @@ public class TechBlocks {
 		if (ConfigHandler.ender_ore){
 			ender_ore = new EnderOre();
 			registerBlock(ender_ore, "ender_ore", true);
+		}
+		
+		// Withered Block
+		if (ConfigHandler.WitheredBlock){
+			withered_block = new WitheredBlock();
+			registerBlock(withered_block, "withered_block", true);
 		}
 	}
 	

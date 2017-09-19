@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.tiles.TileEntityWithered;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -19,6 +20,8 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.stats.StatList;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityBeacon;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
@@ -38,7 +41,11 @@ public class WitheredBlock extends Block {
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("withered_block");
         this.disableStats();
-        this.getTickRandomly();
+    }
+    
+    public TileEntity createNewTileEntity(World worldIn, int meta)
+    {
+        return new TileEntityWithered();
     }
     
     @Override
@@ -56,10 +63,10 @@ public class WitheredBlock extends Block {
     
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
-    {
+    {    	
         if (entityIn instanceof EntityPlayer)
         {
-            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.WITHER, 128, 0, true, false));
+            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.WITHER, 120, 0, true, true));
         }
 
         super.onEntityWalk(worldIn, pos, entityIn);

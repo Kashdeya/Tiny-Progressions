@@ -43,7 +43,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
@@ -61,11 +60,9 @@ public class TinyProgressions {
 	public static final CreativeTabs tabTP = new TabTP("tiny_progressions");
 
 	public static SimpleNetworkWrapper network;
-	public static org.apache.logging.log4j.Logger logger;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
-		logger = e.getModLog();
 
 		// Configs
 		TinyConfig.initMainConfigs();
@@ -121,11 +118,6 @@ public class TinyProgressions {
 		}
 	}
 
-	@SubscribeEvent
-	public void registerOre(OreRegisterEvent event) {
-		logger.debug(event.getOre().getDisplayName());
-	}
-	
 	@SubscribeEvent
 	public void itemCrafted(ItemCraftedEvent event)
 	{

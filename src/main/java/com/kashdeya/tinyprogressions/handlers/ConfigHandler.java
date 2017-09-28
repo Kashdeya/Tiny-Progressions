@@ -193,28 +193,6 @@ public class ConfigHandler {
 	// Angel Block
 	public static boolean angel_block = true;
 	
-	public static boolean parse(String key)
-	{
-		Object value = false;
-		
-		try
-		{
-			value = ConfigHandler.class.getField(key).get(null);
-		}
-		catch(Exception e)
-		{
-		}
-		
-		try
-		{
-			return (boolean)value;
-		}
-		catch(Exception e)
-		{
-			return false;
-		}
-	}
-	
 	// Food and Drinks
 	public static boolean CookedBacon = true;
 	public static boolean MonsterJerky = true;
@@ -243,4 +221,11 @@ public class ConfigHandler {
 	// Rain Timer
 	public static boolean custom_moist_timer;
 	public static float moist_time;
+	
+	// Life Force ore
+	public static boolean spirit_ore = true;
+	public static int spirit_ore_frequency = 5;
+	public static int spirit_ore_min = 1;
+	public static int spirit_ore_max = 32;
+	public static int spirit_ore_size = 2;
 }

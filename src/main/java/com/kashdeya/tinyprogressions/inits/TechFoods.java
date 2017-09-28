@@ -59,31 +59,31 @@ public class TechFoods {
 			juicer = new ItemJuicer().setUnlocalizedName("juicer");
 			registerItem(juicer, "juicer");
 			
-			apple_juice = new DrinkBase(6, false).setUnlocalizedName("apple_juice");
+			apple_juice = new DrinkBase(3, false).setUnlocalizedName("apple_juice");
 			registerItem(apple_juice, "apple_juice");
 			
-			carrot_juice = new DrinkBase(4, false).setUnlocalizedName("carrot_juice");
+			carrot_juice = new DrinkBase(3, false).setUnlocalizedName("carrot_juice");
 			registerItem(carrot_juice, "carrot_juice");
 			
-			potatoe_juice = new DrinkBase(4, false).setUnlocalizedName("potatoe_juice");
+			potatoe_juice = new DrinkBase(3, false).setUnlocalizedName("potatoe_juice");
 			registerItem(potatoe_juice, "potatoe_juice");
 			
 			beet_juice = new DrinkBase(3, false).setUnlocalizedName("beet_juice");
 			registerItem(beet_juice, "beet_juice");
 			
-			cactus_juice = new DrinkBase(4, false).setUnlocalizedName("cactus_juice");
+			cactus_juice = new DrinkBase(3, false).setUnlocalizedName("cactus_juice");
 			registerItem(cactus_juice, "cactus_juice");
 			
-			slime_juice = new DrinkBase(2, false).setUnlocalizedName("slime_juice");
+			slime_juice = new DrinkBase(3, false).setUnlocalizedName("slime_juice");
 			registerItem(slime_juice, "slime_juice");
 			
-			wheat_juice = new DrinkBase(2, false).setUnlocalizedName("wheat_juice");
+			wheat_juice = new DrinkBase(3, false).setUnlocalizedName("wheat_juice");
 			registerItem(wheat_juice, "wheat_juice");
 			
-			melon_juice = new DrinkBase(4, false).setUnlocalizedName("melon_juice");
+			melon_juice = new DrinkBase(3, false).setUnlocalizedName("melon_juice");
 			registerItem(melon_juice, "melon_juice");
 			
-			pumpkin_juice = new DrinkBase(4, false).setUnlocalizedName("pumpkin_juice");
+			pumpkin_juice = new DrinkBase(3, false).setUnlocalizedName("pumpkin_juice");
 			registerItem(pumpkin_juice, "pumpkin_juice");
 		}
 		
@@ -125,7 +125,7 @@ public class TechFoods {
 		    registerItem(toasted_bread, "toasted_bread");
 	    }
 	    if (ConfigHandler.FriedEgg){
-		    fried_egg = new FoodBase(5, 0.6F, true).setUnlocalizedName("fried_egg");
+		    fried_egg = new FoodBase(4, 0.6F, true).setUnlocalizedName("fried_egg");
 		    registerItem(fried_egg, "fried_egg");
 	    }
 	    if (ConfigHandler.CookedMushrooms){
@@ -139,11 +139,11 @@ public class TechFoods {
 		    registerItem(bacon_eggs, "bacon_eggs");
 	    }
 	    if (ConfigHandler.LittleCandy){
-		    little_candy = new FoodBase(2, 0.6F, true).setUnlocalizedName("little_candy");
+		    little_candy = new FoodBase(1, 0.6F, true).setUnlocalizedName("little_candy");
 		    registerItem(little_candy, "little_candy");
 	    }
 	    if (ConfigHandler.CookedApple){
-		    cooked_apple = new FoodBase(8, 10.0F, true).setUnlocalizedName("cooked_apple");
+		    cooked_apple = new FoodBase(8, 8.0F, true).setUnlocalizedName("cooked_apple");
 		    registerItem(cooked_apple, "cooked_apple");
 	    }
 	    if (ConfigHandler.Sandwiches){

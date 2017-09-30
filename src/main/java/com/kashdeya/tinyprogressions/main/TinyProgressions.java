@@ -60,10 +60,12 @@ public class TinyProgressions {
 	public static final CreativeTabs tabTP = new TabTP("tiny_progressions");
 
 	public static SimpleNetworkWrapper network;
+	public static org.apache.logging.log4j.Logger logger;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
-
+		logger = e.getModLog();
+		
 		// Configs
 		TinyConfig.initMainConfigs();
 

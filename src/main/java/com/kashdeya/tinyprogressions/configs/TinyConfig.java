@@ -1,11 +1,16 @@
 package com.kashdeya.tinyprogressions.configs;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
+import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 
 public class TinyConfig {
@@ -24,6 +29,10 @@ public class TinyConfig {
         
         config.load();
         System.out.println(config.getLoadedConfigVersion() +":"+ config.getDefinedConfigVersion());
+        
+     // Run Legacy Handler if the versions dont Match up
+        if(config.getLoadedConfigVersion() != config.getDefinedConfigVersion())
+        	LegacyHandler.runLegacyHandler();
         
 		String category;
 		
@@ -234,4 +243,221 @@ public class TinyConfig {
 		if (config.hasChanged())
         config.save();    
 	}
+	
+	/**
+	 * Used to update old configs without losing the old settings and cleaning up configs. 
+	 * 
+	 * @author GenDeathrow
+	 */
+	protected static class LegacyHandler
+	{
+		
+		private static List<String> removeCategoryList = new ArrayList();
+		private static List<List<String>> removePropertiesList = new ArrayList();
+		private static List<List<String>> moveKeyList = new ArrayList();
+		private static List<List<String>> renameKeyList = new ArrayList();
+		
+		private static org.apache.logging.log4j.Logger logger;
+		
+		public static void runLegacyHandler()
+		{
+			logger = TinyProgressions.logger;
+			
+			
+			logger.info("Initiating Config Legacy Handler....");
+	        initLegacyHander();
+	        
+	        logger.info("Moving Old Properties....");
+	        moveOldKeys();
+	        
+	        logger.info("Renaming Old Propertiesr....");
+	        renameOldKeys();
+	        
+	        logger.info("Cleaning up Categories....");
+			removeOldCategories();
+			
+			logger.info("Cleaning up Properties....");
+			removeProperites();
+			
+			logger.info("Config Legacy Handler Finished");
+		}		
+		
+		/**
+		 * Setup what Properties need removal <br>
+		 * Must go in order of operation.. it will
+		 *  <br><br>
+		 * <b>1st.</b> It moves properties <br>
+		 * <b>2nd.</b> It renames properties<br>
+		 * <b>3rd.</b> Than removes old categories<br>
+		 *  <br><br>
+		 * So you have to set it up in correct order to get the files end up right.
+		 */
+		private static void initLegacyHander()
+		{
+			
+			//addToMovePropertyList("tiny progressions birthday pickaxe", "Birthday Pickaxe", "tiny progressions goodies");
+			//addToRenamePropertyList("tiny progressions goodies" , "Birthday Pickaxe", "Party Pickaxe");
+			//addToRemoveCategoryList("tiny progressions birthday pickaxe");			
+			//addToRemoveProperties(category, propName);
+		}
+		
+		/**
+		 * Adds Property to be move to a new Category, Overwrites any Property with the same name
+		 * 
+		 * @param oldCategory
+		 * @param propName
+		 * @param newCategory
+		 */
+		public static void addToMovePropertyList(String oldCategory, String propName, String newCategory)
+		{
+			moveKeyList.add(Arrays.asList(oldCategory, propName, newCategory));
+		}
+		
+		/**
+		 * Renames a Property, Overwrites any Property with the new Name
+		 * 
+		 * @param category
+		 * @param propName
+		 * @param newPropName
+		 */
+		public static void addToRenamePropertyList(String category, String propName, String newPropName)
+		{
+			renameKeyList.add(Arrays.asList(category , propName, newPropName));
+		}
+		
+		/**
+		 * This is used to remove Properties inside categories that are being used still, <br>
+		 * but the Property is no longer used. <br><br>
+		 * 
+		 * <b>Dont Use this if your overwriting a property with move / rename</b>
+		 * 
+		 * @param category
+		 * @param propName
+		 */
+		public static void addToRemovePropertyList(String category, String propName)
+		{
+			renameKeyList.add(Arrays.asList(category , propName));
+		}
+		
+		/**
+		 * Adds to Remove Category List, All Properties and Category will be gone for ever, Careful with this one
+		 * 
+		 * @param category
+		 */
+		public static void addToRemoveCategoryList(String category)
+		{
+			removeCategoryList.add(category);
+		}
+		
+		
+		private static void moveOldKeys()
+		{
+			for(List<String> parms : moveKeyList)
+			{
+				if(parms.size() != 3) return;
+				
+				String oldCat = parms.get(0);
+				String propName = parms.get(1);
+				String newCat = parms.get(2);
+				
+				if(config.hasCategory(oldCat) && config.hasKey(oldCat, propName))
+				{
+					// Remove property if it already exist than replace
+					if(config.hasKey(newCat, propName))
+					{
+						removeProperty(newCat, propName);
+						logger.info("    - found duplicate property ("+propName+"), Overwriting.");
+					}
+					config.moveProperty(oldCat, propName, newCat);
+					logger.info("    - property Moved ("+propName+")");
+				}
+			}
+		}
+		
+		private static void renameOldKeys()
+		{
+			for(List<String> parms : renameKeyList)
+			{
+				if(parms.size() != 3) return;
+				
+				String category = parms.get(0);
+				String oldPropName = parms.get(1);
+				String newPropName = parms.get(2);
+				
+				if(config.hasCategory(category) && config.hasKey(category, oldPropName))
+				{
+					// Remove property if it already exist than replace
+					if(config.hasKey(category, newPropName))
+					{
+						removeProperty(category, newPropName);
+						logger.info("    - found duplicate property ("+newPropName+"), Overwriting.");
+					}
+					config.renameProperty(category, oldPropName, newPropName);
+					logger.info("    - property ("+oldPropName+") Renamed to ("+newPropName+")");
+				}
+			}	
+		}
+		
+		private static void removeProperites()
+		{
+			for(List<String> parms : removePropertiesList)
+			{
+				String category = parms.get(0);
+				String propName = parms.get(1);
+				
+				if(config.hasKey(category, propName))
+				{
+					removeProperty(category, propName);
+					
+					logger.info("    - removing property ("+category+":"+propName+"). Its no longer Needed");
+				}
+			}
+		}
+		
+		/**
+		 * Remove Property if needed
+		 * 
+		 * @param category
+		 * @param propName
+		 */
+		public static void removeProperty(String category, String propName)
+		{
+			String rmv = "Remove";
+			config.addCustomCategoryComment(rmv, "");
+				config.moveProperty(category, propName, rmv);
+			config.removeCategory(config.getCategory(rmv));
+		}
+		/**
+		 * Add all Categories you want to remove the the remove List. 
+		 * This will remove all the properties inside these category's.
+		 * Only do this if you have no intention of ever using that category name again,
+		 * And don't mine losing the properties inside (config.moveproperty could be used before calling remove)  
+		 */
+		private static void removeOldCategories()
+		{
+			for(String category : removeCategoryList)
+			{
+				if(config.hasCategory(category))
+				{
+					config.removeCategory(config.getCategory(category));
+					logger.info("    - category removed ("+category+")");
+				}
+			}
+		}
+		
+		
+		/**
+		 * Use this to 
+		 * @param Category
+		 * @return ConfigCategory
+		 */
+		private static ConfigCategory getCategory(String Category)
+		{
+			return config.getCategory(Category);
+		}
+
+		
+	}
+	
+	// Config Tools 
 }

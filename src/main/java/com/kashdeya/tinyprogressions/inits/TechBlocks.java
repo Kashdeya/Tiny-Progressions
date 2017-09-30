@@ -122,9 +122,6 @@ public class TechBlocks {
     public static Block colored_lamp;
 	// Glowstone Blocks
     public static Block colored_glowstone;
-    // Life Force
-    public static Block spirit_ore;
-    public static Block spirit_torch;
     
 	public static void init() {
 
@@ -325,17 +322,6 @@ public class TechBlocks {
 			water_block = new WaterBlock();
 			registerBlock(water_block, "water_block", true);
 		}
-		
-		/*
-		// Spirit Ore
-		if (ConfigHandler.spirit_ore) {
-			spirit_ore = new SpiritOre();
-			registerBlock(spirit_ore, "spirit_ore", true);
-			
-			spirit_torch = new SpiritTorch();
-			registerBlock(spirit_torch, "spirit_torch", true);
-		}
-		*/
 	}
 
 	public static void registerBlock(Block block, String name, boolean itemblock) {

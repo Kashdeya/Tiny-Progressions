@@ -32,8 +32,8 @@ public class ConfigHandler {
 	public static float AppleSaturation = 0.8F;
 	public static int CarrotAmount = 3;
 	public static float CarrotSaturation = 0.8F;
-	public static int PotatoeAmount = 3;
-	public static float PotatoeSaturation = 0.8F;
+	public static int PotatoAmount = 3;
+	public static float PotatoSaturation = 0.8F;
 	public static int BeetAmount = 3;
 	public static float BeetSaturation = 0.8F;
 	public static int CactusAmount = 3;

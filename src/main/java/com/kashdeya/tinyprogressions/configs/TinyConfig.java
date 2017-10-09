@@ -230,8 +230,8 @@ public class TinyConfig {
 		ConfigHandler.AppleSaturation = config.getFloat("Apple Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		ConfigHandler.CarrotAmount = config.getInt("Carrot Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.CarrotSaturation = config.getFloat("Carrot Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.PotatoeAmount = config.getInt("Potatoe Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.PotatoeSaturation = config.getFloat("Potatoe Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.PotatoAmount = config.getInt("Potato Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.PotatoSaturation = config.getFloat("Potato Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		ConfigHandler.BeetAmount = config.getInt("Beet Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.BeetSaturation = config.getFloat("Beet Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		ConfigHandler.CactusAmount = config.getInt("Cactus Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");

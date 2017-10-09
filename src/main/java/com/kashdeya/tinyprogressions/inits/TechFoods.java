@@ -61,7 +61,7 @@ public class TechFoods {
 			carrot_juice = new DrinkBase(ConfigHandler.CarrotAmount, ConfigHandler.CarrotSaturation, false).setUnlocalizedName("carrot_juice");
 			TechItems.registerItem(carrot_juice, "carrot_juice");
 			
-			potatoe_juice = new DrinkBase(ConfigHandler.PotatoeAmount, ConfigHandler.PotatoeSaturation, false).setUnlocalizedName("potatoe_juice");
+			potatoe_juice = new DrinkBase(ConfigHandler.PotatoAmount, ConfigHandler.PotatoSaturation, false).setUnlocalizedName("potatoe_juice");
 			TechItems.registerItem(potatoe_juice, "potatoe_juice");
 			
 			beet_juice = new DrinkBase(ConfigHandler.BeetAmount, ConfigHandler.BeetSaturation, false).setUnlocalizedName("beet_juice");

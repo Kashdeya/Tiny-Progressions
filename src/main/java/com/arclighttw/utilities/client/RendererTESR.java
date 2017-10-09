@@ -14,8 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RendererTESR<T extends TileEntity>
 {
 	public Class<T> clazz;
-	
-	@SideOnly(Side.CLIENT)
 	public TileEntitySpecialRenderer<? super T> renderer;
 	
 	public RendererTESR(Class<T> clazz, TileEntitySpecialRenderer<? super T> renderer)
@@ -24,7 +22,6 @@ public class RendererTESR<T extends TileEntity>
 		this.renderer = renderer;
 	}
 	
-	@SideOnly(Side.CLIENT)
 	public void register(Block block)
 	{
 		ClientRegistry.bindTileEntitySpecialRenderer(clazz, renderer);

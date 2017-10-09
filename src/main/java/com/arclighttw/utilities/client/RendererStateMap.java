@@ -10,8 +10,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RendererStateMap
 {
 	public Block block;
-	
-	@SideOnly(Side.CLIENT)
 	public StateMap stateMap;
 	
 	public RendererStateMap(Block block, StateMap stateMap)
@@ -20,7 +18,6 @@ public class RendererStateMap
 		this.stateMap = stateMap;
 	}
 	
-	@SideOnly(Side.CLIENT)
 	public void register()
 	{
 		ModelLoader.setCustomStateMapper(block, stateMap);

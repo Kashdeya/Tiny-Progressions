@@ -18,8 +18,8 @@ import net.minecraft.world.World;
 
 public class DrinkBase extends ItemFood{
 	
-	public DrinkBase(int amount, boolean isWolfFood) {
-		super(amount, isWolfFood);
+	public DrinkBase(int amount, float saturation, boolean isWolfFood) {
+		super(amount, saturation, isWolfFood);
 		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	

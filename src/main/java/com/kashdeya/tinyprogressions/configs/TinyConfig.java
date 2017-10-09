@@ -225,6 +225,26 @@ public class TinyConfig {
 		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices W/O Bottles", category + " Juices", true, "Enable Juices With out bottles in the recipe?");
 		ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juices With Bottles", category + " Juices", false, "Enable Juices With bottles in the recipe?");
 		
+		config.addCustomCategoryComment(category + " Juices Stats", "Everyone loves juice Stats!");
+		ConfigHandler.AppleAmount = config.getInt("Apple Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.AppleSaturation = config.getFloat("Apple Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.CarrotAmount = config.getInt("Carrot Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.CarrotSaturation = config.getFloat("Carrot Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.PotatoeAmount = config.getInt("Potatoe Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.PotatoeSaturation = config.getFloat("Potatoe Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.BeetAmount = config.getInt("Beet Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BeetSaturation = config.getFloat("Beet Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.CactusAmount = config.getInt("Cactus Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.CactusSaturation = config.getFloat("Cactus Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.SlimeAmount = config.getInt("Slime Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.SlimeSaturation = config.getFloat("Slime Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.WheatAmount = config.getInt("Wheat Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.WheatSaturation = config.getFloat("Wheat Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.MelonAmount = config.getInt("Melon Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.MelonSaturation = config.getFloat("Melon Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		
 		config.addCustomCategoryComment(category + " Moist", "Change when the first rains on a world are due.");
 		ConfigHandler.custom_moist_timer = config.getBoolean("Enable Custom Moist Timer", category + " Moist", false, "Enable the ability to change how long it takes for the first rain of a world.");
 		ConfigHandler.moist_time = config.getFloat("Moist Timer", category + " Moist", 1, 0, Float.MAX_VALUE, "How long (in days) until the first rainfall");
@@ -239,6 +259,10 @@ public class TinyConfig {
 		ConfigHandler.LittleCandy = config.getBoolean("Little Candy", category + "Extra Food", true, "Enable Little Candy?");
 		ConfigHandler.Sandwiches = config.getBoolean("Sandwiches", category + "Extra Food", true, "Enable Sandwiches?");
 		ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", category + "Extra Food", true, "Enable Cooked Apple?");
+		
+		config.addCustomCategoryComment(category + " Extra Food Stats", "Want more food Stats?\n[WIP]");
+		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Juices Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		if (config.hasChanged())
         config.save();    

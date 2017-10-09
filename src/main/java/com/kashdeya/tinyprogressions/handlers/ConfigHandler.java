@@ -26,6 +26,27 @@ public class ConfigHandler {
 	// Juices
 	public static boolean all_juices = true;
 	public static boolean JuiceBottles = true;
+	
+	// Juices Stats
+	public static int AppleAmount = 3;
+	public static float AppleSaturation = 0.8F;
+	public static int CarrotAmount = 3;
+	public static float CarrotSaturation = 0.8F;
+	public static int PotatoeAmount = 3;
+	public static float PotatoeSaturation = 0.8F;
+	public static int BeetAmount = 3;
+	public static float BeetSaturation = 0.8F;
+	public static int CactusAmount = 3;
+	public static float CactusSaturation = 0.8F;
+	public static int SlimeAmount = 3;
+	public static float SlimeSaturation = 0.8F;
+	public static int WheatAmount = 3;
+	public static float WheatSaturation = 0.8F;
+	public static int MelonAmount = 3;
+	public static float MelonSaturation = 0.8F;
+	public static int PumpkinAmount = 3;
+	public static float PumpkinSaturation = 0.8F;
+	
 	// Apples
 	public static boolean iron_apple = true;
 	public static boolean redstone_apple = true;
@@ -193,7 +214,7 @@ public class ConfigHandler {
 	// Angel Block
 	public static boolean angel_block = true;
 	
-	// Food and Drinks
+	// Food
 	public static boolean CookedBacon = true;
 	public static boolean MonsterJerky = true;
 	public static boolean ToastedBread = true;
@@ -203,6 +224,10 @@ public class ConfigHandler {
 	public static boolean LittleCandy = true;
 	public static boolean Sandwiches = true;
 	public static boolean CookedApple = true;
+	
+	// Food Stats
+	public static int ToastedAmount = 4;
+	public static float ToastedSaturation = 1.0F;
 	
 	// Lava Block
 	public static boolean lava_block = true;

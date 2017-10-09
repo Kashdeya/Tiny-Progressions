@@ -55,31 +55,31 @@ public class TechFoods {
 			juicer = new ItemJuicer().setUnlocalizedName("juicer");
 			TechItems.registerItem(juicer, "juicer");
 			
-			apple_juice = new DrinkBase(3, false).setUnlocalizedName("apple_juice");
+			apple_juice = new DrinkBase(ConfigHandler.AppleAmount, ConfigHandler.AppleSaturation, false).setUnlocalizedName("apple_juice");
 			TechItems.registerItem(apple_juice, "apple_juice");
 			
-			carrot_juice = new DrinkBase(3, false).setUnlocalizedName("carrot_juice");
+			carrot_juice = new DrinkBase(ConfigHandler.CarrotAmount, ConfigHandler.CarrotSaturation, false).setUnlocalizedName("carrot_juice");
 			TechItems.registerItem(carrot_juice, "carrot_juice");
 			
-			potatoe_juice = new DrinkBase(3, false).setUnlocalizedName("potatoe_juice");
+			potatoe_juice = new DrinkBase(ConfigHandler.PotatoeAmount, ConfigHandler.PotatoeSaturation, false).setUnlocalizedName("potatoe_juice");
 			TechItems.registerItem(potatoe_juice, "potatoe_juice");
 			
-			beet_juice = new DrinkBase(3, false).setUnlocalizedName("beet_juice");
+			beet_juice = new DrinkBase(ConfigHandler.BeetAmount, ConfigHandler.BeetSaturation, false).setUnlocalizedName("beet_juice");
 			TechItems.registerItem(beet_juice, "beet_juice");
 			
-			cactus_juice = new DrinkBase(3, false).setUnlocalizedName("cactus_juice");
+			cactus_juice = new DrinkBase(ConfigHandler.CactusAmount, ConfigHandler.CactusSaturation, false).setUnlocalizedName("cactus_juice");
 			TechItems.registerItem(cactus_juice, "cactus_juice");
 			
-			slime_juice = new DrinkBase(3, false).setUnlocalizedName("slime_juice");
+			slime_juice = new DrinkBase(ConfigHandler.SlimeAmount, ConfigHandler.SlimeSaturation, false).setUnlocalizedName("slime_juice");
 			TechItems.registerItem(slime_juice, "slime_juice");
 			
-			wheat_juice = new DrinkBase(3, false).setUnlocalizedName("wheat_juice");
+			wheat_juice = new DrinkBase(ConfigHandler.WheatAmount, ConfigHandler.WheatSaturation, false).setUnlocalizedName("wheat_juice");
 			TechItems.registerItem(wheat_juice, "wheat_juice");
 			
-			melon_juice = new DrinkBase(3, false).setUnlocalizedName("melon_juice");
+			melon_juice = new DrinkBase(ConfigHandler.MelonAmount, ConfigHandler.MelonSaturation, false).setUnlocalizedName("melon_juice");
 			TechItems.registerItem(melon_juice, "melon_juice");
 			
-			pumpkin_juice = new DrinkBase(3, false).setUnlocalizedName("pumpkin_juice");
+			pumpkin_juice = new DrinkBase(ConfigHandler.PumpkinAmount, ConfigHandler.PumpkinSaturation, false).setUnlocalizedName("pumpkin_juice");
 			TechItems.registerItem(pumpkin_juice, "pumpkin_juice");
 		}
 		
@@ -117,7 +117,7 @@ public class TechFoods {
 		    TechItems.registerItem(monster_jerky, "monster_jerky");
 	    }
 	    if (ConfigHandler.ToastedBread){
-		    toasted_bread = new FoodBase(7, 3.0F, true).setUnlocalizedName("toasted_bread");
+		    toasted_bread = new FoodBase(ConfigHandler.ToastedAmount, ConfigHandler.ToastedSaturation, true).setUnlocalizedName("toasted_bread");
 		    TechItems.registerItem(toasted_bread, "toasted_bread");
 	    }
 	    if (ConfigHandler.FriedEgg){

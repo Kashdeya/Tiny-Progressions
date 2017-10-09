@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import com.arclighttw.utilities.client.Renderer;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
@@ -89,7 +90,7 @@ public class TechItems {
 			registerItem(mycelium_seeds, "mycelium_seeds");
 		}
 		if (ConfigHandler.old_reed){
-	    	dead_reed = new ItemBase().setUnlocalizedName("dead_reed");
+	    		dead_reed = new ItemBase().setUnlocalizedName("dead_reed");
 		    registerItem(dead_reed, "dead_reed");
 	    }
 		
@@ -141,16 +142,95 @@ public class TechItems {
 	    if (ConfigHandler.ColorGlowstone){
 	    		colored_dust = new ItemBaseMeta(EnumDustColor.getNames());
 	    		registerItem(colored_dust, "coloured_dust");
-	    		
+	    }
+	}
+	
+	public static void render() {
+
+		// Watering Cans
+		if (ConfigHandler.WateringCan) {
+			renderItem(watering_can, "watering_can");
+		}
+		if (ConfigHandler.WateringCanUpgrade) {
+			renderItem(watering_can_upgrade, "watering_can_upgrade");
+		}
+		
+		// Quartz Items
+		if (ConfigHandler.QuartzKnife) {
+			renderItem(quartz_knife, "quartz_knife");
+			renderItem(quartz_dust, "quartz_dust");
+		}
+		
+	    // Drops
+	    if (ConfigHandler.dragon_armor){
+	    		renderItem(dragon_scale, "dragon_scale");
+	    }
+	    if (ConfigHandler.wither_armor){
+		    renderItem(wither_rib, "wither_rib");
+	    }
+	    
+		// Misc Items
+		if (ConfigHandler.StoneTorch) {
+			renderItem(stone_stick, "stone_stick");
+		}
+		if (ConfigHandler.MyceliumSeeds) {
+			renderItem(mycelium_seeds, "mycelium_seeds");
+		}
+		if (ConfigHandler.old_reed){
+			renderItem(dead_reed, "dead_reed");
+	    }
+		
+		// Medkit
+		if (ConfigHandler.MedKit) {
+			renderItem(med_kit, "med_kit");
+		}
+		
+		// Stone Dust
+		if (ConfigHandler.StoneDust) {
+			renderItem(stone_dust, "stone_dust");
+		}
+		
+		// Ingot
+		if (ConfigHandler.FlintArmor) {
+			renderItem(flint_ingot, "flint_ingot");
+		}
+		if (ConfigHandler.ReinforcedObsidian) {
+			renderItem(reinforced_obsidian_ingot, "reinforced_obsidian_ingot");
+		}
+		
+		// Flint Knife
+		if (ConfigHandler.FlintKnife) {
+			renderItem(flint_knife, "flint_knife");
+		}
+		
+		// Ender Dust
+		if (ConfigHandler.ender_ore) {
+			renderItem(ender_dust, "ender_dust");
+		}
+		if (ConfigHandler.lava_ore) {
+			renderItem(lava_crystal, "lava_crystal");
+		}
+		
+		// Pouch
+		if (ConfigHandler.pouch) {
+			renderItem(pouch, "pouch");
+		}
+		
+	    // Glowstone Dust
+	    if (ConfigHandler.ColorGlowstone){
 	    		for(int i = 0; i < EnumDustColor.getNames().length; i++)
-	    			TinyProgressions.REGISTRY.render(colored_dust, i, EnumDustColor.getNames()[i]);
+	    			TinyProgressions.instance.render(new Renderer(colored_dust, i, new ResourceLocation(Reference.MOD_ID, EnumDustColor.getNames()[i])));
 	    }
 	}
 
-	static void registerItem(Item item, String name) {
+	public static void registerItem(Item item, String name) {
 		item.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + name));
-		TinyProgressions.REGISTRY.register(item);
-		TinyProgressions.REGISTRY.render(item);
+		TinyProgressions.instance.register(item);
+	}
+	
+	public static void renderItem(Item item, String unusedString)
+	{
+		TinyProgressions.instance.render(new Renderer(item));
 	}
 
 }

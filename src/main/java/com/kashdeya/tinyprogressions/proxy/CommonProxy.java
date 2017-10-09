@@ -1,20 +1,53 @@
 package com.kashdeya.tinyprogressions.proxy;
 
+import com.arclighttw.utilities.IProxy;
+import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
+import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
+import com.kashdeya.tinyprogressions.crafting.FoodRecipes;
+import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
+import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
+import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
+import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
 import com.kashdeya.tinyprogressions.world.PlantGen;
 import com.kashdeya.tinyprogressions.world.WorldGen;
 
-import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class CommonProxy {
+public class CommonProxy implements IProxy {
 
-	public void init() {
+	@Override
+	public void onPreInitialization(FMLPreInitializationEvent event)
+	{
+		TechItems.init();
+		TechBlocks.init();
+		TechArmor.init();
+		TechTools.init();
+		TechFoods.init();
+	}
+	
+	@Override
+	public void onInitialization(FMLInitializationEvent event)
+	{
+		OreDictHandler.init();
+		OtherRecipes.init();
+		ArmorRecipes.init();
+		BlockRecipes.init();
+		ItemRecipes.init();
+		ToolsRecipes.init();
+		FoodRecipes.init();
+		
 		// FuelHandler
 		GameRegistry.registerFuelHandler(new FuelHandler());
 
@@ -28,11 +61,10 @@ public class CommonProxy {
 		int packetId = 0;
 		TinyProgressions.network.registerMessage(MessageExtendedReachAttack.Handler.class,
 				MessageExtendedReachAttack.class, packetId++, Side.SERVER);
-
 	}
-
-	public EntityPlayerMP getPlayerEntityFromContext(MessageContext ctx) {
-		return null;
+	
+	@Override
+	public void onPostInitialization(net.minecraftforge.fml.common.event.FMLPostInitializationEvent event)
+	{
 	}
-
 }

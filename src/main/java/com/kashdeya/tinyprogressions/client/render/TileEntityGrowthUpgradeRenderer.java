@@ -1,9 +1,7 @@
 package com.kashdeya.tinyprogressions.client.render;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgrade;
 
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelEnderCrystal;
 import net.minecraft.client.renderer.GlStateManager;
@@ -24,9 +22,7 @@ public class TileEntityGrowthUpgradeRenderer extends TileEntitySpecialRenderer<T
 
 	@Override
 	public void renderTileEntityAt(TileEntityGrowthUpgrade tile, double x, double y, double z, float partialTick, int destroyStage) {
-		IBlockState state = tile.getWorld().getBlockState(tile.getPos());
-
-		if(state == null || state.getBlock() != TechBlocks.growth_upgrade)
+		if(tile == null || !tile.hasWorldObj())
 			return;
 
 		float ticks = tile.animationTicks + (tile.animationTicks - tile.prevAnimationTicks) * partialTick;

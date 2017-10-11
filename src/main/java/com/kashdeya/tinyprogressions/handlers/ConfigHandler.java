@@ -1,6 +1,12 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	
+	// Withered Block
+	public static boolean WitheredBlock = true;
+	public static boolean WitheredBlockParticals = false;
+	public static int WitheredBlockTime = 3;
+	
 	// Watering cans
 	public static boolean WateringCan = true;
 	public static int WateringCanChance = 25;
@@ -15,6 +21,9 @@ public class ConfigHandler {
 	public static boolean FlintArmor = true;
 	public static boolean BoneArmor = true;
 	public static boolean WoodArmor = true;
+	public static boolean lapis_armor = true;
+	public static boolean quartz_armor = true;
+	public static boolean redstone_armor = true;
 	
 	// Lamps & Glowstone
 	public static boolean ColorLamps = true;

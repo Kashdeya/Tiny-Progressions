@@ -27,6 +27,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.SmoothEndStone;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.WaterBlock;
+import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
@@ -117,6 +118,8 @@ public class TechBlocks {
     public static Block colored_lamp;
 	// Glowstone Blocks
     public static Block colored_glowstone;
+    // Withered Block
+    public static Block withered_block;
     
 	public static void init() {
 
@@ -306,6 +309,12 @@ public class TechBlocks {
 			water_block = new WaterBlock();
 			registerBlock(water_block, "water_block", true);
 		}
+		
+		// Withered Block
+		if (ConfigHandler.WitheredBlock){
+			withered_block = new WitheredBlock();
+			registerBlock(withered_block, "withered_block", true);
+		}
 	}
 	
 	public static void render() {
@@ -424,6 +433,11 @@ public class TechBlocks {
 		}
 		if (ConfigHandler.water_block) {
 			renderBlock(water_block, "water_block");
+		}
+		
+		// Withered Block
+		if (ConfigHandler.WitheredBlock){
+			renderBlock(withered_block, "withered_block");
 		}
 	}
 

@@ -21,5 +21,8 @@ public class MaterialHandler {
 	public static final ArmorMaterial lavaArmorMaterial = EnumHelper.addArmorMaterial("lavaArmorMaterial", "tp:lava", 50, new int[] {5, 7, 8, 5}, 35, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 	public static final ArmorMaterial witherArmorMaterial = EnumHelper.addArmorMaterial("witherArmorMaterial", "tp:wither", 60, new int[]{5, 6, 8, 5}, 40, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 	public static final ArmorMaterial dragonArmorMaterial = EnumHelper.addArmorMaterial("dragonArmorMaterial", "tp:dragon", 200, new int[]{10, 10, 10, 10}, 75, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
-	public static final ArmorMaterial obsidianArmorMaterial = EnumHelper.addArmorMaterial("obsidianArmorMaterial", "tp:obsidian", 45, new int[] {4, 5, 7, 4}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0);
+	public static final ArmorMaterial obsidianArmorMaterial = EnumHelper.addArmorMaterial("obsidianArmorMaterial", "tp:obsidian", 45, new int[] {4, 5, 7, 4}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+	public static final ArmorMaterial redstoneArmourMaterial = EnumHelper.addArmorMaterial("redstoneArmourMaterial", "tp:redstone", 20, new int[]{1, 4, 5, 1}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+	public static final ArmorMaterial lapisArmourMaterial = EnumHelper.addArmorMaterial("lapisArmourMaterial", "tp:lapis", 20, new int[]{1, 4, 5, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
+	public static final ArmorMaterial quartzArmourMaterial = EnumHelper.addArmorMaterial("quartzArmourMaterial", "tp:quartz", 20, new int[]{1, 4, 5, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F);
 }

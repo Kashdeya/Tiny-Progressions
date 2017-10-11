@@ -119,6 +119,9 @@ public class TinyConfig {
 		ConfigHandler.wither_armor = config.getBoolean("Wither Armor", category + " Armor", true, "Enable Wither Armor?");
 		ConfigHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Armor", true, "Enable Dragon Armor?");
 		ConfigHandler.obsidian_armor = config.getBoolean("Obsidian Armor", category + " Armor", true, "Enable Obsidian Armor?");
+		ConfigHandler.redstone_armor = config.getBoolean("Redstone Armor", category + " Armor", true, "Enable Redstone Armor?");
+		ConfigHandler.lapis_armor = config.getBoolean("Lapis Armor", category + " Armor", true, "Enable Lapis Armor?");
+		ConfigHandler.quartz_armor = config.getBoolean("Quartz Armor", category + " Armor", true, "Enable Quartz Armor?");
 		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
@@ -263,6 +266,11 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Extra Food Stats", "Want more food Stats?\n[WIP]");
 		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Juices Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		
+		config.addCustomCategoryComment(category + " Withered Bedrock", "Sink Into Madness Block");
+		ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", category + " Withered Bedrock", false, "Enable Withered Bedrock?\n[This item is not a Craftable Block.]\n[To be used with Bedrock Replacer Mod]");
+		ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered Particals", category + " Withered Bedrock", false, "Enable Player Withered Particals?");
+		ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", category + " Withered Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from standing on Withered Bedrock.\n[1 = 20Ticks]");
 		
 		if (config.hasChanged())
         config.save();    

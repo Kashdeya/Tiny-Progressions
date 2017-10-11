@@ -3,8 +3,11 @@ package com.kashdeya.tinyprogressions.inits;
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.DragonArmour;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
+import com.kashdeya.tinyprogressions.armor.LapisArmor;
 import com.kashdeya.tinyprogressions.armor.LavaArmour;
 import com.kashdeya.tinyprogressions.armor.ObsidianArmor;
+import com.kashdeya.tinyprogressions.armor.QuartzArmor;
+import com.kashdeya.tinyprogressions.armor.RedstoneArmor;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
 import com.kashdeya.tinyprogressions.armor.WitherArmour;
 import com.kashdeya.tinyprogressions.armor.WoodArmor;
@@ -57,11 +60,29 @@ public class TechArmor {
 	public static ItemArmor dragon_leggings;
 	public static ItemArmor dragon_boots;
 	
-	// Dragon
+	// Obsidian
 	public static ItemArmor obsidian_helmet;
 	public static ItemArmor obsidian_chestplate;
 	public static ItemArmor obsidian_leggings;
 	public static ItemArmor obsidian_boots;
+	
+	// Lapis
+	public static ItemArmor lapis_helmet;
+	public static ItemArmor lapis_chestplate;
+	public static ItemArmor lapis_leggings;
+	public static ItemArmor lapis_boots;
+	
+	// Quartz
+	public static ItemArmor quartz_helmet;
+	public static ItemArmor quartz_chestplate;
+	public static ItemArmor quartz_leggings;
+	public static ItemArmor quartz_boots;
+	
+	// Redstone
+	public static ItemArmor redstone_helmet;
+	public static ItemArmor redstone_chestplate;
+	public static ItemArmor redstone_leggings;
+	public static ItemArmor redstone_boots;
 	
 	public static void init(){
 		// Stone Armor
@@ -148,7 +169,7 @@ public class TechArmor {
 		   	TechItems.registerItem(dragon_boots, "dragon_boots");
 		}
 		
-		// Dragon
+		// Obsidian
 		if (ConfigHandler.obsidian_armor){
 			obsidian_helmet = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("obsidian_helmet");
 		   	TechItems.registerItem(obsidian_helmet, "obsidian_helmet");
@@ -158,6 +179,42 @@ public class TechArmor {
 		   	TechItems.registerItem(obsidian_leggings, "obsidian_leggings");
 		   	obsidian_boots = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("obsidian_boots");
 		   	TechItems.registerItem(obsidian_boots, "obsidian_boots");
+		}
+		
+		// Lapis
+		if (ConfigHandler.lapis_armor){
+			lapis_helmet = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("lapis_helmet");
+		   	TechItems.registerItem(lapis_helmet, "lapis_helmet");
+		   	lapis_chestplate = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("lapis_chestplate");
+		   	TechItems.registerItem(lapis_chestplate, "lapis_chestplate");
+		   	lapis_leggings = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("lapis_leggings");
+		   	TechItems.registerItem(lapis_leggings, "lapis_leggings");
+		   	lapis_boots = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("lapis_boots");
+		   	TechItems.registerItem(lapis_boots, "lapis_boots");
+		}
+		
+		// Quartz
+		if (ConfigHandler.quartz_armor){
+			quartz_helmet = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("quartz_helmet");
+		   	TechItems.registerItem(quartz_helmet, "quartz_helmet");
+		   	quartz_chestplate = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("quartz_chestplate");
+		   	TechItems.registerItem(quartz_chestplate, "quartz_chestplate");
+		   	quartz_leggings = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("quartz_leggings");
+		   	TechItems.registerItem(quartz_leggings, "quartz_leggings");
+		   	quartz_boots = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("quartz_boots");
+		   	TechItems.registerItem(quartz_boots, "quartz_boots");
+		}
+		
+		// Redstone
+		if (ConfigHandler.redstone_armor){
+			redstone_helmet = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("redstone_helmet");
+		   	TechItems.registerItem(redstone_helmet, "redstone_helmet");
+		   	redstone_chestplate = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("redstone_chestplate");
+		   	TechItems.registerItem(redstone_chestplate, "redstone_chestplate");
+		   	redstone_leggings = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("redstone_leggings");
+		   	TechItems.registerItem(redstone_leggings, "redstone_leggings");
+		   	redstone_boots = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("redstone_boots");
+		   	TechItems.registerItem(redstone_boots, "redstone_boots");
 		}
 	}
 	

@@ -138,7 +138,7 @@ item.redstone_leggings.name=Redstone Leggings
 item.redstone_boots.name=Redstone Boots
 
 #Quartz Armor
-tooltip.quartzarmor_1=Full set gives you Fire Resistance!
+tooltip.quartzarmor_1=Full set gives you Resistance!
 item.quartz_helmet.name=Quartz Helmet
 item.quartz_chestplate.name=Quartz Chestplate
 item.quartz_leggings.name=Quartz Leggings

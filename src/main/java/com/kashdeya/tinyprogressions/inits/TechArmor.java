@@ -275,12 +275,36 @@ public class TechArmor {
 		   	TechItems.renderItem(dragon_boots, "dragon_boots");
 		}
 		
-		// Dragon
+		// Obsidian
 		if (ConfigHandler.obsidian_armor){
 		   	TechItems.renderItem(obsidian_helmet, "obsidian_helmet");
 		   	TechItems.renderItem(obsidian_chestplate, "obsidian_chestplate");
 		   	TechItems.renderItem(obsidian_leggings, "obsidian_leggings");
 		   	TechItems.renderItem(obsidian_boots, "obsidian_boots");
+		}
+		
+		// redstone
+		if (ConfigHandler.redstone_armor){
+		   	TechItems.renderItem(redstone_helmet, "redstone_helmet");
+		   	TechItems.renderItem(redstone_chestplate, "redstone_chestplate");
+		   	TechItems.renderItem(redstone_leggings, "redstone_leggings");
+		   	TechItems.renderItem(redstone_boots, "redstone_boots");
+		}
+		
+		// lapis
+		if (ConfigHandler.lapis_armor){
+		   	TechItems.renderItem(lapis_helmet, "lapis_helmet");
+		   	TechItems.renderItem(lapis_chestplate, "lapis_chestplate");
+		   	TechItems.renderItem(lapis_leggings, "lapis_leggings");
+		   	TechItems.renderItem(lapis_boots, "lapis_boots");
+		}
+		
+		// quartz
+		if (ConfigHandler.quartz_armor){
+		   	TechItems.renderItem(quartz_helmet, "quartz_helmet");
+		   	TechItems.renderItem(quartz_chestplate, "quartz_chestplate");
+		   	TechItems.renderItem(quartz_leggings, "quartz_leggings");
+		   	TechItems.renderItem(quartz_boots, "quartz_boots");
 		}
 	}
 }

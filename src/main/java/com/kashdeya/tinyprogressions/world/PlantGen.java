@@ -18,8 +18,8 @@ public class PlantGen implements IWorldGenerator{
 
     @Override
     public void generate(Random random, int chunk_X, int chunk_Z, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-    	int x = chunk_X * 16 + random.nextInt(8);
-        int z = chunk_Z * 16 + random.nextInt(8);
+    	int x = chunk_X * 16 + random.nextInt(16);
+        int z = chunk_Z * 16 + random.nextInt(16);
         
         final Biome biome = world.getBiomeForCoordsBody(new BlockPos(x, 0, z));
         final BlockPos blockPos = world.getHeight(new BlockPos(x, 0, z));

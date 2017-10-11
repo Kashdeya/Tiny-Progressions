@@ -194,29 +194,29 @@ public class TinyConfig {
 		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable Ender Ore?");
 		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable Endermite spawn?");
 		ConfigHandler.endermite_spawn = config.getFloat("Endermite Spawn", category + " Ender Ore", 0.25F, 0.0F, 1.0F, "Sets the Chance of Endermites to spawn when Ore is mined.");
-		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 5, 1, 64, "Sets the Chance of Ender ore.");
-		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 50, 1, 100, "Sets the Chance of Ender ore.");
+		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 1, 64, "Sets the Ender Ore Vein Size.");
+		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 5, 100, "Sets the Ender Ore Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Lava Ore", "May also include Lava Armour!");
 		ConfigHandler.lava_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable Lava Ore?");
-		ConfigHandler.lava_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 5, 1, 64, "Sets the Chance of Lava ore.");
-		ConfigHandler.lava_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.lava_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 50, 1, 100, "Sets the Chance of Lava ore.");
+		ConfigHandler.lava_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 2, 1, 64, "Sets the Lava Ore Vein Size.");
+		ConfigHandler.lava_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 7, 5, 100, "Sets the Lava Ore Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Stones", "Lavastone and Waterstone!");
-		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Stones", true, "Enable Lavastone?");
-		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Stones", 5, 1, 64, "Sets the Chance of Lavastone.");
-		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Stones", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
+		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Stones", 50, 1, 100, "Sets the Chance of Lavastone.");
+		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Stones", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Stones", 2, 1, 64, "Sets the Lavastone Vein Size.");
-		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Stones", true, "Enable Waterstone?");
-		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Stones", 5, 1, 64, "Sets the Chance of Waterstone.");
-		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Stones", 1, 1, 10, "Sets the min Y level.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Stones", 7, 5, 100, "Sets the Lavastone Vein Size.");
+		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
+		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Stones", 50, 1, 100, "Sets the Chance of Waterstone.");
+		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Stones", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Stones", 2, 1, 64, "Sets the Waterstone Vein Size.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Stones", 7, 5, 100, "Sets the Waterstone Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
@@ -253,22 +253,22 @@ public class TinyConfig {
 		ConfigHandler.moist_time = config.getFloat("Moist Timer", category + " Moist", 1, 0, Float.MAX_VALUE, "How long (in days) until the first rainfall");
 		
 		config.addCustomCategoryComment(category + " Extra Food", "Want more food?");
-		ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", category + "Extra Food", true, "Enable Cooked Bacon?");
-		ConfigHandler.MonsterJerky = config.getBoolean("Monster Jerky", category + "Extra Food", true, "Enable Monster jerky?");
-		ConfigHandler.ToastedBread = config.getBoolean("Toasted Bread", category + "Extra Food", true, "Enable Toasted Bread?");
-		ConfigHandler.FriedEgg = config.getBoolean("Fried Egg", category + "Extra Food", true, "Enable Fried Egg?");
-		ConfigHandler.CookedMushrooms = config.getBoolean("Cooked Mushrooms", category + "Extra Food", true, "Enable Cooked Mushrooms?");
-		ConfigHandler.BaconEggs = config.getBoolean("Bacon & Eggs", category + "Extra Food", true, "Enable Bacon & Eggs?");
-		ConfigHandler.LittleCandy = config.getBoolean("Little Candy", category + "Extra Food", true, "Enable Little Candy?");
-		ConfigHandler.Sandwiches = config.getBoolean("Sandwiches", category + "Extra Food", true, "Enable Sandwiches?");
-		ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", category + "Extra Food", true, "Enable Cooked Apple?");
+		ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", category + " Extra Food", true, "Enable Cooked Bacon?");
+		ConfigHandler.MonsterJerky = config.getBoolean("Monster Jerky", category + " Extra Food", true, "Enable Monster jerky?");
+		ConfigHandler.ToastedBread = config.getBoolean("Toasted Bread", category + " Extra Food", true, "Enable Toasted Bread?");
+		ConfigHandler.FriedEgg = config.getBoolean("Fried Egg", category + " Extra Food", true, "Enable Fried Egg?");
+		ConfigHandler.CookedMushrooms = config.getBoolean("Cooked Mushrooms", category + " Extra Food", true, "Enable Cooked Mushrooms?");
+		ConfigHandler.BaconEggs = config.getBoolean("Bacon & Eggs", category + " Extra Food", true, "Enable Bacon & Eggs?");
+		ConfigHandler.LittleCandy = config.getBoolean("Little Candy", category + " Extra Food", true, "Enable Little Candy?");
+		ConfigHandler.Sandwiches = config.getBoolean("Sandwiches", category + " Extra Food", true, "Enable Sandwiches?");
+		ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", category + " Extra Food", true, "Enable Cooked Apple?");
 		
 		config.addCustomCategoryComment(category + " Extra Food Stats", "Want more food Stats?\n[WIP]");
-		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Juices Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Extra Food Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		config.addCustomCategoryComment(category + " Withered Bedrock", "Sink Into Madness Block");
-		ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", category + " Withered Bedrock", false, "Enable Withered Bedrock?\n[This item is not a Craftable Block.]\n[To be used with Bedrock Replacer Mod]");
+		ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", category + " Withered Bedrock", false, "Enable Withered Bedrock?\n[This item is not a Craftable Block.]\n[To be used with Bedrock Replacer Mod]\n[MAY CAUSE SERVER LAG NEEDS MORE TESTING]");
 		ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered Particals", category + " Withered Bedrock", false, "Enable Player Withered Particals?");
 		ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", category + " Withered Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from standing on Withered Bedrock.\n[1 = 20Ticks]");
 		

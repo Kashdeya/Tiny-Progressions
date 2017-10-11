@@ -66,10 +66,10 @@ public class ConfigHandler {
 	
 	// Lava
 	public static boolean lava_ore = true;
-	public static int lava_ore_frequency = 5;
+	public static int lava_ore_frequency = 50;
 	public static int lava_ore_min = 1;
 	public static int lava_ore_max = 32;
-	public static int lava_ore_size = 2;
+	public static int lava_ore_size = 7;
 	
 	// Birthday Pickaxe
 	public static boolean BirthdayPickaxe = true;
@@ -212,9 +212,9 @@ public class ConfigHandler {
 	public static boolean ender_ore = true;
 	public static boolean ender_mite = true;
 	public static float endermite_spawn = 0.25F;
-	public static int ender_ore_frequency = 5;
+	public static int ender_ore_frequency = 50;
 	public static int ender_ore_min = 1;
-	public static int ender_ore_max = 32;
+	public static int ender_ore_max = 35;
 	public static int ender_ore_size = 7;
 	
 	// Pouch
@@ -240,17 +240,17 @@ public class ConfigHandler {
 	
 	// Lava Block
 	public static boolean lava_block = true;
-	public static int lava_block_frequency = 5;
+	public static int lava_block_frequency = 50;
 	public static int lava_block_min = 1;
-	public static int lava_block_max = 63;
-	public static int lava_block_size = 2;
+	public static int lava_block_max = 64;
+	public static int lava_block_size = 7;
 	
 	// Water Block
 	public static boolean water_block = true;
-	public static int water_block_frequency = 5;
+	public static int water_block_frequency = 50;
 	public static int water_block_min = 1;
 	public static int water_block_max = 64;
-	public static int water_block_size = 2;
+	public static int water_block_size = 7;
 	
 	// Rain Timer
 	public static boolean custom_moist_timer;

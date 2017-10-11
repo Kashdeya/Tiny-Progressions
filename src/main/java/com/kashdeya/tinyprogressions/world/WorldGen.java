@@ -44,9 +44,9 @@ public class WorldGen implements IWorldGenerator {
       int heightDiff = maxHeight - minHeight + 1;
       for (int i = 0; i < chancesToSpawn; i++)
       {
-        int x = chunk_X * 16 + rand.nextInt(8);
+        int x = chunk_X * 16 + rand.nextInt(16);
         int y = minHeight + rand.nextInt(heightDiff);
-        int z = chunk_Z * 16 + rand.nextInt(8);
+        int z = chunk_Z * 16 + rand.nextInt(16);
         generator.generate(world, rand, new BlockPos(x, y, z));
       }
     }

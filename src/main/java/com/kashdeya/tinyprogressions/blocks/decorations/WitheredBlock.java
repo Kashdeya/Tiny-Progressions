@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
+import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -27,6 +28,7 @@ public class WitheredBlock extends Block {
     {
         super(Material.ROCK);
         this.setBlockUnbreakable();
+        this.setTickRandomly(true);
         this.setResistance(6000000.0F);
         this.setSoundType(blockSoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
@@ -62,5 +64,11 @@ public class WitheredBlock extends Block {
 	public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, EntityLiving.SpawnPlacementType type) {
 		return true;
 	}
+    
+    @Override
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    {
+        List<EntityLivingBase> list = worldIn.getEntitiesWithinAABB(EntityPlayer.class, this.FULL_BLOCK_AABB.expand(2, 2, 2));
+    }
     
 }

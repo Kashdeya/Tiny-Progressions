@@ -99,13 +99,13 @@ public class ToolsRecipes {
 		// Happy Birthday Darkosto
 	    if (ConfigHandler.BirthdayPickaxe && ConfigHandler.ReinforcedObsidian){
 			ItemStack BirthdayPickaxe = new ItemStack(TechTools.birthday_pickaxe);
-			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 2);
+			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 0);
 			
 			RecipeRegistry.addShapedRecipe(BirthdayPickaxe, new Object[] {
 					"rdr",
 					" s ",
 					" s ",
-						Character.valueOf('r'), "blockReinforcedObsidian",
+						Character.valueOf('r'), "ingotReinforcedObsidian",
 						Character.valueOf('d'), "gemDiamond",
 						Character.valueOf('s'), "stickWood"
 			});

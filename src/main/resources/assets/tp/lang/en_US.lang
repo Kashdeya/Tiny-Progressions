@@ -75,6 +75,9 @@ item.watering_can.invalidusage=Cannot activate with more than 1 Watering Can in 
 item.quartz_dust.name=Quartz Enriched Iron Dust
 item.quartz_knife.name=Quartz Knife
 item.flint_ingot.name=Flint Ingot - [WIP]
+item.redstone_ingot.name=Redstone Ingot
+item.lapis_ingot.name=Lapis Ingot
+item.quartz_ingot.name=Quartz Ingot
 
 #Stone Dust
 item.stone_dust.name=Stone Dust

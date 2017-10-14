@@ -34,6 +34,9 @@ public class TechItems {
 	// Ingots
 	public static Item flint_ingot;
 	public static Item reinforced_obsidian_ingot;
+	public static Item lapis_ingot;
+	public static Item redstone_ingot;
+	public static Item quartz_ingot;
 	// Flint Knife
 	public static Item flint_knife;
 	// Stone Stick
@@ -140,8 +143,26 @@ public class TechItems {
 		
 	    // Glowstone Dust
 	    if (ConfigHandler.ColorGlowstone){
-	    		colored_dust = new ItemBaseMeta(EnumDustColor.getNames());
-	    		registerItem(colored_dust, "coloured_dust");
+	    	colored_dust = new ItemBaseMeta(EnumDustColor.getNames());
+	    	registerItem(colored_dust, "coloured_dust");
+	    }
+	    
+	    // Lapis armor
+	    if (ConfigHandler.lapis_armor){
+	    	lapis_ingot = new ItemBase().setUnlocalizedName("lapis_ingot");
+	    	registerItem(lapis_ingot, "lapis_ingot");
+	    }
+	    
+	    // Redstone Amor
+	    if (ConfigHandler.redstone_armor){
+	    	redstone_ingot = new ItemBase().setUnlocalizedName("redstone_ingot");
+	    	registerItem(redstone_ingot, "redstone_ingot");
+	    }
+	    
+	    // Quartz Amor
+	    if (ConfigHandler.quartz_armor){
+	    	quartz_ingot = new ItemBase().setUnlocalizedName("quartz_ingot");
+	    	registerItem(quartz_ingot, "quartz_ingot");
 	    }
 	}
 	
@@ -153,6 +174,17 @@ public class TechItems {
 		}
 		if (ConfigHandler.WateringCanUpgrade) {
 			renderItem(watering_can_upgrade, "watering_can_upgrade");
+		}
+		
+		// Armor
+		if (ConfigHandler.lapis_armor) {
+			renderItem(lapis_ingot, "lapis_ingot");
+		}
+		if (ConfigHandler.redstone_armor) {
+			renderItem(redstone_ingot, "redstone_ingot");
+		}
+		if (ConfigHandler.quartz_armor) {
+			renderItem(quartz_ingot, "quartz_ingot");
 		}
 		
 		// Quartz Items

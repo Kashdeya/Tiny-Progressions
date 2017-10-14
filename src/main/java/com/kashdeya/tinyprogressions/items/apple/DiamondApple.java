@@ -44,7 +44,7 @@ public class DiamondApple extends ItemFood
 	  {
 	    if (!World.isRemote)
 	    {
-	      Player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300, 4, true, false)); //15
+	      Player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300, 0, true, false)); //15
 	      Player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 1200, 0, true, false)); //60
 	      Player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 300, 0, true, false));
 	      Player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 1200, 0, true, false));

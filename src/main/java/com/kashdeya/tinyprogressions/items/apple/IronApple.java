@@ -44,8 +44,7 @@ public class IronApple extends ItemFood
 	  {
 	    if (!World.isRemote)
 	    {
-	      Player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 300, 0, true, false));
-	      Player.addPotionEffect(new PotionEffect(MobEffects.SATURATION, 20, 0, true, false));
+	      Player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 300, 2, true, false));
 	    }
 	  }
 	  

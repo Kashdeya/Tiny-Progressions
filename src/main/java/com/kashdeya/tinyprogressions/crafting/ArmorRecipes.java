@@ -2,10 +2,13 @@ package com.kashdeya.tinyprogressions.crafting;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ArmorRecipes {
 	
@@ -231,6 +234,105 @@ public class ArmorRecipes {
 					"d d",
 					"d d",
 						Character.valueOf('d'), TechItems.dragon_scale
+			});
+		}
+		
+		if (ConfigHandler.lapis_armor){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.lapis_ingot), new Object[] {
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), new ItemStack(Items.DYE, 1, 4)
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.lapis_helmet), new Object[] {
+					"ddd",
+					"d d",
+						Character.valueOf('d'), TechItems.lapis_ingot
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.lapis_chestplate), new Object[] {
+					"d d",
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), TechItems.lapis_ingot
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.lapis_leggings), new Object[] {
+					"ddd",
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.lapis_ingot
+			});
+			
+		   	RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.lapis_boots), new Object[] {
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.lapis_ingot
+			});
+		}
+		
+		if (ConfigHandler.redstone_armor){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.redstone_ingot), new Object[] {
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), Items.REDSTONE
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.redstone_helmet), new Object[] {
+					"ddd",
+					"d d",
+						Character.valueOf('d'), TechItems.redstone_ingot
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.redstone_chestplate), new Object[] {
+					"d d",
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), TechItems.redstone_ingot
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.redstone_leggings), new Object[] {
+					"ddd",
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.redstone_ingot
+			});
+			
+		   	RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.redstone_boots), new Object[] {
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.redstone_ingot
+			});
+		}
+		
+		if (ConfigHandler.quartz_armor){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.quartz_ingot), new Object[] {
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), Items.QUARTZ
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.quartz_helmet), new Object[] {
+					"ddd",
+					"d d",
+						Character.valueOf('d'), TechItems.quartz_ingot
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.quartz_chestplate), new Object[] {
+					"d d",
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), TechItems.quartz_ingot
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.quartz_leggings), new Object[] {
+					"ddd",
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.quartz_ingot
+			});
+			
+		   	RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.quartz_boots), new Object[] {
+					"d d",
+					"d d",
+						Character.valueOf('d'), TechItems.quartz_ingot
 			});
 		}
 	}

@@ -115,10 +115,16 @@ public class BlockRecipes {
 
 		// Stone Torch
 		if (ConfigHandler.StoneTorch) {
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.stone_torch), new Object[] {
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.stone_torch, 4), new Object[] {
 					"c",
 					"s",
-						Character.valueOf('c'), Items.COAL,
+						Character.valueOf('c'), new ItemStack(Items.COAL,1,0),
+						Character.valueOf('s'), "stickStone"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.stone_torch, 4), new Object[] {
+					"c",
+					"s",
+						Character.valueOf('c'), new ItemStack(Items.COAL,1,1),
 						Character.valueOf('s'), "stickStone"
 			});
 		}
@@ -316,7 +322,7 @@ public class BlockRecipes {
 		if (ConfigHandler.angel_block) {
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.fmf_block), new Object[] {
 		            "ifi",
-		            "f f",
+		            "fif",
 		            "ifi",
 		                Character.valueOf('i'), "ingotIron",
 		                Character.valueOf('f'), "feather"

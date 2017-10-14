@@ -16,9 +16,9 @@ public class OtherRecipes
 		// Pouch
 		if (ConfigHandler.pouch) {
 		    RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.pouch), new Object[] {
-		            "lcl",
-		            "scs",
-		            "lll",
+		            "lsl",
+		            "clc",
+		            "lsl",
 		                Character.valueOf('s'), Items.STRING,
 		                Character.valueOf('l'), Items.LEATHER,
 		                Character.valueOf('c'), Blocks.CHEST
@@ -75,9 +75,17 @@ public class OtherRecipes
 			GameRegistry.addSmelting(TechBlocks.flint_block, new ItemStack(TechItems.flint_ingot), 1.0F);
 		}
 		
-		// Reinforced Obsidian Ingot WIP
+		// Reinforced Obsidian Ingot
 		if (ConfigHandler.ReinforcedObsidian) {
-			GameRegistry.addSmelting(TechBlocks.reinforced_obsidian, new ItemStack(TechItems.reinforced_obsidian_ingot), 1.0F);
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.reinforced_obsidian_ingot, 9), new Object[] {
+					TechBlocks.reinforced_obsidian
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.reinforced_obsidian), new Object[] {
+					"sss",
+					"sss",
+					"sss",
+						Character.valueOf('s'), TechItems.reinforced_obsidian_ingot
+			});
 		}
 		
 		// Flint Knife

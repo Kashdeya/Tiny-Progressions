@@ -47,8 +47,8 @@ public class WitherArmour extends ItemArmor {
     			(feet != null) && (feet.getItem() == TechArmor.wither_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
     		entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, 0, true, false));
     		entity.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 180, 0, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, 3, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 3, true, false));
+    		entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, 0, true, false));
+    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 0, true, false));
     		}
     }
 	

@@ -108,6 +108,6 @@ public class TinyProgressions extends ForgeMod {
 	public void itemCrafted(ItemCraftedEvent event)
 	{
 		if (event.crafting.getItem() == TechTools.birthday_pickaxe)
-			event.crafting.addEnchantment(Enchantments.MENDING, 2);
+			event.crafting.addEnchantment(Enchantments.MENDING, 0);
 	}
 }

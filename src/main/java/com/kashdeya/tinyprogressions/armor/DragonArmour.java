@@ -46,8 +46,8 @@ public class DragonArmour extends ItemArmor {
     			(legs != null) && (legs.getItem() == TechArmor.dragon_leggings) && 
     			(feet != null) && (feet.getItem() == TechArmor.dragon_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
     		entity.capabilities.allowFlying = true;
-    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 5, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, 5, true, false));
+    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 1, true, false));
+    		entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, 1, true, false));
     		entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, 1, true, false));
     		entity.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 180, 1, true, false));
     		}

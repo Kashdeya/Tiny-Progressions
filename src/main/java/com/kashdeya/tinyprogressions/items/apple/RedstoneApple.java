@@ -45,7 +45,6 @@ public class RedstoneApple extends ItemFood
 	    if (!World.isRemote)
 	    {
 	      Player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 300, 0, true, false));
-	      Player.addPotionEffect(new PotionEffect(MobEffects.SATURATION, 60, 0, true, false));
 	    }
 	  }
 	  

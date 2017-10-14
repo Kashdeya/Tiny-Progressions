@@ -35,7 +35,7 @@ public class BirthdayPickaxe extends ItemTool {
 	public BirthdayPickaxe(Item.ToolMaterial material)
 	{
 		super(material, effective_against);
-        this.setMaxDamage(2561);
+        this.setMaxDamage(6521);
         this.material = material;
         this.maxStackSize = 1;
         this.setHarvestLevel("pickaxe", 4);

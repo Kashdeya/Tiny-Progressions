@@ -38,8 +38,8 @@ public class GoldenApple extends ItemFood
 	    if (!World.isRemote)
 	    {
 	    	Player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 3000, 0));
-	    	Player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 225, 1));
-            Player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 2400, 1));
+	    	Player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 225, 0));
+            Player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 2400, 0));
 	    }
 	}
 }

@@ -199,7 +199,7 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 5, 100, "Sets the Ender Ore Vein Size.");
 		
-		config.addCustomCategoryComment(category + " Lava Ore", "May also include Lava Armour!");
+		config.addCustomCategoryComment(category + " Lava Ore", "Also includes Lava Armour!");
 		ConfigHandler.lava_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable Lava Ore?");
 		ConfigHandler.lava_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 50, 1, 100, "Sets the Chance of Lava ore.");
 		ConfigHandler.lava_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 255, "Sets the min Y level.");

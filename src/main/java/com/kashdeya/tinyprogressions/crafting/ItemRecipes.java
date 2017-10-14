@@ -43,7 +43,7 @@ public class ItemRecipes {
 						"on ",
 						"owo",
 						" o ",
-							Character.valueOf('o'), "obsidian",
+							Character.valueOf('o'), "ingotReinforcedObsidian",
 							Character.valueOf('n'), "netherStar",
 							Character.valueOf('w'), TechItems.watering_can
 				});

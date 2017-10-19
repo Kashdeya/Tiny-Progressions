@@ -2,9 +2,21 @@ package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
 	
+	// Natura Juices
+	public static boolean NaturaJuices = true;
+	public static boolean NaturaJuicesBottles = true;
+	public static int RaspberryAmount = 3;
+	public static float RaspberrySaturation = 0.8F;
+	public static int BlueberryAmount = 3;
+	public static float BlueberrySaturation = 0.8F;
+	public static int BlackberryAmount = 3;
+	public static float BlackberrySaturation = 0.8F;
+	public static int MaloberryAmount = 3;
+	public static float MaloberrySaturation = 0.8F;
+	
 	// Withered Block
 	public static boolean WitheredBlock = true;
-	public static boolean WitheredBlockParticals = false;
+	public static boolean WitheredBlockParticals = true;
 	public static int WitheredBlockTime = 3;
 	
 	// Watering cans

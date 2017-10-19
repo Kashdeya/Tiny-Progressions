@@ -49,12 +49,34 @@ public class TechFoods {
 	public static Item rabbit_sandwhich;
 	public static Item bacon_eggs_sandwhich;
 	
+	// Natura Juices
+	public static Item raspberry_juice;
+	public static Item blueberry_juice;
+	public static Item blackberry_juice;
+	public static Item maloberry_juice;
+	
 	public static void init(){
-		// Juices
-		if (ConfigHandler.all_juices){
+		
+		// Natura Juices
+		if (ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
+			raspberry_juice = new DrinkBase(ConfigHandler.RaspberryAmount, ConfigHandler.RaspberrySaturation, false).setUnlocalizedName("raspberry_juice");
+			TechItems.registerItem(raspberry_juice, "raspberry_juice");
+			blueberry_juice = new DrinkBase(ConfigHandler.BlueberryAmount, ConfigHandler.BlueberrySaturation, false).setUnlocalizedName("blueberry_juice");
+			TechItems.registerItem(blueberry_juice, "blueberry_juice");
+			blackberry_juice = new DrinkBase(ConfigHandler.BlackberryAmount, ConfigHandler.BlackberrySaturation, false).setUnlocalizedName("blackberry_juice");
+			TechItems.registerItem(blackberry_juice, "blackberry_juice");
+			maloberry_juice = new DrinkBase(ConfigHandler.MaloberryAmount, ConfigHandler.MaloberrySaturation, false).setUnlocalizedName("maloberry_juice");
+			TechItems.registerItem(maloberry_juice, "maloberry_juice");
+		}
+		
+		// Juicer
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
 			juicer = new ItemJuicer().setUnlocalizedName("juicer");
 			TechItems.registerItem(juicer, "juicer");
-			
+		}
+		
+		// Juices
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
 			apple_juice = new DrinkBase(ConfigHandler.AppleAmount, ConfigHandler.AppleSaturation, false).setUnlocalizedName("apple_juice");
 			TechItems.registerItem(apple_juice, "apple_juice");
 			
@@ -160,9 +182,20 @@ public class TechFoods {
 	}
 	
 	public static void render(){
-		// Juices
-		if (ConfigHandler.all_juices){
+		// Natura Juices
+		if (ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
+			TechItems.renderItem(raspberry_juice, "raspberry_juice");
+			TechItems.renderItem(blueberry_juice, "blueberry_juice");
+			TechItems.renderItem(blackberry_juice, "blackberry_juice");
+			TechItems.renderItem(maloberry_juice, "maloberry_juice");
+		}
+		
+		// Juicer
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
 			TechItems.renderItem(juicer, "juicer");
+		}
+		// Juices
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
 			TechItems.renderItem(apple_juice, "apple_juice");
 			TechItems.renderItem(carrot_juice, "carrot_juice");
 			TechItems.renderItem(potatoe_juice, "potatoe_juice");

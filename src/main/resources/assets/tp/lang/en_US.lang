@@ -56,6 +56,10 @@ item.slime_juice.name=Slime Juice
 item.wheat_juice.name=Wheat Juice
 item.melon_juice.name=Mealon Juice
 item.pumpkin_juice.name=Pumpkin Juice
+item.raspberry_juice.name=Raspberry Juice
+item.blueberry_juice.name=Blueberry Juice
+item.blackberry_juice.name=Blueberry Juice
+item.maloberry_juice.name=Maloberry Juice
 
 #Reinforced Blocks
 tile.reinforced_glass.name=Reinforced Glass

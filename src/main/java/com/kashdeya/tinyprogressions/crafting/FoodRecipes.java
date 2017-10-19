@@ -9,12 +9,13 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class FoodRecipes {
 
 	public static void init() {
 		// Juicer
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechFoods.juicer), new Object[] {
 					"l",
 					"s",
@@ -100,6 +101,46 @@ public class FoodRecipes {
 			
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.pumpkin_juice, 2), new Object[] {
 					"juicer", Blocks.PUMPKIN, "glassBottle", "glassBottle"
+			});
+		}
+		
+		// Juices WO Bottles
+		if (ConfigHandler.NaturaJuices && ConfigHandler.NaturaJuicesBottles == false){
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.raspberry_juice), new Object[] {
+					"juicer", "cropRaspberry"
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.blueberry_juice), new Object[] {
+					"juicer", "cropBlueberry"
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.blackberry_juice), new Object[] {
+					"juicer", "cropBlackberry"
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.maloberry_juice), new Object[] {
+					"juicer", "cropMaloberry"
+			});
+		}
+		
+		// Juice Bottles
+		if (ConfigHandler.NaturaJuicesBottles && ConfigHandler.NaturaJuices == false){
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.raspberry_juice), new Object[] {
+					"juicer", "cropRaspberry", "glassBottle"
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.blueberry_juice), new Object[] {
+					"juicer", "cropBlueberry", "glassBottle"
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.blackberry_juice), new Object[] {
+					"juicer", "cropBlackberry", "glassBottle"
+			});
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.maloberry_juice), new Object[] {
+					"juicer", "cropMaloberry", "glassBottle"
 			});
 		}
 		

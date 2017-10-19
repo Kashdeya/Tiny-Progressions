@@ -71,7 +71,7 @@ public class TinyConfig {
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Extra Stuff", true, "Enable Medkit?");
 		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
 		ConfigHandler.SmoothEndStone = config.getBoolean("Smooth EndStone", category + " Extra Stuff", true, "Enable Smooth EndStone?");
-		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE is Tinkers is installed.]");
+		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE if Tinkers is installed.]");
 		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?\n[Do not ENABLE is Tinkers is installed.]");
 		ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", category + " Extra Stuff", true, "Enable Hardened Stone?");
 		ConfigHandler.old_reed = config.getBoolean("Dead Sugar Cane", category + " Extra Stuff", true, "Enable Dead Sugar Cane?");
@@ -247,6 +247,20 @@ public class TinyConfig {
 		ConfigHandler.MelonSaturation = config.getFloat("Melon Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		
+		config.addCustomCategoryComment(category + " Natura Juices", "Everyone loves juice!\n[Only Enable if Natura is installed!]\n[Only ENABLE one or the other.]");
+		ConfigHandler.NaturaJuices = config.getBoolean("Natura Juices W/O Bottles", category + " Natura Juices", false, "Enable Juices With out bottles in the recipe?\n[Only Enable if Natura is installed!]");
+		ConfigHandler.NaturaJuicesBottles = config.getBoolean("Natura Juices With Bottles", category + " Natura Juices", false, "Enable Juices With bottles in the recipe?\n[Only Enable if Natura is installed!]");
+		
+		config.addCustomCategoryComment(category + " Natura Juices Stats", "Everyone loves juice Stats!\n[Only Enable Above if Natura is installed!]");
+		ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		config.addCustomCategoryComment(category + " Moist", "Change when the first rains on a world are due.");
 		ConfigHandler.custom_moist_timer = config.getBoolean("Enable Custom Moist Timer", category + " Moist", false, "Enable the ability to change how long it takes for the first rain of a world.");

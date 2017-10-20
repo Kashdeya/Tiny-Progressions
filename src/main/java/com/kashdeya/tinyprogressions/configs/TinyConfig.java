@@ -248,19 +248,19 @@ public class TinyConfig {
 		ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
-		config.addCustomCategoryComment(category + " Natura Juices", "Everyone loves juice!\n[Only Enable if Natura is installed!]\n[Only ENABLE one or the other.]");
-		ConfigHandler.NaturaJuices = config.getBoolean("Natura Juices W/O Bottles", category + " Natura Juices", false, "Enable Juices With out bottles in the recipe?\n[Only Enable if Natura is installed!]");
-		ConfigHandler.NaturaJuicesBottles = config.getBoolean("Natura Juices With Bottles", category + " Natura Juices", false, "Enable Juices With bottles in the recipe?\n[Only Enable if Natura is installed!]");
+		config.addCustomCategoryComment(category + " Extra Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
+		ConfigHandler.ExtraJuices = config.getBoolean("Extra Juices W/O Bottles", category + " Extra Juices", true, "Enable Juices With out bottles in the recipe?");
+		ConfigHandler.ExtraJuicesBottles = config.getBoolean("Extra Juices With Bottles", category + " Extra Juices", false, "Enable Juices With bottles in the recipe?");
 		
-		config.addCustomCategoryComment(category + " Natura Juices Stats", "Everyone loves juice Stats!\n[Only Enable Above if Natura is installed!]");
-		ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount", category + " Natura Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice Saturation Amount", category + " Natura Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		config.addCustomCategoryComment(category + " Extra Juices Stats", "Everyone loves juice Stats!");
+		ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		config.addCustomCategoryComment(category + " Moist", "Change when the first rains on a world are due.");
 		ConfigHandler.custom_moist_timer = config.getBoolean("Enable Custom Moist Timer", category + " Moist", false, "Enable the ability to change how long it takes for the first rain of a world.");

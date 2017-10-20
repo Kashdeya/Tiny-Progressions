@@ -15,7 +15,7 @@ public class FoodRecipes {
 
 	public static void init() {
 		// Juicer
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechFoods.juicer), new Object[] {
 					"l",
 					"s",
@@ -105,7 +105,7 @@ public class FoodRecipes {
 		}
 		
 		// Juices WO Bottles
-		if (ConfigHandler.NaturaJuices && ConfigHandler.NaturaJuicesBottles == false){
+		if (ConfigHandler.ExtraJuices && !ConfigHandler.ExtraJuicesBottles){
 			
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.raspberry_juice), new Object[] {
 					"juicer", "cropRaspberry"
@@ -125,7 +125,7 @@ public class FoodRecipes {
 		}
 		
 		// Juice Bottles
-		if (ConfigHandler.NaturaJuicesBottles && ConfigHandler.NaturaJuices == false){
+		if (ConfigHandler.ExtraJuicesBottles && !ConfigHandler.ExtraJuices){
 			
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechFoods.raspberry_juice), new Object[] {
 					"juicer", "cropRaspberry", "glassBottle"

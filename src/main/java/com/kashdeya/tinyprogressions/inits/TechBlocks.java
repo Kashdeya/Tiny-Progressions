@@ -2,6 +2,10 @@ package com.kashdeya.tinyprogressions.inits;
 
 import com.arclighttw.utilities.client.Renderer;
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
+import com.kashdeya.tinyprogressions.blocks.bushes.BlackberryBush;
+import com.kashdeya.tinyprogressions.blocks.bushes.BlueberryBush;
+import com.kashdeya.tinyprogressions.blocks.bushes.MaloberryBush;
+import com.kashdeya.tinyprogressions.blocks.bushes.RaspberryBush;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.BlazeCobblegen;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.Cobblegen;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.DiamondCobblegen;
@@ -120,9 +124,26 @@ public class TechBlocks {
     public static Block colored_glowstone;
     // Withered Block
     public static Block withered_block;
+    // berries
+    public static Block blueberry_bush;
+    public static Block blackberry_bush;
+    public static Block maloberry_bush;
+    public static Block raspberry_bush;
     
 	public static void init() {
-
+		
+		// Berry Bushes
+		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
+			blueberry_bush = new BlueberryBush();
+			registerBlock(blueberry_bush, "blueberry_bush", true);
+			blackberry_bush = new BlackberryBush();
+			registerBlock(blackberry_bush, "blackberry_bush", true);
+			maloberry_bush = new MaloberryBush();
+			registerBlock(maloberry_bush, "maloberry_bush", true);
+			raspberry_bush = new RaspberryBush();
+			registerBlock(raspberry_bush, "raspberry_bush", true);
+		}
+		
 		// Tech Blocks
 		if (ConfigHandler.BlockGrowth) {
 			growth_block = new BlockGrowth();
@@ -320,7 +341,6 @@ public class TechBlocks {
 	public static void render() {
 
 		// Tech Blocks
-		
 		if (ConfigHandler.Cobblegen) {
 			renderBlock(cobblegen_block, "cobblegen_block");
 		}
@@ -438,6 +458,14 @@ public class TechBlocks {
 		// Withered Block
 		if (ConfigHandler.WitheredBlock){
 			renderBlock(withered_block, "withered_block");
+		}
+		
+		// Juices
+		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
+			renderBlock(blueberry_bush, "blueberry_bush");
+			renderBlock(blackberry_bush, "blackberry_bush");
+			renderBlock(maloberry_bush, "maloberry_bush");
+			renderBlock(raspberry_bush, "raspberry_bush");
 		}
 	}
 

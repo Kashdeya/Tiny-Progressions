@@ -3,8 +3,8 @@ package com.kashdeya.tinyprogressions.handlers;
 public class ConfigHandler {
 	
 	// Natura Juices
-	public static boolean NaturaJuices = true;
-	public static boolean NaturaJuicesBottles = true;
+	public static boolean ExtraJuices = true;
+	public static boolean ExtraJuicesBottles = true;
 	public static int RaspberryAmount = 3;
 	public static float RaspberrySaturation = 0.8F;
 	public static int BlueberryAmount = 3;

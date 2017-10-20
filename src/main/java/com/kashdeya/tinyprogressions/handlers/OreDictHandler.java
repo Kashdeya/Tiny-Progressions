@@ -39,6 +39,11 @@ public class OreDictHandler {
 		OreDictionary.registerOre("gemLava", TechItems.lava_crystal);
 		OreDictionary.registerOre("ingotLapis", TechItems.lapis_ingot);
 		OreDictionary.registerOre("ingotRedstone", TechItems.redstone_ingot);
+		// Juices
+		OreDictionary.registerOre("cropRaspberry", TechFoods.raspberry_berry);
+		OreDictionary.registerOre("cropBlueberry", TechFoods.blueberry_berry);
+		OreDictionary.registerOre("cropBlackberry", TechFoods.blackberry_berry);
+		OreDictionary.registerOre("cropMaloberry", TechFoods.maloberry_berry);
 		// Glowstone Dust
 		for(int i = 0; i < EnumDustColor.values().length; i++)
 			OreDictionary.registerOre(EnumDustColor.values()[i].getOredict(), new ItemStack(TechItems.colored_dust, 1, i));

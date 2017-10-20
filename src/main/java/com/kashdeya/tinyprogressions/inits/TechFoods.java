@@ -49,16 +49,21 @@ public class TechFoods {
 	public static Item rabbit_sandwhich;
 	public static Item bacon_eggs_sandwhich;
 	
-	// Natura Juices
+	// Extra Juices
 	public static Item raspberry_juice;
 	public static Item blueberry_juice;
 	public static Item blackberry_juice;
 	public static Item maloberry_juice;
+	public static Item raspberry_berry;
+	public static Item blueberry_berry;
+	public static Item blackberry_berry;
+	public static Item maloberry_berry;
+	
 	
 	public static void init(){
 		
 		// Natura Juices
-		if (ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
+		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			raspberry_juice = new DrinkBase(ConfigHandler.RaspberryAmount, ConfigHandler.RaspberrySaturation, false).setUnlocalizedName("raspberry_juice");
 			TechItems.registerItem(raspberry_juice, "raspberry_juice");
 			blueberry_juice = new DrinkBase(ConfigHandler.BlueberryAmount, ConfigHandler.BlueberrySaturation, false).setUnlocalizedName("blueberry_juice");
@@ -67,10 +72,18 @@ public class TechFoods {
 			TechItems.registerItem(blackberry_juice, "blackberry_juice");
 			maloberry_juice = new DrinkBase(ConfigHandler.MaloberryAmount, ConfigHandler.MaloberrySaturation, false).setUnlocalizedName("maloberry_juice");
 			TechItems.registerItem(maloberry_juice, "maloberry_juice");
+			raspberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("raspberry_berry");
+		    TechItems.registerItem(raspberry_berry, "raspberry_berry");
+		    blueberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("blueberry_berry");
+		    TechItems.registerItem(blueberry_berry, "blueberry_berry");
+		    blackberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("blackberry_berry");
+		    TechItems.registerItem(blackberry_berry, "blackberry_berry");
+		    maloberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("maloberry_berry");
+		    TechItems.registerItem(maloberry_berry, "maloberry_berry");
 		}
 		
 		// Juicer
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			juicer = new ItemJuicer().setUnlocalizedName("juicer");
 			TechItems.registerItem(juicer, "juicer");
 		}
@@ -183,17 +196,22 @@ public class TechFoods {
 	
 	public static void render(){
 		// Natura Juices
-		if (ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
+		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			TechItems.renderItem(raspberry_juice, "raspberry_juice");
 			TechItems.renderItem(blueberry_juice, "blueberry_juice");
 			TechItems.renderItem(blackberry_juice, "blackberry_juice");
 			TechItems.renderItem(maloberry_juice, "maloberry_juice");
+			TechItems.renderItem(raspberry_berry, "raspberry_berry");
+			TechItems.renderItem(blueberry_berry, "blueberry_berry");
+			TechItems.renderItem(blackberry_berry, "blackberry_berry");
+			TechItems.renderItem(maloberry_berry, "maloberry_berry");
 		}
 		
 		// Juicer
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.NaturaJuices || ConfigHandler.NaturaJuicesBottles){
+		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			TechItems.renderItem(juicer, "juicer");
 		}
+		
 		// Juices
 		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
 			TechItems.renderItem(apple_juice, "apple_juice");

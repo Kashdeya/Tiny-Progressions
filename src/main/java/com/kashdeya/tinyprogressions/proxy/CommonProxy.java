@@ -40,13 +40,7 @@ public class CommonProxy implements IProxy {
 	@Override
 	public void onInitialization(FMLInitializationEvent event)
 	{
-		OreDictHandler.init();
-		OtherRecipes.init();
-		ArmorRecipes.init();
-		BlockRecipes.init();
-		ItemRecipes.init();
-		ToolsRecipes.init();
-		FoodRecipes.init();
+		
 		
 		// FuelHandler
 		GameRegistry.registerFuelHandler(new FuelHandler());
@@ -66,5 +60,12 @@ public class CommonProxy implements IProxy {
 	@Override
 	public void onPostInitialization(net.minecraftforge.fml.common.event.FMLPostInitializationEvent event)
 	{
+		OreDictHandler.init();
+		OtherRecipes.init();
+		ArmorRecipes.init();
+		BlockRecipes.init();
+		ItemRecipes.init();
+		ToolsRecipes.init();
+		FoodRecipes.init();
 	}
 }

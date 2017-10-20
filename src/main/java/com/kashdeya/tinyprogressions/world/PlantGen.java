@@ -37,16 +37,16 @@ public class PlantGen implements IWorldGenerator{
 	        if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 	        	switch(random.nextInt(3)){
 	        	case 0:
-	        		generateBlueberryPlant(TechBlocks.blueberry_bush, world, blockPos, random);
+	        		generateBerryPlant(TechBlocks.blueberry_bush, world, blockPos, random);
 	        		break;
 	        	case 1:
-	        		generateRaspberryPlant(TechBlocks.raspberry_bush, world, blockPos, random);
+	        		generateBerryPlant(TechBlocks.raspberry_bush, world, blockPos, random);
 	        		break;
 	        	case 2:
-	        		generateMaloberryPlant(TechBlocks.maloberry_bush, world, blockPos, random);
+	        		generateBerryPlant(TechBlocks.maloberry_bush, world, blockPos, random);
 	        		break;
 	        	case 3:
-	        		generateBlackberryPlant(TechBlocks.blackberry_bush, world, blockPos, random);
+	        		generateBerryPlant(TechBlocks.blackberry_bush, world, blockPos, random);
 	        		break;
 	        	}	
 	        }
@@ -68,52 +68,7 @@ public class PlantGen implements IWorldGenerator{
         }
     }
     
-    private void generateBlueberryPlant(Block block, World world, BlockPos pos, Random random) {
-
-        for (int tryNum = 0; tryNum < 2; tryNum++) {
-            int posX = (pos.getX() + random.nextInt(8));
-            int posY = (pos.getY());
-            int posZ = (pos.getZ() + random.nextInt(8));
-
-            final BlockPos newPos = new BlockPos(posX, posY, posZ);
-
-            if (block.canPlaceBlockAt(world, newPos)) {
-                world.setBlockState(newPos, block.getDefaultState(), 2);
-            }
-        }
-    }
-    
-    private void generateBlackberryPlant(Block block, World world, BlockPos pos, Random random) {
-
-        for (int tryNum = 0; tryNum < 2; tryNum++) {
-            int posX = (pos.getX() + random.nextInt(8));
-            int posY = (pos.getY());
-            int posZ = (pos.getZ() + random.nextInt(8));
-
-            final BlockPos newPos = new BlockPos(posX, posY, posZ);
-
-            if (block.canPlaceBlockAt(world, newPos)) {
-                world.setBlockState(newPos, block.getDefaultState(), 2);
-            }
-        }
-    }
-    
-    private void generateMaloberryPlant(Block block, World world, BlockPos pos, Random random) {
-
-        for (int tryNum = 0; tryNum < 2; tryNum++) {
-            int posX = (pos.getX() + random.nextInt(8));
-            int posY = (pos.getY());
-            int posZ = (pos.getZ() + random.nextInt(8));
-
-            final BlockPos newPos = new BlockPos(posX, posY, posZ);
-
-            if (block.canPlaceBlockAt(world, newPos)) {
-                world.setBlockState(newPos, block.getDefaultState(), 2);
-            }
-        }
-    }
-    
-    private void generateRaspberryPlant(Block block, World world, BlockPos pos, Random random) {
+    private void generateBerryPlant(Block block, World world, BlockPos pos, Random random) {
 
         for (int tryNum = 0; tryNum < 2; tryNum++) {
             int posX = (pos.getX() + random.nextInt(8));

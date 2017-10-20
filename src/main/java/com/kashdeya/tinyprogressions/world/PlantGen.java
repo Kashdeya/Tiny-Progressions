@@ -35,10 +35,20 @@ public class PlantGen implements IWorldGenerator{
         
         if(!BiomeDictionary.hasType(biome, Type.SAVANNA) || !BiomeDictionary.hasType(biome, Type.COLD)){
 	        if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
-	        	generateBlueberryPlant(TechBlocks.blueberry_bush, world, blockPos);
-	        	generateRaspberryPlant(TechBlocks.raspberry_bush, world, blockPos);
-	        	generateMaloberryPlant(TechBlocks.maloberry_bush, world, blockPos);
-	        	generateBlackberryPlant(TechBlocks.blackberry_bush, world, blockPos);
+	        	switch(random.nextInt(3)){
+	        	case 0:
+	        		generateBlueberryPlant(TechBlocks.blueberry_bush, world, blockPos, random);
+	        		break;
+	        	case 1:
+	        		generateRaspberryPlant(TechBlocks.raspberry_bush, world, blockPos, random);
+	        		break;
+	        	case 2:
+	        		generateMaloberryPlant(TechBlocks.maloberry_bush, world, blockPos, random);
+	        		break;
+	        	case 3:
+	        		generateBlackberryPlant(TechBlocks.blackberry_bush, world, blockPos, random);
+	        		break;
+	        	}	
 	        }
         }        
     }
@@ -58,12 +68,12 @@ public class PlantGen implements IWorldGenerator{
         }
     }
     
-    private void generateBlueberryPlant(Block block, World world, BlockPos pos) {
+    private void generateBlueberryPlant(Block block, World world, BlockPos pos, Random random) {
 
-        for (int tryNum = 0; tryNum < 1; tryNum++) {
-            int posX = (pos.getX());
+        for (int tryNum = 0; tryNum < 2; tryNum++) {
+            int posX = (pos.getX() + random.nextInt(8));
             int posY = (pos.getY());
-            int posZ = (pos.getZ());
+            int posZ = (pos.getZ() + random.nextInt(8));
 
             final BlockPos newPos = new BlockPos(posX, posY, posZ);
 
@@ -73,12 +83,12 @@ public class PlantGen implements IWorldGenerator{
         }
     }
     
-    private void generateBlackberryPlant(Block block, World world, BlockPos pos) {
+    private void generateBlackberryPlant(Block block, World world, BlockPos pos, Random random) {
 
-        for (int tryNum = 0; tryNum < 1; tryNum++) {
-            int posX = (pos.getX());
+        for (int tryNum = 0; tryNum < 2; tryNum++) {
+            int posX = (pos.getX() + random.nextInt(8));
             int posY = (pos.getY());
-            int posZ = (pos.getZ());
+            int posZ = (pos.getZ() + random.nextInt(8));
 
             final BlockPos newPos = new BlockPos(posX, posY, posZ);
 
@@ -88,12 +98,12 @@ public class PlantGen implements IWorldGenerator{
         }
     }
     
-    private void generateMaloberryPlant(Block block, World world, BlockPos pos) {
+    private void generateMaloberryPlant(Block block, World world, BlockPos pos, Random random) {
 
-        for (int tryNum = 0; tryNum < 1; tryNum++) {
-            int posX = (pos.getX());
+        for (int tryNum = 0; tryNum < 2; tryNum++) {
+            int posX = (pos.getX() + random.nextInt(8));
             int posY = (pos.getY());
-            int posZ = (pos.getZ());
+            int posZ = (pos.getZ() + random.nextInt(8));
 
             final BlockPos newPos = new BlockPos(posX, posY, posZ);
 
@@ -103,12 +113,12 @@ public class PlantGen implements IWorldGenerator{
         }
     }
     
-    private void generateRaspberryPlant(Block block, World world, BlockPos pos) {
+    private void generateRaspberryPlant(Block block, World world, BlockPos pos, Random random) {
 
-        for (int tryNum = 0; tryNum < 1; tryNum++) {
-            int posX = (pos.getX());
+        for (int tryNum = 0; tryNum < 2; tryNum++) {
+            int posX = (pos.getX() + random.nextInt(8));
             int posY = (pos.getY());
-            int posZ = (pos.getZ());
+            int posZ = (pos.getZ() + random.nextInt(8));
 
             final BlockPos newPos = new BlockPos(posX, posY, posZ);
 

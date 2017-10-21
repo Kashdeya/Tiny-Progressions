@@ -1,5 +1,8 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.lang.reflect.Field;
+import java.util.Locale;
+
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FoodBase;
@@ -65,218 +68,108 @@ public class TechFoods {
 		// Natura Juices
 		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			raspberry_juice = new DrinkBase(ConfigHandler.RaspberryAmount, ConfigHandler.RaspberrySaturation, false).setUnlocalizedName("raspberry_juice");
-			TechItems.registerItem(raspberry_juice, "raspberry_juice");
 			blueberry_juice = new DrinkBase(ConfigHandler.BlueberryAmount, ConfigHandler.BlueberrySaturation, false).setUnlocalizedName("blueberry_juice");
-			TechItems.registerItem(blueberry_juice, "blueberry_juice");
 			blackberry_juice = new DrinkBase(ConfigHandler.BlackberryAmount, ConfigHandler.BlackberrySaturation, false).setUnlocalizedName("blackberry_juice");
-			TechItems.registerItem(blackberry_juice, "blackberry_juice");
 			maloberry_juice = new DrinkBase(ConfigHandler.MaloberryAmount, ConfigHandler.MaloberrySaturation, false).setUnlocalizedName("maloberry_juice");
-			TechItems.registerItem(maloberry_juice, "maloberry_juice");
 			raspberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("raspberry_berry");
-		    TechItems.registerItem(raspberry_berry, "raspberry_berry");
 		    blueberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("blueberry_berry");
-		    TechItems.registerItem(blueberry_berry, "blueberry_berry");
 		    blackberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("blackberry_berry");
-		    TechItems.registerItem(blackberry_berry, "blackberry_berry");
 		    maloberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("maloberry_berry");
-		    TechItems.registerItem(maloberry_berry, "maloberry_berry");
 		}
 		
 		// Juicer
 		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			juicer = new ItemJuicer().setUnlocalizedName("juicer");
-			TechItems.registerItem(juicer, "juicer");
 		}
 		
 		// Juices
 		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
 			apple_juice = new DrinkBase(ConfigHandler.AppleAmount, ConfigHandler.AppleSaturation, false).setUnlocalizedName("apple_juice");
-			TechItems.registerItem(apple_juice, "apple_juice");
-			
 			carrot_juice = new DrinkBase(ConfigHandler.CarrotAmount, ConfigHandler.CarrotSaturation, false).setUnlocalizedName("carrot_juice");
-			TechItems.registerItem(carrot_juice, "carrot_juice");
-			
 			potatoe_juice = new DrinkBase(ConfigHandler.PotatoAmount, ConfigHandler.PotatoSaturation, false).setUnlocalizedName("potatoe_juice");
-			TechItems.registerItem(potatoe_juice, "potatoe_juice");
-			
 			beet_juice = new DrinkBase(ConfigHandler.BeetAmount, ConfigHandler.BeetSaturation, false).setUnlocalizedName("beet_juice");
-			TechItems.registerItem(beet_juice, "beet_juice");
-			
 			cactus_juice = new DrinkBase(ConfigHandler.CactusAmount, ConfigHandler.CactusSaturation, false).setUnlocalizedName("cactus_juice");
-			TechItems.registerItem(cactus_juice, "cactus_juice");
-			
 			slime_juice = new DrinkBase(ConfigHandler.SlimeAmount, ConfigHandler.SlimeSaturation, false).setUnlocalizedName("slime_juice");
-			TechItems.registerItem(slime_juice, "slime_juice");
-			
 			wheat_juice = new DrinkBase(ConfigHandler.WheatAmount, ConfigHandler.WheatSaturation, false).setUnlocalizedName("wheat_juice");
-			TechItems.registerItem(wheat_juice, "wheat_juice");
-			
 			melon_juice = new DrinkBase(ConfigHandler.MelonAmount, ConfigHandler.MelonSaturation, false).setUnlocalizedName("melon_juice");
-			TechItems.registerItem(melon_juice, "melon_juice");
-			
 			pumpkin_juice = new DrinkBase(ConfigHandler.PumpkinAmount, ConfigHandler.PumpkinSaturation, false).setUnlocalizedName("pumpkin_juice");
-			TechItems.registerItem(pumpkin_juice, "pumpkin_juice");
 		}
 		
 		// Apples
 		if (ConfigHandler.DiamondApple) {
 			diamond_apple = new DiamondApple(4, 1.2F, false);
-			TechItems.registerItem(diamond_apple, "diamond_apple");
 		}
 		if (ConfigHandler.EmeraldApple) {
 			emerald_apple = new EmeraldApple(4, 1.2F, false);
-			TechItems.registerItem(emerald_apple, "emerald_apple");
 		}
 		if (ConfigHandler.iron_apple) {
 			iron_apple = new IronApple(4, 1.2F, false);
-			TechItems.registerItem(iron_apple, "iron_apple");
 		}
  		if (ConfigHandler.redstone_apple) {
 			redstone_apple = new RedstoneApple(4, 1.2F, false);
-			TechItems.registerItem(redstone_apple, "redstone_apple");
 		}
 		if (ConfigHandler.ApplePro) {
 			golden_apple = new GoldenApple(4, 1.2F, false);
-			TechItems.registerItem(golden_apple, "golden_apple");
 		}
 		
 		// Extra Food
 		if (ConfigHandler.CookedBacon){
 		    raw_bacon = new FoodBase(1, 0.1F, true).setUnlocalizedName("raw_bacon");
-		    TechItems.registerItem(raw_bacon, "raw_bacon");
 		    cooked_bacon = new FoodBase(3, 0.3F, true).setUnlocalizedName("cooked_bacon");
-		    TechItems.registerItem(cooked_bacon, "cooked_bacon");
 	    }
 	    if (ConfigHandler.MonsterJerky){
 		    monster_jerky = new FoodBase(4, 0.5F, true).setUnlocalizedName("monster_jerky");
-		    TechItems.registerItem(monster_jerky, "monster_jerky");
 	    }
 	    if (ConfigHandler.ToastedBread){
 		    toasted_bread = new FoodBase(ConfigHandler.ToastedAmount, ConfigHandler.ToastedSaturation, true).setUnlocalizedName("toasted_bread");
-		    TechItems.registerItem(toasted_bread, "toasted_bread");
 	    }
 	    if (ConfigHandler.FriedEgg){
 		    fried_egg = new FoodBase(4, 0.6F, true).setUnlocalizedName("fried_egg");
-		    TechItems.registerItem(fried_egg, "fried_egg");
 	    }
 	    if (ConfigHandler.CookedMushrooms){
 		    cooked_mushroom_brown = new FoodBase(2, 03F, false).setUnlocalizedName("cooked_mushroom_brown");
-		    TechItems.registerItem(cooked_mushroom_brown, "cooked_mushroom_brown");
 		    cooked_mushroom_red = new FoodBase(2, 03F, false).setUnlocalizedName("cooked_mushroom_red");
-		    TechItems.registerItem(cooked_mushroom_red, "cooked_mushroom_red");
 	    }
 	    if (ConfigHandler.BaconEggs){
 		    bacon_eggs = new FoodBase(6, 0.7F, false).setUnlocalizedName("bacon_eggs");
-		    TechItems.registerItem(bacon_eggs, "bacon_eggs");
 	    }
 	    if (ConfigHandler.LittleCandy){
 		    little_candy = new FoodBase(1, 0.6F, true).setUnlocalizedName("little_candy");
-		    TechItems.registerItem(little_candy, "little_candy");
 	    }
 	    if (ConfigHandler.CookedApple){
 		    cooked_apple = new FoodBase(8, 8.0F, true).setUnlocalizedName("cooked_apple");
-		    TechItems.registerItem(cooked_apple, "cooked_apple");
 	    }
 	    if (ConfigHandler.Sandwiches){
 	    	bread_slice = new FoodBase(1, 0.1F, true).setUnlocalizedName("bread_slice");
-		    TechItems.registerItem(bread_slice, "bread_slice");
 		    rabbit_sandwhich = new FoodBase(8, 2.0F, true).setUnlocalizedName("rabbit_sandwhich");
-		    TechItems.registerItem(rabbit_sandwhich, "rabbit_sandwhich");
 		    bacon_eggs_sandwhich = new FoodBase(9, 11.0F, true).setUnlocalizedName("bacon_eggs_sandwhich");
-		    TechItems.registerItem(bacon_eggs_sandwhich, "bacon_eggs_sandwhich");
 		    chicken_sandwhich = new FoodBase(8, 2.0F, true).setUnlocalizedName("chicken_sandwhich");
-		    TechItems.registerItem(chicken_sandwhich, "chicken_sandwhich");
 		    beef_sandwhich = new FoodBase(10, 2.0F, true).setUnlocalizedName("beef_sandwhich");
-		    TechItems.registerItem(beef_sandwhich, "beef_sandwhich");
 		    bacon_sandwhich = new FoodBase(6, 2.0F, true).setUnlocalizedName("bacon_sandwhich");
-		    TechItems.registerItem(bacon_sandwhich, "bacon_sandwhich");
 	    }
 		
 	}
 	
-	public static void render(){
-		// Natura Juices
-		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
-			TechItems.renderItem(raspberry_juice, "raspberry_juice");
-			TechItems.renderItem(blueberry_juice, "blueberry_juice");
-			TechItems.renderItem(blackberry_juice, "blackberry_juice");
-			TechItems.renderItem(maloberry_juice, "maloberry_juice");
-			TechItems.renderItem(raspberry_berry, "raspberry_berry");
-			TechItems.renderItem(blueberry_berry, "blueberry_berry");
-			TechItems.renderItem(blackberry_berry, "blackberry_berry");
-			TechItems.renderItem(maloberry_berry, "maloberry_berry");
-		}
+	public static void onRegister()
+	{
+		init();
 		
-		// Juicer
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
-			TechItems.renderItem(juicer, "juicer");
+		try
+		{
+			for(Field field : TechFoods.class.getDeclaredFields())
+			{
+				Object obj = field.get(null);
+				
+				if(obj == null || !(obj instanceof Item))
+					continue;
+				
+				Item item = (Item)obj;
+				String name = field.getName().toLowerCase(Locale.ENGLISH);
+				Registry.registerItem(item, name);
+			}
 		}
-		
-		// Juices
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
-			TechItems.renderItem(apple_juice, "apple_juice");
-			TechItems.renderItem(carrot_juice, "carrot_juice");
-			TechItems.renderItem(potatoe_juice, "potatoe_juice");
-			TechItems.renderItem(beet_juice, "beet_juice");
-			TechItems.renderItem(cactus_juice, "cactus_juice");
-			TechItems.renderItem(slime_juice, "slime_juice");
-			TechItems.renderItem(wheat_juice, "wheat_juice");
-			TechItems.renderItem(melon_juice, "melon_juice");
-			TechItems.renderItem(pumpkin_juice, "pumpkin_juice");
+		catch(IllegalAccessException e)
+		{
 		}
-		
-		// Apples
-		if (ConfigHandler.DiamondApple) {
-			TechItems.renderItem(diamond_apple, "diamond_apple");
-		}
-		if (ConfigHandler.EmeraldApple) {
-			TechItems.renderItem(emerald_apple, "emerald_apple");
-		}
-		if (ConfigHandler.iron_apple) {
-			TechItems.renderItem(iron_apple, "iron_apple");
-		}
- 		if (ConfigHandler.redstone_apple) {
-			TechItems.renderItem(redstone_apple, "redstone_apple");
-		}
-		if (ConfigHandler.ApplePro) {
-			TechItems.renderItem(golden_apple, "golden_apple");
-		}
-		
-		// Extra Food
-		if (ConfigHandler.CookedBacon){
-		    TechItems.renderItem(raw_bacon, "raw_bacon");
-		    TechItems.renderItem(cooked_bacon, "cooked_bacon");
-	    }
-	    if (ConfigHandler.MonsterJerky){
-		    TechItems.renderItem(monster_jerky, "monster_jerky");
-	    }
-	    if (ConfigHandler.ToastedBread){
-		    TechItems.renderItem(toasted_bread, "toasted_bread");
-	    }
-	    if (ConfigHandler.FriedEgg){
-		    TechItems.renderItem(fried_egg, "fried_egg");
-	    }
-	    if (ConfigHandler.CookedMushrooms){
-		    TechItems.renderItem(cooked_mushroom_brown, "cooked_mushroom_brown");
-		    TechItems.renderItem(cooked_mushroom_red, "cooked_mushroom_red");
-	    }
-	    if (ConfigHandler.BaconEggs){
-		    TechItems.renderItem(bacon_eggs, "bacon_eggs");
-	    }
-	    if (ConfigHandler.LittleCandy){
-		    TechItems.renderItem(little_candy, "little_candy");
-	    }
-	    if (ConfigHandler.CookedApple){
-		    TechItems.renderItem(cooked_apple, "cooked_apple");
-	    }
-	    if (ConfigHandler.Sandwiches){
-		    TechItems.renderItem(bread_slice, "bread_slice");
-		    TechItems.renderItem(rabbit_sandwhich, "rabbit_sandwhich");
-		    TechItems.renderItem(bacon_eggs_sandwhich, "bacon_eggs_sandwhich");
-		    TechItems.renderItem(chicken_sandwhich, "chicken_sandwhich");
-		    TechItems.renderItem(beef_sandwhich, "beef_sandwhich");
-		    TechItems.renderItem(bacon_sandwhich, "bacon_sandwhich");
-	    }
-		
 	}
 }

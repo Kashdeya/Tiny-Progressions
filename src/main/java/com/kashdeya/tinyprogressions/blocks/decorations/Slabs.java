@@ -1,25 +1,41 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
+import com.kashdeya.tinyprogressions.inits.Registry.IItemProvider;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class Slabs extends BlockSlab
+public class Slabs extends BlockSlab implements IItemProvider
 {
     private boolean isDouble;
     private Block droppedBlock;
+    private BlockSlab doubleSlab;
     
-    public Slabs(boolean isDouble)
+    public Slabs()
+    {
+    		this(true, null);
+    }
+    
+    public Slabs(BlockSlab doubleSlab)
+    {
+    		this(false, doubleSlab);
+    }
+    
+    public Slabs(boolean isDouble, BlockSlab doubleSlab)
     {
         super(Material.ROCK);
         this.isDouble = isDouble;
+        this.doubleSlab = doubleSlab;
         
         IBlockState state = blockState.getBaseState();
         if(!isDouble())
@@ -27,6 +43,15 @@ public class Slabs extends BlockSlab
         
         setDefaultState(state);
         useNeighborBrightness = true;
+    }
+    
+    @Override
+    public ItemBlock getItemBlock()
+    {
+    		if(!isDouble)
+    			return new ItemSlab(this, this, doubleSlab);
+    		
+    		return null;
     }
     
     @Override

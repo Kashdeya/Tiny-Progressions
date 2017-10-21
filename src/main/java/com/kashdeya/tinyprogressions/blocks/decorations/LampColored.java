@@ -1,7 +1,9 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import com.kashdeya.tinyprogressions.items.block.MetaItemBlock.IBlockMetadata;
+import com.kashdeya.tinyprogressions.inits.Registry.IItemProvider;
+import com.kashdeya.tinyprogressions.items.block.MetaItemBlock;
 import com.kashdeya.tinyprogressions.properties.EnumLampColor;
+import com.kashdeya.tinyprogressions.util.IMetadata;
 
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
@@ -10,12 +12,13 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumDyeColor;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class LampColored extends Lamp implements IBlockMetadata
+public class LampColored extends Lamp implements IMetadata, IItemProvider
 {
 	public static final PropertyEnum<EnumLampColor> COLOR = PropertyEnum.create("color", EnumLampColor.class);
 	protected String[] unlocalNames;
@@ -24,6 +27,24 @@ public class LampColored extends Lamp implements IBlockMetadata
 	{
 		setDefaultState(blockState.getBaseState().withProperty(COLOR, EnumLampColor.WHITE));
 		this.unlocalNames = EnumLampColor.getNames();
+	}
+	
+	@Override
+	public ItemBlock getItemBlock()
+	{
+		return new MetaItemBlock(this);
+	}
+	
+	@Override
+	public int getCount()
+	{
+		return unlocalNames.length;
+	}
+	
+	@Override
+	public String getTexture(int index)
+	{
+		return unlocalNames[index];
 	}
 	
 	@Override

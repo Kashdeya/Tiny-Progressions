@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.items.block;
 
+import com.kashdeya.tinyprogressions.util.IMetadata;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -14,7 +16,7 @@ public class MetaItemBlock extends ItemBlock
 		setMaxDamage(0);
 		setHasSubtypes(true);
 		
-		this.unlocalNames = ((IBlockMetadata)block).getUnlocalizedNames();
+		this.unlocalNames = ((IMetadata)block).getUnlocalizedNames();
 	}
 	
 	@Override
@@ -27,17 +29,5 @@ public class MetaItemBlock extends ItemBlock
 	public String getUnlocalizedName(ItemStack stack)
 	{
 		return "tile." + unlocalNames[stack.getItemDamage()];
-	}
-	/*
-	@Override
-	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
-	{
-		for(int i = 0; i < unlocalNames.length; i++)
-			items.add(new ItemStack(this, 1, i));
-	}
-	*/
-	public interface IBlockMetadata
-	{
-		public String[] getUnlocalizedNames();
 	}
 }

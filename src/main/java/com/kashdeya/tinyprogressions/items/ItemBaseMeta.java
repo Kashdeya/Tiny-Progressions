@@ -1,14 +1,13 @@
 package com.kashdeya.tinyprogressions.items;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.util.IMetadata;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemBaseMeta extends ItemBase
+public class ItemBaseMeta extends ItemBase implements IMetadata
 {
 	protected String[] unlocalNames;
 	
@@ -30,5 +29,23 @@ public class ItemBaseMeta extends ItemBase
 		if (tab == TinyProgressions.tabTP)
 		for(int i = 0; i < unlocalNames.length; i++)
 			items.add(new ItemStack(this, 1, i));
+	}
+	
+	@Override
+	public int getCount()
+	{
+		return unlocalNames.length;
+	}
+	
+	@Override
+	public String getTexture(int index)
+	{
+		return unlocalNames[index];
+	}
+	
+	@Override
+	public String[] getUnlocalizedNames()
+	{
+		return unlocalNames;
 	}
 }

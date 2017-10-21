@@ -1,0 +1,249 @@
+#Tech Blocks
+tile.cobblegen_block.name=圆石生成机
+tile.iron_cobblegen_block.name=中级圆石生成机
+tile.diamond_cobblegen_block.name=高级圆石生成机
+tile.blaze_cobblegen_block.name=终极圆石生成机
+tile.emerald_cobblegen_block.name=究极圆石生成机
+
+#Growth Blocks
+tile.growth_block.name=生长晶体 
+tile.growth_upgrade.name=高级生长晶体 
+tile.growth_upgrade_two.name=终极生长晶体
+
+#Withered Block
+tile.withered_block.name=凋零基岩
+
+#Deco Blocks
+tile.charcoal_block.name=木炭块 
+tile.dirty_glass.name=肮脏玻璃
+tile.diorite_brick.name=闪长岩砖块
+tile.granite_brick.name=花岗岩砖块 
+tile.andesite_brick.name=安山岩砖块
+tile.smooth_endstone.name=平滑末地石
+
+#Stone Torch
+tile.stone_torch.name=石制火把
+item.stone_stick.name=石棍
+
+#Reinforced Blocks
+tile.reinforced_glass.name=强化玻璃
+tile.reinforced_obsidian.name=强化黑曜石
+
+#Compressed Blocks
+tile.flesh_block.name=压缩肉块
+tile.bone_block.name=压缩骨块
+tile.netherstar_block.name=压缩下界之星块
+tile.flint_block.name=压缩燧石块
+
+#Tech Items
+item.watering_can.name=洒水壶
+item.watering_can_upgrade.name=强化洒水壶
+item.quartz_dust.name=高纯石英铁粉
+item.quartz_knife.name=石英刀
+item.flint_ingot.name=石英铁-[未完成]
+
+#Stone Dust
+item.stone_dust.name=石粉
+
+#Reinforced Ingot
+item.reinforced_obsidian_ingot.name=强化黑曜石锭-[未完成]
+
+#Ender Ore
+tile.ender_ore.name=末影矿石
+item.ender_dust.name=末影尘 
+
+#Goodies
+item.birthday_pickaxe.name=派对镐 
+
+#Creative Tabs
+itemGroup.tiny_progressions=Tiny Progressions
+
+#Armor
+item.stone_helmet.name=石头盔
+item.stone_chestplate.name=石胸甲
+item.stone_leggings.name=石护腿 
+item.stone_boots.name=石靴子
+
+item.wooden_helmet.name=橡木头盔
+item.wooden_chestplate.name=橡木胸甲
+item.wooden_leggings.name=橡木护腿
+item.wooden_boots.name=橡木靴子
+
+#MISC
+item.mycelium_seeds.name=菌丝种子
+
+#Apple
+item.diamond_apple.name=钻石苹果
+item.emerald_apple.name=绿宝石苹果
+
+#AppleProgression
+item.golden_apple.name=金苹果
+
+#Medkit
+item.med_kit.name=医疗包
+
+#Flint Weapons & Tools
+item.flint_pickaxe.name=燧石镐
+item.flint_spade.name=燧石铲
+item.flint_axe.name=燧石斧 
+item.flint_sword.name=燧石剑
+item.flint_hoe.name=燧石锄
+item.flint_knife.name=燧石刀
+
+#Flint Armor
+item.flint_helmet.name=燧石头盔
+item.flint_chestplate.name=燧石胸甲
+item.flint_leggings.name=燧石护腿
+item.flint_boots.name=燧石靴子
+
+#Bone Weapons & Tools
+item.bone_pickaxe.name=骨镐
+item.bone_spade.name=骨铲
+item.bone_axe.name=骨斧
+item.bone_sword.name=骨剑
+item.bone_hoe.name=骨锄
+
+#Bone Armor
+item.bone_helmet.name=骨制头盔
+item.bone_chestplate.name=骨制胸甲
+item.bone_leggings.name=骨制护腿
+item.bone_boots.name=骨制靴子
+
+#Cobblegen
+tooltip.cobblegen_1=只能容纳32个方块！
+tooltip.cobblegen_2=每40Ticks产生1个圆石！
+tooltip.cobblegen_3=可在其上面放置箱子进行输出！
+tooltip.cobblegen_4=可在其周围放置‘漏斗’进行取出！
+
+#IronCobblegen
+tooltip.ironcobblegen_1=只能容纳64个方块！
+tooltip.ironcobblegen_2=每20Ticks产生1个圆石！
+tooltip.ironcobblegen_3=可在其上面放置箱子进行输出！
+tooltip.ironcobblegen_4=可在其周围放置‘漏斗’进行取出！
+
+#DiamondCobblegen
+tooltip.diamondcobblegen_1=只能容纳64个方块！
+tooltip.diamondcobblegen_2=每10Ticks产生1个圆石！
+tooltip.diamondcobblegen_3=可在其上面放置箱子进行输出！
+tooltip.diamondcobblegen_4=Can output to Hopper Below!
+
+#BlazeCobblegen
+tooltip.blazecobblegen_1=只能容纳64个方块！
+tooltip.blazecobblegen_2=每5Ticks产生1个圆石！
+tooltip.blazecobblegen_3=可在其上面放置箱子进行输出！
+tooltip.blazecobblegen_4=可在其周围放置‘漏斗’进行取出！
+
+#EmeraldCobblegen
+tooltip.emeraldcobblegen_1=只能容纳64个方块！
+tooltip.emeraldcobblegen_2=每1Ticks产生1个圆石！
+tooltip.emeraldcobblegen_3=可在其上面放置箱子进行输出！
+tooltip.emeraldcobblegen_4=可在其周围放置‘漏斗’进行取出！
+
+#Growth Crystal Tooltips
+tooltip.growth_1=缓慢加速作物生长！
+tooltip.growth_2=范围9x9！
+tooltip.growth_3=最大高度为以自己为中心的上下3格！
+
+#Growth Crystal Upgrade Tooltips
+tooltip.growthupgrade_1=较快加速作物生长！
+tooltip.growthupgrade_2=范围9x9！
+tooltip.growthupgrade_3=最大高度为以自己为中心的上下5格！
+tooltip.growthupgrade_4=它能作为水源使用！
+tooltip.growthupgrade_5=请不要把海绵放置在其周围，否则其会消失！
+
+#Growth Crystal Upgrade Two Tooltips
+tooltip.growthupgrade2_1=极快加速作物生长！
+tooltip.growthupgrade2_2=范围9x9！
+tooltip.growthupgrade2_3=最大高度为以自己为中心的上下10格！
+tooltip.growthupgrade2_4=它能作为水源使用！
+tooltip.growthupgrade2_5=请不要把海绵放置在其周围，否则其会消失！
+
+#Nether Star Block Tooltips
+tooltip.netherstar_1=可作为信标基座使用。
+
+#Armor Tooltip
+tooltip.armor_1=使你缓慢！
+
+#Reinforced Blocks Tooltips
+tooltip.glass_1=凋零的证明！
+tooltip.obsidian_1=凋零的证明！
+
+#Birthday Pickaxe Tooltip
+tooltip.birthday_1=神速力镐！
+tooltip.birthday_2=右键单击出现惊喜！
+
+#Medkit Tooltip
+tooltip.medkit=治愈玩家！
+
+#Mycelium Tooltip
+tooltip.seeds=右键点击泥土！
+
+#Diamond Apple Tooltips
+tooltip.apple_1=防火
+tooltip.apple_2=再生
+tooltip.apple_3=抗性提升
+tooltip.apple_4=速度
+
+#Emerald Apple Tooltips
+tooltip.emerald_apple_1=伤害吸收
+tooltip.emerald_apple_2=速度
+tooltip.emerald_apple_3=饱和
+
+#Knife Tooltip
+tooltip.knife=非常尖锐，小心处理！
+
+#Scythes
+item.wooden_scythe.name=木镰刀
+item.stone_scythe.name=石镰刀
+item.golden_scythe.name=金镰刀
+item.iron_scythe.name=铁镰刀
+item.diamond_scythe.name=钻石镰刀
+item.emerald_scythe.name=绿宝石镰刀
+item.obsidian_scythe.name=黑曜石镰刀
+
+#Emerald Tools
+item.emerald_axe.name=绿宝石斧
+item.emerald_pickaxe.name=绿宝石镐
+item.emerald_spade.name=绿宝石铲
+item.emerald_hoe.name=绿宝石锄 
+item.emerald_sword.name=绿宝石剑
+
+#Obsidian Tools
+item.obsidian_axe.name=黑曜石斧
+item.obsidian_pickaxe.name=黑曜石镐
+item.obsidian_spade.name=黑曜石铲
+item.obsidian_hoe.name=黑曜石锄
+item.obsidian_sword.name=黑曜石剑
+
+#Watering Cans Tooltips
+tooltip.can_1=用来浇灌作物！
+tooltip.can_2=范围3x3！
+tooltip.canupgrade_1=一种更好的浇灌方式！
+tooltip.canupgrade_2=范围5x5！
+
+#MultiTools
+item.wooden_multi.name=木制多功能工具
+item.stone_multi.name=石制多功能工具
+item.golden_multi.name=金制多功能工具
+item.iron_multi.name=铁制多功能工具
+item.diamond_multi.name=钻石制多功能工具
+item.emerald_multi.name=绿宝石制多功能工具
+item.obsidian_multi.name=黑曜石制多功能工具
+
+#BattleAxes
+item.wooden_battle.name=木战斧
+item.stone_battle.name=石战斧
+item.golden_battle.name=金战斧
+item.iron_battle.name=铁战斧
+item.diamond_battle.name=钻石战斧
+item.emerald_battle.name=绿宝石战斧
+item.obsidian_battle.name=黑曜石战斧
+
+#Spears
+item.wooden_spear.name=木长矛
+item.stone_spear.name=石长矛
+item.golden_spear.name=金长矛
+item.iron_spear.name=铁长矛
+item.diamond_spear.name=钻石长矛
+item.emerald_spear.name=绿宝石长矛
+item.obsidian_spear.name=黑曜石长矛

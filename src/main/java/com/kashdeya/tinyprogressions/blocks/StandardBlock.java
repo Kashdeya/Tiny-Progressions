@@ -1,5 +1,8 @@
 package com.kashdeya.tinyprogressions.blocks;
 
+import java.lang.reflect.InvocationTargetException;
+
+import com.kashdeya.tinyprogressions.inits.Registry.IItemProvider;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -7,12 +10,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class StandardBlock extends Block
+public class StandardBlock extends Block implements IItemProvider
 {
+	private ItemBlock itemBlock;
+	
 	public StandardBlock(Material material)
 	{
 		super(material);
@@ -35,6 +41,25 @@ public class StandardBlock extends Block
 	{
 		setHarvestLevel(toolClass, level);
 		return this;
+	}
+	
+	public StandardBlock setItemBlock(Class<? extends ItemBlock> itemBlock)
+	{
+		try
+		{
+			this.itemBlock = itemBlock.getDeclaredConstructor(Block.class).newInstance(this);
+		}
+		catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e)
+		{
+		}
+		
+		return this;
+	}
+	
+	@Override
+	public ItemBlock getItemBlock()
+	{
+		return itemBlock;
 	}
 	
 	@SideOnly(Side.CLIENT)

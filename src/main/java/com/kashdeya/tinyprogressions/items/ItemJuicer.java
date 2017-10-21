@@ -1,9 +1,7 @@
 package com.kashdeya.tinyprogressions.items;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 

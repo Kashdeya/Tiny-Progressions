@@ -3,10 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.bushes;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechFoods;
-import com.kashdeya.tinyprogressions.inits.TechItems;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 

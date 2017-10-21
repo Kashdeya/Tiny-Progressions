@@ -17,14 +17,12 @@ import net.minecraft.world.World;
 
 public class HardenedBlocks extends Block{
 	
-	private Block drop;
 	private int meta;
 	private int least_quantity;
 	private int most_quantity;
 	
 	private HardenedBlocks(String unlocalizedName, Material mat, Block drop, int meta, int least_quantity, int most_quantity) {
 		super(mat);
-		this.drop = drop;
 		this.meta = meta;
 		this.least_quantity = least_quantity;
 		this.most_quantity = most_quantity;

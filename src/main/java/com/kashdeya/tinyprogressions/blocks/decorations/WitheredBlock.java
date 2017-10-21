@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -9,6 +8,7 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -30,7 +30,7 @@ public class WitheredBlock extends Block {
         this.setBlockUnbreakable();
         this.setTickRandomly(true);
         this.setResistance(6000000.0F);
-        this.setSoundType(blockSoundType.STONE);
+        this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("withered_block");
         this.disableStats();
@@ -68,7 +68,7 @@ public class WitheredBlock extends Block {
     @Override
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-        List<EntityLivingBase> list = worldIn.getEntitiesWithinAABB(EntityPlayer.class, this.FULL_BLOCK_AABB.expand(2, 2, 2));
+//        List<EntityLivingBase> list = worldIn.getEntitiesWithinAABB(EntityPlayer.class, this.FULL_BLOCK_AABB.expand(2, 2, 2));
     }
     
 }

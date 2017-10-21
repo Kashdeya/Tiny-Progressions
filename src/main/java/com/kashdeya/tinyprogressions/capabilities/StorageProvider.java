@@ -9,7 +9,7 @@ import net.minecraftforge.common.capabilities.Capability.IStorage;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>, Capability.IStorage<IStorage>
+public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>, Capability.IStorage<IStorage<?>>
 {
     private final InventoryStorage instance;
  
@@ -34,20 +34,21 @@ public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>,
         return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
     }
  
-    @Override
+	@Override
+    @SuppressWarnings("unchecked")
     public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing)
     {
         return hasCapability(capability, facing) ? (T)instance : null;
     }
  
     @Override
-    public NBTBase writeNBT(Capability<IStorage> capability, IStorage instance, EnumFacing side)
+    public NBTBase writeNBT(Capability<IStorage<?>> capability, IStorage<?> instance, EnumFacing side)
     {
         return serializeNBT();
     }
  
     @Override
-    public void readNBT(Capability<IStorage> capability, IStorage instance, EnumFacing facing, NBTBase nbt)
+    public void readNBT(Capability<IStorage<?>> capability, IStorage<?> instance, EnumFacing facing, NBTBase nbt)
     {
         deserializeNBT((NBTTagCompound)nbt);
     }

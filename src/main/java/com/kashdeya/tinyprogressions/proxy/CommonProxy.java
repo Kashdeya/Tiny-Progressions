@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.proxy;
 
-import com.arclighttw.utilities.IProxy;
 import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
 import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
 import com.kashdeya.tinyprogressions.crafting.FoodRecipes;
@@ -9,11 +8,6 @@ import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
 import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechFoods;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
 import com.kashdeya.tinyprogressions.world.PlantGen;
@@ -25,19 +19,12 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class CommonProxy implements IProxy {
+public class CommonProxy {
 
-	@Override
 	public void onPreInitialization(FMLPreInitializationEvent event)
 	{
-		TechItems.init();
-		TechBlocks.init();
-		TechArmor.init();
-		TechTools.init();
-		TechFoods.init();
 	}
 	
-	@Override
 	public void onInitialization(FMLInitializationEvent event)
 	{
 		
@@ -57,7 +44,6 @@ public class CommonProxy implements IProxy {
 				MessageExtendedReachAttack.class, packetId++, Side.SERVER);
 	}
 	
-	@Override
 	public void onPostInitialization(net.minecraftforge.fml.common.event.FMLPostInitializationEvent event)
 	{
 		OreDictHandler.init();

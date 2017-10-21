@@ -2,8 +2,6 @@ package com.kashdeya.tinyprogressions.main;
 
 import java.util.Iterator;
 
-import com.arclighttw.utilities.ForgeMod;
-import com.arclighttw.utilities.IProxy;
 import com.kashdeya.tinyprogressions.configs.TinyConfig;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EntityEvents;
@@ -12,7 +10,6 @@ import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.handlers.GuiHandler;
 import com.kashdeya.tinyprogressions.inits.TechTools;
-import com.kashdeya.tinyprogressions.proxy.ClientProxy;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
 import com.kashdeya.tinyprogressions.tabs.TabTP;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
@@ -26,6 +23,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -37,28 +35,19 @@ import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
-public class TinyProgressions extends ForgeMod {
+public class TinyProgressions {
 
 	@Instance(Reference.MOD_ID)
 	public static TinyProgressions instance;
+	
+	@SidedProxy(clientSide = Reference.PROXY_CLIENT, serverSide = Reference.PROXY_COMMON)
+	public static CommonProxy proxy;
 	
 	public static final CreativeTabs tabTP = new TabTP("tiny_progressions");
 
 	public static SimpleNetworkWrapper network;
 	public static org.apache.logging.log4j.Logger logger;
 	
-	@Override
-	public IProxy getClientProxy()
-	{
-		return new ClientProxy();
-	}
-	
-	@Override
-	public IProxy getServerProxy()
-	{
-		return new CommonProxy();
-	}
-
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		logger = e.getModLog();
@@ -67,7 +56,6 @@ public class TinyProgressions extends ForgeMod {
 		TinyConfig.initMainConfigs();
 		
 		// Setup
-		proxy.setupInstance(instance);
 		proxy.onPreInitialization(e);
 				
 		RemoveItems.initRemove();

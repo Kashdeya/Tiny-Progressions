@@ -1,5 +1,6 @@
 {
     "variants": {
+	    "normal": {"model": "tp:white_glowstone"},
         "color=white_glowstone": {"model": "tp:white_glowstone"},
         "color=orange_glowstone": {"model": "tp:orange_glowstone"},
         "color=magenta_glowstone": {"model": "tp:magenta_glowstone"},

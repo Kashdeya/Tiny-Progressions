@@ -1,5 +1,6 @@
 {
     "variants": {
+    		"normal": {"model": "tp:white_lamp"},
         "color=white_lamp": {"model": "tp:white_lamp"},
         "color=orange_lamp": {"model": "tp:orange_lamp"},
         "color=magenta_lamp": {"model": "tp:magenta_lamp"},

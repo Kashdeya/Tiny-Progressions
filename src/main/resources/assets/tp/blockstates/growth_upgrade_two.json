@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:growth_upgrade_two"}
+        "level=0": {"model": "tp:growth_upgrade_two"}
     }
 }

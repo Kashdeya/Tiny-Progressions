@@ -11,6 +11,7 @@ import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.Pouch;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
+import com.kashdeya.tinyprogressions.items.RepairTablet;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCan;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
@@ -51,6 +52,8 @@ public class TechItems {
 	public static Item pouch;
 	// Glowstone Dust
 	public static Item colored_dust;
+	// Repair Tablet
+	public static Item repair_tablet;
 	
 	static void init() {
 
@@ -141,6 +144,11 @@ public class TechItems {
 	    // Quartz Amor
 	    if (ConfigHandler.quartz_armor){
 	    	quartz_ingot = new ItemBase().setUnlocalizedName("quartz_ingot");
+	    }
+	    
+	    // Repair Tablet
+	    if (ConfigHandler.repair_tablet){
+	    		repair_tablet = new RepairTablet().setUnlocalizedName("repair_tablet");
 	    }
 	}
 

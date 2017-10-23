@@ -285,6 +285,10 @@ public class TinyConfig {
 		ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered Particals", category + " Withered Bedrock", false, "Enable Player Withered Particals?");
 		ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", category + " Withered Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from standing on Withered Bedrock.\n[1 = 20Ticks]");
 		
+		config.addCustomCategoryComment(category + " Repair Tablet", "Need some extra durability, eh?");
+		ConfigHandler.repair_tablet = config.getBoolean("Repair Tablet", category + " Repair Tablet", true, "Enable Repair Tablet?");
+		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Table Cooldown", category + " Repair Tablet", 300, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
+		
 		if (config.hasChanged())
         config.save();    
 	}

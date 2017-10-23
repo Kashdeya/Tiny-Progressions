@@ -454,3 +454,6 @@ item.bacon_eggs_sandwhich.name=Bacon & Egg Sandwich
 item.chicken_sandwhich.name=Chicken Sandwich
 item.beef_sandwhich.name=Beef Sandwich
 item.bacon_sandwhich.name=Bacon Sandwich
+
+// Repair Tablet
+item.repair_tablet.name=Repair Tablet

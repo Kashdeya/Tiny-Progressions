@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.compressed;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -12,7 +13,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.world.Explosion;
 
-public class CharcoalBlock extends Block{
+public class CharcoalBlock extends Block implements IOreDictEntry{
 	
 	public CharcoalBlock()
 	{
@@ -23,6 +24,11 @@ public class CharcoalBlock extends Block{
 		this.setSoundType(SoundType.STONE);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("charcoal_block");
+	}
+	
+	@Override
+	public String getOreDictName() {
+		return "blockCharcoal";
 	}
 	
 	/**

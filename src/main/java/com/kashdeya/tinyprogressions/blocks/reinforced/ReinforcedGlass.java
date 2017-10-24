@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.BlockGlass;
@@ -26,7 +27,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ReinforcedGlass extends BlockGlass
+public class ReinforcedGlass extends BlockGlass implements IOreDictEntry
 {
     public ReinforcedGlass()
     {
@@ -37,6 +38,11 @@ public class ReinforcedGlass extends BlockGlass
         this.setSoundType(SoundType.GLASS);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("reinforced_glass");
+    }
+    
+    @Override
+    public String getOreDictName() {
+    	return "blockReinforcedGlass";
     }
     
     @Override

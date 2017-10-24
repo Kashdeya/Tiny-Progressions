@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -15,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class GraniteBrick extends Block {
+public class GraniteBrick extends Block implements IOreDictEntry {
 	
 	public GraniteBrick()
     {
@@ -27,6 +28,11 @@ public class GraniteBrick extends Block {
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("granite_brick");
     }
+	
+	@Override
+	public String getOreDictName() {
+		return "stoneGraniteBrick";
+	}
 	
 	/**
      * Get the Item that this Block should drop when harvested.

@@ -71,10 +71,10 @@ public class TechFoods {
 			blueberry_juice = new DrinkBase(ConfigHandler.BlueberryAmount, ConfigHandler.BlueberrySaturation, false).setUnlocalizedName("blueberry_juice");
 			blackberry_juice = new DrinkBase(ConfigHandler.BlackberryAmount, ConfigHandler.BlackberrySaturation, false).setUnlocalizedName("blackberry_juice");
 			maloberry_juice = new DrinkBase(ConfigHandler.MaloberryAmount, ConfigHandler.MaloberrySaturation, false).setUnlocalizedName("maloberry_juice");
-			raspberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("raspberry_berry");
-		    blueberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("blueberry_berry");
-		    blackberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("blackberry_berry");
-		    maloberry_berry = new FoodBase(1, 0.05F, true).setUnlocalizedName("maloberry_berry");
+			raspberry_berry = new FoodBase(1, 0.05F, true).setOreDictName("cropRaspberry").setUnlocalizedName("raspberry_berry");
+		    blueberry_berry = new FoodBase(1, 0.05F, true).setOreDictName("cropBlueberry").setUnlocalizedName("blueberry_berry");
+		    blackberry_berry = new FoodBase(1, 0.05F, true).setOreDictName("cropBlackberry").setUnlocalizedName("blackberry_berry");
+		    maloberry_berry = new FoodBase(1, 0.05F, true).setOreDictName("cropMaloberry").setUnlocalizedName("maloberry_berry");
 		}
 		
 		// Juicer

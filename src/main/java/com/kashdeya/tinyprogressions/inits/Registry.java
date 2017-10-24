@@ -1,7 +1,9 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.util.List;
 import java.util.Map;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
 import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
@@ -9,6 +11,7 @@ import com.kashdeya.tinyprogressions.crafting.FoodRecipes;
 import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
 import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
 import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
+import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.util.IMetadata;
 
@@ -17,6 +20,7 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -26,6 +30,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class Registry
@@ -35,6 +40,7 @@ public class Registry
 	static Map<ResourceLocation, Class<? extends TileEntity>> TILES = Maps.newHashMap();
 	
 	public static Map<ResourceLocation, IRecipe> RECIPES = Maps.newHashMap();
+	static Map<String, List<ItemStack>> OREDICT = Maps.newHashMap();
 	
 	public static void registerBlock(Block block, String name)
 	{
@@ -44,6 +50,24 @@ public class Registry
 			block.setUnlocalizedName(Reference.MOD_ID + ":" + name);
 		
 		BLOCKS.put(block.getRegistryName(), block);
+		
+		if(block instanceof IOreDictEntry)
+		{
+			String entry = ((IOreDictEntry)block).getOreDictName();
+			
+			if(entry != null)
+			{
+				List<ItemStack> entryList;
+				
+				if(OREDICT.containsKey(entry))
+					entryList = OREDICT.get(entry);
+				else
+					entryList = Lists.newArrayList();
+				
+				entryList.add(new ItemStack(block));
+				OREDICT.put(entry, entryList);
+			}
+		}
 		
 		Item item = null;
 		
@@ -72,12 +96,36 @@ public class Registry
 			item.setUnlocalizedName(Reference.MOD_ID + ":" + name);
 		
 		ITEMS.put(item.getRegistryName(), item);
+		
+		if(item instanceof IOreDictEntry)
+		{
+			String entry = ((IOreDictEntry)item).getOreDictName();
+			
+			if(entry != null)
+			{
+				List<ItemStack> entryList;
+				
+				if(OREDICT.containsKey(entry))
+					entryList = OREDICT.get(entry);
+				else
+					entryList = Lists.newArrayList();
+				
+				entryList.add(new ItemStack(item));
+				OREDICT.put(entry, entryList);
+			}
+		}
 	}
 	
 	public static void registerRecipe(IRecipe recipe, String name)
 	{
-		recipe.setRegistryName(new ResourceLocation(name));
-		System.out.println("add--"+ name);
+		int recipeIndex = 0;
+		ResourceLocation resName = new ResourceLocation(name);
+		ResourceLocation tmpName = resName;
+		
+		while(RECIPES.containsKey(resName))
+			resName = new ResourceLocation(tmpName.getResourceDomain(), String.format("%s.%d", tmpName.getResourcePath(), recipeIndex++));
+		
+		recipe.setRegistryName(resName);
 		RECIPES.put(recipe.getRegistryName(), recipe);
 	}
 	
@@ -103,13 +151,17 @@ public class Registry
 		
 		for(Map.Entry<ResourceLocation, Item> item : ITEMS.entrySet())
 			event.getRegistry().register(item.getValue());
+		
+		for(Map.Entry<String, List<ItemStack>> oredict : OREDICT.entrySet())
+		{
+			for(ItemStack entry : oredict.getValue())
+				OreDictionary.registerOre(oredict.getKey(), entry);
+		}
 	}
 	
 	@SubscribeEvent
 	public static void onRecipeRegister(RegistryEvent.Register<IRecipe> event)
 	{
-		System.out.println("EVENT RECIPES!!!");
-		
 		OtherRecipes.init();
 		ArmorRecipes.init();
 		BlockRecipes.init();
@@ -117,11 +169,11 @@ public class Registry
 		ToolsRecipes.init();
 		FoodRecipes.init();
 
+		// TODO: The plan is to remove this entirely.
+		OreDictHandler.init();
 		
-		for(Map.Entry<ResourceLocation, IRecipe> recipe : RECIPES.entrySet()) {
-			System.out.println("load--"+ recipe.getKey().toString());
+		for(Map.Entry<ResourceLocation, IRecipe> recipe : RECIPES.entrySet())
 			event.getRegistry().register(recipe.getValue());
-		}
 	}
 	
 	@SubscribeEvent
@@ -157,5 +209,10 @@ public class Registry
 	public static interface IItemProvider
 	{
 		ItemBlock getItemBlock();
+	}
+	
+	public static interface IOreDictEntry
+	{
+		String getOreDictName();
 	}
 }

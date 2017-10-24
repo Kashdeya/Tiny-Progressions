@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.BlockGlass;
@@ -15,7 +16,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class DirtyGlass extends BlockGlass
+public class DirtyGlass extends BlockGlass implements IOreDictEntry
 {
     public DirtyGlass()
     {
@@ -24,6 +25,11 @@ public class DirtyGlass extends BlockGlass
         this.setSoundType(SoundType.GLASS);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("dirty_glass");
+    }
+    
+    @Override
+    public String getOreDictName() {
+    	return "blockGlassDirty";
     }
     
     @SideOnly(Side.CLIENT)

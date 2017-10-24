@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.blocks.compressed;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -15,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class FlintBlock extends Block{
+public class FlintBlock extends Block implements IOreDictEntry{
 	
 	public FlintBlock()
 	{
@@ -25,6 +26,11 @@ public class FlintBlock extends Block{
 		this.setSoundType(SoundType.STONE);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("flint_block");
+	}
+	
+	@Override
+	public String getOreDictName() {
+		return "blockFlint";
 	}
 	
 	/**

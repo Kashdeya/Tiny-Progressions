@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -25,7 +26,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ReinforcedObsidian extends Block {
+public class ReinforcedObsidian extends Block implements IOreDictEntry {
 	
 	public ReinforcedObsidian()
     {
@@ -37,6 +38,11 @@ public class ReinforcedObsidian extends Block {
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("reinforced_obsidian");
     }
+	
+	@Override
+	public String getOreDictName() {
+		return "blockReinforcedObsidian";
+	}
 	
 	@Override
 	public boolean canEntityDestroy(IBlockState state, IBlockAccess world, BlockPos pos, Entity entity)

@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.compressed;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -15,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class BoneBlock extends Block{
+public class BoneBlock extends Block implements IOreDictEntry{
 	
 	public BoneBlock()
 	{
@@ -25,6 +26,11 @@ public class BoneBlock extends Block{
 		this.setSoundType(SoundType.GROUND);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setUnlocalizedName("bone_block");
+	}
+	
+	@Override
+	public String getOreDictName() {
+		return "blockBone";
 	}
 	
 	/**

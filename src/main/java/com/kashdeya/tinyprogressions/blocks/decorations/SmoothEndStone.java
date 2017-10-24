@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -15,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class SmoothEndStone extends Block {
+public class SmoothEndStone extends Block implements IOreDictEntry {
 	
 	public SmoothEndStone()
     {
@@ -27,6 +28,11 @@ public class SmoothEndStone extends Block {
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("smooth_endstone");
     }
+	
+	@Override
+	public String getOreDictName() {
+		return "smoothEndstone";
+	}
 	
 	/**
      * Get the Item that this Block should drop when harvested.

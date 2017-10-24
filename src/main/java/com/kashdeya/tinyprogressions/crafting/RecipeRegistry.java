@@ -20,11 +20,10 @@ public class RecipeRegistry
     {
         int recipeIndex = 0;
         ResourceLocation name = output.getItem().getRegistryName();
+        ResourceLocation tmpName = name;
         
         while(CraftingManager.REGISTRY.containsKey(name))
-        {
-            name = new ResourceLocation(name.getResourceDomain(), String.format("%s.%d", name.getResourcePath(), recipeIndex++));
-        }
+            name = new ResourceLocation(tmpName.getResourceDomain(), String.format("%s.%d", tmpName.getResourcePath(), recipeIndex++));
         
         addShapedRecipe(name.toString(), output, inputs);
     }
@@ -37,19 +36,16 @@ public class RecipeRegistry
     public static void addShapedRecipe(String name, String group, ItemStack output, Object... inputs)
     {
 	      Registry.registerRecipe(new ShapedOreRecipe(new ResourceLocation(group), output, inputs), name);
-	      
-//        GameRegistry.addShapedRecipe(new ResourceLocation(name), new ResourceLocation(group), output, inputs);
     }
     
     public static void addShapelessRecipe(ItemStack output, Object... inputs)
     {
         int recipeIndex = 0;
         ResourceLocation name = output.getItem().getRegistryName();
+        ResourceLocation tmpName = name;
         
         while(CraftingManager.REGISTRY.containsKey(name))
-        {
-            name = new ResourceLocation(name.getResourceDomain(), String.format("%s.%d", name.getResourcePath(), recipeIndex++));
-        }
+            name = new ResourceLocation(tmpName.getResourceDomain(), String.format("%s.%d", tmpName.getResourcePath(), recipeIndex++));
         
         addShapelessRecipe(name.toString(), output, inputs);
     }

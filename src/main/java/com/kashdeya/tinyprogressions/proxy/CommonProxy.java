@@ -1,13 +1,6 @@
 package com.kashdeya.tinyprogressions.proxy;
 
-import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
-import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
-import com.kashdeya.tinyprogressions.crafting.FoodRecipes;
-import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
-import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
-import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
-import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
 import com.kashdeya.tinyprogressions.world.PlantGen;
@@ -23,7 +16,6 @@ public class CommonProxy {
 
 	public void onPreInitialization(FMLPreInitializationEvent event)
 	{
-
 	}
 	
 	public void onInitialization(FMLInitializationEvent event)
@@ -50,7 +42,5 @@ public class CommonProxy {
 	
 	public void onPostInitialization(net.minecraftforge.fml.common.event.FMLPostInitializationEvent event)
 	{
-		OreDictHandler.init();
-
 	}
 }

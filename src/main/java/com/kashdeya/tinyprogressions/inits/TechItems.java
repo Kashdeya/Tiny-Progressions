@@ -73,15 +73,15 @@ public class TechItems {
 		
 	    // Drops
 	    if (ConfigHandler.dragon_armor){
-		    dragon_scale = new ItemBase().setUnlocalizedName("dragon_scale");
+		    dragon_scale = new ItemBase().setOreDictName("dragonScale").setUnlocalizedName("dragon_scale");
 	    }
 	    if (ConfigHandler.wither_armor){
-		    wither_rib = new ItemBase().setUnlocalizedName("wither_rib");
+		    wither_rib = new ItemBase().setOreDictName("witherRib").setUnlocalizedName("wither_rib");
 	    }
 	    
 		// Misc Items
 		if (ConfigHandler.StoneTorch) {
-			stone_stick = new ItemBase().setUnlocalizedName("stone_stick");
+			stone_stick = new ItemBase().setOreDictName("stickStone").setUnlocalizedName("stone_stick");
 		}
 		if (ConfigHandler.MyceliumSeeds) {
 			mycelium_seeds = new MyceliumSeeds();
@@ -102,10 +102,10 @@ public class TechItems {
 		
 		// Ingot
 		if (ConfigHandler.FlintArmor) {
-			flint_ingot = new ItemBase().setUnlocalizedName("flint_ingot");
+			flint_ingot = new ItemBase().setOreDictName("ingotFlint").setUnlocalizedName("flint_ingot");
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
-			reinforced_obsidian_ingot = new ItemBase().setUnlocalizedName("reinforced_obsidian_ingot");
+			reinforced_obsidian_ingot = new ItemBase().setOreDictName("ingotReinforcedObsidian").setUnlocalizedName("reinforced_obsidian_ingot");
 		}
 		
 		// Flint Knife
@@ -115,10 +115,10 @@ public class TechItems {
 		
 		// Ender Dust
 		if (ConfigHandler.ender_ore) {
-			ender_dust = new ItemBase().setUnlocalizedName("ender_dust");
+			ender_dust = new ItemBase().setOreDictName("dustEnder").setUnlocalizedName("ender_dust");
 		}
 		if (ConfigHandler.lava_ore) {
-			lava_crystal = new ItemBase().setUnlocalizedName("lava_crystal");
+			lava_crystal = new ItemBase().setOreDictName("gemLava").setUnlocalizedName("lava_crystal");
 		}
 		
 		// Pouch
@@ -133,12 +133,12 @@ public class TechItems {
 	    
 	    // Lapis armor
 	    if (ConfigHandler.lapis_armor){
-	    	lapis_ingot = new ItemBase().setUnlocalizedName("lapis_ingot");
+	    	lapis_ingot = new ItemBase().setOreDictName("ingotLapis").setUnlocalizedName("lapis_ingot");
 	    }
 	    
 	    // Redstone Amor
 	    if (ConfigHandler.redstone_armor){
-	    	redstone_ingot = new ItemBase().setUnlocalizedName("redstone_ingot");
+	    	redstone_ingot = new ItemBase().setOreDictName("ingotRedstone").setUnlocalizedName("redstone_ingot");
 	    }
 	    
 	    // Quartz Amor

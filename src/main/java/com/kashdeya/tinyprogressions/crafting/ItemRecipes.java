@@ -25,6 +25,10 @@ public class ItemRecipes {
 							Character.valueOf('g'), Items.GLOWSTONE_DUST,
 							Character.valueOf('d'), EnumDustColor.values()[i].getCraftingOredict()
 					});
+					
+					System.out.println("= TP LOGGING =");
+					System.out.println("" + EnumDustColor.values()[i].getCraftingOredict());
+					System.out.println("==============");
 				}
 			}
 			

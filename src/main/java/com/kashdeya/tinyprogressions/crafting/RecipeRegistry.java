@@ -2,14 +2,17 @@ package com.kashdeya.tinyprogressions.crafting;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.inits.Registry;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class RecipeRegistry
 {
@@ -33,7 +36,8 @@ public class RecipeRegistry
     
     public static void addShapedRecipe(String name, String group, ItemStack output, Object... inputs)
     {
-        GameRegistry.addShapedRecipe(new ResourceLocation(name), new ResourceLocation(group), output, inputs);
+	      Registry.RECIPES.put(new ResourceLocation(name), new ShapedOreRecipe(new ResourceLocation(group), output, inputs));
+//        GameRegistry.addShapedRecipe(new ResourceLocation(name), new ResourceLocation(group), output, inputs);
     }
     
     public static void addShapelessRecipe(ItemStack output, Object... inputs)
@@ -89,7 +93,9 @@ public class RecipeRegistry
                 ingredients[i] = Ingredient.fromStacks(itemstack);
             }
         }
-        
-        GameRegistry.addShapelessRecipe(new ResourceLocation(name), new ResourceLocation(group), output, ingredients);
+
+        Registry.RECIPES.put(new ResourceLocation(name), new ShapelessOreRecipe(new ResourceLocation(group), output, inputs));
+
+        //GameRegistry.addShapelessRecipe(new ResourceLocation(name), new ResourceLocation(group), output, ingredients);
     }
 }

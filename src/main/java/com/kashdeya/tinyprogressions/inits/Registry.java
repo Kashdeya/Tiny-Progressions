@@ -28,7 +28,7 @@ public class Registry
 	static Map<ResourceLocation, Item> ITEMS = Maps.newHashMap();
 	static Map<ResourceLocation, Class<? extends TileEntity>> TILES = Maps.newHashMap();
 	
-	static Map<ResourceLocation, IRecipe> RECIPES = Maps.newHashMap();
+	public static Map<ResourceLocation, IRecipe> RECIPES = Maps.newHashMap();
 	
 	public static void registerBlock(Block block, String name)
 	{

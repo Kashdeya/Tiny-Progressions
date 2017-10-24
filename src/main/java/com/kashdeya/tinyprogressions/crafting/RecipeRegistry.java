@@ -36,7 +36,8 @@ public class RecipeRegistry
     
     public static void addShapedRecipe(String name, String group, ItemStack output, Object... inputs)
     {
-	      Registry.RECIPES.put(new ResourceLocation(name), new ShapedOreRecipe(new ResourceLocation(group), output, inputs));
+	      Registry.registerRecipe(new ShapedOreRecipe(new ResourceLocation(group), output, inputs), name);
+	      
 //        GameRegistry.addShapedRecipe(new ResourceLocation(name), new ResourceLocation(group), output, inputs);
     }
     
@@ -94,8 +95,7 @@ public class RecipeRegistry
             }
         }
 
-        Registry.RECIPES.put(new ResourceLocation(name), new ShapelessOreRecipe(new ResourceLocation(group), output, inputs));
-
+        Registry.registerRecipe(new ShapelessOreRecipe(new ResourceLocation(group), output, inputs), name);
         //GameRegistry.addShapelessRecipe(new ResourceLocation(name), new ResourceLocation(group), output, ingredients);
     }
 }

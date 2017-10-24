@@ -10,9 +10,12 @@ import net.minecraft.item.ItemStack;
 public class ItemRecipes {
 	
 		public static void init() {
+			
+			System.out.println("load item init");
 			// Glowstone Dust
 			if (ConfigHandler.ColorGlowstone)
 			{
+				System.out.println("load item init");
 				for(int i = 0; i < EnumDustColor.values().length; i++)
 				{
 					RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.colored_dust, 8, i), new Object[] {

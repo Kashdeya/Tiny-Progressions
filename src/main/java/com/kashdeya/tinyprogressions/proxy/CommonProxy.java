@@ -23,11 +23,14 @@ public class CommonProxy {
 
 	public void onPreInitialization(FMLPreInitializationEvent event)
 	{
+
 	}
 	
 	public void onInitialization(FMLInitializationEvent event)
 	{
+		System.out.println("COMMON PROXY");
 		
+
 		
 		// FuelHandler
 		GameRegistry.registerFuelHandler(new FuelHandler());
@@ -35,6 +38,7 @@ public class CommonProxy {
 		// Load WorldGeneration
 		GameRegistry.registerWorldGenerator(new WorldGen(), 0);
 		GameRegistry.registerWorldGenerator(new PlantGen(), 0);
+
 
 		// register messages from client to server
 		TinyProgressions.network = NetworkRegistry.INSTANCE.newSimpleChannel("network");
@@ -47,11 +51,6 @@ public class CommonProxy {
 	public void onPostInitialization(net.minecraftforge.fml.common.event.FMLPostInitializationEvent event)
 	{
 		OreDictHandler.init();
-		OtherRecipes.init();
-		ArmorRecipes.init();
-		BlockRecipes.init();
-		ItemRecipes.init();
-		ToolsRecipes.init();
-		FoodRecipes.init();
+
 	}
 }

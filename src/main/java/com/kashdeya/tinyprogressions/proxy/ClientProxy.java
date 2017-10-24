@@ -23,11 +23,13 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void onPreInitialization(FMLPreInitializationEvent event)
 	{
+		super.onPreInitialization(event);
 	}
 
 	@Override
 	public void onInitialization(FMLInitializationEvent event)
 	{
+		super.onInitialization(event);
 		if (ConfigHandler.BlockGrowth) {
 			ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGrowth.class, new TileEntityGrowthRenderer());
 		}
@@ -44,5 +46,6 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void onPostInitialization(FMLPostInitializationEvent event)
 	{
+		super.onPostInitialization(event);
 	}
 }

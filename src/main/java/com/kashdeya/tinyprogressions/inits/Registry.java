@@ -3,6 +3,12 @@ package com.kashdeya.tinyprogressions.inits;
 import java.util.Map;
 
 import com.google.common.collect.Maps;
+import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
+import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
+import com.kashdeya.tinyprogressions.crafting.FoodRecipes;
+import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
+import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
+import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.util.IMetadata;
 
@@ -70,7 +76,8 @@ public class Registry
 	
 	public static void registerRecipe(IRecipe recipe, String name)
 	{
-		recipe.setRegistryName(new ResourceLocation(Reference.MOD_ID, name));
+		recipe.setRegistryName(new ResourceLocation(name));
+		System.out.println("add--"+ name);
 		RECIPES.put(recipe.getRegistryName(), recipe);
 	}
 	
@@ -101,8 +108,20 @@ public class Registry
 	@SubscribeEvent
 	public static void onRecipeRegister(RegistryEvent.Register<IRecipe> event)
 	{
-		for(Map.Entry<ResourceLocation, IRecipe> recipe : RECIPES.entrySet())
+		System.out.println("EVENT RECIPES!!!");
+		
+		OtherRecipes.init();
+		ArmorRecipes.init();
+		BlockRecipes.init();
+		ItemRecipes.init();
+		ToolsRecipes.init();
+		FoodRecipes.init();
+
+		
+		for(Map.Entry<ResourceLocation, IRecipe> recipe : RECIPES.entrySet()) {
+			System.out.println("load--"+ recipe.getKey().toString());
 			event.getRegistry().register(recipe.getValue());
+		}
 	}
 	
 	@SubscribeEvent

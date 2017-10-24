@@ -45,9 +45,9 @@ public class MultiMain extends ItemPickaxe {
 	}
 
 	@Override
-	public float getStrVsBlock(ItemStack stack, IBlockState state) {
+	public float getDestroySpeed(ItemStack stack, IBlockState state) {
 		 if (state.getMaterial() == Material.WOOD || state.getMaterial() == Material.VINE || state.getMaterial() == Material.PLANTS || state.getMaterial() == Material.GROUND || state.getMaterial() == Material.GRASS || state.getMaterial() == Material.SAND)
-		        return this.efficiencyOnProperMaterial;
-		 return effectiveAgainst.contains(state.getBlock()) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(stack, state);
+		        return this.efficiency;
+		 return effectiveAgainst.contains(state.getBlock()) ? this.efficiency : super.getDestroySpeed(stack, state);
 	}
 }

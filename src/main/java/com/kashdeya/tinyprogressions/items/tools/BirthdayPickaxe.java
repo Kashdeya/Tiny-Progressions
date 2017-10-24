@@ -53,7 +53,7 @@ public class BirthdayPickaxe extends ItemTool {
 	{
 	    Block block = state.getBlock();
 	    if (block == Blocks.OBSIDIAN) {
-	    	return this.efficiencyOnProperMaterial;
+	    	return this.efficiency;
 	    }
 	    return 0.0F;
 	}
@@ -61,9 +61,8 @@ public class BirthdayPickaxe extends ItemTool {
 	/**
      * Returns the amount of damage this item will deal. One heart of damage is equal to 2 damage points.
      */
-    public float getDamageVsEntity()
-    {
-        return this.material.getDamageVsEntity();
+    public float getDamageVsEntity() {
+        return this.material.getAttackDamage();
     }
     
     /**
@@ -138,10 +137,10 @@ public class BirthdayPickaxe extends ItemTool {
     }
     
     @Override
-    public float getStrVsBlock(ItemStack stack, IBlockState state)
+    public float getDestroySpeed(ItemStack stack, IBlockState state)
     {
     	Material material = state.getMaterial();
-        return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
+        return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getDestroySpeed(stack, state) : this.efficiency;
     }
     
 	@Override

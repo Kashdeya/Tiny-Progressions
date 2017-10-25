@@ -70,9 +70,8 @@ public class ItemRecipes {
 			// Ender Dust
 			if (ConfigHandler.ender_ore) {
 				RecipeRegistry.addShapedRecipe(new ItemStack(Items.ENDER_PEARL), new Object[] {
-						"eee",
-						"e e",
-						"eee",
+						"ee",
+						"ee",
 							Character.valueOf('e'), "dustEnder"
 				});
 			}

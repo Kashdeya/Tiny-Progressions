@@ -31,8 +31,8 @@ public class BlockRecipes {
 					"ded",
 					"ibi",
 						Character.valueOf('i'), "ingotIron",
-						Character.valueOf('b'), "blockBone",
-						Character.valueOf('d'), "blockGlassDirty",
+						Character.valueOf('b'), TechBlocks.bone_block,
+						Character.valueOf('d'), TechBlocks.dirty_glass,
 						Character.valueOf('e'), Blocks.SEA_LANTERN
 			});
 		}
@@ -41,7 +41,7 @@ public class BlockRecipes {
 					"cwc",
 					"ses",
 					"cnc",
-						Character.valueOf('c'), "blockReinforcedObsidian",
+						Character.valueOf('c'), TechBlocks.reinforced_glass,
 						Character.valueOf('w'), TechItems.watering_can_upgrade,
 						Character.valueOf('s'), Items.END_CRYSTAL,
 						Character.valueOf('e'), TechBlocks.growth_block,
@@ -136,7 +136,7 @@ public class BlockRecipes {
 					"gog",
 					"ogo",
 						Character.valueOf('o'), "obsidian",
-						Character.valueOf('g'), "blockGlassDirty"
+						Character.valueOf('g'), TechBlocks.dirty_glass
 			});
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
@@ -257,21 +257,6 @@ public class BlockRecipes {
 			});
 		}
 
-		// Smooth EndStone
-		if (ConfigHandler.SmoothEndStone) {
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.smooth_endstone, 4), new Object[] {
-					"ee",
-					"ee",
-						Character.valueOf('e'), Blocks.END_STONE
-			});
-			
-			RecipeRegistry.addShapedRecipe(new ItemStack(Blocks.END_BRICKS, 4), new Object[] {
-					"ee",
-					"ee",
-						Character.valueOf('e'), "smoothEndstone"
-			});
-		}
-		
 		// Hardened Stone
 		if (ConfigHandler.hardened_stone) {
 			GameRegistry.addSmelting(new ItemStack(Blocks.STONE, 1, 0), new ItemStack(TechBlocks.hardened_stone), 1.0F);

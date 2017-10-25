@@ -181,7 +181,7 @@ public class FoodRecipes {
  		
  		// Apple Pro
 		if (ConfigHandler.ApplePro && ConfigHandler.NotchApple == false) {
-			RecipeRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 0), new Object[] {
+			RecipeRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_APPLE), new Object[] {
 					"ggg",
 					"gag",
 					"ggg",
@@ -193,7 +193,7 @@ public class FoodRecipes {
 					"gag",
 					"ggg",
 						Character.valueOf('g'), "ingotGold",
-						Character.valueOf('a'), new ItemStack(Items.GOLDEN_APPLE, 1, 0)
+						Character.valueOf('a'), new ItemStack(Items.GOLDEN_APPLE)
 			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 1), new Object[] {
 					"ggg",

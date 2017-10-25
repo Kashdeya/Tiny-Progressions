@@ -124,7 +124,6 @@ public class ConfigHandler {
 	public static boolean AndesiteBrick = true;
 	public static boolean DioriteBrick = true;
 	public static boolean GraniteBrick = true;
-	public static boolean SmoothEndStone = true;
 	public static boolean old_reed = true;
 	
 	// Reinforced Blocks

@@ -29,9 +29,9 @@ import com.kashdeya.tinyprogressions.blocks.decorations.LampColored;
 import com.kashdeya.tinyprogressions.blocks.decorations.LavaBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.Slabs;
-import com.kashdeya.tinyprogressions.blocks.decorations.SmoothEndStone;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
+import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
@@ -43,6 +43,7 @@ import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.block.AngelItemBlock;
+import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
@@ -73,8 +74,6 @@ public class TechBlocks {
 	public static Block bone_block;
 	public static Block netherstar_block;
 	public static Block flint_block;
-	// End Stones
-	public static Block smooth_endstone;
 	// Stone Torch
 	public static Block stone_torch;
 	// EnderOre
@@ -85,6 +84,7 @@ public class TechBlocks {
 	// Water Block
 	public static Block water_block;
 	// Hardened Stone
+	public static Block unhardened_stone;
 	public static Block hardened_stone;
 	public static Block hardened_stone_bricks;
 	public static Block hardened_stone_smallbricks;
@@ -169,6 +169,7 @@ public class TechBlocks {
 			dirty_glass = new DirtyGlass();
 		}
 		if (ConfigHandler.hardened_stone) {
+			unhardened_stone = new UnhardenedBlock();
 			hardened_stone = new HardenedBlocks("hardened_stone", Material.ROCK, TechBlocks.hardened_stone, 1, 1);
 			hardened_stone_bricks = new HardenedBlocks("hardened_stone_bricks", Material.ROCK, TechBlocks.hardened_stone, 1, 1);
 			hardened_stone_smallbricks = new HardenedBlocks("hardened_stone_smallbricks", Material.ROCK, TechBlocks.hardened_stone, 1, 1);
@@ -225,11 +226,6 @@ public class TechBlocks {
 			flint_block = new FlintBlock();
 		}
 
-		// Smooth EndStone
-		if (ConfigHandler.SmoothEndStone) {
-			smooth_endstone = new SmoothEndStone();
-		}
-
 		// Ore
 		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
@@ -240,10 +236,10 @@ public class TechBlocks {
 		
 		// FMF Block
 		if(ConfigHandler.angel_block) {
-			fmf_block = new StandardBlock(Material.ROCK).setUnlocalName("fmf_block")
+			fmf_block = new StandardBlock(Material.GROUND).setUnlocalName("fmf_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
 					.setItemBlock(AngelItemBlock.class)
-					.setHardness(25F).setResistance(1000F);
+					.setHardness(1.5F).setResistance(1000F);
 		}
 		
 		// Lava & Water Blocks

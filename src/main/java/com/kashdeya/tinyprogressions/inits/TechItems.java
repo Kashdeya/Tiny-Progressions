@@ -15,6 +15,7 @@ import com.kashdeya.tinyprogressions.items.RepairTablet;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCan;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
+import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.item.Item;
 

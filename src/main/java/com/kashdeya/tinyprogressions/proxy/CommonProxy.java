@@ -15,14 +15,11 @@ import net.minecraftforge.fml.relauncher.Side;
 public class CommonProxy {
 
 	public void onPreInitialization(FMLPreInitializationEvent event)
-	{
-	}
+	{}
 	
 	public void onInitialization(FMLInitializationEvent event)
 	{
 		System.out.println("COMMON PROXY");
-		
-
 		
 		// FuelHandler
 		GameRegistry.registerFuelHandler(new FuelHandler());
@@ -41,6 +38,5 @@ public class CommonProxy {
 	}
 	
 	public void onPostInitialization(net.minecraftforge.fml.common.event.FMLPostInitializationEvent event)
-	{
-	}
+	{}
 }

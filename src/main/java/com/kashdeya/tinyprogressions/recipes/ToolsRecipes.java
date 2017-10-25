@@ -1,7 +1,8 @@
-package com.kashdeya.tinyprogressions.crafting;
+package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechTools;
+import com.kashdeya.tinyprogressions.util.RecipeRegistry;
 
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;

@@ -61,7 +61,8 @@ public class BirthdayPickaxe extends ItemTool {
 	/**
      * Returns the amount of damage this item will deal. One heart of damage is equal to 2 damage points.
      */
-    public float getDamageVsEntity() {
+    public float getDamageVsEntity()
+    {
         return this.material.getAttackDamage();
     }
     

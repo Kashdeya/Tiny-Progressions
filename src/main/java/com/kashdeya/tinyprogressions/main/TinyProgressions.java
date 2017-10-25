@@ -2,16 +2,15 @@ package com.kashdeya.tinyprogressions.main;
 
 import java.util.Iterator;
 
-import com.kashdeya.tinyprogressions.configs.TinyConfig;
+import com.kashdeya.tinyprogressions.config.TinyConfig;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
 import com.kashdeya.tinyprogressions.events.EntityEvents;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
-import com.kashdeya.tinyprogressions.handlers.GuiHandler;
+import com.kashdeya.tinyprogressions.gui.GuiHandler;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
-import com.kashdeya.tinyprogressions.tabs.TabTP;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 
 import net.minecraft.creativetab.CreativeTabs;

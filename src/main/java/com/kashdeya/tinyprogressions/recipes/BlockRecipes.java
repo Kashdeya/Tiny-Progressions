@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.crafting;
+package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 import com.kashdeya.tinyprogressions.properties.EnumGlowstoneColor;
 import com.kashdeya.tinyprogressions.properties.EnumLampColor;
+import com.kashdeya.tinyprogressions.util.RecipeRegistry;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -31,8 +32,8 @@ public class BlockRecipes {
 					"ded",
 					"ibi",
 						Character.valueOf('i'), "ingotIron",
-						Character.valueOf('b'), "blockBone",
-						Character.valueOf('d'), "blockGlassDirty",
+						Character.valueOf('b'), TechBlocks.bone_block,
+						Character.valueOf('d'), TechBlocks.dirty_glass,
 						Character.valueOf('e'), Blocks.SEA_LANTERN
 			});
 		}
@@ -41,7 +42,7 @@ public class BlockRecipes {
 					"cwc",
 					"ses",
 					"cnc",
-						Character.valueOf('c'), "blockReinforcedObsidian",
+						Character.valueOf('c'), TechBlocks.reinforced_glass,
 						Character.valueOf('w'), TechItems.watering_can_upgrade,
 						Character.valueOf('s'), Items.END_CRYSTAL,
 						Character.valueOf('e'), TechBlocks.growth_block,
@@ -136,7 +137,7 @@ public class BlockRecipes {
 					"gog",
 					"ogo",
 						Character.valueOf('o'), "obsidian",
-						Character.valueOf('g'), "blockGlassDirty"
+						Character.valueOf('g'), TechBlocks.dirty_glass
 			});
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
@@ -257,24 +258,18 @@ public class BlockRecipes {
 			});
 		}
 
-		// Smooth EndStone
-		if (ConfigHandler.SmoothEndStone) {
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.smooth_endstone, 4), new Object[] {
-					"ee",
-					"ee",
-						Character.valueOf('e'), Blocks.END_STONE
-			});
-			
-			RecipeRegistry.addShapedRecipe(new ItemStack(Blocks.END_BRICKS, 4), new Object[] {
-					"ee",
-					"ee",
-						Character.valueOf('e'), "smoothEndstone"
-			});
-		}
-		
 		// Hardened Stone
 		if (ConfigHandler.hardened_stone) {
-			GameRegistry.addSmelting(new ItemStack(Blocks.STONE, 1, 0), new ItemStack(TechBlocks.hardened_stone), 1.0F);
+			GameRegistry.addSmelting(new ItemStack(TechBlocks.unhardened_stone), new ItemStack(TechBlocks.hardened_stone), 1.0F);
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.unhardened_stone, 4), new Object[] {
+		            "csc",
+		            "yiy",
+		            "csc",
+		                Character.valueOf('c'), Blocks.COBBLESTONE,
+		                Character.valueOf('s'), Blocks.SAND,
+		                Character.valueOf('y'), Items.CLAY_BALL,
+		                Character.valueOf('i'), Items.IRON_INGOT,
+		    });			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks), new Object[] {
 		            "ss",
 		            "ss",

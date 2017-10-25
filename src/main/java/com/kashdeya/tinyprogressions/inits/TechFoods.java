@@ -12,6 +12,7 @@ import com.kashdeya.tinyprogressions.items.apple.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.apple.GoldenApple;
 import com.kashdeya.tinyprogressions.items.apple.IronApple;
 import com.kashdeya.tinyprogressions.items.apple.RedstoneApple;
+import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.item.Item;
 

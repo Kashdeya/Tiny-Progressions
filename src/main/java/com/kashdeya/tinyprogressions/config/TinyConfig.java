@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.configs;
+package com.kashdeya.tinyprogressions.config;
 
 import java.io.File;
 import java.util.Arrays;
@@ -69,7 +69,6 @@ public class TinyConfig {
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Extra Stuff", true, "Enable Mycelium Seeds?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Extra Stuff", true, "Enable Medkit?");
 		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
-		ConfigHandler.SmoothEndStone = config.getBoolean("Smooth EndStone", category + " Extra Stuff", true, "Enable Smooth EndStone?");
 		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE if Tinkers is installed.]");
 		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?\n[Do not ENABLE is Tinkers is installed.]");
 		ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", category + " Extra Stuff", true, "Enable Hardened Stone?");
@@ -287,7 +286,7 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Repair Tablet", "Need some extra durability, eh?");
 		ConfigHandler.repair_tablet = config.getBoolean("Repair Tablet", category + " Repair Tablet", true, "Enable Repair Tablet?");
-		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Table Cooldown", category + " Repair Tablet", 300, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
+		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Table Cooldown", category + " Repair Tablet", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
 		
 		if (config.hasChanged())
         config.save();    

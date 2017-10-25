@@ -10,6 +10,17 @@ tile.growth_block.name=Growth Crystal
 tile.growth_upgrade.name=Growth Crystal Tier 2
 tile.growth_upgrade_two.name=Growth Crystal Tier 3
 
+#Bushes and Berries
+tile.blackberry_bush.name=Blackberry Bush
+tile.blueberry_bush.name=Blueberry Bush
+tile.maloberry_bush.name=Maloberry Bush
+tile.raspberry_bush.name=Raspberry Bush
+
+item.blackberry_berry.name=Blackberry
+item.blueberry_berry.name=Blueberry
+item.maloberry_berry.name=Maloberry
+item.raspberry_berry.name=Raspberry
+
 #Withered Block
 tile.withered_block.name=Withered Bedrock
 
@@ -26,6 +37,7 @@ tile.lava_block.name=Lavastone
 tile.water_block.name=Waterstone
 
 #Hardened Stone
+tile.unhardened_stone.name=Unhardened Stone
 tile.hardened_stone.name=Hardened Stone
 tile.hardened_stone_bricks.name=Hardened Stone Bricks
 tile.hardened_stone_smallbricks.name=Hardened Stone Small Bricks
@@ -105,10 +117,10 @@ item.stone_chestplate.name=Stone Chestplate
 item.stone_leggings.name=Stone Leggings
 item.stone_boots.name=Stone Boots
 
-item.wooden_helmet.name=Oak Helmet
-item.wooden_chestplate.name=Oak Chestplate
-item.wooden_leggings.name=Oak Leggings
-item.wooden_boots.name=Oak Boots
+item.wooden_helmet.name=Wooden Helmet
+item.wooden_chestplate.name=Wooden Chestplate
+item.wooden_leggings.name=Wooden Leggings
+item.wooden_boots.name=Wooden Boots
 
 item.obsidian_helmet.name=Obsidian Helmet
 item.obsidian_chestplate.name=Obsidian Chestplate
@@ -457,3 +469,5 @@ item.bacon_sandwhich.name=Bacon Sandwich
 
 // Repair Tablet
 item.repair_tablet.name=Repair Tablet
+tooltip.tablet_1=Repair items in players inventory
+tooltip.tablet_2=Restores 1 durability every X seconds

@@ -1,15 +1,17 @@
 package com.kashdeya.tinyprogressions.blocks;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Random;
 
-import com.kashdeya.tinyprogressions.inits.Registry.IItemProvider;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
@@ -55,6 +57,12 @@ public class StandardBlock extends Block implements IItemProvider
 		
 		return this;
 	}
+	
+	@Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    {
+        return itemBlock;
+    }
 	
 	@Override
 	public ItemBlock getItemBlock()

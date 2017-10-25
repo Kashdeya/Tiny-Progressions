@@ -55,9 +55,9 @@ public class PlantGen implements IWorldGenerator{
     private void generatePlant(Block block, World world, BlockPos pos, Random random) {
 
         for (int tryNum = 0; tryNum < 3; tryNum++) {
-            int posX = (pos.getX() + random.nextInt(16));
+            int posX = (pos.getX() + random.nextInt(8));
             int posY = (pos.getY());
-            int posZ = (pos.getZ() + random.nextInt(16));
+            int posZ = (pos.getZ() + random.nextInt(8));
 
             final BlockPos newPos = new BlockPos(posX, posY, posZ);
 

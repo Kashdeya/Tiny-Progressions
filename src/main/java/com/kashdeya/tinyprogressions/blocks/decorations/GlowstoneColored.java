@@ -2,12 +2,12 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import java.util.Random;
 
-import com.kashdeya.tinyprogressions.inits.Registry.IItemProvider;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.items.block.MetaItemBlock;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.properties.EnumGlowstoneColor;
 import com.kashdeya.tinyprogressions.util.IMetadata;
+import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;

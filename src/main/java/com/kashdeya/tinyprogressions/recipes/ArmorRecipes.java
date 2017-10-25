@@ -1,8 +1,9 @@
-package com.kashdeya.tinyprogressions.crafting;
+package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.util.RecipeRegistry;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -15,27 +16,27 @@ public class ArmorRecipes {
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.stone_helmet), new Object[] {
 					"sss",
 					"s s",
-						Character.valueOf('s'), "stone"
+						Character.valueOf('s'), "cobblestone"
 			});
 			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.stone_chestplate), new Object[] {
 					"s s",
 					"sss",
 					"sss",
-						Character.valueOf('s'), "stone"
+						Character.valueOf('s'), "cobblestone"
 			});
 			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.stone_leggings), new Object[] {
 					"sss",
 					"s s",
 					"s s",
-						Character.valueOf('s'), "stone"
+						Character.valueOf('s'), "cobblestone"
 			});
 			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.stone_boots), new Object[] {
 					"s s",
 					"s s",
-						Character.valueOf('s'), "stone"
+						Character.valueOf('s'), "cobblestone"
 			});
 		}
 		
@@ -148,6 +149,31 @@ public class ArmorRecipes {
 					"l l",
 					"l l",
 						Character.valueOf('l'), Blocks.LOG
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.wooden_helmet), new Object[] {
+					"lll",
+					"l l",
+						Character.valueOf('l'), Blocks.LOG2
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.wooden_chestplate), new Object[] {
+					"l l",
+					"lll",
+					"lll",
+						Character.valueOf('l'), Blocks.LOG2
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.wooden_leggings), new Object[] {
+					"lll",
+					"l l",
+					"l l",
+						Character.valueOf('l'), Blocks.LOG2
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.wooden_boots), new Object[] {
+					"l l",
+					"l l",
+						Character.valueOf('l'), Blocks.LOG2
 			});
 		}
 		

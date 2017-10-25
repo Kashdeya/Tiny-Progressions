@@ -73,8 +73,6 @@ public class TechBlocks {
 	public static Block bone_block;
 	public static Block netherstar_block;
 	public static Block flint_block;
-	// End Stones
-	public static Block smooth_endstone;
 	// Stone Torch
 	public static Block stone_torch;
 	// EnderOre
@@ -223,11 +221,6 @@ public class TechBlocks {
 		// Flint Block
 		if (ConfigHandler.FlintBlock) {
 			flint_block = new FlintBlock();
-		}
-
-		// Smooth EndStone
-		if (ConfigHandler.SmoothEndStone) {
-			smooth_endstone = new SmoothEndStone();
 		}
 
 		// Ore

@@ -47,7 +47,7 @@ public class RepairTablet extends ItemBase
 			if(invStack.isEmpty() || !invStack.getItem().isRepairable())
 				continue;
 			
-			if(invStack != player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND) || !player.isSwingInProgress)
+			if(invStack != player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND) && invStack != player.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND) || !player.isSwingInProgress)
 			{
 				if(!invStack.getHasSubtypes() && invStack.getMaxDamage() != 0 && invStack.getItemDamage() > 0)
 					invStack.setItemDamage(invStack.getItemDamage() - 1);

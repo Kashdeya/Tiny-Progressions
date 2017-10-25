@@ -105,10 +105,10 @@ item.stone_chestplate.name=Stone Chestplate
 item.stone_leggings.name=Stone Leggings
 item.stone_boots.name=Stone Boots
 
-item.wooden_helmet.name=Oak Helmet
-item.wooden_chestplate.name=Oak Chestplate
-item.wooden_leggings.name=Oak Leggings
-item.wooden_boots.name=Oak Boots
+item.wooden_helmet.name=Wooden Helmet
+item.wooden_chestplate.name=Wooden Chestplate
+item.wooden_leggings.name=Wooden Leggings
+item.wooden_boots.name=Wooden Boots
 
 item.obsidian_helmet.name=Obsidian Helmet
 item.obsidian_chestplate.name=Obsidian Chestplate

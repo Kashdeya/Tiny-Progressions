@@ -16,6 +16,8 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockBerryBush extends BlockBush implements net.minecraftforge.common.IPlantable {
 	
+	protected static final AxisAlignedBB BERRY_AABB = new AxisAlignedBB(0.125D, 0.0D, 0.125D, 0.875D, 1.0D, 0.875D);
+	
 	public BlockBerryBush()
     {
         super(Material.PLANTS);
@@ -27,7 +29,7 @@ public class BlockBerryBush extends BlockBush implements net.minecraftforge.comm
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        return BUSH_AABB;
+        return BERRY_AABB;
     }
 	
 	public MapColor getMapColor(IBlockState state)

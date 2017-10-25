@@ -346,10 +346,11 @@ item.lava_leggings.name=Lava Leggings
 item.lava_boots.name=Lava Boots
 
 #Lava Ore
-tile.lava_ore.name=Lava Ore
+tile.lava_ore.name=Lava Crystal Ore
 
 #Lava Crystal
 item.lava_crystal.name=Lava Crystal
+tile.lava_crystal_block.name=Lava Crystal Block
 
 #Lava Armor Tooltip
 tooltip.lavaarmor_1=When wearing full suit!

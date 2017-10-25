@@ -36,6 +36,7 @@ public class ConfigHandler {
 	public static boolean lapis_armor = true;
 	public static boolean quartz_armor = true;
 	public static boolean redstone_armor = true;
+	public static boolean lava_armor = true;
 	
 	// Lamps & Glowstone
 	public static boolean ColorLamps = true;
@@ -82,6 +83,8 @@ public class ConfigHandler {
 	public static int lava_ore_min = 1;
 	public static int lava_ore_max = 32;
 	public static int lava_ore_size = 7;
+	public static boolean lava_crystal_bucket = true;
+	public static boolean lava_crystal_enable = true;
 	
 	// Birthday Pickaxe
 	public static boolean BirthdayPickaxe = true;

@@ -78,8 +78,10 @@ public class TechBlocks {
 	public static Block stone_torch;
 	// EnderOre
 	public static Block ender_ore;
-	// Lava Blocks
+	// Lava Crystal Blocks
 	public static Block lava_ore;
+	public static Block lava_crystal_block;
+	// Lava Block
 	public static Block lava_block;
 	// Water Block
 	public static Block water_block;
@@ -232,14 +234,16 @@ public class TechBlocks {
 		}
 		if (ConfigHandler.lava_ore) {
 			lava_ore = new LavaOre();
+			lava_crystal_block = new StandardBlock(Material.ROCK).setUnlocalName("lava_crystal_block")
+					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
+					.setHardness(1.5F).setResistance(10.0F).setLightLevel(0.5F);
 		}
 		
 		// FMF Block
 		if(ConfigHandler.angel_block) {
 			fmf_block = new StandardBlock(Material.GROUND).setUnlocalName("fmf_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
-					.setItemBlock(AngelItemBlock.class)
-					.setHardness(1.5F).setResistance(1000F);
+					.setItemBlock(AngelItemBlock.class).setHardness(1.5F).setResistance(1000F);
 		}
 		
 		// Lava & Water Blocks

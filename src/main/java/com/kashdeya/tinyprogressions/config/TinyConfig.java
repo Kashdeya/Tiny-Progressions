@@ -120,6 +120,7 @@ public class TinyConfig {
 		ConfigHandler.redstone_armor = config.getBoolean("Redstone Armor", category + " Armor", true, "Enable Redstone Armor?");
 		ConfigHandler.lapis_armor = config.getBoolean("Lapis Armor", category + " Armor", true, "Enable Lapis Armor?");
 		ConfigHandler.quartz_armor = config.getBoolean("Quartz Armor", category + " Armor", true, "Enable Quartz Armor?");
+		ConfigHandler.lava_armor = config.getBoolean("Lava Armor", category + " Armor", true, "Enable Lava Armor?\n[Only Enable if Lava Ore is ENABLED.]");
 		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
@@ -197,14 +198,20 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 5, 100, "Sets the Ender Ore Vein Size.");
 		
-		config.addCustomCategoryComment(category + " Lava Ore", "Also includes Lava Armour!");
+		config.addCustomCategoryComment(category + " Lava Ore", "Lava that wont hurt you!");
 		ConfigHandler.lava_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable Lava Ore?");
 		ConfigHandler.lava_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 50, 1, 100, "Sets the Chance of Lava ore.");
 		ConfigHandler.lava_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.lava_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 7, 5, 100, "Sets the Lava Ore Vein Size.");
 		
-		config.addCustomCategoryComment(category + " Stones", "Lavastone and Waterstone!");
+		config.addCustomCategoryComment(category + " Lava Ore Crystal", "Can be used as a Decoration block, Furnace Fuel and may also include Lava Armor if enabled!");
+		ConfigHandler.lava_crystal_enable = config.getBoolean("Lava Ore Crystal", category + " Lava Ore Crystal", true, "Enable Lava Ore Crystal Extras?");
+		ConfigHandler.lava_crystal_bucket = config.getBoolean("Lava Ore Crystal Bucket", category + " Lava Ore Crystal", true, "Enable Lava Ore Crystal to Lava Bucket Recipe?");
+		FuelHandler.lava_crystal_burntime = config.getInt("Lava Ore Crystal Burn Time", category + " Lava Ore Crystal", 20000, 20000, Integer.MAX_VALUE, "Sets the Lava Ore Crystal Burn Time.");
+		FuelHandler.lava_crystal_block_burntime = config.getInt("Lava Ore Crystal Block Burn Time", category + " Lava Ore Crystal", 180000, 180000, Integer.MAX_VALUE, "Sets the Lava Ore Crystal Block Burn Time.");
+		
+		config.addCustomCategoryComment(category + " Source Block Stones", "Lavastone and Waterstone!");
 		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
 		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Stones", 50, 1, 100, "Sets the Chance of Lavastone.");
 		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Stones", 1, 1, 255, "Sets the min Y level.");

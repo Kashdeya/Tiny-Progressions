@@ -353,5 +353,18 @@ public class BlockRecipes {
 				});
 			}
 		}
+		
+		// Lava Crystal Block
+		if (ConfigHandler.lava_ore) {
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.lava_crystal_block), new Object[] {
+		            "iii",
+		            "iii",
+		            "iii",
+		                Character.valueOf('i'), TechItems.lava_crystal
+		    });
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.lava_crystal, 9), new Object[] {
+					TechBlocks.lava_crystal_block
+			});
+		}
 	}
 }

@@ -3,7 +3,6 @@ package com.kashdeya.tinyprogressions.blocks;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
@@ -23,11 +22,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class StandardBlock extends Block implements IItemProvider
 {
 	private ItemBlock itemBlock;
+	private BlockRenderLayer renderLayer;
 	
 	public StandardBlock(Material material)
 	{
 		super(material);
 		setCreativeTab(TinyProgressions.tabTP);
+	}
+	
+	public StandardBlock setBlockRenderLayer(BlockRenderLayer renderLayer)
+	{
+		this.renderLayer = renderLayer;
+		return this;
 	}
 	
 	public StandardBlock setUnlocalName(String name)
@@ -76,13 +82,7 @@ public class StandardBlock extends Block implements IItemProvider
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {
-		if (TechBlocks.fmf_block != null){
-			return BlockRenderLayer.CUTOUT;
-		}
-		if (TechBlocks.lava_crystal_block !=null){
-			return BlockRenderLayer.CUTOUT_MIPPED;
-		}
-		return null;
+		return renderLayer;
     }
 	
 	@Override

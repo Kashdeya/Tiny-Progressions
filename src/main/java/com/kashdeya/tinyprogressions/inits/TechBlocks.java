@@ -49,6 +49,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.BlockRenderLayer;
 
 public class TechBlocks {
 	// Tech Blocks
@@ -236,6 +237,7 @@ public class TechBlocks {
 			lava_ore = new LavaOre();
 			lava_crystal_block = new StandardBlock(Material.ROCK).setUnlocalName("lava_crystal_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
+					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED)
 					.setHardness(1.5F).setResistance(10.0F).setLightLevel(0.5F);
 		}
 		
@@ -243,7 +245,8 @@ public class TechBlocks {
 		if(ConfigHandler.angel_block) {
 			fmf_block = new StandardBlock(Material.GROUND).setUnlocalName("fmf_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
-					.setItemBlock(AngelItemBlock.class).setHardness(1.5F).setResistance(1000F);
+					.setItemBlock(AngelItemBlock.class).setBlockRenderLayer(BlockRenderLayer.CUTOUT)
+					.setHardness(1.5F).setResistance(1000F);
 		}
 		
 		// Lava & Water Blocks

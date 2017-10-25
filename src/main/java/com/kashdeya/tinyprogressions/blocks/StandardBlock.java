@@ -3,7 +3,6 @@ package com.kashdeya.tinyprogressions.blocks;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
@@ -20,6 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class StandardBlock extends Block implements IItemProvider
 {
 	private ItemBlock itemBlock;
+	private BlockRenderLayer renderLayer;
 	
 	public StandardBlock(Material material)
 	{
@@ -58,6 +58,12 @@ public class StandardBlock extends Block implements IItemProvider
 		return this;
 	}
 	
+	public StandardBlock setBlockRenderLayer(BlockRenderLayer renderLayer)
+	{
+		this.renderLayer = renderLayer;
+		return this;
+	}
+	
 	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
@@ -73,10 +79,7 @@ public class StandardBlock extends Block implements IItemProvider
 	@SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {
-		if (TechBlocks.fmf_block != null){
-			return BlockRenderLayer.CUTOUT;
-		}
-		return null;
+		return renderLayer;
     }
 	
 	@Override

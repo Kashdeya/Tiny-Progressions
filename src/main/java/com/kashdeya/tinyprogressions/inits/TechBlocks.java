@@ -49,6 +49,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.BlockRenderLayer;
 
 public class TechBlocks {
 	// Tech Blocks
@@ -239,6 +240,7 @@ public class TechBlocks {
 			fmf_block = new StandardBlock(Material.GROUND).setUnlocalName("fmf_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
 					.setItemBlock(AngelItemBlock.class)
+					.setBlockRenderLayer(BlockRenderLayer.CUTOUT)
 					.setHardness(1.5F).setResistance(1000F);
 		}
 		

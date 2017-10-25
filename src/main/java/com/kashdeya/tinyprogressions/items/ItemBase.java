@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.items;
 
-import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.util.Registry.IOreDictEntry;
 
 import net.minecraft.item.Item;
 

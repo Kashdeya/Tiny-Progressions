@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.tabs;
+package com.kashdeya.tinyprogressions.main;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;

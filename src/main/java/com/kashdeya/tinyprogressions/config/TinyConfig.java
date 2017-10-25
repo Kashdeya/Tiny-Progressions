@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.configs;
+package com.kashdeya.tinyprogressions.config;
 
 import java.io.File;
 import java.util.Arrays;

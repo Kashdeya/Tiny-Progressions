@@ -1,9 +1,9 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import com.kashdeya.tinyprogressions.inits.Registry.IItemProvider;
 import com.kashdeya.tinyprogressions.items.block.MetaItemBlock;
 import com.kashdeya.tinyprogressions.properties.EnumLampColor;
 import com.kashdeya.tinyprogressions.util.IMetadata;
+import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;

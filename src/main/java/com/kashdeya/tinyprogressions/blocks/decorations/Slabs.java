@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import com.kashdeya.tinyprogressions.inits.Registry.IItemProvider;
+import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;

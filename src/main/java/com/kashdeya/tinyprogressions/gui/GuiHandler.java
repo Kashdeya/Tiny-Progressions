@@ -1,8 +1,7 @@
-package com.kashdeya.tinyprogressions.handlers;
+package com.kashdeya.tinyprogressions.gui;
 
 import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 import com.kashdeya.tinyprogressions.container.PouchContainer;
-import com.kashdeya.tinyprogressions.gui.PouchGui;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
 import net.minecraft.entity.player.EntityPlayer;

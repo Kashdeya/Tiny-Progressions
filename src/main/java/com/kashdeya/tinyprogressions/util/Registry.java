@@ -1,19 +1,22 @@
-package com.kashdeya.tinyprogressions.inits;
+package com.kashdeya.tinyprogressions.util;
 
 import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.kashdeya.tinyprogressions.crafting.ArmorRecipes;
-import com.kashdeya.tinyprogressions.crafting.BlockRecipes;
-import com.kashdeya.tinyprogressions.crafting.FoodRecipes;
-import com.kashdeya.tinyprogressions.crafting.ItemRecipes;
-import com.kashdeya.tinyprogressions.crafting.OtherRecipes;
-import com.kashdeya.tinyprogressions.crafting.ToolsRecipes;
-import com.kashdeya.tinyprogressions.handlers.OreDictHandler;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.main.Reference;
-import com.kashdeya.tinyprogressions.util.IMetadata;
+import com.kashdeya.tinyprogressions.recipes.ArmorRecipes;
+import com.kashdeya.tinyprogressions.recipes.BlockRecipes;
+import com.kashdeya.tinyprogressions.recipes.FoodRecipes;
+import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
+import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
+import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -170,7 +173,7 @@ public class Registry
 		FoodRecipes.init();
 
 		// TODO: The plan is to remove this entirely.
-		OreDictHandler.init();
+		OreDict.init();
 		
 		for(Map.Entry<ResourceLocation, IRecipe> recipe : RECIPES.entrySet())
 			event.getRegistry().register(recipe.getValue());

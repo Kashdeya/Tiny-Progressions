@@ -2,8 +2,8 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import java.util.Random;
 
-import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.util.Registry.IOreDictEntry;
 
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.SoundType;

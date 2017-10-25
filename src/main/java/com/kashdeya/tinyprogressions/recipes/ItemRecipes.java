@@ -1,9 +1,12 @@
-package com.kashdeya.tinyprogressions.crafting;
+package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
+import com.kashdeya.tinyprogressions.util.RecipeRegistry;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -76,6 +79,18 @@ public class ItemRecipes {
 				});
 			}
 			
+			// Medkit
+			if (ConfigHandler.repair_tablet) {
+				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.repair_tablet), new Object[] {
+						"plp",
+						"rgr",
+						"prp",
+							Character.valueOf('p'), TechBlocks.hardened_stone,
+							Character.valueOf('r'), Blocks.BROWN_GLAZED_TERRACOTTA,
+							Character.valueOf('l'), Items.NETHER_STAR,
+							Character.valueOf('g'), TechItems.redstone_ingot
+				});
+			}
 			
 		}
 

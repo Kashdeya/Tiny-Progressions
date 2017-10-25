@@ -1,8 +1,6 @@
-package com.kashdeya.tinyprogressions.crafting;
+package com.kashdeya.tinyprogressions.util;
 
 import java.util.List;
-
-import com.kashdeya.tinyprogressions.inits.Registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

@@ -39,6 +39,7 @@ import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianHoe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSpade;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSword;
+import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;

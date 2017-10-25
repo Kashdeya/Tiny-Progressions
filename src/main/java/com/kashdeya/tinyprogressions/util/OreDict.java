@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.handlers;
+package com.kashdeya.tinyprogressions.util;
 
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
@@ -8,7 +8,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class OreDictHandler {
+public class OreDict {
 	public static void init()
 	{
 		// Vanilla Ore Dicts

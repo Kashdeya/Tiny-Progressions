@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.crafting;
+package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 import com.kashdeya.tinyprogressions.properties.EnumGlowstoneColor;
 import com.kashdeya.tinyprogressions.properties.EnumLampColor;
+import com.kashdeya.tinyprogressions.util.RecipeRegistry;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -259,7 +260,16 @@ public class BlockRecipes {
 
 		// Hardened Stone
 		if (ConfigHandler.hardened_stone) {
-			GameRegistry.addSmelting(new ItemStack(Blocks.STONE, 1, 0), new ItemStack(TechBlocks.hardened_stone), 1.0F);
+			GameRegistry.addSmelting(new ItemStack(TechBlocks.unhardened_stone), new ItemStack(TechBlocks.hardened_stone), 1.0F);
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.unhardened_stone, 4), new Object[] {
+		            "csc",
+		            "yiy",
+		            "csc",
+		                Character.valueOf('c'), Blocks.COBBLESTONE,
+		                Character.valueOf('s'), Blocks.SAND,
+		                Character.valueOf('y'), Items.CLAY_BALL,
+		                Character.valueOf('i'), Items.IRON_INGOT,
+		    });			
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks), new Object[] {
 		            "ss",
 		            "ss",

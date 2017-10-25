@@ -3,8 +3,8 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.Registry.IOreDictEntry;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.util.Registry.IOreDictEntry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -16,31 +16,23 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class SmoothEndStone extends Block implements IOreDictEntry {
+public class UnhardenedBlock extends Block{
 	
-	public SmoothEndStone()
+	public UnhardenedBlock()
     {
-        super(Material.ROCK);
-        this.setHardness(3.0F);
-        this.setHarvestLevel("pickaxe", 1);
-        this.setResistance(15.0F);
+        super(Material.GROUND);
+        this.setHardness(1.5F);
+        this.setHarvestLevel("pickaxe", 0);
+        this.setResistance(10.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("smooth_endstone");
+        this.setUnlocalizedName("unhardened_stone");
     }
 	
 	@Override
-	public String getOreDictName() {
-		return "smoothEndstone";
-	}
-	
-	/**
-     * Get the Item that this Block should drop when harvested.
-     */
-	@Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TechBlocks.smooth_endstone);
+        return Item.getItemFromBlock(TechBlocks.unhardened_stone);
     }
 	
 	@Override
@@ -60,4 +52,5 @@ public class SmoothEndStone extends Block implements IOreDictEntry {
     {
         entityIn.fall(fallDistance, 3.0F);
     }
+
 }

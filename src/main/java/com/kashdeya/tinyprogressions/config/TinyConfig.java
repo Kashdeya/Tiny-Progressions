@@ -101,6 +101,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Goodies", "Fun Stuff");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Goodies", true, "Enable Party Pickaxe?");
 		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", category + " Goodies", true, "Enable Kappa Pick?");
+		ConfigHandler.c_axe = config.getBoolean("C-axe", category + " Goodies", true, "Enable C-axe?");
 		
 		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
 		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");

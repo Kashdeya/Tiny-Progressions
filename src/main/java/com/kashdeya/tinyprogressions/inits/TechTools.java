@@ -137,8 +137,14 @@ public class TechTools {
 	public static Item bsc_diamond_axe;
 	public static Item bsc_diamond_hoe;
 	public static Item bsc_diamond_spade;
+	// c axe
+	public static Item c_axe;
 	
 	static void init(){
+		// c axe
+		if (ConfigHandler.c_axe){
+			c_axe = new BscIronAxe(MaterialHandler.BSCIRON, 10.0F, -1.2F).setUnlocalizedName("c_axe");
+		}
 		// bsc tools and weapons
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
 			bsc_iron_sword = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_sword");

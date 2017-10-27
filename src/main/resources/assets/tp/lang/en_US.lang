@@ -21,6 +21,8 @@ item.blueberry_berry.name=Blueberry
 item.maloberry_berry.name=Maloberry
 item.raspberry_berry.name=Raspberry
 
+item.c_axe.name=C-Axe
+
 #Withered Block
 tile.withered_block.name=Withered Bedrock
 

@@ -11,6 +11,16 @@ import net.minecraft.item.ItemStack;
 public class ToolsRecipes {
 	
 	public static void init() {
+		// c axe
+		if (ConfigHandler.c_axe){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.c_axe), new Object[] {
+					"s i",
+					"si ",
+					"s i",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickWood"
+			});
+		}
 		// bsc iron
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_axe), new Object[] {

@@ -17,7 +17,8 @@ public class ConfigHandler {
 	// bsc sugarcane blocks
 	public static boolean bsc_sugarcane_compressed_blocks = true;
 	
-	
+	//
+	public static boolean c_axe = true;
 	// Kappa Pick
 	public static boolean kappa_pick = true;
 	

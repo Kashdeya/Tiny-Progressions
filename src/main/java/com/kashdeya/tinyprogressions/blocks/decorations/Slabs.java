@@ -1,9 +1,11 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
@@ -34,8 +36,13 @@ public class Slabs extends BlockSlab implements IItemProvider
     public Slabs(boolean isDouble, BlockSlab doubleSlab)
     {
         super(Material.ROCK);
+        this.setHarvestLevel("pickaxe", 0);
+        this.setHardness(50.0f);
+        this.setResistance(2000.0F);
         this.isDouble = isDouble;
         this.doubleSlab = doubleSlab;
+        this.setSoundType(SoundType.STONE);
+        this.setCreativeTab(TinyProgressions.tabTP);
         
         IBlockState state = blockState.getBaseState();
         if(!isDouble())

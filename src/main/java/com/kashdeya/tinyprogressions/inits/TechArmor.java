@@ -5,6 +5,7 @@ import java.util.Locale;
 
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.DragonArmour;
+import com.kashdeya.tinyprogressions.armor.EmeraldArmor;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
 import com.kashdeya.tinyprogressions.armor.LapisArmor;
 import com.kashdeya.tinyprogressions.armor.LavaArmour;
@@ -89,7 +90,22 @@ public class TechArmor {
 	public static ItemArmor redstone_leggings;
 	public static ItemArmor redstone_boots;
 	
+	// Emerald
+	public static ItemArmor emerald_helmet;
+	public static ItemArmor emerald_chestplate;
+	public static ItemArmor emerald_leggings;
+	public static ItemArmor emerald_boots;
+	
 	static void init(){
+		
+		// Emerald Armor
+		if (ConfigHandler.emerald_amor){
+			emerald_helmet = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("emerald_helmet");
+			emerald_chestplate = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("emerald_chestplate");
+			emerald_leggings = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("emerald_leggings");
+			emerald_boots = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("emerald_boots");
+		}
+		
 		// Stone Armor
 		if (ConfigHandler.StoneArmor){
 			stone_helmet = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("stone_helmet");

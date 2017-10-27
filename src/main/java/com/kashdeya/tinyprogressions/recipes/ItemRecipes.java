@@ -13,8 +13,17 @@ import net.minecraft.item.ItemStack;
 public class ItemRecipes {
 	
 		public static void init() {
-			
 			System.out.println("load item init");
+			
+			// bsc
+			if (ConfigHandler.bsc_rod) {
+				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), new Object[] {
+						"i",
+						"i",
+							Character.valueOf('i'), TechBlocks.compressed_sugar_cane
+				});
+			}
+			
 			// Glowstone Dust
 			if (ConfigHandler.ColorGlowstone)
 			{

@@ -73,6 +73,9 @@ item.blueberry_juice.name=Blueberry Juice
 item.blackberry_juice.name=Blueberry Juice
 item.maloberry_juice.name=Maloberry Juice
 
+#Kappa
+item.kappa_pick.name=Kappa Pick
+
 #Reinforced Blocks
 tile.reinforced_glass.name=Reinforced Glass
 tile.reinforced_obsidian.name=Reinforced Obsidian
@@ -126,6 +129,11 @@ item.obsidian_helmet.name=Obsidian Helmet
 item.obsidian_chestplate.name=Obsidian Chestplate
 item.obsidian_leggings.name=Obsidian Leggings
 item.obsidian_boots.name=Obsidian Boots
+
+item.emerald_helmet.name=Emerald Helmet
+item.emerald_chestplate.name=Emerald Chestplate
+item.emerald_leggings.name=Emerald Leggings
+item.emerald_boots.name=Emerald Boots
 
 #MISC
 item.mycelium_seeds.name=Mycelium Seed
@@ -467,8 +475,45 @@ item.bacon_eggs_sandwhich.name=Bacon & Egg Sandwich
 item.chicken_sandwhich.name=Chicken Sandwich
 item.beef_sandwhich.name=Beef Sandwich
 item.bacon_sandwhich.name=Bacon Sandwich
+item.bams_pizza.name=Bams Pizza
 
 // Repair Tablet
 item.repair_tablet.name=Repair Tablet
 tooltip.tablet_1=Repair items in players inventory
 tooltip.tablet_2=Restores 1 durability every X seconds
+
+#bsc
+tile.compressed_sugar_cane.name=Compressed Sugar Cane
+tile.double_compressed_sugar_cane.name=Double Compressed Sugar Cane
+tile.triple_compressed_sugar_cane.name=Triple Compressed Sugar Cane
+tile.quadruple_compressed_sugar_cane.name=Quadruple Compressed Sugar Cane
+tile.quintuple_compressed_sugar_cane.name=Quintuple Compressed Sugar Cane
+tile.sextuple_compressed_sugar_cane.name=Sextuple Compressed Sugar Cane
+tile.septuple_compressed_sugar_cane.name=Septuple Compressed Sugar Cane
+tile.octuple_compressed_sugar_cane.name=Octuple Compressed Sugar Cane
+
+tile.compressed_sugar.name=Compressed Sugar
+tile.double_compressed_sugar.name=Double Compressed Sugar
+
+item.bsc_rod.name=Sugar Cane Rod
+item.bsc_sugar_cookie.name=Sugar Cookie
+
+item.bsc_iron_sword.name=Iron Sugar Cane Sword
+item.bsc_gold_sword.name=Golden Sugar Cane Sword
+item.bsc_diamond_sword.name=Diamond Sugar Cane Sword
+
+item.bsc_iron_pickaxe.name=Iron Sugar Cane Pickaxe
+item.bsc_gold_pickaxe.name=Golden Sugar Cane Pickaxe
+item.bsc_diamond_pickaxe.name=Diamond Sugar Cane Pickaxe
+
+item.bsc_iron_axe.name=Iron Sugar Cane Axe
+item.bsc_gold_axe.name=Golden Sugar Cane Axe
+item.bsc_diamond_axe.name= Sugar Cane Axe
+
+item.bsc_iron_hoe.name=Iron Sugar Cane Shovel
+item.bsc_gold_hoe.name=Golden Sugar Cane Shovel
+item.bsc_diamond_hoe.name=Diamond Sugar Cane Shovel
+
+item.bsc_iron_spade.name=Iron Sugar Cane Shovel
+item.bsc_gold_spade.name=Golden Sugar Cane Shovel
+item.bsc_diamond_spade.name=Diamond Sugar Cane Shovel

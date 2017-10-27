@@ -9,6 +9,21 @@ import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.items.battle.BattleMain;
 import com.kashdeya.tinyprogressions.items.battle.EmeraldBattle;
 import com.kashdeya.tinyprogressions.items.battle.ObsidianBattle;
+import com.kashdeya.tinyprogressions.items.bsc.BscDiamondAxe;
+import com.kashdeya.tinyprogressions.items.bsc.BscDiamondHoe;
+import com.kashdeya.tinyprogressions.items.bsc.BscDiamondPickaxe;
+import com.kashdeya.tinyprogressions.items.bsc.BscDiamondSpade;
+import com.kashdeya.tinyprogressions.items.bsc.BscDiamondSword;
+import com.kashdeya.tinyprogressions.items.bsc.BscGoldAxe;
+import com.kashdeya.tinyprogressions.items.bsc.BscGoldHoe;
+import com.kashdeya.tinyprogressions.items.bsc.BscGoldPickaxe;
+import com.kashdeya.tinyprogressions.items.bsc.BscGoldSpade;
+import com.kashdeya.tinyprogressions.items.bsc.BscGoldSword;
+import com.kashdeya.tinyprogressions.items.bsc.BscIronAxe;
+import com.kashdeya.tinyprogressions.items.bsc.BscIronHoe;
+import com.kashdeya.tinyprogressions.items.bsc.BscIronPickaxe;
+import com.kashdeya.tinyprogressions.items.bsc.BscIronSpade;
+import com.kashdeya.tinyprogressions.items.bsc.BscIronSword;
 import com.kashdeya.tinyprogressions.items.multi.EmeraldMulti;
 import com.kashdeya.tinyprogressions.items.multi.MultiMain;
 import com.kashdeya.tinyprogressions.items.multi.ObsidianMulti;
@@ -19,6 +34,7 @@ import com.kashdeya.tinyprogressions.items.spears.EmeraldSpear;
 import com.kashdeya.tinyprogressions.items.spears.ObsidianSpear;
 import com.kashdeya.tinyprogressions.items.spears.SpearMain;
 import com.kashdeya.tinyprogressions.items.tools.BirthdayPickaxe;
+import com.kashdeya.tinyprogressions.items.tools.KappaPick;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneAxe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneHoe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BonePickaxe;
@@ -59,6 +75,8 @@ public class TechTools {
 	public static Item bone_hoe;
 	// Birthday
 	public static Item birthday_pickaxe;
+	// Kappa Pick
+	public static Item kappa_pick;
 	// Emerald
 	public static Item emerald_axe;
 	public static Item emerald_pickaxe;
@@ -103,8 +121,46 @@ public class TechTools {
 	public static Item emerald_spear;
 	public static Item diamond_spear;
 	public static Item obsidian_spear;
+	// bsc tools and weapons
+	public static Item bsc_iron_sword;
+	public static Item bsc_iron_pickaxe;
+	public static Item bsc_iron_axe;
+	public static Item bsc_iron_hoe;
+	public static Item bsc_iron_spade;
+	public static Item bsc_gold_sword;
+	public static Item bsc_gold_pickaxe;
+	public static Item bsc_gold_axe;
+	public static Item bsc_gold_hoe;
+	public static Item bsc_gold_spade;
+	public static Item bsc_diamond_sword;
+	public static Item bsc_diamond_pickaxe;
+	public static Item bsc_diamond_axe;
+	public static Item bsc_diamond_hoe;
+	public static Item bsc_diamond_spade;
 	
 	static void init(){
+		// bsc tools and weapons
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
+			bsc_iron_sword = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_sword");
+			bsc_iron_pickaxe = new BscIronAxe(MaterialHandler.BSCIRON, 7.0F, -1.2F).setUnlocalizedName("bsc_iron_pickaxe");
+			bsc_iron_axe = new BscIronSpade(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_axe");
+			bsc_iron_hoe = new BscIronSword(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_hoe");
+			bsc_iron_spade = new BscIronHoe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_spade");
+		}
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_gold_tools_weapons){
+			bsc_gold_sword = new BscGoldPickaxe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_sword");
+			bsc_gold_pickaxe = new BscGoldAxe(MaterialHandler.BSCGOLD, 7.0F, -1.2F).setUnlocalizedName("bsc_gold_pickaxe");
+			bsc_gold_axe = new BscGoldSpade(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_axe");
+			bsc_gold_hoe = new BscGoldSword(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_hoe");
+			bsc_gold_spade = new BscGoldHoe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_spade");
+		}
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){
+			bsc_diamond_sword = new BscDiamondPickaxe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_sword");
+			bsc_diamond_pickaxe = new BscDiamondAxe(MaterialHandler.BSCDIAMOND, 7.0F, -1.2F).setUnlocalizedName("bsc_diamond_pickaxe");
+			bsc_diamond_axe = new BscDiamondSpade(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_axe");
+			bsc_diamond_hoe = new BscDiamondSword(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_hoe");
+			bsc_diamond_spade = new BscDiamondHoe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_spade");
+		}
 		// Flint
 		if (ConfigHandler.FlintTools){
 			flint_pickaxe = new FlintPickaxe(MaterialHandler.FLINT).setUnlocalizedName("flint_pickaxe");
@@ -123,11 +179,15 @@ public class TechTools {
 		}
 		// Birthday
 	    if (ConfigHandler.BirthdayPickaxe){
-	    		birthday_pickaxe = new BirthdayPickaxe(MaterialHandler.BIRTHDAY);
+	    	birthday_pickaxe = new BirthdayPickaxe(MaterialHandler.BIRTHDAY);
 		}
+	    // Kappa Pick
+	    if (ConfigHandler.kappa_pick){
+	    	kappa_pick = new KappaPick(MaterialHandler.KAPPA).setUnlocalizedName("kappa_pick");
+	    }
 	    // Scythe
 	    if (ConfigHandler.wooden_scythe){
-	    		wooden_scythe = new ScytheMain(ToolMaterial.WOOD).setUnlocalizedName("wooden_scythe").setMaxDamage(DamageHandler.wooden_scythe);
+	    	wooden_scythe = new ScytheMain(ToolMaterial.WOOD).setUnlocalizedName("wooden_scythe").setMaxDamage(DamageHandler.wooden_scythe);
 	    }
 	    if (ConfigHandler.stone_scythe){
 			stone_scythe = new ScytheMain(ToolMaterial.STONE).setUnlocalizedName("stone_scythe").setMaxDamage(DamageHandler.stone_scythe);

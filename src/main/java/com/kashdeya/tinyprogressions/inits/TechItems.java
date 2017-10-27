@@ -55,9 +55,15 @@ public class TechItems {
 	public static Item colored_dust;
 	// Repair Tablet
 	public static Item repair_tablet;
+	// bsc rod
+	public static Item bsc_rod;
 	
 	static void init() {
-
+		
+		// bsc rod
+		if (ConfigHandler.bsc_rod){
+			bsc_rod = new ItemBase().setOreDictName("stickCane").setUnlocalizedName("bsc_rod");
+		}
 		// Watering Cans
 		if (ConfigHandler.WateringCan) {
 			watering_can = new WateringCan();

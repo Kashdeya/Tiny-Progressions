@@ -11,6 +11,173 @@ import net.minecraft.item.ItemStack;
 public class ToolsRecipes {
 	
 	public static void init() {
+		// bsc iron
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_axe), new Object[] {
+					"ii ",
+					"is ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_axe), new Object[] {
+					" ii",
+					" si",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_hoe), new Object[] {
+					"ii ",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_hoe), new Object[] {
+					" ii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_pickaxe), new Object[] {
+					"iii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_spade), new Object[] {
+					"i",
+					"s",
+					"s",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_sword), new Object[] {
+					"i",
+					"i",
+					"s",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+		}
+		// bsc gold
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_gold_tools_weapons){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_axe), new Object[] {
+					"ii ",
+					"is ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_axe), new Object[] {
+					" ii",
+					" si",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_hoe), new Object[] {
+					"ii ",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_hoe), new Object[] {
+					" ii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_pickaxe), new Object[] {
+					"iii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_spade), new Object[] {
+					"i",
+					"s",
+					"s",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_sword), new Object[] {
+					"i",
+					"i",
+					"s",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickCane"
+			});
+		}
+		// bsc diamond
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_axe), new Object[] {
+					"ii ",
+					"is ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_axe), new Object[] {
+					" ii",
+					" si",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_hoe), new Object[] {
+					"ii ",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_hoe), new Object[] {
+					" ii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_pickaxe), new Object[] {
+					"iii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_spade), new Object[] {
+					"i",
+					"s",
+					"s",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickCane"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_sword), new Object[] {
+					"i",
+					"i",
+					"s",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickCane"
+			});
+		}
+		// Kappa Pick
+		if (ConfigHandler.kappa_pick){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.kappa_pick), new Object[] {
+					"ici",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('c'), Items.BRICK,
+						Character.valueOf('s'), "stickWood"
+			});
+		}
 		// Flint Tools
 		if (ConfigHandler.FlintTools){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.flint_pickaxe), new Object[] {

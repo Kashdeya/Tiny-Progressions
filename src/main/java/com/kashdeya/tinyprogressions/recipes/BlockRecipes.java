@@ -16,6 +16,72 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class BlockRecipes {
 	
 	public static void init() {
+		// bsc
+		if (ConfigHandler.bsc_sugar_compressed_blocks){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.compressed_sugar), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), Items.SUGAR
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.compressed_sugar
+			});
+		}
+		if (ConfigHandler.bsc_sugarcane_compressed_blocks){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), Items.REEDS
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.compressed_sugar_cane
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.triple_compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.double_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.quadruple_compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.triple_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.quintuple_compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.quadruple_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.sextuple_compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.quintuple_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.septuple_compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.sextuple_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.octuple_compressed_sugar_cane), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.septuple_compressed_sugar_cane
+			});
+		}
+		
 		// Stone Torch
 		if (ConfigHandler.StoneTorch) {
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.stone_stick, 4), new Object[] {

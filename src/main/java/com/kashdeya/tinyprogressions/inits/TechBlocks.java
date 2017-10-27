@@ -118,8 +118,48 @@ public class TechBlocks {
     public static Block blackberry_bush;
     public static Block maloberry_bush;
     public static Block raspberry_bush;
+    // bsc sugar blocks
+    public static Block compressed_sugar;
+    public static Block double_compressed_sugar;
+    // bsc sugar cane blocks
+    public static Block compressed_sugar_cane;
+    public static Block double_compressed_sugar_cane;
+    public static Block triple_compressed_sugar_cane;
+    public static Block quadruple_compressed_sugar_cane;
+    public static Block quintuple_compressed_sugar_cane;
+    public static Block sextuple_compressed_sugar_cane;
+    public static Block septuple_compressed_sugar_cane;
+    public static Block octuple_compressed_sugar_cane;
     
 	static void init() {
+		// bsc sugar blocks
+		if (ConfigHandler.bsc_sugar_compressed_blocks){
+			compressed_sugar = new StandardBlock(Material.CLAY).setUnlocalName("compressed_sugar")
+					.setSound(SoundType.SNOW).setHardness(0.6F).setResistance(0.6F);
+			
+			double_compressed_sugar = new StandardBlock(Material.CLAY).setUnlocalName("double_compressed_sugar")
+					.setSound(SoundType.SNOW).setHardness(1.0F).setResistance(1.2F);
+		}
+		
+		// bsc sugar cane blocks
+		if (ConfigHandler.bsc_sugarcane_compressed_blocks){
+			compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(1.0F).setResistance(1.0F);
+			double_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("double_compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(1.2F).setResistance(1.2F);
+			triple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("triple_compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(1.4F).setResistance(1.4F);
+			quadruple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("quadruple_compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(1.6F).setResistance(1.6F);
+			quintuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("quintuple_compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(1.8F).setResistance(1.8F);
+			sextuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("sextuple_compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(2.0F).setResistance(2.0F);
+			septuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("septuple_compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(2.2F).setResistance(2.2F);
+			octuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("octuple_compressed_sugar_cane")
+					.setSound(SoundType.GROUND).setHardness(2.4F).setResistance(2.4F);
+		}
 		
 		// Berry Bushes
 		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){

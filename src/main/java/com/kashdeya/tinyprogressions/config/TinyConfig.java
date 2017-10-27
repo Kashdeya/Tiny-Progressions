@@ -100,6 +100,22 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Goodies", "Fun Stuff");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Goodies", true, "Enable Party Pickaxe?");
+		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", category + " Goodies", true, "Enable Kappa Pick?");
+		
+		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
+		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");
+		// iron
+		ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Iron Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// gold
+		ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Gold Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// diamond
+		ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// cookie
+		ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", category + " Better Sugar Cane", true, "Enable Sugar Cookie?");
+		// sugar blocks
+		ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed Sugar", category + " Better Sugar Cane", true, "Enable Compressed Sugar?");
+		// sugarcane blocks
+		ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed Sugar Cane", category + " Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
 		
 		config.addCustomCategoryComment(category + " Apples", "Just Because");
 		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
@@ -121,6 +137,7 @@ public class TinyConfig {
 		ConfigHandler.lapis_armor = config.getBoolean("Lapis Armor", category + " Armor", true, "Enable Lapis Armor?");
 		ConfigHandler.quartz_armor = config.getBoolean("Quartz Armor", category + " Armor", true, "Enable Quartz Armor?");
 		ConfigHandler.lava_armor = config.getBoolean("Lava Armor", category + " Armor", true, "Enable Lava Armor?\n[Only Enable if Lava Ore is ENABLED.]");
+		ConfigHandler.emerald_amor = config.getBoolean("Emerald Armor", category + " Armor", true, "Enable Emerald Armor?");
 		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
@@ -272,6 +289,7 @@ public class TinyConfig {
 		ConfigHandler.moist_time = config.getFloat("Moist Timer", category + " Moist", 1, 0, Float.MAX_VALUE, "How long (in days) until the first rainfall");
 		
 		config.addCustomCategoryComment(category + " Extra Food", "Want more food?");
+		ConfigHandler.bams_pizza = config.getBoolean("Bams Pizza", category + " Extra Food", true, "Enable Bams Pizza?");
 		ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", category + " Extra Food", true, "Enable Cooked Bacon?");
 		ConfigHandler.MonsterJerky = config.getBoolean("Monster Jerky", category + " Extra Food", true, "Enable Monster jerky?");
 		ConfigHandler.ToastedBread = config.getBoolean("Toasted Bread", category + " Extra Food", true, "Enable Toasted Bread?");
@@ -283,6 +301,8 @@ public class TinyConfig {
 		ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", category + " Extra Food", true, "Enable Cooked Apple?");
 		
 		config.addCustomCategoryComment(category + " Extra Food Stats", "Want more food Stats?\n[WIP]");
+		ConfigHandler.bams_pizza_amount = config.getInt("Bams Pizza Heal Amount", category + " Extra Food Stats", 10, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.bams_pizza_sat = config.getFloat("Bams Pizza Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Extra Food Stats", 4, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		

@@ -63,8 +63,23 @@ public class TechFoods {
 	public static Item blackberry_berry;
 	public static Item maloberry_berry;
 	
+	// bsc cookie
+	public static Item bsc_sugar_cookie;
+	
+	// Bams Pizza
+	public static Item bams_pizza;
+	
 	
 	public static void init(){
+		
+		// bsc cookie
+		if (ConfigHandler.bsc_sugar_cookie){
+			bsc_sugar_cookie = new FoodBase(1, 1.0F, true).setUnlocalizedName("bsc_sugar_cookie");
+		}
+		// Bams Pizza
+		if (ConfigHandler.bams_pizza){
+			bams_pizza = new FoodBase(ConfigHandler.bams_pizza_amount, ConfigHandler.bams_pizza_sat, true).setUnlocalizedName("bams_pizza");
+		}
 		
 		// Natura Juices
 		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){

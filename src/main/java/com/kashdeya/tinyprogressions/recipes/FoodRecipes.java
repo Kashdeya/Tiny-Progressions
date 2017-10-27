@@ -12,6 +12,25 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class FoodRecipes {
 
 	public static void init() {
+		
+		// bsc cookie
+		if (ConfigHandler.bsc_sugar_cookie){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechFoods.bsc_sugar_cookie, 8), new Object[] {
+					"wsw",
+						Character.valueOf('w'), Items.WHEAT,
+						Character.valueOf('s'), Items.SUGAR
+			});
+		}
+		
+		// Bams Pizza 
+		if (ConfigHandler.bams_pizza){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechFoods.bams_pizza), new Object[] {
+					"bbb",
+					" b ",
+					" b ",
+						Character.valueOf('b'), Items.BREAD
+			});
+		}
 		// Juicer
 		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechFoods.juicer), new Object[] {

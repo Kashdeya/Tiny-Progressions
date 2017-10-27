@@ -2,6 +2,30 @@ package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
 	
+	// bsc rod
+	public static boolean bsc_rod = true;
+	// bsc iron
+	public static boolean bsc_iron_tools_weapons = true;
+	// bsc gold
+	public static boolean bsc_gold_tools_weapons = true;
+	// bsc diamond
+	public static boolean bsc_diamond_tools_weapons = true;
+	// bsc cookie
+	public static boolean bsc_sugar_cookie = true;
+	// bsc sugar blocks
+	public static boolean bsc_sugar_compressed_blocks = true;
+	// bsc sugarcane blocks
+	public static boolean bsc_sugarcane_compressed_blocks = true;
+	
+	
+	// Kappa Pick
+	public static boolean kappa_pick = true;
+	
+	// Bams Pizza
+	public static boolean bams_pizza = true;
+	public static int bams_pizza_amount = 10;
+	public static float bams_pizza_sat = 1.0F;
+	
 	// Natura Juices
 	public static boolean ExtraJuices = true;
 	public static boolean ExtraJuicesBottles = true;
@@ -37,6 +61,7 @@ public class ConfigHandler {
 	public static boolean quartz_armor = true;
 	public static boolean redstone_armor = true;
 	public static boolean lava_armor = true;
+	public static boolean emerald_amor = true;
 	
 	// Lamps & Glowstone
 	public static boolean ColorLamps = true;

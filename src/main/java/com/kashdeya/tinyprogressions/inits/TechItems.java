@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.inits;
 import java.lang.reflect.Field;
 import java.util.Locale;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
@@ -79,10 +80,10 @@ public class TechItems {
 		}
 		
 	    // Drops
-	    if (ConfigHandler.dragon_armor){
+	    if (ArmorHandler.dragon_armor){
 		    dragon_scale = new ItemBase().setOreDictName("dragonScale").setUnlocalizedName("dragon_scale");
 	    }
-	    if (ConfigHandler.wither_armor){
+	    if (ArmorHandler.wither_armor){
 		    wither_rib = new ItemBase().setOreDictName("witherRib").setUnlocalizedName("wither_rib");
 	    }
 	    
@@ -108,7 +109,7 @@ public class TechItems {
 		}
 		
 		// Ingot
-		if (ConfigHandler.FlintArmor) {
+		if (ArmorHandler.FlintArmor) {
 			flint_ingot = new ItemBase().setOreDictName("ingotFlint").setUnlocalizedName("flint_ingot");
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
@@ -139,18 +140,18 @@ public class TechItems {
 	    }
 	    
 	    // Lapis armor
-	    if (ConfigHandler.lapis_armor){
+	    if (ArmorHandler.lapis_armor){
 	    	lapis_ingot = new ItemBase().setOreDictName("ingotLapis").setUnlocalizedName("lapis_ingot");
 	    }
 	    
 	    // Redstone Amor
-	    if (ConfigHandler.redstone_armor){
+	    if (ArmorHandler.redstone_armor){
 	    	redstone_ingot = new ItemBase().setOreDictName("ingotRedstone").setUnlocalizedName("redstone_ingot");
 	    }
 	    
 	    // Quartz Amor
-	    if (ConfigHandler.quartz_armor){
-	    	quartz_ingot = new ItemBase().setUnlocalizedName("quartz_ingot");
+	    if (ArmorHandler.quartz_armor){
+	    	quartz_ingot = new ItemBase().setOreDictName("ingotQuartz").setUnlocalizedName("quartz_ingot");
 	    }
 	    
 	    // Repair Tablet

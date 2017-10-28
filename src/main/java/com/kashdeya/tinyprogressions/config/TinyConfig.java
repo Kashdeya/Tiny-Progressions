@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.google.common.collect.Lists;
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -51,9 +52,9 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Watering Cans", "Remember to water those plants!");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");
-		ConfigHandler.WateringCanChance = config.getInt("Watering Can Chance", category + " Watering Cans", 25, 1, 50, "Chance out of 100 that the Watering Can will tick the plant!");
+		ConfigHandler.WateringCanChance = config.getInt("Watering Can Chance", category + " Watering Cans", 50, 1, 50, "Chance out of 100 that the Watering Can will tick the plant!");
 		ConfigHandler.WateringCanUpgrade = config.getBoolean("Watering Can Reinforced", category + " Watering Cans", true, "Enable Reinforced Watering Can?\n[Requires Watering Can to be Enabled]");
-		ConfigHandler.WateringCanUpgradeChance = config.getInt("Watering Can Reinforced Chance", category + " Watering Cans", 75, 50, 100, "Chance out of 100 that the Watering Can will tick the plant!");
+		ConfigHandler.WateringCanUpgradeChance = config.getInt("Watering Can Reinforced Chance", category + " Watering Cans", 100, 50, 100, "Chance out of 100 that the Watering Can will tick the plant!");
 		
 		config.addCustomCategoryComment(category + " Cobblegen Crystals", "Everyone needs a little cobblestone!");
 		ConfigHandler.Cobblegen = config.getBoolean("Cobblegen Crystal Tier 1", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 1?");
@@ -127,18 +128,18 @@ public class TinyConfig {
 		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", false, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
 		
 		config.addCustomCategoryComment(category + " Armor", "Why not");
-		ConfigHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
-		ConfigHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
-		ConfigHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
-		ConfigHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
-		ConfigHandler.wither_armor = config.getBoolean("Wither Armor", category + " Armor", true, "Enable Wither Armor?");
-		ConfigHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Armor", true, "Enable Dragon Armor?");
-		ConfigHandler.obsidian_armor = config.getBoolean("Obsidian Armor", category + " Armor", true, "Enable Obsidian Armor?");
-		ConfigHandler.redstone_armor = config.getBoolean("Redstone Armor", category + " Armor", true, "Enable Redstone Armor?");
-		ConfigHandler.lapis_armor = config.getBoolean("Lapis Armor", category + " Armor", true, "Enable Lapis Armor?");
-		ConfigHandler.quartz_armor = config.getBoolean("Quartz Armor", category + " Armor", true, "Enable Quartz Armor?");
-		ConfigHandler.lava_armor = config.getBoolean("Lava Armor", category + " Armor", true, "Enable Lava Armor?\n[Only Enable if Lava Ore is ENABLED.]");
-		ConfigHandler.emerald_amor = config.getBoolean("Emerald Armor", category + " Armor", true, "Enable Emerald Armor?");
+		ArmorHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
+		ArmorHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
+		ArmorHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
+		ArmorHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
+		ArmorHandler.wither_armor = config.getBoolean("Wither Armor", category + " Armor", true, "Enable Wither Armor?");
+		ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Armor", true, "Enable Dragon Armor?");
+		ArmorHandler.obsidian_armor = config.getBoolean("Obsidian Armor", category + " Armor", true, "Enable Obsidian Armor?");
+		ArmorHandler.redstone_armor = config.getBoolean("Redstone Armor", category + " Armor", true, "Enable Redstone Armor?");
+		ArmorHandler.lapis_armor = config.getBoolean("Lapis Armor", category + " Armor", true, "Enable Lapis Armor?");
+		ArmorHandler.quartz_armor = config.getBoolean("Quartz Armor", category + " Armor", true, "Enable Quartz Armor?");
+		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", category + " Armor", true, "Enable Lava Armor?\n[Only Enable if Lava Ore is ENABLED.]");
+		ArmorHandler.emerald_amor = config.getBoolean("Emerald Armor", category + " Armor", true, "Enable Emerald Armor?");
 		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
@@ -230,16 +231,16 @@ public class TinyConfig {
 		FuelHandler.lava_crystal_block_burntime = config.getInt("Lava Ore Crystal Block Burn Time", category + " Lava Ore Crystal", 180000, 180000, Integer.MAX_VALUE, "Sets the Lava Ore Crystal Block Burn Time.");
 		
 		config.addCustomCategoryComment(category + " Source Block Stones", "Lavastone and Waterstone!");
-		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
-		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Stones", 50, 1, 100, "Sets the Chance of Lavastone.");
-		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Stones", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Stones", 7, 5, 100, "Sets the Lavastone Vein Size.");
-		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
-		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Stones", 50, 1, 100, "Sets the Chance of Waterstone.");
-		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Stones", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Stones", 7, 5, 100, "Sets the Waterstone Vein Size.");
+		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
+		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Source Block Stones", 50, 1, 100, "Sets the Chance of Lavastone.");
+		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Source Block Stones", 1, 1, 255, "Sets the min Y level.");
+		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Source Block Stones", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Source Block Stones", 7, 5, 100, "Sets the Lavastone Vein Size.");
+		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
+		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Source Block Stones", 50, 1, 100, "Sets the Chance of Waterstone.");
+		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Source Block Stones", 1, 1, 255, "Sets the min Y level.");
+		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Source Block Stones", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Source Block Stones", 7, 5, 100, "Sets the Waterstone Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
@@ -272,6 +273,7 @@ public class TinyConfig {
 		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		config.addCustomCategoryComment(category + " Extra Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
+		ConfigHandler.ExtraPlantGen = config.getBoolean("Extra Plant Generation", category + " Extra Juices", true, "Enable Extra Plant Generation?\n[Disable Extra Plant Generation if you want to use Naturas Berries only!]");
 		ConfigHandler.ExtraJuices = config.getBoolean("Extra Juices W/O Bottles", category + " Extra Juices", true, "Enable Juices With out bottles in the recipe?");
 		ConfigHandler.ExtraJuicesBottles = config.getBoolean("Extra Juices With Bottles", category + " Extra Juices", false, "Enable Juices With bottles in the recipe?");
 		

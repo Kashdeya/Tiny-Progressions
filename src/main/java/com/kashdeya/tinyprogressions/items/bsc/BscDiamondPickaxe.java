@@ -5,7 +5,6 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item.ToolMaterial;
 
 public class BscDiamondPickaxe extends ItemPickaxe {
 	

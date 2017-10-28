@@ -17,7 +17,7 @@ public class ConfigHandler {
 	// bsc sugarcane blocks
 	public static boolean bsc_sugarcane_compressed_blocks = true;
 	
-	//
+	// c-axe
 	public static boolean c_axe = true;
 	// Kappa Pick
 	public static boolean kappa_pick = true;
@@ -28,6 +28,7 @@ public class ConfigHandler {
 	public static float bams_pizza_sat = 1.0F;
 	
 	// Natura Juices
+	public static boolean ExtraPlantGen = true;
 	public static boolean ExtraJuices = true;
 	public static boolean ExtraJuicesBottles = true;
 	public static int RaspberryAmount = 3;
@@ -49,20 +50,6 @@ public class ConfigHandler {
 	public static int WateringCanChance = 25;
 	public static boolean WateringCanUpgrade = true;
 	public static int WateringCanUpgradeChance = 75;
-	
-	//Armor
-	public static boolean wither_armor = true;
-	public static boolean dragon_armor = true;
-	public static boolean obsidian_armor = true;
-	public static boolean StoneArmor = true;
-	public static boolean FlintArmor = true;
-	public static boolean BoneArmor = true;
-	public static boolean WoodArmor = true;
-	public static boolean lapis_armor = true;
-	public static boolean quartz_armor = true;
-	public static boolean redstone_armor = true;
-	public static boolean lava_armor = true;
-	public static boolean emerald_amor = true;
 	
 	// Lamps & Glowstone
 	public static boolean ColorLamps = true;

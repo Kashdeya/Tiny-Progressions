@@ -33,7 +33,7 @@ public class PlantGen implements IWorldGenerator{
         }
         
         if(!BiomeDictionary.hasType(biome, Type.SAVANNA) || !BiomeDictionary.hasType(biome, Type.COLD)){
-	        if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
+	        if (ConfigHandler.ExtraPlantGen && (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles)){
 	        	switch(random.nextInt(3)){
 	        	case 0:
 	        		generateBerryPlant(TechBlocks.blueberry_bush, world, blockPos, random);

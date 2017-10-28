@@ -1,10 +1,7 @@
 package com.kashdeya.tinyprogressions.armor;
 
-import com.google.common.collect.Multimap;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;

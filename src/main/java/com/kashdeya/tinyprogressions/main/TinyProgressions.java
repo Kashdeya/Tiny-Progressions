@@ -53,6 +53,7 @@ public class TinyProgressions {
 		
 		// Configs
 		TinyConfig.initMainConfigs();
+		TinyConfig.initArmorConfigs();
 		
 		// Setup
 		proxy.onPreInitialization(e);

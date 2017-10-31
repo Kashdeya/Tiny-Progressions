@@ -421,15 +421,15 @@ public class BlockRecipes {
 		}
 		
 		// Lava Crystal Block
-		if (ConfigHandler.lava_ore) {
+		if (ConfigHandler.lava_crystal_enable) {
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.lava_crystal_block), new Object[] {
-		            "iii",
-		            "iii",
-		            "iii",
+		            "ii",
+		            "ii",
 		                Character.valueOf('i'), TechItems.lava_crystal
 		    });
-			RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.lava_crystal, 9), new Object[] {
-					TechBlocks.lava_crystal_block
+			
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.lava_crystal, 4), new Object[] {
+					new ItemStack(TechBlocks.lava_crystal_block)
 			});
 		}
 	}

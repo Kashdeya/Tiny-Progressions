@@ -101,6 +101,16 @@ public class ItemRecipes {
 				});
 			}
 			
+			if (ConfigHandler.lava_crystal_enable) {
+				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.lava_crystal,  8), new Object[] {
+						"sss",
+						"sbs",
+						"sss",
+							Character.valueOf('s'), TechItems.reinforced_obsidian_ingot,
+							Character.valueOf('b'), Items.LAVA_BUCKET
+				});
+			}
+			
 		}
 
 }

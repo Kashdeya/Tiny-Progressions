@@ -91,11 +91,6 @@ public class ConfigHandler {
 	public static boolean EmeraldApple = true;
 	
 	// Lava
-	public static boolean lava_ore = true;
-	public static int lava_ore_frequency = 50;
-	public static int lava_ore_min = 1;
-	public static int lava_ore_max = 32;
-	public static int lava_ore_size = 7;
 	public static boolean lava_crystal_bucket = true;
 	public static boolean lava_crystal_enable = true;
 	

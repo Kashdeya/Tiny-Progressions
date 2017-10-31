@@ -140,7 +140,7 @@ public class TechArmor {
 		}
 		
 		// Lava
-		if (ArmorHandler.lava_armor && ConfigHandler.lava_ore){
+		if (ArmorHandler.lava_armor && ConfigHandler.lava_crystal_enable){
 			lava_helmet = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("lava_helmet");
 		   	lava_chestplate = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("lava_chestplate");
 		   	lava_leggings = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("lava_leggings");

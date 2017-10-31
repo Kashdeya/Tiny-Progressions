@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -42,14 +43,18 @@ public class LapisArmor extends ItemArmor {
     		(chest != null) && (chest.getItem() == TechArmor.lapis_chestplate) && 
     		(legs != null) && (legs.getItem() == TechArmor.lapis_leggings) && 
     		(feet != null) && (feet.getItem() == TechArmor.lapis_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    				entity.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 180, 0, true, false));
+    		if (ArmorHandler.lapis_armor && ArmorHandler.lapis_armor_water){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 180, ArmorHandler.lapis_armor_water_lvl, true, false));
+    		}
     	}
     }
 	
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lapisarmor_1").getFormattedText());
+    	if (ArmorHandler.lapis_armor && ArmorHandler.lapis_armor_water){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lapisarmor_1").getFormattedText());
+    	}
     }
     
 }

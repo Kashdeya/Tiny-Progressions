@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -42,14 +43,18 @@ public class RedstoneArmor extends ItemArmor {
     		(chest != null) && (chest.getItem() == TechArmor.redstone_chestplate) && 
     		(legs != null) && (legs.getItem() == TechArmor.redstone_leggings) && 
     		(feet != null) && (feet.getItem() == TechArmor.redstone_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    				entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 180, 0, true, false));
+    		if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, true, false));
+    		}
     	}
     }
 	
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.redstonearmor_1").getFormattedText());
+    	if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.redstonearmor_1").getFormattedText());
+    	}
     }
     
 }

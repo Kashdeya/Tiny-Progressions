@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -45,14 +46,18 @@ public class ObsidianArmor extends ItemArmor {
     			(chest != null) && (chest.getItem() == TechArmor.obsidian_chestplate) && 
     			(legs != null) && (legs.getItem() == TechArmor.obsidian_leggings) && 
     			(feet != null) && (feet.getItem() == TechArmor.obsidian_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 0, true, false));
+    		if (ArmorHandler.obsidian_armor && ArmorHandler.obsidian_armor_resistance){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.obsidian_armor_resistance_lvl, true, false));
+    		}
     	}
     }
     
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.obsidianarmor_1").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.obsidianarmor_2").getFormattedText());
+    	if (ArmorHandler.obsidian_armor && ArmorHandler.obsidian_armor_resistance){
+        	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.obsidianarmor_1").getFormattedText());
+        	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.obsidianarmor_2").getFormattedText());
+    	}
     }
 }

@@ -104,7 +104,7 @@ item.quartz_ingot.name=Quartz Ingot
 item.stone_dust.name=Stone Dust
 
 #Reinforced Ingot
-item.reinforced_obsidian_ingot.name=Reinforced Obsidian Ingot - [WIP]
+item.reinforced_obsidian_ingot.name=Reinforced Obsidian Ingot
 
 #Ender Ore
 tile.ender_ore.name=Ender Ore
@@ -355,9 +355,6 @@ item.lava_chestplate.name=Lava Chestplate
 item.lava_leggings.name=Lava Leggings
 item.lava_boots.name=Lava Boots
 
-#Lava Ore
-tile.lava_ore.name=Lava Crystal Ore
-
 #Lava Crystal
 item.lava_crystal.name=Lava Crystal
 tile.lava_crystal_block.name=Lava Crystal Block
@@ -386,16 +383,14 @@ item.wither_rib.name=Rib of the Wither
 #Wither Tooltips
 tooltip.witherarmor_1=Full set gives you
 tooltip.witherarmor_2=Strength
-tooltip.witherarmor_3=Absorption
+tooltip.witherarmor_3=Fire Resistance
 tooltip.witherarmor_4=Resistance
-tooltip.witherarmor_5=Fire Resistance
 
 #Dragon Tooltips
 tooltip.dragonarmor_1=Full set gives you Flight
 tooltip.dragonarmor_2=Strength
-tooltip.dragonarmor_3=Absorption
+tooltip.dragonarmor_3=Fire Resistance
 tooltip.dragonarmor_4=Resistance
-tooltip.dragonarmor_5=Fire Resistance
 
 #Obsidian Tooltips
 tooltip.obsidianarmor_1=Full set gives you

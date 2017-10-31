@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.events;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
@@ -66,9 +67,9 @@ public class EventDrops {
 		int min = 0;
 		int max = 4;
         if (event.getEntity() instanceof EntityDragon) {
-            registerMobDrop(event, event.getEntity(), ConfigHandler.dragon_armor, new ItemStack(TechItems.dragon_scale, AMOUNT.nextInt(16)));
+            registerMobDrop(event, event.getEntity(), ArmorHandler.dragon_armor, new ItemStack(TechItems.dragon_scale, AMOUNT.nextInt(16)));
         } else if (event.getEntity() instanceof EntityWither) {
-            registerMobDrop(event, event.getEntity(), ConfigHandler.wither_armor, new ItemStack(TechItems.wither_rib, AMOUNT.nextInt(max - min + 1) + min));
+            registerMobDrop(event, event.getEntity(), ArmorHandler.wither_armor, new ItemStack(TechItems.wither_rib, AMOUNT.nextInt(max - min + 1) + min));
         }
     }
 

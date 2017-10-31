@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -42,14 +43,18 @@ public class QuartzArmor extends ItemArmor {
     		(chest != null) && (chest.getItem() == TechArmor.quartz_chestplate) && 
     		(legs != null) && (legs.getItem() == TechArmor.quartz_leggings) && 
     		(feet != null) && (feet.getItem() == TechArmor.quartz_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    				entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 0, true, false));
+    		if (ArmorHandler.quartz_armor && ArmorHandler.quartz_armor_strength){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, ArmorHandler.quartz_armor_strength_lvl, true, false));
+    		}
     	}
     }
 	
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.quartzarmor_1").getFormattedText());
+    	if (ArmorHandler.quartz_armor && ArmorHandler.quartz_armor_strength){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.quartzarmor_1").getFormattedText());
+    	}
     }
     
 }

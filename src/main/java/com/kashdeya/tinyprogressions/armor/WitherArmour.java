@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -44,21 +45,34 @@ public class WitherArmour extends ItemArmor {
     	if (((head != null) && (head.getItem() == TechArmor.wither_helmet) && 
     			(chest != null) && (chest.getItem() == TechArmor.wither_chestplate) && 
     			(legs != null) && (legs.getItem() == TechArmor.wither_leggings) && 
-    			(feet != null) && (feet.getItem() == TechArmor.wither_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, 0, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 180, 0, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, 0, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 0, true, false));
+    			(feet != null) && (feet.getItem() == TechArmor.wither_boots)) || 
+    			(entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
+    		if (ArmorHandler.wither_armor && ArmorHandler.wither_strength){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, ArmorHandler.wither_strength_lvl, true, false));
     		}
+    		if (ArmorHandler.wither_armor && ArmorHandler.wither_fire){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, ArmorHandler.wither_fire_lvl, true, false));
+    		}
+    		if (ArmorHandler.wither_armor && ArmorHandler.wither_resistance){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.wither_resistance_lvl, true, false));
+    		}
+    	}
     }
 	
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_1").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_2").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_3").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_4").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_5").getFormattedText());
+    	if (ArmorHandler.wither_armor && (ArmorHandler.wither_strength || ArmorHandler.wither_fire || ArmorHandler.wither_resistance)){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_1").getFormattedText());
+    	}
+    	if (ArmorHandler.wither_armor && ArmorHandler.wither_strength){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_2").getFormattedText());
+    	}
+		if (ArmorHandler.wither_armor && ArmorHandler.wither_fire){
+			tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_3").getFormattedText());
+		}
+		if (ArmorHandler.wither_armor && ArmorHandler.wither_resistance){
+			tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherarmor_4").getFormattedText());
+		}
     }
 }

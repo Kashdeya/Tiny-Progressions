@@ -1,15 +1,11 @@
 package com.kashdeya.tinyprogressions.config;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
 
-import com.google.common.collect.Lists;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraftforge.common.config.Configuration;
 
@@ -28,11 +24,6 @@ public class TinyConfig {
         config = new Configuration(f, configVersion);
         
         config.load();
-        System.out.println(config.getLoadedConfigVersion() +":"+ config.getDefinedConfigVersion());
-        
-     // Run Legacy Handler if the versions dont Match up
-        if(config.getLoadedConfigVersion() != config.getDefinedConfigVersion())
-        	LegacyHandler.runLegacyHandler();
         
 		String category;
 		
@@ -127,20 +118,6 @@ public class TinyConfig {
 		ConfigHandler.redstone_apple = config.getBoolean("Redstone Apple", category + " Apples", true, "Enable Redstone Apple?");
 		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", false, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
 		
-		config.addCustomCategoryComment(category + " Armor", "Why not");
-		ArmorHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
-		ArmorHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
-		ArmorHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
-		ArmorHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
-		ArmorHandler.wither_armor = config.getBoolean("Wither Armor", category + " Armor", true, "Enable Wither Armor?");
-		ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Armor", true, "Enable Dragon Armor?");
-		ArmorHandler.obsidian_armor = config.getBoolean("Obsidian Armor", category + " Armor", true, "Enable Obsidian Armor?");
-		ArmorHandler.redstone_armor = config.getBoolean("Redstone Armor", category + " Armor", true, "Enable Redstone Armor?");
-		ArmorHandler.lapis_armor = config.getBoolean("Lapis Armor", category + " Armor", true, "Enable Lapis Armor?");
-		ArmorHandler.quartz_armor = config.getBoolean("Quartz Armor", category + " Armor", true, "Enable Quartz Armor?");
-		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", category + " Armor", true, "Enable Lava Armor?\n[Only Enable if Lava Ore is ENABLED.]");
-		ArmorHandler.emerald_amor = config.getBoolean("Emerald Armor", category + " Armor", true, "Enable Emerald Armor?");
-		
 		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
 		ConfigHandler.FleshBlock = config.getBoolean("Compressed Flesh Block", category + " Compressed Blocks", true, "Enable Compressed Flesh Block?");
@@ -217,18 +194,9 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 5, 100, "Sets the Ender Ore Vein Size.");
 		
-		config.addCustomCategoryComment(category + " Lava Ore", "Lava that wont hurt you!");
-		ConfigHandler.lava_ore = config.getBoolean("Lava Ore", category + " Lava Ore", true, "Enable Lava Ore?");
-		ConfigHandler.lava_ore_frequency = config.getInt("Lava Ore Frequency", category + " Lava Ore", 50, 1, 100, "Sets the Chance of Lava ore.");
-		ConfigHandler.lava_ore_min = config.getInt("Lava Ore Min", category + " Lava Ore", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.lava_ore_max = config.getInt("Lava Ore Max", category + " Lava Ore", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_ore_size = config.getInt("Lava Ore Size", category + " Lava Ore", 7, 5, 100, "Sets the Lava Ore Vein Size.");
-		
-		config.addCustomCategoryComment(category + " Lava Ore Crystal", "Can be used as a Decoration block, Furnace Fuel and may also include Lava Armor if enabled!");
-		ConfigHandler.lava_crystal_enable = config.getBoolean("Lava Ore Crystal", category + " Lava Ore Crystal", true, "Enable Lava Ore Crystal Extras?");
-		ConfigHandler.lava_crystal_bucket = config.getBoolean("Lava Ore Crystal Bucket", category + " Lava Ore Crystal", true, "Enable Lava Ore Crystal to Lava Bucket Recipe?");
-		FuelHandler.lava_crystal_burntime = config.getInt("Lava Ore Crystal Burn Time", category + " Lava Ore Crystal", 20000, 20000, Integer.MAX_VALUE, "Sets the Lava Ore Crystal Burn Time.");
-		FuelHandler.lava_crystal_block_burntime = config.getInt("Lava Ore Crystal Block Burn Time", category + " Lava Ore Crystal", 180000, 180000, Integer.MAX_VALUE, "Sets the Lava Ore Crystal Block Burn Time.");
+		config.addCustomCategoryComment(category + " Lava Crystal", "Can be used as a Decoration block, Furnace Fuel and may also include Lava Armor if enabled!");
+		ConfigHandler.lava_crystal_enable = config.getBoolean("Lava Crystal", category + " Lava Crystal", true, "Enable Lava Crystal & Armor?");
+		ConfigHandler.lava_crystal_bucket = config.getBoolean("Lava Crystal Bucket", category + " Lava Crystal", true, "Enable Lava Crystal to Lava Bucket Recipe?");
 		
 		config.addCustomCategoryComment(category + " Source Block Stones", "Lavastone and Waterstone!");
 		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
@@ -319,223 +287,69 @@ public class TinyConfig {
 		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Table Cooldown", category + " Repair Tablet", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
 		
 		if (config.hasChanged())
-        config.save();    
+        config.save();
 	}
 	
-	/**
-	 * Used to update old configs without losing the old settings and cleaning up configs. 
-	 * 
-	 * @author GenDeathrow
-	 */
-	protected static class LegacyHandler
+	public static void initArmorConfigs()
 	{
 		
-		private static List<String> removeCategoryList = Lists.newArrayList();
-		private static List<List<String>> removePropertiesList = Lists.newArrayList();
-		private static List<List<String>> moveKeyList = Lists.newArrayList();
-		private static List<List<String>> renameKeyList = Lists.newArrayList();
+		File f = new File(configDir, "Armor.cfg");
+        config = new Configuration(f, configVersion);
+        
+        config.load();
+        
+		String category;
 		
-		private static org.apache.logging.log4j.Logger logger;
+		category = "Tiny Progressions";
 		
-		public static void runLegacyHandler()
-		{
-			logger = TinyProgressions.logger;
-			
-			
-			logger.info("Initiating Config Legacy Handler....");
-	        initLegacyHander();
-	        
-	        logger.info("Moving Old Properties....");
-	        moveOldKeys();
-	        
-	        logger.info("Renaming Old Propertiesr....");
-	        renameOldKeys();
-	        
-	        logger.info("Cleaning up Categories....");
-			removeOldCategories();
-			
-			logger.info("Cleaning up Properties....");
-			removeProperites();
-			
-			logger.info("Config Legacy Handler Finished");
-		}		
+		config.addCustomCategoryComment(category + " Armor", "Why not");
+		ArmorHandler.StoneArmor = config.getBoolean("Stone Armor", category + " Armor", true, "Enable Stone Armor?");
+		ArmorHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
+		ArmorHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
+		ArmorHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
+		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", category + " Armor", true, "Enable Lava Armor?\n[Lava Crystal Must be Enabled in Main.cfg.]");
+		ArmorHandler.emerald_amor = config.getBoolean("Emerald Armor", category + " Armor", true, "Enable Emerald Armor?");
 		
-		/**
-		 * Setup what Properties need removal <br>
-		 * Must go in order of operation.. it will
-		 *  <br><br>
-		 * <b>1st.</b> It moves properties <br>
-		 * <b>2nd.</b> It renames properties<br>
-		 * <b>3rd.</b> Than removes old categories<br>
-		 *  <br><br>
-		 * So you have to set it up in correct order to get the files end up right.
-		 */
-		private static void initLegacyHander()
-		{
-			
-			//addToMovePropertyList("tiny progressions birthday pickaxe", "Birthday Pickaxe", "tiny progressions goodies");
-			//addToRenamePropertyList("tiny progressions goodies" , "Birthday Pickaxe", "Party Pickaxe");
-			//addToRemoveCategoryList("tiny progressions birthday pickaxe");			
-			//addToRemoveProperties(category, propName);
-		}
+		config.addCustomCategoryComment(category + " Dragon Armor", "End Game Armor");
+		ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Dragon Armor", true, "Enable Dragon Armor?");
+		ArmorHandler.dragon_fly = config.getBoolean("Dragon Armor Flight", category + " Dragon Armor", true, "Enable Dragon Armor Flight?");
+		ArmorHandler.dragon_resistance = config.getBoolean("Dragon Armor Resistance", category + " Dragon Armor", true, "Enable Dragon Armor Resistance?");
+		ArmorHandler.dragon_resistance_lvl = config.getInt("Dragon Armor Resistance Level", category + " Dragon Armor", 1, 0, 10, "Resistance Level.");
+		ArmorHandler.dragon_fire = config.getBoolean("Dragon Armor Fire Resistance", category + " Dragon Armor", true, "Enable Dragon Armor Fire Resistance?");
+		ArmorHandler.dragon_fire_lvl = config.getInt("Dragon Armor Fire Resistance Level", category + " Dragon Armor", 1, 0, 10, "Fire Resistance Level.");
+		ArmorHandler.dragon_strength = config.getBoolean("Dragon Armor Strength", category + " Dragon Armor", true, "Enable Dragon Armor Strength?");
+		ArmorHandler.dragon_strength_lvl = config.getInt("Dragon Armor Strength Level", category + " Dragon Armor", 1, 0, 10, "Strength Level.");
 		
-		/**
-		 * Adds Property to be move to a new Category, Overwrites any Property with the same name
-		 * 
-		 * @param oldCategory
-		 * @param propName
-		 * @param newCategory
-		 */
-		public static void addToMovePropertyList(String oldCategory, String propName, String newCategory)
-		{
-			moveKeyList.add(Arrays.asList(oldCategory, propName, newCategory));
-		}
+		config.addCustomCategoryComment(category + " Wither Armor", "Mid Game Armor");
+		ArmorHandler.wither_armor = config.getBoolean("Wither Armor", category + " Wither Armor", true, "Enable Wither Armor?");
+		ArmorHandler.wither_resistance = config.getBoolean("Wither Armor Resistance", category + " Wither Armor", true, "Enable Wither Armor Resistance?");
+		ArmorHandler.wither_resistance_lvl = config.getInt("Wither Armor Resistance Level", category + " Wither Armor", 0, 0, 10, "Resistance Level.");
+		ArmorHandler.wither_fire = config.getBoolean("Wither Armor Fire Resistance", category + " Wither Armor", true, "Enable Wither Armor Fire Resistance?");
+		ArmorHandler.wither_fire_lvl = config.getInt("Wither Armor Fire Resistance Level", category + " Wither Armor", 0, 0, 10, "Fire Resistance Level.");
+		ArmorHandler.wither_strength = config.getBoolean("Wither Armor Strength", category + " Wither Armor", true, "Enable Wither Armor Strength?");
+		ArmorHandler.wither_strength_lvl = config.getInt("Wither Armor Strength Level", category + " Wither Armor", 0, 0, 10, "Strength Level.");
 		
-		/**
-		 * Renames a Property, Overwrites any Property with the new Name
-		 * 
-		 * @param category
-		 * @param propName
-		 * @param newPropName
-		 */
-		public static void addToRenamePropertyList(String category, String propName, String newPropName)
-		{
-			renameKeyList.add(Arrays.asList(category , propName, newPropName));
-		}
+		config.addCustomCategoryComment(category + " Lapis Armor", "Lets go under the water");
+		ArmorHandler.lapis_armor = config.getBoolean("Lapis Armor", category + " Lapis Armor", true, "Enable Wither Armor?");
+		ArmorHandler.lapis_armor_water = config.getBoolean("Lapis Armor Water Breathing", category + " Lapis Armor", true, "Enable Wither Water Breathing?");
+		ArmorHandler.lapis_armor_water_lvl = config.getInt("Lapis Armor Water Breathing Level", category + " Lapis Armor", 0, 0, 10, "Water Breathing Level.");
 		
-		/**
-		 * This is used to remove Properties inside categories that are being used still, <br>
-		 * but the Property is no longer used. <br><br>
-		 * 
-		 * <b>Dont Use this if your overwriting a property with move / rename</b>
-		 * 
-		 * @param category
-		 * @param propName
-		 */
-		public static void addToRemovePropertyList(String category, String propName)
-		{
-			renameKeyList.add(Arrays.asList(category , propName));
-		}
+		config.addCustomCategoryComment(category + " Obsidian Armor", "What?");
+		ArmorHandler.obsidian_armor = config.getBoolean("Obsidian Armor", category + " Obsidian Armor", true, "Enable Obsidian Armor?");
+		ArmorHandler.obsidian_armor_resistance = config.getBoolean("Obsidian Armor Resistance", category + " Obsidian Armor", true, "Enable Obsidian Resistance?");
+		ArmorHandler.obsidian_armor_resistance_lvl = config.getInt("Obsidian Armor Resistance Level", category + " Obsidian Armor", 0, 0, 10, "Resistance Level.");
 		
-		/**
-		 * Adds to Remove Category List, All Properties and Category will be gone for ever, Careful with this one
-		 * 
-		 * @param category
-		 */
-		public static void addToRemoveCategoryList(String category)
-		{
-			removeCategoryList.add(category);
-		}
+		config.addCustomCategoryComment(category + " Quartz Armor", "You went where?");
+		ArmorHandler.quartz_armor = config.getBoolean("Quartz Armor", category + " Quartz Armor", true, "Enable Quartz Armor?");
+		ArmorHandler.quartz_armor_strength = config.getBoolean("Quartz Armor Strength", category + " Quartz Armor", true, "Enable Quartz Strength?");
+		ArmorHandler.quartz_armor_strength_lvl = config.getInt("Quartz Armor Strength Level", category + " Quartz Armor", 0, 0, 10, "Strength Level.");
 		
+		config.addCustomCategoryComment(category + " Redstone Armor", "How fast you want to go?");
+		ArmorHandler.redstone_armor = config.getBoolean("Redstone Armor", category + " Redstone Armor", true, "Enable Redstone Armor?");
+		ArmorHandler.redstone_armor_speed = config.getBoolean("Redstone Armor Speed", category + " Redstone Armor", true, "Enable Redstone Speed?");
+		ArmorHandler.redstone_armor_speed_lvl = config.getInt("Redstone Armor Speed Level", category + " Redstone Armor", 0, 0, 10, "Speed Level.");
 		
-		private static void moveOldKeys()
-		{
-			for(List<String> parms : moveKeyList)
-			{
-				if(parms.size() != 3) return;
-				
-				String oldCat = parms.get(0);
-				String propName = parms.get(1);
-				String newCat = parms.get(2);
-				
-				if(config.hasCategory(oldCat) && config.hasKey(oldCat, propName))
-				{
-					// Remove property if it already exist than replace
-					if(config.hasKey(newCat, propName))
-					{
-						removeProperty(newCat, propName);
-						logger.info("    - found duplicate property ("+propName+"), Overwriting.");
-					}
-					config.moveProperty(oldCat, propName, newCat);
-					logger.info("    - property Moved ("+propName+")");
-				}
-			}
-		}
-		
-		private static void renameOldKeys()
-		{
-			for(List<String> parms : renameKeyList)
-			{
-				if(parms.size() != 3) return;
-				
-				String category = parms.get(0);
-				String oldPropName = parms.get(1);
-				String newPropName = parms.get(2);
-				
-				if(config.hasCategory(category) && config.hasKey(category, oldPropName))
-				{
-					// Remove property if it already exist than replace
-					if(config.hasKey(category, newPropName))
-					{
-						removeProperty(category, newPropName);
-						logger.info("    - found duplicate property ("+newPropName+"), Overwriting.");
-					}
-					config.renameProperty(category, oldPropName, newPropName);
-					logger.info("    - property ("+oldPropName+") Renamed to ("+newPropName+")");
-				}
-			}	
-		}
-		
-		private static void removeProperites()
-		{
-			for(List<String> parms : removePropertiesList)
-			{
-				String category = parms.get(0);
-				String propName = parms.get(1);
-				
-				if(config.hasKey(category, propName))
-				{
-					removeProperty(category, propName);
-					
-					logger.info("    - removing property ("+category+":"+propName+"). Its no longer Needed");
-				}
-			}
-		}
-		
-		/**
-		 * Remove Property if needed
-		 * 
-		 * @param category
-		 * @param propName
-		 */
-		public static void removeProperty(String category, String propName)
-		{
-			String rmv = "Remove";
-			config.addCustomCategoryComment(rmv, "");
-				config.moveProperty(category, propName, rmv);
-			config.removeCategory(config.getCategory(rmv));
-		}
-		/**
-		 * Add all Categories you want to remove the the remove List. 
-		 * This will remove all the properties inside these category's.
-		 * Only do this if you have no intention of ever using that category name again,
-		 * And don't mine losing the properties inside (config.moveproperty could be used before calling remove)  
-		 */
-		private static void removeOldCategories()
-		{
-			for(String category : removeCategoryList)
-			{
-				if(config.hasCategory(category))
-				{
-					config.removeCategory(config.getCategory(category));
-					logger.info("    - category removed ("+category+")");
-				}
-			}
-		}
-		
-		
-		/**
-		 * Use this to 
-		 * @param Category
-		 * @return ConfigCategory
-		 */
-//		private static ConfigCategory getCategory(String Category)
-//		{
-//			return config.getCategory(Category);
-//		}
-
-		
+		if (config.hasChanged())
+        config.save();
 	}
-	
-	// Config Tools 
 }

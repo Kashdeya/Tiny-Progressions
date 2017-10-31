@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.recipes;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -12,7 +13,7 @@ import net.minecraft.item.ItemStack;
 public class ArmorRecipes {
 	
 	public static void init() {
-		if (ConfigHandler.StoneArmor){
+		if (ArmorHandler.StoneArmor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.stone_helmet), new Object[] {
 					"sss",
 					"s s",
@@ -40,7 +41,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.obsidian_armor){
+		if (ArmorHandler.obsidian_armor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.obsidian_helmet), new Object[] {
 					"sss",
 					"s s",
@@ -68,7 +69,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.FlintArmor){
+		if (ArmorHandler.FlintArmor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.flint_helmet), new Object[] {
 					"fff",
 					"f f",
@@ -96,7 +97,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.BoneArmor){
+		if (ArmorHandler.BoneArmor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.bone_helmet), new Object[] {
 					"bbb",
 					"b b",
@@ -124,7 +125,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.WoodArmor){
+		if (ArmorHandler.WoodArmor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.wooden_helmet), new Object[] {
 					"lll",
 					"l l",
@@ -177,7 +178,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.lava_ore){
+		if (ConfigHandler.lava_crystal_enable){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.lava_helmet), new Object[] {
 					"lll",
 					"l l",
@@ -205,7 +206,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.wither_armor){
+		if (ArmorHandler.wither_armor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.wither_helmet), new Object[] {
 					"www",
 					"w w",
@@ -233,7 +234,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.dragon_armor){
+		if (ArmorHandler.dragon_armor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.dragon_helmet), new Object[] {
 					"ddd",
 					"d d",
@@ -261,7 +262,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.lapis_armor){
+		if (ArmorHandler.lapis_armor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.lapis_ingot), new Object[] {
 					"ddd",
 					"ddd",
@@ -294,7 +295,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.redstone_armor){
+		if (ArmorHandler.redstone_armor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.redstone_ingot), new Object[] {
 					"ddd",
 					"ddd",
@@ -327,7 +328,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.quartz_armor){
+		if (ArmorHandler.quartz_armor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.quartz_ingot), new Object[] {
 					"ddd",
 					"ddd",

@@ -25,9 +25,6 @@ public class WorldGen implements IWorldGenerator {
     	if (ConfigHandler.ender_ore){
     		this.ender_ore = new WorldGenMinable(TechBlocks.ender_ore.getDefaultState(), ConfigHandler.ender_ore_size);
     	}
-    	if (ConfigHandler.lava_ore){
-    		this.lava_ore = new WorldGenMinable(TechBlocks.lava_ore.getDefaultState(), ConfigHandler.lava_ore_size);
-    	}
     	if (ConfigHandler.lava_block){
     		this.lava_block = new WorldGenMinable(TechBlocks.lava_block.getDefaultState(), ConfigHandler.lava_block_size);
     	}
@@ -59,9 +56,6 @@ public class WorldGen implements IWorldGenerator {
       case 0:
     	  if (ConfigHandler.ender_ore){
     		  runGenerator(this.ender_ore, world, random, chunkX, chunkZ, ConfigHandler.ender_ore_frequency, ConfigHandler.ender_ore_min, ConfigHandler.ender_ore_max);
-    	  }
-    	  if (ConfigHandler.lava_ore){
-    		  runGenerator(this.lava_ore, world, random, chunkX, chunkZ, ConfigHandler.lava_ore_frequency, ConfigHandler.lava_ore_min, ConfigHandler.lava_ore_max);
     	  }
     	  if (ConfigHandler.lava_block){
     		  runGenerator(this.lava_block, world, random, chunkX, chunkZ, ConfigHandler.lava_block_frequency, ConfigHandler.lava_block_min, ConfigHandler.lava_block_max);

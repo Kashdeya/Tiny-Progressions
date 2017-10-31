@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -42,15 +43,23 @@ public class DragonArmour extends ItemArmor {
     	ItemStack head = entity.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
     	ItemStack legs = entity.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
     	if (((head != null) && (head.getItem() == TechArmor.dragon_helmet) && 
-    			(chest != null) && (chest.getItem() == TechArmor.dragon_chestplate) && 
-    			(legs != null) && (legs.getItem() == TechArmor.dragon_leggings) && 
-    			(feet != null) && (feet.getItem() == TechArmor.dragon_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.capabilities.allowFlying = true;
-    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 1, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, 1, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, 1, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 180, 1, true, false));
+    	(chest != null) && (chest.getItem() == TechArmor.dragon_chestplate) && 
+    	(legs != null) && (legs.getItem() == TechArmor.dragon_leggings) && 
+    	(feet != null) && (feet.getItem() == TechArmor.dragon_boots)) || 
+    	(entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
+    		if (ArmorHandler.dragon_armor && ArmorHandler.dragon_resistance){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.dragon_resistance_lvl, true, false));
     		}
+    		if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fire){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, ArmorHandler.dragon_fire_lvl, true, false));
+    		}
+    		if (ArmorHandler.dragon_armor && ArmorHandler.dragon_strength){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, ArmorHandler.dragon_strength_lvl, true, false));
+    		}
+    		if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly){
+    			entity.capabilities.allowFlying = true;
+    		}
+    	}
     	else{
     		entity.capabilities.allowFlying = false;
     		entity.capabilities.isFlying = false;
@@ -60,10 +69,17 @@ public class DragonArmour extends ItemArmor {
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_1").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_2").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_3").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_4").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_5").getFormattedText());
+    	if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_1").getFormattedText());
+    	}
+    	if (ArmorHandler.dragon_armor && ArmorHandler.dragon_strength){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_2").getFormattedText());
+    	}
+    	if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fire){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_3").getFormattedText());
+    	}
+    	if (ArmorHandler.dragon_armor && ArmorHandler.dragon_resistance){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.dragonarmor_4").getFormattedText());
+    	}
     }
 }

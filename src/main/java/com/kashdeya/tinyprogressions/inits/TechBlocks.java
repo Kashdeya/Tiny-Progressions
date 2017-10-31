@@ -38,7 +38,6 @@ import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
-import com.kashdeya.tinyprogressions.blocks.ores.LavaOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
@@ -80,7 +79,6 @@ public class TechBlocks {
 	// EnderOre
 	public static Block ender_ore;
 	// Lava Crystal Blocks
-	public static Block lava_ore;
 	public static Block lava_crystal_block;
 	// Lava Block
 	public static Block lava_block;
@@ -273,14 +271,12 @@ public class TechBlocks {
 		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
 		}
-		if (ConfigHandler.lava_ore) {
-			lava_ore = new LavaOre();
+		if (ConfigHandler.lava_crystal_enable) {
 			lava_crystal_block = new StandardBlock(Material.ROCK).setUnlocalName("lava_crystal_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
 					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED)
 					.setHardness(1.5F).setResistance(10.0F).setLightLevel(0.5F);
 		}
-		
 		// FMF Block
 		if(ConfigHandler.angel_block) {
 			fmf_block = new StandardBlock(Material.GROUND).setUnlocalName("fmf_block")

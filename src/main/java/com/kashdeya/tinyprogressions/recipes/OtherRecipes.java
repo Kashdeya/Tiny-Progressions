@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.recipes;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -72,7 +73,7 @@ public class OtherRecipes
 		}
 		
 		// Flint Ingot WIP
-		if (ConfigHandler.FlintArmor) {
+		if (ArmorHandler.FlintArmor) {
 			GameRegistry.addSmelting(TechBlocks.flint_block, new ItemStack(TechItems.flint_ingot), 1.0F);
 		}
 		
@@ -98,8 +99,12 @@ public class OtherRecipes
 		
 		// Lava Bucket
 		if (ConfigHandler.lava_crystal_bucket) {
-			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
-					Items.BUCKET, TechItems.lava_crystal
+			RecipeRegistry.addShapedRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
+					"sss",
+					"sbs",
+					"sss",
+						Character.valueOf('b'), Items.BUCKET,
+						Character.valueOf('s'), TechItems.lava_crystal
 			});
 		}
 	}

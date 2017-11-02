@@ -44,6 +44,10 @@ public class ArmorHandler {
 	public static int redstone_armor_speed_lvl = 0;
 	
 	public static boolean lava_armor = true;
+	public static boolean lava_armor_resistance = true;
+	public static int lava_armor_resistance_lvl = 0;
+	public static boolean lava_armor_fire = true;
+	public static int lava_armor_fire_lvl = 0;
 	
 	public static boolean emerald_amor = true;
 	

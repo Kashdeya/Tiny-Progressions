@@ -90,10 +90,6 @@ public class ConfigHandler {
 	public static boolean DiamondApple = true;
 	public static boolean EmeraldApple = true;
 	
-	// Lava
-	public static boolean lava_crystal_bucket = true;
-	public static boolean lava_crystal_enable = true;
-	
 	// Birthday Pickaxe
 	public static boolean BirthdayPickaxe = true;
 	

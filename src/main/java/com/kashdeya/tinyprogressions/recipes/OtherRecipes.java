@@ -96,16 +96,5 @@ public class OtherRecipes
 					"flint", "flint", "stickWood"
 			});
 		}
-		
-		// Lava Bucket
-		if (ConfigHandler.lava_crystal_bucket) {
-			RecipeRegistry.addShapedRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
-					"sss",
-					"sbs",
-					"sss",
-						Character.valueOf('b'), Items.BUCKET,
-						Character.valueOf('s'), TechItems.lava_crystal
-			});
-		}
 	}
 }

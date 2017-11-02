@@ -40,6 +40,7 @@ import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.block.AngelItemBlock;
 import com.kashdeya.tinyprogressions.util.Registry;
@@ -271,7 +272,7 @@ public class TechBlocks {
 		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
 		}
-		if (ConfigHandler.lava_crystal_enable) {
+		if (ArmorHandler.lava_armor) {
 			lava_crystal_block = new StandardBlock(Material.ROCK).setUnlocalName("lava_crystal_block")
 					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
 					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED)

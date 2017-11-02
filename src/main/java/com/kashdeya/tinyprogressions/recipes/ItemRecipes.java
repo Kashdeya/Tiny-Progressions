@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.recipes;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -101,13 +102,20 @@ public class ItemRecipes {
 				});
 			}
 			
-			if (ConfigHandler.lava_crystal_enable) {
+			if (ArmorHandler.lava_armor) {
 				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.lava_crystal,  8), new Object[] {
 						"sss",
 						"sbs",
 						"sss",
 							Character.valueOf('s'), TechItems.reinforced_obsidian_ingot,
 							Character.valueOf('b'), Items.LAVA_BUCKET
+				});
+				RecipeRegistry.addShapedRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
+						"sss",
+						"sbs",
+						"sss",
+							Character.valueOf('b'), Items.BUCKET,
+							Character.valueOf('s'), TechItems.lava_crystal
 				});
 			}
 			

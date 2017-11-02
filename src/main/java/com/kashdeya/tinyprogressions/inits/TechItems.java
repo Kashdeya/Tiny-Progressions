@@ -125,7 +125,7 @@ public class TechItems {
 		if (ConfigHandler.ender_ore) {
 			ender_dust = new ItemBase().setOreDictName("dustEnder").setUnlocalizedName("ender_dust");
 		}
-		if (ConfigHandler.lava_crystal_enable) {
+		if (ArmorHandler.lava_armor) {
 			lava_crystal = new ItemBase().setOreDictName("gemLava").setUnlocalizedName("lava_crystal");
 		}
 		

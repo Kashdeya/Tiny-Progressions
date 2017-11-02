@@ -194,10 +194,6 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 5, 100, "Sets the Ender Ore Vein Size.");
 		
-		config.addCustomCategoryComment(category + " Lava Crystal", "Can be used as a Decoration block, Furnace Fuel and may also include Lava Armor if enabled!");
-		ConfigHandler.lava_crystal_enable = config.getBoolean("Lava Crystal", category + " Lava Crystal", true, "Enable Lava Crystal & Armor?");
-		ConfigHandler.lava_crystal_bucket = config.getBoolean("Lava Crystal Bucket", category + " Lava Crystal", true, "Enable Lava Crystal to Lava Bucket Recipe?");
-		
 		config.addCustomCategoryComment(category + " Source Block Stones", "Lavastone and Waterstone!");
 		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
 		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Source Block Stones", 50, 1, 100, "Sets the Chance of Lavastone.");
@@ -307,8 +303,14 @@ public class TinyConfig {
 		ArmorHandler.FlintArmor = config.getBoolean("Flint Armor", category + " Armor", true, "Enable Flint Armor?");
 		ArmorHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
 		ArmorHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
-		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", category + " Armor", true, "Enable Lava Armor?\n[Lava Crystal Must be Enabled in Main.cfg.]");
 		ArmorHandler.emerald_amor = config.getBoolean("Emerald Armor", category + " Armor", true, "Enable Emerald Armor?");
+		
+		config.addCustomCategoryComment(category + " Lava Armor", "What Armor?");
+		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", category + " Lava Armor", true, "Enable Lava Armor?");
+		ArmorHandler.lava_armor_resistance = config.getBoolean("Lava Armor Resistance", category + " Lava Armor", true, "Enable Lava Armor Resistance?");
+		ArmorHandler.lava_armor_resistance_lvl = config.getInt("Lava Armor Resistance Level", category + " Lava Armor", 0, 0, 10, "Resistance Level.");
+		ArmorHandler.lava_armor_fire = config.getBoolean("Lava Armor Fire Resistance", category + " Lava Armor", true, "Enable Lava Armor Fire Resistance?");
+		ArmorHandler.lava_armor_fire_lvl = config.getInt("Lava Armor Fire Resistance Level", category + " Lava Armor", 0, 0, 10, "Fire Resistance Level.");
 		
 		config.addCustomCategoryComment(category + " Dragon Armor", "End Game Armor");
 		ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Dragon Armor", true, "Enable Dragon Armor?");

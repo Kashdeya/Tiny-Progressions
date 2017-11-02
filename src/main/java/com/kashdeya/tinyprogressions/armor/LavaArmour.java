@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
@@ -45,16 +46,26 @@ public class LavaArmour extends ItemArmor {
     			(chest != null) && (chest.getItem() == TechArmor.lava_chestplate) && 
     			(legs != null) && (legs.getItem() == TechArmor.lava_leggings) && 
     			(feet != null) && (feet.getItem() == TechArmor.lava_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, 0, true, false));
-    		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 0, true, false));
+    		if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_fire){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, ArmorHandler.lava_armor_fire_lvl, true, false));
     		}
+    		if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_resistance){
+    			entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.lava_armor_resistance_lvl, true, false));
+    		}
+    	}
     }
     
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lavaarmor_1").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lavaarmor_2").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lavaarmor_3").getFormattedText());
+    	if (ArmorHandler.lava_armor && (ArmorHandler.lava_armor_resistance || ArmorHandler.lava_armor_fire)){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lavaarmor_1").getFormattedText());
+    	}
+    	if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_fire){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lavaarmor_2").getFormattedText());
+    	}
+    	if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_resistance){
+    		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.lavaarmor_3").getFormattedText());
+    	}
     }
 }

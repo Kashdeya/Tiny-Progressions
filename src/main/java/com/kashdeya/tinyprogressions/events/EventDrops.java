@@ -49,13 +49,20 @@ public class EventDrops {
 			}
 			
 			// Stick Drops
-			if (ConfigHandler.stickDrops)
+			if(target == Blocks.LEAVES || target == Blocks.LEAVES2)
 			{
-				if(target == Blocks.LEAVES || target == Blocks.LEAVES2)
+				if (ConfigHandler.stickDrops)
 				{
 					if(CHANCE.nextFloat()<ConfigHandler.stickDropsChance)
 					{
 						event.getDrops().add(new ItemStack(Items.STICK,AMOUNT.nextInt(ConfigHandler.stickDropsAmmount)));
+					}
+				}
+				if (ConfigHandler.appleDrops)
+				{
+					if(CHANCE.nextFloat()<ConfigHandler.appleDropsChance)
+					{
+						event.getDrops().add(new ItemStack(Items.APPLE,AMOUNT.nextInt(ConfigHandler.appleDropsAmmount)));
 					}
 				}
 			}

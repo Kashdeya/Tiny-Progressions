@@ -151,6 +151,9 @@ public class ConfigHandler {
 	public static boolean stickDrops = true;
 	public static float stickDropsChance = 1.0F;
 	public static int stickDropsAmmount = 1;
+	public static boolean appleDrops = true;
+	public static float appleDropsChance = 1.0F;
+	public static int appleDropsAmmount = 1;
 	
 	// MISC
 	public static boolean AllowRightClick = true;

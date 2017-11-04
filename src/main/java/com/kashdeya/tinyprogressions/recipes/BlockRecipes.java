@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.recipes;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -421,7 +422,7 @@ public class BlockRecipes {
 		}
 		
 		// Lava Crystal Block
-		if (ConfigHandler.lava_crystal_enable) {
+		if (ArmorHandler.lapis_armor) {
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.lava_crystal_block), new Object[] {
 		            "ii",
 		            "ii",

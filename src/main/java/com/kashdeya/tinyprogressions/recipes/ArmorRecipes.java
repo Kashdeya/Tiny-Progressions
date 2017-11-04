@@ -178,7 +178,7 @@ public class ArmorRecipes {
 			});
 		}
 		
-		if (ConfigHandler.lava_crystal_enable){
+		if (ArmorHandler.lava_armor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.lava_helmet), new Object[] {
 					"lll",
 					"l l",

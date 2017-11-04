@@ -52,8 +52,10 @@ public class TinyProgressions {
 		logger = e.getModLog();
 		
 		// Configs
-		TinyConfig.initMainConfigs();
-		TinyConfig.initArmorConfigs();
+		TinyConfig.initMain();
+		TinyConfig.initArmor();
+		TinyConfig.initToolsWeapons();
+		TinyConfig.initFood();
 		
 		// Setup
 		proxy.onPreInitialization(e);

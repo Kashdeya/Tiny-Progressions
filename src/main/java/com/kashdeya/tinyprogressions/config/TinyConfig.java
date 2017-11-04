@@ -17,7 +17,7 @@ public class TinyConfig {
 
 	public static final String configVersion = Reference.VERSION;
 	
-	public static void initMainConfigs()
+	public static void initMain()
 	{
 		
 		File f = new File(configDir, "Main.cfg");
@@ -57,7 +57,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Extra Stuff", "It's the little things that count right?");
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Extra Stuff", true, "Enable the Charcoal Block?");
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Extra Stuff", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
-		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Extra Stuff", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
+		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Extra Stuff", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Extra Stuff", true, "Enable Mycelium Seeds?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Extra Stuff", true, "Enable Medkit?");
 		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
@@ -75,6 +75,9 @@ public class TinyConfig {
 		ConfigHandler.stickDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
 		ConfigHandler.stickDropsChance = config.getFloat("Stick Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
 		ConfigHandler.stickDropsAmmount = config.getInt("Stick Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
+		ConfigHandler.appleDrops = config.getBoolean("Apple Drops", category + " Drops", true, "Enable Apple to drop from leaves?");
+		ConfigHandler.appleDropsChance = config.getFloat("Apple Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Apple from leaves.");
+		ConfigHandler.appleDropsAmmount = config.getInt("Apple Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Apple Dropped from leaves.");
 		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Drops", true, "Enable Bones to drop from Dirt?");
 		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Drops", 0.01F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
 		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
@@ -86,104 +89,20 @@ public class TinyConfig {
 		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", false, "Enable the Quartz Knife and Dust Recipe?");
 		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		
-		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
+		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False\n[Required for Other Items in this mod.]");
 		ConfigHandler.ReinforcedGlass = config.getBoolean("Reinforced Glass Block", category + " Reinforced Blocks", true, "Enable Reinforced Glass Block?");
 		ConfigHandler.ReinforcedObsidian = config.getBoolean("Reinforced Obsidian Block", category + " Reinforced Blocks", true, "Enable Reinforced Obsidian Block?");
 		
-		config.addCustomCategoryComment(category + " Goodies", "Fun Stuff");
-		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Goodies", true, "Enable Party Pickaxe?");
-		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", category + " Goodies", true, "Enable Kappa Pick?");
-		ConfigHandler.c_axe = config.getBoolean("C-axe", category + " Goodies", true, "Enable C-axe?");
-		
-		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
-		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");
-		// iron
-		ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Iron Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// gold
-		ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Gold Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// diamond
-		ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// cookie
-		ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", category + " Better Sugar Cane", true, "Enable Sugar Cookie?");
-		// sugar blocks
-		ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed Sugar", category + " Better Sugar Cane", true, "Enable Compressed Sugar?");
-		// sugarcane blocks
-		ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed Sugar Cane", category + " Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
-		
-		config.addCustomCategoryComment(category + " Apples", "Just Because");
-		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
-		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", true, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
-		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Apples", true, "Enable Diamond Apple?");
-		ConfigHandler.iron_apple = config.getBoolean("Iron Apple", category + " Apples", true, "Enable Iron Apple?");
-		ConfigHandler.redstone_apple = config.getBoolean("Redstone Apple", category + " Apples", true, "Enable Redstone Apple?");
-		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", false, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
-		
-		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod, If Disabled you will have to make your own recipes.");
+		config.addCustomCategoryComment(category + " Compressed Blocks", "These blocks are required for Other Items in this mod.");
 		ConfigHandler.BoneBlock = config.getBoolean("Compressed Bone Block", category + " Compressed Blocks", true, "Enable Compressed Bone Block?");
 		ConfigHandler.FleshBlock = config.getBoolean("Compressed Flesh Block", category + " Compressed Blocks", true, "Enable Compressed Flesh Block?");
 		ConfigHandler.NetherStarBlock = config.getBoolean("Compressed Nether Star Block", category + " Compressed Blocks", true, "Enable Compressed Nether Star Block?");
 		ConfigHandler.FlintBlock = config.getBoolean("Compressed Flint Block", category + " Compressed Blocks", true, "Enable Compressed Flint Block?");
 		
-		config.addCustomCategoryComment(category + " Flint and Bone Tools & Weapons", "Cause Progression!");
-		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
-		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
-		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");
-		
 		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
 		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
 		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
 		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
-		
-		config.addCustomCategoryComment(category + " Scythes", "Because I love to farm and stuff");
-		ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", category + " Scythes", true, "Enable Wooden Scythe?");
-		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", category + " Scythes", true, "Enable Stone Scythe?");
-		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", category + " Scythes", true, "Enable Golden Scythe?");
-		ConfigHandler.iron_scythe = config.getBoolean("Iron Scythe", category + " Scythes", true, "Enable Iron Scythe?");
-		ConfigHandler.diamond_scythe = config.getBoolean("Diamond Scythe", category + " Scythes", true, "Enable Diamond Scythe?");
-		ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", category + " Scythes", true, "Enable Emerald Scythe?");
-		ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe", category + " Scythes", true, "Enable Obsidian Scythe?");
-		
-		config.addCustomCategoryComment(category + " MultiTools", "Because I love weird stuff\n[Requires Other Items in this mod.]\n[If Other Items are Disabled you will have to make your own recipes.]");
-		ConfigHandler.wooden_multi = config.getBoolean("Wooden MultiTool", category + " MultiTools", true, "Enable Wooden MultiTool?");
-		ConfigHandler.stone_multi = config.getBoolean("Stone MultiTool", category + " MultiTools", true, "Enable Stone MultiTool?");
-		ConfigHandler.golden_multi = config.getBoolean("Golden MultiTool", category + " MultiTools", true, "Enable Golden MultiTool?");
-		ConfigHandler.iron_multi = config.getBoolean("Iron MultiTool", category + " MultiTools", true, "Enable Iron MultiTool?");
-		ConfigHandler.diamond_multi = config.getBoolean("Diamond MultiTool", category + " MultiTools", true, "Enable Diamond MultiTool?");
-		ConfigHandler.emerald_multi = config.getBoolean("Emerald MultiTool", category + " MultiTools", true, "Enable Emerald MultiTool?");
-		ConfigHandler.obsidian_multi = config.getBoolean("Obsidian MultiTool", category + " MultiTools", true, "Enable Obsidian MultiTool?");
-		
-		config.addCustomCategoryComment(category + " Spears", "Because I love weird stuff");
-		ConfigHandler.spear_reach = config.getInt("A Spears Extended Reach", category + " Spears", 7, 5, 10, "Sets the Reach of a Spear.\n[Vanilla is 5 blocks!]");
-		ConfigHandler.wooden_spear = config.getBoolean("Wooden Spear", category + " Spears", true, "Enable Wooden Spear?");
-		ConfigHandler.stone_spear = config.getBoolean("Stone Spear", category + " Spears", true, "Enable Stone Spear?");
-		ConfigHandler.golden_spear = config.getBoolean("Golden Spear", category + " Spears", true, "Enable Golden Spear?");
-		ConfigHandler.iron_spear = config.getBoolean("Iron Spear", category + " Spears", true, "Enable Iron Spear?");
-		ConfigHandler.diamond_spear = config.getBoolean("Diamond Spear", category + " Spears", true, "Enable Diamond Spear?");
-		ConfigHandler.emerald_spear = config.getBoolean("Emerald Spear", category + " Spears", true, "Enable Emerald Spear?");
-		ConfigHandler.obsidian_spear = config.getBoolean("Obsidian Spear", category + " Spears", true, "Enable Obsidian Spear?");
-		
-		config.addCustomCategoryComment(category + " BattleAxes", "Because I love weird stuff");
-		ConfigHandler.wooden_battle = config.getBoolean("Wooden BattleAxe", category + " BattleAxes", true, "Enable Wooden BattleAxe?");
-		ConfigHandler.stone_battle = config.getBoolean("Stone BattleAxe", category + " BattleAxes", true, "Enable Stone BattleAxe?");
-		ConfigHandler.golden_battle = config.getBoolean("Golden BattleAxe", category + " BattleAxes", true, "Enable Golden BattleAxe?");
-		ConfigHandler.iron_battle = config.getBoolean("Iron BattleAxe", category + " BattleAxes", true, "Enable Iron BattleAxe?");
-		ConfigHandler.diamond_battle = config.getBoolean("Diamond BattleAxe", category + " BattleAxes", true, "Enable Diamond BattleAxe?");
-		ConfigHandler.emerald_battle = config.getBoolean("Emerald BattleAxe", category + " BattleAxes", true, "Enable Emerald BattleAxe?");
-		ConfigHandler.obsidian_battle = config.getBoolean("Obsidian BattleAxe", category + " BattleAxes", true, "Enable Obsidian BattleAxe?");
-		
-		config.addCustomCategoryComment(category + " Obsidian", "Because I love weird stuff\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
-		ConfigHandler.obsidian_axe = config.getBoolean("Obsidian Axe", category + " Obsidian", true, "Enable Obsidian Axe?");
-		ConfigHandler.obsidian_pickaxe = config.getBoolean("Obsidian Pickaxe", category + " Obsidian", true, "Enable Obsidian Pickaxe?");
-		ConfigHandler.obsidian_hoe = config.getBoolean("Obsidian Hoe", category + " Obsidian", true, "Enable Obsidian Hoe?");
-		ConfigHandler.obsidian_spade = config.getBoolean("Obsidian Shovel", category + " Obsidian", true, "Enable Obsidian Shovel?");
-		ConfigHandler.obsidian_sword = config.getBoolean("Obsidian Sword", category + " Obsidian", true, "Enable Obsidian Sword?");
-		
-		config.addCustomCategoryComment(category + " Emerald", "Because I love weird stuff\n[Required for Other Items in this mod.]\n[If Disabled you will have to make your own recipes.]");
-		ConfigHandler.emerald_axe = config.getBoolean("Emerald Axe", category + " Emerald", true, "Enable Emerald Axe?");
-		ConfigHandler.emerald_pickaxe = config.getBoolean("Emerald Pickaxe", category + " Emerald", true, "Enable Emerald Pickaxe?");
-		ConfigHandler.emerald_hoe = config.getBoolean("Emerald Hoe", category + " Emerald", true, "Enable Emerald Hoe?");
-		ConfigHandler.emerald_spade = config.getBoolean("Emerald Shovel", category + " Emerald", true, "Enable Emerald Shovel?");
-		ConfigHandler.emerald_sword = config.getBoolean("Emerald Sword", category + " Emerald", true, "Enable Emerald Sword?");
 		
 		config.addCustomCategoryComment(category + " Ender Ore", "Might as well add this");
 		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable Ender Ore?");
@@ -212,66 +131,9 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Floaty Block", "May save you from certain death!");
 		ConfigHandler.angel_block = config.getBoolean("Floaty McFloaty Block", category + " Floaty Block", true, "Enable Floaty McFloaty Block?");
 		
-		config.addCustomCategoryComment(category + " Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
-		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices W/O Bottles", category + " Juices", true, "Enable Juices With out bottles in the recipe?");
-		ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juices With Bottles", category + " Juices", false, "Enable Juices With bottles in the recipe?");
-		
-		config.addCustomCategoryComment(category + " Juices Stats", "Everyone loves juice Stats!");
-		ConfigHandler.AppleAmount = config.getInt("Apple Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.AppleSaturation = config.getFloat("Apple Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.CarrotAmount = config.getInt("Carrot Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.CarrotSaturation = config.getFloat("Carrot Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.PotatoAmount = config.getInt("Potato Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.PotatoSaturation = config.getFloat("Potato Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.BeetAmount = config.getInt("Beet Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BeetSaturation = config.getFloat("Beet Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.CactusAmount = config.getInt("Cactus Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.CactusSaturation = config.getFloat("Cactus Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.SlimeAmount = config.getInt("Slime Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.SlimeSaturation = config.getFloat("Slime Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.WheatAmount = config.getInt("Wheat Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.WheatSaturation = config.getFloat("Wheat Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.MelonAmount = config.getInt("Melon Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.MelonSaturation = config.getFloat("Melon Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		
-		config.addCustomCategoryComment(category + " Extra Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
-		ConfigHandler.ExtraPlantGen = config.getBoolean("Extra Plant Generation", category + " Extra Juices", true, "Enable Extra Plant Generation?\n[Disable Extra Plant Generation if you want to use Naturas Berries only!]");
-		ConfigHandler.ExtraJuices = config.getBoolean("Extra Juices W/O Bottles", category + " Extra Juices", true, "Enable Juices With out bottles in the recipe?");
-		ConfigHandler.ExtraJuicesBottles = config.getBoolean("Extra Juices With Bottles", category + " Extra Juices", false, "Enable Juices With bottles in the recipe?");
-		
-		config.addCustomCategoryComment(category + " Extra Juices Stats", "Everyone loves juice Stats!");
-		ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount", category + " Extra Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice Saturation Amount", category + " Extra Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		
 		config.addCustomCategoryComment(category + " Moist", "Change when the first rains on a world are due.");
 		ConfigHandler.custom_moist_timer = config.getBoolean("Enable Custom Moist Timer", category + " Moist", false, "Enable the ability to change how long it takes for the first rain of a world.");
 		ConfigHandler.moist_time = config.getFloat("Moist Timer", category + " Moist", 1, 0, Float.MAX_VALUE, "How long (in days) until the first rainfall");
-		
-		config.addCustomCategoryComment(category + " Extra Food", "Want more food?");
-		ConfigHandler.bams_pizza = config.getBoolean("Bams Pizza", category + " Extra Food", true, "Enable Bams Pizza?");
-		ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", category + " Extra Food", true, "Enable Cooked Bacon?");
-		ConfigHandler.MonsterJerky = config.getBoolean("Monster Jerky", category + " Extra Food", true, "Enable Monster jerky?");
-		ConfigHandler.ToastedBread = config.getBoolean("Toasted Bread", category + " Extra Food", true, "Enable Toasted Bread?");
-		ConfigHandler.FriedEgg = config.getBoolean("Fried Egg", category + " Extra Food", true, "Enable Fried Egg?");
-		ConfigHandler.CookedMushrooms = config.getBoolean("Cooked Mushrooms", category + " Extra Food", true, "Enable Cooked Mushrooms?");
-		ConfigHandler.BaconEggs = config.getBoolean("Bacon & Eggs", category + " Extra Food", true, "Enable Bacon & Eggs?");
-		ConfigHandler.LittleCandy = config.getBoolean("Little Candy", category + " Extra Food", true, "Enable Little Candy?");
-		ConfigHandler.Sandwiches = config.getBoolean("Sandwiches", category + " Extra Food", true, "Enable Sandwiches?");
-		ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", category + " Extra Food", true, "Enable Cooked Apple?");
-		
-		config.addCustomCategoryComment(category + " Extra Food Stats", "Want more food Stats?\n[WIP]");
-		ConfigHandler.bams_pizza_amount = config.getInt("Bams Pizza Heal Amount", category + " Extra Food Stats", 10, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.bams_pizza_sat = config.getFloat("Bams Pizza Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Extra Food Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		config.addCustomCategoryComment(category + " Withered Bedrock", "Sink Into Madness Block");
 		ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", category + " Withered Bedrock", false, "Enable Withered Bedrock?\n[This item is not a Craftable Block.]\n[To be used with Bedrock Replacer Mod]\n[MAY CAUSE SERVER LAG NEEDS MORE TESTING]");
@@ -279,14 +141,29 @@ public class TinyConfig {
 		ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", category + " Withered Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from standing on Withered Bedrock.\n[1 = 20Ticks]");
 		
 		config.addCustomCategoryComment(category + " Repair Tablet", "Need some extra durability, eh?");
-		ConfigHandler.repair_tablet = config.getBoolean("Repair Tablet", category + " Repair Tablet", true, "Enable Repair Tablet?");
-		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Table Cooldown", category + " Repair Tablet", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
+		ConfigHandler.repair_tablet = config.getBoolean("Repair Tablet", category + " Repair Tablet", true, "Enable Repair Tablet?\n[Repairs in Players Inventory only.]");
+		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Tablet Cooldown", category + " Repair Tablet", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
+		
+		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
+		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");
+		// iron
+		ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Iron Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// gold
+		ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Gold Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// diamond
+		ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// cookie
+		ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", category + " Better Sugar Cane", true, "Enable Sugar Cookie?");
+		// sugar blocks
+		ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed Sugar", category + " Better Sugar Cane", true, "Enable Compressed Sugar?");
+		// sugarcane blocks
+		ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed Sugar Cane", category + " Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
 		
 		if (config.hasChanged())
         config.save();
 	}
 	
-	public static void initArmorConfigs()
+	public static void initArmor()
 	{
 		
 		File f = new File(configDir, "Armor.cfg");
@@ -314,7 +191,7 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Dragon Armor", "End Game Armor");
 		ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", category + " Dragon Armor", true, "Enable Dragon Armor?");
-		ArmorHandler.dragon_fly = config.getBoolean("Dragon Armor Flight", category + " Dragon Armor", true, "Enable Dragon Armor Flight?");
+		ArmorHandler.dragon_fly = config.getBoolean("Dragon Armor Allow Flight", category + " Dragon Armor", true, "Enable Dragon Armor Flight?");
 		ArmorHandler.dragon_resistance = config.getBoolean("Dragon Armor Resistance", category + " Dragon Armor", true, "Enable Dragon Armor Resistance?");
 		ArmorHandler.dragon_resistance_lvl = config.getInt("Dragon Armor Resistance Level", category + " Dragon Armor", 1, 0, 10, "Resistance Level.");
 		ArmorHandler.dragon_fire = config.getBoolean("Dragon Armor Fire Resistance", category + " Dragon Armor", true, "Enable Dragon Armor Fire Resistance?");
@@ -350,6 +227,164 @@ public class TinyConfig {
 		ArmorHandler.redstone_armor = config.getBoolean("Redstone Armor", category + " Redstone Armor", true, "Enable Redstone Armor?");
 		ArmorHandler.redstone_armor_speed = config.getBoolean("Redstone Armor Speed", category + " Redstone Armor", true, "Enable Redstone Speed?");
 		ArmorHandler.redstone_armor_speed_lvl = config.getInt("Redstone Armor Speed Level", category + " Redstone Armor", 0, 0, 10, "Speed Level.");
+		
+		if (config.hasChanged())
+        config.save();
+	}
+	
+	public static void initToolsWeapons()
+	{
+		
+		File f = new File(configDir, "Tools & Weapons.cfg");
+        config = new Configuration(f, configVersion);
+        
+        config.load();
+        
+		String category;
+		
+		category = "Tiny Progressions";
+		
+		config.addCustomCategoryComment(category + " Goodies", "Fun Stuff");
+		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Goodies", true, "Enable Party Pickaxe?");
+		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", category + " Goodies", true, "Enable Kappa Pick?");
+		ConfigHandler.c_axe = config.getBoolean("C-axe", category + " Goodies", true, "Enable C-axe?");
+		
+		config.addCustomCategoryComment(category + " Flint and Bone Tools & Weapons", "Cause Progression!");
+		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
+		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
+		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");
+		
+		config.addCustomCategoryComment(category + " Scythes", "Because I love to farm and stuff");
+		ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", category + " Scythes", true, "Enable Wooden Scythe?");
+		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", category + " Scythes", true, "Enable Stone Scythe?");
+		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", category + " Scythes", true, "Enable Golden Scythe?");
+		ConfigHandler.iron_scythe = config.getBoolean("Iron Scythe", category + " Scythes", true, "Enable Iron Scythe?");
+		ConfigHandler.diamond_scythe = config.getBoolean("Diamond Scythe", category + " Scythes", true, "Enable Diamond Scythe?");
+		ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", category + " Scythes", true, "Enable Emerald Scythe?");
+		ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe", category + " Scythes", true, "Enable Obsidian Scythe?");
+		
+		config.addCustomCategoryComment(category + " MultiTools", "Because I love weird stuff\n[Requires Other Items in this mod.]");
+		ConfigHandler.wooden_multi = config.getBoolean("Wooden MultiTool", category + " MultiTools", true, "Enable Wooden MultiTool?");
+		ConfigHandler.stone_multi = config.getBoolean("Stone MultiTool", category + " MultiTools", true, "Enable Stone MultiTool?");
+		ConfigHandler.golden_multi = config.getBoolean("Golden MultiTool", category + " MultiTools", true, "Enable Golden MultiTool?");
+		ConfigHandler.iron_multi = config.getBoolean("Iron MultiTool", category + " MultiTools", true, "Enable Iron MultiTool?");
+		ConfigHandler.diamond_multi = config.getBoolean("Diamond MultiTool", category + " MultiTools", true, "Enable Diamond MultiTool?");
+		ConfigHandler.emerald_multi = config.getBoolean("Emerald MultiTool", category + " MultiTools", true, "Enable Emerald MultiTool?");
+		ConfigHandler.obsidian_multi = config.getBoolean("Obsidian MultiTool", category + " MultiTools", true, "Enable Obsidian MultiTool?");
+		
+		config.addCustomCategoryComment(category + " Spears", "Because I love weird stuff");
+		ConfigHandler.spear_reach = config.getInt("A Spears Extended Reach", category + " Spears", 7, 5, 10, "Sets the Reach of a Spear.\n[Vanilla is 5 blocks!]");
+		ConfigHandler.wooden_spear = config.getBoolean("Wooden Spear", category + " Spears", true, "Enable Wooden Spear?");
+		ConfigHandler.stone_spear = config.getBoolean("Stone Spear", category + " Spears", true, "Enable Stone Spear?");
+		ConfigHandler.golden_spear = config.getBoolean("Golden Spear", category + " Spears", true, "Enable Golden Spear?");
+		ConfigHandler.iron_spear = config.getBoolean("Iron Spear", category + " Spears", true, "Enable Iron Spear?");
+		ConfigHandler.diamond_spear = config.getBoolean("Diamond Spear", category + " Spears", true, "Enable Diamond Spear?");
+		ConfigHandler.emerald_spear = config.getBoolean("Emerald Spear", category + " Spears", true, "Enable Emerald Spear?");
+		ConfigHandler.obsidian_spear = config.getBoolean("Obsidian Spear", category + " Spears", true, "Enable Obsidian Spear?");
+		
+		config.addCustomCategoryComment(category + " BattleAxes", "Because I love weird stuff");
+		ConfigHandler.wooden_battle = config.getBoolean("Wooden BattleAxe", category + " BattleAxes", true, "Enable Wooden BattleAxe?");
+		ConfigHandler.stone_battle = config.getBoolean("Stone BattleAxe", category + " BattleAxes", true, "Enable Stone BattleAxe?");
+		ConfigHandler.golden_battle = config.getBoolean("Golden BattleAxe", category + " BattleAxes", true, "Enable Golden BattleAxe?");
+		ConfigHandler.iron_battle = config.getBoolean("Iron BattleAxe", category + " BattleAxes", true, "Enable Iron BattleAxe?");
+		ConfigHandler.diamond_battle = config.getBoolean("Diamond BattleAxe", category + " BattleAxes", true, "Enable Diamond BattleAxe?");
+		ConfigHandler.emerald_battle = config.getBoolean("Emerald BattleAxe", category + " BattleAxes", true, "Enable Emerald BattleAxe?");
+		ConfigHandler.obsidian_battle = config.getBoolean("Obsidian BattleAxe", category + " BattleAxes", true, "Enable Obsidian BattleAxe?");
+		
+		config.addCustomCategoryComment(category + " Obsidian", "Because I love weird stuff\n[Required for Other Items in this mod.]");
+		ConfigHandler.obsidian_axe = config.getBoolean("Obsidian Axe", category + " Obsidian", true, "Enable Obsidian Axe?");
+		ConfigHandler.obsidian_pickaxe = config.getBoolean("Obsidian Pickaxe", category + " Obsidian", true, "Enable Obsidian Pickaxe?");
+		ConfigHandler.obsidian_hoe = config.getBoolean("Obsidian Hoe", category + " Obsidian", true, "Enable Obsidian Hoe?");
+		ConfigHandler.obsidian_spade = config.getBoolean("Obsidian Shovel", category + " Obsidian", true, "Enable Obsidian Shovel?");
+		ConfigHandler.obsidian_sword = config.getBoolean("Obsidian Sword", category + " Obsidian", true, "Enable Obsidian Sword?");
+		
+		config.addCustomCategoryComment(category + " Emerald", "Because I love weird stuff\n[Required for Other Items in this mod.]");
+		ConfigHandler.emerald_axe = config.getBoolean("Emerald Axe", category + " Emerald", true, "Enable Emerald Axe?");
+		ConfigHandler.emerald_pickaxe = config.getBoolean("Emerald Pickaxe", category + " Emerald", true, "Enable Emerald Pickaxe?");
+		ConfigHandler.emerald_hoe = config.getBoolean("Emerald Hoe", category + " Emerald", true, "Enable Emerald Hoe?");
+		ConfigHandler.emerald_spade = config.getBoolean("Emerald Shovel", category + " Emerald", true, "Enable Emerald Shovel?");
+		ConfigHandler.emerald_sword = config.getBoolean("Emerald Sword", category + " Emerald", true, "Enable Emerald Sword?");
+		
+		if (config.hasChanged())
+        config.save();
+	}
+	
+	public static void initFood()
+	{
+		
+		File f = new File(configDir, "Food & Drinks.cfg");
+        config = new Configuration(f, configVersion);
+        
+        config.load();
+        
+		String category;
+		
+		category = "Tiny Progressions";
+		
+		config.addCustomCategoryComment(category + " Apples", "Just Because");
+		ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", category + " Apples", true, "Enable Emerald Apple?");
+		ConfigHandler.NotchApple = config.getBoolean("Notch Apple", category + " Apples", true, "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple Progression DISABLED.]");
+		ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", category + " Apples", true, "Enable Diamond Apple?");
+		ConfigHandler.iron_apple = config.getBoolean("Iron Apple", category + " Apples", true, "Enable Iron Apple?");
+		ConfigHandler.redstone_apple = config.getBoolean("Redstone Apple", category + " Apples", true, "Enable Redstone Apple?");
+		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", category + " Apples", false, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
+		
+		config.addCustomCategoryComment(category + " Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
+		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices W/O Bottles", category + " Juices", true, "Enable Juices With out bottles in the recipe?");
+		ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juices With Bottles", category + " Juices", false, "Enable Juices With bottles in the recipe?");
+		
+		config.addCustomCategoryComment(category + " Juices Stats", "Everyone loves juice Stats!");
+		ConfigHandler.AppleAmount = config.getInt("Apple Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.AppleSaturation = config.getFloat("Apple Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.CarrotAmount = config.getInt("Carrot Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.CarrotSaturation = config.getFloat("Carrot Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.PotatoAmount = config.getInt("Potato Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.PotatoSaturation = config.getFloat("Potato Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.BeetAmount = config.getInt("Beet Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BeetSaturation = config.getFloat("Beet Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.CactusAmount = config.getInt("Cactus Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.CactusSaturation = config.getFloat("Cactus Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.SlimeAmount = config.getInt("Slime Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.SlimeSaturation = config.getFloat("Slime Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.WheatAmount = config.getInt("Wheat Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.WheatSaturation = config.getFloat("Wheat Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.MelonAmount = config.getInt("Melon Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.MelonSaturation = config.getFloat("Melon Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount", category + " Juices Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", category + " Juices Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		
+		config.addCustomCategoryComment(category + " Juices Extra", "Everyone loves juice!\n[Only ENABLE one or the other.]");
+		ConfigHandler.ExtraPlantGen = config.getBoolean("Extra Plant Generation", category + " Juices Extra", true, "Enable Extra Plant Generation?\n[Disable Extra Plant Generation if you want to use Naturas Berries only!]");
+		ConfigHandler.ExtraJuices = config.getBoolean("Extra Juices W/O Bottles", category + " Juices Extra", true, "Enable Juices With out bottles in the recipe?");
+		ConfigHandler.ExtraJuicesBottles = config.getBoolean("Extra Juices With Bottles", category + " Juices Extra", false, "Enable Juices With bottles in the recipe?");
+		
+		config.addCustomCategoryComment(category + " Juices Extra Stats", "Everyone loves juice Stats!");
+		ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount", category + " Juices Extra Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice Saturation Amount", category + " Juices Extra Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal Amount", category + " Juices Extra Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice Saturation Amount", category + " Juices Extra Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount", category + " Juices Extra Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice Saturation Amount", category + " Juices Extra Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount", category + " Juices Extra Stats", 3, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice Saturation Amount", category + " Juices Extra Stats", 0.8F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		
+		config.addCustomCategoryComment(category + " Extra Food", "Want more food?");
+		ConfigHandler.bams_pizza = config.getBoolean("Bams Pizza", category + " Extra Food", true, "Enable Bams Pizza?");
+		ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", category + " Extra Food", true, "Enable Cooked Bacon?");
+		ConfigHandler.MonsterJerky = config.getBoolean("Monster Jerky", category + " Extra Food", true, "Enable Monster jerky?");
+		ConfigHandler.ToastedBread = config.getBoolean("Toasted Bread", category + " Extra Food", true, "Enable Toasted Bread?");
+		ConfigHandler.FriedEgg = config.getBoolean("Fried Egg", category + " Extra Food", true, "Enable Fried Egg?");
+		ConfigHandler.CookedMushrooms = config.getBoolean("Cooked Mushrooms", category + " Extra Food", true, "Enable Cooked Mushrooms?");
+		ConfigHandler.BaconEggs = config.getBoolean("Bacon & Eggs", category + " Extra Food", true, "Enable Bacon & Eggs?");
+		ConfigHandler.LittleCandy = config.getBoolean("Little Candy", category + " Extra Food", true, "Enable Little Candy?");
+		ConfigHandler.Sandwiches = config.getBoolean("Sandwiches", category + " Extra Food", true, "Enable Sandwiches?");
+		ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", category + " Extra Food", true, "Enable Cooked Apple?");
+		
+		config.addCustomCategoryComment(category + " Extra Food Stats", "Want more food Stats?\n[WIP Section]");
+		ConfigHandler.bams_pizza_amount = config.getInt("Bams Pizza Heal Amount", category + " Extra Food Stats", 10, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.bams_pizza_sat = config.getFloat("Bams Pizza Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Extra Food Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		if (config.hasChanged())
         config.save();

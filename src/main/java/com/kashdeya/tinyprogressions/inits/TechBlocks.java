@@ -37,6 +37,8 @@ import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
+import com.kashdeya.tinyprogressions.blocks.misc.Bridge;
+import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
@@ -129,8 +131,22 @@ public class TechBlocks {
     public static Block sextuple_compressed_sugar_cane;
     public static Block septuple_compressed_sugar_cane;
     public static Block octuple_compressed_sugar_cane;
+    // water harvester
+    public static Block water_harvester;
+    // bridge
+    public static Block bridge_block;
     
 	static void init() {
+		// water harvester
+		if (ConfigHandler.water_harvester){
+			water_harvester = new WaterHarvester();
+		}
+		
+		// bridge
+		if (ConfigHandler.bridge_block){
+			bridge_block = new Bridge();
+		}
+		
 		// bsc sugar blocks
 		if (ConfigHandler.bsc_sugar_compressed_blocks){
 			compressed_sugar = new StandardBlock(Material.CLAY).setUnlocalName("compressed_sugar")

@@ -37,7 +37,8 @@ import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
-import com.kashdeya.tinyprogressions.blocks.misc.Bridge;
+import com.kashdeya.tinyprogressions.blocks.misc.BridgeBuilder;
+import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
@@ -134,7 +135,8 @@ public class TechBlocks {
     // water harvester
     public static Block water_harvester;
     // bridge
-    public static Block bridge_block;
+    public static Block bridge_builder;
+    public static Block tower_builder;
     
 	static void init() {
 		// water harvester
@@ -143,8 +145,13 @@ public class TechBlocks {
 		}
 		
 		// bridge
-		if (ConfigHandler.bridge_block){
-			bridge_block = new Bridge();
+		if (ConfigHandler.bridge_builder){
+			bridge_builder = new BridgeBuilder();
+		}
+		
+		// tower
+		if (ConfigHandler.tower_builder){
+			tower_builder = new TowerBuilder();
 		}
 		
 		// bsc sugar blocks

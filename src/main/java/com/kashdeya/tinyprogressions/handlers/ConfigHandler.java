@@ -1,12 +1,12 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
-	
 	// water harvester
 	public static boolean water_harvester = true;
 	
 	// bridge
-	public static boolean bridge_block = true;
+	public static boolean bridge_builder = true;
+	public static boolean tower_builder = true;
 	
 	// bsc rod
 	public static boolean bsc_rod = true;

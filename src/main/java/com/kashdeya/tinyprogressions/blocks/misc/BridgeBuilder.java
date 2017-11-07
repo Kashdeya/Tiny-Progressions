@@ -6,9 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
-public class Bridge extends Block {
+public class BridgeBuilder extends Block {
 	
-	public Bridge()
+	public BridgeBuilder()
     {
         super(Material.WOOD);// needs changed!
         this.setHardness(1.5F);// needs changed!
@@ -16,6 +16,6 @@ public class Bridge extends Block {
         this.setResistance(10.0F);// needs changed!
         this.setSoundType(SoundType.WOOD);// needs changed!
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("bridge_block");
+        this.setUnlocalizedName("bridge_builder");
     }
 }

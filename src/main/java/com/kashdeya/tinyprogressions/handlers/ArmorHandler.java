@@ -1,6 +1,10 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ArmorHandler {
+	
+	// bam t-shirt
+	public static boolean bam_tshirt = true;
+	
 	//Armor
 	public static boolean wither_armor = true;
 	public static boolean wither_resistance = true;

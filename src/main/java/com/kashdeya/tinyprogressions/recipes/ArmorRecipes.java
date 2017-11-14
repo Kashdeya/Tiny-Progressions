@@ -1,7 +1,6 @@
 package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.util.RecipeRegistry;
@@ -13,6 +12,12 @@ import net.minecraft.item.ItemStack;
 public class ArmorRecipes {
 	
 	public static void init() {
+		if (ArmorHandler.bam_tshirt){
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), new Object[] {
+					Items.DIAMOND_CHESTPLATE
+			});
+		}
+		
 		if (ArmorHandler.StoneArmor){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.stone_helmet), new Object[] {
 					"sss",

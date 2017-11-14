@@ -22,6 +22,7 @@ item.maloberry_berry.name=Maloberry
 item.raspberry_berry.name=Raspberry
 
 item.c_axe.name=Sea-Axe
+item.bam_tshirt.name=bamInati T-Shirt
 
 #Withered Block
 tile.withered_block.name=Withered Bedrock

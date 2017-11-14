@@ -30,4 +30,5 @@ public class MaterialHandler {
 	public static final ArmorMaterial lapisArmourMaterial = EnumHelper.addArmorMaterial("lapisArmourMaterial", "tp:lapis", 20, new int[]{1, 4, 5, 3}, 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.5F);
 	public static final ArmorMaterial quartzArmourMaterial = EnumHelper.addArmorMaterial("quartzArmourMaterial", "tp:quartz", 20, new int[]{1, 4, 5, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.2F);
 	public static final ArmorMaterial emeraldArmourMaterial = EnumHelper.addArmorMaterial("emeraldArmourMaterial", "tp:emerald", 43, new int[]{4, 7, 9, 4}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F);
+	public static final ArmorMaterial bamArmourMaterial = EnumHelper.addArmorMaterial("bamArmourMaterial", "tp:bam_tshirt", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.5F);
 }

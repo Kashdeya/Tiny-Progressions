@@ -168,6 +168,9 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
 		
+		config.addCustomCategoryComment(category + " bamInati T-Shirt", "Cause it looks freaking AWESOME");
+		ArmorHandler.bam_tshirt = config.getBoolean("bamInati T-Shirt", category + " bamInati T-Shirt", true, "Enable bamInati T-Shirt?");
+		
 		config.addCustomCategoryComment(category + " Floaty Block", "May save you from certain death!");
 		ConfigHandler.angel_block = config.getBoolean("Floaty McFloaty Block", category + " Floaty Block", true, "Enable Floaty McFloaty Block?");
 		

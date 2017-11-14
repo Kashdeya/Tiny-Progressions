@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.inits;
 import java.lang.reflect.Field;
 import java.util.Locale;
 
+import com.kashdeya.tinyprogressions.armor.BamShirt;
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.DragonArmour;
 import com.kashdeya.tinyprogressions.armor.EmeraldArmor;
@@ -16,7 +17,6 @@ import com.kashdeya.tinyprogressions.armor.StoneArmor;
 import com.kashdeya.tinyprogressions.armor.WitherArmour;
 import com.kashdeya.tinyprogressions.armor.WoodArmor;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.util.Registry;
 
@@ -97,7 +97,15 @@ public class TechArmor {
 	public static ItemArmor emerald_leggings;
 	public static ItemArmor emerald_boots;
 	
+	// bam t-shirt
+	public static ItemArmor bam_tshirt;
+	
 	static void init(){
+		
+		// bam t-shirt
+		if (ArmorHandler.bam_tshirt){
+			bam_tshirt = (ItemArmor) new BamShirt(MaterialHandler.bamArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("bam_tshirt");
+		}
 		
 		// Emerald Armor
 		if (ArmorHandler.emerald_amor){

@@ -84,24 +84,24 @@ public class TinyConfig {
 		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable Ender Ore?");
 		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable Endermite spawn?");
 		ConfigHandler.endermite_spawn = config.getFloat("Endermite Spawn", category + " Ender Ore", 0.25F, 0.0F, 1.0F, "Sets the Chance of Endermites to spawn when Ore is mined.");
-		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 50, 1, 100, "Sets the Chance of Ender ore.");
+		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", category + " Ender Ore", 15, 1, 100, "Sets the Chance of Ender ore.");
 		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", category + " Ender Ore", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 5, 100, "Sets the Ender Ore Vein Size.");
+		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 10, 5, 100, "Sets the Ender Ore Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Lava Source Block Stones", "Lavastone!");
 		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Lava Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
 		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Lava Source Block Stones", 15, 1, 100, "Sets the Chance of Lavastone.");
 		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Lava Source Block Stones", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Lava Source Block Stones", 64, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Lava Source Block Stones", 20, 5, 100, "Sets the Lavastone Vein Size.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Lava Source Block Stones", 10, 5, 100, "Sets the Lavastone Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
 		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Water Source Block Stones", 15, 1, 100, "Sets the Chance of Waterstone.");
 		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Water Source Block Stones", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Water Source Block Stones", 64, 1, 255, "Sets the max Y level.");
-		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Water Source Block Stones", 20, 5, 100, "Sets the Waterstone Vein Size.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Water Source Block Stones", 10, 5, 100, "Sets the Waterstone Vein Size.");
 		
 		config.addCustomCategoryComment(category + " Dirty Glass", "Just a little dirty!");
 		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Dirty Glass", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");

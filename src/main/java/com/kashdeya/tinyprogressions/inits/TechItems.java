@@ -60,7 +60,6 @@ public class TechItems {
 	public static Item bsc_rod;
 		
 	static void init() {
-		
 		// bsc rod
 		if (ConfigHandler.bsc_rod){
 			bsc_rod = new ItemBase().setOreDictName("stickCane").setUnlocalizedName("bsc_rod");

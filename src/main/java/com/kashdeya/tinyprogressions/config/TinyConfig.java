@@ -283,10 +283,10 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Happy Birthday Darkosto", "Fun Stuff");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Happy Birthday Darkosto", true, "Enable Party Pickaxe?");
 		
-		config.addCustomCategoryComment(category + " 5-Head Pickaxe", "Fun Stuff");
-		ConfigHandler.kappa_pick = config.getBoolean("Pick-Kappa", category + " 5-Head Pickaxe", true, "Enable Pick-Kappa?");
-		ConfigHandler.kappa_level = config.getInt("Pick-Kappa Mining Level", category + " 5-Head Pickaxe", 1, 0, 3, "Mining Level.");
-		ConfigHandler.kappa_damage = config.getInt("Pick-Kappa Mining Level Durability", category + " 5-Head Pickaxe", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
+		config.addCustomCategoryComment(category + " 5-Head Pickappa", "Fun Stuff");
+		ConfigHandler.kappa_pick = config.getBoolean("Pickappa", category + " 5-Head Pickaxe", true, "Enable Pickappa?");
+		ConfigHandler.kappa_level = config.getInt("Pickappa Mining Level", category + " 5-Head Pickaxe", 1, 0, 3, "Mining Level.");
+		ConfigHandler.kappa_damage = config.getInt("Pickappa Mining Level Durability", category + " 5-Head Pickaxe", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
 		
 		config.addCustomCategoryComment(category + " Sea Axe", "A Funny Thing");
 		ConfigHandler.c_axe = config.getBoolean("Sea Axe", category + " Sea Axe", true, "Enable Sea Axe?");

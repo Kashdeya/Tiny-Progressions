@@ -21,7 +21,7 @@ item.blueberry_berry.name=Blueberry
 item.maloberry_berry.name=Maloberry
 item.raspberry_berry.name=Raspberry
 
-item.c_axe.name=C-Axe
+item.c_axe.name=Sea-Axe
 
 #Withered Block
 tile.withered_block.name=Withered Bedrock
@@ -76,7 +76,7 @@ item.blackberry_juice.name=Blueberry Juice
 item.maloberry_juice.name=Maloberry Juice
 
 #Kappa
-item.kappa_pick.name=Kappa Pick
+item.kappa_pick.name=Pick-Kappa
 
 #Reinforced Blocks
 tile.reinforced_glass.name=Reinforced Glass

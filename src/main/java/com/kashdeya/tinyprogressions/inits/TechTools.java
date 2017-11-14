@@ -142,9 +142,13 @@ public class TechTools {
 	
 	static void init(){
 		// c axe
-		if (ConfigHandler.c_axe){
+		if (ConfigHandler.c_axe && ConfigHandler.sea_axe){
 			c_axe = new BscIronAxe(MaterialHandler.BSCIRON, 10.0F, -1.2F).setUnlocalizedName("c_axe");
 		}
+		if (ConfigHandler.c_axe && ConfigHandler.sea_pickaxe){
+			c_axe = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("c_axe");
+		}
+		
 		// bsc tools and weapons
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
 			bsc_iron_sword = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_sword");

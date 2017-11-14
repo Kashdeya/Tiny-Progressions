@@ -54,40 +54,21 @@ public class TinyConfig {
 		ConfigHandler.BlazeCobblegen = config.getBoolean("Cobblegen Crystal Tier 4", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 4?\n[Requires Cobblegen Crystal Tier 3 to be Enabled for recipe]");
 		ConfigHandler.EmeraldCobblegen = config.getBoolean("Cobblegen Crystal Tier 5", category + " Cobblegen Crystals", true, "Enable Cobblegen Crystal Tier 5?\n[Requires Cobblegen Crystal Tier 4 to be Enabled for recipe]");
 		
-		config.addCustomCategoryComment(category + " Extra Stuff", "It's the little things that count right?");
-		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Extra Stuff", true, "Enable the Charcoal Block?");
-		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Extra Stuff", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
-		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Extra Stuff", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");
-		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Extra Stuff", true, "Enable Mycelium Seeds?");
-		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Extra Stuff", true, "Enable Medkit?");
-		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Extra Stuff", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
-		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Extra Stuff", true, "Enable Stone Torch?\n[Do not ENABLE if Tinkers is installed.]");
-		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Extra Stuff", true, "Enable 3 Gravel into Flint Recipe?\n[Do not ENABLE is Tinkers is installed.]");
-		ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", category + " Extra Stuff", true, "Enable Hardened Stone?");
-		ConfigHandler.old_reed = config.getBoolean("Dead Sugar Cane", category + " Extra Stuff", true, "Enable Dead Sugar Cane?");
+		config.addCustomCategoryComment(category + " Tree Drops", "Extra Drops");
+		ConfigHandler.stickDrops = config.getBoolean("Stick Drops", category + " Tree Drops", true, "Enable Sticks to drop from leaves?");
+		ConfigHandler.stickDropsChance = config.getFloat("Stick Drop Chance", category + " Tree Drops", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
+		ConfigHandler.stickDropsAmmount = config.getInt("Stick Drop Ammount", category + " Tree Drops", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
+		ConfigHandler.appleDrops = config.getBoolean("Apple Drops", category + " Tree Drops", true, "Enable Apple to drop from leaves?");
+		ConfigHandler.appleDropsChance = config.getFloat("Apple Drop Chance", category + " Tree Drops", 0.1F, 0, 1.0F, "Sets the Chance of Apple from leaves.");
+		ConfigHandler.appleDropsAmmount = config.getInt("Apple Drop Ammount", category + " Tree Drops", 1, 1, 64, "Sets the Ammount of Apple Dropped from leaves.");
 		
-		config.addCustomCategoryComment(category + " CUS", "Added for Can_U_Survive - If you enable please make a recipe for them, Other wise they do nothing.");
-		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", false, "Enable Flint Knife?");
-		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
-		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", false, "Enable Stone Dust?");
-		
-		config.addCustomCategoryComment(category + " Drops", "Extra Drops");
-		ConfigHandler.stickDrops = config.getBoolean("Stick Drops", category + " Drops", true, "Enable Sticks to drop from leaves?");
-		ConfigHandler.stickDropsChance = config.getFloat("Stick Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
-		ConfigHandler.stickDropsAmmount = config.getInt("Stick Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
-		ConfigHandler.appleDrops = config.getBoolean("Apple Drops", category + " Drops", true, "Enable Apple to drop from leaves?");
-		ConfigHandler.appleDropsChance = config.getFloat("Apple Drop Chance", category + " Drops", 0.1F, 0, 1.0F, "Sets the Chance of Apple from leaves.");
-		ConfigHandler.appleDropsAmmount = config.getInt("Apple Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Apple Dropped from leaves.");
-		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Drops", true, "Enable Bones to drop from Dirt?");
-		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Drops", 0.01F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
-		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
-		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", category + " Drops", true, "Enable Skulls to drop from Dirt?");
-		ConfigHandler.SkullDropsChance = config.getFloat("Skull Drop Chance", category + " Drops", 0.01F, 0, 1.0F, "Sets the Chance of Skulls from Dirt.");
-		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Drops", 1, 1, 64, "Sets the Ammount of Skulls Dropped from Dirt.");
-		
-		config.addCustomCategoryComment(category + " Quartz", "Added for Sky Factory 3 - If you enable please make a recipe for it, Other wise it does nothing.");
-		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", false, "Enable the Quartz Knife and Dust Recipe?");
-		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
+		config.addCustomCategoryComment(category + " Dirt Drops", "Extra Drops");
+		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Dirt Drops", true, "Enable Bones to drop from Dirt?");
+		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Dirt Drops", 0.01F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
+		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Dirt Drops", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
+		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", category + " Dirt Drops", true, "Enable Skulls to drop from Dirt?");
+		ConfigHandler.SkullDropsChance = config.getFloat("Skull Drop Chance", category + " Dirt Drops", 0.01F, 0, 1.0F, "Sets the Chance of Skulls from Dirt.");
+		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Dirt Drops", 1, 1, 64, "Sets the Ammount of Skulls Dropped from Dirt.");
 		
 		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False\n[Required for Other Items in this mod.]");
 		ConfigHandler.ReinforcedGlass = config.getBoolean("Reinforced Glass Block", category + " Reinforced Blocks", true, "Enable Reinforced Glass Block?");
@@ -99,11 +80,6 @@ public class TinyConfig {
 		ConfigHandler.NetherStarBlock = config.getBoolean("Compressed Nether Star Block", category + " Compressed Blocks", true, "Enable Compressed Nether Star Block?");
 		ConfigHandler.FlintBlock = config.getBoolean("Compressed Flint Block", category + " Compressed Blocks", true, "Enable Compressed Flint Block?");
 		
-		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
-		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
-		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
-		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
-		
 		config.addCustomCategoryComment(category + " Ender Ore", "Might as well add this");
 		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", category + " Ender Ore", true, "Enable Ender Ore?");
 		ConfigHandler.ender_mite = config.getBoolean("Endermite", category + " Ender Ore", true, "Enable Endermite spawn?");
@@ -113,17 +89,81 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", category + " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", category + " Ender Ore", 7, 5, 100, "Sets the Ender Ore Vein Size.");
 		
-		config.addCustomCategoryComment(category + " Source Block Stones", "Lavastone and Waterstone!");
-		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
-		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Source Block Stones", 50, 1, 100, "Sets the Chance of Lavastone.");
-		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Source Block Stones", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Source Block Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Source Block Stones", 7, 5, 100, "Sets the Lavastone Vein Size.");
-		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
-		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Source Block Stones", 50, 1, 100, "Sets the Chance of Waterstone.");
-		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Source Block Stones", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Source Block Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Source Block Stones", 7, 5, 100, "Sets the Waterstone Vein Size.");
+		config.addCustomCategoryComment(category + " Lava Source Block Stones", "Lavastone!");
+		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Lava Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
+		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Lava Source Block Stones", 15, 1, 100, "Sets the Chance of Lavastone.");
+		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Lava Source Block Stones", 1, 1, 255, "Sets the min Y level.");
+		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Lava Source Block Stones", 64, 1, 255, "Sets the max Y level.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Lava Source Block Stones", 20, 5, 100, "Sets the Lavastone Vein Size.");
+		
+		config.addCustomCategoryComment(category + " Water Source Block Stones", "Waterstone!");
+		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
+		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Water Source Block Stones", 15, 1, 100, "Sets the Chance of Waterstone.");
+		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Water Source Block Stones", 1, 1, 255, "Sets the min Y level.");
+		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Water Source Block Stones", 64, 1, 255, "Sets the max Y level.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Water Source Block Stones", 20, 5, 100, "Sets the Waterstone Vein Size.");
+		
+		config.addCustomCategoryComment(category + " Dirty Glass", "Just a little dirty!");
+		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Dirty Glass", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");
+		
+		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
+		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");
+		// iron
+		ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Iron Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// gold
+		ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Gold Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// diamond
+		ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// cookie
+		ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", category + " Better Sugar Cane", true, "Enable Sugar Cookie?");
+		// sugar blocks
+		ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed Sugar", category + " Better Sugar Cane", true, "Enable Compressed Sugar?");
+		// sugarcane blocks
+		ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed Sugar Cane", category + " Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
+		
+		if (config.hasChanged())
+        config.save();
+	}
+	
+	public static void initExtra()
+	{
+		
+		File f = new File(configDir, "Extras.cfg");
+        config = new Configuration(f, configVersion);
+        
+        config.load();
+        
+		String category;
+		
+		category = "Tiny Progressions";
+		
+		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
+		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
+		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
+		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", category + " Bricks", true, "Enable Granite Bricks?");
+		
+		config.addCustomCategoryComment(category + " Charcoal", "It's the little things that count right?");
+		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Charcoal", true, "Enable the Charcoal Block?");
+		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Charcoal", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
+		
+		config.addCustomCategoryComment(category + " Seeds", "Things to plant?");
+		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Seeds", true, "Enable Mycelium Seeds?");
+		
+		config.addCustomCategoryComment(category + " Medical Kit", "Need a little healing?");
+		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Medical Kit", true, "Enable Medkit?");
+		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Medical Kit", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
+		
+		config.addCustomCategoryComment(category + " Torch", "I'll light the way!");
+		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Torch", true, "Enable Stone Torch?\n[Do not ENABLE if Tinkers is installed.]");
+		
+		config.addCustomCategoryComment(category + " Flint", "A little extra flint can help, right?");
+		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", category + " Flint", true, "Enable 3 Gravel into Flint Recipe?\n[Do not ENABLE is Tinkers is installed.]");
+		
+		config.addCustomCategoryComment(category + " Harder Stone", "It's the little things that count right?");
+		ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", category + " Harder Stone", true, "Enable Hardened Stone?");
+		
+		config.addCustomCategoryComment(category + " Sugar", "even the dead stiff can help!");
+		ConfigHandler.old_reed = config.getBoolean("Dead Sugar Cane", category + " Sugar", true, "Enable Dead Sugar Cane?");
 		
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", category + " Pouch", true, "Enable Pouch?");
@@ -144,20 +184,16 @@ public class TinyConfig {
 		ConfigHandler.repair_tablet = config.getBoolean("Repair Tablet", category + " Repair Tablet", true, "Enable Repair Tablet?\n[Repairs in Players Inventory only.]");
 		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Tablet Cooldown", category + " Repair Tablet", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
 		
-		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
-		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");
-		// iron
-		ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Iron Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// gold
-		ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Gold Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// diamond
-		ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// cookie
-		ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", category + " Better Sugar Cane", true, "Enable Sugar Cookie?");
-		// sugar blocks
-		ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed Sugar", category + " Better Sugar Cane", true, "Enable Compressed Sugar?");
-		// sugarcane blocks
-		ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed Sugar Cane", category + " Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
+		config.addCustomCategoryComment(category + " Quartz", "Added for Sky Factory 3 - If you enable please make a recipe for it, Other wise it does nothing.");
+		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", category + " Quartz", false, "Enable the Quartz Knife and Dust Recipe?");
+		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", category + " Quartz", 128, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
+		
+		config.addCustomCategoryComment(category + " CUS", "Added for Can_U_Survive - If you enable please make a recipe for them, Other wise they do nothing.");
+		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", category + " CUS", false, "Enable Flint Knife?");
+		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
+		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", false, "Enable Stone Dust?");
+		
+		
 		
 		if (config.hasChanged())
         config.save();
@@ -246,8 +282,12 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Goodies", "Fun Stuff");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Goodies", true, "Enable Party Pickaxe?");
-		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", category + " Goodies", true, "Enable Kappa Pick?");
-		ConfigHandler.c_axe = config.getBoolean("C-axe", category + " Goodies", true, "Enable C-axe?");
+		ConfigHandler.kappa_pick = config.getBoolean("Pick-Kappa", category + " Goodies", true, "Enable Pick-Kappa?");
+		
+		config.addCustomCategoryComment(category + " Sea Axe", "A Funny Thing");
+		ConfigHandler.c_axe = config.getBoolean("Sea Axe", category + " Sea Axe", true, "Enable Sea Axe?");
+		ConfigHandler.sea_axe = config.getBoolean("Sea Axe - Axe", category + " Sea Axe", true, "Enable Sea Axe as a Axe?\n[Axe has 11 attack damage!]\n[Only ENABLE if Sea Axe - Pickaxe is DISABLED!]\n[Sea Axe must be ENABLED for this config to work!]");
+		ConfigHandler.sea_pickaxe = config.getBoolean("Sea Axe - Pickaxe", category + " Sea Axe", false, "Enable Sea Axe as a Pickaxe?\n[Pickaxe has 10 attack damage!]\n[Only ENABLE if Sea Axe - Axe is DISABLED!]\n[Sea Axe must be ENABLED for this config to work!]");
 		
 		config.addCustomCategoryComment(category + " Flint and Bone Tools & Weapons", "Cause Progression!");
 		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", category + " Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");

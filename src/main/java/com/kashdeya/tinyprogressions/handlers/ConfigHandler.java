@@ -25,6 +25,9 @@ public class ConfigHandler {
 	
 	// c-axe
 	public static boolean c_axe = true;
+	public static boolean sea_axe = true;
+	public static boolean sea_pickaxe = true;
+	
 	// Kappa Pick
 	public static boolean kappa_pick = true;
 	

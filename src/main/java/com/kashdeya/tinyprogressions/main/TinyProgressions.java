@@ -56,6 +56,7 @@ public class TinyProgressions {
 		TinyConfig.initArmor();
 		TinyConfig.initToolsWeapons();
 		TinyConfig.initFood();
+		TinyConfig.initExtra();
 		
 		// Setup
 		proxy.onPreInitialization(e);

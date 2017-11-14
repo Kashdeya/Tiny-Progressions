@@ -12,7 +12,7 @@ public class KappaPick extends ItemPickaxe{
 	public KappaPick(Item.ToolMaterial material)
 	{
 		super(material);
-        this.setMaxDamage(31513);
+        this.setMaxDamage(51313);
         this.material = material;
         this.maxStackSize = 1;
         this.setHarvestLevel("pickaxe", 1);

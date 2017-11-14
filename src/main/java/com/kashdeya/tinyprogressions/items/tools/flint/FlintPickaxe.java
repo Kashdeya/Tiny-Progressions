@@ -12,6 +12,7 @@ public class FlintPickaxe extends ItemPickaxe {
 		super(material);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
+		this.setHarvestLevel("pickaxe", 0);
 	}
 	
 	@Override

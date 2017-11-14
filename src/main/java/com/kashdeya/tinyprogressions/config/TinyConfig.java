@@ -285,8 +285,8 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " 5-Head Pickaxe", "Fun Stuff");
 		ConfigHandler.kappa_pick = config.getBoolean("Pick-Kappa", category + " 5-Head Pickaxe", true, "Enable Pick-Kappa?");
-		ConfigHandler.kappa_level = config.getInt("Pick-Kappa Mining Level", category + " Redstone Armor", 1, 0, 3, "Mining Level.");
-		ConfigHandler.kappa_damage = config.getInt("Pick-Kappa Mining Level Durability", category + " Redstone Armor", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
+		ConfigHandler.kappa_level = config.getInt("Pick-Kappa Mining Level", category + " 5-Head Pickaxe", 1, 0, 3, "Mining Level.");
+		ConfigHandler.kappa_damage = config.getInt("Pick-Kappa Mining Level Durability", category + " 5-Head Pickaxe", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
 		
 		config.addCustomCategoryComment(category + " Sea Axe", "A Funny Thing");
 		ConfigHandler.c_axe = config.getBoolean("Sea Axe", category + " Sea Axe", true, "Enable Sea Axe?");

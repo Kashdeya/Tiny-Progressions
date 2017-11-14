@@ -13,6 +13,7 @@ public class BscIronPickaxe extends ItemPickaxe {
 		super(material);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
+		this.setHarvestLevel("pickaxe", 2);
 	}
 	
 	@Override

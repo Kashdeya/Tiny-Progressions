@@ -30,6 +30,8 @@ public class ConfigHandler {
 	
 	// Kappa Pick
 	public static boolean kappa_pick = true;
+	public static int kappa_damage = 31513;
+	public static int kappa_level = 1;
 	
 	// Bams Pizza
 	public static boolean bams_pizza = true;

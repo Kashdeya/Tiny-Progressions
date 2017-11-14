@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.items.tools;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.Item;
@@ -12,10 +13,10 @@ public class KappaPick extends ItemPickaxe{
 	public KappaPick(Item.ToolMaterial material)
 	{
 		super(material);
-        this.setMaxDamage(51313);
+        this.setMaxDamage(ConfigHandler.kappa_damage);
         this.material = material;
         this.maxStackSize = 1;
-        this.setHarvestLevel("pickaxe", 1);
+        this.setHarvestLevel("pickaxe", ConfigHandler.kappa_level);
 		this.setUnlocalizedName("kappa_pick");
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	}

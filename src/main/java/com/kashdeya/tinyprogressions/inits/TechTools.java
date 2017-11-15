@@ -35,6 +35,8 @@ import com.kashdeya.tinyprogressions.items.spears.ObsidianSpear;
 import com.kashdeya.tinyprogressions.items.spears.SpearMain;
 import com.kashdeya.tinyprogressions.items.tools.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.KappaPick;
+import com.kashdeya.tinyprogressions.items.tools.SeaIronAxe;
+import com.kashdeya.tinyprogressions.items.tools.SeaIronPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneAxe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneHoe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BonePickaxe;
@@ -143,10 +145,10 @@ public class TechTools {
 	static void init(){
 		// c axe
 		if (ConfigHandler.c_axe && ConfigHandler.sea_axe){
-			c_axe = new BscIronAxe(MaterialHandler.BSCIRON, 10.0F, -1.2F).setUnlocalizedName("c_axe");
+			c_axe = new SeaIronAxe(MaterialHandler.SEAIRON, 10.0F, -1.2F).setUnlocalizedName("c_axe");
 		}
 		if (ConfigHandler.c_axe && ConfigHandler.sea_pickaxe){
-			c_axe = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("c_axe");
+			c_axe = new SeaIronPickaxe(MaterialHandler.SEAIRON).setUnlocalizedName("c_axe");
 		}
 		
 		// bsc tools and weapons

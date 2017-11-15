@@ -151,7 +151,10 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Medical Kit", "Need a little healing?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Medical Kit", true, "Enable Medkit?");
-		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Medical Kit", 15, 0, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
+		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Medical Kit", 30, 1, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
+		ConfigHandler.healLevel = config.getInt("Medkit Heal Level", category + " Medical Kit", 2, 0, 2, "Sets the level of Regen!");
+		ConfigHandler.healStack = config.getInt("Medkit Heal Stacksize", category + " Medical Kit", 32, 1, 64, "Sets the Stacksize of the Medkit!");
+		ConfigHandler.healinstant = config.getBoolean("Medkit Instant heal", category + " Medical Kit", false, "Enable Medkit Instant Heal?");
 		
 		config.addCustomCategoryComment(category + " Torch", "I'll light the way!");
 		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Torch", true, "Enable Stone Torch?\n[Do not ENABLE if Tinkers is installed.]");
@@ -287,9 +290,9 @@ public class TinyConfig {
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Happy Birthday Darkosto", true, "Enable Party Pickaxe?");
 		
 		config.addCustomCategoryComment(category + " 5-Head Pickappa", "Fun Stuff");
-		ConfigHandler.kappa_pick = config.getBoolean("Pickappa", category + " 5-Head Pickaxe", true, "Enable Pickappa?");
-		ConfigHandler.kappa_level = config.getInt("Pickappa Mining Level", category + " 5-Head Pickaxe", 1, 0, 3, "Mining Level.");
-		ConfigHandler.kappa_damage = config.getInt("Pickappa Mining Level Durability", category + " 5-Head Pickaxe", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
+		ConfigHandler.kappa_pick = config.getBoolean("Pickappa", category + " 5-Head Pickappa", true, "Enable Pickappa?");
+		ConfigHandler.kappa_level = config.getInt("Pickappa Mining Level", category + " 5-Head Pickappa", 1, 0, 3, "Mining Level.");
+		ConfigHandler.kappa_damage = config.getInt("Pickappa Mining Level Durability", category + " 5-Head Pickappa", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
 		
 		config.addCustomCategoryComment(category + " Sea Axe", "A Funny Thing");
 		ConfigHandler.c_axe = config.getBoolean("Sea Axe", category + " Sea Axe", true, "Enable Sea Axe?");

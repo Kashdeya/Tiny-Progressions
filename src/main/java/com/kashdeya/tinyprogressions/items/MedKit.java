@@ -8,6 +8,7 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -26,7 +27,7 @@ public class MedKit extends Item {
 	  {
 		  this.setCreativeTab(TinyProgressions.tabTP);
 		  this.setUnlocalizedName("med_kit");
-		  this.setMaxStackSize(16);
+		  this.setMaxStackSize(ConfigHandler.healStack);
 	  }
 	  
 	  @Override
@@ -35,7 +36,10 @@ public class MedKit extends Item {
 	      playerIn.getHeldItem(handIn).setCount(playerIn.getHeldItem(handIn).getCount() - 1);
 	    }
 	    
-	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, 0));
+	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, ConfigHandler.healLevel, false, false));
+	    if (ConfigHandler.healinstant){
+	    	playerIn.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 0, false, false));
+	    }
 	    
 	    return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
 	  }

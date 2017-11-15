@@ -172,7 +172,10 @@ public class ConfigHandler {
 	
 	// Medkit
 	public static boolean MedKit = true;
-	public static int healDuration = 300;
+	public static int healDuration = 30;
+	public static int healLevel = 2;
+	public static int healStack = 32;
+	public static boolean healinstant = true;
 	
 	// Flint Items & More
 	public static boolean FlintTools = true;

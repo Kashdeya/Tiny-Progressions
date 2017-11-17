@@ -13,6 +13,8 @@ public class PouchContainer extends Container
     private final InventoryStorage storage;
     private final int currentSlot;
     
+    private boolean takenItem;
+    
     public PouchContainer(InventoryStorage storage, EntityPlayer player)
     {
         this.storage = storage;
@@ -42,12 +44,24 @@ public class PouchContainer extends Container
         if(slotId == currentSlot)
             return ItemStack.EMPTY;
         
-        Slot slot = getSlot(slotId);
+        Slot slot = null;
         
-        if(!slot.getHasStack())
-            return ItemStack.EMPTY;
+        try
+        {
+        	slot = getSlot(slotId);
+        }
+        catch(ArrayIndexOutOfBoundsException ex)
+        {
+        	return ItemStack.EMPTY;
+        }
         
-        return super.slotClick(slotId, dragType, clickTypeIn, player);
+        if(slot.getHasStack())
+        {
+        	takenItem = true;
+    		return super.slotClick(slotId, dragType, clickTypeIn, player);
+        }
+        else
+        	return takenItem ? super.slotClick(slotId, dragType, clickTypeIn, player) : ItemStack.EMPTY;
     }
     
     @Override
@@ -56,7 +70,7 @@ public class PouchContainer extends Container
         Slot slot = getSlot(index);
  
         if(slot == null || !slot.getHasStack())
-            return null;
+            return ItemStack.EMPTY;
  
         ItemStack itemstack = slot.getStack();
         ItemStack returned = itemstack.copy();
@@ -92,6 +106,7 @@ public class PouchContainer extends Container
         }
  
         slot.onTake(player, itemstack);
+        takenItem = false;
         return returned;
     }
 }

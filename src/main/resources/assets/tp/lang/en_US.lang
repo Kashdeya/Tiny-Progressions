@@ -27,6 +27,11 @@ item.bam_tshirt.name=bamInati T-Shirt
 item.tiny_charcoal.name=Tiny Charcoal
 item.tiny_coal.name=Tiny Coal
 
+item.stone_hammer.name=Stone Hammer
+item.chainmail_part.name=Chainmail Part
+
+tooltip.stay_1=Used for crafting only!
+
 #Withered Block
 tile.withered_block.name=Withered Bedrock
 

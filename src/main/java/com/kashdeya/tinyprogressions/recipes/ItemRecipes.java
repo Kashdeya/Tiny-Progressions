@@ -119,7 +119,7 @@ public class ItemRecipes {
 				});
 			}
 			
-			// Lava Bucket
+			// Tiny Coal & Charcoal
 			if (ConfigHandler.lava_block_recipe) {
 				RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new Object[] {
 						new ItemStack(Items.COAL, 1, 1)
@@ -140,6 +140,23 @@ public class ItemRecipes {
 							Character.valueOf('s'), TechItems.tiny_coal
 				});
 			}
+			
+			// Chainmail part
+			if (ArmorHandler.chain_armor){
+				RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), new Object[] {
+						Items.IRON_INGOT, TechItems.stone_hammer
+				});
+			}
+			
+			// Can not be turned off.
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.stone_hammer), new Object[] {
+					"ccc",
+					"isi",
+					" s ",
+						Character.valueOf('i'), Items.STRING,
+						Character.valueOf('s'), Items.STICK,
+						Character.valueOf('c'), "stone"
+			});
 			
 		}
 

@@ -12,6 +12,34 @@ import net.minecraft.item.ItemStack;
 public class ArmorRecipes {
 	
 	public static void init() {
+		if (ArmorHandler.chain_armor){
+			RecipeRegistry.addShapedRecipe(new ItemStack(Items.CHAINMAIL_HELMET), new Object[] {
+					"sss",
+					"s s",
+						Character.valueOf('s'), "chainmail"
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE), new Object[] {
+					"s s",
+					"sss",
+					"sss",
+						Character.valueOf('s'), "chainmail"
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS), new Object[] {
+					"sss",
+					"s s",
+					"s s",
+						Character.valueOf('s'), "chainmail"
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS), new Object[] {
+					"s s",
+					"s s",
+						Character.valueOf('s'), "chainmail"
+			});
+		}
+		
 		if (ArmorHandler.bam_tshirt){
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), new Object[] {
 					Items.DIAMOND_CHESTPLATE

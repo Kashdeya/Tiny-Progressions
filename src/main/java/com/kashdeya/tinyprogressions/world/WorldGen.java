@@ -20,6 +20,7 @@ public class WorldGen implements IWorldGenerator {
     private WorldGenerator ender_ore;
     private WorldGenerator lava_block;
     private WorldGenerator water_block;
+    private WorldGenerator charcoal_block;
     
     public WorldGen()
     {
@@ -31,6 +32,9 @@ public class WorldGen implements IWorldGenerator {
     	}
     	if (ConfigHandler.water_block){
     		this.water_block = new WorldGenMinable(TechBlocks.water_block.getDefaultState(), ConfigHandler.water_block_size, BlockMatcher.forBlock(Blocks.STONE));
+    	}
+    	if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
+    		this.charcoal_block = new WorldGenMinable(TechBlocks.charcoal_block.getDefaultState(), 20, BlockMatcher.forBlock(Blocks.MAGMA));
     	}
     }
     
@@ -68,6 +72,9 @@ public class WorldGen implements IWorldGenerator {
       case 1:
     	  break;
       case -1:
+    	  if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
+    		  runGenerator(this.charcoal_block, world, random, chunkX, chunkZ, 15, 0, 256);
+    	  }
     	  break;
       }
     }

@@ -36,6 +36,13 @@ public class OtherRecipes
 			});
 		}
 		
+		// Lava Bucket
+		if (ConfigHandler.lava_block_recipe) {
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
+					TechBlocks.lava_block, Items.BUCKET
+			});
+		}
+		
 		// Old Reed
 		if (ConfigHandler.old_reed) {
 			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.SUGAR), new Object[] {

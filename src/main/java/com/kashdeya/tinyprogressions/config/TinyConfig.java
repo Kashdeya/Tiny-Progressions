@@ -91,10 +91,11 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Lava Source Block Stones", "Lavastone!");
 		ConfigHandler.lava_block = config.getBoolean("Lavastone", category + " Lava Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
-		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Frequency", category + " Lava Source Block Stones", 15, 1, 100, "Sets the Chance of Lavastone.");
-		ConfigHandler.lava_block_min = config.getInt("Lavastone Min", category + " Lava Source Block Stones", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.lava_block_max = config.getInt("Lavastone Max", category + " Lava Source Block Stones", 64, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_block_size = config.getInt("Lavastone Size", category + " Lava Source Block Stones", 10, 5, 100, "Sets the Lavastone Vein Size.");
+		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Gen Chance", category + " Lava Source Block Stones", 15, 1, 100, "Sets the Chance of Lavastone.");
+		ConfigHandler.lava_block_min = config.getInt("Lavastone Gen Min", category + " Lava Source Block Stones", 1, 1, 255, "Sets the min Y level.");
+		ConfigHandler.lava_block_max = config.getInt("Lavastone Gen Max", category + " Lava Source Block Stones", 64, 1, 255, "Sets the max Y level.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", category + " Lava Source Block Stones", 10, 5, 100, "Sets the Lavastone Vein Size.");
+		ConfigHandler.lava_block_recipe = config.getBoolean("Lavastone Silktouch", category + " Lava Source Block Stones", true, "Enable Lava bucket recipe?\n[If picked up with Silktouch you can use to craft a lava bucket.]");
 		
 		config.addCustomCategoryComment(category + " Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
@@ -145,6 +146,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Charcoal", "It's the little things that count right?");
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Charcoal", true, "Enable the Charcoal Block?");
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Charcoal", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
+		ConfigHandler.CharcoalWorldgen = config.getBoolean("Charcoal Block Nether Worldgen", category + " Charcoal", true, "Enable the Charcoal Block to spawn in the nether?");
 		
 		config.addCustomCategoryComment(category + " Seeds", "Things to plant?");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Seeds", true, "Enable Mycelium Seeds?");
@@ -435,6 +437,9 @@ public class TinyConfig {
 		ConfigHandler.bams_pizza_sat = config.getFloat("Bams Pizza Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount", category + " Extra Food Stats", 4, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", category + " Extra Food Stats", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		
+		config.addCustomCategoryComment(category + " Food Eat Duration", "How long it takes to eat food.");
+		ConfigHandler.eat_timer = config.getInt("Eat Duration", category + " Food Eat Duration", 64, 16, Integer.MAX_VALUE, "Sets how long it takes to eat TP food.");
 		
 		if (config.hasChanged())
         config.save();

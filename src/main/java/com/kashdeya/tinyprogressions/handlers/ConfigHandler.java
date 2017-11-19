@@ -1,6 +1,10 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	
+	// food eat time
+	public static int eat_timer = 16;
+	
 	// water harvester
 	public static boolean water_harvester = false;
 	
@@ -138,6 +142,7 @@ public class ConfigHandler {
 	
 	// Deco Blocks
 	public static boolean CharcoalBlock = true;
+	public static boolean CharcoalWorldgen = true;
 	public static boolean DirtyGlass = true;
 	public static boolean AndesiteBrick = true;
 	public static boolean DioriteBrick = true;
@@ -275,6 +280,7 @@ public class ConfigHandler {
 	
 	// Lava Block
 	public static boolean lava_block = true;
+	public static boolean lava_block_recipe = true;
 	public static int lava_block_frequency = 50;
 	public static int lava_block_min = 1;
 	public static int lava_block_max = 64;

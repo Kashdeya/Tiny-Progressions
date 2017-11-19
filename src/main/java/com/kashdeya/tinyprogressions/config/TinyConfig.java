@@ -99,10 +99,11 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
-		ConfigHandler.water_block_frequency = config.getInt("Waterstone Frequency", category + " Water Source Block Stones", 15, 1, 100, "Sets the Chance of Waterstone.");
-		ConfigHandler.water_block_min = config.getInt("Waterstone Min", category + " Water Source Block Stones", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.water_block_max = config.getInt("Waterstone Max", category + " Water Source Block Stones", 64, 1, 255, "Sets the max Y level.");
-		ConfigHandler.water_block_size = config.getInt("Waterstone Size", category + " Water Source Block Stones", 10, 5, 100, "Sets the Waterstone Vein Size.");
+		ConfigHandler.water_block_frequency = config.getInt("Waterstone Gen Chance", category + " Water Source Block Stones", 15, 1, 100, "Sets the Chance of Waterstone.");
+		ConfigHandler.water_block_min = config.getInt("Waterstone Gen Min", category + " Water Source Block Stones", 1, 1, 255, "Sets the min Y level.");
+		ConfigHandler.water_block_max = config.getInt("Waterstone Gen Max", category + " Water Source Block Stones", 64, 1, 255, "Sets the max Y level.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Gen Size", category + " Water Source Block Stones", 10, 5, 100, "Sets the Waterstone Vein Size.");
+		ConfigHandler.water_block_recipe = config.getBoolean("Waterstone Silktouch", category + " Water Source Block Stones", true, "Enable Water bucket recipe?\n[If picked up with Silktouch you can use to craft a Water bucket.]");
 		
 		config.addCustomCategoryComment(category + " Dirty Glass", "Just a little dirty!");
 		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Dirty Glass", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");

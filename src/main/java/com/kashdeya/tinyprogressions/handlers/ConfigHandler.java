@@ -288,6 +288,7 @@ public class ConfigHandler {
 	
 	// Water Block
 	public static boolean water_block = true;
+	public static boolean water_block_recipe = true;
 	public static int water_block_frequency = 50;
 	public static int water_block_min = 1;
 	public static int water_block_max = 64;

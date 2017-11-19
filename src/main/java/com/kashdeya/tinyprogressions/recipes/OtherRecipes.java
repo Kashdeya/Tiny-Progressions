@@ -43,6 +43,13 @@ public class OtherRecipes
 			});
 		}
 		
+		// Water Bucket
+		if (ConfigHandler.water_block_recipe) {
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.WATER_BUCKET), new Object[] {
+					TechBlocks.water_block, Items.BUCKET
+			});
+		}
+		
 		// Old Reed
 		if (ConfigHandler.old_reed) {
 			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.SUGAR), new Object[] {

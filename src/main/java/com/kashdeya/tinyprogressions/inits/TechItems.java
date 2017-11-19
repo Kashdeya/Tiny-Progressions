@@ -8,6 +8,7 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemBaseMeta;
+import com.kashdeya.tinyprogressions.items.ItemStay;
 import com.kashdeya.tinyprogressions.items.MedKit;
 import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.Pouch;
@@ -61,8 +62,17 @@ public class TechItems {
 	// tiny coal & charcoal
 	public static Item tiny_coal;
 	public static Item tiny_charcoal;
+	// chainmail
+	public static Item chainmail_part;
+	public static Item stone_hammer;
 		
 	static void init() {
+		// Chainmail
+		if (ArmorHandler.chain_armor){
+			chainmail_part = new ItemBase().setOreDictName("chainmail").setUnlocalizedName("chainmail_part");
+		}
+		stone_hammer = new ItemStay().setUnlocalizedName("stone_hammer");
+		
 		// bsc rod
 		if (ConfigHandler.bsc_rod){
 			bsc_rod = new ItemBase().setOreDictName("stickCane").setUnlocalizedName("bsc_rod");

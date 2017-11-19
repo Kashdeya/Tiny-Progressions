@@ -40,7 +40,7 @@ public class LavaBlock extends Block {
         super(Material.GROUND);
         this.setHardness(1.0F);
         this.setResistance(5.0F);
-        this.setLightLevel(0.1F);
+        this.setLightLevel(0.2F);
         this.setTickRandomly(true);
         this.setUnlocalizedName("lava_block");
         this.setSoundType(SoundType.STONE);

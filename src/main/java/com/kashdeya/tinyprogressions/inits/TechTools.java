@@ -37,6 +37,11 @@ import com.kashdeya.tinyprogressions.items.tools.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.KappaPick;
 import com.kashdeya.tinyprogressions.items.tools.SeaIronAxe;
 import com.kashdeya.tinyprogressions.items.tools.SeaIronPickaxe;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseAxe;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseHoe;
+import com.kashdeya.tinyprogressions.items.tools.base.BasePickaxe;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseSpade;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseSword;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneAxe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneHoe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BonePickaxe;
@@ -139,10 +144,60 @@ public class TechTools {
 	public static Item bsc_diamond_axe;
 	public static Item bsc_diamond_hoe;
 	public static Item bsc_diamond_spade;
+	// nether tools and weapons
+	public static Item nether_iron_sword;
+	public static Item nether_iron_pickaxe;
+	public static Item nether_iron_axe;
+	public static Item nether_iron_hoe;
+	public static Item nether_iron_spade;
+	public static Item nether_gold_sword;
+	public static Item nether_gold_pickaxe;
+	public static Item nether_gold_axe;
+	public static Item nether_gold_hoe;
+	public static Item nether_gold_spade;
+	public static Item nether_diamond_sword;
+	public static Item nether_diamond_pickaxe;
+	public static Item nether_diamond_axe;
+	public static Item nether_diamond_hoe;
+	public static Item nether_diamond_spade;
+	public static Item nether_sword;
+	public static Item nether_pickaxe;
+	public static Item nether_axe;
+	public static Item nether_hoe;
+	public static Item nether_spade;
 	// c axe
 	public static Item c_axe;
 	
 	static void init(){
+		// nether tools and weapons
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_iron_tools_weapons){
+			nether_iron_pickaxe = new BasePickaxe(Item.ToolMaterial.IRON).setUnlocalizedName("nether_iron_pickaxe");
+			nether_iron_axe = new BaseAxe(Item.ToolMaterial.IRON, 8.0F, -1.2F).setUnlocalizedName("nether_iron_axe");
+			nether_iron_spade = new BaseSpade(Item.ToolMaterial.IRON).setUnlocalizedName("nether_iron_spade");
+			nether_iron_sword = new BaseSword(Item.ToolMaterial.IRON).setUnlocalizedName("nether_iron_sword");
+			nether_iron_hoe = new BaseHoe(Item.ToolMaterial.IRON).setUnlocalizedName("nether_iron_hoe");
+		}
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_gold_tools_weapons){
+			nether_gold_pickaxe = new BasePickaxe(Item.ToolMaterial.GOLD).setUnlocalizedName("nether_gold_pickaxe");
+			nether_gold_axe = new BaseAxe(Item.ToolMaterial.GOLD, 6.0F, -1.2F).setUnlocalizedName("nether_gold_axe");
+			nether_gold_spade = new BaseSpade(Item.ToolMaterial.GOLD).setUnlocalizedName("nether_gold_spade");
+			nether_gold_sword = new BaseSword(Item.ToolMaterial.GOLD).setUnlocalizedName("nether_gold_sword");
+			nether_gold_hoe = new BaseHoe(Item.ToolMaterial.GOLD).setUnlocalizedName("nether_gold_hoe");
+		}
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_diamond_tools_weapons){
+			nether_diamond_pickaxe = new BasePickaxe(Item.ToolMaterial.DIAMOND).setUnlocalizedName("nether_diamond_pickaxe");
+			nether_diamond_axe = new BaseAxe(Item.ToolMaterial.DIAMOND, 8.0F, -1.2F).setUnlocalizedName("nether_diamond_axe");
+			nether_diamond_spade = new BaseSpade(Item.ToolMaterial.DIAMOND).setUnlocalizedName("nether_diamond_spade");
+			nether_diamond_sword = new BaseSword(Item.ToolMaterial.DIAMOND).setUnlocalizedName("nether_diamond_sword");
+			nether_diamond_hoe = new BaseHoe(Item.ToolMaterial.DIAMOND).setUnlocalizedName("nether_diamond_hoe");
+		}
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_tools_weapons){
+			nether_pickaxe = new BasePickaxe(Item.ToolMaterial.STONE).setUnlocalizedName("nether_pickaxe");
+			nether_axe = new BaseAxe(Item.ToolMaterial.STONE, 8.0F, -1.2F).setUnlocalizedName("nether_axe");
+			nether_spade = new BaseSpade(Item.ToolMaterial.STONE).setUnlocalizedName("nether_spade");
+			nether_sword = new BaseSword(Item.ToolMaterial.STONE).setUnlocalizedName("nether_sword");
+			nether_hoe = new BaseHoe(Item.ToolMaterial.STONE).setUnlocalizedName("nether_hoe");
+		}
 		// c axe
 		if (ConfigHandler.c_axe && ConfigHandler.sea_axe){
 			c_axe = new SeaIronAxe(MaterialHandler.SEAIRON, 10.0F, -1.2F).setUnlocalizedName("c_axe");
@@ -150,28 +205,27 @@ public class TechTools {
 		if (ConfigHandler.c_axe && ConfigHandler.sea_pickaxe){
 			c_axe = new SeaIronPickaxe(MaterialHandler.SEAIRON).setUnlocalizedName("c_axe");
 		}
-		
 		// bsc tools and weapons
-		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
-			bsc_iron_sword = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_sword");
-			bsc_iron_pickaxe = new BscIronAxe(MaterialHandler.BSCIRON, 7.0F, -1.2F).setUnlocalizedName("bsc_iron_pickaxe");
-			bsc_iron_axe = new BscIronSpade(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_axe");
-			bsc_iron_hoe = new BscIronSword(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_hoe");
-			bsc_iron_spade = new BscIronHoe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_spade");
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){
+			bsc_iron_pickaxe = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_pickaxe");
+			bsc_iron_axe = new BscIronAxe(MaterialHandler.BSCIRON, 7.0F, -1.2F).setUnlocalizedName("bsc_iron_axe");
+			bsc_iron_spade = new BscIronSpade(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_spade");
+			bsc_iron_sword = new BscIronSword(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_sword");
+			bsc_iron_hoe = new BscIronHoe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_hoe");
 		}
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_gold_tools_weapons){
-			bsc_gold_sword = new BscGoldPickaxe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_sword");
-			bsc_gold_pickaxe = new BscGoldAxe(MaterialHandler.BSCGOLD, 7.0F, -1.2F).setUnlocalizedName("bsc_gold_pickaxe");
-			bsc_gold_axe = new BscGoldSpade(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_axe");
-			bsc_gold_hoe = new BscGoldSword(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_hoe");
-			bsc_gold_spade = new BscGoldHoe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_spade");
+			bsc_gold_pickaxe = new BscGoldPickaxe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_pickaxe");
+			bsc_gold_axe = new BscGoldAxe(MaterialHandler.BSCGOLD, 7.0F, -1.2F).setUnlocalizedName("bsc_gold_axe");
+			bsc_gold_spade = new BscGoldSpade(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_spade");
+			bsc_gold_sword = new BscGoldSword(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_sword");
+			bsc_gold_hoe = new BscGoldHoe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_hoe");
 		}
-		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){
-			bsc_diamond_sword = new BscDiamondPickaxe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_sword");
-			bsc_diamond_pickaxe = new BscDiamondAxe(MaterialHandler.BSCDIAMOND, 7.0F, -1.2F).setUnlocalizedName("bsc_diamond_pickaxe");
-			bsc_diamond_axe = new BscDiamondSpade(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_axe");
-			bsc_diamond_hoe = new BscDiamondSword(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_hoe");
-			bsc_diamond_spade = new BscDiamondHoe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_spade");
+		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
+			bsc_diamond_pickaxe = new BscDiamondPickaxe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_pickaxe");
+			bsc_diamond_axe = new BscDiamondAxe(MaterialHandler.BSCDIAMOND, 7.0F, -1.2F).setUnlocalizedName("bsc_diamond_axe");
+			bsc_diamond_spade = new BscDiamondSpade(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_spade");
+			bsc_diamond_sword = new BscDiamondSword(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_sword");
+			bsc_diamond_hoe = new BscDiamondHoe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_hoe");
 		}
 		// Flint
 		if (ConfigHandler.FlintTools){

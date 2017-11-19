@@ -109,21 +109,6 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Dirty Glass", "Just a little dirty!");
 		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Dirty Glass", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");
 		
-		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
-		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");
-		// iron
-		ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Iron Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// gold
-		ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Gold Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// diamond
-		ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-		// cookie
-		ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", category + " Better Sugar Cane", true, "Enable Sugar Cookie?");
-		// sugar blocks
-		ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed Sugar", category + " Better Sugar Cane", true, "Enable Compressed Sugar?");
-		// sugarcane blocks
-		ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed Sugar Cane", category + " Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
-		
 		if (config.hasChanged())
         config.save();
 	}
@@ -449,6 +434,50 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Food Eat Duration", "How long it takes to eat food.");
 		ConfigHandler.eat_timer = config.getInt("Eat Duration", category + " Food Eat Duration", 64, 16, Integer.MAX_VALUE, "Sets how long it takes to eat TP food.");
+		
+		if (config.hasChanged())
+        config.save();
+	}
+	
+	public static void initReborn()
+	{
+		
+		File f = new File(configDir, "Reborn.cfg");
+        config = new Configuration(f, configVersion);
+        
+        config.load();
+        
+		String category;
+		
+		category = "Tiny Progressions";
+		
+		config.addCustomCategoryComment(category + " Better Sugar Cane", "Bringing back a oldie but goodie");
+		ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", category + " Better Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all Sugar Cane Tools and Weapons to work!]");
+		// iron
+		ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Iron Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// gold
+		ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Gold Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// diamond
+		ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar Cane Tools and Weapons", category + " Better Sugar Cane", true, "Enable Sugar Cane Tools and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
+		// cookie
+		ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", category + " Better Sugar Cane", true, "Enable Sugar Cookie?");
+		// sugar blocks
+		ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed Sugar", category + " Better Sugar Cane", true, "Enable Compressed Sugar?");
+		// sugarcane blocks
+		ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed Sugar Cane", category + " Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
+		
+		config.addCustomCategoryComment(category + " Better Nether", "Bringing back a oldie but goodie 2");
+		ConfigHandler.nether_rod = config.getBoolean("Better Nether Rod", category + " Better Nether", true, "Enable Better Nether Rod?\n[MUST be ENABLED for all Nether Tools and Weapons to work!]");
+		// iron
+		ConfigHandler.nether_iron_tools_weapons = config.getBoolean("Iron Netherrack Tools and Weapons", category + " Better Nether", true, "Enable Iron Netherrack Tools and Weapons?\n[Better Nether Rod MUST be ENABLED!]");
+		// gold
+		ConfigHandler.nether_gold_tools_weapons = config.getBoolean("Gold Netherrack Tools and Weapons", category + " Better Nether", true, "Enable Gold Netherrack Tools and Weapons?\n[Better Nether Rod MUST be ENABLED!]");
+		// diamond
+		ConfigHandler.nether_diamond_tools_weapons = config.getBoolean("Diamond Netherrack Tools and Weapons", category + " Better Nether", true, "Enable Diamond Netherrack Tools and Weapons?\n[Better Nether Rod MUST be ENABLED!]");
+		// diamond
+		ConfigHandler.nether_tools_weapons = config.getBoolean("Netherrack Tools and Weapons", category + " Better Nether", true, "Enable Netherrack Tools and Weapons?\n[Better Nether Rod MUST be ENABLED!]");
+		// sugarcane blocks
+		ConfigHandler.nether_compressed_blocks = config.getBoolean("Compressed Netherrack", category + " Better Nether", true, "Enable Compressed Netherrack?");
 		
 		if (config.hasChanged())
         config.save();

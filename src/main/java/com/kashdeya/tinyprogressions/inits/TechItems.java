@@ -57,6 +57,8 @@ public class TechItems {
 	public static Item colored_dust;
 	// Repair Tablet
 	public static Item repair_tablet;
+	// nether rod
+	public static Item nether_rod;
 	// bsc rod
 	public static Item bsc_rod;
 	// tiny coal & charcoal
@@ -67,11 +69,14 @@ public class TechItems {
 	public static Item stone_hammer;
 		
 	static void init() {
+		// nether rod
+		if (ConfigHandler.nether_rod){
+			nether_rod = new ItemBase().setOreDictName("stickNether").setUnlocalizedName("nether_rod");
+		}
 		// Chainmail
 		if (ArmorHandler.chain_armor){
 			chainmail_part = new ItemBase().setOreDictName("chainmail").setUnlocalizedName("chainmail_part");
 		}
-		stone_hammer = new ItemStay().setUnlocalizedName("stone_hammer");
 		
 		// bsc rod
 		if (ConfigHandler.bsc_rod){
@@ -178,6 +183,9 @@ public class TechItems {
 	    if (ConfigHandler.repair_tablet){
 	    		repair_tablet = new RepairTablet().setUnlocalizedName("repair_tablet");
 	    }
+	    
+	    // Can not be turned off
+	    stone_hammer = new ItemStay().setUnlocalizedName("stone_hammer");
 	}
 
 	public static void onRegister()

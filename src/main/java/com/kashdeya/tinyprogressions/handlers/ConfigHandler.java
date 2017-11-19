@@ -16,6 +16,19 @@ public class ConfigHandler {
 	public static boolean bridge_builder = false;
 	public static boolean tower_builder = false;
 	
+	// nether rod
+	public static boolean nether_rod = true;
+	// nether cobble
+	public static boolean nether_tools_weapons = true;
+	// nether iron
+	public static boolean nether_iron_tools_weapons = true;
+	// nether gold
+	public static boolean nether_gold_tools_weapons = true;
+	// nether diamond
+	public static boolean nether_diamond_tools_weapons = true;
+	// nether sugar blocks
+	public static boolean nether_compressed_blocks = true;
+	
 	// bsc rod
 	public static boolean bsc_rod = true;
 	// bsc iron

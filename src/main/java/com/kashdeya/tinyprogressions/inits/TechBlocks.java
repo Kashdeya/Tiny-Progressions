@@ -132,6 +132,16 @@ public class TechBlocks {
     public static Block sextuple_compressed_sugar_cane;
     public static Block septuple_compressed_sugar_cane;
     public static Block octuple_compressed_sugar_cane;
+    // nether blocks
+    public static Block compressed_nether_block;
+    public static Block double_compressed_nether_block;
+    public static Block triple_compressed_nether_block;
+    public static Block quadruple_compressed_nether_block;
+    public static Block quintuple_compressed_nether_block;
+    public static Block sextuple_compressed_nether_block;
+    public static Block septuple_compressed_nether_block;
+    public static Block octuple_compressed_nether_block;
+    public static Block soul_sandstone;
     // water harvester
     public static Block water_harvester;
     // bridge
@@ -139,6 +149,31 @@ public class TechBlocks {
     public static Block tower_builder;
     
 	static void init() {
+		
+		// nether blocks
+		if (ConfigHandler.nether_rod){
+			soul_sandstone = new StandardBlock(Material.ROCK).setUnlocalName("soul_sandstone")
+					.setSound(SoundType.STONE).setHardness(0.8F).setResistance(10.0F);
+		}
+		if (ConfigHandler.nether_compressed_blocks){
+			compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(0.4F).setResistance(10.0F);
+			double_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("double_compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(0.8F).setResistance(20.0F);
+			triple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("triple_compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(1.2F).setResistance(30.0F);
+			quadruple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("quadruple_compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(1.6F).setResistance(40.0F);
+			quintuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("quintuple_compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(2.0F).setResistance(50.0F);
+			sextuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("sextuple_compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(2.4F).setResistance(60.0F);
+			septuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("septuple_compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(2.8F).setResistance(70.0F);
+			octuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("octuple_compressed_nether_block")
+					.setSound(SoundType.STONE).setHardness(3.2F).setResistance(80.0F);
+		}
+		
 		// water harvester
 		if (ConfigHandler.water_harvester){
 			water_harvester = new WaterHarvester();

@@ -58,6 +58,9 @@ public class TechItems {
 	public static Item repair_tablet;
 	// bsc rod
 	public static Item bsc_rod;
+	// tiny coal & charcoal
+	public static Item tiny_coal;
+	public static Item tiny_charcoal;
 		
 	static void init() {
 		// bsc rod
@@ -100,6 +103,14 @@ public class TechItems {
 		// Medkit
 		if (ConfigHandler.MedKit) {
 			med_kit = new MedKit();
+		}
+		
+		// Tiny Coal & Charcoal
+		if (ConfigHandler.tiny_charcoal){
+			tiny_charcoal = new ItemBase().setUnlocalizedName("tiny_charcoal");
+		}
+		if (ConfigHandler.tiny_coal){
+			tiny_coal = new ItemBase().setUnlocalizedName("tiny_coal");
 		}
 		
 		// Stone Dust

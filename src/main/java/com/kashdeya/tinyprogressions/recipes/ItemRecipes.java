@@ -119,6 +119,28 @@ public class ItemRecipes {
 				});
 			}
 			
+			// Lava Bucket
+			if (ConfigHandler.lava_block_recipe) {
+				RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new Object[] {
+						new ItemStack(Items.COAL, 1, 1)
+				});
+				RecipeRegistry.addShapedRecipe(new ItemStack(Items.COAL, 1, 1), new Object[] {
+						"sss",
+						"s s",
+						"sss",
+							Character.valueOf('s'), TechItems.tiny_charcoal
+				});
+				RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), new Object[] {
+						Items.COAL
+				});
+				RecipeRegistry.addShapedRecipe(new ItemStack(Items.COAL), new Object[] {
+						"sss",
+						"s s",
+						"sss",
+							Character.valueOf('s'), TechItems.tiny_coal
+				});
+			}
+			
 		}
 
 }

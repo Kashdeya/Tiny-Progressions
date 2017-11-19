@@ -24,6 +24,9 @@ item.raspberry_berry.name=Raspberry
 item.c_axe.name=Sea-Axe
 item.bam_tshirt.name=bamInati T-Shirt
 
+item.tiny_charcoal.name=Tiny Charcoal
+item.tiny_coal.name=Tiny Coal
+
 #Withered Block
 tile.withered_block.name=Withered Bedrock
 

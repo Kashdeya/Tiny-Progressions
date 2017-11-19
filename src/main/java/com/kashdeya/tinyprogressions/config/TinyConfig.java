@@ -96,6 +96,7 @@ public class TinyConfig {
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Gen Max", category + " Lava Source Block Stones", 64, 1, 255, "Sets the max Y level.");
 		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", category + " Lava Source Block Stones", 10, 5, 100, "Sets the Lavastone Vein Size.");
 		ConfigHandler.lava_block_recipe = config.getBoolean("Lavastone Silktouch", category + " Lava Source Block Stones", true, "Enable Lava bucket recipe?\n[If picked up with Silktouch you can use to craft a lava bucket.]");
+		FuelHandler.lava_block_burntime = config.getInt("Lavastone Silktouch Burn-Time", category + " Lava Source Block Stones", 20000, 0, Integer.MAX_VALUE, "If Silktouch is Enbled you can use Lavastone as a fuel source as well.");
 		
 		config.addCustomCategoryComment(category + " Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
@@ -148,6 +149,12 @@ public class TinyConfig {
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", category + " Charcoal", true, "Enable the Charcoal Block?");
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Charcoal", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
 		ConfigHandler.CharcoalWorldgen = config.getBoolean("Charcoal Block Nether Worldgen", category + " Charcoal", true, "Enable the Charcoal Block to spawn in the nether?");
+		
+		config.addCustomCategoryComment(category + " Tiny Coal & Charcoal", "tiny things.");
+		ConfigHandler.tiny_charcoal = config.getBoolean("Tiny Charcoal", category + " Tiny Coal & Charcoal", true, "Enable Tiny Charcoal?");
+		FuelHandler.tiny_charcoal_burntime = config.getInt("Tiny Charcoal Burn Time", category + " Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Charcoal.");
+		ConfigHandler.tiny_coal = config.getBoolean("Tiny Coal", category + " Tiny Coal & Charcoal", true, "Enable Tiny Coal?");
+		FuelHandler.tiny_coal_burntime = config.getInt("Tiny Coal Burn Time", category + " Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Coal.");
 		
 		config.addCustomCategoryComment(category + " Seeds", "Things to plant?");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Seeds", true, "Enable Mycelium Seeds?");

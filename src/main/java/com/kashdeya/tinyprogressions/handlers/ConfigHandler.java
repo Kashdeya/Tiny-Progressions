@@ -2,6 +2,10 @@ package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
 	
+	// Tiny Coals
+	public static boolean tiny_coal = true;
+	public static boolean tiny_charcoal = true;
+	
 	// food eat time
 	public static int eat_timer = 16;
 	

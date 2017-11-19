@@ -233,6 +233,7 @@ public class TinyConfig {
 		ArmorHandler.BoneArmor = config.getBoolean("Bone Armor", category + " Armor", true, "Enable Bone Armor?");
 		ArmorHandler.WoodArmor = config.getBoolean("Wooden Armor", category + " Armor", true, "Enable Wooden Armor?");
 		ArmorHandler.emerald_amor = config.getBoolean("Emerald Armor", category + " Armor", true, "Enable Emerald Armor?");
+		ArmorHandler.chain_armor = config.getBoolean("Chain Armor", category + " Armor", true, "Enable Chain Armor Recipe?");
 		
 		config.addCustomCategoryComment(category + " Lava Armor", "What Armor?");
 		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", category + " Lava Armor", true, "Enable Lava Armor?");

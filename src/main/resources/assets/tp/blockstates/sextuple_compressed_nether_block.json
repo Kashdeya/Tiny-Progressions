@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": {"model": "tp:sextuple_compressed_nether_block"}
+    }
+}

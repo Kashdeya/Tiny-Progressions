@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": {"model": "tp:double_compressed_nether_block"}
+    }
+}

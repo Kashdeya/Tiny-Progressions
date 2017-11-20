@@ -514,7 +514,7 @@ item.bsc_diamond_pickaxe.name=Diamond Sugar Cane Pickaxe
 
 item.bsc_iron_axe.name=Iron Sugar Cane Axe
 item.bsc_gold_axe.name=Golden Sugar Cane Axe
-item.bsc_diamond_axe.name= Sugar Cane Axe
+item.bsc_diamond_axe.name=Diamond Sugar Cane Axe
 
 item.bsc_iron_hoe.name=Iron Sugar Cane Shovel
 item.bsc_gold_hoe.name=Golden Sugar Cane Shovel
@@ -523,3 +523,40 @@ item.bsc_diamond_hoe.name=Diamond Sugar Cane Shovel
 item.bsc_iron_spade.name=Iron Sugar Cane Shovel
 item.bsc_gold_spade.name=Golden Sugar Cane Shovel
 item.bsc_diamond_spade.name=Diamond Sugar Cane Shovel
+
+#Nether
+tile.compressed_nether_block.name=Compressed Netherrack
+tile.double_compressed_nether_block.name=Double Compressed Netherrack
+tile.triple_compressed_nether_block.name=Triple Compressed Netherrack
+tile.quadruple_compressed_nether_block.name=Quadruple Compressed Netherrack
+tile.quintuple_compressed_nether_block.name=Quintuple Compressed Netherrack
+tile.sextuple_compressed_nether_block.name=Sextuple Compressed Netherrack
+tile.septuple_compressed_nether_block.name=Septuple Compressed Netherrack
+tile.octuple_compressed_nether_block.name=Octuple Compressed Netherrack
+
+item.nether_rod.name=Netherrack Rod
+
+item.nether_iron_sword.name=Iron Netherrack Sword
+item.nether_gold_sword.name=Golden Netherrack Sword
+item.nether_diamond_sword.name=Diamond Netherrack Sword
+item.nether_sword.name=Netherrack Sword
+
+item.nether_iron_pickaxe.name=Iron Netherrack Pickaxe
+item.nether_gold_pickaxe.name=Golden Netherrack Pickaxe
+item.nether_diamond_pickaxe.name=Diamond Netherrack Pickaxe
+item.nether_pickaxe.name=Netherrack Pickaxe
+
+item.nether_iron_axe.name=Iron Netherrack Axe
+item.nether_gold_axe.name=Golden Netherrack Axe
+item.nether_diamond_axe.name=Diamond Netherrack Axe
+item.nether_axe.name=Netherrack Axe
+
+item.nether_iron_hoe.name=Iron Netherrack Shovel
+item.nether_gold_hoe.name=Golden Netherrack Shovel
+item.nether_diamond_hoe.name=Diamond Netherrack Shovel
+item.nether_hoe.name=Netherrack Shovel
+
+item.nether_iron_spade.name=Iron Netherrack Shovel
+item.nether_gold_spade.name=Golden Netherrack Shovel
+item.nether_diamond_spade.name=Diamond Netherrack Shovel
+item.nether_spade.name=Netherrack Shovel

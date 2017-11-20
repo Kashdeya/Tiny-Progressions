@@ -1,0 +1,33 @@
+{
+    "parent": "block/block",
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "texture": "#t1", "cullface": "down" },
+                "up":    { "texture": "#t2", "cullface": "up" },
+                "north": { "texture": "#t3", "cullface": "north" },
+                "south": { "texture": "#t3", "cullface": "south" },
+                "west":  { "texture": "#t3", "cullface": "west" },
+                "east":  { "texture": "#t3", "cullface": "east" }
+            }
+        },
+		{   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+				"down":  { "texture": "#t1", "cullface": "down" },
+                "up":    { "texture": "#t2", "cullface": "up" },
+                "north": { "texture": "#t3", "cullface": "north" },
+                "south": { "texture": "#t3", "cullface": "south" },
+                "west":  { "texture": "#t3", "cullface": "west" },
+                "east":  { "texture": "#t3", "cullface": "east" }
+            }
+        }
+    ],
+    "textures": {
+        "particle": "tp:blocks/soul_sandstone",
+		"t1": "blocks/soul_sand",
+        "t2": "tp:blocks/soul_sandstone_top",
+		"t3": "tp:blocks/soul_sandstone"
+    }
+}

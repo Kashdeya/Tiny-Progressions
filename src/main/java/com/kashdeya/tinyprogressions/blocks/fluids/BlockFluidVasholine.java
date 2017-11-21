@@ -9,8 +9,6 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.MobEffects;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -41,8 +39,8 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 	@Override
 	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
 		if (entity instanceof EntityLivingBase) {
-			if(world.getTotalWorldTime()%20 == 0) // add whatever time you want here 20 = every 1 second
-				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 1 * 20, 0));
+			if(world.getTotalWorldTime()%20 == 0 && ((EntityLivingBase) entity).getHealth() < ((EntityLivingBase) entity).getMaxHealth()) // add whatever time you want here 20 = every 1 second
+				((EntityLivingBase) entity).heal(0.5F);
 			entity.rotationYaw += (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
 			entity.rotationPitch += (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
 		}

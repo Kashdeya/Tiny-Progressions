@@ -17,13 +17,104 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class BlockRecipes {
 	
 	public static void init() {
+		// Nether
+		if (ConfigHandler.nether_rod){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.soul_sandstone), new Object[] {
+					"cc",
+					"cc",
+						Character.valueOf('c'), Blocks.SOUL_SAND
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.SOUL_SAND, 9), new Object[] {
+					TechBlocks.soul_sandstone
+			});
+		}
+		if (ConfigHandler.nether_compressed_blocks){
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Blocks.NETHERRACK, 9), new Object[] {
+					TechBlocks.compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), Blocks.NETHERRACK
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.compressed_nether_block, 9), new Object[] {
+					TechBlocks.double_compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.double_compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.compressed_nether_block
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.double_compressed_nether_block, 9), new Object[] {
+					TechBlocks.triple_compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.triple_compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.double_compressed_nether_block
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.triple_compressed_nether_block, 9), new Object[] {
+					TechBlocks.quadruple_compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.quadruple_compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.triple_compressed_nether_block
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.quadruple_compressed_nether_block, 9), new Object[] {
+					TechBlocks.quintuple_compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.quintuple_compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.quadruple_compressed_nether_block
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.quintuple_compressed_nether_block, 9), new Object[] {
+					TechBlocks.sextuple_compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.sextuple_compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.quintuple_compressed_nether_block
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.sextuple_compressed_nether_block, 9), new Object[] {
+					TechBlocks.septuple_compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.septuple_compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.sextuple_compressed_nether_block
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.septuple_compressed_nether_block, 9), new Object[] {
+					TechBlocks.octuple_compressed_nether_block
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.octuple_compressed_nether_block), new Object[] {
+					"ccc",
+					"ccc",
+					"ccc",
+						Character.valueOf('c'), TechBlocks.septuple_compressed_nether_block
+			});
+		}
 		// bsc
 		if (ConfigHandler.bsc_sugar_compressed_blocks){
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.SUGAR, 9), new Object[] {
+					TechBlocks.compressed_sugar
+			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.compressed_sugar), new Object[] {
 					"ccc",
 					"ccc",
 					"ccc",
 						Character.valueOf('c'), Items.SUGAR
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.compressed_sugar, 9), new Object[] {
+					TechBlocks.double_compressed_sugar
 			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar), new Object[] {
 					"ccc",
@@ -33,11 +124,17 @@ public class BlockRecipes {
 			});
 		}
 		if (ConfigHandler.bsc_sugarcane_compressed_blocks){
+			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.REEDS, 9), new Object[] {
+					TechBlocks.compressed_sugar_cane
+			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.compressed_sugar_cane), new Object[] {
 					"ccc",
 					"ccc",
 					"ccc",
 						Character.valueOf('c'), Items.REEDS
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.compressed_sugar_cane, 9), new Object[] {
+					TechBlocks.double_compressed_sugar_cane
 			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar_cane), new Object[] {
 					"ccc",
@@ -45,11 +142,17 @@ public class BlockRecipes {
 					"ccc",
 						Character.valueOf('c'), TechBlocks.compressed_sugar_cane
 			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.double_compressed_sugar_cane, 9), new Object[] {
+					TechBlocks.triple_compressed_sugar_cane
+			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.triple_compressed_sugar_cane), new Object[] {
 					"ccc",
 					"ccc",
 					"ccc",
 						Character.valueOf('c'), TechBlocks.double_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.triple_compressed_sugar_cane, 9), new Object[] {
+					TechBlocks.quadruple_compressed_sugar_cane
 			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.quadruple_compressed_sugar_cane), new Object[] {
 					"ccc",
@@ -57,11 +160,17 @@ public class BlockRecipes {
 					"ccc",
 						Character.valueOf('c'), TechBlocks.triple_compressed_sugar_cane
 			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.quadruple_compressed_sugar_cane, 9), new Object[] {
+					TechBlocks.quintuple_compressed_sugar_cane
+			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.quintuple_compressed_sugar_cane), new Object[] {
 					"ccc",
 					"ccc",
 					"ccc",
 						Character.valueOf('c'), TechBlocks.quadruple_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.quintuple_compressed_sugar_cane, 9), new Object[] {
+					TechBlocks.sextuple_compressed_sugar_cane
 			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.sextuple_compressed_sugar_cane), new Object[] {
 					"ccc",
@@ -69,11 +178,17 @@ public class BlockRecipes {
 					"ccc",
 						Character.valueOf('c'), TechBlocks.quintuple_compressed_sugar_cane
 			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.sextuple_compressed_sugar_cane, 9), new Object[] {
+					TechBlocks.septuple_compressed_sugar_cane
+			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.septuple_compressed_sugar_cane), new Object[] {
 					"ccc",
 					"ccc",
 					"ccc",
 						Character.valueOf('c'), TechBlocks.sextuple_compressed_sugar_cane
+			});
+			RecipeRegistry.addShapelessRecipe(new ItemStack(TechBlocks.septuple_compressed_sugar_cane, 9), new Object[] {
+					TechBlocks.octuple_compressed_sugar_cane
 			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.octuple_compressed_sugar_cane), new Object[] {
 					"ccc",

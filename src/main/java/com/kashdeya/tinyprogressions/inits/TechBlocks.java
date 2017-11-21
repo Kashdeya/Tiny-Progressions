@@ -19,6 +19,7 @@ import com.kashdeya.tinyprogressions.blocks.compressed.FleshBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.FlintBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.CompressedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneColored;
@@ -27,6 +28,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
 import com.kashdeya.tinyprogressions.blocks.decorations.LampColored;
 import com.kashdeya.tinyprogressions.blocks.decorations.LavaBlock;
+import com.kashdeya.tinyprogressions.blocks.decorations.LavaCrystal;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.Slabs;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
@@ -152,35 +154,17 @@ public class TechBlocks {
 		
 		// nether blocks
 		if (ConfigHandler.nether_rod){
-			soul_sandstone = new StandardBlock(Material.ROCK).setUnlocalName("soul_sandstone")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(0.8F).setResistance(10.0F);
+			soul_sandstone = new CompressedBlocks("soul_sandstone", Material.ROCK, SoundType.STONE, TechBlocks.soul_sandstone, 1, 1).setHardness(0.4F).setResistance(10.0F);
 		}
 		if (ConfigHandler.nether_compressed_blocks){
-			compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(0.4F).setResistance(10.0F);
-			double_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("double_compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(0.8F).setResistance(20.0F);
-			triple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("triple_compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(1.2F).setResistance(30.0F);
-			quadruple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("quadruple_compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(1.6F).setResistance(40.0F);
-			quintuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("quintuple_compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(2.0F).setResistance(50.0F);
-			sextuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("sextuple_compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(2.4F).setResistance(60.0F);
-			septuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("septuple_compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(2.8F).setResistance(70.0F);
-			octuple_compressed_nether_block = new StandardBlock(Material.ROCK).setUnlocalName("octuple_compressed_nether_block")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.STONE).setHardness(3.2F).setResistance(80.0F);
+			compressed_nether_block = new CompressedBlocks("compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.compressed_nether_block, 1, 1).setHardness(0.4F).setResistance(10.0F);
+			double_compressed_nether_block = new CompressedBlocks("double_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.double_compressed_nether_block, 1, 1).setHardness(0.8F).setResistance(20.0F);
+			triple_compressed_nether_block = new CompressedBlocks("triple_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.triple_compressed_nether_block, 1, 1).setHardness(1.2F).setResistance(30.0F);
+			quadruple_compressed_nether_block = new CompressedBlocks("quadruple_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.quadruple_compressed_nether_block, 1, 1).setHardness(1.6F).setResistance(40.0F);
+			quintuple_compressed_nether_block = new CompressedBlocks("quintuple_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.quintuple_compressed_nether_block, 1, 1).setHardness(2.0F).setResistance(50.0F);
+			sextuple_compressed_nether_block = new CompressedBlocks("sextuple_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.sextuple_compressed_nether_block, 1, 1).setHardness(2.4F).setResistance(60.0F);
+			septuple_compressed_nether_block = new CompressedBlocks("septuple_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.septuple_compressed_nether_block, 1, 1).setHardness(2.8F).setResistance(70.0F);
+			octuple_compressed_nether_block = new CompressedBlocks("octuple_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.octuple_compressed_nether_block, 1, 1).setHardness(3.2F).setResistance(80.0F);
 		}
 		
 		// water harvester
@@ -200,41 +184,20 @@ public class TechBlocks {
 		
 		// bsc sugar blocks
 		if (ConfigHandler.bsc_sugar_compressed_blocks){
-			compressed_sugar = new StandardBlock(Material.CLAY).setUnlocalName("compressed_sugar")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.SNOW).setHardness(0.6F).setResistance(0.6F);
-			
-			double_compressed_sugar = new StandardBlock(Material.CLAY).setUnlocalName("double_compressed_sugar")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.SNOW).setHardness(1.0F).setResistance(1.2F);
+			compressed_sugar = new CompressedBlocks("compressed_sugar", Material.CLAY, SoundType.SNOW, TechBlocks.compressed_sugar, 1, 1).setHardness(0.6F).setResistance(0.6F);			
+			double_compressed_sugar = new CompressedBlocks("double_compressed_sugar", Material.CLAY, SoundType.SNOW, TechBlocks.double_compressed_sugar, 1, 1).setHardness(1.0F).setResistance(1.2F);
 		}
 		
 		// bsc sugar cane blocks
 		if (ConfigHandler.bsc_sugarcane_compressed_blocks){
-			compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(1.0F).setResistance(1.0F);
-			double_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("double_compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(1.2F).setResistance(1.2F);
-			triple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("triple_compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(1.4F).setResistance(1.4F);
-			quadruple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("quadruple_compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(1.6F).setResistance(1.6F);
-			quintuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("quintuple_compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(1.8F).setResistance(1.8F);
-			sextuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("sextuple_compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(2.0F).setResistance(2.0F);
-			septuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("septuple_compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(2.2F).setResistance(2.2F);
-			octuple_compressed_sugar_cane = new StandardBlock(Material.GROUND).setUnlocalName("octuple_compressed_sugar_cane")
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED).setHarvestLvl("pickaxe", 0)
-					.setSound(SoundType.GROUND).setHardness(2.4F).setResistance(2.4F);
+			compressed_sugar_cane = new CompressedBlocks("compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.compressed_sugar_cane, 1, 1).setHardness(1.0F).setResistance(1.0F);
+			double_compressed_sugar_cane = new CompressedBlocks("double_compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.double_compressed_sugar_cane, 1, 1).setHardness(1.2F).setResistance(1.2F);
+			triple_compressed_sugar_cane = new CompressedBlocks("triple_compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.triple_compressed_sugar_cane, 1, 1).setHardness(1.4F).setResistance(1.4F);
+			quadruple_compressed_sugar_cane = new CompressedBlocks("quadruple_compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.quadruple_compressed_sugar_cane, 1, 1).setHardness(1.6F).setResistance(1.6F);
+			quintuple_compressed_sugar_cane = new CompressedBlocks("quintuple_compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.quintuple_compressed_sugar_cane, 1, 1).setHardness(1.8F).setResistance(1.8F);
+			sextuple_compressed_sugar_cane = new CompressedBlocks("sextuple_compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.sextuple_compressed_sugar_cane, 1, 1).setHardness(2.0F).setResistance(2.0F);
+			septuple_compressed_sugar_cane = new CompressedBlocks("septuple_compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.septuple_compressed_sugar_cane, 1, 1).setHardness(2.2F).setResistance(2.2F);
+			octuple_compressed_sugar_cane = new CompressedBlocks("octuple_compressed_sugar_cane", Material.GROUND, SoundType.GROUND, TechBlocks.octuple_compressed_sugar_cane, 1, 1).setHardness(2.4F).setResistance(2.4F);
 		}
 		
 		// Berry Bushes
@@ -350,10 +313,7 @@ public class TechBlocks {
 			ender_ore = new EnderOre();
 		}
 		if (ArmorHandler.lava_armor) {
-			lava_crystal_block = new StandardBlock(Material.ROCK).setUnlocalName("lava_crystal_block")
-					.setSound(SoundType.STONE).setHarvestLvl("pickaxe", 0)
-					.setBlockRenderLayer(BlockRenderLayer.CUTOUT_MIPPED)
-					.setHardness(1.5F).setResistance(10.0F).setLightLevel(0.5F);
+			lava_crystal_block = new LavaCrystal();
 		}
 		// FMF Block
 		if(ConfigHandler.angel_block) {

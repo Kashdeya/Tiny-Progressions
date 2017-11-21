@@ -177,6 +177,215 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickCane"
 			});
 		}
+		
+		// nether iron
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_iron_tools_weapons){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_axe), new Object[] {
+					"ii ",
+					"is ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_axe), new Object[] {
+					" ii",
+					" si",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_hoe), new Object[] {
+					"ii ",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_hoe), new Object[] {
+					" ii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_pickaxe), new Object[] {
+					"iii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_spade), new Object[] {
+					"i",
+					"s",
+					"s",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_sword), new Object[] {
+					"i",
+					"i",
+					"s",
+						Character.valueOf('i'), Items.IRON_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+		}
+		// nether gold
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_gold_tools_weapons){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_axe), new Object[] {
+					"ii ",
+					"is ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_axe), new Object[] {
+					" ii",
+					" si",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_hoe), new Object[] {
+					"ii ",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_hoe), new Object[] {
+					" ii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_pickaxe), new Object[] {
+					"iii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_spade), new Object[] {
+					"i",
+					"s",
+					"s",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_sword), new Object[] {
+					"i",
+					"i",
+					"s",
+						Character.valueOf('i'), Items.GOLD_INGOT,
+						Character.valueOf('s'), "stickNether"
+			});
+		}
+		// nether diamond
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_diamond_tools_weapons){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_axe), new Object[] {
+					"ii ",
+					"is ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_axe), new Object[] {
+					" ii",
+					" si",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_hoe), new Object[] {
+					"ii ",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_hoe), new Object[] {
+					" ii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_pickaxe), new Object[] {
+					"iii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_spade), new Object[] {
+					"i",
+					"s",
+					"s",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_sword), new Object[] {
+					"i",
+					"i",
+					"s",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+		}
+		// Nether Tools
+		if (ConfigHandler.nether_rod && ConfigHandler.nether_tools_weapons){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_axe), new Object[] {
+					"ii ",
+					"is ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_axe), new Object[] {
+					" ii",
+					" si",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_hoe), new Object[] {
+					"ii ",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_hoe), new Object[] {
+					" ii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_pickaxe), new Object[] {
+					"iii",
+					" s ",
+					" s ",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_spade), new Object[] {
+					"i",
+					"s",
+					"s",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_sword), new Object[] {
+					"i",
+					"i",
+					"s",
+						Character.valueOf('i'), Items.DIAMOND,
+						Character.valueOf('s'), "stickNether"
+			});
+		}
 		// Kappa Pick
 		if (ConfigHandler.kappa_pick){
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.kappa_pick), new Object[] {

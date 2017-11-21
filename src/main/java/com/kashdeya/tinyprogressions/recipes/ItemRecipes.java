@@ -15,7 +15,14 @@ public class ItemRecipes {
 	
 		public static void init() {
 			System.out.println("load item init");
-			
+			// Nether
+			if (ConfigHandler.nether_rod){
+				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.nether_rod, 4), new Object[] {
+						"i",
+						"i",
+							Character.valueOf('i'), TechBlocks.soul_sandstone
+				});
+			}
 			// bsc
 			if (ConfigHandler.bsc_rod) {
 				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), new Object[] {
@@ -62,7 +69,7 @@ public class ItemRecipes {
 						"owo",
 						" o ",
 							Character.valueOf('o'), "ingotReinforcedObsidian",
-							Character.valueOf('n'), "netherStar",
+							Character.valueOf('n'), Items.NETHER_STAR,
 							Character.valueOf('w'), TechItems.watering_can
 				});
 			}

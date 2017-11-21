@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.util.MessageExtendedReachAttack;
 import com.kashdeya.tinyprogressions.world.PlantGen;
 import com.kashdeya.tinyprogressions.world.WorldGen;
 
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -39,4 +40,8 @@ public class CommonProxy {
 	
 	public void onPostInitialization(net.minecraftforge.fml.common.event.FMLPostInitializationEvent event)
 	{}
+
+	public void spawnCustomParticle(String particleName, World world, double x, double y, double z, double vecX, double vecY, double vecZ) {
+		// Unused here check client proxy for use
+	}
 }

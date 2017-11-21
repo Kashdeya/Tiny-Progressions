@@ -36,6 +36,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
+import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
@@ -149,6 +150,7 @@ public class TechBlocks {
     // bridge
     public static Block bridge_builder;
     public static Block tower_builder;
+    public static Block VASHOLINE;
     
 	static void init() {
 		
@@ -335,6 +337,8 @@ public class TechBlocks {
 		if (ConfigHandler.WitheredBlock){
 			withered_block = new WitheredBlock();
 		}
+		
+		VASHOLINE = new BlockFluidVasholine();
 	}
 	
 	public static void onRegister()

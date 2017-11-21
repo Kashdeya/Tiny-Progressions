@@ -98,6 +98,9 @@ tile.bone_block.name=Compressed Bone Block
 tile.netherstar_block.name=Compressed Nether Star Block
 tile.flint_block.name=Compressed Flint Block
 
+#Fluids
+fluid.vasholine=Dragon Piss
+
 #Tech Items
 item.watering_can.name=Watering Can
 item.watering_can_upgrade.name=Reinforced Watering Can

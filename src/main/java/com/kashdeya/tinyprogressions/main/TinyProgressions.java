@@ -8,6 +8,7 @@ import com.kashdeya.tinyprogressions.events.EntityEvents;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
+import com.kashdeya.tinyprogressions.fluids.ModFluids;
 import com.kashdeya.tinyprogressions.gui.GuiHandler;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
@@ -19,6 +20,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -47,6 +49,10 @@ public class TinyProgressions {
 	public static SimpleNetworkWrapper network;
 	public static org.apache.logging.log4j.Logger logger;
 	
+	static { 
+		FluidRegistry.enableUniversalBucket();
+	}
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		logger = e.getModLog();
@@ -57,6 +63,7 @@ public class TinyProgressions {
 		TinyConfig.initToolsWeapons();
 		TinyConfig.initFood();
 		TinyConfig.initExtra();
+		ModFluids.init();
 		
 		// Setup
 		proxy.onPreInitialization(e);

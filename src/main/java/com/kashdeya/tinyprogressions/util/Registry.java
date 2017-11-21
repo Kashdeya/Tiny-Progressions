@@ -20,7 +20,9 @@ import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -30,6 +32,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -193,6 +196,9 @@ public class Registry
 			}
 			else
 				ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block.getValue()), 0, new ModelResourceLocation(Reference.MOD_ID + ":" + block.getKey().getResourcePath(), "inventory"));
+		
+			if (block.getValue() instanceof BlockFluidClassic)
+				ModelLoader.setCustomStateMapper(block.getValue(), new StateMap.Builder().ignore(new IProperty[] { BlockFluidClassic.LEVEL }).build());
 		}
 		
 		for(Map.Entry<ResourceLocation, Item> item : ITEMS.entrySet())

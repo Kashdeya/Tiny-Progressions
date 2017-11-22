@@ -20,6 +20,7 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 
 	public BlockFluidVasholine() {
 		super(ModFluids.VASHOLINE, MaterialHandler.VASHOLINE);
+		setUnlocalizedName("vasholine");
 	}
 
 	@Override

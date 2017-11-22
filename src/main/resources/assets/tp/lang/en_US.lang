@@ -100,6 +100,7 @@ tile.flint_block.name=Compressed Flint Block
 
 #Fluids
 fluid.vasholine=Dragon Piss
+tile.vasholine.name=Dragon Piss
 
 #Tech Items
 item.watering_can.name=Watering Can

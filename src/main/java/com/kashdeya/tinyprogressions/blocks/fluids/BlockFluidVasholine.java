@@ -1,15 +1,21 @@
 package com.kashdeya.tinyprogressions.blocks.fluids;
 
+import java.util.List;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
@@ -64,4 +70,10 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 
 		}
 	}
+	
+    @Override
+    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.vasholine_1").getFormattedText());
+    }
 }

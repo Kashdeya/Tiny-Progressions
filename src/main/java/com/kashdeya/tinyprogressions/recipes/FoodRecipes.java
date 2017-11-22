@@ -168,7 +168,7 @@ public class FoodRecipes {
 					"dad",
 					"ddd",
 						Character.valueOf('d'), "gemDiamond",
-						Character.valueOf('a'), Items.APPLE
+						Character.valueOf('a'), new ItemStack(Items.APPLE)
 			});
 		}
 		if (ConfigHandler.EmeraldApple) {
@@ -177,7 +177,7 @@ public class FoodRecipes {
 					"eae",
 					"eee",
 						Character.valueOf('e'), "gemEmerald",
-						Character.valueOf('a'), Items.APPLE
+						Character.valueOf('a'), new ItemStack(Items.APPLE)
 			});
 		}
 		if (ConfigHandler.iron_apple) {
@@ -186,7 +186,7 @@ public class FoodRecipes {
 					"iai",
 					"iii",
 						Character.valueOf('i'), "ingotIron",
-						Character.valueOf('a'), Items.APPLE
+						Character.valueOf('a'), new ItemStack(Items.APPLE)
 			});
 		}
  		if (ConfigHandler.redstone_apple) {
@@ -195,7 +195,7 @@ public class FoodRecipes {
 					"rar",
 					"rrr",
 						Character.valueOf('r'), "dustRedstone",
-						Character.valueOf('a'), Items.APPLE
+						Character.valueOf('a'), new ItemStack(Items.APPLE)
 			});
 		}
  		
@@ -206,7 +206,7 @@ public class FoodRecipes {
 					"gag",
 					"ggg",
 						Character.valueOf('g'), "nuggetGold",
-						Character.valueOf('a'), Items.APPLE
+						Character.valueOf('a'), new ItemStack(Items.APPLE)
 			});
 			RecipeRegistry.addShapedRecipe(new ItemStack(TechFoods.golden_apple), new Object[] {
 					"ggg",
@@ -231,7 +231,7 @@ public class FoodRecipes {
 					"gag",
 					"ggg",
 						Character.valueOf('g'), "blockGold",
-						Character.valueOf('a'), Items.APPLE
+						Character.valueOf('a'), new ItemStack(Items.APPLE)
 			});
 		}
 		

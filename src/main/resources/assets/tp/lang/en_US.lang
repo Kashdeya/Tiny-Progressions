@@ -99,8 +99,10 @@ tile.netherstar_block.name=Compressed Nether Star Block
 tile.flint_block.name=Compressed Flint Block
 
 #Fluids
-fluid.vasholine=Dragon Piss
-tile.vasholine.name=Dragon Piss
+fluid.vasholine=Vasholine
+tile.vasholine.name=Vasholine
+
+tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
 
 #Tech Items
 item.watering_can.name=Watering Can

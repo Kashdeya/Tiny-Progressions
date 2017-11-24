@@ -393,6 +393,34 @@ public class ArmorRecipes {
 						Character.valueOf('d'), TechItems.quartz_ingot
 			});
 		}
+		
+		if (ArmorHandler.emerald_amor){
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.emerald_helmet), new Object[] {
+					"ddd",
+					"d d",
+						Character.valueOf('d'), Items.EMERALD
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.emerald_chestplate), new Object[] {
+					"d d",
+					"ddd",
+					"ddd",
+						Character.valueOf('d'), Items.EMERALD
+			});
+			
+			RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.emerald_leggings), new Object[] {
+					"ddd",
+					"d d",
+					"d d",
+						Character.valueOf('d'), Items.EMERALD
+			});
+			
+		   	RecipeRegistry.addShapedRecipe(new ItemStack(TechArmor.emerald_boots), new Object[] {
+					"d d",
+					"d d",
+						Character.valueOf('d'), Items.EMERALD
+			});
+		}
 	}
 
 }

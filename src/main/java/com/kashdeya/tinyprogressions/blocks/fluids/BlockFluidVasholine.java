@@ -54,7 +54,7 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 			entity.rotationPitch += (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
 		}
 		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer)){
-			entity.attackEntityFrom(DamageSource.MAGIC	, 1.0F);
+			entity.attackEntityFrom(DamageSource.MAGIC, 1.0F);
 		}
 	}
 

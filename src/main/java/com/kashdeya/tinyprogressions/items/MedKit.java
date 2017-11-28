@@ -38,7 +38,7 @@ public class MedKit extends Item {
 	    
 	    playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, ConfigHandler.healLevel, false, false));
 	    if (ConfigHandler.healinstant){
-	    	playerIn.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1, 0, false, false));
+	    	playerIn.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1 * 20, 0, false, false));
 	    }
 	    
 	    return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));

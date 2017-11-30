@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -53,8 +54,8 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 			entity.rotationYaw += (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
 			entity.rotationPitch += (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
 		}
-		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer)){
-			entity.attackEntityFrom(DamageSource.MAGIC, 1.0F);
+		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer) && ConfigHandler.vasholine_mobs){
+			entity.attackEntityFrom(DamageSource.MAGIC, ConfigHandler.vasholine_mobs_amount);
 		}
 	}
 

@@ -160,7 +160,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Harder Stone", "It's the little things that count right?");
 		ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", category + " Harder Stone", true, "Enable Hardened Stone?");
 		
-		config.addCustomCategoryComment(category + " Sugar", "even the dead stiff can help!");
+		config.addCustomCategoryComment(category + " Sugar", "even the dead stuff can help!");
 		ConfigHandler.old_reed = config.getBoolean("Dead Sugar Cane", category + " Sugar", true, "Enable Dead Sugar Cane?");
 		
 		config.addCustomCategoryComment(category + " Pouch", "More storage anyone?");
@@ -194,7 +194,10 @@ public class TinyConfig {
 		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", false, "Enable Stone Dust?");
 		
-		
+		config.addCustomCategoryComment(category + " Vasholine", "WUB WUB WUB!");
+		ConfigHandler.vasholine = config.getBoolean("Vasholine Juice", category + " Vasholine", true, "Enable Vasholine?");
+		ConfigHandler.vasholine_mobs = config.getBoolean("Vasholine Juice Hurts Mobs", category + " Vasholine", true, "Enable mobs getting hurt?");	
+		ConfigHandler.vasholine_mobs_amount = config.getFloat("Vasholine Juice Hurts Mobs Amount", category + " Vasholine", 1.0F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
 		
 		if (config.hasChanged())
         config.save();
@@ -285,10 +288,10 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Happy Birthday Darkosto", "Fun Stuff");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", category + " Happy Birthday Darkosto", true, "Enable Party Pickaxe?");
 		
-		config.addCustomCategoryComment(category + " 5-Head Pickappa", "Fun Stuff");
-		ConfigHandler.kappa_pick = config.getBoolean("Pickappa", category + " 5-Head Pickappa", true, "Enable Pickappa?");
-		ConfigHandler.kappa_level = config.getInt("Pickappa Mining Level", category + " 5-Head Pickappa", 1, 0, 3, "Mining Level.");
-		ConfigHandler.kappa_damage = config.getInt("Pickappa Mining Level Durability", category + " 5-Head Pickappa", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
+		config.addCustomCategoryComment(category + " 5-Head Kappa Pick", "Fun Stuff");
+		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", category + " 5-Head Kappa Pick", true, "Enable Kappa Pick?");
+		ConfigHandler.kappa_level = config.getInt("Kappa Pick Mining Level", category + " 5-Head Kappa Pick", 1, 0, 3, "Mining Level.");
+		ConfigHandler.kappa_damage = config.getInt("Kappa Pick Mining Level Durability", category + " 5-Head Kappa Pick", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
 		
 		config.addCustomCategoryComment(category + " Sea Axe", "A Funny Thing");
 		ConfigHandler.c_axe = config.getBoolean("Sea Axe", category + " Sea Axe", true, "Enable Sea Axe?");

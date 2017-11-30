@@ -15,6 +15,20 @@ public class OtherRecipes
 {
 	public static void init()
 	{
+		// vasholine
+		
+		/**
+		if (ConfigHandler.vasholine){
+			RecipeRegistry.addShapedRecipe(new ItemStack(<forge:bucketfilled>.withTag({FluidName: "vasholine", Amount: 1000})), new Object[] {
+		            "lll",
+		            "lbl",
+		            "lll",
+		                Character.valueOf('b'), Items.BUCKET,
+		                Character.valueOf('l'), TechItems.vasholine_gem
+		    });
+		}
+		*/
+		
 		// Pouch
 		if (ConfigHandler.pouch) {
 		    RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.pouch), new Object[] {

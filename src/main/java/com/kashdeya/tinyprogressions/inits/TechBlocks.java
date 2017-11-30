@@ -44,6 +44,7 @@ import com.kashdeya.tinyprogressions.blocks.misc.BridgeBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
+import com.kashdeya.tinyprogressions.blocks.ores.VasholineOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
@@ -150,6 +151,7 @@ public class TechBlocks {
     // bridge
     public static Block bridge_builder;
     public static Block tower_builder;
+    // vasholine
     public static Block VASHOLINE;
     
 	static void init() {
@@ -337,8 +339,10 @@ public class TechBlocks {
 		if (ConfigHandler.WitheredBlock){
 			withered_block = new WitheredBlock();
 		}
+		if (ConfigHandler.vasholine){
+			VASHOLINE = new BlockFluidVasholine();
+		}
 		
-		VASHOLINE = new BlockFluidVasholine();
 	}
 	
 	public static void onRegister()

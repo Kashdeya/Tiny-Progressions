@@ -42,7 +42,7 @@ public class ArmorRecipes {
 		
 		if (ArmorHandler.bam_tshirt){
 			RecipeRegistry.addShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), new Object[] {
-					Items.DIAMOND_CHESTPLATE
+					TechArmor.emerald_chestplate
 			});
 		}
 		

@@ -1,6 +1,10 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	// vasholine
+	public static boolean vasholine = true;
+	public static boolean vasholine_mobs = true;
+	public static float vasholine_mobs_amount = 1.0F;
 	
 	// Tiny Coals
 	public static boolean tiny_coal = true;

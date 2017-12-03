@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
-
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.blocks.bushes.BlackberryBush;
 import com.kashdeya.tinyprogressions.blocks.bushes.BlueberryBush;
@@ -44,13 +41,11 @@ import com.kashdeya.tinyprogressions.blocks.misc.BridgeBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
-import com.kashdeya.tinyprogressions.blocks.ores.VasholineOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.block.AngelItemBlock;
-import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
@@ -154,7 +149,7 @@ public class TechBlocks {
     // vasholine
     public static Block VASHOLINE;
     
-	static void init() {
+	public static void init() {
 		
 		// nether blocks
 		if (ConfigHandler.nether_rod){
@@ -343,28 +338,5 @@ public class TechBlocks {
 			VASHOLINE = new BlockFluidVasholine();
 		}
 		
-	}
-	
-	public static void onRegister()
-	{
-		init();
-		
-		try
-		{
-			for(Field field : TechBlocks.class.getDeclaredFields())
-			{
-				Object obj = field.get(null);
-				
-				if(obj == null || !(obj instanceof Block))
-					continue;
-				
-				Block block = (Block)obj;
-				String name = field.getName().toLowerCase(Locale.ENGLISH);
-				Registry.registerBlock(block, name);
-			}
-		}
-		catch(IllegalAccessException e)
-		{
-		}
 	}
 }

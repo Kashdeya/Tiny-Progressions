@@ -5,19 +5,35 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
-import com.kashdeya.tinyprogressions.util.RecipeRegistry;
+import com.kashdeya.tinyprogressions.registry.recipes.ShapedRecipe;
+import com.kashdeya.tinyprogressions.registry.recipes.ShapelessRecipe;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 public class ItemRecipes {
 	
+	public static IRecipe NETHER_ROD, BSC_ROD;
+	public static IRecipe[] COLORED_DUST;
+	
+	public static IRecipe WATERING_CAN, WATERING_CAN_UPGRADE;
+
+	public static IRecipe MEDKIT;
+	public static IRecipe ENDERPEARL;
+	public static IRecipe REPAIR_TABLET;
+	
+	public static IRecipe LAVA_CRYSTAL1, LAVA_BUCKET1;
+	public static IRecipe TINY_CHARCOAL, TINY_COAL, CHARCOAL1, COAL;
+	
+	public static IRecipe CHAINMAIL_PART;
+	public static IRecipe STONE_HAMMER;
+	
 		public static void init() {
-			System.out.println("load item init");
 			// Nether
 			if (ConfigHandler.nether_rod){
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.nether_rod, 4), new Object[] {
+				NETHER_ROD = new ShapedRecipe(new ItemStack(TechItems.nether_rod, 4), new Object[] {
 						"i",
 						"i",
 							Character.valueOf('i'), TechBlocks.soul_sandstone
@@ -25,7 +41,7 @@ public class ItemRecipes {
 			}
 			// bsc
 			if (ConfigHandler.bsc_rod) {
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), new Object[] {
+				BSC_ROD = new ShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), new Object[] {
 						"i",
 						"i",
 							Character.valueOf('i'), TechBlocks.compressed_sugar_cane
@@ -35,26 +51,22 @@ public class ItemRecipes {
 			// Glowstone Dust
 			if (ConfigHandler.ColorGlowstone)
 			{
-				System.out.println("load item init");
+				COLORED_DUST = new IRecipe[EnumDustColor.values().length];
 				for(int i = 0; i < EnumDustColor.values().length; i++)
 				{
-					RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.colored_dust, 8, i), new Object[] {
+					COLORED_DUST[i] = new ShapedRecipe(new ItemStack(TechItems.colored_dust, 8, i), new Object[] {
 						"ddd",
 						"dgd",
 						"ddd",
 							Character.valueOf('g'), Items.GLOWSTONE_DUST,
 							Character.valueOf('d'), EnumDustColor.values()[i].getCraftingOredict()
 					});
-					
-					System.out.println("= TP LOGGING =");
-					System.out.println("" + EnumDustColor.values()[i].getCraftingOredict());
-					System.out.println("==============");
 				}
 			}
 			
 			// Watering Cans
 			if (ConfigHandler.WateringCan) {
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.watering_can), new Object[] {
+				WATERING_CAN = new ShapedRecipe(new ItemStack(TechItems.watering_can), new Object[] {
 						"id ",
 						"iwi",
 						" i ",
@@ -64,7 +76,7 @@ public class ItemRecipes {
 				});
 			}
 			if (ConfigHandler.WateringCanUpgrade && ConfigHandler.WateringCan) {
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.watering_can_upgrade), new Object[] {
+				WATERING_CAN_UPGRADE = new ShapedRecipe(new ItemStack(TechItems.watering_can_upgrade), new Object[] {
 						"on ",
 						"owo",
 						" o ",
@@ -76,7 +88,7 @@ public class ItemRecipes {
 			
 			// Medkit
 			if (ConfigHandler.MedKit) {
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.med_kit), new Object[] {
+				MEDKIT = new ShapedRecipe(new ItemStack(TechItems.med_kit), new Object[] {
 						"prp",
 						"rgr",
 						"lrl",
@@ -89,7 +101,7 @@ public class ItemRecipes {
 			
 			// Ender Dust
 			if (ConfigHandler.ender_ore) {
-				RecipeRegistry.addShapedRecipe(new ItemStack(Items.ENDER_PEARL), new Object[] {
+				ENDERPEARL = new ShapedRecipe(new ItemStack(Items.ENDER_PEARL), new Object[] {
 						"ee",
 						"ee",
 							Character.valueOf('e'), "dustEnder"
@@ -98,7 +110,7 @@ public class ItemRecipes {
 			
 			// Medkit
 			if (ConfigHandler.repair_tablet) {
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.repair_tablet), new Object[] {
+				REPAIR_TABLET = new ShapedRecipe(new ItemStack(TechItems.repair_tablet), new Object[] {
 						"plp",
 						"rgr",
 						"prp",
@@ -110,14 +122,14 @@ public class ItemRecipes {
 			}
 			
 			if (ArmorHandler.lava_armor) {
-				RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.lava_crystal,  8), new Object[] {
+				LAVA_CRYSTAL1 = new ShapedRecipe(new ItemStack(TechItems.lava_crystal,  8), new Object[] {
 						"sss",
 						"sbs",
 						"sss",
 							Character.valueOf('s'), TechItems.reinforced_obsidian_ingot,
 							Character.valueOf('b'), Items.LAVA_BUCKET
 				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
+				LAVA_BUCKET1 = new ShapedRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
 						"sss",
 						"sbs",
 						"sss",
@@ -128,19 +140,19 @@ public class ItemRecipes {
 			
 			// Tiny Coal & Charcoal
 			if (ConfigHandler.lava_block_recipe) {
-				RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new Object[] {
+				TINY_CHARCOAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new Object[] {
 						new ItemStack(Items.COAL, 1, 1)
 				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(Items.COAL, 1, 1), new Object[] {
+				CHARCOAL1 = new ShapedRecipe(new ItemStack(Items.COAL, 1, 1), new Object[] {
 						"sss",
 						"s s",
 						"sss",
 							Character.valueOf('s'), TechItems.tiny_charcoal
 				});
-				RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), new Object[] {
+				TINY_COAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), new Object[] {
 						Items.COAL
 				});
-				RecipeRegistry.addShapedRecipe(new ItemStack(Items.COAL), new Object[] {
+				COAL = new ShapedRecipe(new ItemStack(Items.COAL), new Object[] {
 						"sss",
 						"s s",
 						"sss",
@@ -150,13 +162,13 @@ public class ItemRecipes {
 			
 			// Chainmail part
 			if (ArmorHandler.chain_armor){
-				RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), new Object[] {
+				CHAINMAIL_PART = new ShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), new Object[] {
 						Items.IRON_INGOT, TechItems.stone_hammer
 				});
 			}
 			
 			// Can not be turned off.
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.stone_hammer), new Object[] {
+			STONE_HAMMER = new ShapedRecipe(new ItemStack(TechItems.stone_hammer), new Object[] {
 					"ccc",
 					"isi",
 					" s ",

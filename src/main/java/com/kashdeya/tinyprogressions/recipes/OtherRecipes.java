@@ -4,15 +4,24 @@ import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.util.RecipeRegistry;
+import com.kashdeya.tinyprogressions.registry.recipes.ShapedRecipe;
+import com.kashdeya.tinyprogressions.registry.recipes.ShapelessRecipe;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class OtherRecipes
 {
+	public static IRecipe POUCH;
+	public static IRecipe FLINT1, SUGAR1;
+	public static IRecipe LAVA_BUCKET, WATER_BUCKET;
+	public static IRecipe FLINT_KNIFE, QUARTZ_KNIFE, QUARTZ_DUST;
+	public static IRecipe MYCELIUM_SEEDS;
+	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1;
+	
 	public static void init()
 	{
 		// vasholine
@@ -31,7 +40,7 @@ public class OtherRecipes
 		
 		// Pouch
 		if (ConfigHandler.pouch) {
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.pouch), new Object[] {
+		    POUCH = new ShapedRecipe(new ItemStack(TechItems.pouch), new Object[] {
 		            "lsl",
 		            "clc",
 		            "lsl",
@@ -43,7 +52,7 @@ public class OtherRecipes
 		
 		// MISC Flint Recipe
 		if (ConfigHandler.FlintRecipe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(Items.FLINT), new Object[] {
+			FLINT1 = new ShapedRecipe(new ItemStack(Items.FLINT), new Object[] {
 					"gg ",
 					"g  ",
 						Character.valueOf('g'), "blockGravel"
@@ -52,28 +61,28 @@ public class OtherRecipes
 		
 		// Lava Bucket
 		if (ConfigHandler.lava_block_recipe) {
-			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
+			LAVA_BUCKET = new ShapelessRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
 					TechBlocks.lava_block, Items.BUCKET
 			});
 		}
 		
 		// Water Bucket
 		if (ConfigHandler.water_block_recipe) {
-			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.WATER_BUCKET), new Object[] {
+			WATER_BUCKET = new ShapelessRecipe(new ItemStack(Items.WATER_BUCKET), new Object[] {
 					TechBlocks.water_block, Items.BUCKET
 			});
 		}
 		
 		// Old Reed
 		if (ConfigHandler.old_reed) {
-			RecipeRegistry.addShapelessRecipe(new ItemStack(Items.SUGAR), new Object[] {
+			SUGAR1 = new ShapelessRecipe(new ItemStack(Items.SUGAR), new Object[] {
 					TechItems.dead_reed
 			});
 		}
 		
 		// Quartz Items
 		if (ConfigHandler.QuartzKnife) {
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.quartz_knife), new Object[] {
+			QUARTZ_KNIFE = new ShapedRecipe(new ItemStack(TechItems.quartz_knife), new Object[] {
 					"  s",
 					" s ",
 					"q  ",
@@ -81,7 +90,7 @@ public class OtherRecipes
 						Character.valueOf('q'), "gemQuartz"
 			});
 						
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.quartz_dust), new Object[] {
+			QUARTZ_DUST = new ShapedRecipe(new ItemStack(TechItems.quartz_dust), new Object[] {
 					"k",
 					"q",
 						Character.valueOf('k'), TechItems.quartz_knife,
@@ -91,7 +100,7 @@ public class OtherRecipes
 					
 		// Mycelium Seeds
 		if (ConfigHandler.MyceliumSeeds) {
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechItems.mycelium_seeds), new Object[] {
+			MYCELIUM_SEEDS = new ShapedRecipe(new ItemStack(TechItems.mycelium_seeds), new Object[] {
 					"sss",
 					"ses",
 					"sss",
@@ -107,10 +116,10 @@ public class OtherRecipes
 		
 		// Reinforced Obsidian Ingot
 		if (ConfigHandler.ReinforcedObsidian) {
-			RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.reinforced_obsidian_ingot, 9), new Object[] {
+			OBSIDIAN_INGOT = new ShapelessRecipe(new ItemStack(TechItems.reinforced_obsidian_ingot, 9), new Object[] {
 					TechBlocks.reinforced_obsidian
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechBlocks.reinforced_obsidian), new Object[] {
+			OBSIDIAN1 = new ShapedRecipe(new ItemStack(TechBlocks.reinforced_obsidian), new Object[] {
 					"sss",
 					"sss",
 					"sss",
@@ -120,7 +129,7 @@ public class OtherRecipes
 		
 		// Flint Knife
 		if (ConfigHandler.FlintKnife) {
-			RecipeRegistry.addShapelessRecipe(new ItemStack(TechItems.flint_knife), new Object[] {
+			FLINT_KNIFE = new ShapelessRecipe(new ItemStack(TechItems.flint_knife), new Object[] {
 					"flint", "flint", "stickWood"
 			});
 		}

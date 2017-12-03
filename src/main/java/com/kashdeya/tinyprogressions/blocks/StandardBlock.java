@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
+import com.kashdeya.tinyprogressions.registry.utils.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -74,7 +74,7 @@ public class StandardBlock extends Block implements IItemProvider
     }
 	
 	@Override
-	public ItemBlock getItemBlock()
+	public ItemBlock createItemBlock()
 	{
 		return itemBlock;
 	}

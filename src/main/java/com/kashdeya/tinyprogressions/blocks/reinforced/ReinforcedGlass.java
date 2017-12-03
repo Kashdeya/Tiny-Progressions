@@ -5,7 +5,7 @@ import java.util.Random;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-import com.kashdeya.tinyprogressions.util.Registry.IOreDictEntry;
+import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.SoundType;

@@ -2,18 +2,35 @@ package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechTools;
-import com.kashdeya.tinyprogressions.util.RecipeRegistry;
+import com.kashdeya.tinyprogressions.registry.recipes.ShapedRecipe;
 
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
 public class ToolsRecipes {
+	public static IRecipe C_AXE, KAPPA_PICK, BIRTHDAY_PICKAXE;
+	public static IRecipe BSC_IRON_AXE, BSC_IRON_AXE2, BSC_IRON_HOE, BSC_IRON_HOE2, BSC_IRON_PICKAXE, BSC_IRON_SPADE, BSC_IRON_SWORD;
+	public static IRecipe BSC_GOLD_AXE, BSC_GOLD_AXE2, BSC_GOLD_HOE, BSC_GOLD_HOE2, BSC_GOLD_PICKAXE, BSC_GOLD_SPADE, BSC_GOLD_SWORD;
+	public static IRecipe BSC_DIAMOND_AXE, BSC_DIAMOND_AXE2, BSC_DIAMOND_HOE, BSC_DIAMOND_HOE2, BSC_DIAMOND_PICKAXE, BSC_DIAMOND_SPADE, BSC_DIAMOND_SWORD;
+	public static IRecipe NETHER_IRON_AXE, NETHER_IRON_AXE2, NETHER_IRON_HOE, NETHER_IRON_HOE2, NETHER_IRON_PICKAXE, NETHER_IRON_SPADE, NETHER_IRON_SWORD;
+	public static IRecipe NETHER_GOLD_AXE, NETHER_GOLD_AXE2, NETHER_GOLD_HOE, NETHER_GOLD_HOE2, NETHER_GOLD_PICKAXE, NETHER_GOLD_SPADE, NETHER_GOLD_SWORD;
+	public static IRecipe NETHER_DIAMOND_AXE, NETHER_DIAMOND_AXE2, NETHER_DIAMOND_HOE, NETHER_DIAMOND_HOE2, NETHER_DIAMOND_PICKAXE, NETHER_DIAMOND_SPADE, NETHER_DIAMOND_SWORD;
+	public static IRecipe NETHER_AXE, NETHER_AXE2, NETHER_HOE, NETHER_HOE2, NETHER_PICKAXE, NETHER_SPADE, NETHER_SWORD;
+	public static IRecipe FLINT_AXE, FLINT_HOE, FLINT_PICKAXE, FLINT_SPADE, FLINT_SWORD;
+	public static IRecipe BONE_AXE, BONE_HOE, BONE_PICKAXE, BONE_SPADE, BONE_SWORD;
+	public static IRecipe EMERALD_AXE, EMERALD_HOE, EMERALD_PICKAXE, EMERALD_SPADE, EMERALD_SWORD;
+	public static IRecipe OBSIDIAN_AXE, OBSIDIAN_HOE, OBSIDIAN_PICKAXE, OBSIDIAN_SPADE, OBSIDIAN_SWORD;
+	public static IRecipe WOODEN_SCYTHE, STONE_SCYTHE, IRON_SCYTHE, GOLD_SCYTHE, DIAMOND_SCYTHE, EMERALD_SCYTHE, OBSIDIAN_SCYTHE;
+	public static IRecipe WOODEN_MULTI, STONE_MULTI, IRON_MULTI, GOLD_MULTI, DIAMOND_MULTI, EMERALD_MULTI, OBSIDIAN_MULTI;
+	public static IRecipe WOODEN_BATTLE, STONE_BATTLE, IRON_BATTLE, GOLD_BATTLE, DIAMOND_BATTLE, EMERALD_BATTLE, OBSIDIAN_BATTLE;
+	public static IRecipe WOODEN_SPEAR, STONE_SPEAR, IRON_SPEAR, GOLD_SPEAR, DIAMOND_SPEAR, EMERALD_SPEAR, OBSIDIAN_SPEAR;
 	
 	public static void init() {
 		// c axe
 		if (ConfigHandler.c_axe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.c_axe), new Object[] {
+			C_AXE = new ShapedRecipe(new ItemStack(TechTools.c_axe), new Object[] {
 					"s i",
 					"si ",
 					"s i",
@@ -23,49 +40,49 @@ public class ToolsRecipes {
 		}
 		// bsc iron
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_axe), new Object[] {
+			BSC_IRON_AXE = new ShapedRecipe(new ItemStack(TechTools.bsc_iron_axe), new Object[] {
 					"ii ",
 					"is ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_axe), new Object[] {
+			BSC_IRON_AXE2 = new ShapedRecipe(new ItemStack(TechTools.bsc_iron_axe), new Object[] {
 					" ii",
 					" si",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_hoe), new Object[] {
+			BSC_IRON_HOE = new ShapedRecipe(new ItemStack(TechTools.bsc_iron_hoe), new Object[] {
 					"ii ",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_hoe), new Object[] {
+			BSC_IRON_HOE2 = new ShapedRecipe(new ItemStack(TechTools.bsc_iron_hoe), new Object[] {
 					" ii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_pickaxe), new Object[] {
+			BSC_IRON_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.bsc_iron_pickaxe), new Object[] {
 					"iii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_spade), new Object[] {
+			BSC_IRON_SPADE = new ShapedRecipe(new ItemStack(TechTools.bsc_iron_spade), new Object[] {
 					"i",
 					"s",
 					"s",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_iron_sword), new Object[] {
+			BSC_IRON_SWORD = new ShapedRecipe(new ItemStack(TechTools.bsc_iron_sword), new Object[] {
 					"i",
 					"i",
 					"s",
@@ -75,49 +92,49 @@ public class ToolsRecipes {
 		}
 		// bsc gold
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_gold_tools_weapons){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_axe), new Object[] {
+			BSC_GOLD_AXE = new ShapedRecipe(new ItemStack(TechTools.bsc_gold_axe), new Object[] {
 					"ii ",
 					"is ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_axe), new Object[] {
+			BSC_GOLD_AXE2 = new ShapedRecipe(new ItemStack(TechTools.bsc_gold_axe), new Object[] {
 					" ii",
 					" si",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_hoe), new Object[] {
+			BSC_GOLD_HOE = new ShapedRecipe(new ItemStack(TechTools.bsc_gold_hoe), new Object[] {
 					"ii ",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_hoe), new Object[] {
+			BSC_GOLD_HOE2 = new ShapedRecipe(new ItemStack(TechTools.bsc_gold_hoe), new Object[] {
 					" ii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_pickaxe), new Object[] {
+			BSC_GOLD_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.bsc_gold_pickaxe), new Object[] {
 					"iii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_spade), new Object[] {
+			BSC_GOLD_SPADE = new ShapedRecipe(new ItemStack(TechTools.bsc_gold_spade), new Object[] {
 					"i",
 					"s",
 					"s",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_gold_sword), new Object[] {
+			BSC_GOLD_SWORD = new ShapedRecipe(new ItemStack(TechTools.bsc_gold_sword), new Object[] {
 					"i",
 					"i",
 					"s",
@@ -127,49 +144,49 @@ public class ToolsRecipes {
 		}
 		// bsc diamond
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_axe), new Object[] {
+			BSC_DIAMOND_AXE = new ShapedRecipe(new ItemStack(TechTools.bsc_diamond_axe), new Object[] {
 					"ii ",
 					"is ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_axe), new Object[] {
+			BSC_DIAMOND_AXE2 = new ShapedRecipe(new ItemStack(TechTools.bsc_diamond_axe), new Object[] {
 					" ii",
 					" si",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_hoe), new Object[] {
+			BSC_DIAMOND_HOE = new ShapedRecipe(new ItemStack(TechTools.bsc_diamond_hoe), new Object[] {
 					"ii ",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_hoe), new Object[] {
+			BSC_DIAMOND_HOE2 = new ShapedRecipe(new ItemStack(TechTools.bsc_diamond_hoe), new Object[] {
 					" ii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_pickaxe), new Object[] {
+			BSC_DIAMOND_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.bsc_diamond_pickaxe), new Object[] {
 					"iii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_spade), new Object[] {
+			BSC_DIAMOND_SPADE = new ShapedRecipe(new ItemStack(TechTools.bsc_diamond_spade), new Object[] {
 					"i",
 					"s",
 					"s",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickCane"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bsc_diamond_sword), new Object[] {
+			BSC_DIAMOND_SWORD = new ShapedRecipe(new ItemStack(TechTools.bsc_diamond_sword), new Object[] {
 					"i",
 					"i",
 					"s",
@@ -180,49 +197,49 @@ public class ToolsRecipes {
 		
 		// nether iron
 		if (ConfigHandler.nether_rod && ConfigHandler.nether_iron_tools_weapons){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_axe), new Object[] {
+			NETHER_IRON_AXE = new ShapedRecipe(new ItemStack(TechTools.nether_iron_axe), new Object[] {
 					"ii ",
 					"is ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_axe), new Object[] {
+			NETHER_IRON_AXE2 = new ShapedRecipe(new ItemStack(TechTools.nether_iron_axe), new Object[] {
 					" ii",
 					" si",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_hoe), new Object[] {
+			NETHER_IRON_HOE = new ShapedRecipe(new ItemStack(TechTools.nether_iron_hoe), new Object[] {
 					"ii ",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_hoe), new Object[] {
+			NETHER_IRON_HOE2 = new ShapedRecipe(new ItemStack(TechTools.nether_iron_hoe), new Object[] {
 					" ii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_pickaxe), new Object[] {
+			NETHER_IRON_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.nether_iron_pickaxe), new Object[] {
 					"iii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_spade), new Object[] {
+			NETHER_IRON_SPADE = new ShapedRecipe(new ItemStack(TechTools.nether_iron_spade), new Object[] {
 					"i",
 					"s",
 					"s",
 						Character.valueOf('i'), Items.IRON_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_iron_sword), new Object[] {
+			NETHER_IRON_SWORD = new ShapedRecipe(new ItemStack(TechTools.nether_iron_sword), new Object[] {
 					"i",
 					"i",
 					"s",
@@ -232,49 +249,49 @@ public class ToolsRecipes {
 		}
 		// nether gold
 		if (ConfigHandler.nether_rod && ConfigHandler.nether_gold_tools_weapons){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_axe), new Object[] {
+			NETHER_GOLD_AXE = new ShapedRecipe(new ItemStack(TechTools.nether_gold_axe), new Object[] {
 					"ii ",
 					"is ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_axe), new Object[] {
+			NETHER_GOLD_AXE2 = new ShapedRecipe(new ItemStack(TechTools.nether_gold_axe), new Object[] {
 					" ii",
 					" si",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_hoe), new Object[] {
+			NETHER_GOLD_HOE = new ShapedRecipe(new ItemStack(TechTools.nether_gold_hoe), new Object[] {
 					"ii ",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_hoe), new Object[] {
+			NETHER_GOLD_HOE2 = new ShapedRecipe(new ItemStack(TechTools.nether_gold_hoe), new Object[] {
 					" ii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_pickaxe), new Object[] {
+			NETHER_GOLD_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.nether_gold_pickaxe), new Object[] {
 					"iii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_spade), new Object[] {
+			NETHER_GOLD_SPADE = new ShapedRecipe(new ItemStack(TechTools.nether_gold_spade), new Object[] {
 					"i",
 					"s",
 					"s",
 						Character.valueOf('i'), Items.GOLD_INGOT,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_gold_sword), new Object[] {
+			NETHER_GOLD_SWORD = new ShapedRecipe(new ItemStack(TechTools.nether_gold_sword), new Object[] {
 					"i",
 					"i",
 					"s",
@@ -284,49 +301,49 @@ public class ToolsRecipes {
 		}
 		// nether diamond
 		if (ConfigHandler.nether_rod && ConfigHandler.nether_diamond_tools_weapons){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_axe), new Object[] {
+			NETHER_DIAMOND_AXE = new ShapedRecipe(new ItemStack(TechTools.nether_diamond_axe), new Object[] {
 					"ii ",
 					"is ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_axe), new Object[] {
+			NETHER_DIAMOND_AXE2 = new ShapedRecipe(new ItemStack(TechTools.nether_diamond_axe), new Object[] {
 					" ii",
 					" si",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_hoe), new Object[] {
+			NETHER_DIAMOND_HOE = new ShapedRecipe(new ItemStack(TechTools.nether_diamond_hoe), new Object[] {
 					"ii ",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_hoe), new Object[] {
+			NETHER_DIAMOND_HOE2 = new ShapedRecipe(new ItemStack(TechTools.nether_diamond_hoe), new Object[] {
 					" ii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_pickaxe), new Object[] {
+			NETHER_DIAMOND_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.nether_diamond_pickaxe), new Object[] {
 					"iii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_spade), new Object[] {
+			NETHER_DIAMOND_SPADE = new ShapedRecipe(new ItemStack(TechTools.nether_diamond_spade), new Object[] {
 					"i",
 					"s",
 					"s",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_diamond_sword), new Object[] {
+			NETHER_DIAMOND_SWORD = new ShapedRecipe(new ItemStack(TechTools.nether_diamond_sword), new Object[] {
 					"i",
 					"i",
 					"s",
@@ -336,49 +353,49 @@ public class ToolsRecipes {
 		}
 		// Nether Tools
 		if (ConfigHandler.nether_rod && ConfigHandler.nether_tools_weapons){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_axe), new Object[] {
+			NETHER_AXE = new ShapedRecipe(new ItemStack(TechTools.nether_axe), new Object[] {
 					"ii ",
 					"is ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_axe), new Object[] {
+			NETHER_AXE2 = new ShapedRecipe(new ItemStack(TechTools.nether_axe), new Object[] {
 					" ii",
 					" si",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_hoe), new Object[] {
+			NETHER_HOE = new ShapedRecipe(new ItemStack(TechTools.nether_hoe), new Object[] {
 					"ii ",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_hoe), new Object[] {
+			NETHER_HOE2 = new ShapedRecipe(new ItemStack(TechTools.nether_hoe), new Object[] {
 					" ii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_pickaxe), new Object[] {
+			NETHER_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.nether_pickaxe), new Object[] {
 					"iii",
 					" s ",
 					" s ",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_spade), new Object[] {
+			NETHER_SPADE = new ShapedRecipe(new ItemStack(TechTools.nether_spade), new Object[] {
 					"i",
 					"s",
 					"s",
 						Character.valueOf('i'), Items.DIAMOND,
 						Character.valueOf('s'), "stickNether"
 			});
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.nether_sword), new Object[] {
+			NETHER_SWORD = new ShapedRecipe(new ItemStack(TechTools.nether_sword), new Object[] {
 					"i",
 					"i",
 					"s",
@@ -388,7 +405,7 @@ public class ToolsRecipes {
 		}
 		// Kappa Pick
 		if (ConfigHandler.kappa_pick){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.kappa_pick), new Object[] {
+			KAPPA_PICK = new ShapedRecipe(new ItemStack(TechTools.kappa_pick), new Object[] {
 					"ici",
 					" s ",
 					" s ",
@@ -399,7 +416,7 @@ public class ToolsRecipes {
 		}
 		// Flint Tools
 		if (ConfigHandler.FlintTools){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.flint_pickaxe), new Object[] {
+			FLINT_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.flint_pickaxe), new Object[] {
 					"fff",
 					" s ",
 					" s ",
@@ -407,7 +424,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.flint_axe), new Object[] {
+			FLINT_AXE = new ShapedRecipe(new ItemStack(TechTools.flint_axe), new Object[] {
 					"ff ",
 					"fs ",
 					" s ",
@@ -415,7 +432,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.flint_spade), new Object[] {
+			FLINT_SPADE = new ShapedRecipe(new ItemStack(TechTools.flint_spade), new Object[] {
 					" f ",
 					" s ",
 					" s ",
@@ -423,7 +440,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.flint_sword), new Object[] {
+			FLINT_SWORD = new ShapedRecipe(new ItemStack(TechTools.flint_sword), new Object[] {
 					" f ",
 					" f ",
 					" s ",
@@ -431,7 +448,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.flint_hoe), new Object[] {
+			FLINT_HOE = new ShapedRecipe(new ItemStack(TechTools.flint_hoe), new Object[] {
 					"ff ",
 					" s ",
 					" s ",
@@ -442,7 +459,7 @@ public class ToolsRecipes {
 		
 		// Bone Tools
 		if (ConfigHandler.BoneTools){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bone_pickaxe), new Object[] {
+			BONE_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.bone_pickaxe), new Object[] {
 					"bbb",
 					" s ",
 					" s ",
@@ -450,7 +467,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bone_axe), new Object[] {
+			BONE_AXE = new ShapedRecipe(new ItemStack(TechTools.bone_axe), new Object[] {
 					"bb ",
 					"bs ",
 					" s ",
@@ -458,7 +475,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bone_spade), new Object[] {
+			BONE_SPADE = new ShapedRecipe(new ItemStack(TechTools.bone_spade), new Object[] {
 					" b ",
 					" s ",
 					" s ",
@@ -466,7 +483,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bone_sword), new Object[] {
+			BONE_SWORD = new ShapedRecipe(new ItemStack(TechTools.bone_sword), new Object[] {
 					" b ",
 					" b ",
 					" s ",
@@ -474,7 +491,7 @@ public class ToolsRecipes {
 						Character.valueOf('s'), "stickWood"
 			});
 			
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.bone_hoe), new Object[] {
+			BONE_HOE = new ShapedRecipe(new ItemStack(TechTools.bone_hoe), new Object[] {
 					"bb ",
 					" s ",
 					" s ",
@@ -488,7 +505,7 @@ public class ToolsRecipes {
 			ItemStack BirthdayPickaxe = new ItemStack(TechTools.birthday_pickaxe);
 			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 0);
 			
-			RecipeRegistry.addShapedRecipe(BirthdayPickaxe, new Object[] {
+			BIRTHDAY_PICKAXE = new ShapedRecipe(BirthdayPickaxe, new Object[] {
 					"rdr",
 					" s ",
 					" s ",
@@ -500,7 +517,7 @@ public class ToolsRecipes {
 	    
 	    // Scythe
 	    if (ConfigHandler.wooden_scythe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.wooden_scythe), new Object[] {
+			WOODEN_SCYTHE = new ShapedRecipe(new ItemStack(TechTools.wooden_scythe), new Object[] {
 					"iii",
 					" s ",
 					"s  ",
@@ -509,7 +526,7 @@ public class ToolsRecipes {
 			});
 	    }
 	    if (ConfigHandler.stone_scythe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.stone_scythe), new Object[] {
+			STONE_SCYTHE = new ShapedRecipe(new ItemStack(TechTools.stone_scythe), new Object[] {
 					"iii",
 					" s ",
 					"s  ",
@@ -518,7 +535,7 @@ public class ToolsRecipes {
 			});
 	    }
 	    if (ConfigHandler.golden_scythe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.golden_scythe), new Object[] {
+			GOLD_SCYTHE = new ShapedRecipe(new ItemStack(TechTools.golden_scythe), new Object[] {
 					"iii",
 					" s ",
 					"s  ",
@@ -527,7 +544,7 @@ public class ToolsRecipes {
 			});
 	    }
 	    if (ConfigHandler.iron_scythe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.iron_scythe), new Object[] {
+			IRON_SCYTHE = new ShapedRecipe(new ItemStack(TechTools.iron_scythe), new Object[] {
 					"iii",
 					" s ",
 					"s  ",
@@ -536,7 +553,7 @@ public class ToolsRecipes {
 			});
 	    }
 	    if (ConfigHandler.diamond_scythe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.diamond_scythe), new Object[] {
+			DIAMOND_SCYTHE = new ShapedRecipe(new ItemStack(TechTools.diamond_scythe), new Object[] {
 					"iii",
 					" s ",
 					"s  ",
@@ -545,7 +562,7 @@ public class ToolsRecipes {
 			});
 	    }
 		if (ConfigHandler.emerald_scythe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_scythe), new Object[] {
+			EMERALD_SCYTHE = new ShapedRecipe(new ItemStack(TechTools.emerald_scythe), new Object[] {
 					"iii",
 					" s ",
 					"s  ",
@@ -554,7 +571,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_scythe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_scythe), new Object[] {
+			OBSIDIAN_SCYTHE = new ShapedRecipe(new ItemStack(TechTools.obsidian_scythe), new Object[] {
 					"iii",
 					" s ",
 					"s  ",
@@ -565,7 +582,7 @@ public class ToolsRecipes {
 		
 		// Emerald Tools
 		if (ConfigHandler.emerald_axe){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_axe), new Object[] {
+		    EMERALD_AXE = new ShapedRecipe(new ItemStack(TechTools.emerald_axe), new Object[] {
 					"ee ",
 					"es ",
 					" s ",
@@ -574,7 +591,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.emerald_pickaxe){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_pickaxe), new Object[] {
+		    EMERALD_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.emerald_pickaxe), new Object[] {
 					"eee",
 					" s ",
 					" s ",
@@ -583,7 +600,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.emerald_spade){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_spade), new Object[] {
+		    EMERALD_SPADE = new ShapedRecipe(new ItemStack(TechTools.emerald_spade), new Object[] {
 					" e ",
 					" s ",
 					" s ",
@@ -592,7 +609,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.emerald_hoe){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_hoe), new Object[] {
+		    EMERALD_HOE = new ShapedRecipe(new ItemStack(TechTools.emerald_hoe), new Object[] {
 					"ee ",
 					" s ",
 					" s ",
@@ -601,7 +618,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.emerald_sword){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_sword), new Object[] {
+		    EMERALD_SWORD = new ShapedRecipe(new ItemStack(TechTools.emerald_sword), new Object[] {
 					" e ",
 					" e ",
 					" s ",
@@ -612,7 +629,7 @@ public class ToolsRecipes {
 		
 		// Obsidian Tools
 		if (ConfigHandler.obsidian_axe){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_axe), new Object[] {
+		    OBSIDIAN_AXE = new ShapedRecipe(new ItemStack(TechTools.obsidian_axe), new Object[] {
 					"oo ",
 					"os ",
 					" s ",
@@ -621,7 +638,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_pickaxe){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_pickaxe), new Object[] {
+		    OBSIDIAN_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.obsidian_pickaxe), new Object[] {
 					"ooo",
 					" s ",
 					" s ",
@@ -630,7 +647,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_spade){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_spade), new Object[] {
+		    OBSIDIAN_SPADE = new ShapedRecipe(new ItemStack(TechTools.obsidian_spade), new Object[] {
 					" o ",
 					" s ",
 					" s ",
@@ -639,7 +656,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_hoe){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_hoe), new Object[] {
+		    OBSIDIAN_HOE = new ShapedRecipe(new ItemStack(TechTools.obsidian_hoe), new Object[] {
 					"oo ",
 					" s ",
 					" s ",
@@ -648,7 +665,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_sword){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_sword), new Object[] {
+		    OBSIDIAN_SWORD = new ShapedRecipe(new ItemStack(TechTools.obsidian_sword), new Object[] {
 					" o ",
 					" o ",
 					" s ",
@@ -659,7 +676,7 @@ public class ToolsRecipes {
 		
 		// MultiTools
 		if (ConfigHandler.wooden_multi){
-		    RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.wooden_multi), new Object[] {
+		    WOODEN_MULTI = new ShapedRecipe(new ItemStack(TechTools.wooden_multi), new Object[] {
 					"ASP",
 					" s ",
 					" s ",
@@ -670,7 +687,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.stone_multi){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.stone_multi), new Object[] {
+			STONE_MULTI = new ShapedRecipe(new ItemStack(TechTools.stone_multi), new Object[] {
 					"ASP",
 					" s ",
 					" s ",
@@ -681,7 +698,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.golden_multi){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.golden_multi), new Object[] {
+			GOLD_MULTI = new ShapedRecipe(new ItemStack(TechTools.golden_multi), new Object[] {
 					"ASP",
 					" s ",
 					" s ",
@@ -692,7 +709,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.iron_multi){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.iron_multi), new Object[] {
+			IRON_MULTI = new ShapedRecipe(new ItemStack(TechTools.iron_multi), new Object[] {
 					"ASP",
 					" s ",
 					" s ",
@@ -703,7 +720,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.diamond_multi){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.diamond_multi), new Object[] {
+			DIAMOND_MULTI = new ShapedRecipe(new ItemStack(TechTools.diamond_multi), new Object[] {
 					"ASP",
 					" s ",
 					" s ",
@@ -714,7 +731,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.emerald_multi && ConfigHandler.emerald_axe && ConfigHandler.emerald_spade && ConfigHandler.emerald_pickaxe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_multi), new Object[] {
+			EMERALD_MULTI = new ShapedRecipe(new ItemStack(TechTools.emerald_multi), new Object[] {
 					"ASP",
 					" s ",
 					" s ",
@@ -725,7 +742,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_multi && ConfigHandler.obsidian_axe && ConfigHandler.obsidian_spade && ConfigHandler.obsidian_pickaxe){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_multi), new Object[] {
+			OBSIDIAN_MULTI = new ShapedRecipe(new ItemStack(TechTools.obsidian_multi), new Object[] {
 					"ASP",
 					" s ",
 					" s ",
@@ -738,7 +755,7 @@ public class ToolsRecipes {
 		
 		// Battle Axes
 		if (ConfigHandler.wooden_battle){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.wooden_battle), new Object[] {
+			WOODEN_BATTLE = new ShapedRecipe(new ItemStack(TechTools.wooden_battle), new Object[] {
 					"isi",
 					"isi",
 					" s ",
@@ -747,7 +764,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.stone_battle){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.stone_battle), new Object[] {
+			STONE_BATTLE = new ShapedRecipe(new ItemStack(TechTools.stone_battle), new Object[] {
 					"isi",
 					"isi",
 					" s ",
@@ -756,7 +773,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.golden_battle){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.golden_battle), new Object[] {
+			GOLD_BATTLE = new ShapedRecipe(new ItemStack(TechTools.golden_battle), new Object[] {
 					"isi",
 					"isi",
 					" s ",
@@ -765,7 +782,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.iron_battle){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.iron_battle), new Object[] {
+			IRON_BATTLE = new ShapedRecipe(new ItemStack(TechTools.iron_battle), new Object[] {
 					"isi",
 					"isi",
 					" s ",
@@ -774,7 +791,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.diamond_battle){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.diamond_battle), new Object[] {
+			DIAMOND_BATTLE = new ShapedRecipe(new ItemStack(TechTools.diamond_battle), new Object[] {
 					"isi",
 					"isi",
 					" s ",
@@ -783,7 +800,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.emerald_battle){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_battle), new Object[] {
+			EMERALD_BATTLE = new ShapedRecipe(new ItemStack(TechTools.emerald_battle), new Object[] {
 					"isi",
 					"isi",
 					" s ",
@@ -792,7 +809,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_battle){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_battle), new Object[] {
+			OBSIDIAN_BATTLE = new ShapedRecipe(new ItemStack(TechTools.obsidian_battle), new Object[] {
 					"isi",
 					"isi",
 					" s ",
@@ -803,7 +820,7 @@ public class ToolsRecipes {
 		
 		// Spears
 		if (ConfigHandler.wooden_spear){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.wooden_spear), new Object[] {
+			WOODEN_SPEAR = new ShapedRecipe(new ItemStack(TechTools.wooden_spear), new Object[] {
 					"i  ",
 					" s ",
 					"  s",
@@ -812,7 +829,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.stone_spear){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.stone_spear), new Object[] {
+			STONE_SPEAR = new ShapedRecipe(new ItemStack(TechTools.stone_spear), new Object[] {
 					"i  ",
 					" s ",
 					"  s",
@@ -821,7 +838,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.golden_spear){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.golden_spear), new Object[] {
+			GOLD_SPEAR = new ShapedRecipe(new ItemStack(TechTools.golden_spear), new Object[] {
 					"i  ",
 					" s ",
 					"  s",
@@ -830,7 +847,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.iron_spear){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.iron_spear), new Object[] {
+			IRON_SPEAR = new ShapedRecipe(new ItemStack(TechTools.iron_spear), new Object[] {
 					"i  ",
 					" s ",
 					"  s",
@@ -839,7 +856,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.diamond_spear){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.diamond_spear), new Object[] {
+			DIAMOND_SPEAR = new ShapedRecipe(new ItemStack(TechTools.diamond_spear), new Object[] {
 					"i  ",
 					" s ",
 					"  s",
@@ -848,7 +865,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.emerald_spear){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.emerald_spear), new Object[] {
+			EMERALD_SPEAR = new ShapedRecipe(new ItemStack(TechTools.emerald_spear), new Object[] {
 					"i  ",
 					" s ",
 					"  s",
@@ -857,7 +874,7 @@ public class ToolsRecipes {
 			});
 		}
 		if (ConfigHandler.obsidian_spear){
-			RecipeRegistry.addShapedRecipe(new ItemStack(TechTools.obsidian_spear), new Object[] {
+			OBSIDIAN_SPEAR = new ShapedRecipe(new ItemStack(TechTools.obsidian_spear), new Object[] {
 					"i  ",
 					" s ",
 					"  s",

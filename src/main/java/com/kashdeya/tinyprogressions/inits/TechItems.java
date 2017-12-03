@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
-
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
@@ -17,7 +14,6 @@ import com.kashdeya.tinyprogressions.items.RepairTablet;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCan;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
-import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.item.Item;
 
@@ -68,7 +64,7 @@ public class TechItems {
 	public static Item chainmail_part;
 	public static Item stone_hammer;
 		
-	static void init() {
+	public static void init() {
 		// nether rod
 		if (ConfigHandler.nether_rod){
 			nether_rod = new ItemBase().setOreDictName("stickNether").setUnlocalizedName("nether_rod");
@@ -187,28 +183,4 @@ public class TechItems {
 	    // Can not be turned off
 	    stone_hammer = new ItemStay().setUnlocalizedName("stone_hammer");
 	}
-
-	public static void onRegister()
-	{
-		init();
-		
-		try
-		{
-			for(Field field : TechItems.class.getDeclaredFields())
-			{
-				Object obj = field.get(null);
-				
-				if(obj == null || !(obj instanceof Item))
-					continue;
-				
-				Item item = (Item)obj;
-				String name = field.getName().toLowerCase(Locale.ENGLISH);
-				Registry.registerItem(item, name);
-			}
-		}
-		catch(IllegalAccessException e)
-		{
-		}
-	}
-
 }

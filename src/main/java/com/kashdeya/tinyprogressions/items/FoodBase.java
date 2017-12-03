@@ -2,7 +2,7 @@ package com.kashdeya.tinyprogressions.items;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-import com.kashdeya.tinyprogressions.util.Registry.IOreDictEntry;
+import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;

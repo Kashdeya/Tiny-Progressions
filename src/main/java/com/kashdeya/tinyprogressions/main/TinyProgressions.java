@@ -10,8 +10,19 @@ import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
 import com.kashdeya.tinyprogressions.gui.GuiHandler;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
+import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
+import com.kashdeya.tinyprogressions.recipes.ArmorRecipes;
+import com.kashdeya.tinyprogressions.recipes.BlockRecipes;
+import com.kashdeya.tinyprogressions.recipes.FoodRecipes;
+import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
+import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
+import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
+import com.kashdeya.tinyprogressions.registry.ModRegistry;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,6 +39,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -36,7 +48,7 @@ import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
-public class TinyProgressions {
+public class TinyProgressions extends ModRegistry {
 
 	@Instance(Reference.MOD_ID)
 	public static TinyProgressions instance;
@@ -65,6 +77,17 @@ public class TinyProgressions {
 		TinyConfig.initExtra();
 		ModFluids.init();
 		
+		TechBlocks.init();
+		TechItems.init();
+		TechTools.init();
+		TechArmor.init();
+		TechFoods.init();
+		register(TechBlocks.class);
+		register(TechItems.class);
+		register(TechTools.class);
+		register(TechArmor.class);
+		register(TechFoods.class);
+
 		// Setup
 		proxy.onPreInitialization(e);
 				
@@ -92,6 +115,19 @@ public class TinyProgressions {
 
 	@SubscribeEvent
 	public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+		BlockRecipes.init();
+		ItemRecipes.init();
+		ToolsRecipes.init();
+		ArmorRecipes.init();
+		FoodRecipes.init();
+		OtherRecipes.init();
+		register(BlockRecipes.class);
+		register(ItemRecipes.class);
+		register(ToolsRecipes.class);
+		register(ArmorRecipes.class);
+		register(FoodRecipes.class);
+		register(OtherRecipes.class);
+		
 		IForgeRegistryModifiable<IRecipe> registry = (IForgeRegistryModifiable<IRecipe>) event.getRegistry();
 		Iterator<ResourceLocation> iterator = RemoveItems.recipes.iterator();
 

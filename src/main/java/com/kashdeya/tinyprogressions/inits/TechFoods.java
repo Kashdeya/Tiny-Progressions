@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FoodBase;
@@ -12,7 +9,6 @@ import com.kashdeya.tinyprogressions.items.apple.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.apple.GoldenApple;
 import com.kashdeya.tinyprogressions.items.apple.IronApple;
 import com.kashdeya.tinyprogressions.items.apple.RedstoneApple;
-import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.item.Item;
 
@@ -164,28 +160,5 @@ public class TechFoods {
 		    bacon_sandwhich = new FoodBase(6, 2.0F, true).setUnlocalizedName("bacon_sandwhich");
 	    }
 		
-	}
-	
-	public static void onRegister()
-	{
-		init();
-		
-		try
-		{
-			for(Field field : TechFoods.class.getDeclaredFields())
-			{
-				Object obj = field.get(null);
-				
-				if(obj == null || !(obj instanceof Item))
-					continue;
-				
-				Item item = (Item)obj;
-				String name = field.getName().toLowerCase(Locale.ENGLISH);
-				Registry.registerItem(item, name);
-			}
-		}
-		catch(IllegalAccessException e)
-		{
-		}
 	}
 }

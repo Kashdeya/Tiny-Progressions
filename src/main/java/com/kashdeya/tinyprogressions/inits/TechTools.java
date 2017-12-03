@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.DamageHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
@@ -62,7 +59,6 @@ import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianHoe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSpade;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSword;
-import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -168,7 +164,7 @@ public class TechTools {
 	// c axe
 	public static Item c_axe;
 	
-	static void init(){
+	public static void init(){
 		// nether tools and weapons
 		if (ConfigHandler.nether_rod && ConfigHandler.nether_iron_tools_weapons){
 			nether_iron_pickaxe = new BasePickaxe(Item.ToolMaterial.IRON).setUnlocalizedName("nether_iron_pickaxe");
@@ -370,29 +366,6 @@ public class TechTools {
 		}
 		if (ConfigHandler.obsidian_spear){
 			obsidian_spear = new ObsidianSpear(MaterialHandler.OBSIDIAN).setUnlocalizedName("obsidian_spear").setMaxDamage(DamageHandler.obsidian_spear);
-		}
-	}
-	
-	public static void onRegister()
-	{
-		init();
-		
-		try
-		{
-			for(Field field : TechTools.class.getDeclaredFields())
-			{
-				Object obj = field.get(null);
-				
-				if(obj == null || !(obj instanceof Item))
-					continue;
-				
-				Item item = (Item)obj;
-				String name = field.getName().toLowerCase(Locale.ENGLISH);
-				Registry.registerItem(item, name);
-			}
-		}
-		catch(IllegalAccessException e)
-		{
 		}
 	}
 }

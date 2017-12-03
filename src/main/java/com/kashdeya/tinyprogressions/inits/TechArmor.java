@@ -1,8 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
-
 import com.kashdeya.tinyprogressions.armor.BamShirt;
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.BucketHelm;
@@ -19,10 +16,8 @@ import com.kashdeya.tinyprogressions.armor.WitherArmour;
 import com.kashdeya.tinyprogressions.armor.WoodArmor;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
-import com.kashdeya.tinyprogressions.util.Registry;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 
 public class TechArmor {
@@ -104,7 +99,7 @@ public class TechArmor {
 	// Bucket
 	public static ItemArmor bucket_helm;
 	
-	static void init(){
+	public static void init(){
 		
 		// bam t-shirt
 		if (ArmorHandler.bam_tshirt){
@@ -207,29 +202,6 @@ public class TechArmor {
 		   	redstone_chestplate = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("redstone_chestplate");
 		   	redstone_leggings = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("redstone_leggings");
 		   	redstone_boots = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("redstone_boots");
-		}
-	}
-	
-	public static void onRegister()
-	{
-		init();
-		
-		try
-		{
-			for(Field field : TechArmor.class.getDeclaredFields())
-			{
-				Object obj = field.get(null);
-				
-				if(obj == null || !(obj instanceof Item))
-					continue;
-				
-				Item item = (Item)obj;
-				String name = field.getName().toLowerCase(Locale.ENGLISH);
-				Registry.registerItem(item, name);
-			}
-		}
-		catch(IllegalAccessException e)
-		{
 		}
 	}
 }

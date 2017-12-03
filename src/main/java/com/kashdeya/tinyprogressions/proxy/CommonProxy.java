@@ -20,8 +20,6 @@ public class CommonProxy {
 	
 	public void onInitialization(FMLInitializationEvent event)
 	{
-		System.out.println("COMMON PROXY");
-		
 		// FuelHandler
 		GameRegistry.registerFuelHandler(new FuelHandler());
 

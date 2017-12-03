@@ -1,13 +1,20 @@
 package com.kashdeya.tinyprogressions.items;
 
+import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-import com.kashdeya.tinyprogressions.util.IMetadata;
+import com.kashdeya.tinyprogressions.registry.models.IModelRegistrar;
+import com.kashdeya.tinyprogressions.registry.utils.IMetadata;
 
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemBaseMeta extends ItemBase implements IMetadata
+public class ItemBaseMeta extends ItemBase implements IModelRegistrar, IMetadata
 {
 	protected String[] unlocalNames;
 	
@@ -32,20 +39,14 @@ public class ItemBaseMeta extends ItemBase implements IMetadata
 	}
 	
 	@Override
-	public int getCount()
-	{
-		return unlocalNames.length;
-	}
-	
-	@Override
-	public String getTexture(int index)
-	{
-		return unlocalNames[index];
-	}
-	
-	@Override
-	public String[] getUnlocalizedNames()
-	{
+	public String[] getUnlocalizedNames() {
 		return unlocalNames;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerModels() {
+		for(int i = 0; i < unlocalNames.length; i++)
+			ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, unlocalNames[i]), "inventory"));
 	}
 }

@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.items.block;
 
-import com.kashdeya.tinyprogressions.util.IMetadata;
+import com.kashdeya.tinyprogressions.registry.utils.IMetadata;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

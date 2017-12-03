@@ -1,57 +1,66 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import com.kashdeya.tinyprogressions.items.block.MetaItemBlock;
+import com.kashdeya.tinyprogressions.armor.BlockMetadata;
 import com.kashdeya.tinyprogressions.properties.EnumLampColor;
-import com.kashdeya.tinyprogressions.util.IMetadata;
-import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class LampColored extends Lamp implements IMetadata, IItemProvider
+public class LampColored extends BlockMetadata
 {
 	public static final PropertyEnum<EnumLampColor> COLOR = PropertyEnum.create("color", EnumLampColor.class);
-	protected String[] unlocalNames;
 	
 	public LampColored()
 	{
+		super(Material.GLASS, EnumLampColor.getNames());
+		setHardness(0.5f);
+		setLightLevel(1.0F);
+		setLightOpacity(1);
+		setSoundType(SoundType.GLASS);
 		setDefaultState(blockState.getBaseState().withProperty(COLOR, EnumLampColor.WHITE));
-		this.unlocalNames = EnumLampColor.getNames();
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public BlockRenderLayer getBlockLayer()
+	{
+		return BlockRenderLayer.CUTOUT_MIPPED;
 	}
 	
 	@Override
-	public ItemBlock getItemBlock()
-	{
-		return new MetaItemBlock(this);
-	}
+    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
+    {
+		return false;
+    }
 	
 	@Override
-	public int getCount()
-	{
-		return unlocalNames.length;
-	}
-	
+	public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
+
 	@Override
-	public String getTexture(int index)
-	{
-		return unlocalNames[index];
-	}
-	
+    protected boolean canSilkHarvest()
+    {
+        return true;
+    }
+
 	@Override
-	public String[] getUnlocalizedNames()
-	{
-		return unlocalNames;
-	}
+	public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
 	
 	@Override
 	public BlockStateContainer createBlockState()
@@ -83,11 +92,4 @@ public class LampColored extends Lamp implements IMetadata, IItemProvider
 		EnumLampColor metaValue = state.getValue(COLOR);
 		return metaValue.ordinal();
     }
-	
-	@Override
-	public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
-	{
-		for(int i = 0; i < unlocalNames.length; i++)
-			items.add(new ItemStack(this, 1, i));
-	}
 }

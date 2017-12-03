@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-import com.kashdeya.tinyprogressions.util.Registry.IItemProvider;
+import com.kashdeya.tinyprogressions.registry.utils.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
@@ -53,7 +53,7 @@ public class Slabs extends BlockSlab implements IItemProvider
     }
     
     @Override
-    public ItemBlock getItemBlock()
+    public ItemBlock createItemBlock()
     {
     		if(!isDouble)
     			return new ItemSlab(this, this, doubleSlab);

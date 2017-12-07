@@ -40,8 +40,20 @@ public class BlockRecipes {
 	public static IRecipe SUGAR, COMPRESSED_SUGAR, COMPRESSED_SUGAR2, COMPRESSED_2_SUGAR;
 	public static IRecipe CANE, COMPRESSED_CANE, COMPRESSED_CANE2, COMPRESSED_2_CANE, COMPRESSED_2_CANE2, COMPRESSED_3_CANE, COMPRESSED_3_CANE2, COMPRESSED_4_CANE, COMPRESSED_4_CANE2;
 	public static IRecipe COMPRESSED_5_CANE, COMPRESSED_5_CANE2, COMPRESSED_6_CANE, COMPRESSED_6_CANE2, COMPRESSED_7_CANE, COMPRESSED_7_CANE2, COMPRESSED_8_CANE;
+	public static IRecipe ASPHALT;
 	
 	public static void init() {
+		if (ConfigHandler.asphalt){
+			ASPHALT = new ShapedRecipe(new ItemStack(TechBlocks.asphalt_block, 8), new Object[] {
+					"gsg",
+					"clc",
+					"gsg",
+						Character.valueOf('c'), Blocks.CLAY,
+						Character.valueOf('g'), Blocks.GRAVEL,
+						Character.valueOf('s'), Blocks.SAND,
+						Character.valueOf('l'), Items.LAVA_BUCKET
+			});
+		}
 		// Nether
 		if (ConfigHandler.nether_rod){
 			SOUL_SANDSTONE = new ShapedRecipe(new ItemStack(TechBlocks.soul_sandstone), new Object[] {

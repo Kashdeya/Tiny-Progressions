@@ -16,6 +16,7 @@ import com.kashdeya.tinyprogressions.blocks.compressed.FleshBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.FlintBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.Asphalt;
 import com.kashdeya.tinyprogressions.blocks.decorations.CompressedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.DirtyGlass;
@@ -148,9 +149,14 @@ public class TechBlocks {
     public static Block tower_builder;
     // vasholine
     public static Block VASHOLINE;
+    // asphalt
+    public static Block asphalt_block;
     
 	public static void init() {
-		
+		// asphalt
+		if (ConfigHandler.asphalt){
+			asphalt_block = new Asphalt();
+		}
 		// nether blocks
 		if (ConfigHandler.nether_rod){
 			soul_sandstone = new CompressedBlocks("soul_sandstone", Material.ROCK, SoundType.STONE, TechBlocks.soul_sandstone, 1, 1).setHardness(0.4F).setResistance(10.0F);

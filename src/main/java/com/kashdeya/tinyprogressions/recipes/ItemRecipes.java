@@ -123,10 +123,11 @@ public class ItemRecipes {
 			
 			if (ArmorHandler.lava_armor) {
 				LAVA_CRYSTAL1 = new ShapedRecipe(new ItemStack(TechItems.lava_crystal,  8), new Object[] {
-						"sss",
-						"sbs",
-						"sss",
+						"sls",
+						"lbl",
+						"sls",
 							Character.valueOf('s'), TechItems.reinforced_obsidian_ingot,
+							Character.valueOf('l'), TechBlocks.lava_block,
 							Character.valueOf('b'), Items.LAVA_BUCKET
 				});
 				LAVA_BUCKET1 = new ShapedRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {

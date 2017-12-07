@@ -27,13 +27,21 @@ import com.kashdeya.tinyprogressions.items.multi.ObsidianMulti;
 import com.kashdeya.tinyprogressions.items.scythes.EmeraldScythe;
 import com.kashdeya.tinyprogressions.items.scythes.ObsidianScythe;
 import com.kashdeya.tinyprogressions.items.scythes.ScytheMain;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaDiamondAxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaDiamondPickaxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaEmeraldAxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaEmeraldPickaxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaGoldAxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaGoldPickaxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaIronAxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaIronPickaxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaStoneAxe;
+import com.kashdeya.tinyprogressions.items.seaxe.SeaStonePickaxe;
 import com.kashdeya.tinyprogressions.items.spears.EmeraldSpear;
 import com.kashdeya.tinyprogressions.items.spears.ObsidianSpear;
 import com.kashdeya.tinyprogressions.items.spears.SpearMain;
 import com.kashdeya.tinyprogressions.items.tools.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.KappaPick;
-import com.kashdeya.tinyprogressions.items.tools.SeaIronAxe;
-import com.kashdeya.tinyprogressions.items.tools.SeaIronPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseAxe;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseHoe;
 import com.kashdeya.tinyprogressions.items.tools.base.BasePickaxe;
@@ -162,7 +170,11 @@ public class TechTools {
 	public static Item nether_hoe;
 	public static Item nether_spade;
 	// c axe
+	public static Item stone_sea_axe;
 	public static Item c_axe;
+	public static Item gold_sea_axe;
+	public static Item diamond_sea_axe;
+	public static Item emerald_sea_axe;
 	
 	public static void init(){
 		// nether tools and weapons
@@ -196,10 +208,18 @@ public class TechTools {
 		}
 		// c axe
 		if (ConfigHandler.c_axe && ConfigHandler.sea_axe){
+			stone_sea_axe = new SeaStoneAxe(MaterialHandler.SEASTONE, 5.0F, -1.2F).setUnlocalizedName("stone_sea_axe");
 			c_axe = new SeaIronAxe(MaterialHandler.SEAIRON, 10.0F, -1.2F).setUnlocalizedName("c_axe");
+			gold_sea_axe = new SeaGoldAxe(MaterialHandler.SEAGOLD, 2.0F, -1.2F).setUnlocalizedName("gold_sea_axe");
+			diamond_sea_axe = new SeaDiamondAxe(MaterialHandler.SEADIAMOND, 15.0F, -1.2F).setUnlocalizedName("diamond_sea_axe");
+			emerald_sea_axe = new SeaEmeraldAxe(MaterialHandler.SEAEMERALD, 20.0F, -1.2F).setUnlocalizedName("emerald_sea_axe");
 		}
 		if (ConfigHandler.c_axe && ConfigHandler.sea_pickaxe){
+			stone_sea_axe = new SeaStonePickaxe(MaterialHandler.SEASTONE).setUnlocalizedName("stone_sea_axe");
 			c_axe = new SeaIronPickaxe(MaterialHandler.SEAIRON).setUnlocalizedName("c_axe");
+			gold_sea_axe = new SeaGoldPickaxe(MaterialHandler.SEAGOLD).setUnlocalizedName("gold_sea_axe");
+			diamond_sea_axe = new SeaDiamondPickaxe(MaterialHandler.SEADIAMOND).setUnlocalizedName("diamond_sea_axe");
+			emerald_sea_axe = new SeaEmeraldPickaxe(MaterialHandler.SEAEMERALD).setUnlocalizedName("emerald_sea_axe");
 		}
 		// bsc tools and weapons
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){

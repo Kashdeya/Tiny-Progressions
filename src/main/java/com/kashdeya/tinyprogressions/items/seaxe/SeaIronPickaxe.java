@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items.tools;
+package com.kashdeya.tinyprogressions.items.seaxe;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,19 +12,21 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
 
-public class SeaIronAxe extends ItemAxe{
+public class SeaIronPickaxe extends ItemPickaxe {
 	
-	public SeaIronAxe(ToolMaterial material, float damage, float speed){
-		super(material, damage, speed);
+	public SeaIronPickaxe(ToolMaterial material){
+		super(material);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
+		this.setHarvestLevel("pickaxe", 2);
 	}
 	
 	public Set<String> getToolClasses(ItemStack stack) {
-		return ImmutableSet.of("axe", "sword");
+		return ImmutableSet.of("pickaxe", "sword");
 	}
 	
 	@Override

@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items.tools;
+package com.kashdeya.tinyprogressions.items.seaxe;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,27 +12,26 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 
-public class SeaIronPickaxe extends ItemPickaxe {
+public class SeaStoneAxe extends ItemAxe{
 	
-	public SeaIronPickaxe(ToolMaterial material){
-		super(material);
+	public SeaStoneAxe(ToolMaterial material, float damage, float speed){
+		super(material, damage, speed);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
-		this.setHarvestLevel("pickaxe", 2);
 	}
 	
 	public Set<String> getToolClasses(ItemStack stack) {
-		return ImmutableSet.of("pickaxe", "sword");
+		return ImmutableSet.of("axe", "sword");
 	}
 	
 	@Override
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
     {
-        ItemStack mat = new ItemStack(Items.IRON_INGOT);
+        ItemStack mat = new ItemStack(Blocks.COBBLESTONE);
         if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
         return super.getIsRepairable(toRepair, repair);
     }

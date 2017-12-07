@@ -8,6 +8,9 @@ tile.emerald_cobblegen_block.name=Cobblestone Generator Tier 5
 #bucket helmet
 item.bucket_helm.name=Bucket Helmet
 
+#asphalt
+tile.asphalt_block.name=Asphalt
+
 #Growth Blocks
 tile.growth_block.name=Growth Crystal
 tile.growth_upgrade.name=Growth Crystal Tier 2

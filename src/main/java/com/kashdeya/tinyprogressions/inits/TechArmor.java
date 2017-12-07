@@ -97,7 +97,7 @@ public class TechArmor {
 	public static ItemArmor bam_tshirt;
 	
 	// Bucket
-	public static ItemArmor bucket_helm;
+	//public static ItemArmor bucket_helm;
 	
 	public static void init(){
 		
@@ -106,7 +106,7 @@ public class TechArmor {
 			bam_tshirt = (ItemArmor) new BamShirt(MaterialHandler.bamArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("bam_tshirt");
 		}
 		
-			bucket_helm = (ItemArmor) new BucketHelm(MaterialHandler.bucketArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("bucket_helm");
+			//bucket_helm = (ItemArmor) new BucketHelm(MaterialHandler.bucketArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("bucket_helm");
 		
 		// Emerald Armor
 		if (ArmorHandler.emerald_amor){

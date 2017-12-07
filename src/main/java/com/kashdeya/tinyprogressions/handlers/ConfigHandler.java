@@ -1,6 +1,9 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	// asphalt
+	public static boolean asphalt = true;
+	
 	// vasholine
 	public static boolean vasholine = true;
 	public static boolean vasholine_mobs = true;

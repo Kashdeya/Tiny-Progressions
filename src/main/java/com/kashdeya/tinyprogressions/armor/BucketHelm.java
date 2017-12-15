@@ -38,6 +38,7 @@ public class BucketHelm extends ItemArmor {
     	if (((head != null) && (head.getItem() == TechArmor.bucket_helm)) || 
     	(entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
     		entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, 0, false, false));
+    		entity.removePotionEffect(MobEffects.POISON);
     	}
     }
 }

@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -29,7 +30,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class WaterBlock extends Block {
+public class WaterBlock extends Block implements IOreDictEntry {
 	
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	
@@ -43,6 +44,11 @@ public class WaterBlock extends Block {
         this.setUnlocalizedName("water_block");
         this.setCreativeTab(TinyProgressions.tabTP);
     }
+    
+	@Override
+	public String getOreDictName() {
+		return "oreWaterBlock";
+	}
     
     @SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer()
@@ -90,7 +96,7 @@ public class WaterBlock extends Block {
     
     public int quantityDropped(Random random)
     {
-        return 0;
+        return 1;
     }
     
     public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)

@@ -2,7 +2,9 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -16,6 +18,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
@@ -31,7 +34,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class LavaBlock extends Block {
+public class LavaBlock extends Block implements IOreDictEntry {
 	
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	
@@ -46,6 +49,11 @@ public class LavaBlock extends Block {
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
     }
+    
+	@Override
+	public String getOreDictName() {
+		return "oreLavaBlock";
+	}
     
     @SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer()
@@ -89,9 +97,9 @@ public class LavaBlock extends Block {
 	@Override
     public int quantityDropped(Random random)
     {
-        return 0;
+        return 1;
     }
-	
+
 	@Override
     public boolean canDropFromExplosion(Explosion explosionIn)
     {

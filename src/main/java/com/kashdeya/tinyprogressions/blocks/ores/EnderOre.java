@@ -5,6 +5,7 @@ import java.util.Random;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -24,7 +25,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EnderOre extends Block {
+public class EnderOre extends Block implements IOreDictEntry {
 	
     public EnderOre()
     {
@@ -36,6 +37,11 @@ public class EnderOre extends Block {
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("ender_ore");
     }
+    
+	@Override
+	public String getOreDictName() {
+		return "oreEnderOre";
+	}
     
     @Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)

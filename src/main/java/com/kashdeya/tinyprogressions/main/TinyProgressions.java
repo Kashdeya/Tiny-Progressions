@@ -23,6 +23,7 @@ import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
 import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
 import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;
+import com.kashdeya.tinyprogressions.util.ModChecker;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -46,7 +47,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.MINECRAFT)
 
 public class TinyProgressions extends ModRegistry {
 
@@ -60,6 +61,7 @@ public class TinyProgressions extends ModRegistry {
 
 	public static SimpleNetworkWrapper network;
 	public static org.apache.logging.log4j.Logger logger;
+	public static ModChecker modChecker;
 	
 	static { 
 		FluidRegistry.enableUniversalBucket();
@@ -68,6 +70,7 @@ public class TinyProgressions extends ModRegistry {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		logger = e.getModLog();
+		modChecker = new ModChecker();
 		
 		// Configs
 		TinyConfig.initMain();

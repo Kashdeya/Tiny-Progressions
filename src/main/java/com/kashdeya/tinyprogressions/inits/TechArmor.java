@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.armor.BamShirt;
 import com.kashdeya.tinyprogressions.armor.BoneArmor;
-import com.kashdeya.tinyprogressions.armor.BucketHelm;
 import com.kashdeya.tinyprogressions.armor.DragonArmour;
 import com.kashdeya.tinyprogressions.armor.EmeraldArmor;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
@@ -96,17 +95,12 @@ public class TechArmor {
 	// bam t-shirt
 	public static ItemArmor bam_tshirt;
 	
-	// Bucket
-	public static ItemArmor bucket_helm;
-	
 	public static void init(){
 		
 		// bam t-shirt
 		if (ArmorHandler.bam_tshirt){
 			bam_tshirt = (ItemArmor) new BamShirt(MaterialHandler.bamArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("bam_tshirt");
 		}
-		
-			bucket_helm = (ItemArmor) new BucketHelm(MaterialHandler.bucketArmourMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("bucket_helm");
 		
 		// Emerald Armor
 		if (ArmorHandler.emerald_amor){

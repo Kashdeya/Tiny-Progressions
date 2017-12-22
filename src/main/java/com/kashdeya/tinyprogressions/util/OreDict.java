@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.util;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 

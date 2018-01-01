@@ -69,7 +69,7 @@ public class PouchContainer extends Container
     {
         Slot slot = getSlot(index);
  
-        if(slot == null || !slot.getHasStack())
+        if(!slot.getHasStack())
             return ItemStack.EMPTY;
  
         ItemStack itemstack = slot.getStack();

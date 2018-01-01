@@ -19,7 +19,7 @@ public class SpongeBlockPlacement {
     public void onPlayerSpongePlacement(PlaceEvent event) {
     	if (ConfigHandler.BlockGrowthUpgrade || ConfigHandler.BlockGrowthUpgradeTwo){
             ItemStack itemstack = event.getPlayer().getHeldItem(event.getHand());
-            if (itemstack != null && itemstack.getItem() == Item.getItemFromBlock(Blocks.SPONGE)) {
+            if (!itemstack.isEmpty() && itemstack.getItem() == Item.getItemFromBlock(Blocks.SPONGE)) {
                 for (int x = -8; x <= 8; x++) {
                     for (int y = -8; y <= 8; y++) {
                         for (int z = -8; z <= 8; z++) {

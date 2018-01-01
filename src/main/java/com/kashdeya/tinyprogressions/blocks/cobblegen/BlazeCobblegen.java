@@ -85,7 +85,7 @@ public class BlazeCobblegen extends Block implements ITileEntityProvider{
     		} else
     		{
         		ItemStack stack = ttest.getStackInSlot(0);
-    			player.sendMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack == null? 0 : stack.getCount())));
+    			player.sendMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
     		}
     	}
     	

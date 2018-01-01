@@ -44,503 +44,343 @@ public class BlockRecipes {
 	
 	public static void init() {
 		if (ConfigHandler.asphalt){
-			ASPHALT = new ShapedRecipe(new ItemStack(TechBlocks.asphalt_block, 8), new Object[] {
-					"gsg",
-					"clc",
-					"gsg",
-						Character.valueOf('c'), Blocks.CLAY,
-						Character.valueOf('g'), Blocks.GRAVEL,
-						Character.valueOf('s'), Blocks.SAND,
-						Character.valueOf('l'), Items.LAVA_BUCKET
-			});
+			ASPHALT = new ShapedRecipe(new ItemStack(TechBlocks.asphalt_block, 8), "gsg",
+                "clc",
+                "gsg",
+				'c', Blocks.CLAY,
+				'g', Blocks.GRAVEL,
+				's', Blocks.SAND,
+				'l', Items.LAVA_BUCKET);
 		}
 		// Nether
 		if (ConfigHandler.nether_rod){
-			SOUL_SANDSTONE = new ShapedRecipe(new ItemStack(TechBlocks.soul_sandstone), new Object[] {
-					"cc",
-					"cc",
-						Character.valueOf('c'), Blocks.SOUL_SAND
-			});
-			SOUL_SAND = new ShapelessRecipe(new ItemStack(Blocks.SOUL_SAND, 9), new Object[] {
-					TechBlocks.soul_sandstone
-			});
+			SOUL_SANDSTONE = new ShapedRecipe(new ItemStack(TechBlocks.soul_sandstone), "cc",
+                "cc",
+				'c', Blocks.SOUL_SAND);
+			SOUL_SAND = new ShapelessRecipe(new ItemStack(Blocks.SOUL_SAND, 9), TechBlocks.soul_sandstone);
 		}
 		if (ConfigHandler.nether_compressed_blocks){
-			NETHERRACK = new ShapelessRecipe(new ItemStack(Blocks.NETHERRACK, 9), new Object[] {
-					TechBlocks.compressed_nether_block
-			});
-			COMPRESSED_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), Blocks.NETHERRACK
-			});
-			COMPRESSED_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.compressed_nether_block, 9), new Object[] {
-					TechBlocks.double_compressed_nether_block
-			});
-			COMPRESSED_2_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.double_compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.compressed_nether_block
-			});
-			COMPRESSED_2_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.double_compressed_nether_block, 9), new Object[] {
-					TechBlocks.triple_compressed_nether_block
-			});
-			COMPRESSED_3_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.triple_compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.double_compressed_nether_block
-			});
-			COMPRESSED_3_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.triple_compressed_nether_block, 9), new Object[] {
-					TechBlocks.quadruple_compressed_nether_block
-			});
-			COMPRESSED_4_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.quadruple_compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.triple_compressed_nether_block
-			});
-			COMPRESSED_4_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.quadruple_compressed_nether_block, 9), new Object[] {
-					TechBlocks.quintuple_compressed_nether_block
-			});
-			COMPRESSED_5_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.quintuple_compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.quadruple_compressed_nether_block
-			});
-			COMPRESSED_5_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.quintuple_compressed_nether_block, 9), new Object[] {
-					TechBlocks.sextuple_compressed_nether_block
-			});
-			COMPRESSED_6_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.sextuple_compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.quintuple_compressed_nether_block
-			});
-			COMPRESSED_6_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.sextuple_compressed_nether_block, 9), new Object[] {
-					TechBlocks.septuple_compressed_nether_block
-			});
-			COMPRESSED_7_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.septuple_compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.sextuple_compressed_nether_block
-			});
-			COMPRESSED_7_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.septuple_compressed_nether_block, 9), new Object[] {
-					TechBlocks.octuple_compressed_nether_block
-			});
-			COMPRESSED_8_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.octuple_compressed_nether_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.septuple_compressed_nether_block
-			});
+			NETHERRACK = new ShapelessRecipe(new ItemStack(Blocks.NETHERRACK, 9), TechBlocks.compressed_nether_block);
+			COMPRESSED_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', Blocks.NETHERRACK);
+			COMPRESSED_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.compressed_nether_block, 9), TechBlocks.double_compressed_nether_block);
+			COMPRESSED_2_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.double_compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.compressed_nether_block);
+			COMPRESSED_2_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.double_compressed_nether_block, 9), TechBlocks.triple_compressed_nether_block);
+			COMPRESSED_3_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.triple_compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.double_compressed_nether_block);
+			COMPRESSED_3_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.triple_compressed_nether_block, 9), TechBlocks.quadruple_compressed_nether_block);
+			COMPRESSED_4_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.quadruple_compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.triple_compressed_nether_block);
+			COMPRESSED_4_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.quadruple_compressed_nether_block, 9), TechBlocks.quintuple_compressed_nether_block);
+			COMPRESSED_5_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.quintuple_compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.quadruple_compressed_nether_block);
+			COMPRESSED_5_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.quintuple_compressed_nether_block, 9), TechBlocks.sextuple_compressed_nether_block);
+			COMPRESSED_6_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.sextuple_compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.quintuple_compressed_nether_block);
+			COMPRESSED_6_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.sextuple_compressed_nether_block, 9), TechBlocks.septuple_compressed_nether_block);
+			COMPRESSED_7_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.septuple_compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.sextuple_compressed_nether_block);
+			COMPRESSED_7_NETHER2 = new ShapelessRecipe(new ItemStack(TechBlocks.septuple_compressed_nether_block, 9), TechBlocks.octuple_compressed_nether_block);
+			COMPRESSED_8_NETHER = new ShapedRecipe(new ItemStack(TechBlocks.octuple_compressed_nether_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.septuple_compressed_nether_block);
 		}
 		// bsc
 		if (ConfigHandler.bsc_sugar_compressed_blocks){
-			SUGAR = new ShapelessRecipe(new ItemStack(Items.SUGAR, 9), new Object[] {
-					TechBlocks.compressed_sugar
-			});
-			COMPRESSED_SUGAR = new ShapedRecipe(new ItemStack(TechBlocks.compressed_sugar), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), Items.SUGAR
-			});
-			COMPRESSED_SUGAR2 = new ShapelessRecipe(new ItemStack(TechBlocks.compressed_sugar, 9), new Object[] {
-					TechBlocks.double_compressed_sugar
-			});
-			COMPRESSED_2_SUGAR = new ShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.compressed_sugar
-			});
+			SUGAR = new ShapelessRecipe(new ItemStack(Items.SUGAR, 9), TechBlocks.compressed_sugar);
+			COMPRESSED_SUGAR = new ShapedRecipe(new ItemStack(TechBlocks.compressed_sugar), "ccc",
+                "ccc",
+                "ccc",
+				'c', Items.SUGAR);
+			COMPRESSED_SUGAR2 = new ShapelessRecipe(new ItemStack(TechBlocks.compressed_sugar, 9), TechBlocks.double_compressed_sugar);
+			COMPRESSED_2_SUGAR = new ShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.compressed_sugar);
 		}
 		if (ConfigHandler.bsc_sugarcane_compressed_blocks){
-			CANE = new ShapelessRecipe(new ItemStack(Items.REEDS, 9), new Object[] {
-					TechBlocks.compressed_sugar_cane
-			});
-			COMPRESSED_CANE = new ShapedRecipe(new ItemStack(TechBlocks.compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), Items.REEDS
-			});
-			COMPRESSED_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.compressed_sugar_cane, 9), new Object[] {
-					TechBlocks.double_compressed_sugar_cane
-			});
-			COMPRESSED_2_CANE = new ShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.compressed_sugar_cane
-			});
-			COMPRESSED_2_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.double_compressed_sugar_cane, 9), new Object[] {
-					TechBlocks.triple_compressed_sugar_cane
-			});
-			COMPRESSED_3_CANE = new ShapedRecipe(new ItemStack(TechBlocks.triple_compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.double_compressed_sugar_cane
-			});
-			COMPRESSED_3_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.triple_compressed_sugar_cane, 9), new Object[] {
-					TechBlocks.quadruple_compressed_sugar_cane
-			});
-			COMPRESSED_4_CANE = new ShapedRecipe(new ItemStack(TechBlocks.quadruple_compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.triple_compressed_sugar_cane
-			});
-			COMPRESSED_4_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.quadruple_compressed_sugar_cane, 9), new Object[] {
-					TechBlocks.quintuple_compressed_sugar_cane
-			});
-			COMPRESSED_5_CANE = new ShapedRecipe(new ItemStack(TechBlocks.quintuple_compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.quadruple_compressed_sugar_cane
-			});
-			COMPRESSED_5_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.quintuple_compressed_sugar_cane, 9), new Object[] {
-					TechBlocks.sextuple_compressed_sugar_cane
-			});
-			COMPRESSED_6_CANE = new ShapedRecipe(new ItemStack(TechBlocks.sextuple_compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.quintuple_compressed_sugar_cane
-			});
-			COMPRESSED_6_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.sextuple_compressed_sugar_cane, 9), new Object[] {
-					TechBlocks.septuple_compressed_sugar_cane
-			});
-			COMPRESSED_7_CANE = new ShapedRecipe(new ItemStack(TechBlocks.septuple_compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.sextuple_compressed_sugar_cane
-			});
-			COMPRESSED_7_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.septuple_compressed_sugar_cane, 9), new Object[] {
-					TechBlocks.octuple_compressed_sugar_cane
-			});
-			COMPRESSED_8_CANE = new ShapedRecipe(new ItemStack(TechBlocks.octuple_compressed_sugar_cane), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), TechBlocks.septuple_compressed_sugar_cane
-			});
+			CANE = new ShapelessRecipe(new ItemStack(Items.REEDS, 9), TechBlocks.compressed_sugar_cane);
+			COMPRESSED_CANE = new ShapedRecipe(new ItemStack(TechBlocks.compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', Items.REEDS);
+			COMPRESSED_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.compressed_sugar_cane, 9), TechBlocks.double_compressed_sugar_cane);
+			COMPRESSED_2_CANE = new ShapedRecipe(new ItemStack(TechBlocks.double_compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.compressed_sugar_cane);
+			COMPRESSED_2_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.double_compressed_sugar_cane, 9), TechBlocks.triple_compressed_sugar_cane);
+			COMPRESSED_3_CANE = new ShapedRecipe(new ItemStack(TechBlocks.triple_compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.double_compressed_sugar_cane);
+			COMPRESSED_3_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.triple_compressed_sugar_cane, 9), TechBlocks.quadruple_compressed_sugar_cane);
+			COMPRESSED_4_CANE = new ShapedRecipe(new ItemStack(TechBlocks.quadruple_compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.triple_compressed_sugar_cane);
+			COMPRESSED_4_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.quadruple_compressed_sugar_cane, 9), TechBlocks.quintuple_compressed_sugar_cane);
+			COMPRESSED_5_CANE = new ShapedRecipe(new ItemStack(TechBlocks.quintuple_compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.quadruple_compressed_sugar_cane);
+			COMPRESSED_5_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.quintuple_compressed_sugar_cane, 9), TechBlocks.sextuple_compressed_sugar_cane);
+			COMPRESSED_6_CANE = new ShapedRecipe(new ItemStack(TechBlocks.sextuple_compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.quintuple_compressed_sugar_cane);
+			COMPRESSED_6_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.sextuple_compressed_sugar_cane, 9), TechBlocks.septuple_compressed_sugar_cane);
+			COMPRESSED_7_CANE = new ShapedRecipe(new ItemStack(TechBlocks.septuple_compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.sextuple_compressed_sugar_cane);
+			COMPRESSED_7_CANE2 = new ShapelessRecipe(new ItemStack(TechBlocks.septuple_compressed_sugar_cane, 9), TechBlocks.octuple_compressed_sugar_cane);
+			COMPRESSED_8_CANE = new ShapedRecipe(new ItemStack(TechBlocks.octuple_compressed_sugar_cane), "ccc",
+                "ccc",
+                "ccc",
+				'c', TechBlocks.septuple_compressed_sugar_cane);
 		}
 		
 		// Stone Torch
 		if (ConfigHandler.StoneTorch) {
-			STONE_STICK = new ShapedRecipe(new ItemStack(TechItems.stone_stick, 4), new Object[] {
-					"c",
-					"c",
-						Character.valueOf('c'), "cobblestone"
-			});
+			STONE_STICK = new ShapedRecipe(new ItemStack(TechItems.stone_stick, 4), "c",
+                "c",
+				'c', "cobblestone");
 		}
 		
 		// Growth Crystals
 		if (ConfigHandler.BlockGrowth) {
-			GROWTH_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.growth_block), new Object[] {
-					"ibi",
-					"ded",
-					"ibi",
-						Character.valueOf('i'), "ingotIron",
-						Character.valueOf('b'), TechBlocks.bone_block,
-						Character.valueOf('d'), TechBlocks.dirty_glass,
-						Character.valueOf('e'), Blocks.SEA_LANTERN
-			});
+			GROWTH_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.growth_block), "ibi",
+                "ded",
+                "ibi",
+				'i', "ingotIron",
+				'b', TechBlocks.bone_block,
+				'd', TechBlocks.dirty_glass,
+				'e', Blocks.SEA_LANTERN);
 		}
 		if (ConfigHandler.BlockGrowthUpgrade && ConfigHandler.WateringCanUpgrade && ConfigHandler.BlockGrowth && ConfigHandler.NetherStarBlock) {
-			GROWTH_UPGRADE = new ShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), new Object[] {
-					"cwc",
-					"ses",
-					"cnc",
-						Character.valueOf('c'), TechBlocks.reinforced_glass,
-						Character.valueOf('w'), TechItems.watering_can_upgrade,
-						Character.valueOf('s'), Items.END_CRYSTAL,
-						Character.valueOf('e'), TechBlocks.growth_block,
-						Character.valueOf('n'), TechBlocks.netherstar_block
-			});
+			GROWTH_UPGRADE = new ShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), "cwc",
+                "ses",
+                "cnc",
+				'c', TechBlocks.reinforced_glass,
+				'w', TechItems.watering_can_upgrade,
+				's', Items.END_CRYSTAL,
+				'e', TechBlocks.growth_block,
+				'n', TechBlocks.netherstar_block);
 		}
 		if (ConfigHandler.BlockGrowthUpgradeTwo && ConfigHandler.BlockGrowthUpgrade) {
-			GROWTH_UPGRADE_TWO = new ShapelessRecipe(new ItemStack(TechBlocks.growth_upgrade_two), new Object[] {
-					TechBlocks.growth_upgrade, Blocks.DRAGON_EGG
-			});
+			GROWTH_UPGRADE_TWO = new ShapelessRecipe(new ItemStack(TechBlocks.growth_upgrade_two), TechBlocks.growth_upgrade, Blocks.DRAGON_EGG);
 		}
 		
 		// Cobble Generators
 		if (ConfigHandler.Cobblegen) {
-			COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.cobblegen_block), new Object[] {
-					"ccc",
-					"wgl",
-					"ccc",
-						Character.valueOf('c'), "cobblestone",
-						Character.valueOf('w'), Items.WATER_BUCKET,
-						Character.valueOf('l'), Items.LAVA_BUCKET,
-						Character.valueOf('g'), "blockGlass"
-			});
+			COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.cobblegen_block), "ccc",
+                "wgl",
+                "ccc",
+				'c', "cobblestone",
+				'w', Items.WATER_BUCKET,
+				'l', Items.LAVA_BUCKET,
+				'g', "blockGlass");
 			
-			COBBLE_GEN2 = new ShapedRecipe(new ItemStack(TechBlocks.cobblegen_block), new Object[] {
-					"ccc",
-					"lgw",
-					"ccc",
-						Character.valueOf('c'), "cobblestone",
-						Character.valueOf('w'), Items.WATER_BUCKET,
-						Character.valueOf('l'), Items.LAVA_BUCKET,
-						Character.valueOf('g'), "blockGlass"
-			});
+			COBBLE_GEN2 = new ShapedRecipe(new ItemStack(TechBlocks.cobblegen_block), "ccc",
+                "lgw",
+                "ccc",
+				'c', "cobblestone",
+				'w', Items.WATER_BUCKET,
+				'l', Items.LAVA_BUCKET,
+				'g', "blockGlass");
 		}
 		if (ConfigHandler.IronCobblegen && ConfigHandler.Cobblegen) {
-			IRON_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.iron_cobblegen_block), new Object[] {
-					"iii",
-					"igi",
-					"iii",
-						Character.valueOf('i'), "ingotIron",
-						Character.valueOf('g'), TechBlocks.cobblegen_block
-			});
+			IRON_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.iron_cobblegen_block), "iii",
+                "igi",
+                "iii",
+				'i', "ingotIron",
+				'g', TechBlocks.cobblegen_block);
 		}
 		if (ConfigHandler.DiamondCobblegen && ConfigHandler.IronCobblegen) {
-			DIAMOND_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.diamond_cobblegen_block), new Object[] {
-					"ddd",
-					"did",
-					"ddd",
-						Character.valueOf('d'), "gemDiamond",
-						Character.valueOf('i'), TechBlocks.iron_cobblegen_block
-			});
+			DIAMOND_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.diamond_cobblegen_block), "ddd",
+                "did",
+                "ddd",
+				'd', "gemDiamond",
+				'i', TechBlocks.iron_cobblegen_block);
 		}
 		if (ConfigHandler.BlazeCobblegen && ConfigHandler.DiamondCobblegen) {
-			BLAZE_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.blaze_cobblegen_block), new Object[] {
-					"bbb",
-					"bdb",
-					"bbb",
-						Character.valueOf('b'), Items.BLAZE_ROD,
-						Character.valueOf('d'), TechBlocks.diamond_cobblegen_block
-			});
+			BLAZE_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.blaze_cobblegen_block), "bbb",
+                "bdb",
+                "bbb",
+				'b', Items.BLAZE_ROD,
+				'd', TechBlocks.diamond_cobblegen_block);
 		}
 		if (ConfigHandler.EmeraldCobblegen && ConfigHandler.BlazeCobblegen) {
-			EMERALD_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.emerald_cobblegen_block), new Object[] {
-					"eee",
-					"ebe",
-					"eee",
-						Character.valueOf('e'), "gemEmerald",
-						Character.valueOf('b'), TechBlocks.blaze_cobblegen_block
-			});
+			EMERALD_COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.emerald_cobblegen_block), "eee",
+                "ebe",
+                "eee",
+				'e', "gemEmerald",
+				'b', TechBlocks.blaze_cobblegen_block);
 		}
 
 		// Stone Torch
 		if (ConfigHandler.StoneTorch) {
-			STONE_TORCH = new ShapedRecipe(new ItemStack(TechBlocks.stone_torch, 4), new Object[] {
-					"c",
-					"s",
-						Character.valueOf('c'), new ItemStack(Items.COAL,1,0),
-						Character.valueOf('s'), "stickStone"
-			});
-			STONE_TORCH2 = new ShapedRecipe(new ItemStack(TechBlocks.stone_torch, 4), new Object[] {
-					"c",
-					"s",
-						Character.valueOf('c'), new ItemStack(Items.COAL,1,1),
-						Character.valueOf('s'), "stickStone"
-			});
+			STONE_TORCH = new ShapedRecipe(new ItemStack(TechBlocks.stone_torch, 4), "c",
+                "s",
+				'c', new ItemStack(Items.COAL,1,0),
+				's', "stickStone");
+			STONE_TORCH2 = new ShapedRecipe(new ItemStack(TechBlocks.stone_torch, 4), "c",
+                "s",
+				'c', new ItemStack(Items.COAL,1,1),
+				's', "stickStone");
 		}
 		
 		// Reinforced Blocks
 		if (ConfigHandler.ReinforcedGlass) {
-			GLASS = new ShapedRecipe(new ItemStack(TechBlocks.reinforced_glass, 4), new Object[] {
-					"ogo",
-					"gog",
-					"ogo",
-						Character.valueOf('o'), "obsidian",
-						Character.valueOf('g'), TechBlocks.dirty_glass
-			});
+			GLASS = new ShapedRecipe(new ItemStack(TechBlocks.reinforced_glass, 4), "ogo",
+                "gog",
+                "ogo",
+				'o', "obsidian",
+				'g', TechBlocks.dirty_glass);
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
-			OBSIDIAN = new ShapedRecipe(new ItemStack(TechBlocks.reinforced_obsidian, 4), new Object[] {
-					"ioi",
-					"oio",
-					"ioi",
-						Character.valueOf('o'), "obsidian",
-						Character.valueOf('i'), Blocks.IRON_BARS
-			});
+			OBSIDIAN = new ShapedRecipe(new ItemStack(TechBlocks.reinforced_obsidian, 4), "ioi",
+                "oio",
+                "ioi",
+				'o', "obsidian",
+				'i', Blocks.IRON_BARS);
 		}
 		
 		// Dirty Glass
 		if (ConfigHandler.DirtyGlass) {
-			DIRTY_GLASS = new ShapedRecipe(new ItemStack(TechBlocks.dirty_glass, 4), new Object[] {
-					"sgs",
-					"gsg",
-					"sgs",
-						Character.valueOf('g'), "blockGlass",
-						Character.valueOf('s'), Blocks.SOUL_SAND
-			});
+			DIRTY_GLASS = new ShapedRecipe(new ItemStack(TechBlocks.dirty_glass, 4), "sgs",
+                "gsg",
+                "sgs",
+				'g', "blockGlass",
+				's', Blocks.SOUL_SAND);
 		}
 
 		// Compressed Blocks
 		if (ConfigHandler.FleshBlock) {
-			FLESH_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.flesh_block), new Object[] {
-					"rrr",
-					"rrr",
-					"rrr",
-						Character.valueOf('r'), Items.ROTTEN_FLESH
-			});
+			FLESH_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.flesh_block), "rrr",
+                "rrr",
+                "rrr",
+				'r', Items.ROTTEN_FLESH);
 			
-			ROTTEN_FLESH = new ShapelessRecipe(new ItemStack(Items.ROTTEN_FLESH, 9), new Object[] {
-					TechBlocks.flesh_block
-			});
+			ROTTEN_FLESH = new ShapelessRecipe(new ItemStack(Items.ROTTEN_FLESH, 9), TechBlocks.flesh_block);
 		}
 		if (ConfigHandler.BoneBlock) {
-			BONE_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.bone_block), new Object[] {
-					"bbb",
-					"bbb",
-					"bbb",
-						Character.valueOf('b'), "bone"
-			});
+			BONE_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.bone_block), "bbb",
+                "bbb",
+                "bbb",
+				'b', "bone");
 			
-			BONE = new ShapelessRecipe(new ItemStack(Items.BONE, 9), new Object[] {
-					TechBlocks.bone_block
-			});
+			BONE = new ShapelessRecipe(new ItemStack(Items.BONE, 9), TechBlocks.bone_block);
 		}
 		if (ConfigHandler.NetherStarBlock) {
-			NETHERSTAR_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.netherstar_block), new Object[] {
-					"nnn",
-					"nnn",
-					"nnn",
-						Character.valueOf('n'), Items.NETHER_STAR
-			});
+			NETHERSTAR_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.netherstar_block), "nnn",
+                "nnn",
+                "nnn",
+				'n', Items.NETHER_STAR);
 			
-			NETHERSTAR = new ShapelessRecipe(new ItemStack(Items.NETHER_STAR, 9), new Object[] {
-					TechBlocks.netherstar_block
-			});
+			NETHERSTAR = new ShapelessRecipe(new ItemStack(Items.NETHER_STAR, 9), TechBlocks.netherstar_block);
 		}
 		if (ConfigHandler.FlintBlock) {
-			FLINT_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.flint_block), new Object[] {
-					"fff",
-					"fff",
-					"fff",
-						Character.valueOf('f'), "flint"
-			});
+			FLINT_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.flint_block), "fff",
+                "fff",
+                "fff",
+				'f', "flint");
 					
-			FLINT = new ShapelessRecipe(new ItemStack(Items.FLINT, 9), new Object[] {
-					TechBlocks.flint_block
-			});
+			FLINT = new ShapelessRecipe(new ItemStack(Items.FLINT, 9), TechBlocks.flint_block);
 		}
 		if (ConfigHandler.CharcoalBlock) {
-			CHARCOAL_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.charcoal_block), new Object[] {
-					"ccc",
-					"ccc",
-					"ccc",
-						Character.valueOf('c'), new ItemStack(Items.COAL, 1, 1)
-			});
+			CHARCOAL_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.charcoal_block), "ccc",
+                "ccc",
+                "ccc",
+				'c', new ItemStack(Items.COAL, 1, 1));
 			
-			CHARCOAL = new ShapelessRecipe(new ItemStack(Items.COAL, 9, 1), new Object[] {
-					TechBlocks.charcoal_block
-			});
+			CHARCOAL = new ShapelessRecipe(new ItemStack(Items.COAL, 9, 1), TechBlocks.charcoal_block);
 		}
 		
 		// Vanilla Bricks
 		if (ConfigHandler.DioriteBrick) {
-			DIORITE_BRICK = new ShapedRecipe(new ItemStack(TechBlocks.diorite_brick, 4), new Object[] {
-					"ss",
-					"ss",
-						Character.valueOf('s'), "stoneDioritePolished"
-			});
+			DIORITE_BRICK = new ShapedRecipe(new ItemStack(TechBlocks.diorite_brick, 4), "ss",
+                "ss",
+				's', "stoneDioritePolished");
 			
-			DIORITE = new ShapelessRecipe(new ItemStack(Blocks.STONE, 4, 4), new Object[] {
-					TechBlocks.diorite_brick
-			});
+			DIORITE = new ShapelessRecipe(new ItemStack(Blocks.STONE, 4, 4), TechBlocks.diorite_brick);
 		}
 		if (ConfigHandler.GraniteBrick) {
-			GRANITE_BRICK = new ShapedRecipe(new ItemStack(TechBlocks.granite_brick, 4), new Object[] {
-					"ss",
-					"ss",
-						Character.valueOf('s'), "stoneGranitePolished"
-			});
+			GRANITE_BRICK = new ShapedRecipe(new ItemStack(TechBlocks.granite_brick, 4), "ss",
+                "ss",
+				's', "stoneGranitePolished");
 			
-			GRANITE = new ShapelessRecipe(new ItemStack(Blocks.STONE, 4, 2), new Object[] {
-					TechBlocks.granite_brick
-			});
+			GRANITE = new ShapelessRecipe(new ItemStack(Blocks.STONE, 4, 2), TechBlocks.granite_brick);
 		}
 		if (ConfigHandler.AndesiteBrick) {
-			ANDESITE_BRICK = new ShapedRecipe(new ItemStack(TechBlocks.andesite_brick, 4), new Object[] {
-					"ss",
-					"ss",
-						Character.valueOf('s'), "stoneAndesitePolished"
-			});
+			ANDESITE_BRICK = new ShapedRecipe(new ItemStack(TechBlocks.andesite_brick, 4), "ss",
+                "ss",
+				's', "stoneAndesitePolished");
 			
-			ANDESITE = new ShapelessRecipe(new ItemStack(Blocks.STONE, 4, 6), new Object[] {
-					TechBlocks.andesite_brick
-			});
+			ANDESITE = new ShapelessRecipe(new ItemStack(Blocks.STONE, 4, 6), TechBlocks.andesite_brick);
 		}
 
 		// Hardened Stone
 		if (ConfigHandler.hardened_stone) {
 			GameRegistry.addSmelting(new ItemStack(TechBlocks.unhardened_stone), new ItemStack(TechBlocks.hardened_stone), 1.0F);
-			UNHARDENED_STONE = new ShapedRecipe(new ItemStack(TechBlocks.unhardened_stone, 4), new Object[] {
-		            "csc",
-		            "yiy",
-		            "csc",
-		                Character.valueOf('c'), Blocks.COBBLESTONE,
-		                Character.valueOf('s'), Blocks.SAND,
-		                Character.valueOf('y'), Items.CLAY_BALL,
-		                Character.valueOf('i'), Items.IRON_INGOT,
-		    });			
-			HARDENED_STONEBRICKS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks), new Object[] {
-		            "ss",
-		            "ss",
-		                Character.valueOf('s'), TechBlocks.hardened_stone
-		    });
-			HARDENED_STONESMALLBRICKS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks), new Object[] {
-		            "ss",
-		            "ss",
-		                Character.valueOf('s'), TechBlocks.hardened_stone_bricks
-		    });
+			UNHARDENED_STONE = new ShapedRecipe(new ItemStack(TechBlocks.unhardened_stone, 4), "csc",
+                "yiy",
+                "csc",
+				'c', Blocks.COBBLESTONE,
+				's', Blocks.SAND,
+				'y', Items.CLAY_BALL,
+				'i', Items.IRON_INGOT);
+			HARDENED_STONEBRICKS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks), "ss",
+                "ss",
+				's', TechBlocks.hardened_stone);
+			HARDENED_STONESMALLBRICKS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks), "ss",
+                "ss",
+				's', TechBlocks.hardened_stone_bricks);
 			
-			HARDENED_STONE_STAIRS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_stairs, 4), new Object[] {
-			        "  s",
-			        " ss",
-			        "sss",
-			            Character.valueOf('s'), TechBlocks.hardened_stone
-			});
-			HARDENED_STONEBRICKS_STAIRS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks_stairs, 4), new Object[] {
-                    "  s",
-                    " ss",
-                    "sss",
-                        Character.valueOf('s'), TechBlocks.hardened_stone_bricks
-            });
-			HARDENED_STONESMALLBRICKS_STAIRS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks_stairs, 4), new Object[] {
-                    "  s",
-                    " ss",
-                    "sss",
-                        Character.valueOf('s'), TechBlocks.hardened_stone_smallbricks
-            });
-			HARDENED_STONE_SLAB = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_slab_half, 6), new Object[] {
-			  "sss",
-			      Character.valueOf('s'), TechBlocks.hardened_stone
-			});
-			HARDENED_STONEBRICKS_SLAB = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks_slab_half, 6), new Object[] {
-		              "sss",
-		                  Character.valueOf('s'), TechBlocks.hardened_stone_bricks
-		            });
-			HARDENED_STONESMALLBRICKS_SLAB = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks_slab_half, 6), new Object[] {
-		              "sss",
-		                  Character.valueOf('s'), TechBlocks.hardened_stone_smallbricks
-		            });
+			HARDENED_STONE_STAIRS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_stairs, 4), "  s",
+                " ss",
+                "sss",
+				's', TechBlocks.hardened_stone);
+			HARDENED_STONEBRICKS_STAIRS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks_stairs, 4), "  s",
+                " ss",
+                "sss",
+				's', TechBlocks.hardened_stone_bricks);
+			HARDENED_STONESMALLBRICKS_STAIRS = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks_stairs, 4), "  s",
+                " ss",
+                "sss",
+				's', TechBlocks.hardened_stone_smallbricks);
+			HARDENED_STONE_SLAB = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_slab_half, 6), "sss",
+				's', TechBlocks.hardened_stone);
+			HARDENED_STONEBRICKS_SLAB = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_bricks_slab_half, 6), "sss",
+				's', TechBlocks.hardened_stone_bricks);
+			HARDENED_STONESMALLBRICKS_SLAB = new ShapedRecipe(new ItemStack(TechBlocks.hardened_stone_smallbricks_slab_half, 6), "sss",
+				's', TechBlocks.hardened_stone_smallbricks);
 		}
 		
 		// Floaty Block
 		if (ConfigHandler.angel_block) {
-			FMF_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.fmf_block), new Object[] {
-		            "ifi",
-		            "fif",
-		            "ifi",
-		                Character.valueOf('i'), "ingotIron",
-		                Character.valueOf('f'), "feather"
-		    });
+			FMF_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.fmf_block), "ifi",
+                "fif",
+                "ifi",
+				'i', "ingotIron",
+				'f', "feather");
 		}
 		
 		// Glowstone Dust
@@ -548,44 +388,34 @@ public class BlockRecipes {
 			COLORED_GLOWSTONE = new IRecipe[EnumGlowstoneColor.values().length];
 			for(int i = 0; i < EnumGlowstoneColor.values().length; i++)
 			{
-				COLORED_GLOWSTONE[i] = new ShapedRecipe(new ItemStack(TechBlocks.colored_glowstone, 1, i), new Object[] {
-						"dd",
-						"dd",
-							Character.valueOf('d'), EnumDustColor.values()[i].getOredict()
-				});
+				COLORED_GLOWSTONE[i] = new ShapedRecipe(new ItemStack(TechBlocks.colored_glowstone, 1, i), "dd",
+                    "dd",
+					'd', EnumDustColor.values()[i].getOredict());
 			}
 		}
 		
 		// Lamps
 		if (ConfigHandler.ColorLamps){
-			LAMP = new ShapedRecipe(new ItemStack(TechBlocks.lamp), new Object[] {
-					"dt",
-						Character.valueOf('d'), "blockGlassColorless",
-						Character.valueOf('t'), "torch"
-			});
+			LAMP = new ShapedRecipe(new ItemStack(TechBlocks.lamp), "dt",
+				'd', "blockGlassColorless",
+				't', "torch");
 			
 			COLORED_LAMPS = new IRecipe[EnumLampColor.values().length];
 			for(int i = 0; i < EnumLampColor.values().length; i++)
 			{
-				COLORED_LAMPS[i] = new ShapedRecipe(new ItemStack(TechBlocks.colored_lamp, 1, i), new Object[] {
-						"dt",
-							Character.valueOf('d'), new ItemStack(Blocks.STAINED_GLASS, 1, i),
-							Character.valueOf('t'), "torch"
-				});
+				COLORED_LAMPS[i] = new ShapedRecipe(new ItemStack(TechBlocks.colored_lamp, 1, i), "dt",
+					'd', new ItemStack(Blocks.STAINED_GLASS, 1, i),
+					't', "torch");
 			}
 		}
 		
 		// Lava Crystal Block
 		if (ArmorHandler.lapis_armor) {
-			LAVA_CRYSTAL_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.lava_crystal_block), new Object[] {
-		            "ii",
-		            "ii",
-		                Character.valueOf('i'), TechItems.lava_crystal
-		    });
+			LAVA_CRYSTAL_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.lava_crystal_block), "ii",
+                "ii",
+				'i', TechItems.lava_crystal);
 			
-			LAVA_CRYSTAL = new ShapelessRecipe(new ItemStack(TechItems.lava_crystal, 4), new Object[] {
-					new ItemStack(TechBlocks.lava_crystal_block)
-			});
+			LAVA_CRYSTAL = new ShapelessRecipe(new ItemStack(TechItems.lava_crystal, 4), new ItemStack(TechBlocks.lava_crystal_block));
 		}
 	}
 }

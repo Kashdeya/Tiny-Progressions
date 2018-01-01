@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.properties;
 
 import net.minecraft.util.IStringSerializable;
 
+import java.util.Arrays;
+
 public enum EnumGlowstoneColor implements IStringSerializable
 {
 	WHITE(0, "white_glowstone"),
@@ -42,11 +44,6 @@ public enum EnumGlowstoneColor implements IStringSerializable
 	
 	public static String[] getNames()
 	{
-		String[] names = new String[EnumGlowstoneColor.values().length];
-		
-		for(int i = 0; i < names.length; i++)
-			names[i] = EnumGlowstoneColor.values()[i].getName();
-		
-		return names;
+		return Arrays.stream(EnumGlowstoneColor.values()).map(EnumGlowstoneColor::getName).toArray(String[]::new);
 	}
 }

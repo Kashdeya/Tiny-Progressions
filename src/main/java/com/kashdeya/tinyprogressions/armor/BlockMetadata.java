@@ -46,15 +46,18 @@ public class BlockMetadata extends Block implements IModelRegistrar, IMetadata, 
 	@Override
 	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items)
 	{
-		if(tab == TinyProgressions.tabTP)
-		for(int i = 0; i < unlocalNames.length; i++)
-			items.add(new ItemStack(this, 1, i));
+		if(tab == TinyProgressions.tabTP) {
+			for(int i = 0; i < unlocalNames.length; i++) {
+				items.add(new ItemStack(this, 1, i));
+			}
+		}
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
-		for(int i = 0; i < unlocalNames.length; i++)
+		for(int i = 0; i < unlocalNames.length; i++) {
 			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, unlocalNames[i]), "inventory"));
+		}
 	}
 }

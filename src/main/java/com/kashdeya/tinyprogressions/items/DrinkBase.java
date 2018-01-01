@@ -39,7 +39,7 @@ public class DrinkBase extends ItemFood{
         {
             EntityPlayer entityplayer = (EntityPlayer)entityLiving;
             entityplayer.getFoodStats().addStats(this, stack);
-            worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+            worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
             this.onFoodEaten(stack, worldIn, entityplayer);
             entityplayer.addStat(StatList.getObjectUseStats(this));
 
@@ -48,14 +48,14 @@ public class DrinkBase extends ItemFood{
                 CriteriaTriggers.CONSUME_ITEM.trigger((EntityPlayerMP)entityplayer, stack);
             }
             
-            if (entityplayer == null || !entityplayer.capabilities.isCreativeMode)
+            if (!entityplayer.capabilities.isCreativeMode)
             {
                 if (stack.isEmpty() && ConfigHandler.JuiceBottles)
                 {
                     return new ItemStack(Items.GLASS_BOTTLE);
                 }
 
-                if (entityplayer != null && ConfigHandler.JuiceBottles)
+                if (ConfigHandler.JuiceBottles)
                 {
                     entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
                 }

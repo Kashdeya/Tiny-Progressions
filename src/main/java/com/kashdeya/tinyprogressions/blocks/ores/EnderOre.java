@@ -1,12 +1,10 @@
 package com.kashdeya.tinyprogressions.blocks.ores;
 
-import java.util.Random;
-
+import com.google.common.base.Predicate;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -24,6 +22,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 public class EnderOre extends Block implements IOreDictEntry {
 	
@@ -59,7 +59,7 @@ public class EnderOre extends Block implements IOreDictEntry {
 
             if (rand.nextFloat() <= ConfigHandler.endermite_spawn) {
                 Entity entity = new EntityEndermite(world);
-                if (entity != null && !world.isRemote) {
+                if (!world.isRemote) {
                     entity.setLocationAndAngles(x + (0.5), y + (1), z + (0.5), world.rand.nextFloat() * 360F, 0.0F);
                     world.spawnEntity(entity);
                     ((EntityLiving) entity).playLivingSound();
@@ -92,7 +92,7 @@ public class EnderOre extends Block implements IOreDictEntry {
                 d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
             }
 
-            worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5, new int[0]);
+            worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5);
         }
     }
     
@@ -124,7 +124,7 @@ public class EnderOre extends Block implements IOreDictEntry {
     }
     
     @Override
-    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, com.google.common.base.Predicate<IBlockState> target)
+    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target)
     {
         return false;
     }

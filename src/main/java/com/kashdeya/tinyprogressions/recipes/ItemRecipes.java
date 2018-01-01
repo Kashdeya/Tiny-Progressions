@@ -33,19 +33,15 @@ public class ItemRecipes {
 		public static void init() {
 			// Nether
 			if (ConfigHandler.nether_rod){
-				NETHER_ROD = new ShapedRecipe(new ItemStack(TechItems.nether_rod, 4), new Object[] {
-						"i",
-						"i",
-							Character.valueOf('i'), TechBlocks.soul_sandstone
-				});
+				NETHER_ROD = new ShapedRecipe(new ItemStack(TechItems.nether_rod, 4), "i",
+                    "i",
+					'i', TechBlocks.soul_sandstone);
 			}
 			// bsc
 			if (ConfigHandler.bsc_rod) {
-				BSC_ROD = new ShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), new Object[] {
-						"i",
-						"i",
-							Character.valueOf('i'), TechBlocks.compressed_sugar_cane
-				});
+				BSC_ROD = new ShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), "i",
+                    "i",
+					'i', TechBlocks.compressed_sugar_cane);
 			}
 			
 			// Glowstone Dust
@@ -54,129 +50,101 @@ public class ItemRecipes {
 				COLORED_DUST = new IRecipe[EnumDustColor.values().length];
 				for(int i = 0; i < EnumDustColor.values().length; i++)
 				{
-					COLORED_DUST[i] = new ShapedRecipe(new ItemStack(TechItems.colored_dust, 8, i), new Object[] {
-						"ddd",
-						"dgd",
-						"ddd",
-							Character.valueOf('g'), Items.GLOWSTONE_DUST,
-							Character.valueOf('d'), EnumDustColor.values()[i].getCraftingOredict()
-					});
+					COLORED_DUST[i] = new ShapedRecipe(new ItemStack(TechItems.colored_dust, 8, i), "ddd",
+                        "dgd",
+                        "ddd",
+						'g', Items.GLOWSTONE_DUST,
+						'd', EnumDustColor.values()[i].getCraftingOredict());
 				}
 			}
 			
 			// Watering Cans
 			if (ConfigHandler.WateringCan) {
-				WATERING_CAN = new ShapedRecipe(new ItemStack(TechItems.watering_can), new Object[] {
-						"id ",
-						"iwi",
-						" i ",
-							Character.valueOf('i'), "ingotIron",
-							Character.valueOf('d'), "dyeWhite",
-							Character.valueOf('w'), Items.WATER_BUCKET
-				});
+				WATERING_CAN = new ShapedRecipe(new ItemStack(TechItems.watering_can), "id ",
+                    "iwi",
+                    " i ",
+					'i', "ingotIron",
+					'd', "dyeWhite",
+					'w', Items.WATER_BUCKET);
 			}
 			if (ConfigHandler.WateringCanUpgrade && ConfigHandler.WateringCan) {
-				WATERING_CAN_UPGRADE = new ShapedRecipe(new ItemStack(TechItems.watering_can_upgrade), new Object[] {
-						"on ",
-						"owo",
-						" o ",
-							Character.valueOf('o'), "ingotReinforcedObsidian",
-							Character.valueOf('n'), Items.NETHER_STAR,
-							Character.valueOf('w'), TechItems.watering_can
-				});
+				WATERING_CAN_UPGRADE = new ShapedRecipe(new ItemStack(TechItems.watering_can_upgrade), "on ",
+                    "owo",
+                    " o ",
+					'o', "ingotReinforcedObsidian",
+					'n', Items.NETHER_STAR,
+					'w', TechItems.watering_can);
 			}
 			
 			// Medkit
 			if (ConfigHandler.MedKit) {
-				MEDKIT = new ShapedRecipe(new ItemStack(TechItems.med_kit), new Object[] {
-						"prp",
-						"rgr",
-						"lrl",
-							Character.valueOf('p'), "paper",
-							Character.valueOf('r'), "dyeRed",
-							Character.valueOf('l'), "leather",
-							Character.valueOf('g'), Items.SPECKLED_MELON
-				});
+				MEDKIT = new ShapedRecipe(new ItemStack(TechItems.med_kit), "prp",
+                    "rgr",
+                    "lrl",
+					'p', "paper",
+					'r', "dyeRed",
+					'l', "leather",
+					'g', Items.SPECKLED_MELON);
 			}
 			
 			// Ender Dust
 			if (ConfigHandler.ender_ore) {
-				ENDERPEARL = new ShapedRecipe(new ItemStack(Items.ENDER_PEARL), new Object[] {
-						"ee",
-						"ee",
-							Character.valueOf('e'), "dustEnder"
-				});
+				ENDERPEARL = new ShapedRecipe(new ItemStack(Items.ENDER_PEARL), "ee",
+                    "ee",
+					'e', "dustEnder");
 			}
 			
 			// Medkit
 			if (ConfigHandler.repair_tablet) {
-				REPAIR_TABLET = new ShapedRecipe(new ItemStack(TechItems.repair_tablet), new Object[] {
-						"plp",
-						"rgr",
-						"prp",
-							Character.valueOf('p'), TechBlocks.hardened_stone,
-							Character.valueOf('r'), Blocks.BROWN_GLAZED_TERRACOTTA,
-							Character.valueOf('l'), Items.NETHER_STAR,
-							Character.valueOf('g'), TechItems.redstone_ingot
-				});
+				REPAIR_TABLET = new ShapedRecipe(new ItemStack(TechItems.repair_tablet), "plp",
+                    "rgr",
+                    "prp",
+					'p', TechBlocks.hardened_stone,
+					'r', Blocks.BROWN_GLAZED_TERRACOTTA,
+					'l', Items.NETHER_STAR,
+					'g', TechItems.redstone_ingot);
 			}
 			
 			if (ArmorHandler.lava_armor) {
-				LAVA_CRYSTAL1 = new ShapedRecipe(new ItemStack(TechItems.lava_crystal,  8), new Object[] {
-						"sls",
-						"lbl",
-						"sls",
-							Character.valueOf('s'), TechItems.reinforced_obsidian_ingot,
-							Character.valueOf('l'), TechBlocks.lava_block,
-							Character.valueOf('b'), Items.LAVA_BUCKET
-				});
-				LAVA_BUCKET1 = new ShapedRecipe(new ItemStack(Items.LAVA_BUCKET), new Object[] {
-						"sss",
-						"sbs",
-						"sss",
-							Character.valueOf('b'), Items.BUCKET,
-							Character.valueOf('s'), TechItems.lava_crystal
-				});
+				LAVA_CRYSTAL1 = new ShapedRecipe(new ItemStack(TechItems.lava_crystal,  8), "sls",
+                    "lbl",
+                    "sls",
+					's', TechItems.reinforced_obsidian_ingot,
+					'l', TechBlocks.lava_block,
+					'b', Items.LAVA_BUCKET);
+				LAVA_BUCKET1 = new ShapedRecipe(new ItemStack(Items.LAVA_BUCKET), "sss",
+                    "sbs",
+                    "sss",
+					'b', Items.BUCKET,
+					's', TechItems.lava_crystal);
 			}
 			
 			// Tiny Coal & Charcoal
 			if (ConfigHandler.lava_block_recipe) {
-				TINY_CHARCOAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new Object[] {
-						new ItemStack(Items.COAL, 1, 1)
-				});
-				CHARCOAL1 = new ShapedRecipe(new ItemStack(Items.COAL, 1, 1), new Object[] {
-						"sss",
-						"s s",
-						"sss",
-							Character.valueOf('s'), TechItems.tiny_charcoal
-				});
-				TINY_COAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), new Object[] {
-						Items.COAL
-				});
-				COAL = new ShapedRecipe(new ItemStack(Items.COAL), new Object[] {
-						"sss",
-						"s s",
-						"sss",
-							Character.valueOf('s'), TechItems.tiny_coal
-				});
+				TINY_CHARCOAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new ItemStack(Items.COAL, 1, 1));
+				CHARCOAL1 = new ShapedRecipe(new ItemStack(Items.COAL, 1, 1), "sss",
+                    "s s",
+                    "sss",
+					's', TechItems.tiny_charcoal);
+				TINY_COAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), Items.COAL);
+				COAL = new ShapedRecipe(new ItemStack(Items.COAL), "sss",
+                    "s s",
+                    "sss",
+					's', TechItems.tiny_coal);
 			}
 			
 			// Chainmail part
 			if (ArmorHandler.chain_armor){
-				CHAINMAIL_PART = new ShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), new Object[] {
-						Items.IRON_INGOT, TechItems.stone_hammer
-				});
+				CHAINMAIL_PART = new ShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), Items.IRON_INGOT, TechItems.stone_hammer);
 			}
 			
 			// Can not be turned off.
-			STONE_HAMMER = new ShapedRecipe(new ItemStack(TechItems.stone_hammer), new Object[] {
-					"ccc",
-					"isi",
-					" s ",
-						Character.valueOf('i'), Items.STRING,
-						Character.valueOf('s'), Items.STICK,
-						Character.valueOf('c'), "stone"
-			});
+			STONE_HAMMER = new ShapedRecipe(new ItemStack(TechItems.stone_hammer), "ccc",
+                "isi",
+                " s ",
+				'i', Items.STRING,
+				's', Items.STICK,
+				'c', "stone");
 			
 		}
 

@@ -1,11 +1,8 @@
 package com.kashdeya.tinyprogressions.items.wateringcan;
 
-import java.util.Random;
-
 import com.kashdeya.tinyprogressions.handlers.CanHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
 import net.minecraft.block.IGrowable;
@@ -27,6 +24,9 @@ import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
+
+import java.util.Random;
+import java.util.stream.IntStream;
 
 public class WateringCanBase extends Item
 {
@@ -81,7 +81,7 @@ public class WateringCanBase extends Item
             
             RayTraceResult raytrace = rayTrace(worldIn, player, false);
             
-            if(raytrace != null && raytrace.typeOfHit == Type.BLOCK)
+            if(raytrace.typeOfHit == Type.BLOCK)
             {
                 attemptWaterParticles(worldIn, raytrace.getBlockPos());
                 attemptWater(worldIn, raytrace.getBlockPos());
@@ -115,23 +115,8 @@ public class WateringCanBase extends Item
     {
         if(!world.isRemote && player.isSneaking())
         {
-            int wateringcanCount = 0;
-            
-            for(int i = 0; i < player.inventory.getSizeInventory(); i++)
-            {
-                ItemStack itemstack = player.inventory.getStackInSlot(i);
-                
-                if(itemstack == ItemStack.EMPTY)
-                    continue;
-                
-                Item item = itemstack.getItem();
-                
-                if(item != TechItems.watering_can && item != TechItems.watering_can_upgrade)
-                    continue;
-                
-                wateringcanCount++;
-            }
-            
+            int wateringcanCount = (int) IntStream.range(0, player.inventory.getSizeInventory()).mapToObj(i -> player.inventory.getStackInSlot(i)).filter(itemstack -> itemstack != ItemStack.EMPTY).map(ItemStack::getItem).filter(item -> item == TechItems.watering_can || item == TechItems.watering_can_upgrade).count();
+
             if(wateringcanCount <= 1)
             {
                 if(wateringcanCount == 1)   // This should always be true given the above check (we should never get a count of 0)

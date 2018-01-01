@@ -1,35 +1,18 @@
 package com.kashdeya.tinyprogressions.main;
 
-import java.util.Iterator;
-
 import com.kashdeya.tinyprogressions.config.TinyConfig;
-import com.kashdeya.tinyprogressions.events.BucketUseEvent;
-import com.kashdeya.tinyprogressions.events.EntityEvents;
-import com.kashdeya.tinyprogressions.events.EventDrops;
-import com.kashdeya.tinyprogressions.events.IReachEvent;
-import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
+import com.kashdeya.tinyprogressions.events.*;
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
 import com.kashdeya.tinyprogressions.gui.GuiHandler;
-import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechFoods;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.inits.TechTools;
+import com.kashdeya.tinyprogressions.inits.*;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
-import com.kashdeya.tinyprogressions.recipes.ArmorRecipes;
-import com.kashdeya.tinyprogressions.recipes.BlockRecipes;
-import com.kashdeya.tinyprogressions.recipes.FoodRecipes;
-import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
-import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
-import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
+import com.kashdeya.tinyprogressions.recipes.*;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;
 import com.kashdeya.tinyprogressions.util.ModChecker;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Enchantments;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -40,12 +23,12 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.MINECRAFT)
 
@@ -60,7 +43,7 @@ public class TinyProgressions extends ModRegistry {
 	public static final CreativeTabs tabTP = new TabTP("tiny_progressions");
 
 	public static SimpleNetworkWrapper network;
-	public static org.apache.logging.log4j.Logger logger;
+	public static Logger logger;
 	public static ModChecker modChecker;
 	
 	static { 
@@ -132,13 +115,11 @@ public class TinyProgressions extends ModRegistry {
 		register(OtherRecipes.class);
 		
 		IForgeRegistryModifiable<IRecipe> registry = (IForgeRegistryModifiable<IRecipe>) event.getRegistry();
-		Iterator<ResourceLocation> iterator = RemoveItems.recipes.iterator();
 
-		while (iterator.hasNext()) {
-		    ResourceLocation rl = iterator.next();
-		    System.out.println("Removing: " + rl);
+		RemoveItems.recipes.forEach(rl -> {
+			System.out.println("Removing: " + rl);
 			registry.remove(rl);
-		}
+		});
 	}
 
 	@SubscribeEvent

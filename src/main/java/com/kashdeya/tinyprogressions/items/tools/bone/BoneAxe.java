@@ -5,6 +5,7 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class BoneAxe extends ItemAxe{
 	
@@ -15,10 +16,8 @@ public class BoneAxe extends ItemAxe{
 	}
 	
 	@Override
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
         ItemStack mat = new ItemStack(Items.BONE);
-        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
-        return super.getIsRepairable(toRepair, repair);
+        return !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false) || super.getIsRepairable(toRepair, repair);
     }
 }

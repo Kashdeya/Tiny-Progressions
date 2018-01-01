@@ -21,8 +21,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EventDrops {
 	
-	public static Random CHANCE = new java.util.Random();
-	public static Random AMOUNT = new java.util.Random();
+	public static Random CHANCE = new Random();
+	public static Random AMOUNT = new Random();
 
 	
 	@SubscribeEvent

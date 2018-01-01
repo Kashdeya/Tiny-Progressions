@@ -17,6 +17,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.event.ForgeEventFactory;
 
 public class ScytheMain extends ItemSword {
 	
@@ -36,7 +37,7 @@ public class ScytheMain extends ItemSword {
         }
         else
         {
-            int hook = net.minecraftforge.event.ForgeEventFactory.onHoeUse(itemstack, playerIn, worldIn, pos);
+            int hook = ForgeEventFactory.onHoeUse(itemstack, playerIn, worldIn, pos);
             if (hook != 0) return hook > 0 ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
         	
             IBlockState iblockstate = worldIn.getBlockState(pos);
@@ -58,7 +59,7 @@ public class ScytheMain extends ItemSword {
 
                 if (block == Blocks.DIRT)
                 {
-                    switch ((BlockDirt.DirtType)iblockstate.getValue(BlockDirt.VARIANT))
+                    switch (iblockstate.getValue(BlockDirt.VARIANT))
                     {
                         case DIRT:
                             this.setBlock(itemstack, playerIn, worldIn, pos, Blocks.FARMLAND.getDefaultState());

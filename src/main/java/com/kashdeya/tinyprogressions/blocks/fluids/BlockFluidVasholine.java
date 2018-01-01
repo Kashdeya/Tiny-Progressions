@@ -1,13 +1,9 @@
 package com.kashdeya.tinyprogressions.blocks.fluids;
 
-import java.util.List;
-import java.util.Random;
-
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -24,6 +20,9 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.List;
+import java.util.Random;
+
 public class BlockFluidVasholine extends BlockFluidClassic {
 
 	public BlockFluidVasholine() {
@@ -34,16 +33,12 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 
 	@Override
 	public boolean canDisplace(IBlockAccess world, BlockPos pos) {
-		if (world.getBlockState(pos).getMaterial().isLiquid())
-			return false;
-		return super.canDisplace(world, pos);
+		return !world.getBlockState(pos).getMaterial().isLiquid() && super.canDisplace(world, pos);
 	}
 
 	@Override
 	public boolean displaceIfPossible(World world, BlockPos pos) {
-		if (world.getBlockState(pos).getMaterial().isLiquid())
-			return false;
-		return super.displaceIfPossible(world, pos);
+		return !world.getBlockState(pos).getMaterial().isLiquid() && super.displaceIfPossible(world, pos);
 	}
 
 	@Override

@@ -1,16 +1,12 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import java.util.Random;
-
 import com.kashdeya.tinyprogressions.armor.BlockMetadata;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.properties.EnumGlowstoneColor;
-
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -19,6 +15,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+
+import java.util.Random;
 
 public class GlowstoneColored extends BlockMetadata
 {
@@ -38,7 +36,7 @@ public class GlowstoneColored extends BlockMetadata
 	@Override
 	public BlockStateContainer createBlockState()
 	{
-		return new BlockStateContainer(this, new IProperty[] { COLOR });
+		return new BlockStateContainer(this, COLOR);
 	}
 	
 	@Override

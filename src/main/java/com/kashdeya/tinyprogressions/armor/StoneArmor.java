@@ -1,10 +1,7 @@
 package com.kashdeya.tinyprogressions.armor;
 
-import java.util.List;
-
 import com.kashdeya.tinyprogressions.inits.TechArmor;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -16,47 +13,48 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.List;
 
 public class StoneArmor extends ItemArmor {
-	
-	public StoneArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
-		super(material, renderIndex, equipmentSlotIn);
-		this.maxStackSize = 1;
-		this.setCreativeTab(TinyProgressions.tabTP);
-	}
-	
-	/**
+
+    public StoneArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
+        super(material, renderIndex, equipmentSlotIn);
+        this.setMaxStackSize(1);
+        this.setCreativeTab(TinyProgressions.tabTP);
+    }
+
+    /**
      * Return whether this item is repairable in an anvil.
      */
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
         ItemStack mat = new ItemStack(Blocks.STONE, 1, 0);
-        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
-        return super.getIsRepairable(toRepair, repair);
+        return !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false) || super.getIsRepairable(toRepair, repair);
     }
-    
+
     @Override
     public void onArmorTick(World world, EntityPlayer entity, ItemStack itemStack) {
-    	ItemStack chest = entity.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
-    	ItemStack feet = entity.getItemStackFromSlot(EntityEquipmentSlot.FEET);
-    	ItemStack head = entity.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
-    	ItemStack legs = entity.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
-    	if ((head != null) && (head.getItem() == TechArmor.stone_helmet) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
-    	}
-    	if ((chest != null) && (chest.getItem() == TechArmor.stone_chestplate) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
-    	}
-    	if ((legs != null) && (legs.getItem() == TechArmor.stone_leggings) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
-    	}
-    	if ((feet != null) && (feet.getItem() == TechArmor.stone_boots) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())){
-    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
-    	}
+        ItemStack chest = entity.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
+        ItemStack feet = entity.getItemStackFromSlot(EntityEquipmentSlot.FEET);
+        ItemStack head = entity.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
+        ItemStack legs = entity.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+        if (!head.isEmpty() && head.getItem() == TechArmor.stone_helmet || entity.capabilities.isCreativeMode || entity.isSpectator()) {
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+        }
+        if (!chest.isEmpty() && chest.getItem() == TechArmor.stone_chestplate || entity.capabilities.isCreativeMode || entity.isSpectator()) {
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+        }
+        if (!legs.isEmpty() && legs.getItem() == TechArmor.stone_leggings || entity.capabilities.isCreativeMode || entity.isSpectator()) {
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+        }
+        if (!feet.isEmpty() && feet.getItem() == TechArmor.stone_boots || entity.capabilities.isCreativeMode || entity.isSpectator()) {
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+        }
     }
 
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.armor_1").getFormattedText());
+        tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.armor_1").getFormattedText());
     }
 }

@@ -1,14 +1,10 @@
 package com.kashdeya.tinyprogressions.registry;
 
-import java.util.List;
-import java.util.Map;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.registry.models.IModelRegistrar;
 import com.kashdeya.tinyprogressions.registry.models.IRuntimeModel;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.client.renderer.block.model.IBakedModel;
@@ -32,6 +28,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.List;
+import java.util.Map;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class InternalRegistry
@@ -184,34 +183,32 @@ public class InternalRegistry
 	public static void onRegisterBlock(RegistryEvent.Register<Block> event)
 	{
 		event.getRegistry().registerAll(blocks.values().toArray(new Block[blocks.size()]));
-		
-		for(Map.Entry<ResourceLocation, Class<? extends TileEntity>> entry : tiles.entrySet())
-			GameRegistry.registerTileEntity(entry.getValue(), entry.getKey().toString());
+
+		tiles.forEach((key, value) -> GameRegistry.registerTileEntity(value, key.toString()));
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void onRegisterItem(RegistryEvent.Register<Item> event)
 	{
 		event.getRegistry().registerAll(items.values().toArray(new Item[items.size()]));
-		
-		for(Map.Entry<String, List<Object>> entry : oredict.entrySet()) {
-			for(Object obj : entry.getValue())
-			{
+
+		oredict.forEach((key, value) -> {
+			for (Object obj : value) {
 				ItemStack itemstack = ItemStack.EMPTY;
-				
-				if(obj instanceof Block)
-					itemstack = new ItemStack((Block)obj);
-				
-				if(obj instanceof Item)
-					itemstack = new ItemStack((Item)obj);
-				
-				if(obj instanceof ItemStack)
-					itemstack = (ItemStack)obj;
-				
-				if(!itemstack.isEmpty())
-					OreDictionary.registerOre(entry.getKey(), itemstack);
+
+				if (obj instanceof Block)
+					itemstack = new ItemStack((Block) obj);
+
+				if (obj instanceof Item)
+					itemstack = new ItemStack((Item) obj);
+
+				if (obj instanceof ItemStack)
+					itemstack = (ItemStack) obj;
+
+				if (!itemstack.isEmpty())
+					OreDictionary.registerOre(key, itemstack);
 			}
-		}
+		});
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
@@ -230,48 +227,34 @@ public class InternalRegistry
 	@SideOnly(Side.CLIENT)
 	public static void onRegisterModel(ModelRegistryEvent event)
 	{
-		for(Map.Entry<ResourceLocation, Item> entry : items.entrySet())
-		{
-			Item item = entry.getValue();
-			
-			if(item instanceof IModelRegistrar)
-			{
-				((IModelRegistrar)item).registerModels();
-				continue;
+		items.forEach((key, item) -> {
+			if (item instanceof IModelRegistrar) {
+				((IModelRegistrar) item).registerModels();
+				return;
 			}
-			
-			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, entry.getKey().getResourcePath()), "inventory"));			
-		}
-		
-		for(Map.Entry<ResourceLocation, Block> entry : blocks.entrySet())
-		{
-			Block block = entry.getValue();
-			
-			if(block instanceof IModelRegistrar)
-			{
-				((IModelRegistrar)block).registerModels();
-				continue;
-			}
-			
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, entry.getKey().getResourcePath()), "inventory"));			
+			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getResourcePath()), "inventory"));
+		});
 
+		blocks.forEach((key, block) -> {
+			if (block instanceof IModelRegistrar) {
+				((IModelRegistrar) block).registerModels();
+				return;
+			}
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getResourcePath()), "inventory"));
 			if (block instanceof BlockFluidClassic)
-				ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(new IProperty[] { BlockFluidClassic.LEVEL }).build());
-		}
+				ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(new IProperty[]{BlockFluidClassic.LEVEL}).build());
+		});
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	@SideOnly(Side.CLIENT)
 	public static void onBakeModel(ModelBakeEvent event)
 	{
-		for(Map.Entry<ModelResourceLocation, IRuntimeModel> entry : models.entrySet())
-		{
-			Object existing = event.getModelRegistry().getObject(entry.getKey());
-			
-			if(!(existing instanceof IBakedModel))
-				continue;
-			
-			event.getModelRegistry().putObject(entry.getKey(), entry.getValue().createModel((IBakedModel)existing));
-		}
+		models.forEach((key, value) -> {
+			Object existing = event.getModelRegistry().getObject(key);
+			if (existing == null)
+				return;
+			event.getModelRegistry().putObject(key, value.createModel((IBakedModel) existing));
+		});
 	}
 }

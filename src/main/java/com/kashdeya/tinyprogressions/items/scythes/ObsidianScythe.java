@@ -4,6 +4,7 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ObsidianScythe extends ScytheMain{
 	
@@ -14,10 +15,8 @@ public class ObsidianScythe extends ScytheMain{
 	}
 	
 	@Override
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
         ItemStack mat = new ItemStack(Blocks.OBSIDIAN);
-        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
-        return super.getIsRepairable(toRepair, repair);
+        return !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false) || super.getIsRepairable(toRepair, repair);
     }
 }

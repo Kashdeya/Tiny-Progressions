@@ -45,7 +45,7 @@ public class GuiHandler implements IGuiHandler
         case 0:
             ItemStack item = player.getHeldItemMainhand();
              
-            if(item == null)
+            if(item.isEmpty())
                 return null;
      
             if(item.getItem() != TechItems.pouch)

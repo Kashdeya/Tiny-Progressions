@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.properties;
 
 import net.minecraft.util.IStringSerializable;
 
+import java.util.Arrays;
+
 public enum EnumDustColor implements IStringSerializable
 {
 	WHITE(0, "white_dust", "dustWhiteGlowstone", "dyeWhite"),
@@ -56,11 +58,6 @@ public enum EnumDustColor implements IStringSerializable
 	
 	public static String[] getNames()
 	{
-		String[] names = new String[EnumDustColor.values().length];
-		
-		for(int i = 0; i < names.length; i++)
-			names[i] = EnumDustColor.values()[i].getName();
-		
-		return names;
+		return Arrays.stream(EnumDustColor.values()).map(EnumDustColor::getName).toArray(String[]::new);
 	}
 }

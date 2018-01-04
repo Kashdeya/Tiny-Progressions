@@ -5,6 +5,7 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class EmeraldSword extends ItemSword {
 	
@@ -15,10 +16,8 @@ public class EmeraldSword extends ItemSword {
 	}
 	
 	@Override
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
         ItemStack mat = new ItemStack(Items.EMERALD);
-        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
-        return super.getIsRepairable(toRepair, repair);
+        return !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false) || super.getIsRepairable(toRepair, repair);
     }
 }

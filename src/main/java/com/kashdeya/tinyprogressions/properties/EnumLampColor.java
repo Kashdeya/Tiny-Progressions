@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.properties;
 
 import net.minecraft.util.IStringSerializable;
 
+import java.util.Arrays;
+
 public enum EnumLampColor implements IStringSerializable
 {
 	WHITE(0, "white_lamp"),
@@ -43,11 +45,6 @@ public enum EnumLampColor implements IStringSerializable
 	
 	public static String[] getNames()
 	{
-		String[] names = new String[EnumLampColor.values().length];
-		
-		for(int i = 0; i < names.length; i++)
-			names[i] = EnumLampColor.values()[i].getName();
-		
-		return names;
+		return Arrays.stream(EnumLampColor.values()).map(EnumLampColor::getName).toArray(String[]::new);
 	}
 }

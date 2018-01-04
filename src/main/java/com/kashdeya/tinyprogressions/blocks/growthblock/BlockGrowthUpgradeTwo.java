@@ -1,25 +1,15 @@
 package com.kashdeya.tinyprogressions.blocks.growthblock;
 
-import java.util.List;
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.IGrowable;
-import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -40,6 +30,10 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Random;
+
 public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider {
 	
 	private int range = 4;
@@ -58,7 +52,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(SoundType.METAL);
 		this.setUnlocalizedName("growth_upgrade_two");
-		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(0)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, 0));
 	}
 	
 	@Override
@@ -68,17 +62,17 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] { BlockLiquid.LEVEL });
+		return new BlockStateContainer(this, BlockLiquid.LEVEL);
 	}
 
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(BlockLiquid.LEVEL, Integer.valueOf(meta));
+		return this.getDefaultState().withProperty(BlockLiquid.LEVEL, meta);
 	}
 
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return ((Integer) state.getValue(BlockLiquid.LEVEL)).intValue();
+		return state.getValue(BlockLiquid.LEVEL);
 	}
     
     @SideOnly(Side.CLIENT)
@@ -137,9 +131,9 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 
                     double distance = Math.sqrt(Math.pow(x-xO,2) + Math.pow(y - yO,2) + Math.pow(z - zO,2));
                     distance = Math.max(1D, distance);
-                    double distanceCoefficient = 1D - (1D/distance);;
+                    double distanceCoefficient = 1D - (1D/distance);
 
-                    IBlockState cropState = world.getBlockState(new BlockPos(x, y, z));
+					IBlockState cropState = world.getBlockState(new BlockPos(x, y, z));
                     Block cropBlock = cropState.getBlock();
 
                     if (cropBlock instanceof IPlantable || cropBlock instanceof IGrowable) {
@@ -194,7 +188,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 
 	        		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
 	        		            		{
-	        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+	        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D);
 	        	                        }
 	        		            	}
 	        		            }
@@ -250,7 +244,7 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
     }
 	
 	@Override
-    public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, net.minecraft.entity.EntityLiving.SpawnPlacementType type)
+    public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, EntityLiving.SpawnPlacementType type)
     {
         return type != SpawnPlacementType.IN_WATER && super.canCreatureSpawn(state, world, pos, type);
     }

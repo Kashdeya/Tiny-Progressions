@@ -55,16 +55,13 @@ public class Slabs extends BlockSlab implements IItemProvider
     @Override
     public ItemBlock createItemBlock()
     {
-    		if(!isDouble)
-    			return new ItemSlab(this, this, doubleSlab);
-    		
-    		return null;
+        return !isDouble ? new ItemSlab(this, this, doubleSlab) : null;
     }
     
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] { HALF });
+        return new BlockStateContainer(this, HALF);
     }
     
     @Override
@@ -94,19 +91,14 @@ public class Slabs extends BlockSlab implements IItemProvider
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        if(isDouble())
-            return 0;
-        
-        return ((EnumBlockHalf)state.getValue(HALF)).ordinal() + 1;
+        return isDouble() ? 0 : state.getValue(HALF).ordinal() + 1;
     }
     
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        if(!isDouble())
-            return getDefaultState().withProperty(HALF, EnumBlockHalf.values()[meta % EnumBlockHalf.values().length]);
-        
-        return getDefaultState();
+        return !isDouble() ? getDefaultState().withProperty(HALF, EnumBlockHalf.values()[meta % EnumBlockHalf.values().length]) : getDefaultState();
+
     }
     
     @Override

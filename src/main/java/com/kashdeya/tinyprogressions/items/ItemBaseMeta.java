@@ -14,6 +14,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.stream.IntStream;
+
 public class ItemBaseMeta extends ItemBase implements IModelRegistrar, IMetadata
 {
 	protected String[] unlocalNames;
@@ -33,9 +35,9 @@ public class ItemBaseMeta extends ItemBase implements IModelRegistrar, IMetadata
 	@Override
 	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
 	{
-		if (tab == TinyProgressions.tabTP)
-		for(int i = 0; i < unlocalNames.length; i++)
-			items.add(new ItemStack(this, 1, i));
+		if (tab == TinyProgressions.tabTP) {
+			IntStream.range(0, unlocalNames.length).mapToObj(i -> new ItemStack(this, 1, i)).forEach(items::add);
+		}
 	}
 	
 	@Override
@@ -46,7 +48,6 @@ public class ItemBaseMeta extends ItemBase implements IModelRegistrar, IMetadata
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
-		for(int i = 0; i < unlocalNames.length; i++)
-			ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, unlocalNames[i]), "inventory"));
+		IntStream.range(0, unlocalNames.length).forEach(i -> ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, unlocalNames[i]), "inventory")));
 	}
 }

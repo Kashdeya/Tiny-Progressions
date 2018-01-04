@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.blocks.ores;
 
 import java.util.Random;
 
+import com.google.common.base.Predicate;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
@@ -89,7 +90,7 @@ public class VasholineOre extends Block {
     }
     
     @Override
-    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, com.google.common.base.Predicate<IBlockState> target)
+    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target)
     {
         return false;
     }

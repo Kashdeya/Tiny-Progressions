@@ -1,11 +1,8 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import java.util.Random;
-
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -17,8 +14,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.IShearable;
 
-public class OldReed extends BlockBush implements net.minecraftforge.common.IShearable {
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+public class OldReed extends BlockBush implements IShearable {
 	
     protected static final AxisAlignedBB REED_AABB = new AxisAlignedBB(0.125D, 0.0D, 0.125D, 0.875D, 1.0D, 0.875D);
 	
@@ -36,19 +38,16 @@ public class OldReed extends BlockBush implements net.minecraftforge.common.IShe
     {
         return REED_AABB;
     }
-	
-	public MapColor getMapColor(IBlockState state)
-    {
+
+    @Override
+    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         return MapColor.WOOD;
     }
 
 	@Override
     protected boolean canSustainBush(IBlockState state)
     {
-        if (state.getBlock() == Blocks.SAND){
-        	return true;
-        }
-        return false;
+        return state.getBlock() == Blocks.SAND;
     }
 
 	@Override
@@ -70,13 +69,13 @@ public class OldReed extends BlockBush implements net.minecraftforge.common.IShe
     }
 
     @Override 
-    public boolean isShearable(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos){ 
+    public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){
     	return false; 
     }
 
     @Override
-    public java.util.List<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
+    public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune)
     {
-        return java.util.Arrays.asList(new ItemStack(TechBlocks.old_reed));
+        return Collections.singletonList(new ItemStack(TechBlocks.old_reed));
     }
 }

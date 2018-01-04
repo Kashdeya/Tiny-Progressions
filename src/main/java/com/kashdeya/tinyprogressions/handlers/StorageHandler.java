@@ -1,12 +1,5 @@
 package com.kashdeya.tinyprogressions.handlers;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.nio.charset.Charset;
-
-import javax.annotation.Nonnull;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import jline.internal.Nullable;
@@ -14,6 +7,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
+
+import javax.annotation.Nonnull;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
 public class StorageHandler
 {
@@ -54,11 +53,8 @@ public class StorageHandler
         PacketBuffer buffer = new PacketBuffer(data);
         
         data.writeByte(type);
-        
-        if(vanilla)
-            buffer = writeSmallString(buffer, id.substring("minecraft:".length()));
-        else
-            buffer = writeSmallString(buffer, id);
+
+        buffer = vanilla ? writeSmallString(buffer, id.substring("minecraft:".length())) : writeSmallString(buffer, id);
         
         if(count != 1 && count != 64)
             buffer.writeByte(count);
@@ -112,10 +108,7 @@ public class StorageHandler
             count = 1;
         else
         {
-            if((type & 0x10) != 0)
-                count = 64;
-            else
-                count = buffer.readByte();
+            count = (type & 0x10) != 0 ? 64 : buffer.readByte();
         }
         
         short damage;

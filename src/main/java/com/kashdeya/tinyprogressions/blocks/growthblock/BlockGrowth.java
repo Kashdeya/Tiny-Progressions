@@ -1,15 +1,9 @@
 package com.kashdeya.tinyprogressions.blocks.growthblock;
 
-import java.util.List;
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityGrowth;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.ITileEntityProvider;
@@ -35,6 +29,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Random;
 
 public class BlockGrowth extends Block implements ITileEntityProvider {
 	
@@ -92,7 +90,6 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
 	
 	@Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random par5Random) {
-
         this.growCropsNearby(world, pos, state);
     }
     
@@ -173,7 +170,7 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
 
 	        		            		if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS || checkBlock == Blocks.CHORUS_FLOWER)
 	        		            		{
-	        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D, new int[0]);
+	        		            			pos.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, (double)state.getX() + 0.5D, (double)state.getY() + 2.0D, (double)state.getZ() + 0.5D, (double)((float)i + rand.nextFloat()) - 0.5D, (double)((float)k - rand.nextFloat() - 1.0F), (double)((float)j + rand.nextFloat()) - 0.5D);
 	        		            		}
 	        		            	}
 	        		            }
@@ -214,7 +211,7 @@ public class BlockGrowth extends Block implements ITileEntityProvider {
     {
         return this.canPlaceBlockAt(worldIn, pos);
     }
-    
+
 	protected static void addCollisionBoxToList(BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable AxisAlignedBB blockBox)
     {
         if (blockBox != NULL_AABB)

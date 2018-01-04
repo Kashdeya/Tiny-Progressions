@@ -7,6 +7,6 @@ public class ModChecker {
 	public static boolean isTinkersConstructLoaded;
 	
 	public ModChecker() {
-		this.isTinkersConstructLoaded = Loader.isModLoaded("tconstruct");
+		isTinkersConstructLoaded = Loader.isModLoaded("tconstruct");
 	}
 }

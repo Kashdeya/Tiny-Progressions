@@ -212,7 +212,7 @@ public class InternalRegistry
 			}
 
 			for(int i = 0; i < entry.getValue().size(); i++) {
-				Object obj = entry.getValue().get(i);
+				Object value = entry.getValue().get(i);
 				ItemStack itemstack = ItemStack.EMPTY;
 
 				if(obj instanceof Block) {

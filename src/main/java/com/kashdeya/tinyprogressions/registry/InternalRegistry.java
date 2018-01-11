@@ -183,18 +183,8 @@ public class InternalRegistry
 	public static void onRegisterBlock(RegistryEvent.Register<Block> event)
 	{
 		event.getRegistry().registerAll(blocks.values().toArray(new Block[blocks.size()]));
-		
-		if(tiles == null) {
-			tiles = Maps.newHashMap();	
-		}
-		
-		for(Map.Entry<ResourceLocation, Class<? extends TileEntity>> entry : tiles.entrySet()) {
-			if(entry == null || entry.getKey() == null || entry.getValue() == null) {
-				continue;	
-			}
-			
-			GameRegistry.registerTileEntity(entry.getValue(), entry.getKey().toString());
-		}
+
+		tiles.forEach((key, value) -> GameRegistry.registerTileEntity(value, key.toString()));
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
@@ -202,38 +192,23 @@ public class InternalRegistry
 	{
 		event.getRegistry().registerAll(items.values().toArray(new Item[items.size()]));
 
-		if(oredict == null) {
-			oredict = Maps.newHashMap();	
-		}
-		
-		for(Map.Entry<String, List<Object>> entry : oredict.entrySet()) {
-			if(entry == null || entry.getKey() == null || entry.getKey() == "" || entry.getValue() == null || entry.getValue().size() == 0) {
-				continue;
-			}
-
-			for(int i = 0; i < entry.getValue().size(); i++) {
-				Object value = entry.getValue().get(i);
+		oredict.forEach((key, value) -> {
+			for (Object obj : value) {
 				ItemStack itemstack = ItemStack.EMPTY;
 
-				if(obj instanceof Block) {
-					itemstack = new ItemStack((Block)obj);
-				}
+				if (obj instanceof Block)
+					itemstack = new ItemStack((Block) obj);
 
-				if(obj instanceof Item) {
-					itemstack = new ItemStack((Item)obj);
-				}
+				if (obj instanceof Item)
+					itemstack = new ItemStack((Item) obj);
 
-				if(obj instanceof ItemStack) {
-					itemstack = (ItemStack)obj;
-				}
+				if (obj instanceof ItemStack)
+					itemstack = (ItemStack) obj;
 
-				if(itemstack == ItemStack.EMPTY) {
-					continue;
-				}
-
-				OreDictionary.registerOre(entry.getKey(), itemstack);
+				if (!itemstack.isEmpty())
+					OreDictionary.registerOre(key, itemstack);
 			}
-		}
+		});
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
@@ -252,45 +227,34 @@ public class InternalRegistry
 	@SideOnly(Side.CLIENT)
 	public static void onRegisterModel(ModelRegistryEvent event)
 	{
-		for(Map.Entry<ResourceLocation, Item> entry : items.entrySet()) {
-			if(entry.getValue() instanceof IModelRegistrar) {
-				((IModelRegistrar)entry.getValue()).registerModels();
+		items.forEach((key, item) -> {
+			if (item instanceof IModelRegistrar) {
+				((IModelRegistrar) item).registerModels();
 				return;
 			}
-			
-			ModelLoader.setCustomModelResourceLocation(entry.getValue(), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, entry.getKey().getResourcePath()), "inventory"));
-		}
-		
-		for(Map.Entry<ResourceLocation, Block> entry : blocks.entrySet()) {
-			if(entry.getValue() instanceof IModelRegistrar) {
-				((IModelRegistrar)entry.getValue()).registerModels();
+			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getResourcePath()), "inventory"));
+		});
+
+		blocks.forEach((key, block) -> {
+			if (block instanceof IModelRegistrar) {
+				((IModelRegistrar) block).registerModels();
 				return;
 			}
-			
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(entry.getValue()), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, entry.getKey().getResourcePath()), "inventory"));
-			
-			if(entry.getValue() instanceof BlockFluidClassic) {
-				ModelLoader.setCustomStateMapper(entry.getValue(), new StateMap.Builder().ignore(new IProperty[] { BlockFluidClassic.LEVEL }).build());
-			}
-		}
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getResourcePath()), "inventory"));
+			if (block instanceof BlockFluidClassic)
+				ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(new IProperty[]{BlockFluidClassic.LEVEL}).build());
+		});
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	@SideOnly(Side.CLIENT)
 	public static void onBakeModel(ModelBakeEvent event)
 	{
-		if(models == null) {
-			models = Maps.newHashMap();	
-		}
-		
-		for(Map.Entry<ModelResourceLocation, IRuntimeModel> entry : models.entrySet()) {
-			Object existing = event.getModelRegistry().getObject(entry.getKey());
-			
-			if(existing == null) {
-				continue;
-			}
-			
-			event.getModelRegistry().putObject(entry.getKey(), entry.getValue().createModel((IBakedModel)existing));
-		}
+		models.forEach((key, value) -> {
+			Object existing = event.getModelRegistry().getObject(key);
+			if (existing == null)
+				return;
+			event.getModelRegistry().putObject(key, value.createModel((IBakedModel) existing));
+		});
 	}
 }

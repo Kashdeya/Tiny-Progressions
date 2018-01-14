@@ -32,7 +32,7 @@ public class EnderOre extends Block implements IOreDictEntry {
         super(Material.ROCK);
         this.setHardness(8.0F);
         this.setResistance(10.0F);
-        this.setHarvestLevel("pickaxe", 2);
+        this.setHarvestLevel("pickaxe", 0);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("ender_ore");

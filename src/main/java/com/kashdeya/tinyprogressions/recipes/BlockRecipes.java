@@ -175,7 +175,8 @@ public class BlockRecipes {
 				'e', Blocks.SEA_LANTERN);
 		}
 		if (ConfigHandler.BlockGrowthUpgrade && ConfigHandler.WateringCanUpgrade && ConfigHandler.BlockGrowth && ConfigHandler.NetherStarBlock) {
-			GROWTH_UPGRADE = new ShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), "cwc",
+			GROWTH_UPGRADE = new ShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), 
+				"cwc",
                 "ses",
                 "cnc",
 				'c', TechBlocks.reinforced_glass,
@@ -185,12 +186,17 @@ public class BlockRecipes {
 				'n', TechBlocks.netherstar_block);
 		}
 		if (ConfigHandler.BlockGrowthUpgradeTwo && ConfigHandler.BlockGrowthUpgrade) {
-			GROWTH_UPGRADE_TWO = new ShapelessRecipe(new ItemStack(TechBlocks.growth_upgrade_two), TechBlocks.growth_upgrade, Blocks.DRAGON_EGG);
+			//GROWTH_UPGRADE_TWO = new ShapelessRecipe(new ItemStack(TechBlocks.growth_upgrade_two), TechBlocks.growth_upgrade, "dragonEgg");
+			GROWTH_UPGRADE_TWO = new ShapedRecipe(new ItemStack(TechBlocks.growth_upgrade_two), 
+					"dg",
+					'd', new ItemStack(TechBlocks.growth_upgrade),
+					'g', new ItemStack(Blocks.DRAGON_EGG));
 		}
 		
 		// Cobble Generators
 		if (ConfigHandler.Cobblegen) {
-			COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.cobblegen_block), "ccc",
+			COBBLE_GEN = new ShapedRecipe(new ItemStack(TechBlocks.cobblegen_block), 
+				"ccc",
                 "wgl",
                 "ccc",
 				'c', "cobblestone",

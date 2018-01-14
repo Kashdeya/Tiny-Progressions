@@ -13,8 +13,8 @@
                 "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#t6" }
             }
         },
-		{   "from": [ 2, 0.1, 2 ],
-            "to": [ 14, 3, 14 ],
+		{   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
             "faces": {
 				"down":  { "uv": [ 2, 2, 14, 14 ], "texture": "#t7" },
                 "up":	 { "uv": [ 2, 2, 14, 14 ], "texture": "#t7" },
@@ -44,6 +44,6 @@
 		"t4": "tp:blocks/growth_upgrade_south",
 		"t5": "tp:blocks/growth_upgrade_west",
 		"t6": "tp:blocks/growth_upgrade_east",
-		"t7": "blocks/water_flow"
+		"t7": "blocks/water_overlay"
     }
 }

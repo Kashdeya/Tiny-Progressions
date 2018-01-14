@@ -9,6 +9,7 @@ import com.kashdeya.tinyprogressions.proxy.CommonProxy;
 import com.kashdeya.tinyprogressions.recipes.*;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;
 import com.kashdeya.tinyprogressions.util.ModChecker;
+import com.kashdeya.tinyprogressions.util.OreDict;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Enchantments;
@@ -92,6 +93,7 @@ public class TinyProgressions extends ModRegistry {
 	public void init(FMLInitializationEvent e) {
 		proxy.onInitialization(e);
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+		OreDict.init();
 	}
 
 	@EventHandler

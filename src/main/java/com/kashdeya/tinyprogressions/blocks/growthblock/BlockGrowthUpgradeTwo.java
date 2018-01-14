@@ -1,10 +1,18 @@
 package com.kashdeya.tinyprogressions.blocks.growthblock;
 
+import java.util.List;
+import java.util.Random;
+
+import javax.annotation.Nullable;
+
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
-import com.kashdeya.tinyprogressions.tiles.TileEntityGrowthUpgradeTwo;
-import net.minecraft.block.*;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -14,7 +22,6 @@ import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
@@ -30,11 +37,7 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Random;
-
-public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider {
+public class BlockGrowthUpgradeTwo extends Block {
 	
 	private int range = 4;
 	private int rangeY = 10;
@@ -55,11 +58,6 @@ public class BlockGrowthUpgradeTwo extends Block implements ITileEntityProvider 
 		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, 0));
 	}
 	
-	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityGrowthUpgradeTwo();
-	}
-
 	@Override
 	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, BlockLiquid.LEVEL);

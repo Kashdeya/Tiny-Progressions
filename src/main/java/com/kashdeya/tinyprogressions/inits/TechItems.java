@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.inits;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
+import com.kashdeya.tinyprogressions.items.FoodBase;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemBaseMeta;
 import com.kashdeya.tinyprogressions.items.ItemStay;
@@ -108,7 +109,7 @@ public class TechItems {
 			mycelium_seeds = new MyceliumSeeds();
 		}
 		if (ConfigHandler.old_reed){
-	    		dead_reed = new ItemBase().setUnlocalizedName("dead_reed");
+	    		dead_reed = new FoodBase(1, 0.15F, false).setOreDictName("sugarcane").setUnlocalizedName("dead_reed");
 	    }
 		
 		// Medkit

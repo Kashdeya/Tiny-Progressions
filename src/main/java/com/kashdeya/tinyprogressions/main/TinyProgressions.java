@@ -4,6 +4,7 @@ import com.kashdeya.tinyprogressions.config.TinyConfig;
 import com.kashdeya.tinyprogressions.events.*;
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
 import com.kashdeya.tinyprogressions.gui.GuiHandler;
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.*;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
 import com.kashdeya.tinyprogressions.recipes.*;
@@ -13,6 +14,7 @@ import com.kashdeya.tinyprogressions.util.OreDict;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Enchantments;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -74,9 +76,6 @@ public class TinyProgressions extends ModRegistry {
 		register(TechTools.class);
 		register(TechArmor.class);
 		register(TechFoods.class);
-
-		// Setup
-		proxy.onPreInitialization(e);
 				
 		RemoveItems.initRemove();
 		
@@ -87,6 +86,17 @@ public class TinyProgressions extends ModRegistry {
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
 		MinecraftForge.EVENT_BUS.register(EntityEvents.class);
+		
+		// Seeds
+		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
+			MinecraftForge.addGrassSeed(new ItemStack(TechItems.blueberry_seeds), 5); //Config Option drop rate
+			MinecraftForge.addGrassSeed(new ItemStack(TechItems.blackberry_seeds), 5);
+			MinecraftForge.addGrassSeed(new ItemStack(TechItems.maloberry_seeds), 5);
+			MinecraftForge.addGrassSeed(new ItemStack(TechItems.raspberry_seeds), 5);
+		}
+		
+		// Setup
+		proxy.onPreInitialization(e);
 	}
 
 	@EventHandler

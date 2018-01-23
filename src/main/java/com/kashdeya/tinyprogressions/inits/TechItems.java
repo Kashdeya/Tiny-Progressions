@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import com.kashdeya.tinyprogressions.crops.Seeds;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
@@ -17,7 +16,6 @@ import com.kashdeya.tinyprogressions.items.wateringcan.WateringCan;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 public class TechItems {
@@ -66,11 +64,6 @@ public class TechItems {
 	// chainmail
 	public static Item chainmail_part;
 	public static Item stone_hammer;
-	// Seeds
-	public static Item blueberry_seeds;
-	public static Item blackberry_seeds;
-	public static Item maloberry_seeds;
-	public static Item raspberry_seeds;
 		
 	public static void init() {
 		// nether rod
@@ -186,14 +179,6 @@ public class TechItems {
 	    // Repair Tablet
 	    if (ConfigHandler.repair_tablet){
 	    	repair_tablet = new RepairTablet().setUnlocalizedName("repair_tablet");
-	    }
-	    
-	    // Seeds
-	    if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
-	    	blueberry_seeds = new Seeds(TechBlocks.blueberry_bush, Blocks.FARMLAND, "blueberry_seeds", "blueberry_seeds");
-	    	blackberry_seeds = new Seeds(TechBlocks.blackberry_bush, Blocks.FARMLAND, "blackberry_seeds", "blackberry_seeds");
-	    	maloberry_seeds = new Seeds(TechBlocks.maloberry_bush, Blocks.FARMLAND, "maloberry_seeds", "maloberry_seeds");
-	    	raspberry_seeds = new Seeds(TechBlocks.raspberry_bush, Blocks.FARMLAND, "raspberry_seeds", "raspberry_seeds");
 	    }
 	    
 	    // Can not be turned off

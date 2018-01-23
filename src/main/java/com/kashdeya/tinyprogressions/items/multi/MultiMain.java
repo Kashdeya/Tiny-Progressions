@@ -1,17 +1,18 @@
 package com.kashdeya.tinyprogressions.items.multi;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class MultiMain extends ItemPickaxe {
 	
@@ -20,6 +21,7 @@ public class MultiMain extends ItemPickaxe {
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
 	}
+	
 	public Set<String> getToolClasses(ItemStack stack) {
 		return ImmutableSet.of("pickaxe", "spade", "axe");
 	}
@@ -35,7 +37,7 @@ public class MultiMain extends ItemPickaxe {
 		Blocks.PACKED_ICE, Blocks.RAIL, Blocks.REDSTONE_ORE, Blocks.SANDSTONE, Blocks.RED_SANDSTONE,
 		Blocks.STONE, Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE, Blocks.CLAY,
 		Blocks.DIRT, Blocks.FARMLAND, Blocks.GRASS, Blocks.GRAVEL, Blocks.MYCELIUM, Blocks.SAND,
-		Blocks.SNOW, Blocks.SNOW_LAYER, Blocks.SOUL_SAND, Blocks.GRASS_PATH);
+		Blocks.SNOW, Blocks.SNOW_LAYER, Blocks.SOUL_SAND, Blocks.GRASS_PATH, Blocks.WEB);
 
 	@Override
 	public boolean canHarvestBlock(IBlockState blockIn) {
@@ -44,6 +46,6 @@ public class MultiMain extends ItemPickaxe {
 
 	@Override
 	public float getDestroySpeed(ItemStack stack, IBlockState state) {
-		return state.getMaterial() == Material.WOOD || state.getMaterial() == Material.VINE || state.getMaterial() == Material.PLANTS || state.getMaterial() == Material.GROUND || state.getMaterial() == Material.GRASS || state.getMaterial() == Material.SAND ? this.efficiency : effectiveAgainst.contains(state.getBlock()) ? this.efficiency : super.getDestroySpeed(stack, state);
+		return state.getMaterial() == Material.WEB || state.getMaterial() == Material.WOOD || state.getMaterial() == Material.VINE || state.getMaterial() == Material.PLANTS || state.getMaterial() == Material.GROUND || state.getMaterial() == Material.GRASS || state.getMaterial() == Material.SAND ? this.efficiency : effectiveAgainst.contains(state.getBlock()) ? this.efficiency : super.getDestroySpeed(stack, state);
 	}
 }

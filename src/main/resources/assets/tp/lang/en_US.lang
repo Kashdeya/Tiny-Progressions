@@ -345,13 +345,13 @@ tooltip.canupgrade_2=Waters a 5x5 area!
 tooltip.canupgrade_3=Shift+RightClick to activate!
 
 #MultiTools
-item.wooden_multi.name=Wooden MultiTool
-item.stone_multi.name=Stone MultiTool
-item.golden_multi.name=Golden MultiTool
-item.iron_multi.name=Iron MultiTool
-item.diamond_multi.name=Diamond MultiTool
-item.emerald_multi.name=Emerald MultiTool
-item.obsidian_multi.name=Obsidian MultiTool
+item.wooden_multi.name=Wooden Paxel
+item.stone_multi.name=Stone Paxel
+item.golden_multi.name=Golden Paxel
+item.iron_multi.name=Iron Paxel
+item.diamond_multi.name=Diamond Paxel
+item.emerald_multi.name=Emerald Paxel
+item.obsidian_multi.name=Obsidian Paxel
 
 #BattleAxes
 item.wooden_battle.name=Wooden BattleAxe

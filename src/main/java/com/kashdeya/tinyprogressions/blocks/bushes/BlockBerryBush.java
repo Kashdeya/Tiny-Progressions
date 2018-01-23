@@ -52,7 +52,7 @@ public class BlockBerryBush extends BlockBush implements IPlantable {
 	@Override
 	public int quantityDropped(Random random)
     {
-        return 1 + random.nextInt(4);
+        return 1 + random.nextInt(5);
     }
 	
 }

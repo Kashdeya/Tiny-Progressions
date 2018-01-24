@@ -43,7 +43,7 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Watering Cans", "Remember to water those plants!");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", category + " Watering Cans", true, "Enable Watering Can?");
-		ConfigHandler.WateringCanChance = config.getInt("Watering Can Chance", category + " Watering Cans", 50, 1, 50, "Chance out of 100 that the Watering Can will tick the plant!");
+		ConfigHandler.WateringCanChance = config.getInt("Watering Can Chance", category + " Watering Cans", 50, 1, 50, "Chance out of 50 that the Watering Can will tick the plant!");
 		ConfigHandler.WateringCanUpgrade = config.getBoolean("Watering Can Reinforced", category + " Watering Cans", true, "Enable Reinforced Watering Can?\n[Requires Watering Can to be Enabled]");
 		ConfigHandler.WateringCanUpgradeChance = config.getInt("Watering Can Reinforced Chance", category + " Watering Cans", 100, 50, 100, "Chance out of 100 that the Watering Can will tick the plant!");
 		
@@ -125,6 +125,9 @@ public class TinyConfig {
 		
 		category = "Tiny Progressions";
 		
+		config.addCustomCategoryComment(category + " Water Infused Stone", "Makes Obsidian and Cobblestone when lava is place around it.");
+		ConfigHandler.water_infused_stone = config.getBoolean("Water Infused Stone", category + " Water Infused Stone", true, "Enable Water Infused Stone?");
+		
 		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
 		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
 		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
@@ -135,11 +138,12 @@ public class TinyConfig {
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Charcoal", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
 		ConfigHandler.CharcoalWorldgen = config.getBoolean("Charcoal Block Nether Worldgen", category + " Charcoal", true, "Enable the Charcoal Block to spawn in the nether?");
 		
-		config.addCustomCategoryComment(category + " Tiny Coal & Charcoal", "tiny things.");
+		config.addCustomCategoryComment(category + " Tiny Coal & Charcoal & Steel Ingots", "tiny things.");
 		ConfigHandler.tiny_charcoal = config.getBoolean("Tiny Charcoal", category + " Tiny Coal & Charcoal", true, "Enable Tiny Charcoal?");
 		FuelHandler.tiny_charcoal_burntime = config.getInt("Tiny Charcoal Burn Time", category + " Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Charcoal.");
 		ConfigHandler.tiny_coal = config.getBoolean("Tiny Coal", category + " Tiny Coal & Charcoal", true, "Enable Tiny Coal?");
 		FuelHandler.tiny_coal_burntime = config.getInt("Tiny Coal Burn Time", category + " Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Coal.");
+		ConfigHandler.steel_ingot = config.getBoolean("Steel Ingots", category + " Tiny Coal & Charcoal", true, "Enable Steel Ingots?");
 		
 		config.addCustomCategoryComment(category + " Seeds", "Things to plant?");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Seeds", true, "Enable Mycelium Seeds?");
@@ -304,22 +308,22 @@ public class TinyConfig {
 		ConfigHandler.RemoveItems = config.getBoolean("Remove Wooden Tools & Weapons", category + " Flint and Bone Tools & Weapons", false, "Remove Wooden Tools & Weapons?");
 		
 		config.addCustomCategoryComment(category + " Scythes", "Because I love to farm and stuff");
-		ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", category + " Scythes", true, "Enable Wooden Scythe?");
-		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", category + " Scythes", true, "Enable Stone Scythe?");
-		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", category + " Scythes", true, "Enable Golden Scythe?");
-		ConfigHandler.iron_scythe = config.getBoolean("Iron Scythe", category + " Scythes", true, "Enable Iron Scythe?");
-		ConfigHandler.diamond_scythe = config.getBoolean("Diamond Scythe", category + " Scythes", true, "Enable Diamond Scythe?");
-		ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", category + " Scythes", true, "Enable Emerald Scythe?");
-		ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe", category + " Scythes", true, "Enable Obsidian Scythe?");
+		ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", category + " Scythes", false, "Enable Wooden Scythe?");
+		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", category + " Scythes", false, "Enable Stone Scythe?");
+		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", category + " Scythes", false, "Enable Golden Scythe?");
+		ConfigHandler.iron_scythe = config.getBoolean("Iron Scythe", category + " Scythes", false, "Enable Iron Scythe?");
+		ConfigHandler.diamond_scythe = config.getBoolean("Diamond Scythe", category + " Scythes", false, "Enable Diamond Scythe?");
+		ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", category + " Scythes", false, "Enable Emerald Scythe?");
+		ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe", category + " Scythes", false, "Enable Obsidian Scythe?");
 		
 		config.addCustomCategoryComment(category + " MultiTools", "Because I love weird stuff\n[Requires Other Items in this mod.]");
-		ConfigHandler.wooden_multi = config.getBoolean("Wooden MultiTool", category + " MultiTools", true, "Enable Wooden MultiTool?");
-		ConfigHandler.stone_multi = config.getBoolean("Stone MultiTool", category + " MultiTools", true, "Enable Stone MultiTool?");
-		ConfigHandler.golden_multi = config.getBoolean("Golden MultiTool", category + " MultiTools", true, "Enable Golden MultiTool?");
-		ConfigHandler.iron_multi = config.getBoolean("Iron MultiTool", category + " MultiTools", true, "Enable Iron MultiTool?");
-		ConfigHandler.diamond_multi = config.getBoolean("Diamond MultiTool", category + " MultiTools", true, "Enable Diamond MultiTool?");
-		ConfigHandler.emerald_multi = config.getBoolean("Emerald MultiTool", category + " MultiTools", true, "Enable Emerald MultiTool?");
-		ConfigHandler.obsidian_multi = config.getBoolean("Obsidian MultiTool", category + " MultiTools", true, "Enable Obsidian MultiTool?");
+		ConfigHandler.wooden_multi = config.getBoolean("Wooden Paxel", category + " MultiTools", true, "Enable Wooden MultiTool?");
+		ConfigHandler.stone_multi = config.getBoolean("Stone Paxel", category + " MultiTools", true, "Enable Stone MultiTool?");
+		ConfigHandler.golden_multi = config.getBoolean("Golden Paxel", category + " MultiTools", true, "Enable Golden MultiTool?");
+		ConfigHandler.iron_multi = config.getBoolean("Iron Paxel", category + " MultiTools", true, "Enable Iron MultiTool?");
+		ConfigHandler.diamond_multi = config.getBoolean("Diamond Paxel", category + " MultiTools", true, "Enable Diamond MultiTool?");
+		ConfigHandler.emerald_multi = config.getBoolean("Emerald Paxel", category + " MultiTools", true, "Enable Emerald MultiTool?");
+		ConfigHandler.obsidian_multi = config.getBoolean("Obsidian Paxel", category + " MultiTools", true, "Enable Obsidian MultiTool?");
 		
 		config.addCustomCategoryComment(category + " Spears", "Because I love weird stuff");
 		ConfigHandler.spear_reach = config.getInt("A Spears Extended Reach", category + " Spears", 7, 5, 10, "Sets the Reach of a Spear.\n[Vanilla is 5 blocks!]");

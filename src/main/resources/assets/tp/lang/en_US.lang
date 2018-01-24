@@ -22,10 +22,14 @@ tile.blueberry_bush.name=Blueberry Bush
 tile.maloberry_bush.name=Maloberry Bush
 tile.raspberry_bush.name=Raspberry Bush
 
+tile.water_infused_stone.name=Water Infused Stone
+
 item.blackberry_berry.name=Blackberry
 item.blueberry_berry.name=Blueberry
 item.maloberry_berry.name=Maloberry
 item.raspberry_berry.name=Raspberry
+
+item.steel_ingot.name=Steel Ingot
 
 item.c_axe.name=Sea-Axe
 item.bam_tshirt.name=bamInati T-Shirt

@@ -1,6 +1,11 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	// Water Infused Stone Block
+	public static boolean water_infused_stone = true;
+	// steel
+	public static boolean steel_ingot = true;
+	
 	// asphalt
 	public static boolean asphalt = true;
 	

@@ -128,6 +128,9 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Water Infused Stone", "Makes Obsidian and Cobblestone when lava is place around it.");
 		ConfigHandler.water_infused_stone = config.getBoolean("Water Infused Stone", category + " Water Infused Stone", true, "Enable Water Infused Stone?");
 		
+		config.addCustomCategoryComment(category + " Lava Crystal", "if Lava armor is disabled ENABLE this to craft the Fire Ring.");
+		ConfigHandler.lava_crystal = config.getBoolean("Lava Crystal", category + " Lava Crystal", true, "Enable Lava Crystal Recipe?");
+		
 		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
 		ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", category + " Bricks", true, "Enable Andesite Bricks?");
 		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", category + " Bricks", true, "Enable Diorite Bricks?");
@@ -138,12 +141,24 @@ public class TinyConfig {
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", category + " Charcoal", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
 		ConfigHandler.CharcoalWorldgen = config.getBoolean("Charcoal Block Nether Worldgen", category + " Charcoal", true, "Enable the Charcoal Block to spawn in the nether?");
 		
-		config.addCustomCategoryComment(category + " Tiny Coal & Charcoal & Steel Ingots", "tiny things.");
+		config.addCustomCategoryComment(category + " Tiny Coal & Charcoal", "tiny things. Used to make Steel Ingots");
 		ConfigHandler.tiny_charcoal = config.getBoolean("Tiny Charcoal", category + " Tiny Coal & Charcoal", true, "Enable Tiny Charcoal?");
 		FuelHandler.tiny_charcoal_burntime = config.getInt("Tiny Charcoal Burn Time", category + " Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Charcoal.");
 		ConfigHandler.tiny_coal = config.getBoolean("Tiny Coal", category + " Tiny Coal & Charcoal", true, "Enable Tiny Coal?");
 		FuelHandler.tiny_coal_burntime = config.getInt("Tiny Coal Burn Time", category + " Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Coal.");
-		ConfigHandler.steel_ingot = config.getBoolean("Steel Ingots", category + " Tiny Coal & Charcoal", true, "Enable Steel Ingots?");
+		
+		config.addCustomCategoryComment(category + " Steel", "Used to make Rings and Deco Block.");
+		ConfigHandler.steel_ingot = config.getBoolean("Steel Ingots", category + " Steel", true, "Enable Steel Ingots?");
+		
+		config.addCustomCategoryComment(category + " Rib", "If Wither armor is disabled ENABLE this to craft the Wither Ring.");
+		ConfigHandler.wither_rib = config.getBoolean("Wither Rib", category + " Rib", false, "Enable Wither Rib?");
+		
+		config.addCustomCategoryComment(category + " Rings", "Needs Steel, Tiny Coal, Tiny Charcoal, Wither Rib, MedKit and Lava Crystals Enabled!");
+		ConfigHandler.wither_ring = config.getBoolean("Wither Ring", category + " Rings", true, "Enable Wither Ring?");
+		ConfigHandler.fire_ring = config.getBoolean("Fire Ring", category + " Rings", true, "Enable Fire Ring?");
+		ConfigHandler.posion_ring = config.getBoolean("Posion Ring", category + " Rings", true, "Enable Posion Ring?");
+		ConfigHandler.nausea_ring = config.getBoolean("Nausea Ring", category + " Rings", true, "Enable Nausea Ring?");
+		ConfigHandler.master_ring = config.getBoolean("Master Ring", category + " Rings", true, "Enable Master Ring?\n[All other rings need to be enabled to craft this one.]");
 		
 		config.addCustomCategoryComment(category + " Seeds", "Things to plant?");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", category + " Seeds", true, "Enable Mycelium Seeds?");

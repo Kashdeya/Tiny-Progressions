@@ -1,8 +1,20 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {
+	// Rings
+	public static boolean wither_ring = true;
+	public static boolean fire_ring = true;
+	public static boolean posion_ring = true;
+	public static boolean nausea_ring = true;
+	public static boolean master_ring = true;
+	
+	public static boolean lava_crystal = true;
+	
+	public static boolean wither_rib = true;
+	
 	// Water Infused Stone Block
 	public static boolean water_infused_stone = true;
+	
 	// steel
 	public static boolean steel_ingot = true;
 	

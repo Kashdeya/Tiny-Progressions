@@ -1,20 +1,34 @@
 package com.kashdeya.tinyprogressions.main;
 
+import org.apache.logging.log4j.Logger;
+
 import com.kashdeya.tinyprogressions.config.TinyConfig;
-import com.kashdeya.tinyprogressions.events.*;
+import com.kashdeya.tinyprogressions.events.BucketUseEvent;
+import com.kashdeya.tinyprogressions.events.EntityEvents;
+import com.kashdeya.tinyprogressions.events.EventDrops;
+import com.kashdeya.tinyprogressions.events.IReachEvent;
+import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
 import com.kashdeya.tinyprogressions.gui.GuiHandler;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.inits.*;
+import com.kashdeya.tinyprogressions.inits.TechArmor;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.proxy.CommonProxy;
-import com.kashdeya.tinyprogressions.recipes.*;
+import com.kashdeya.tinyprogressions.recipes.ArmorRecipes;
+import com.kashdeya.tinyprogressions.recipes.BlockRecipes;
+import com.kashdeya.tinyprogressions.recipes.FoodRecipes;
+import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
+import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
+import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;
 import com.kashdeya.tinyprogressions.util.ModChecker;
 import com.kashdeya.tinyprogressions.util.OreDict;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Enchantments;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -31,7 +45,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
-import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.MINECRAFT)
 
@@ -86,14 +99,6 @@ public class TinyProgressions extends ModRegistry {
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
 		MinecraftForge.EVENT_BUS.register(EntityEvents.class);
-		
-		// Seeds
-		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
-			MinecraftForge.addGrassSeed(new ItemStack(TechItems.blueberry_seeds), 5); //Config Option drop rate
-			MinecraftForge.addGrassSeed(new ItemStack(TechItems.blackberry_seeds), 5);
-			MinecraftForge.addGrassSeed(new ItemStack(TechItems.maloberry_seeds), 5);
-			MinecraftForge.addGrassSeed(new ItemStack(TechItems.raspberry_seeds), 5);
-		}
 		
 		// Setup
 		proxy.onPreInitialization(e);

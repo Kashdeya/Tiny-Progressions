@@ -12,6 +12,11 @@ import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.Pouch;
 import com.kashdeya.tinyprogressions.items.QuartzKnife;
 import com.kashdeya.tinyprogressions.items.RepairTablet;
+import com.kashdeya.tinyprogressions.items.artifacts.FireRing;
+import com.kashdeya.tinyprogressions.items.artifacts.MasterRing;
+import com.kashdeya.tinyprogressions.items.artifacts.NauseaRing;
+import com.kashdeya.tinyprogressions.items.artifacts.PosionRing;
+import com.kashdeya.tinyprogressions.items.artifacts.WitherRing;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCan;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
@@ -19,6 +24,12 @@ import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 import net.minecraft.item.Item;
 
 public class TechItems {
+	// Rings
+	public static Item wither_ring;
+	public static Item fire_ring;
+	public static Item posion_ring;
+	public static Item nausea_ring;
+	public static Item master_ring;
 	// Watering Cans
 	public static Item watering_can;
 	public static Item watering_can_upgrade;
@@ -68,8 +79,28 @@ public class TechItems {
 	public static Item steel_ingot;
 		
 	public static void init() {
+		// Master Ring
+		if (ConfigHandler.master_ring && ConfigHandler.nausea_ring && ConfigHandler.posion_ring && ConfigHandler.fire_ring && ConfigHandler.wither_ring){
+			master_ring = new MasterRing().setUnlocalizedName("master_ring");
+		}
+		// Nausea Ring
+		if (ConfigHandler.nausea_ring){
+			nausea_ring = new NauseaRing().setUnlocalizedName("nausea_ring");
+		}
+		// Posion Ring
+		if (ConfigHandler.posion_ring){
+			posion_ring = new PosionRing().setUnlocalizedName("posion_ring");
+		}
+		// Fire Ring
+		if (ConfigHandler.fire_ring && ConfigHandler.lava_crystal){
+			fire_ring = new FireRing().setUnlocalizedName("fire_ring");
+		}
+		// Wither Ring
+		if (ConfigHandler.wither_ring && ConfigHandler.steel_ingot){
+			wither_ring = new WitherRing().setUnlocalizedName("wither_ring");
+		}
 		// Steel
-		if (ConfigHandler.steel_ingot & (ConfigHandler.tiny_charcoal || ConfigHandler.tiny_coal)) {
+		if (ConfigHandler.steel_ingot && (ConfigHandler.tiny_charcoal || ConfigHandler.tiny_coal)) {
 			steel_ingot = new ItemBase().setOreDictName("ingotSteel").setUnlocalizedName("steel_ingot");
 		}
 		// nether rod
@@ -103,7 +134,7 @@ public class TechItems {
 	    if (ArmorHandler.dragon_armor){
 		    dragon_scale = new ItemBase().setOreDictName("dragonScale").setUnlocalizedName("dragon_scale");
 	    }
-	    if (ArmorHandler.wither_armor){
+	    if (ArmorHandler.wither_armor || ConfigHandler.wither_rib){
 		    wither_rib = new ItemBase().setOreDictName("witherRib").setUnlocalizedName("wither_rib");
 	    }
 	    
@@ -153,7 +184,7 @@ public class TechItems {
 		if (ConfigHandler.ender_ore) {
 			ender_dust = new ItemBase().setOreDictName("dustEnder").setUnlocalizedName("ender_dust");
 		}
-		if (ArmorHandler.lava_armor) {
+		if (ArmorHandler.lava_armor || ConfigHandler.lava_crystal) {
 			lava_crystal = new ItemBase().setOreDictName("gemLava").setUnlocalizedName("lava_crystal");
 		}
 		

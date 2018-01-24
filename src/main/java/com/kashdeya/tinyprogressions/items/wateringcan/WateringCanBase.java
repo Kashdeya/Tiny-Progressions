@@ -32,7 +32,7 @@ public class WateringCanBase extends Item
 {
 
     private int     range            = 1;
-    private int     waterChance      = 25;
+    private int     waterChance      = 100;
 
     private boolean canWater         = false;
     private boolean showParticlTicks = false;
@@ -167,7 +167,6 @@ public class WateringCanBase extends Item
                 }
                 return EnumActionResult.FAIL;
             }
-            // return EnumActionResult.FAIL;
         }
         return EnumActionResult.FAIL;
     }

@@ -40,17 +40,26 @@ public class BlockRecipes {
 	public static IRecipe SUGAR, COMPRESSED_SUGAR, COMPRESSED_SUGAR2, COMPRESSED_2_SUGAR;
 	public static IRecipe CANE, COMPRESSED_CANE, COMPRESSED_CANE2, COMPRESSED_2_CANE, COMPRESSED_2_CANE2, COMPRESSED_3_CANE, COMPRESSED_3_CANE2, COMPRESSED_4_CANE, COMPRESSED_4_CANE2;
 	public static IRecipe COMPRESSED_5_CANE, COMPRESSED_5_CANE2, COMPRESSED_6_CANE, COMPRESSED_6_CANE2, COMPRESSED_7_CANE, COMPRESSED_7_CANE2, COMPRESSED_8_CANE;
-	public static IRecipe ASPHALT;
+	public static IRecipe ASPHALT, WATER_INFUSED_STONE;
 	
 	public static void init() {
+		if (ConfigHandler.water_infused_stone){
+			WATER_INFUSED_STONE = new ShapedRecipe(new ItemStack(TechBlocks.water_infused_stone), 
+					"h h",
+	                " w ",
+	                "h h",
+					'h', TechBlocks.hardened_stone,
+					'w', Items.WATER_BUCKET);
+		}
 		if (ConfigHandler.asphalt){
-			ASPHALT = new ShapedRecipe(new ItemStack(TechBlocks.asphalt_block, 8), "gsg",
-                "clc",
-                "gsg",
-				'c', Blocks.CLAY,
-				'g', Blocks.GRAVEL,
-				's', Blocks.SAND,
-				'l', Items.LAVA_BUCKET);
+			ASPHALT = new ShapedRecipe(new ItemStack(TechBlocks.asphalt_block, 8), 
+					"gsg",
+					"clc",
+					"gsg",
+					'c', Blocks.CLAY,
+					'g', Blocks.GRAVEL,
+					's', Blocks.SAND,
+					'l', Items.LAVA_BUCKET);
 		}
 		// Nether
 		if (ConfigHandler.nether_rod){

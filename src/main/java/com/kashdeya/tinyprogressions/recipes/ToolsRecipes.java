@@ -326,15 +326,17 @@ public class ToolsRecipes {
 				'f', "flint",
 				's', "stickWood");
 			
-			FLINT_SPADE = new ShapedRecipe(new ItemStack(TechTools.flint_spade), " f ",
-                " s ",
-                " s ",
+			FLINT_SPADE = new ShapedRecipe(new ItemStack(TechTools.flint_spade), 
+				"f",
+                "s",
+                "s",
 				'f', "flint",
 				's', "stickWood");
 			
-			FLINT_SWORD = new ShapedRecipe(new ItemStack(TechTools.flint_sword), " f ",
-                " f ",
-                " s ",
+			FLINT_SWORD = new ShapedRecipe(new ItemStack(TechTools.flint_sword), 
+				"f",
+                "f",
+                "s",
 				'f', "flint",
 				's', "stickWood");
 			
@@ -359,15 +361,15 @@ public class ToolsRecipes {
 				'b', "bone",
 				's', "stickWood");
 			
-			BONE_SPADE = new ShapedRecipe(new ItemStack(TechTools.bone_spade), " b ",
-                " s ",
-                " s ",
+			BONE_SPADE = new ShapedRecipe(new ItemStack(TechTools.bone_spade), "b",
+                "s",
+                "s",
 				'b', "bone",
 				's', "stickWood");
 			
-			BONE_SWORD = new ShapedRecipe(new ItemStack(TechTools.bone_sword), " b ",
-                " b ",
-                " s ",
+			BONE_SWORD = new ShapedRecipe(new ItemStack(TechTools.bone_sword), "b",
+                "b",
+                "s",
 				'b', "bone",
 				's', "stickWood");
 			
@@ -458,23 +460,24 @@ public class ToolsRecipes {
 				's', "stickWood");
 		}
 		if (ConfigHandler.emerald_spade){
-		    EMERALD_SPADE = new ShapedRecipe(new ItemStack(TechTools.emerald_spade), " e ",
-                " s ",
-                " s ",
+		    EMERALD_SPADE = new ShapedRecipe(new ItemStack(TechTools.emerald_spade), "e",
+                "s",
+                "s",
 				'e', "gemEmerald",
 				's', "stickWood");
 		}
 		if (ConfigHandler.emerald_hoe){
-		    EMERALD_HOE = new ShapedRecipe(new ItemStack(TechTools.emerald_hoe), "ee ",
+		    EMERALD_HOE = new ShapedRecipe(new ItemStack(TechTools.emerald_hoe), 
+		    	"ee ",
                 " s ",
                 " s ",
 				'e', "gemEmerald",
 				's', "stickWood");
 		}
 		if (ConfigHandler.emerald_sword){
-		    EMERALD_SWORD = new ShapedRecipe(new ItemStack(TechTools.emerald_sword), " e ",
-                " e ",
-                " s ",
+		    EMERALD_SWORD = new ShapedRecipe(new ItemStack(TechTools.emerald_sword), "e",
+                "e",
+                "s",
 				'e', "gemEmerald",
 				's', "stickWood");
 		}
@@ -495,9 +498,9 @@ public class ToolsRecipes {
 				's', "stickWood");
 		}
 		if (ConfigHandler.obsidian_spade){
-		    OBSIDIAN_SPADE = new ShapedRecipe(new ItemStack(TechTools.obsidian_spade), " o ",
-                " s ",
-                " s ",
+		    OBSIDIAN_SPADE = new ShapedRecipe(new ItemStack(TechTools.obsidian_spade), "o",
+                "s",
+                "s",
 				'o', "obsidian",
 				's', "stickWood");
 		}
@@ -509,9 +512,9 @@ public class ToolsRecipes {
 				's', "stickWood");
 		}
 		if (ConfigHandler.obsidian_sword){
-		    OBSIDIAN_SWORD = new ShapedRecipe(new ItemStack(TechTools.obsidian_sword), " o ",
-                " o ",
-                " s ",
+		    OBSIDIAN_SWORD = new ShapedRecipe(new ItemStack(TechTools.obsidian_sword), "o",
+                "o",
+                "s",
 				'o', "obsidian",
 				's', "stickWood");
 		}

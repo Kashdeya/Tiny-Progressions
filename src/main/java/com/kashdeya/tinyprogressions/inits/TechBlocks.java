@@ -39,6 +39,7 @@ import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.misc.BridgeBuilder;
+import com.kashdeya.tinyprogressions.blocks.misc.Infused;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
@@ -151,8 +152,14 @@ public class TechBlocks {
     public static Block VASHOLINE;
     // asphalt
     public static Block asphalt_block;
+    // Water Infused Stone Block
+    public static Block water_infused_stone;
     
 	public static void init() {
+		// Water Infused Stone Block
+		if (ConfigHandler.water_infused_stone){
+			water_infused_stone = new Infused();
+		}
 		// asphalt
 		if (ConfigHandler.asphalt){
 			asphalt_block = new Asphalt();

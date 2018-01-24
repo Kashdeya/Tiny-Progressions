@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.blocks.decorations;
+package com.kashdeya.tinyprogressions.blocks.ores;
 
 import com.google.common.base.Predicate;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;

@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.blocks.decorations;
+package com.kashdeya.tinyprogressions.blocks.compressed;
 
 import java.util.Random;
 
@@ -22,7 +22,7 @@ public class CompressedBlocks extends Block{
 		this.least_quantity = least_quantity;
 		this.most_quantity = most_quantity;
 		this.setUnlocalizedName(unlocalizedName);
-		this.setHarvestLevel("pickaxe", 0);
+		this.setHarvestLevel("pickaxe", 1);
         this.setSoundType(sound);
         this.setCreativeTab(TinyProgressions.tabTP);
 	}

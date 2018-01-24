@@ -43,10 +43,8 @@ public class BlockGrowth extends Block {
 		super(Material.GROUND);
 		this.setTickRandomly(true);
 		this.setHardness(1.0F);
-		this.setHarvestLevel("pickaxe", 0);
-		this.setResistance(2000.0F);
-		this.setLightLevel(1.0F);
-		this.setLightOpacity(1);
+		this.setHarvestLevel("pickaxe", 1);
+		this.setResistance(1000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(SoundType.METAL);
 		this.setUnlocalizedName("growth_block");

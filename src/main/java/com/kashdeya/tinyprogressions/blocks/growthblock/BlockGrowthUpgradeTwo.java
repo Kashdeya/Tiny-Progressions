@@ -14,6 +14,7 @@ import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
@@ -41,6 +42,8 @@ public class BlockGrowthUpgradeTwo extends Block {
 	
 	private int range = 4;
 	private int rangeY = 10;
+	
+	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
 	public BlockGrowthUpgradeTwo()
 	{
@@ -48,29 +51,27 @@ public class BlockGrowthUpgradeTwo extends Block {
 		super(Material.WATER);
 		this.setTickRandomly(true);
 		this.setHardness(1.5F);
-		this.setHarvestLevel("pickaxe", 0);
-		this.setLightLevel(1.0F);
+		this.setHarvestLevel("pickaxe", 1);
 		this.setResistance(2000.0F);
-		this.setLightOpacity(1);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(SoundType.METAL);
 		this.setUnlocalizedName("growth_upgrade_two");
-		this.setDefaultState(this.blockState.getBaseState().withProperty(BlockLiquid.LEVEL, 0));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 7));
 	}
 	
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, BlockLiquid.LEVEL);
+		return new BlockStateContainer(this, LEVEL);
 	}
 
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(BlockLiquid.LEVEL, meta);
+		return this.getDefaultState();
 	}
 
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return state.getValue(BlockLiquid.LEVEL);
+		return 0;
 	}
     
     @SideOnly(Side.CLIENT)

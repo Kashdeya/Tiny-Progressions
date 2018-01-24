@@ -36,7 +36,7 @@ public class Slabs extends BlockSlab implements IItemProvider
     public Slabs(boolean isDouble, BlockSlab doubleSlab)
     {
         super(Material.ROCK);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
         this.setHardness(50.0f);
         this.setResistance(2000.0F);
         this.isDouble = isDouble;

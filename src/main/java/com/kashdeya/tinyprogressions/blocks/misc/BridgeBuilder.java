@@ -12,7 +12,7 @@ public class BridgeBuilder extends Block {
     {
         super(Material.WOOD);// needs changed!
         this.setHardness(1.5F);// needs changed!
-        this.setHarvestLevel("pickaxe", 0);// needs changed!
+        this.setHarvestLevel("pickaxe", 1);// needs changed!
         this.setResistance(10.0F);// needs changed!
         this.setSoundType(SoundType.WOOD);// needs changed!
         this.setCreativeTab(TinyProgressions.tabTP);

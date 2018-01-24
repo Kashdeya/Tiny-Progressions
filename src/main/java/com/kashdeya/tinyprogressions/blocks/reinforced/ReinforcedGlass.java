@@ -34,7 +34,7 @@ public class ReinforcedGlass extends BlockGlass implements IOreDictEntry
         super(Material.GLASS, false);
         this.setHardness(20.0F);
         this.setResistance(2000.0F);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
         this.setSoundType(SoundType.GLASS);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("reinforced_glass");

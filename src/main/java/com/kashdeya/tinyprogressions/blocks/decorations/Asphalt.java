@@ -25,7 +25,7 @@ public class Asphalt extends Block{
     {
         super(Material.ROCK);
         this.setHardness(0.8F);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
         this.setResistance(100.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);

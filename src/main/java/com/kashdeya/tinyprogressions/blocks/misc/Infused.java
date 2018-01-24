@@ -33,13 +33,13 @@ public class Infused extends Block {
 
 	public Infused() {
 		super(Material.WATER);
-		setUnlocalizedName("water_infused_stone");
-		setHardness(10.0f);
-		setCreativeTab(TinyProgressions.tabTP);
+		this.setUnlocalizedName("water_infused_stone");
+		this.setHardness(2.0F);
+		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setResistance(1000.0F);
-		setSoundType(SoundType.STONE);
-		setHarvestLevel("pickaxe", 1);
-		setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 7));
+		this.setSoundType(SoundType.STONE);
+		this.setHarvestLevel("pickaxe", 1);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 7));
 	}
 	
 	@SideOnly(Side.CLIENT)

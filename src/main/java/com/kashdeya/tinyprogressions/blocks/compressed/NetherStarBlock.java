@@ -31,8 +31,8 @@ public class NetherStarBlock extends Block {
 	public NetherStarBlock()
 	{
 		super(Material.IRON);
-		this.setHardness(2.0F);
-	    this.setHarvestLevel("pickaxe", 0);
+		this.setHardness(3.0F);
+	    this.setHarvestLevel("pickaxe", 1);
 	    this.setResistance(2000.0F);
 		this.setLightOpacity(1);
 		this.setSoundType(SoundType.STONE);

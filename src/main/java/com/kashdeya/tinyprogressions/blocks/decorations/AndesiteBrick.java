@@ -22,7 +22,7 @@ public class AndesiteBrick extends Block implements IOreDictEntry {
     {
         super(Material.ROCK);
         this.setHardness(1.5F);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);

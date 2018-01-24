@@ -26,7 +26,7 @@ public class LavaCrystal extends Block {
     {
         super(Material.ROCK);
         this.setHardness(1.5F);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
         this.setResistance(10.0F);
         this.setLightLevel(0.5F);
         this.setSoundType(SoundType.STONE);

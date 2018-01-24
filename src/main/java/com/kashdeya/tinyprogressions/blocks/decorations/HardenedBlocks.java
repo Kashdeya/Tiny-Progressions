@@ -28,7 +28,7 @@ public class HardenedBlocks extends Block{
 		this.most_quantity = most_quantity;
 		this.setHardness(50.0f);
 		this.setUnlocalizedName(unlocalizedName);
-		this.setHarvestLevel("pickaxe", 0);
+		this.setHarvestLevel("pickaxe", 1);
         this.setResistance(2000.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);

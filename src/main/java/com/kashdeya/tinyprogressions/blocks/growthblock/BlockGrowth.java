@@ -40,9 +40,9 @@ public class BlockGrowth extends Block {
 
 	public BlockGrowth()
 	{
-		super(Material.GROUND);
+		super(Material.IRON);
 		this.setTickRandomly(true);
-		this.setHardness(1.0F);
+		this.setHardness(8.0F);
 		this.setHarvestLevel("pickaxe", 1);
 		this.setResistance(1000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);
@@ -120,12 +120,6 @@ public class BlockGrowth extends Block {
             }
         }
         world.scheduleBlockUpdate(pos, state.getBlock(), ConfigHandler.BlockGrowthTicks * 40, 1);
-    }
-	
-	@Override
-	public int quantityDropped(Random random)
-    {
-        return 1;
     }
 	
 	@Override

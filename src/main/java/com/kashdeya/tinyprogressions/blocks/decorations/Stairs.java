@@ -12,7 +12,7 @@ public class Stairs extends BlockStairs
     {
         super(parent.getDefaultState());
         this.setHardness(50.0F);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
         this.setResistance(1750.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);

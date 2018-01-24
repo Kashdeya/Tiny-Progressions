@@ -12,12 +12,12 @@ import com.kashdeya.tinyprogressions.blocks.cobblegen.EmeraldCobblegen;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.IronCobblegen;
 import com.kashdeya.tinyprogressions.blocks.compressed.BoneBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.CharcoalBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.CompressedBlocks;
 import com.kashdeya.tinyprogressions.blocks.compressed.FleshBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.FlintBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.Asphalt;
-import com.kashdeya.tinyprogressions.blocks.decorations.CompressedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneColored;
@@ -25,24 +25,25 @@ import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
 import com.kashdeya.tinyprogressions.blocks.decorations.LampColored;
-import com.kashdeya.tinyprogressions.blocks.decorations.LavaBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.LavaCrystal;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.Slabs;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
-import com.kashdeya.tinyprogressions.blocks.decorations.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.misc.BridgeBuilder;
+import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
 import com.kashdeya.tinyprogressions.blocks.misc.Infused;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
+import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
+import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
@@ -154,8 +155,14 @@ public class TechBlocks {
     public static Block asphalt_block;
     // Water Infused Stone Block
     public static Block water_infused_stone;
+    // Steel Block
+    public static Block steel_block;
     
 	public static void init() {
+		// Steel Block
+		if (ConfigHandler.steel_ingot){
+			steel_block = new DecoMain().setOreDictName("blockSteel").setUnlocalizedName("steel_block");
+		}
 		// Water Infused Stone Block
 		if (ConfigHandler.water_infused_stone){
 			water_infused_stone = new Infused();
@@ -324,7 +331,7 @@ public class TechBlocks {
 		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
 		}
-		if (ArmorHandler.lava_armor) {
+		if (ArmorHandler.lava_armor || ConfigHandler.lava_crystal) {
 			lava_crystal_block = new LavaCrystal();
 		}
 		// FMF Block

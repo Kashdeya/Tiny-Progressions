@@ -64,8 +64,14 @@ public class TechItems {
 	// chainmail
 	public static Item chainmail_part;
 	public static Item stone_hammer;
+	// Steel
+	public static Item steel_ingot;
 		
 	public static void init() {
+		// Steel
+		if (ConfigHandler.steel_ingot & (ConfigHandler.tiny_charcoal || ConfigHandler.tiny_coal)) {
+			steel_ingot = new ItemBase().setOreDictName("ingotSteel").setUnlocalizedName("steel_ingot");
+		}
 		// nether rod
 		if (ConfigHandler.nether_rod){
 			nether_rod = new ItemBase().setOreDictName("stickNether").setUnlocalizedName("nether_rod");
@@ -119,10 +125,10 @@ public class TechItems {
 		
 		// Tiny Coal & Charcoal
 		if (ConfigHandler.tiny_charcoal){
-			tiny_charcoal = new ItemBase().setUnlocalizedName("tiny_charcoal");
+			tiny_charcoal = new ItemBase().setOreDictName("dustCharcoal").setUnlocalizedName("tiny_charcoal");
 		}
 		if (ConfigHandler.tiny_coal){
-			tiny_coal = new ItemBase().setUnlocalizedName("tiny_coal");
+			tiny_coal = new ItemBase().setOreDictName("dustCoal").setUnlocalizedName("tiny_coal");
 		}
 		
 		// Stone Dust

@@ -22,6 +22,14 @@ tile.blueberry_bush.name=Blueberry Bush
 tile.maloberry_bush.name=Maloberry Bush
 tile.raspberry_bush.name=Raspberry Bush
 
+item.wither_ring.name=Wither Ring
+item.fire_ring.name=Fire Ring
+item.posion_ring.name=Posion Ring
+item.nausea_ring.name=Nausea Ring
+item.master_ring.name=Master Ring
+
+tile.steel_block.name=Steel Block
+
 tile.water_infused_stone.name=Water Infused Stone
 
 item.blackberry_berry.name=Blackberry

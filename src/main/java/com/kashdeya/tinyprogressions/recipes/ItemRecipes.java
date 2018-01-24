@@ -30,7 +30,55 @@ public class ItemRecipes {
 	public static IRecipe CHAINMAIL_PART;
 	public static IRecipe STONE_HAMMER;
 	
+	public static IRecipe WITHER_RING, POSION_RING, FIRE_RING, NAUSEA_RING, MASTER_RING;
+	
 		public static void init() {
+			// Rings
+			if (ConfigHandler.wither_ring && ConfigHandler.steel_ingot && (ArmorHandler.wither_armor || ConfigHandler.wither_rib)){
+				WITHER_RING = new ShapedRecipe(new ItemStack(TechItems.wither_ring), 
+						"sms",
+						"a a",
+						"sms",
+						'm', Items.MILK_BUCKET,
+						'a', TechItems.wither_rib,
+						's', TechItems.steel_ingot);
+			}
+			if (ConfigHandler.fire_ring && (ArmorHandler.lava_armor || ConfigHandler.lava_crystal)){
+				FIRE_RING = new ShapedRecipe(new ItemStack(TechItems.fire_ring), 
+						"sms",
+						"a a",
+						"sms",
+						'm', Items.MAGMA_CREAM,
+						'a', TechItems.lava_crystal,
+						's', TechItems.steel_ingot);
+			}
+			if (ConfigHandler.posion_ring && ConfigHandler.MedKit){
+				POSION_RING = new ShapedRecipe(new ItemStack(TechItems.posion_ring), 
+						"sms",
+						"a a",
+						"sms",
+						'm', Items.SPIDER_EYE,
+						'a', TechItems.med_kit,
+						's', TechItems.steel_ingot);
+			}
+			if (ConfigHandler.nausea_ring && ConfigHandler.MedKit){
+				NAUSEA_RING = new ShapedRecipe(new ItemStack(TechItems.nausea_ring), 
+						"sms",
+						"a a",
+						"sms",
+						'm', Items.GHAST_TEAR,
+						'a', TechItems.med_kit,
+						's', TechItems.steel_ingot);
+			}
+			if (ConfigHandler.wither_ring && ConfigHandler.posion_ring && ConfigHandler.nausea_ring && ConfigHandler.fire_ring){
+				MASTER_RING = new ShapedRecipe(new ItemStack(TechItems.master_ring), 
+						"wf",
+						"np",
+						'w', TechItems.wither_ring,
+						'f', TechItems.fire_ring,
+						'n', TechItems.nausea_ring,
+						'p', TechItems.posion_ring);
+			}
 			// Nether
 			if (ConfigHandler.nether_rod){
 				NETHER_ROD = new ShapedRecipe(new ItemStack(TechItems.nether_rod, 4), 

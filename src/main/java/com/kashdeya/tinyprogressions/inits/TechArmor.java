@@ -14,6 +14,7 @@ import com.kashdeya.tinyprogressions.armor.StoneArmor;
 import com.kashdeya.tinyprogressions.armor.WitherArmour;
 import com.kashdeya.tinyprogressions.armor.WoodArmor;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -143,7 +144,7 @@ public class TechArmor {
 		}
 		
 		// Lava
-		if (ArmorHandler.lava_armor){
+		if (ArmorHandler.lava_armor && ConfigHandler.lava_crystal){
 			lava_helmet = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("lava_helmet");
 		   	lava_chestplate = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("lava_chestplate");
 		   	lava_leggings = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 2, EntityEquipmentSlot.LEGS).setUnlocalizedName("lava_leggings");

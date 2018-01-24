@@ -128,7 +128,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Water Infused Stone", "Makes Obsidian and Cobblestone when lava is place around it.");
 		ConfigHandler.water_infused_stone = config.getBoolean("Water Infused Stone", category + " Water Infused Stone", true, "Enable Water Infused Stone?");
 		
-		config.addCustomCategoryComment(category + " Lava Crystal", "if Lava armor is disabled ENABLE this to craft the Fire Ring.");
+		config.addCustomCategoryComment(category + " Lava Crystal", "If Lava Armor is disabled ENABLE this to craft the Fire Ring. DO NOT ENABLE BOTH.");
 		ConfigHandler.lava_crystal = config.getBoolean("Lava Crystal", category + " Lava Crystal", true, "Enable Lava Crystal Recipe?");
 		
 		config.addCustomCategoryComment(category + " Bricks", "Because People Love Bricks");
@@ -150,7 +150,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment(category + " Steel", "Used to make Rings and Deco Block.");
 		ConfigHandler.steel_ingot = config.getBoolean("Steel Ingots", category + " Steel", true, "Enable Steel Ingots?");
 		
-		config.addCustomCategoryComment(category + " Rib", "If Wither armor is disabled ENABLE this to craft the Wither Ring.");
+		config.addCustomCategoryComment(category + " Rib", "If Wither Armor is disabled ENABLE this to craft the Wither Ring. DO NOT ENABLE BOTH.");
 		ConfigHandler.wither_rib = config.getBoolean("Wither Rib", category + " Rib", false, "Enable Wither Rib?");
 		
 		config.addCustomCategoryComment(category + " Rings", "Needs Steel, Tiny Coal, Tiny Charcoal, Wither Rib, MedKit and Lava Crystals Enabled!");
@@ -190,10 +190,6 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Floaty Block", "May save you from certain death!");
 		ConfigHandler.angel_block = config.getBoolean("Floaty McFloaty Block", category + " Floaty Block", true, "Enable Floaty McFloaty Block?");
-		
-		config.addCustomCategoryComment(category + " Moist", "Change when the first rains on a world are due.");
-		ConfigHandler.custom_moist_timer = config.getBoolean("Enable Custom Moist Timer", category + " Moist", false, "Enable the ability to change how long it takes for the first rain of a world.");
-		ConfigHandler.moist_time = config.getFloat("Moist Timer", category + " Moist", 1, 0, Float.MAX_VALUE, "How long (in days) until the first rainfall");
 		
 		config.addCustomCategoryComment(category + " Withered Bedrock", "Sink Into Madness Block");
 		ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", category + " Withered Bedrock", false, "Enable Withered Bedrock?\n[This item is not a Craftable Block.]\n[To be used with Bedrock Replacer Mod]\n[MAY CAUSE SERVER LAG NEEDS MORE TESTING]");

@@ -335,10 +335,6 @@ public class ConfigHandler {
 	public static int water_block_max = 64;
 	public static int water_block_size = 7;
 	
-	// Rain Timer
-	public static boolean custom_moist_timer;
-	public static float moist_time;
-	
 	// Repair Tablet
 	public static boolean repair_tablet;
 	public static int repair_tablet_cooldown;

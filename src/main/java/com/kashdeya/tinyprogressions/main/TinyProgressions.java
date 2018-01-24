@@ -4,7 +4,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.kashdeya.tinyprogressions.config.TinyConfig;
 import com.kashdeya.tinyprogressions.events.BucketUseEvent;
-import com.kashdeya.tinyprogressions.events.EntityEvents;
 import com.kashdeya.tinyprogressions.events.EventDrops;
 import com.kashdeya.tinyprogressions.events.IReachEvent;
 import com.kashdeya.tinyprogressions.events.SpongeBlockPlacement;
@@ -98,7 +97,6 @@ public class TinyProgressions extends ModRegistry {
 		MinecraftForge.EVENT_BUS.register(EventDrops.class);
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
-		MinecraftForge.EVENT_BUS.register(EntityEvents.class);
 		
 		// Setup
 		proxy.onPreInitialization(e);

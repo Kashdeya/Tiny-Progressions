@@ -16,52 +16,65 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class OtherRecipes
 {
 	public static IRecipe POUCH, SUGAR1;
-	public static IRecipe FLINT1;
+	public static IRecipe FLINT1, INFIN_WATER_BUCKET;
 	public static IRecipe FLINT_KNIFE, QUARTZ_KNIFE, QUARTZ_DUST;
 	public static IRecipe MYCELIUM_SEEDS;
 	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1;
 	
 	public static void init()
 	{
+		// Infin Water Bucket
+		if (ConfigHandler.infin_bucket){
+			INFIN_WATER_BUCKET = new ShapedRecipe(new ItemStack(TechItems.infin_bucket), 
+					"wew",
+	                "sws",
+	                " s ",
+					's', new ItemStack(TechItems.steel_ingot),
+					'w', new ItemStack(Items.WATER_BUCKET),
+					'e', new ItemStack(Items.ENDER_EYE));
+		}
 		// Pouch
 		if (ConfigHandler.pouch) {
-		    POUCH = new ShapedRecipe(new ItemStack(TechItems.pouch), "lsl",
-                "clc",
-                "lsl",
-				's', Items.STRING,
-				'l', Items.LEATHER,
-				'c', Blocks.CHEST);
+		    POUCH = new ShapedRecipe(new ItemStack(TechItems.pouch), 
+		    		"lsl",
+		    		"clc",
+		    		"lsl",
+		    		's', new ItemStack(Items.STRING),
+		    		'l', new ItemStack(Items.LEATHER),
+		    		'c', new ItemStack(Blocks.CHEST));
 		}
 		
 		// MISC Flint Recipe
 		if (ConfigHandler.FlintRecipe){
 			FLINT1 = new ShapedRecipe(new ItemStack(Items.FLINT), 
-				"gg ",
-                "g  ",
-				'g', "blockGravel");
+					"gg",
+					"g ",
+					'g', "blockGravel");
 		}
 		
 		// Quartz Items
 		if (ConfigHandler.QuartzKnife) {
-			QUARTZ_KNIFE = new ShapedRecipe(new ItemStack(TechItems.quartz_knife), "  s",
-                " s ",
-                "q  ",
-				's', "stickWood",
-				'q', "gemQuartz");
+			QUARTZ_KNIFE = new ShapedRecipe(new ItemStack(TechItems.quartz_knife), 
+					"  s",
+					" s ",
+					"q  ",
+					's', "stickWood",
+					'q', "gemQuartz");
 						
-			QUARTZ_DUST = new ShapedRecipe(new ItemStack(TechItems.quartz_dust), "k",
-                "q",
-				'k', TechItems.quartz_knife,
-				'q', "gemQuartz");
+			QUARTZ_DUST = new ShapedRecipe(new ItemStack(TechItems.quartz_dust), 
+					"kq",
+					'k', new ItemStack(TechItems.quartz_knife),
+					'q', "gemQuartz");
 		}
 					
 		// Mycelium Seeds
 		if (ConfigHandler.MyceliumSeeds) {
-			MYCELIUM_SEEDS = new ShapedRecipe(new ItemStack(TechItems.mycelium_seeds), "sss",
-                "ses",
-                "sss",
-				's', Items.WHEAT_SEEDS,
-				'e', Items.SPIDER_EYE);
+			MYCELIUM_SEEDS = new ShapedRecipe(new ItemStack(TechItems.mycelium_seeds), 
+					"sss",
+					"ses",
+					"sss",
+					's', new ItemStack(Items.WHEAT_SEEDS),
+					'e', new ItemStack(Items.SPIDER_EYE));
 		}
 		
 		// Flint Ingot WIP
@@ -71,11 +84,12 @@ public class OtherRecipes
 		
 		// Reinforced Obsidian Ingot
 		if (ConfigHandler.ReinforcedObsidian) {
-			OBSIDIAN_INGOT = new ShapelessRecipe(new ItemStack(TechItems.reinforced_obsidian_ingot, 9), TechBlocks.reinforced_obsidian);
-			OBSIDIAN1 = new ShapedRecipe(new ItemStack(TechBlocks.reinforced_obsidian), "sss",
-                "sss",
-                "sss",
-				's', TechItems.reinforced_obsidian_ingot);
+			OBSIDIAN_INGOT = new ShapelessRecipe(new ItemStack(TechItems.reinforced_obsidian_ingot, 9), new ItemStack(TechBlocks.reinforced_obsidian));
+			OBSIDIAN1 = new ShapedRecipe(new ItemStack(TechBlocks.reinforced_obsidian), 
+					"sss",
+					"sss",
+					"sss",
+					's', new ItemStack(TechItems.reinforced_obsidian_ingot));
 		}
 		
 		// Flint Knife
@@ -85,7 +99,7 @@ public class OtherRecipes
 		
         // Old Reed
         if (ConfigHandler.old_reed) {
-            SUGAR1 = new ShapelessRecipe(new ItemStack(Items.SUGAR), TechItems.dead_reed);
+            SUGAR1 = new ShapelessRecipe(new ItemStack(Items.SUGAR), new ItemStack(TechItems.dead_reed));
         }
 
 	}

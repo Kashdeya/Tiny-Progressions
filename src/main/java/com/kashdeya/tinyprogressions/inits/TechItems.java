@@ -4,6 +4,7 @@ import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.FlintKnife;
 import com.kashdeya.tinyprogressions.items.FoodBase;
+import com.kashdeya.tinyprogressions.items.InfinBucket;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemBaseMeta;
 import com.kashdeya.tinyprogressions.items.ItemStay;
@@ -77,8 +78,14 @@ public class TechItems {
 	public static Item stone_hammer;
 	// Steel
 	public static Item steel_ingot;
+	// Infin Water Bucket
+	public static Item infin_bucket;
 		
 	public static void init() {
+		// Infin Water Bucket
+		if (ConfigHandler.infin_bucket){
+			infin_bucket = new InfinBucket().setUnlocalizedName("infin_bucket");
+		}
 		// Master Ring
 		if (ConfigHandler.master_ring && ConfigHandler.nausea_ring && ConfigHandler.posion_ring && ConfigHandler.fire_ring && ConfigHandler.wither_ring){
 			master_ring = new MasterRing().setUnlocalizedName("master_ring");

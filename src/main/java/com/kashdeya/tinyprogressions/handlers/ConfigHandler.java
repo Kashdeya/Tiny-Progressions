@@ -12,6 +12,8 @@ public class ConfigHandler {
 	
 	public static boolean wither_rib = true;
 	
+	public static boolean infin_bucket = true;
+	
 	// Water Infused Stone Block
 	public static boolean water_infused_stone = true;
 	

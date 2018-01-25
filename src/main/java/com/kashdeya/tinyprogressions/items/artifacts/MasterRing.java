@@ -1,7 +1,10 @@
 package com.kashdeya.tinyprogressions.items.artifacts;
 
+import java.util.List;
+
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
@@ -9,6 +12,8 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -43,4 +48,14 @@ public class MasterRing extends Item {
     public boolean hasEffect(ItemStack stack){
         return true;
     }
+    
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
+	{
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.masterring_1").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.masterring_2").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.masterring_3").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.masterring_4").getFormattedText());
+	}
 }

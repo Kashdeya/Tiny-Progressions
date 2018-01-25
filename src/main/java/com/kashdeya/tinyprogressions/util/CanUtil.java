@@ -1,8 +1,8 @@
-package com.kashdeya.tinyprogressions.handlers;
+package com.kashdeya.tinyprogressions.util;
 
 import java.util.Random;
 
-public class CanHandler {
+public class CanUtil {
 	
 	public static int randInt(int min, int max){
 		

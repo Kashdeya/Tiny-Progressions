@@ -1,8 +1,9 @@
 package com.kashdeya.tinyprogressions.items.wateringcan;
 
-import com.kashdeya.tinyprogressions.handlers.CanHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.util.CanUtil;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
 import net.minecraft.block.IGrowable;
@@ -145,7 +146,7 @@ public class WateringCanBase extends Item
         if(!world.isRemote && canWater)
         {
             canWater = false;
-            int chance = CanHandler.randInt(1, 100);
+            int chance = CanUtil.randInt(1, 100);
             if(chance <= waterChance)
             {
                 for(int xAxis = -range; xAxis <= range; xAxis++)

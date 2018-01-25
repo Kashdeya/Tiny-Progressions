@@ -19,7 +19,7 @@ public class FuelHandler implements IFuelHandler {
 		if (ConfigHandler.CharcoalBlock){
 			if (fuel.getItem() == Item.getItemFromBlock(TechBlocks.charcoal_block)) { return CharcoalBlockBurn; }
 		}
-        if (ArmorHandler.lava_armor){
+        if (ArmorHandler.lava_armor || ConfigHandler.lava_crystal){
         	if (fuel.getItem() == TechItems.lava_crystal) {return 2500;}
         	if (fuel.getItem() == Item.getItemFromBlock(TechBlocks.lava_crystal_block)) {return 10000;}
         }
@@ -31,9 +31,6 @@ public class FuelHandler implements IFuelHandler {
         }
         if (ConfigHandler.tiny_charcoal){
         	if (fuel.getItem() == TechItems.tiny_charcoal) {return tiny_charcoal_burntime;}
-        }
-        if (ConfigHandler.lava_block_recipe){
-        	if (fuel.getItem() == Item.getItemFromBlock(TechBlocks.lava_block)) {return lava_block_burntime;}
         }
 
         return 0;

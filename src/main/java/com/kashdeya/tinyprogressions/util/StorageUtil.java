@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.handlers;
+package com.kashdeya.tinyprogressions.util;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-public class StorageHandler
+public class StorageUtil
 {
     public static byte[] storeData(@Nullable ItemStack itemstack)
     {

@@ -22,7 +22,6 @@ import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
 import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
 import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;
-import com.kashdeya.tinyprogressions.util.ModChecker;
 import com.kashdeya.tinyprogressions.util.OreDict;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
 
@@ -59,7 +58,6 @@ public class TinyProgressions extends ModRegistry {
 
 	public static SimpleNetworkWrapper network;
 	public static Logger logger;
-	public static ModChecker modChecker;
 	
 	static { 
 		FluidRegistry.enableUniversalBucket();
@@ -68,7 +66,6 @@ public class TinyProgressions extends ModRegistry {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		logger = e.getModLog();
-		modChecker = new ModChecker();
 		
 		// Configs
 		TinyConfig.initMain();

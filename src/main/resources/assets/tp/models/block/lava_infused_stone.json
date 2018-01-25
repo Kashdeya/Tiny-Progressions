@@ -27,6 +27,6 @@
     "textures": {
         "particle": "tp:blocks/hardened_stone",
 		"t1": "tp:blocks/hardened_stone",
-		"t2": "tp:blocks/water_block"
+		"t2": "tp:blocks/lava_infused"
     }
 }

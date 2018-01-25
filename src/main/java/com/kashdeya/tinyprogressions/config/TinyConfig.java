@@ -56,18 +56,18 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Tree Drops", "Extra Drops");
 		ConfigHandler.stickDrops = config.getBoolean("Stick Drops", category + " Tree Drops", true, "Enable Sticks to drop from leaves?");
-		ConfigHandler.stickDropsChance = config.getFloat("Stick Drop Chance", category + " Tree Drops", 0.1F, 0, 1.0F, "Sets the Chance of Sticks from leaves.");
+		ConfigHandler.stickDropsChance = config.getFloat("Stick Drop Chance", category + " Tree Drops", 0.01F, 0.0F, 1.0F, "Sets the Chance of Sticks from leaves.");
 		ConfigHandler.stickDropsAmmount = config.getInt("Stick Drop Ammount", category + " Tree Drops", 1, 1, 64, "Sets the Ammount of Sticks Dropped from leaves.");
 		ConfigHandler.appleDrops = config.getBoolean("Apple Drops", category + " Tree Drops", true, "Enable Apple to drop from leaves?");
-		ConfigHandler.appleDropsChance = config.getFloat("Apple Drop Chance", category + " Tree Drops", 0.1F, 0, 1.0F, "Sets the Chance of Apple from leaves.");
+		ConfigHandler.appleDropsChance = config.getFloat("Apple Drop Chance", category + " Tree Drops", 0.01F, 0.0F, 1.0F, "Sets the Chance of Apple from leaves.");
 		ConfigHandler.appleDropsAmmount = config.getInt("Apple Drop Ammount", category + " Tree Drops", 1, 1, 64, "Sets the Ammount of Apple Dropped from leaves.");
 		
 		config.addCustomCategoryComment(category + " Dirt Drops", "Extra Drops");
 		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", category + " Dirt Drops", true, "Enable Bones to drop from Dirt?");
-		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Dirt Drops", 0.01F, 0, 1.0F, "Sets the Chance of Bones from Dirt.");
+		ConfigHandler.BoneDropsChance = config.getFloat("Bone Drop Chance", category + " Dirt Drops", 0.01F, 0.0F, 1.0F, "Sets the Chance of Bones from Dirt.");
 		ConfigHandler.BoneAmmount = config.getInt("Bone Drop Ammount", category + " Dirt Drops", 1, 1, 64, "Sets the Ammount of Bones Dropped from Dirt.");
 		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", category + " Dirt Drops", true, "Enable Skulls to drop from Dirt?");
-		ConfigHandler.SkullDropsChance = config.getFloat("Skull Drop Chance", category + " Dirt Drops", 0.01F, 0, 1.0F, "Sets the Chance of Skulls from Dirt.");
+		ConfigHandler.SkullDropsChance = config.getFloat("Skull Drop Chance", category + " Dirt Drops", 0.01F, 0.0F, 1.0F, "Sets the Chance of Skulls from Dirt.");
 		ConfigHandler.SkullAmmount = config.getInt("Skull Drop Ammount", category + " Dirt Drops", 1, 1, 64, "Sets the Ammount of Skulls Dropped from Dirt.");
 		
 		config.addCustomCategoryComment(category + " Reinforced Blocks", "True or False\n[Required for Other Items in this mod.]");
@@ -95,8 +95,6 @@ public class TinyConfig {
 		ConfigHandler.lava_block_min = config.getInt("Lavastone Gen Min", category + " Lava Source Block Stones", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Gen Max", category + " Lava Source Block Stones", 64, 1, 255, "Sets the max Y level.");
 		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", category + " Lava Source Block Stones", 10, 5, 100, "Sets the Lavastone Vein Size.");
-		ConfigHandler.lava_block_recipe = config.getBoolean("Lavastone Silktouch", category + " Lava Source Block Stones", true, "Enable Lava bucket recipe?\n[If picked up with Silktouch you can use to craft a lava bucket.]");
-		FuelHandler.lava_block_burntime = config.getInt("Lavastone Silktouch Burn-Time", category + " Lava Source Block Stones", 20000, 0, Integer.MAX_VALUE, "If Silktouch is Enbled you can use Lavastone as a fuel source as well.");
 		
 		config.addCustomCategoryComment(category + " Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", category + " Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
@@ -104,7 +102,6 @@ public class TinyConfig {
 		ConfigHandler.water_block_min = config.getInt("Waterstone Gen Min", category + " Water Source Block Stones", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.water_block_max = config.getInt("Waterstone Gen Max", category + " Water Source Block Stones", 64, 1, 255, "Sets the max Y level.");
 		ConfigHandler.water_block_size = config.getInt("Waterstone Gen Size", category + " Water Source Block Stones", 10, 5, 100, "Sets the Waterstone Vein Size.");
-		ConfigHandler.water_block_recipe = config.getBoolean("Waterstone Silktouch", category + " Water Source Block Stones", true, "Enable Water bucket recipe?\n[If picked up with Silktouch you can use to craft a Water bucket.]");
 		
 		config.addCustomCategoryComment(category + " Dirty Glass", "Just a little dirty!");
 		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", category + " Dirty Glass", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");
@@ -213,6 +210,9 @@ public class TinyConfig {
 		ConfigHandler.vasholine = config.getBoolean("Vasholine Juice", category + " Vasholine", true, "Enable Vasholine?");
 		ConfigHandler.vasholine_mobs = config.getBoolean("Vasholine Juice Hurts Mobs", category + " Vasholine", true, "Enable mobs getting hurt?");	
 		ConfigHandler.vasholine_mobs_amount = config.getFloat("Vasholine Juice Hurts Mobs Amount", category + " Vasholine", 1.0F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
+		
+		config.addCustomCategoryComment(category + " Infinity", "Unlimited Water! Requires Steel to be enabled.");
+		ConfigHandler.infin_bucket = config.getBoolean("Infinity Water Bucket", category + " Infinity", true, "Enable Infinity Water Bucket?");
 		
 		if (config.hasChanged())
         config.save();

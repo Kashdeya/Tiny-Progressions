@@ -6,77 +6,67 @@ import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirt;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EventDrops {
 	
-	public static Random CHANCE = new Random();
-	public static Random AMOUNT = new Random();
-
-	
 	@SubscribeEvent
-	public void blockBreak(HarvestDropsEvent event)
-	{
-		World world = event.getWorld();
-		if(!world.isRemote)
-		{
-			Block target = event.getState().getBlock();
-			if (ConfigHandler.BoneDrops)
-			{
-				if(target == Blocks.DIRT)
-				{
-					if(CHANCE.nextFloat()<ConfigHandler.BoneDropsChance)
-					{
-						event.getDrops().add(new ItemStack(Items.BONE,AMOUNT.nextInt(ConfigHandler.BoneAmmount)));
-						if (CHANCE.nextFloat()<ConfigHandler.SkullDropsChance && ConfigHandler.SkullDrops)
-						{
-							event.getDrops().add(new ItemStack(Items.SKULL,AMOUNT.nextInt(ConfigHandler.SkullAmmount)));
-							
-						}
-					}
-				}
+	public static void blockBreak(BlockEvent.HarvestDropsEvent event) {
+		
+		if(ConfigHandler.BoneDrops) {
+			if (event.getState().getBlock() instanceof BlockDirt){
+				event.getDrops().add(new ItemStack(Items.BONE, ConfigHandler.BoneAmmount));
+				event.setDropChance(ConfigHandler.BoneDropsChance);
 			}
+		}
 			
-			// Stick Drops
-			if(target == Blocks.LEAVES || target == Blocks.LEAVES2)
-			{
-				if (ConfigHandler.stickDrops)
-				{
-					if(CHANCE.nextFloat()<ConfigHandler.stickDropsChance)
-					{
-						event.getDrops().add(new ItemStack(Items.STICK,AMOUNT.nextInt(ConfigHandler.stickDropsAmmount)));
-					}
-				}
-				if (ConfigHandler.appleDrops)
-				{
-					if(CHANCE.nextFloat()<ConfigHandler.appleDropsChance)
-					{
-						event.getDrops().add(new ItemStack(Items.APPLE,AMOUNT.nextInt(ConfigHandler.appleDropsAmmount)));
-					}
-				}
+		if(ConfigHandler.SkullDrops) {
+			if (event.getState().getBlock() instanceof BlockDirt){
+				event.getDrops().add(new ItemStack(Items.SKULL, ConfigHandler.SkullAmmount));
+				event.setDropChance(ConfigHandler.SkullDropsChance);
 			}
 		}
 	}
 	
+	@SubscribeEvent
+	public static void onBlockBreak(BlockEvent.HarvestDropsEvent event) {
+		if (ConfigHandler.stickDrops) {
+			if (event.getState().getBlock().isLeaves(event.getState(), event.getWorld(), event.getPos())) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.STICK, ConfigHandler.stickDropsAmmount));
+				event.setDropChance(ConfigHandler.stickDropsChance);
+				event.getWorld().spawnEntity(item);
+				}
+		}
+		
+		
+		if (ConfigHandler.appleDrops) {
+			if (event.getState().getBlock().isLeaves(event.getState(), event.getWorld(), event.getPos())) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.APPLE, ConfigHandler.appleDropsAmmount));
+				event.setDropChance(ConfigHandler.appleDropsChance);
+				event.getWorld().spawnEntity(item);
+				}
+		}
+		
+	}
+	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onLivingDrops(LivingDropsEvent event) {
-		int min = 0;
-		int max = 4;
-        if (event.getEntity() instanceof EntityDragon) {
-            registerMobDrop(event, event.getEntity(), ArmorHandler.dragon_armor, new ItemStack(TechItems.dragon_scale, AMOUNT.nextInt(16)));
-        } else if (event.getEntity() instanceof EntityWither) {
-            registerMobDrop(event, event.getEntity(), ArmorHandler.wither_armor, new ItemStack(TechItems.wither_rib, AMOUNT.nextInt(max - min + 1) + min));
+        if (event.getEntity() instanceof EntityDragon && ArmorHandler.dragon_armor) {
+            registerMobDrop(event, event.getEntity(), ArmorHandler.dragon_armor, new ItemStack(TechItems.dragon_scale, new Random().nextInt(16)));
+        } else if (event.getEntity() instanceof EntityWither && (ArmorHandler.wither_armor || ConfigHandler.wither_rib)) {
+            registerMobDrop(event, event.getEntity(), ArmorHandler.wither_armor, new ItemStack(TechItems.wither_rib, new Random().nextInt(6)));
         }
     }
 

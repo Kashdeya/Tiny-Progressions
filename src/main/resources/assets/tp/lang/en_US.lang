@@ -28,6 +28,8 @@ item.posion_ring.name=Posion Ring
 item.nausea_ring.name=Nausea Ring
 item.master_ring.name=Master Ring
 
+item.infin_bucket.name=Infinity Water Bucket
+
 tile.steel_block.name=Steel Block
 
 tile.water_infused_stone.name=Water Infused Stone

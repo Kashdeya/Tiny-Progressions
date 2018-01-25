@@ -28,11 +28,11 @@ public class FireRing extends Item{
 	
 	public void onUpdate(ItemStack stack, World worldIn, Entity player, int itemSlot, boolean isSelected) {
 		if(player instanceof EntityLivingBase && worldIn.isRemote)
-			if(((EntityLivingBase) player).isBurning()){
+			if(((EntityLivingBase) player).isBurning());
 				((EntityLivingBase) player).extinguish();
-				Entity.class.getField("isImmuneToFire").setAccessible(true);
-				Entity.class.getField("isImmuneToFire").set(player, true);
-			}
+				((EntityLivingBase) player).isImmuneToFire();
+				
+				((EntityLivingBase) player).addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 0, 0, true, false));
 	}
 	
 	@Override

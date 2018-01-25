@@ -45,7 +45,7 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
 		if (entity instanceof EntityPlayer) {
 			if(world.getTotalWorldTime()%20 == 0 && ((EntityPlayer) entity).getHealth() < ((EntityPlayer) entity).getMaxHealth()) // add whatever time you want here 20 = every 1 second
-				((EntityPlayer) entity).heal(0.5F);
+				((EntityPlayer) entity).heal(ConfigHandler.vasholine_heal_amount);
 			entity.rotationYaw += (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
 			entity.rotationPitch += (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
 		}

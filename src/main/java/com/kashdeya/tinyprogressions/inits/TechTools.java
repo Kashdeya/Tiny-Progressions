@@ -162,11 +162,7 @@ public class TechTools {
 	public static Item nether_hoe;
 	public static Item nether_spade;
 	// c axe
-	public static Item stone_sea_axe;
 	public static Item c_axe;
-	public static Item gold_sea_axe;
-	public static Item diamond_sea_axe;
-	public static Item emerald_sea_axe;
 	
 	public static void init(){
 		// nether tools and weapons

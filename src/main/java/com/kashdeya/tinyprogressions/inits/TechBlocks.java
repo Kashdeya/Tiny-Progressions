@@ -153,8 +153,8 @@ public class TechBlocks {
     public static Block VASHOLINE;
     // asphalt
     public static Block asphalt_block;
-    // Water Infused Stone Block
-    public static Block water_infused_stone;
+    // Lava Infused Stone Block
+    public static Block lava_infused_stone;
     // Steel Block
     public static Block steel_block;
     
@@ -163,9 +163,9 @@ public class TechBlocks {
 		if (ConfigHandler.steel_ingot){
 			steel_block = new DecoMain().setOreDictName("blockSteel").setUnlocalizedName("steel_block");
 		}
-		// Water Infused Stone Block
-		if (ConfigHandler.water_infused_stone){
-			water_infused_stone = new Infused();
+		// Lava Infused Stone Block
+		if (ConfigHandler.lava_infused_stone){
+			lava_infused_stone = new Infused();
 		}
 		// asphalt
 		if (ConfigHandler.asphalt){

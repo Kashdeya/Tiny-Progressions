@@ -122,8 +122,8 @@ public class TinyConfig {
 		
 		category = "Tiny Progressions";
 		
-		config.addCustomCategoryComment(category + " Water Infused Stone", "Makes Obsidian and Cobblestone when lava is place around it.");
-		ConfigHandler.water_infused_stone = config.getBoolean("Water Infused Stone", category + " Water Infused Stone", true, "Enable Water Infused Stone?");
+		config.addCustomCategoryComment(category + " Lava Infused Stone", "Makes Obsidian and Cobblestone when Water is place around it.");
+		ConfigHandler.lava_infused_stone = config.getBoolean("Lava Infused Stone", category + " Lava Infused Stone", true, "Enable Lava Infused Stone?");
 		
 		config.addCustomCategoryComment(category + " Lava Crystal", "If Lava Armor is disabled ENABLE this to craft the Fire Ring. DO NOT ENABLE BOTH.");
 		ConfigHandler.lava_crystal = config.getBoolean("Lava Crystal", category + " Lava Crystal", true, "Enable Lava Crystal Recipe?");
@@ -206,10 +206,11 @@ public class TinyConfig {
 		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", category + " CUS", 100, 0, Integer.MAX_VALUE, "Sets the ammount of Durability.");
 		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", category + " CUS", false, "Enable Stone Dust?");
 		
-		config.addCustomCategoryComment(category + " Vasholine", "WUB WUB WUB!");
-		ConfigHandler.vasholine = config.getBoolean("Vasholine Juice", category + " Vasholine", true, "Enable Vasholine?");
-		ConfigHandler.vasholine_mobs = config.getBoolean("Vasholine Juice Hurts Mobs", category + " Vasholine", true, "Enable mobs getting hurt?");	
-		ConfigHandler.vasholine_mobs_amount = config.getFloat("Vasholine Juice Hurts Mobs Amount", category + " Vasholine", 1.0F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
+		config.addCustomCategoryComment(category + " WUB Juice", "WUB WUB WUB!");
+		ConfigHandler.vasholine = config.getBoolean("WUB Juice", category + " WUB Juice", true, "Enable WUB Juice?");
+		ConfigHandler.vasholine_heal_amount = config.getFloat("WUB Juice Heal Amount", category + " WUB Juice", 0.25F, 0.0F, 1.0F, "Sets the amount of heal Wub Juice does per tick.");
+		ConfigHandler.vasholine_mobs = config.getBoolean("WUB Juice Hurts Mobs", category + " WUB Juice", false, "Enable mobs getting hurt?");	
+		ConfigHandler.vasholine_mobs_amount = config.getFloat("WUB Juice Hurts Mobs Amount", category + " WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
 		
 		config.addCustomCategoryComment(category + " Infinity", "Unlimited Water! Requires Steel to be enabled.");
 		ConfigHandler.infin_bucket = config.getBoolean("Infinity Water Bucket", category + " Infinity", true, "Enable Infinity Water Bucket?");

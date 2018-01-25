@@ -40,7 +40,7 @@ public class BlockRecipes {
 	public static IRecipe SUGAR, COMPRESSED_SUGAR, COMPRESSED_SUGAR2, COMPRESSED_2_SUGAR;
 	public static IRecipe CANE, COMPRESSED_CANE, COMPRESSED_CANE2, COMPRESSED_2_CANE, COMPRESSED_2_CANE2, COMPRESSED_3_CANE, COMPRESSED_3_CANE2, COMPRESSED_4_CANE, COMPRESSED_4_CANE2;
 	public static IRecipe COMPRESSED_5_CANE, COMPRESSED_5_CANE2, COMPRESSED_6_CANE, COMPRESSED_6_CANE2, COMPRESSED_7_CANE, COMPRESSED_7_CANE2, COMPRESSED_8_CANE;
-	public static IRecipe ASPHALT, WATER_INFUSED_STONE;
+	public static IRecipe ASPHALT, LAVA_INFUSED_STONE;
 	public static IRecipe STEEL_BLOCK, STEEL_BLOCK2;
 	
 	public static void init() {
@@ -53,13 +53,13 @@ public class BlockRecipes {
 			
 			STEEL_BLOCK2 = new ShapelessRecipe(new ItemStack(TechItems.steel_ingot, 9), new ItemStack(TechBlocks.steel_block));
 		}
-		if (ConfigHandler.water_infused_stone){
-			WATER_INFUSED_STONE = new ShapedRecipe(new ItemStack(TechBlocks.water_infused_stone), 
+		if (ConfigHandler.lava_infused_stone){
+			LAVA_INFUSED_STONE = new ShapedRecipe(new ItemStack(TechBlocks.lava_infused_stone), 
 					"h h",
 	                " w ",
 	                "h h",
 					'h', new ItemStack(TechBlocks.hardened_stone),
-					'w', new ItemStack(Items.WATER_BUCKET));
+					'w', new ItemStack(Items.LAVA_BUCKET));
 		}
 		if (ConfigHandler.asphalt){
 			ASPHALT = new ShapedRecipe(new ItemStack(TechBlocks.asphalt_block, 8), 

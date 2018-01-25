@@ -14,8 +14,8 @@ public class ConfigHandler {
 	
 	public static boolean infin_bucket = true;
 	
-	// Water Infused Stone Block
-	public static boolean water_infused_stone = true;
+	// Lava Infused Stone Block
+	public static boolean lava_infused_stone = true;
 	
 	// steel
 	public static boolean steel_ingot = true;
@@ -27,6 +27,7 @@ public class ConfigHandler {
 	public static boolean vasholine = true;
 	public static boolean vasholine_mobs = true;
 	public static float vasholine_mobs_amount = 1.0F;
+	public static float vasholine_heal_amount = 0.5F;
 	
 	// Tiny Coals
 	public static boolean tiny_coal = true;

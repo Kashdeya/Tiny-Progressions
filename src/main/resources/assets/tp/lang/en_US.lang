@@ -5,9 +5,6 @@ tile.diamond_cobblegen_block.name=Cobblestone Generator Tier 3
 tile.blaze_cobblegen_block.name=Cobblestone Generator Tier 4
 tile.emerald_cobblegen_block.name=Cobblestone Generator Tier 5
 
-#bucket helmet
-item.bucket_helm.name=Bucket Helmet
-
 #asphalt
 tile.asphalt_block.name=Asphalt
 
@@ -21,7 +18,13 @@ tile.blackberry_bush.name=Blackberry Bush
 tile.blueberry_bush.name=Blueberry Bush
 tile.maloberry_bush.name=Maloberry Bush
 tile.raspberry_bush.name=Raspberry Bush
+item.blackberry_berry.name=Blackberry
+item.blueberry_berry.name=Blueberry
+item.maloberry_berry.name=Maloberry
+item.raspberry_berry.name=Raspberry
 
+
+#Artifacts
 item.wither_ring.name=§8Ring Of The Wither
 tooltip.witherring_1=Immunity to Wither
 item.fire_ring.name=§4Ring Of Heat Resistance
@@ -36,31 +39,35 @@ tooltip.masterring_2=Immunity to Fire
 tooltip.masterring_3=Immunity to Posion
 tooltip.masterring_4=Immunity to Nausea
 
+#Infinity Bucket
 item.infin_bucket.name=Infinity Water Bucket
+tooltip.infinbucket_1=Provides a lot of water
 
+#Steel
 tile.steel_block.name=Steel Block
+item.steel_ingot.name=Steel Ingot
 
+#Infused Lava Block
 tile.lava_infused_stone.name=Lava Infused Stone
 tooltip.infused_1=Used to make Cobblestone and Obsidian
 tooltip.infused_2=Place water next to it to make Obsidian
 tooltip.infused_3=Place water 1-2 blocks away to make Cobblestone
 
-item.blackberry_berry.name=Blackberry
-item.blueberry_berry.name=Blueberry
-item.maloberry_berry.name=Maloberry
-item.raspberry_berry.name=Raspberry
-
-item.steel_ingot.name=Steel Ingot
-
+#JonBam Items
 item.c_axe.name=Sea-Axe
 item.bam_tshirt.name=bamInati T-Shirt
 
+#TinyCoal
 item.tiny_charcoal.name=Tiny Charcoal
 item.tiny_coal.name=Tiny Coal
 
+#Stone Hammer
 item.stone_hammer.name=Stone Hammer
+
+#Chainmail Parts
 item.chainmail_part.name=Chainmail Part
 
+#Tooltip
 tooltip.stay_1=Used for crafting only!
 
 #Withered Block
@@ -130,28 +137,28 @@ tile.netherstar_block.name=Compressed Nether Star Block
 tile.flint_block.name=Compressed Flint Block
 
 #Fluids
-fluid.vasholine=Vasholine
-tile.vasholine.name=Vasholine
-
+fluid.vasholine=Wub Wub Juice
+tile.vasholine.name=Wub Wub Juice
 tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
 
-#Tech Items
+#Watering Cans
 item.watering_can.name=Watering Can
 item.watering_can_upgrade.name=Reinforced Watering Can
 item.watering_can.invalidusage=Cannot activate with more than 1 Watering Can in your inventory!
 
+#Quartz
 item.quartz_dust.name=Quartz Enriched Iron Dust
 item.quartz_knife.name=Quartz Knife
+
+#Extra Ingots
 item.flint_ingot.name=Flint Ingot - [WIP]
 item.redstone_ingot.name=Redstone Ingot
 item.lapis_ingot.name=Lapis Ingot
 item.quartz_ingot.name=Quartz Ingot
+item.reinforced_obsidian_ingot.name=Reinforced Obsidian Ingot
 
 #Stone Dust
 item.stone_dust.name=Stone Dust
-
-#Reinforced Ingot
-item.reinforced_obsidian_ingot.name=Reinforced Obsidian Ingot
 
 #Ender Ore
 tile.ender_ore.name=Ender Ore
@@ -451,7 +458,7 @@ item.pouch.name=Big Pouch
 #Angel Block
 tile.fmf_block.name=Floaty McFloaty Block
 
-// Glowstone Dust
+#Glowstone Dust
 item.black_dust.name=Black Glowstone Dust
 item.blue_dust.name=Blue Glowstone Dust
 item.brown_dust.name=Brown Glowstone Dust
@@ -468,7 +475,7 @@ item.red_dust.name=Red Glowstone Dust
 item.silver_dust.name=LightGray Glowstone Dust
 item.white_dust.name=White Glowstone Dust
 
-// Colored Glowstone
+#Colored Glowstone
 tile.black_glowstone.name=Black Glowstone
 tile.blue_glowstone.name=Blue Glowstone
 tile.brown_glowstone.name=Brown Glowstone
@@ -485,7 +492,7 @@ tile.red_glowstone.name=Red Glowstone
 tile.silver_glowstone.name=LightGray Glowstone
 tile.white_glowstone.name=White Glowstone
 
-// Lamps
+#Lamps
 tile.black_lamp.name=Black Lamp
 tile.blue_lamp.name=Blue Lamp
 tile.brown_lamp.name=Brown Lamp
@@ -504,7 +511,7 @@ tile.white_lamp.name=White Lamp
 tile.yellow_lamp.name=Yellow Lamp
 tile.lamp.name=Lamp
 
-// Extra Food
+#Extra Food
 item.raw_bacon.name=Raw Bacon
 item.cooked_bacon.name=Cooked Bacon
 item.monster_jerky.name=Monster Jerky
@@ -523,7 +530,7 @@ item.beef_sandwhich.name=Beef Sandwich
 item.bacon_sandwhich.name=Bacon Sandwich
 item.bams_pizza.name=Bams Pizza
 
-// Repair Tablet
+#Repair Tablet
 item.repair_tablet.name=Repair Tablet
 tooltip.tablet_1=Repair items in players inventory
 tooltip.tablet_2=Restores 1 durability every X seconds

@@ -162,10 +162,12 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment(category + " Medical Kit", "Need a little healing?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", category + " Medical Kit", true, "Enable Medkit?");
-		ConfigHandler.healDuration = config.getInt("Medkit Heal Duration", category + " Medical Kit", 30, 1, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
-		ConfigHandler.healLevel = config.getInt("Medkit Heal Level", category + " Medical Kit", 2, 0, 2, "Sets the level of Regen!");
-		ConfigHandler.healStack = config.getInt("Medkit Heal Stacksize", category + " Medical Kit", 32, 1, 64, "Sets the Stacksize of the Medkit!");
+		ConfigHandler.enableRegeneration = config.getBoolean("Medkit Regeneration", category + " Medical Kit", true, "Enable Regeneration?");
+		ConfigHandler.healDuration = config.getInt("Medkit Regeneration Duration", category + " Medical Kit", 15, 1, Integer.MAX_VALUE, "How many ticks. (1 = 1 Tick)");
+		ConfigHandler.healLevel = config.getInt("Medkit Regeneration Level", category + " Medical Kit", 2, 0, 2, "Sets the level of Regen!");
+		ConfigHandler.healStack = config.getInt("Medkit Stacksize", category + " Medical Kit", 32, 1, 64, "Sets the Stacksize of the Medkit!");
 		ConfigHandler.healinstant = config.getBoolean("Medkit Instant heal", category + " Medical Kit", false, "Enable Medkit Instant Heal?");
+		ConfigHandler.useDuration = config.getInt("Medkit Instant heal Use Duration", category + " Medical Kit", 64, 1, 128, "Sets how long it takes the player to apply the medkit!");
 		
 		config.addCustomCategoryComment(category + " Torch", "I'll light the way!");
 		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", category + " Torch", true, "Enable Stone Torch?\n[Do not ENABLE if Tinkers is installed.]");

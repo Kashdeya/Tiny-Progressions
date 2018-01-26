@@ -120,11 +120,11 @@ public class TechItems {
 		if (ArmorHandler.chain_armor){
 			chainmail_part = new ItemBase().setOreDictName("chainmail").setUnlocalizedName("chainmail_part");
 		}
-		
 		// bsc rod
 		if (ConfigHandler.bsc_rod){
 			bsc_rod = new ItemBase().setOreDictName("stickCane").setUnlocalizedName("bsc_rod");
 		}
+		
 		// Watering Cans
 		if (ConfigHandler.WateringCan) {
 			watering_can = new WateringCan();

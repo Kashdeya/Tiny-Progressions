@@ -10,11 +10,9 @@ import net.minecraft.item.ItemStack;
 
 public class FoodBase extends ItemFood implements IOreDictEntry{
 	String oredictName;
-	public final int itemUseDuration;
 	
 	public FoodBase(int amount, float saturation, boolean isWolfFood) {
 		super(amount, saturation, isWolfFood);
-		this.itemUseDuration = ConfigHandler.eat_timer;
 		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	

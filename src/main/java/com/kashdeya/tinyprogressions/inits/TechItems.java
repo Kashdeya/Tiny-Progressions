@@ -2,22 +2,24 @@ package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.FlintKnife;
-import com.kashdeya.tinyprogressions.items.FoodBase;
-import com.kashdeya.tinyprogressions.items.InfinBucket;
-import com.kashdeya.tinyprogressions.items.ItemBase;
-import com.kashdeya.tinyprogressions.items.ItemBaseMeta;
-import com.kashdeya.tinyprogressions.items.ItemStay;
-import com.kashdeya.tinyprogressions.items.MedKit;
-import com.kashdeya.tinyprogressions.items.MyceliumSeeds;
-import com.kashdeya.tinyprogressions.items.Pouch;
-import com.kashdeya.tinyprogressions.items.QuartzKnife;
-import com.kashdeya.tinyprogressions.items.RepairTablet;
 import com.kashdeya.tinyprogressions.items.artifacts.FireRing;
 import com.kashdeya.tinyprogressions.items.artifacts.MasterRing;
 import com.kashdeya.tinyprogressions.items.artifacts.NauseaRing;
 import com.kashdeya.tinyprogressions.items.artifacts.PosionRing;
 import com.kashdeya.tinyprogressions.items.artifacts.WitherRing;
+import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
+import com.kashdeya.tinyprogressions.items.misc.FoodBase;
+import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
+import com.kashdeya.tinyprogressions.items.misc.ItemBase;
+import com.kashdeya.tinyprogressions.items.misc.ItemBaseMeta;
+import com.kashdeya.tinyprogressions.items.misc.ItemRib;
+import com.kashdeya.tinyprogressions.items.misc.ItemScale;
+import com.kashdeya.tinyprogressions.items.misc.ItemStay;
+import com.kashdeya.tinyprogressions.items.misc.MedKit;
+import com.kashdeya.tinyprogressions.items.misc.MyceliumSeeds;
+import com.kashdeya.tinyprogressions.items.misc.Pouch;
+import com.kashdeya.tinyprogressions.items.misc.QuartzKnife;
+import com.kashdeya.tinyprogressions.items.misc.RepairTablet;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCan;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanUpgrade;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
@@ -139,10 +141,10 @@ public class TechItems {
 		
 	    // Drops
 	    if (ArmorHandler.dragon_armor){
-		    dragon_scale = new ItemBase().setOreDictName("dragonScale").setUnlocalizedName("dragon_scale");
+		    dragon_scale = new ItemScale().setOreDictName("dragonScale").setUnlocalizedName("dragon_scale");
 	    }
 	    if (ArmorHandler.wither_armor || ConfigHandler.wither_rib){
-		    wither_rib = new ItemBase().setOreDictName("witherRib").setUnlocalizedName("wither_rib");
+		    wither_rib = new ItemRib().setOreDictName("witherRib").setUnlocalizedName("wither_rib");
 	    }
 	    
 		// Misc Items

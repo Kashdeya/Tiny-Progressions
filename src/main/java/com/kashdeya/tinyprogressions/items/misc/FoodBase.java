@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items;
+package com.kashdeya.tinyprogressions.items.misc;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;

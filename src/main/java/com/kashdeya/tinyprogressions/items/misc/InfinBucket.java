@@ -1,5 +1,6 @@
-package com.kashdeya.tinyprogressions.items;
+package com.kashdeya.tinyprogressions.items.misc;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.FluidUtil;
 
 import net.minecraft.advancements.CriteriaTriggers;
@@ -35,6 +36,7 @@ public class InfinBucket extends ItemBucket {
 
 	public InfinBucket() {
 		super(Blocks.FLOWING_WATER);
+		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 
 	@Override

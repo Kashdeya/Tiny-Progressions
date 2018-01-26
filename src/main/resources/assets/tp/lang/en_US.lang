@@ -22,19 +22,19 @@ tile.blueberry_bush.name=Blueberry Bush
 tile.maloberry_bush.name=Maloberry Bush
 tile.raspberry_bush.name=Raspberry Bush
 
-item.wither_ring.name=Wither Ring
-tooltip.witherring_1=Protects player from wither
-item.fire_ring.name=Fire Ring
-tooltip.firering_1=Protect player from fire
-item.posion_ring.name=Posion Ring
-tooltip.posionring_1=Protects player from posion
-item.nausea_ring.name=Nausea Ring
-tooltip.nausearing_1=Protects player from nausea
-item.master_ring.name=Master Ring
-tooltip.masterring_1=Protects player from wither
-tooltip.masterring_2=Protect player from fire
-tooltip.masterring_3=Protects player from posion
-tooltip.masterring_4=Protects player from nausea
+item.wither_ring.name=§8Ring Of The Wither
+tooltip.witherring_1=Immunity to Wither
+item.fire_ring.name=§4Ring Of Heat Resistance
+tooltip.firering_1=Immunity to lava and fire
+item.posion_ring.name=§aRing Of Venom
+tooltip.posionring_1=Immunity to Posion
+item.nausea_ring.name=§aRing of Anti Nausea
+tooltip.nausearing_1=Immunity to Nausea
+item.master_ring.name=§aMaster Ring
+tooltip.masterring_1=Immunity to Wither
+tooltip.masterring_2=Immunity to Fire
+tooltip.masterring_3=Immunity to Posion
+tooltip.masterring_4=Immunity to Nausea
 
 item.infin_bucket.name=Infinity Water Bucket
 
@@ -425,7 +425,9 @@ item.dragon_boots.name=Dragon Boots
 
 #Mob Drops
 item.dragon_scale.name=Dragon Scale
+tooltip.scale_1=Drops from Dragons
 item.wither_rib.name=Rib of the Wither
+tooltip.rib_1=Drops from Withers
 
 #Wither Tooltips
 tooltip.witherarmor_1=Full set gives you

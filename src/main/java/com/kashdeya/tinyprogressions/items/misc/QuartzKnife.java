@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items;
+package com.kashdeya.tinyprogressions.items.misc;
 
 import java.util.List;
 
@@ -14,15 +14,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class FlintKnife extends Item {
+public class QuartzKnife extends Item {
 	
-	public FlintKnife() {
+	public QuartzKnife() {
 		super();
 		super.setMaxStackSize(1);
-		this.setMaxDamage(ConfigHandler.FlintKnifeDamage);
+		this.setMaxDamage(ConfigHandler.QuartzKnifeDamage);
 		super.setContainerItem(this);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("flint_knife");
+		this.setUnlocalizedName("quartz_knife");
 	}
 	
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
@@ -45,3 +45,4 @@ public class FlintKnife extends Item {
 		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.knife").getFormattedText());
 	}
 }
+

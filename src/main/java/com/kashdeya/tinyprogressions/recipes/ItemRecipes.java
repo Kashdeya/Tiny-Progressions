@@ -37,8 +37,9 @@ public class ItemRecipes {
 			if (ConfigHandler.wither_ring && ConfigHandler.steel_ingot && (ArmorHandler.wither_armor || ConfigHandler.wither_rib)){
 				WITHER_RING = new ShapedRecipe(new ItemStack(TechItems.wither_ring), 
 						"sms",
-						"a a",
+						"aha",
 						"sms",
+						'h', TechItems.stone_hammer,
 						'm', Items.MILK_BUCKET,
 						'a', TechItems.wither_rib,
 						's', TechItems.steel_ingot);
@@ -46,8 +47,9 @@ public class ItemRecipes {
 			if (ConfigHandler.fire_ring && (ArmorHandler.lava_armor || ConfigHandler.lava_crystal)){
 				FIRE_RING = new ShapedRecipe(new ItemStack(TechItems.fire_ring), 
 						"sms",
-						"a a",
+						"aha",
 						"sms",
+						'h', TechItems.stone_hammer,
 						'm', Items.MAGMA_CREAM,
 						'a', TechItems.lava_crystal,
 						's', TechItems.steel_ingot);
@@ -55,8 +57,9 @@ public class ItemRecipes {
 			if (ConfigHandler.posion_ring && ConfigHandler.MedKit){
 				POSION_RING = new ShapedRecipe(new ItemStack(TechItems.posion_ring), 
 						"sms",
-						"a a",
+						"aha",
 						"sms",
+						'h', TechItems.stone_hammer,
 						'm', Items.SPIDER_EYE,
 						'a', TechItems.med_kit,
 						's', TechItems.steel_ingot);
@@ -64,16 +67,19 @@ public class ItemRecipes {
 			if (ConfigHandler.nausea_ring && ConfigHandler.MedKit){
 				NAUSEA_RING = new ShapedRecipe(new ItemStack(TechItems.nausea_ring), 
 						"sms",
-						"a a",
+						"aha",
 						"sms",
+						'h', TechItems.stone_hammer,
 						'm', Items.GHAST_TEAR,
 						'a', TechItems.med_kit,
 						's', TechItems.steel_ingot);
 			}
 			if (ConfigHandler.wither_ring && ConfigHandler.posion_ring && ConfigHandler.nausea_ring && ConfigHandler.fire_ring){
 				MASTER_RING = new ShapedRecipe(new ItemStack(TechItems.master_ring), 
-						"wf",
-						"np",
+						"w f",
+						" h ",
+						"n p",
+						'h', TechItems.stone_hammer,
 						'w', TechItems.wither_ring,
 						'f', TechItems.fire_ring,
 						'n', TechItems.nausea_ring,
@@ -202,28 +208,30 @@ public class ItemRecipes {
 			
 			// Steel
 			if (ConfigHandler.steel_ingot & (ConfigHandler.tiny_charcoal || ConfigHandler.tiny_coal)){
-				STEEL_INGOT = new ShapedRecipe(new ItemStack(TechItems.steel_ingot), 
+				STEEL_INGOT = new ShapedRecipe(new ItemStack(TechItems.steel_ingot, 2), 
 						"sss",
-						"sis",
+						"ihi",
 						"sss",
+						'h', TechItems.stone_hammer,
 						'i', Items.IRON_INGOT,
 						's', TechItems.tiny_coal);
-				STEEL_INGOT1 = new ShapedRecipe(new ItemStack(TechItems.steel_ingot), 
+				STEEL_INGOT1 = new ShapedRecipe(new ItemStack(TechItems.steel_ingot, 2), 
 						"sss",
-						"sis",
+						"ihi",
 						"sss",
+						'h', TechItems.stone_hammer,
 						'i', Items.IRON_INGOT,
 						's', TechItems.tiny_charcoal);
 			}
 			
 			// Can not be turned off.
 				STONE_HAMMER = new ShapedRecipe(new ItemStack(TechItems.stone_hammer),					
-						"ccc",
+						"cic",
 						"isi",
 						" s ",
 						'i', Items.STRING,
 						's', Items.STICK,
-						'c', "stone");
+						'c', TechBlocks.hardened_stone);
 			
 		}
 

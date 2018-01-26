@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.blocks.misc;
 
-import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.items.misc.ItemBase;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 

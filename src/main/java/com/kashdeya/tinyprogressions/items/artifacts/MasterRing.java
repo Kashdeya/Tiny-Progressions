@@ -43,22 +43,6 @@ public class MasterRing extends Item {
 	}
 	
 	@SubscribeEvent
-	public static void CheckImmuneToFire(LivingHurtEvent event) {
-		if(event.getEntity() instanceof EntityPlayer) {
-			EntityPlayer player = (EntityPlayer) event.getEntity();
-			
-			//you want to add lava ' || event.getSource() == DamageSource.LAVA'
-			if(event.getSource() == DamageSource.ON_FIRE || event.getSource() == DamageSource.IN_FIRE || event.getSource() == DamageSource.LAVA) {
-				if(player.inventory.hasItemStack(new ItemStack(TechItems.fire_ring))) {
-					event.setCanceled(true);
-					if(player.isBurning());
-						player.extinguish();
-				}
-			}
-		}
-	}
-	
-	@SubscribeEvent
 	public static void noMore(LivingAttackEvent event){
 		if(event.getEntity() instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) event.getEntity();

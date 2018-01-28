@@ -120,7 +120,7 @@ item.melon_juice.name=Mealon Juice
 item.pumpkin_juice.name=Pumpkin Juice
 item.raspberry_juice.name=Raspberry Juice
 item.blueberry_juice.name=Blueberry Juice
-item.blackberry_juice.name=Blueberry Juice
+item.blackberry_juice.name=Blackberry Juice
 item.maloberry_juice.name=Maloberry Juice
 
 #Kappa
@@ -563,9 +563,9 @@ item.bsc_iron_axe.name=Iron Sugar Cane Axe
 item.bsc_gold_axe.name=Golden Sugar Cane Axe
 item.bsc_diamond_axe.name=Diamond Sugar Cane Axe
 
-item.bsc_iron_hoe.name=Iron Sugar Cane Shovel
-item.bsc_gold_hoe.name=Golden Sugar Cane Shovel
-item.bsc_diamond_hoe.name=Diamond Sugar Cane Shovel
+item.bsc_iron_hoe.name=Iron Sugar Cane Hoe
+item.bsc_gold_hoe.name=Golden Sugar Cane Hoe
+item.bsc_diamond_hoe.name=Diamond Sugar Cane Hoe
 
 item.bsc_iron_spade.name=Iron Sugar Cane Shovel
 item.bsc_gold_spade.name=Golden Sugar Cane Shovel
@@ -598,10 +598,10 @@ item.nether_gold_axe.name=Golden Netherrack Axe
 item.nether_diamond_axe.name=Diamond Netherrack Axe
 item.nether_axe.name=Netherrack Axe
 
-item.nether_iron_hoe.name=Iron Netherrack Shovel
-item.nether_gold_hoe.name=Golden Netherrack Shovel
-item.nether_diamond_hoe.name=Diamond Netherrack Shovel
-item.nether_hoe.name=Netherrack Shovel
+item.nether_iron_hoe.name=Iron Netherrack Hoe
+item.nether_gold_hoe.name=Golden Netherrack Hoe
+item.nether_diamond_hoe.name=Diamond Netherrack Hoe
+item.nether_hoe.name=Netherrack Hoe
 
 item.nether_iron_spade.name=Iron Netherrack Shovel
 item.nether_gold_spade.name=Golden Netherrack Shovel

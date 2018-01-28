@@ -500,110 +500,110 @@ tile.cyan_lamp.name=青色玻璃灯
 tile.gray_lamp.name=灰色玻璃灯
 tile.green_lamp.name=绿色玻璃灯
 tile.lightblue_lamp.name=淡蓝色玻璃灯
-tile.lime_lamp.name=Lime Lamp
-tile.magenta_lamp.name=Magenta Lamp
-tile.orange_lamp.name=Orange Lamp
-tile.pink_lamp.name=Pink Lamp
-tile.purple_lamp.name=Purple Lamp
-tile.red_lamp.name=Red Lamp
-tile.silver_lamp.name=LightGray Lamp
-tile.white_lamp.name=White Lamp
-tile.yellow_lamp.name=Yellow Lamp
-tile.lamp.name=Lamp
+tile.lime_lamp.name=黄绿色玻璃灯
+tile.magenta_lamp.name=品红色玻璃灯
+tile.orange_lamp.name=橙色玻璃灯
+tile.pink_lamp.name=粉色玻璃灯
+tile.purple_lamp.name=紫色玻璃灯
+tile.red_lamp.name=红色玻璃灯
+tile.silver_lamp.name=淡灰色玻璃灯
+tile.white_lamp.name=白色玻璃灯
+tile.yellow_lamp.name=黄色玻璃灯
+tile.lamp.name=玻璃灯
 
 #Extra Food
-item.raw_bacon.name=Raw Bacon
-item.cooked_bacon.name=Cooked Bacon
-item.monster_jerky.name=Monster Jerky
-item.toasted_bread.name=Toasted Bread
-item.fried_egg.name=Fried Egg
-item.cooked_mushroom_brown.name=Cooked Brown Mushroom
-item.cooked_mushroom_red.name=Cooked Red Mushroom
-item.bacon_eggs.name=Bacon & Eggs
-item.little_candy.name=Candy
-item.cooked_apple.name=Cooked Apple
-item.bread_slice.name=Bread Slice
-item.rabbit_sandwhich.name=Rabbit Sandwich
-item.bacon_eggs_sandwhich.name=Bacon & Egg Sandwich
-item.chicken_sandwhich.name=Chicken Sandwich
-item.beef_sandwhich.name=Beef Sandwich
-item.bacon_sandwhich.name=Bacon Sandwich
-item.bams_pizza.name=Bams Pizza
+item.raw_bacon.name=生腌肉
+item.cooked_bacon.name=烤腌肉
+item.monster_jerky.name=腐肉干
+item.toasted_bread.name=吐司
+item.fried_egg.name=煎蛋
+item.cooked_mushroom_brown.name=烤棕蘑菇
+item.cooked_mushroom_red.name=烤红蘑菇
+item.bacon_eggs.name=煎蛋腌肉
+item.little_candy.name=糖果
+item.cooked_apple.name=烤苹果
+item.bread_slice.name=面包片
+item.rabbit_sandwhich.name=兔肉三明治
+item.bacon_eggs_sandwhich.name=煎蛋腌肉三明治
+item.chicken_sandwhich.name=鸡肉三明治
+item.beef_sandwhich.name=牛肉三明治
+item.bacon_sandwhich.name=腌肉三明治
+item.bams_pizza.name=Bam 披萨
 
 #Repair Tablet
-item.repair_tablet.name=Repair Tablet
-tooltip.tablet_1=Repair items in players inventory
-tooltip.tablet_2=Restores 1 durability every X seconds
+item.repair_tablet.name=万用修理器
+tooltip.tablet_1=自动修复物品栏中损耗耐久的物品
+tooltip.tablet_2=每10秒自动修复1耐久
 
 #bsc
-tile.compressed_sugar_cane.name=Compressed Sugar Cane
-tile.double_compressed_sugar_cane.name=Double Compressed Sugar Cane
-tile.triple_compressed_sugar_cane.name=Triple Compressed Sugar Cane
-tile.quadruple_compressed_sugar_cane.name=Quadruple Compressed Sugar Cane
-tile.quintuple_compressed_sugar_cane.name=Quintuple Compressed Sugar Cane
-tile.sextuple_compressed_sugar_cane.name=Sextuple Compressed Sugar Cane
-tile.septuple_compressed_sugar_cane.name=Septuple Compressed Sugar Cane
-tile.octuple_compressed_sugar_cane.name=Octuple Compressed Sugar Cane
+tile.compressed_sugar_cane.name=压缩甘蔗块
+tile.double_compressed_sugar_cane.name=二重压缩甘蔗块
+tile.triple_compressed_sugar_cane.name=三重压缩甘蔗块
+tile.quadruple_compressed_sugar_cane.name=四重压缩甘蔗块
+tile.quintuple_compressed_sugar_cane.name=五重压缩甘蔗块
+tile.sextuple_compressed_sugar_cane.name=六重压缩甘蔗块
+tile.septuple_compressed_sugar_cane.name=七重压缩甘蔗块
+tile.octuple_compressed_sugar_cane.name=八重压缩甘蔗块
 
-tile.compressed_sugar.name=Compressed Sugar
-tile.double_compressed_sugar.name=Double Compressed Sugar
+tile.compressed_sugar.name=压缩糖块
+tile.double_compressed_sugar.name=二重压缩糖块
 
-item.bsc_rod.name=Sugar Cane Rod
-item.bsc_sugar_cookie.name=Sugar Cookie
+item.bsc_rod.name=甘蔗棍
+item.bsc_sugar_cookie.name=糖果曲奇
 
-item.bsc_iron_sword.name=Iron Sugar Cane Sword
-item.bsc_gold_sword.name=Golden Sugar Cane Sword
-item.bsc_diamond_sword.name=Diamond Sugar Cane Sword
+item.bsc_iron_sword.name=铁质甘蔗剑
+item.bsc_gold_sword.name=金质甘蔗剑
+item.bsc_diamond_sword.name=钻石质甘蔗剑
 
-item.bsc_iron_pickaxe.name=Iron Sugar Cane Pickaxe
-item.bsc_gold_pickaxe.name=Golden Sugar Cane Pickaxe
-item.bsc_diamond_pickaxe.name=Diamond Sugar Cane Pickaxe
+item.bsc_iron_pickaxe.name=铁质甘蔗镐
+item.bsc_gold_pickaxe.name=金质甘蔗镐
+item.bsc_diamond_pickaxe.name=钻石质甘蔗镐
 
-item.bsc_iron_axe.name=Iron Sugar Cane Axe
-item.bsc_gold_axe.name=Golden Sugar Cane Axe
-item.bsc_diamond_axe.name=Diamond Sugar Cane Axe
+item.bsc_iron_axe.name=铁质甘蔗斧
+item.bsc_gold_axe.name=金质甘蔗斧
+item.bsc_diamond_axe.name=钻石质甘蔗斧
 
-item.bsc_iron_hoe.name=Iron Sugar Cane Shovel
-item.bsc_gold_hoe.name=Golden Sugar Cane Shovel
-item.bsc_diamond_hoe.name=Diamond Sugar Cane Shovel
+item.bsc_iron_hoe.name=铁质甘蔗锄
+item.bsc_gold_hoe.name=金质甘蔗锄
+item.bsc_diamond_hoe.name=钻石质甘蔗锄
 
-item.bsc_iron_spade.name=Iron Sugar Cane Shovel
-item.bsc_gold_spade.name=Golden Sugar Cane Shovel
-item.bsc_diamond_spade.name=Diamond Sugar Cane Shovel
+item.bsc_iron_spade.name=铁质甘蔗铲
+item.bsc_gold_spade.name=金质甘蔗铲
+item.bsc_diamond_spade.name=钻石质甘蔗铲
 
 #Nether
-tile.compressed_nether_block.name=Compressed Netherrack
-tile.double_compressed_nether_block.name=Double Compressed Netherrack
-tile.triple_compressed_nether_block.name=Triple Compressed Netherrack
-tile.quadruple_compressed_nether_block.name=Quadruple Compressed Netherrack
-tile.quintuple_compressed_nether_block.name=Quintuple Compressed Netherrack
-tile.sextuple_compressed_nether_block.name=Sextuple Compressed Netherrack
-tile.septuple_compressed_nether_block.name=Septuple Compressed Netherrack
-tile.octuple_compressed_nether_block.name=Octuple Compressed Netherrack
+tile.compressed_nether_block.name=压缩地狱岩
+tile.double_compressed_nether_block.name=二重压缩地狱岩
+tile.triple_compressed_nether_block.name=三重压缩地狱岩
+tile.quadruple_compressed_nether_block.name=四重压缩地狱岩
+tile.quintuple_compressed_nether_block.name=五重压缩地狱岩
+tile.sextuple_compressed_nether_block.name=六重压缩地狱岩
+tile.septuple_compressed_nether_block.name=七重压缩地狱岩
+tile.octuple_compressed_nether_block.name=八重压缩地狱岩
 
-item.nether_rod.name=Netherrack Rod
+item.nether_rod.name=地狱岩棍
 
-item.nether_iron_sword.name=Iron Netherrack Sword
-item.nether_gold_sword.name=Golden Netherrack Sword
-item.nether_diamond_sword.name=Diamond Netherrack Sword
-item.nether_sword.name=Netherrack Sword
+item.nether_iron_sword.name=铁质地狱岩剑
+item.nether_gold_sword.name=金质地狱岩剑
+item.nether_diamond_sword.name=钻石质地狱岩剑
+item.nether_sword.name=地狱岩剑
 
-item.nether_iron_pickaxe.name=Iron Netherrack Pickaxe
-item.nether_gold_pickaxe.name=Golden Netherrack Pickaxe
-item.nether_diamond_pickaxe.name=Diamond Netherrack Pickaxe
-item.nether_pickaxe.name=Netherrack Pickaxe
+item.nether_iron_pickaxe.name=铁质地狱岩镐
+item.nether_gold_pickaxe.name=金质地狱岩镐
+item.nether_diamond_pickaxe.name=钻石质地狱岩镐
+item.nether_pickaxe.name=地狱岩镐
 
-item.nether_iron_axe.name=Iron Netherrack Axe
-item.nether_gold_axe.name=Golden Netherrack Axe
-item.nether_diamond_axe.name=Diamond Netherrack Axe
-item.nether_axe.name=Netherrack Axe
+item.nether_iron_axe.name=铁质地狱岩斧
+item.nether_gold_axe.name=金质地狱岩斧
+item.nether_diamond_axe.name=钻石质地狱岩斧
+item.nether_axe.name=地狱岩斧
 
-item.nether_iron_hoe.name=Iron Netherrack Shovel
-item.nether_gold_hoe.name=Golden Netherrack Shovel
-item.nether_diamond_hoe.name=Diamond Netherrack Shovel
-item.nether_hoe.name=Netherrack Shovel
+item.nether_iron_hoe.name=铁质地狱岩锄
+item.nether_gold_hoe.name=金质地狱岩锄
+item.nether_diamond_hoe.name=钻石质地狱岩锄
+item.nether_hoe.name=地狱岩锄
 
-item.nether_iron_spade.name=Iron Netherrack Shovel
-item.nether_gold_spade.name=Golden Netherrack Shovel
-item.nether_diamond_spade.name=Diamond Netherrack Shovel
-item.nether_spade.name=Netherrack Shovel
+item.nether_iron_spade.name=铁质地狱岩铲
+item.nether_gold_spade.name=金质地狱岩铲
+item.nether_diamond_spade.name=钻石质地狱岩铲
+item.nether_spade.name=地狱岩铲

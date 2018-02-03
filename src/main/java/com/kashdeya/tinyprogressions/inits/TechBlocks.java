@@ -43,6 +43,7 @@ import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
+import com.kashdeya.tinyprogressions.blocks.ores.LavaCrystalOre;
 import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
@@ -86,6 +87,7 @@ public class TechBlocks {
 	public static Block ender_ore;
 	// Lava Crystal Blocks
 	public static Block lava_crystal_block;
+	public static Block lava_crystal_ore;
 	// Lava Block
 	public static Block lava_block;
 	// Water Block
@@ -331,8 +333,9 @@ public class TechBlocks {
 		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
 		}
-		if (ArmorHandler.lava_armor || ConfigHandler.lava_crystal) {
+		if (ConfigHandler.lava_crystal) {
 			lava_crystal_block = new LavaCrystal();
+			lava_crystal_ore = new LavaCrystalOre();
 		}
 		// FMF Block
 		if(ConfigHandler.angel_block) {

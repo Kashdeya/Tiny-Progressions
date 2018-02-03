@@ -16,7 +16,7 @@ public class FoodRecipes {
 	public static IRecipe BSC_SUGAR_COOKIE;
 	public static IRecipe BAMS_PIZZA;
 	
-	public static IRecipe JUICER;
+	public static IRecipe JUICER, PEAR_JUICE, PEACH_JUICE, PEAR_JUICE2, PEACH_JUICE2;
 	public static IRecipe APPLE_JUICE, CARROT_JUICE, POTATO_JUICE, BEET_JUICE, CACTUS_JUICE, SLIME_JUICE, WHEAT_JUICE, MELON_JUICE, PUMPKIN_JUICE;
 	public static IRecipe APPLE_JUICE2, CARROT_JUICE2, POTATO_JUICE2, BEET_JUICE2, CACTUS_JUICE2, SLIME_JUICE2, WHEAT_JUICE2, MELON_JUICE2, PUMPKIN_JUICE2;
 	
@@ -45,12 +45,21 @@ public class FoodRecipes {
                 " b ",
 				'b', Items.BREAD);
 		}
-		// Juicer
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
+		// Juicer (Can not be turned off)
 			JUICER = new ShapedRecipe(new ItemStack(TechFoods.juicer), "l",
                 "s",
 				's', "stone",
 				'l', Blocks.STONE_BUTTON);
+		
+		// Extra Drop w/o Bottles
+		if (!ConfigHandler.extra_drop_bottle){
+			PEAR_JUICE = new ShapelessRecipe(new ItemStack(TechFoods.pear_juice), "juicer", TechFoods.plump_pear);
+			PEACH_JUICE = new ShapelessRecipe(new ItemStack(TechFoods.peach_juice), "juicer", TechFoods.plump_peach);
+		}
+		// Extra Drops Bottles
+		if (ConfigHandler.extra_drop_bottle){
+			PEAR_JUICE2 = new ShapelessRecipe(new ItemStack(TechFoods.pear_juice), "juicer", TechFoods.plump_pear, "glassBottle");
+			PEACH_JUICE2 = new ShapelessRecipe(new ItemStack(TechFoods.peach_juice), "juicer", TechFoods.plump_peach, "glassBottle");
 		}
 		
 		// Juices WO Bottles

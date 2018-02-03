@@ -31,7 +31,9 @@ public class TechFoods {
 	public static Item wheat_juice;
 	public static Item melon_juice;
 	public static Item pumpkin_juice;
-	
+	public static Item peach_juice;
+	public static Item pear_juice;
+	// MISC
 	public static Item raw_bacon;
 	public static Item cooked_bacon;
 	public static Item monster_jerky;
@@ -48,7 +50,6 @@ public class TechFoods {
 	public static Item cooked_apple;
 	public static Item rabbit_sandwhich;
 	public static Item bacon_eggs_sandwhich;
-	
 	// Extra Juices
 	public static Item raspberry_juice;
 	public static Item blueberry_juice;
@@ -58,16 +59,22 @@ public class TechFoods {
 	public static Item blueberry_berry;
 	public static Item blackberry_berry;
 	public static Item maloberry_berry;
-	
 	// bsc cookie
 	public static Item bsc_sugar_cookie;
-	
 	// Bams Pizza
 	public static Item bams_pizza;
-	
+	// Extra Drops
+	public static Item plump_pear;
+	public static Item plump_peach;
 	
 	public static void init(){
-		
+		// Extra Drops
+		if (ConfigHandler.extra_drops){
+			plump_pear = new FoodBase(3, 0.25F, true).setOreDictName("cropPear").setUnlocalizedName("plump_pear");
+			plump_peach = new FoodBase(3, 0.25F, true).setOreDictName("cropPeach").setUnlocalizedName("plump_peach");
+			pear_juice = new DrinkBase(ConfigHandler.pearAmount, ConfigHandler.pearSaturation, false).setUnlocalizedName("pear_juice");
+			peach_juice = new DrinkBase(ConfigHandler.peachAmount, ConfigHandler.peachSaturation, false).setUnlocalizedName("peach_juice");
+		}
 		// bsc cookie
 		if (ConfigHandler.bsc_sugar_cookie){
 			bsc_sugar_cookie = new FoodBase(1, 1.0F, true).setUnlocalizedName("bsc_sugar_cookie");
@@ -83,16 +90,14 @@ public class TechFoods {
 			blueberry_juice = new DrinkBase(ConfigHandler.BlueberryAmount, ConfigHandler.BlueberrySaturation, false).setUnlocalizedName("blueberry_juice");
 			blackberry_juice = new DrinkBase(ConfigHandler.BlackberryAmount, ConfigHandler.BlackberrySaturation, false).setUnlocalizedName("blackberry_juice");
 			maloberry_juice = new DrinkBase(ConfigHandler.MaloberryAmount, ConfigHandler.MaloberrySaturation, false).setUnlocalizedName("maloberry_juice");
-			raspberry_berry = new FoodBase(2, 0.15F, true).setOreDictName("cropRaspberry").setUnlocalizedName("raspberry_berry");
-		    blueberry_berry = new FoodBase(2, 0.15F, true).setOreDictName("cropBlueberry").setUnlocalizedName("blueberry_berry");
-		    blackberry_berry = new FoodBase(2, 0.15F, true).setOreDictName("cropBlackberry").setUnlocalizedName("blackberry_berry");
-		    maloberry_berry = new FoodBase(2, 0.15F, true).setOreDictName("cropMaloberry").setUnlocalizedName("maloberry_berry");
+			raspberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropRaspberry").setUnlocalizedName("raspberry_berry");
+		    blueberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropBlueberry").setUnlocalizedName("blueberry_berry");
+		    blackberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropBlackberry").setUnlocalizedName("blackberry_berry");
+		    maloberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropMaloberry").setUnlocalizedName("maloberry_berry");
 		}
 		
-		// Juicer
-		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles || ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
+		// Juicer (Can not be turned off)
 			juicer = new ItemJuicer().setUnlocalizedName("juicer");
-		}
 		
 		// Juices
 		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
@@ -109,19 +114,19 @@ public class TechFoods {
 		
 		// Apples
 		if (ConfigHandler.DiamondApple) {
-			diamond_apple = new DiamondApple(4, 1.2F, false);
+			diamond_apple = new DiamondApple(4, 1.0F, false);
 		}
 		if (ConfigHandler.EmeraldApple) {
-			emerald_apple = new EmeraldApple(4, 1.2F, false);
+			emerald_apple = new EmeraldApple(4, 1.0F, false);
 		}
 		if (ConfigHandler.iron_apple) {
-			iron_apple = new IronApple(4, 1.2F, false);
+			iron_apple = new IronApple(4, 1.0F, false);
 		}
  		if (ConfigHandler.redstone_apple) {
-			redstone_apple = new RedstoneApple(4, 1.2F, false);
+			redstone_apple = new RedstoneApple(4, 1.0F, false);
 		}
 		if (ConfigHandler.ApplePro) {
-			golden_apple = new GoldenApple(4, 1.2F, false);
+			golden_apple = new GoldenApple(4, 1.0F, false);
 		}
 		
 		// Extra Food
@@ -139,8 +144,8 @@ public class TechFoods {
 		    fried_egg = new FoodBase(4, 0.6F, true).setUnlocalizedName("fried_egg");
 	    }
 	    if (ConfigHandler.CookedMushrooms){
-		    cooked_mushroom_brown = new FoodBase(2, 03F, false).setUnlocalizedName("cooked_mushroom_brown");
-		    cooked_mushroom_red = new FoodBase(2, 03F, false).setUnlocalizedName("cooked_mushroom_red");
+		    cooked_mushroom_brown = new FoodBase(2, 0.3F, false).setUnlocalizedName("cooked_mushroom_brown");
+		    cooked_mushroom_red = new FoodBase(2, 0.3F, false).setUnlocalizedName("cooked_mushroom_red");
 	    }
 	    if (ConfigHandler.BaconEggs){
 		    bacon_eggs = new FoodBase(6, 0.7F, false).setUnlocalizedName("bacon_eggs");
@@ -149,15 +154,15 @@ public class TechFoods {
 		    little_candy = new FoodBase(1, 0.6F, true).setUnlocalizedName("little_candy");
 	    }
 	    if (ConfigHandler.CookedApple){
-		    cooked_apple = new FoodBase(8, 8.0F, true).setUnlocalizedName("cooked_apple");
+		    cooked_apple = new FoodBase(8, 0.75F, true).setUnlocalizedName("cooked_apple");
 	    }
 	    if (ConfigHandler.Sandwiches){
 	    	bread_slice = new FoodBase(1, 0.1F, true).setUnlocalizedName("bread_slice");
-		    rabbit_sandwhich = new FoodBase(8, 2.0F, true).setUnlocalizedName("rabbit_sandwhich");
-		    bacon_eggs_sandwhich = new FoodBase(9, 11.0F, true).setUnlocalizedName("bacon_eggs_sandwhich");
-		    chicken_sandwhich = new FoodBase(8, 2.0F, true).setUnlocalizedName("chicken_sandwhich");
-		    beef_sandwhich = new FoodBase(10, 2.0F, true).setUnlocalizedName("beef_sandwhich");
-		    bacon_sandwhich = new FoodBase(6, 2.0F, true).setUnlocalizedName("bacon_sandwhich");
+		    rabbit_sandwhich = new FoodBase(8, 1.0F, true).setUnlocalizedName("rabbit_sandwhich");
+		    bacon_eggs_sandwhich = new FoodBase(9, 1.0F, true).setUnlocalizedName("bacon_eggs_sandwhich");
+		    chicken_sandwhich = new FoodBase(8, 1.0F, true).setUnlocalizedName("chicken_sandwhich");
+		    beef_sandwhich = new FoodBase(10, 1.0F, true).setUnlocalizedName("beef_sandwhich");
+		    bacon_sandwhich = new FoodBase(6, 1.0F, true).setUnlocalizedName("bacon_sandwhich");
 	    }
 		
 	}

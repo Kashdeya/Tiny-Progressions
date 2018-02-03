@@ -37,13 +37,13 @@
         }
     ],
     "textures": {
-        "particle": "tp:blocks/growth_upgrade",
-        "t1": "tp:blocks/growth_upgrade_down",
-		"t2": "tp:blocks/growth_upgrade_up",
-		"t3": "tp:blocks/growth_upgrade_north",
-		"t4": "tp:blocks/growth_upgrade_south",
-		"t5": "tp:blocks/growth_upgrade_west",
-		"t6": "tp:blocks/growth_upgrade_east",
+        "particle": "tp:blocks/growth_block",
+        "t1": "tp:blocks/growth_block_down",
+		"t2": "tp:blocks/growth_block_up",
+		"t3": "tp:blocks/growth_block_north",
+		"t4": "tp:blocks/growth_block_south",
+		"t5": "tp:blocks/growth_block_west",
+		"t6": "tp:blocks/growth_block_east",
 		"t7": "blocks/water_still"
     }
 }

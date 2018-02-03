@@ -1,6 +1,7 @@
 package com.kashdeya.tinyprogressions.items.misc;
 
 import java.util.List;
+import java.util.Random;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
@@ -34,13 +35,19 @@ public class MedKit extends Item {
 		this.setMaxStackSize(ConfigHandler.healStack);
 	}
 	
+	@Override
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
 		if (entityLiving instanceof EntityPlayer) {
-			EntityPlayerMP entityplayer = (EntityPlayerMP)entityLiving;
-	        CriteriaTriggers.CONSUME_ITEM.trigger(entityplayer, stack);
-	        this.onFoodEaten(stack, worldIn, entityplayer);
-	        worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
-	        worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_HURT, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.7F);
+			Random random = new Random();
+			EntityPlayer entityplayer = (EntityPlayer)entityLiving;
+	        this.onItemUse(stack, worldIn, entityplayer);
+	        worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
+	        
+	        if (entityplayer instanceof EntityPlayerMP)
+            {
+                CriteriaTriggers.CONSUME_ITEM.trigger((EntityPlayerMP)entityplayer, stack);
+            }
+	        
 	    }
 		
 		if (entityLiving instanceof EntityPlayer && !((EntityPlayer)entityLiving).capabilities.isCreativeMode) {
@@ -49,7 +56,7 @@ public class MedKit extends Item {
 		return stack;
 	}
 	
-	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
+	protected void onItemUse(ItemStack stack, World worldIn, EntityPlayer player) {
 		if (ConfigHandler.enableRegeneration){
 			player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, ConfigHandler.healLevel, false, false));
 		}
@@ -57,15 +64,19 @@ public class MedKit extends Item {
 		    player.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1 * 20, 0, false, false));
 		}
 	}
-	  
+	
+	// ConfigHandler.useDuration
+	@Override
 	public int getMaxItemUseDuration(ItemStack stack) {
-	    return ConfigHandler.useDuration;
+	    return 16;
 	}
 	  
+	@Override
 	public EnumAction getItemUseAction(ItemStack stack) {
 	    return EnumAction.BOW;
 	}
-	  
+	
+	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		playerIn.setActiveHand(handIn);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));

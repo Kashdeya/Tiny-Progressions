@@ -3,14 +3,21 @@ package com.kashdeya.tinyprogressions.recipes;
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.registry.recipes.ShapedRecipe;
 import com.kashdeya.tinyprogressions.registry.recipes.ShapelessRecipe;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.potion.PotionUtils;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class OtherRecipes
@@ -19,10 +26,24 @@ public class OtherRecipes
 	public static IRecipe FLINT1, INFIN_WATER_BUCKET;
 	public static IRecipe FLINT_KNIFE, QUARTZ_KNIFE, QUARTZ_DUST;
 	public static IRecipe MYCELIUM_SEEDS;
-	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1;
+	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1, WUB_JUICE;
 	
 	public static void init()
 	{
+		// WUB WUB JUICE
+		if(ConfigHandler.vasholine){
+			WUB_JUICE = new ShapedRecipe(FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("vasholine"), Fluid.BUCKET_VOLUME)),
+					"prp",
+					"wbg",
+					"psp",
+					'p', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER),
+					'r', new ItemStack(Items.REDSTONE),
+					'w', new ItemStack(Items.SPECKLED_MELON),
+					'b', new ItemStack(Items.BUCKET),
+					'g', new ItemStack(TechItems.corrupted_shard),
+					's', new ItemStack(Items.SUGAR));
+		}
+		
 		// Infin Water Bucket
 		if (ConfigHandler.infin_bucket){
 			INFIN_WATER_BUCKET = new ShapedRecipe(new ItemStack(TechItems.infin_bucket), 
@@ -33,6 +54,7 @@ public class OtherRecipes
 					'w', new ItemStack(Items.WATER_BUCKET),
 					'e', new ItemStack(Items.ENDER_EYE));
 		}
+		
 		// Pouch
 		if (ConfigHandler.pouch) {
 		    POUCH = new ShapedRecipe(new ItemStack(TechItems.pouch), 
@@ -78,7 +100,7 @@ public class OtherRecipes
 		}
 		
 		// Flint Ingot WIP
-		if (ArmorHandler.FlintArmor) {
+		if (ConfigHandler.FlintBlock) {
 			GameRegistry.addSmelting(TechBlocks.flint_block, new ItemStack(TechItems.flint_ingot), 1.0F);
 		}
 		

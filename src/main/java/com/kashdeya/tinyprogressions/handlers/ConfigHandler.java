@@ -1,17 +1,13 @@
 package com.kashdeya.tinyprogressions.handlers;
 
-public class ConfigHandler {
+public class ConfigHandler {	
 	// Rings
-	public static boolean wither_ring = true;
-	public static boolean fire_ring = true;
-	public static boolean posion_ring = true;
-	public static boolean nausea_ring = true;
-	public static boolean master_ring = true;
+	public static boolean artifact_rings = true;
 	
-	public static boolean lava_crystal = true;
-	
+	// Wither Rib
 	public static boolean wither_rib = true;
 	
+	// Infinity Water Bucket
 	public static boolean infin_bucket = true;
 	
 	// Lava Infused Stone Block
@@ -19,6 +15,18 @@ public class ConfigHandler {
 	
 	// steel
 	public static boolean steel_ingot = true;
+	
+	// Extra Drops
+	public static boolean extra_drops = true;
+	public static boolean extra_drop_bottle = true;
+	public static int pearAmount = 3;
+	public static float pearSaturation = 0.08F;
+	public static int peachAmount = 3;
+	public static float peachSaturation = 0.08F;
+	public static float pearDropsChance = 1.0F;
+	public static int pearDropsAmmount = 1;
+	public static float peachDropsChance = 1.0F;
+	public static int peachDropsAmmount = 1;
 	
 	// asphalt
 	public static boolean asphalt = true;
@@ -91,13 +99,14 @@ public class ConfigHandler {
 	public static boolean ExtraJuices = true;
 	public static boolean ExtraJuicesBottles = true;
 	public static int RaspberryAmount = 3;
-	public static float RaspberrySaturation = 0.8F;
+	public static float RaspberrySaturation = 0.08F;
 	public static int BlueberryAmount = 3;
-	public static float BlueberrySaturation = 0.8F;
+	public static float BlueberrySaturation = 0.08F;
 	public static int BlackberryAmount = 3;
-	public static float BlackberrySaturation = 0.8F;
+	public static float BlackberrySaturation = 0.08F;
 	public static int MaloberryAmount = 3;
-	public static float MaloberrySaturation = 0.8F;
+	public static float MaloberrySaturation = 0.08F;
+	public static int berryPlantRarity = 5;
 	
 	// Withered Block
 	public static boolean WitheredBlock = true;
@@ -106,9 +115,9 @@ public class ConfigHandler {
 	
 	// Watering cans
 	public static boolean WateringCan = true;
-	public static int WateringCanChance = 25;
+	public static int WateringCanChance = 50;
 	public static boolean WateringCanUpgrade = true;
-	public static int WateringCanUpgradeChance = 75;
+	public static int WateringCanUpgradeChance = 100;
 	
 	// Lamps & Glowstone
 	public static boolean ColorLamps = true;
@@ -184,9 +193,15 @@ public class ConfigHandler {
 	public static boolean QuartzKnife = true;
 	public static int QuartzKnifeDamage = 128;
 	
-	// Deco Blocks
+	// Charcoal
 	public static boolean CharcoalBlock = true;
 	public static boolean CharcoalWorldgen = true;
+	public static int charcoal_frequency = 5;
+	public static int charcoal_min = 32;
+	public static int charcoal_max = 48;
+	public static int charcoal_size = 20;
+	
+	// Deco Blocks
 	public static boolean DirtyGlass = true;
 	public static boolean AndesiteBrick = true;
 	public static boolean DioriteBrick = true;
@@ -231,17 +246,12 @@ public class ConfigHandler {
 	// Flint Items & More
 	public static boolean FlintTools = true;
 	public static boolean FlintBlock = true;
-	
-	// Flint Knife
 	public static boolean FlintKnife = true;
 	public static int FlintKnifeDamage = 128;
 	
 	// Bone Items & More
 	public static boolean BoneTools = true;
 	public static boolean BoneBlock = true;
-	
-	// Remove Items
-	public static boolean RemoveItems = true;
 	
 	// Emerald
 	public static boolean emerald_axe = true;
@@ -324,21 +334,26 @@ public class ConfigHandler {
 	public static int ToastedAmount = 4;
 	public static float ToastedSaturation = 1.0F;
 	
+	// Lava Crystal
+	public static boolean lava_crystal = true;
+	public static int lava_crystal_frequency = 5;
+	public static int lava_crystal_min = 1;
+	public static int lava_crystal_max = 48;
+	public static int lava_crystal_size = 3;
 	// Lava Block
 	public static boolean lava_block = true;
 	public static boolean lava_block_recipe = true;
-	public static int lava_block_frequency = 50;
-	public static int lava_block_min = 1;
-	public static int lava_block_max = 64;
-	public static int lava_block_size = 7;
+	public static int lava_block_frequency = 5;
+	public static int lava_block_min = 16;
+	public static int lava_block_max = 32;
+	public static int lava_block_size = 3;
 	
 	// Water Block
 	public static boolean water_block = true;
-	public static boolean water_block_recipe = true;
-	public static int water_block_frequency = 50;
-	public static int water_block_min = 1;
-	public static int water_block_max = 64;
-	public static int water_block_size = 7;
+	public static int water_block_frequency = 5;
+	public static int water_block_min = 32;
+	public static int water_block_max = 48;
+	public static int water_block_size = 3;
 	
 	// Repair Tablet
 	public static boolean repair_tablet;

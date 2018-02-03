@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.util.PlacementUtil;
 
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
@@ -18,8 +19,8 @@ public class PlantGen implements IWorldGenerator{
 
     @Override
     public void generate(Random random, int chunk_X, int chunk_Z, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-    	int x = chunk_X * 16 + random.nextInt(16);
-        int z = chunk_Z * 16 + random.nextInt(16);
+    	int x = chunk_X * 16 + random.nextInt(8);
+        int z = chunk_Z * 16 + random.nextInt(8);
         
         final BlockPos blockPos = world.getHeight(new BlockPos(x, 0, z));
         final BlockPos chunkPos = new BlockPos(x, 0, z);
@@ -54,9 +55,9 @@ public class PlantGen implements IWorldGenerator{
     private void generatePlant(Block block, World world, BlockPos pos, Random random) {
 
         for (int tryNum = 0; tryNum < 2; tryNum++) {
-            int posX = (pos.getX() + random.nextInt(8));
+            int posX = (pos.getX() + random.nextInt(16));
             int posY = (pos.getY());
-            int posZ = (pos.getZ() + random.nextInt(8));
+            int posZ = (pos.getZ() + random.nextInt(16));
 
             final BlockPos newPos = new BlockPos(posX, posY, posZ);
 
@@ -68,12 +69,11 @@ public class PlantGen implements IWorldGenerator{
     
     private void generateBerryPlant(Block block, World world, BlockPos pos, Random random) {
 
-        for (int tryNum = 0; tryNum < 1; tryNum++) {
-            int posX = (pos.getX() + random.nextInt(8));
-            int posY = (pos.getY());
-            int posZ = (pos.getZ() + random.nextInt(8));
+        if (random.nextFloat() < ConfigHandler.berryPlantRarity / 10.0f) {
+            final int posX = (pos.getX() + random.nextInt(16));
+            final int posZ = (pos.getZ() + random.nextInt(16));
 
-            final BlockPos newPos = new BlockPos(posX, posY, posZ);
+            final BlockPos newPos = PlacementUtil.BlockPos(world, posX, posZ);
 
             if (block.canPlaceBlockAt(world, newPos)) {
                 world.setBlockState(newPos, block.getDefaultState(), 2);

@@ -23,8 +23,17 @@ item.blueberry_berry.name=Blueberry
 item.maloberry_berry.name=Maloberry
 item.raspberry_berry.name=Raspberry
 
+#Corruption
+item.corrupted_shard.name=Corrupted Shard
+item.corrupted_haxa.name=Corrupted Hexa
+item.corrupted_gem.name=Corrupted Gem
+tooltip.warning_1=Keep away from mouth and eyes!
+tooltip.shard_1=Used to craft Low level Rings and more!
+tooltip.hexa_1=Used to craft Mid level Rings and more!
+tooltip.gem_1=Used to craft High level Rings  and more!
 
 #Artifacts
+item.starter_ring.name=Steel Band
 item.wither_ring.name=§8Ring Of The Wither
 tooltip.witherring_1=Immunity to Wither
 item.fire_ring.name=§4Ring Of Heat Resistance
@@ -46,6 +55,13 @@ tooltip.infinbucket_1=Provides a lot of water
 #Steel
 tile.steel_block.name=Steel Block
 item.steel_ingot.name=Steel Ingot
+
+#Dust
+item.obsidian_dust.name=Obsidian Dust
+
+#Tree Drops
+item.plump_pear.name=Plump Pear
+item.plump_peach.name=Plump Peach
 
 #Infused Lava Block
 tile.lava_infused_stone.name=Lava Infused Stone
@@ -82,8 +98,8 @@ tile.andesite_brick.name=Andesite Brick
 tile.smooth_endstone.name=Smooth EndStone
 tile.old_reed.name=Dried up Reed
 item.dead_reed.name=Dried up Sugar cane
-tile.lava_block.name=Lavastone
-tile.water_block.name=Waterstone
+tile.lava_block.name=Lava Source Stone
+tile.water_block.name=Water Source Stone
 tile.soul_sandstone.name=Soul Sandstone
 
 #Hardened Stone
@@ -120,8 +136,10 @@ item.melon_juice.name=Mealon Juice
 item.pumpkin_juice.name=Pumpkin Juice
 item.raspberry_juice.name=Raspberry Juice
 item.blueberry_juice.name=Blueberry Juice
-item.blackberry_juice.name=Blueberry Juice
+item.blackberry_juice.name=Blackberry Juice
 item.maloberry_juice.name=Maloberry Juice
+item.pear_juice.name=Pear juice
+item.peach_juice.name=Peach Juice
 
 #Kappa
 item.kappa_pick.name=Kappa Pick
@@ -412,6 +430,7 @@ item.lava_boots.name=Lava Boots
 #Lava Crystal
 item.lava_crystal.name=Lava Crystal
 tile.lava_crystal_block.name=Lava Crystal Block
+tile.lava_crystal_ore.name=Lava Crystal Ore
 
 #Lava Armor Tooltip
 tooltip.lavaarmor_1=When wearing full suit!
@@ -563,9 +582,9 @@ item.bsc_iron_axe.name=Iron Sugar Cane Axe
 item.bsc_gold_axe.name=Golden Sugar Cane Axe
 item.bsc_diamond_axe.name=Diamond Sugar Cane Axe
 
-item.bsc_iron_hoe.name=Iron Sugar Cane Shovel
-item.bsc_gold_hoe.name=Golden Sugar Cane Shovel
-item.bsc_diamond_hoe.name=Diamond Sugar Cane Shovel
+item.bsc_iron_hoe.name=Iron Sugar Cane Hoe
+item.bsc_gold_hoe.name=Golden Sugar Cane Hoe
+item.bsc_diamond_hoe.name=Diamond Sugar Cane Hoe
 
 item.bsc_iron_spade.name=Iron Sugar Cane Shovel
 item.bsc_gold_spade.name=Golden Sugar Cane Shovel
@@ -598,10 +617,10 @@ item.nether_gold_axe.name=Golden Netherrack Axe
 item.nether_diamond_axe.name=Diamond Netherrack Axe
 item.nether_axe.name=Netherrack Axe
 
-item.nether_iron_hoe.name=Iron Netherrack Shovel
-item.nether_gold_hoe.name=Golden Netherrack Shovel
-item.nether_diamond_hoe.name=Diamond Netherrack Shovel
-item.nether_hoe.name=Netherrack Shovel
+item.nether_iron_hoe.name=Iron Netherrack Hoe
+item.nether_gold_hoe.name=Golden Netherrack Hoe
+item.nether_diamond_hoe.name=Diamond Netherrack Hoe
+item.nether_hoe.name=Netherrack Hoe
 
 item.nether_iron_spade.name=Iron Netherrack Shovel
 item.nether_gold_spade.name=Golden Netherrack Shovel

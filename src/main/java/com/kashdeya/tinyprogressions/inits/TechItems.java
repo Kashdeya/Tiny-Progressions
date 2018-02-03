@@ -7,6 +7,9 @@ import com.kashdeya.tinyprogressions.items.artifacts.MasterRing;
 import com.kashdeya.tinyprogressions.items.artifacts.NauseaRing;
 import com.kashdeya.tinyprogressions.items.artifacts.PosionRing;
 import com.kashdeya.tinyprogressions.items.artifacts.WitherRing;
+import com.kashdeya.tinyprogressions.items.misc.CorruptedGem;
+import com.kashdeya.tinyprogressions.items.misc.CorruptedHexa;
+import com.kashdeya.tinyprogressions.items.misc.CorruptedShard;
 import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
 import com.kashdeya.tinyprogressions.items.misc.FoodBase;
 import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
@@ -33,6 +36,7 @@ public class TechItems {
 	public static Item posion_ring;
 	public static Item nausea_ring;
 	public static Item master_ring;
+	public static Item starter_ring;
 	// Watering Cans
 	public static Item watering_can;
 	public static Item watering_can_upgrade;
@@ -82,6 +86,12 @@ public class TechItems {
 	public static Item steel_ingot;
 	// Infin Water Bucket
 	public static Item infin_bucket;
+	// Corrupted
+	public static Item corrupted_shard;
+	public static Item corrupted_hexa;
+	public static Item corrupted_gem;
+	// Dust
+	public static Item obsidian_dust;
 		
 	public static void init() {
 		// Infin Water Bucket
@@ -89,23 +99,20 @@ public class TechItems {
 			infin_bucket = new InfinBucket().setUnlocalizedName("infin_bucket");
 		}
 		// Master Ring
-		if (ConfigHandler.master_ring && ConfigHandler.nausea_ring && ConfigHandler.posion_ring && ConfigHandler.fire_ring && ConfigHandler.wither_ring){
+		if (ConfigHandler.artifact_rings){
+			starter_ring = new ItemBase().setUnlocalizedName("starter_ring");
 			master_ring = new MasterRing().setUnlocalizedName("master_ring");
-		}
 		// Nausea Ring
-		if (ConfigHandler.nausea_ring){
 			nausea_ring = new NauseaRing().setUnlocalizedName("nausea_ring");
-		}
 		// Posion Ring
-		if (ConfigHandler.posion_ring){
 			posion_ring = new PosionRing().setUnlocalizedName("posion_ring");
 		}
 		// Fire Ring
-		if (ConfigHandler.fire_ring && ConfigHandler.lava_crystal){
+		if (ConfigHandler.artifact_rings && ConfigHandler.lava_crystal){
 			fire_ring = new FireRing().setUnlocalizedName("fire_ring");
 		}
 		// Wither Ring
-		if (ConfigHandler.wither_ring && ConfigHandler.steel_ingot){
+		if (ConfigHandler.artifact_rings && ConfigHandler.steel_ingot){
 			wither_ring = new WitherRing().setUnlocalizedName("wither_ring");
 		}
 		// Steel
@@ -228,6 +235,11 @@ public class TechItems {
 	    }
 	    
 	    // Can not be turned off
+	    obsidian_dust = new ItemBase().setOreDictName("dustObsidian").setUnlocalizedName("obsidian_dust");
 	    stone_hammer = new ItemStay().setUnlocalizedName("stone_hammer");
+	    // Corrupted
+	    corrupted_shard = new CorruptedShard().setOreDictName("shardCorrupted").setUnlocalizedName("corrupted_shard");
+	    corrupted_hexa = new CorruptedHexa().setOreDictName("hexaCorrupted").setUnlocalizedName("corrupted_hexa");
+	    corrupted_gem = new CorruptedGem().setOreDictName("gemCorrupted").setUnlocalizedName("corrupted_gem");
 	}
 }

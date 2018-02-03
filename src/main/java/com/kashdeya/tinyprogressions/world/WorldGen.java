@@ -34,7 +34,7 @@ public class WorldGen implements IWorldGenerator {
     		this.water_block = new WorldGenMinable(TechBlocks.water_block.getDefaultState(), ConfigHandler.water_block_size, BlockMatcher.forBlock(Blocks.STONE));
     	}
     	if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
-    		this.charcoal_block = new WorldGenMinable(TechBlocks.charcoal_block.getDefaultState(), 20, BlockMatcher.forBlock(Blocks.MAGMA));
+    		this.charcoal_block = new WorldGenMinable(TechBlocks.charcoal_block.getDefaultState(), ConfigHandler.charcoal_size, BlockMatcher.forBlock(Blocks.MAGMA));
     	}
     }
     
@@ -73,7 +73,7 @@ public class WorldGen implements IWorldGenerator {
     	  break;
       case -1:
     	  if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
-    		  runGenerator(this.charcoal_block, world, random, chunkX, chunkZ, 15, 0, 256);
+    		  runGenerator(this.charcoal_block, world, random, chunkX, chunkZ, ConfigHandler.charcoal_frequency, ConfigHandler.charcoal_min, ConfigHandler.charcoal_max);
     	  }
     	  break;
       }

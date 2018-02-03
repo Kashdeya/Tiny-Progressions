@@ -73,6 +73,7 @@ public class TinyProgressions extends ModRegistry {
 		TinyConfig.initToolsWeapons();
 		TinyConfig.initFood();
 		TinyConfig.initExtra();
+		TinyConfig.initOres();
 		ModFluids.init();
 		
 		TechBlocks.init();

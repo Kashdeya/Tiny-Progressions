@@ -80,7 +80,7 @@ public class ScytheMain extends ItemSword {
     		      for (int l = -1; l < 2; l++)
     		      {
     		        BlockPos blockState = new BlockPos(pos.add(k, 0, l));
-    		        if ((worldIn.getBlockState(blockState).getBlock() instanceof IGrowable))
+    		        if (!worldIn.isRemote && (worldIn.getBlockState(blockState).getBlock() instanceof IGrowable))
     		        {
     		          IGrowable cropBlock = (IGrowable)worldIn.getBlockState(blockState).getBlock();
     		          IBlockState cropState = worldIn.getBlockState(blockState);
@@ -89,9 +89,9 @@ public class ScytheMain extends ItemSword {
     		            worldIn.destroyBlock(blockState, true);
     		            worldIn.setBlockState(blockState, cropState.getBlock().getDefaultState());
     		            itemstack.setItemDamage(itemstack.getItemDamage() + 1);
-    		            if (itemstack.getItemDamage() >= itemstack.getMaxDamage())
+    		            if (itemstack.getItemDamage() >= itemstack.getMaxDamage() && !itemstack.isEmpty())
     		            {
-    		              playerIn.setHeldItem(hand, null);
+    		              playerIn.setHeldItem(hand, ItemStack.EMPTY);
     		              return super.onItemUse(playerIn, worldIn, pos, hand, facing, hitX, hitY, hitZ);
     		            }
     		          }

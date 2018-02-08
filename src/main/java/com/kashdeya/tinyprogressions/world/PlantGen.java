@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.util.PlacementUtil;
 
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
@@ -70,10 +69,11 @@ public class PlantGen implements IWorldGenerator{
     private void generateBerryPlant(Block block, World world, BlockPos pos, Random random) {
 
         if (random.nextFloat() < ConfigHandler.berryPlantRarity / 10.0f) {
-            final int posX = (pos.getX() + random.nextInt(16));
-            final int posZ = (pos.getZ() + random.nextInt(16));
+            int posX = (pos.getX() + random.nextInt(16));
+            int posY = (pos.getY());
+            int posZ = (pos.getZ() + random.nextInt(16));
 
-            final BlockPos newPos = PlacementUtil.BlockPos(world, posX, posZ);
+            final BlockPos newPos = new BlockPos(posX, posY, posZ);
 
             if (block.canPlaceBlockAt(world, newPos)) {
                 world.setBlockState(newPos, block.getDefaultState(), 2);

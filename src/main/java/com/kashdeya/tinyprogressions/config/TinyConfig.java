@@ -339,7 +339,7 @@ public class TinyConfig {
 		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", " Scythes", false, "Enable Stone Scythe?");
 		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", " Scythes", false, "Enable Golden Scythe?");
 		ConfigHandler.iron_scythe = config.getBoolean("Iron Scythe", " Scythes", false, "Enable Iron Scythe?");
-		ConfigHandler.diamond_scythe = config.getBoolean("Diamond Scythe", " Scythes", false, "Enable Diamond Scythe?");
+		ConfigHandler.diamond_scythe = config.getBoolean("Diamond Scythe", " Scythes", true, "Enable Diamond Scythe?");
 		ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", " Scythes", false, "Enable Emerald Scythe?");
 		ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe", " Scythes", false, "Enable Obsidian Scythe?");
 		

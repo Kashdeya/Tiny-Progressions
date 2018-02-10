@@ -205,7 +205,7 @@ public class InternalRegistry
 				if (obj instanceof ItemStack)
 					itemstack = (ItemStack) obj;
 
-				if (!itemstack.isEmpty())
+				if (!itemstack.isEmpty() && key != null)
 					OreDictionary.registerOre(key, itemstack);
 			}
 		});

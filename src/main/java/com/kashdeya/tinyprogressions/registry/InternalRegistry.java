@@ -16,6 +16,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.StringUtils;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -205,7 +206,7 @@ public class InternalRegistry
 				if (obj instanceof ItemStack)
 					itemstack = (ItemStack) obj;
 
-				if (!itemstack.isEmpty() && key != null)
+				if (!itemstack.isEmpty() && !StringUtils.isNullOrEmpty(key))
 					OreDictionary.registerOre(key, itemstack);
 			}
 		});

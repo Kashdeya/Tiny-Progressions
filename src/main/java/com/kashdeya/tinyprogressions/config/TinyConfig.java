@@ -121,19 +121,12 @@ public class TinyConfig {
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", " Ender Ore", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", " Ender Ore", 5, 1, 100, "Sets the Ender Ore Vein Size.");
 		
-		config.addCustomCategoryComment(" Lava Crystal Ore", "Lava Crystal!");
-		ConfigHandler.lava_crystal = config.getBoolean("Lava Crystal Ore", " Lava Crystal Ore", true, "Enable Lava Crystal Ore?\n[Used in recipes!]");
-		ConfigHandler.lava_crystal_frequency = config.getInt("Lava Crystal Ore Frequency", " Lava Crystal Ore", 5, 1, 100, "Sets the Chance of Lava Crystals Gen.");
-		ConfigHandler.lava_crystal_min = config.getInt("Lava Crystal Ore Min", " Lava Crystal Ore", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.lava_crystal_max = config.getInt("Lava Crystal Ore Max", " Lava Crystal Ore", 48, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_crystal_size = config.getInt("Lava Crystal Ore Size", " Lava Crystal Ore", 3, 1, 100, "Sets the Lava Crystal Vein Size.");
-		
 		config.addCustomCategoryComment(" Charcoal", "It's the little things that count right?\n[Charcoal Block must be ENABLED in Main.cfg]");
 		ConfigHandler.CharcoalWorldgen = config.getBoolean("Charcoal Block Nether Worldgen", " Charcoal", true, "Enable the Charcoal Block to spawn in the nether?");
 		ConfigHandler.charcoal_frequency = config.getInt("Charcoal Block Nether Worldgen Frequency", " Charcoal", 10, 1, 100, "Sets the Chance of Charcoal Block.");
 		ConfigHandler.charcoal_min = config.getInt("Charcoal Block Nether Worldgen Min", " Charcoal", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.charcoal_max = config.getInt("Charcoal Block Nether Worldgen Max", " Charcoal", 128, 1, 255, "Sets the max Y level.");
-		ConfigHandler.charcoal_size = config.getInt("Charcoal Block Nether Worldgen Size", " Charcoal", 20, 1, 100, "Sets the Lava Charcoal Vein Size.");        
+		ConfigHandler.charcoal_size = config.getInt("Charcoal Block Nether Worldgen Size", " Charcoal", 20, 1, 100, "Sets the Charcoal Vein Size.");        
 		
 		if (config.hasChanged())
 	        config.save();

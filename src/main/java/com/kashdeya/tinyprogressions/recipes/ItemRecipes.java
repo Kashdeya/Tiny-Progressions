@@ -26,7 +26,6 @@ public class ItemRecipes {
 	public static IRecipe ENDERPEARL;
 	public static IRecipe REPAIR_TABLET;
 	
-	public static IRecipe LAVA_BUCKET1;
 	public static IRecipe TINY_CHARCOAL, TINY_COAL, CHARCOAL1, COAL, STEEL_INGOT, STEEL_INGOT1;
 	
 	public static IRecipe CHAINMAIL_PART;
@@ -163,15 +162,6 @@ public class ItemRecipes {
 						'r', TechItems.corrupted_gem,
 						'l', Items.NETHER_STAR,
 						'g', TechItems.redstone_ingot);
-			}
-			
-			if (ArmorHandler.lava_armor) {
-				LAVA_BUCKET1 = new ShapedRecipe(new ItemStack(Items.LAVA_BUCKET), 
-						"sss",
-						"sbs",
-						"sss",
-						'b', Items.BUCKET,
-						's', TechItems.lava_crystal);
 			}
 			
 			// Tiny Coal & Charcoal

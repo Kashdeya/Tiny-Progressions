@@ -25,7 +25,6 @@ import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
 import com.kashdeya.tinyprogressions.blocks.decorations.LampColored;
-import com.kashdeya.tinyprogressions.blocks.decorations.LavaCrystal;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.Slabs;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
@@ -38,16 +37,16 @@ import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgrade;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowthUpgradeTwo;
 import com.kashdeya.tinyprogressions.blocks.misc.BridgeBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
+import com.kashdeya.tinyprogressions.blocks.misc.GhostBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.Infused;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
+import com.kashdeya.tinyprogressions.blocks.ores.CorruptedBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
-import com.kashdeya.tinyprogressions.blocks.ores.LavaCrystalOre;
 import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
-import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.block.AngelItemBlock;
 
@@ -85,11 +84,10 @@ public class TechBlocks {
 	public static Block stone_torch;
 	// EnderOre
 	public static Block ender_ore;
-	// Lava Crystal Blocks
-	public static Block lava_crystal_block;
-	public static Block lava_crystal_ore;
 	// Lava Block
 	public static Block lava_block;
+	// Corrupted Ore
+	public static Block corrupted_ore;
 	// Water Block
 	public static Block water_block;
 	// Hardened Stone
@@ -159,8 +157,14 @@ public class TechBlocks {
     public static Block lava_infused_stone;
     // Steel Block
     public static Block steel_block;
+    // Ghost Block
+    public static Block ghost_block;
     
 	public static void init() {
+		// Corrupted Ore
+		if (ConfigHandler.artifact_rings){
+			corrupted_ore = new CorruptedBlock();
+		}
 		// Steel Block
 		if (ConfigHandler.steel_ingot){
 			steel_block = new DecoMain().setOreDictName("blockSteel").setUnlocalizedName("steel_block");
@@ -333,10 +337,7 @@ public class TechBlocks {
 		if (ConfigHandler.ender_ore) {
 			ender_ore = new EnderOre();
 		}
-		if (ConfigHandler.lava_crystal) {
-			lava_crystal_block = new LavaCrystal();
-			lava_crystal_ore = new LavaCrystalOre();
-		}
+		
 		// FMF Block
 		if(ConfigHandler.angel_block) {
 			fmf_block = new StandardBlock(Material.GROUND).setUnlocalName("fmf_block")
@@ -360,6 +361,9 @@ public class TechBlocks {
 		if (ConfigHandler.vasholine){
 			VASHOLINE = new BlockFluidVasholine();
 		}
+		
+		// Can not turn off
+			ghost_block = new GhostBlock();
 		
 	}
 }

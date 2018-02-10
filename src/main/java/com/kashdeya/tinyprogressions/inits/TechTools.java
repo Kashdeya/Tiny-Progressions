@@ -303,25 +303,25 @@ public class TechTools {
 		}
 		// Multi
 		if (ConfigHandler.wooden_multi){
-			wooden_multi = new MultiMain(ToolMaterial.WOOD).setUnlocalizedName("wooden_multi").setMaxDamage(DamageHandler.wooden_multi);
+			wooden_multi = new MultiMain(MaterialHandler.PWOOD).setUnlocalizedName("wooden_multi").setMaxDamage(DamageHandler.wooden_multi);
 		}
 		if (ConfigHandler.stone_multi){
-			stone_multi = new MultiMain(ToolMaterial.STONE).setUnlocalizedName("stone_multi").setMaxDamage(DamageHandler.stone_multi);
+			stone_multi = new MultiMain(MaterialHandler.PSTONE).setUnlocalizedName("stone_multi").setMaxDamage(DamageHandler.stone_multi);
 		}
 		if (ConfigHandler.golden_multi){
-			golden_multi = new MultiMain(ToolMaterial.GOLD).setUnlocalizedName("golden_multi").setMaxDamage(DamageHandler.golden_multi);
+			golden_multi = new MultiMain(MaterialHandler.PGOLD).setUnlocalizedName("golden_multi").setMaxDamage(DamageHandler.golden_multi);
 		}
 		if (ConfigHandler.iron_multi){
-			iron_multi = new MultiMain(ToolMaterial.IRON).setUnlocalizedName("iron_multi").setMaxDamage(DamageHandler.iron_multi);
+			iron_multi = new MultiMain(MaterialHandler.PIRON).setUnlocalizedName("iron_multi").setMaxDamage(DamageHandler.iron_multi);
 		}
 		if (ConfigHandler.diamond_multi){
-			diamond_multi = new MultiMain(ToolMaterial.DIAMOND).setUnlocalizedName("diamond_multi").setMaxDamage(DamageHandler.diamond_multi);
+			diamond_multi = new MultiMain(MaterialHandler.PDIAMOND).setUnlocalizedName("diamond_multi").setMaxDamage(DamageHandler.diamond_multi);
 		}
 		if (ConfigHandler.emerald_multi){
-			emerald_multi = new EmeraldMulti(MaterialHandler.EMERALD).setUnlocalizedName("emerald_multi").setMaxDamage(DamageHandler.emerald_multi);
+			emerald_multi = new EmeraldMulti(MaterialHandler.PEMERALD).setUnlocalizedName("emerald_multi").setMaxDamage(DamageHandler.emerald_multi);
 		}
 		if (ConfigHandler.obsidian_multi){
-			obsidian_multi = new ObsidianMulti(MaterialHandler.OBSIDIAN).setUnlocalizedName("obsidian_multi").setMaxDamage(DamageHandler.obsidian_multi);
+			obsidian_multi = new ObsidianMulti(MaterialHandler.POBSIDIAN).setUnlocalizedName("obsidian_multi").setMaxDamage(DamageHandler.obsidian_multi);
 		}
 		// Battle
 		if (ConfigHandler.wooden_battle){

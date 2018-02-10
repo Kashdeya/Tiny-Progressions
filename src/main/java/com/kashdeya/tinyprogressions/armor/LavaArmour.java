@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
@@ -30,7 +31,7 @@ public class LavaArmour extends ItemArmor {
      * Return whether this item is repairable in an anvil.
      */
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-        ItemStack mat = new ItemStack(TechItems.lava_crystal);
+        ItemStack mat = new ItemStack(Items.MAGMA_CREAM);
         return !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false) || super.getIsRepairable(toRepair, repair);
     }
 

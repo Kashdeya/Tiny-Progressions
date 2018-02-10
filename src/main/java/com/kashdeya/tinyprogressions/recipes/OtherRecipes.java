@@ -1,9 +1,7 @@
 package com.kashdeya.tinyprogressions.recipes;
 
-import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.registry.recipes.ShapedRecipe;
 import com.kashdeya.tinyprogressions.registry.recipes.ShapelessRecipe;
@@ -27,9 +25,26 @@ public class OtherRecipes
 	public static IRecipe FLINT_KNIFE, QUARTZ_KNIFE, QUARTZ_DUST;
 	public static IRecipe MYCELIUM_SEEDS;
 	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1, WUB_JUICE;
+	public static IRecipe CORRUPTED_GEM, CORRUPTED_GEM_2, CORRUPTED_HEXA, CORRUPTED_HEXA_2;
 	
 	public static void init()
 	{
+		// Corruption
+		if (ConfigHandler.artifact_rings){
+			CORRUPTED_HEXA = new ShapedRecipe(new ItemStack(TechItems.corrupted_hexa),
+					"ccc",
+					"ccc",
+					"ccc",
+					'c', new ItemStack(TechItems.corrupted_shard));
+			CORRUPTED_HEXA_2 = new ShapelessRecipe(new ItemStack(TechItems.corrupted_shard, 9), new ItemStack(TechItems.corrupted_hexa));
+			
+			CORRUPTED_GEM = new ShapedRecipe(new ItemStack(TechItems.corrupted_gem),
+					"ccc",
+					"ccc",
+					"ccc",
+					'c', new ItemStack(TechItems.corrupted_hexa));
+			CORRUPTED_GEM_2 = new ShapelessRecipe(new ItemStack(TechItems.corrupted_hexa, 9), new ItemStack(TechItems.corrupted_gem));
+		}
 		// WUB WUB JUICE
 		if(ConfigHandler.vasholine){
 			WUB_JUICE = new ShapedRecipe(FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("vasholine"), Fluid.BUCKET_VOLUME)),

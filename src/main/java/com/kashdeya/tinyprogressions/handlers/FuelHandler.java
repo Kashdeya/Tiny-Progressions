@@ -19,10 +19,6 @@ public class FuelHandler implements IFuelHandler {
 		if (ConfigHandler.CharcoalBlock){
 			if (fuel.getItem() == Item.getItemFromBlock(TechBlocks.charcoal_block)) { return CharcoalBlockBurn; }
 		}
-        if (ArmorHandler.lava_armor || ConfigHandler.lava_crystal){
-        	if (fuel.getItem() == TechItems.lava_crystal) {return 2500;}
-        	if (fuel.getItem() == Item.getItemFromBlock(TechBlocks.lava_crystal_block)) {return 10000;}
-        }
         if (ConfigHandler.StoneTorch){
         	if (fuel.getItem() == Item.getItemFromBlock(TechBlocks.stone_torch)) {return 150;}
         }

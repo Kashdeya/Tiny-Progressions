@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.recipes;
 
-import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
@@ -34,7 +33,6 @@ public class BlockRecipes {
 	public static IRecipe FMF_BLOCK;
 	public static IRecipe LAMP;
 	public static IRecipe[] COLORED_GLOWSTONE, COLORED_LAMPS;
-	public static IRecipe LAVA_CRYSTAL, LAVA_CRYSTAL_BLOCK;
 	public static IRecipe NETHERRACK, COMPRESSED_NETHER, COMPRESSED_NETHER2, COMPRESSED_2_NETHER, COMPRESSED_2_NETHER2, COMPRESSED_3_NETHER, COMPRESSED_3_NETHER2, COMPRESSED_4_NETHER, COMPRESSED_4_NETHER2;
 	public static IRecipe COMPRESSED_5_NETHER, COMPRESSED_5_NETHER2, COMPRESSED_6_NETHER, COMPRESSED_6_NETHER2, COMPRESSED_7_NETHER, COMPRESSED_7_NETHER2, COMPRESSED_8_NETHER;
 	public static IRecipe SUGAR, COMPRESSED_SUGAR, COMPRESSED_SUGAR2, COMPRESSED_2_SUGAR;
@@ -486,14 +484,5 @@ public class BlockRecipes {
 			}
 		}
 		
-		// Lava Crystal Block
-		if (ArmorHandler.lapis_armor) {
-			LAVA_CRYSTAL_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.lava_crystal_block), 
-					"ii",
-					"ii",
-					'i', new ItemStack(TechItems.lava_crystal));
-			
-			LAVA_CRYSTAL = new ShapelessRecipe(new ItemStack(TechItems.lava_crystal, 4), new ItemStack(TechBlocks.lava_crystal_block));
-		}
 	}
 }

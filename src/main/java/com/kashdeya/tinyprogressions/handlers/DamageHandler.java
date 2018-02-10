@@ -26,9 +26,9 @@ public class DamageHandler {
 	public static int stone_multi = 131;
 	public static int golden_multi = 32;
 	public static int iron_multi = 250;
-	public static int emerald_multi = 1961;
+	public static int emerald_multi = 4000;
 	public static int diamond_multi = 1561;
-	public static int obsidian_multi = 2561;
+	public static int obsidian_multi = 3000;
 	// Battle
 	public static int wooden_battle = 59;
 	public static int stone_battle = 131;

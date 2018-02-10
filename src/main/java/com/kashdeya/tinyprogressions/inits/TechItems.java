@@ -61,8 +61,6 @@ public class TechItems {
 	public static Item stone_stick;
 	// Ender
 	public static Item ender_dust;
-	// Lava Crystal
-	public static Item lava_crystal;
 	// Drops
 	public static Item wither_rib;
 	public static Item dragon_scale;
@@ -99,20 +97,16 @@ public class TechItems {
 			infin_bucket = new InfinBucket().setUnlocalizedName("infin_bucket");
 		}
 		// Master Ring
-		if (ConfigHandler.artifact_rings){
+		if (ConfigHandler.artifact_rings && ConfigHandler.steel_ingot){
 			starter_ring = new ItemBase().setUnlocalizedName("starter_ring");
 			master_ring = new MasterRing().setUnlocalizedName("master_ring");
 		// Nausea Ring
 			nausea_ring = new NauseaRing().setUnlocalizedName("nausea_ring");
 		// Posion Ring
 			posion_ring = new PosionRing().setUnlocalizedName("posion_ring");
-		}
 		// Fire Ring
-		if (ConfigHandler.artifact_rings && ConfigHandler.lava_crystal){
 			fire_ring = new FireRing().setUnlocalizedName("fire_ring");
-		}
 		// Wither Ring
-		if (ConfigHandler.artifact_rings && ConfigHandler.steel_ingot){
 			wither_ring = new WitherRing().setUnlocalizedName("wither_ring");
 		}
 		// Steel
@@ -199,9 +193,6 @@ public class TechItems {
 		// Ender Dust
 		if (ConfigHandler.ender_ore) {
 			ender_dust = new ItemBase().setOreDictName("dustEnder").setUnlocalizedName("ender_dust");
-		}
-		if (ArmorHandler.lava_armor || ConfigHandler.lava_crystal) {
-			lava_crystal = new ItemBase().setOreDictName("gemLava").setUnlocalizedName("lava_crystal");
 		}
 		
 		// Pouch

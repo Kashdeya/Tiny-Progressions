@@ -333,13 +333,7 @@ public class ConfigHandler {
 	// Food Stats
 	public static int ToastedAmount = 4;
 	public static float ToastedSaturation = 1.0F;
-	
-	// Lava Crystal
-	public static boolean lava_crystal = true;
-	public static int lava_crystal_frequency = 5;
-	public static int lava_crystal_min = 1;
-	public static int lava_crystal_max = 48;
-	public static int lava_crystal_size = 3;
+
 	// Lava Block
 	public static boolean lava_block = true;
 	public static boolean lava_block_recipe = true;

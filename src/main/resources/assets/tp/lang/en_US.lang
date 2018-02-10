@@ -8,6 +8,9 @@ tile.emerald_cobblegen_block.name=Cobblestone Generator Tier 5
 #asphalt
 tile.asphalt_block.name=Asphalt
 
+#ghost block
+tile.ghost_block.name="Cobblestone"
+
 #Growth Blocks
 tile.growth_block.name=Growth Crystal
 tile.growth_upgrade.name=Growth Crystal Tier 2
@@ -24,8 +27,9 @@ item.maloberry_berry.name=Maloberry
 item.raspberry_berry.name=Raspberry
 
 #Corruption
+tile.corrupted_ore.name=Corrupted Ore
 item.corrupted_shard.name=Corrupted Shard
-item.corrupted_haxa.name=Corrupted Hexa
+item.corrupted_hexa.name=Corrupted Hexa
 item.corrupted_gem.name=Corrupted Gem
 tooltip.warning_1=Keep away from mouth and eyes!
 tooltip.shard_1=Used to craft Low level Rings and more!
@@ -421,16 +425,11 @@ item.diamond_spear.name=Diamond Spear
 item.emerald_spear.name=Emerald Spear
 item.obsidian_spear.name=Obsidian Spear
 
-#Lava Armor
-item.lava_helmet.name=Lava Helmet
-item.lava_chestplate.name=Lava Chestplate
-item.lava_leggings.name=Lava Leggings
-item.lava_boots.name=Lava Boots
-
-#Lava Crystal
-item.lava_crystal.name=Lava Crystal
-tile.lava_crystal_block.name=Lava Crystal Block
-tile.lava_crystal_ore.name=Lava Crystal Ore
+#Magma Armor
+item.lava_helmet.name=Magma Helmet
+item.lava_chestplate.name=Magma Chestplate
+item.lava_leggings.name=Magma Leggings
+item.lava_boots.name=Magma Boots
 
 #Lava Armor Tooltip
 tooltip.lavaarmor_1=When wearing full suit!

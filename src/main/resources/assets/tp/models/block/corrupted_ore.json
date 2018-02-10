@@ -25,8 +25,8 @@
         }
     ],
     "textures": {
-        "particle": "blocks/stone",
-        "t1": "blocks/stone",
-        "t2": "tp:blocks/lava_crystal_ore"
+        "particle": "blocks/netherrack",
+        "t1": "blocks/netherrack",
+        "t2": "tp:blocks/corrupted_ore"
     }
 }

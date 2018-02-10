@@ -21,6 +21,7 @@ public class WorldGen implements IWorldGenerator {
     private WorldGenerator lava_block;
     private WorldGenerator water_block;
     private WorldGenerator charcoal_block;
+    private WorldGenerator corrupted_ore;
     
     public WorldGen()
     {
@@ -35,6 +36,9 @@ public class WorldGen implements IWorldGenerator {
     	}
     	if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
     		this.charcoal_block = new WorldGenMinable(TechBlocks.charcoal_block.getDefaultState(), ConfigHandler.charcoal_size, BlockMatcher.forBlock(Blocks.MAGMA));
+    	}
+    	if (ConfigHandler.artifact_rings){
+    		this.corrupted_ore = new WorldGenMinable(TechBlocks.corrupted_ore.getDefaultState(), 5, BlockMatcher.forBlock(Blocks.NETHERRACK));
     	}
     }
     
@@ -74,6 +78,9 @@ public class WorldGen implements IWorldGenerator {
       case -1:
     	  if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
     		  runGenerator(this.charcoal_block, world, random, chunkX, chunkZ, ConfigHandler.charcoal_frequency, ConfigHandler.charcoal_min, ConfigHandler.charcoal_max);
+    	  }
+    	  if (ConfigHandler.artifact_rings){
+    		  runGenerator(this.corrupted_ore, world, random, chunkX, chunkZ, 5, 1, 200);
     	  }
     	  break;
       }

@@ -201,26 +201,34 @@ public class ArmorRecipes {
 		
 		if (ArmorHandler.lava_armor){
 			LAVA_HELMET = new ShapedRecipe(new ItemStack(TechArmor.lava_helmet),
-				"lll",
-				"l l",
-				'l', TechItems.lava_crystal);
+				"bbb",
+				"cdc",
+				'b', Blocks.MAGMA,
+				'c', Items.MAGMA_CREAM,
+				'd', TechArmor.emerald_helmet);
 			
 			LAVA_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.lava_chestplate),
-				"l l",
-				"lll",
-				"lll",
-				'l', TechItems.lava_crystal);
+				"b b",
+				"cdc",
+				"bbb",
+				'b', Blocks.MAGMA,
+				'c', Items.MAGMA_CREAM,
+				'd', TechArmor.emerald_chestplate);
 			
 			LAVA_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.lava_leggings),
-				"lll",
-				"l l",
-				"l l",
-				'l', TechItems.lava_crystal);
+				"bdb",
+				"c c",
+				"b b",
+				'b', Blocks.MAGMA,
+				'c', Items.MAGMA_CREAM,
+				'd', TechArmor.emerald_leggings);
 			
 			LAVA_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.lava_boots),
-				"l l",
-				"l l",
-				'l', TechItems.lava_crystal);
+				"bdb",
+				"c c",
+				'b', Blocks.MAGMA,
+				'c', Items.MAGMA_CREAM,
+				'd', TechArmor.emerald_boots);
 		}
 		
 		if (ArmorHandler.wither_armor){

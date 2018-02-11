@@ -55,7 +55,7 @@ public class Slabs extends BlockSlab implements IItemProvider
     @Override
     public ItemBlock createItemBlock()
     {
-        return !isDouble ? new ItemSlab(this, this, doubleSlab) : null;
+    	return new ItemSlab(this, this, doubleSlab);
     }
     
     @Override

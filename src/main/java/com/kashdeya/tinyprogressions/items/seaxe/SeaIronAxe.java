@@ -1,8 +1,12 @@
 package com.kashdeya.tinyprogressions.items.seaxe;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -11,9 +15,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class SeaIronAxe extends ItemAxe{
 	

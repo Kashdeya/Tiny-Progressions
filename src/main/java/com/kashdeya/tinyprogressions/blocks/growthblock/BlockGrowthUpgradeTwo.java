@@ -10,7 +10,6 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -51,6 +50,7 @@ public class BlockGrowthUpgradeTwo extends Block {
 		super(Material.WATER);
 		this.setTickRandomly(true);
 		this.setHardness(1.5F);
+		this.setLightLevel(0.5F);
 		this.setHarvestLevel("pickaxe", 1);
 		this.setResistance(2000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);

@@ -1,8 +1,13 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -15,10 +20,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.IShearable;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
 
 public class OldReed extends BlockBush implements IShearable {
 	

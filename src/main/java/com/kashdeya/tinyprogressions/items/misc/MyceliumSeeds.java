@@ -1,7 +1,10 @@
 package com.kashdeya.tinyprogressions.items.misc;
 
+import java.util.List;
+
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.InventoryHelper;
+
 import net.minecraft.block.BlockDirt;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,8 +22,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.List;
 
 public class MyceliumSeeds extends Item {
 

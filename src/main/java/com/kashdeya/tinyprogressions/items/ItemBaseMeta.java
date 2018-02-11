@@ -1,4 +1,6 @@
-package com.kashdeya.tinyprogressions.items.misc;
+package com.kashdeya.tinyprogressions.items;
+
+import java.util.stream.IntStream;
 
 import com.kashdeya.tinyprogressions.main.Reference;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
@@ -13,8 +15,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.stream.IntStream;
 
 public class ItemBaseMeta extends ItemBase implements IModelRegistrar, IMetadata
 {

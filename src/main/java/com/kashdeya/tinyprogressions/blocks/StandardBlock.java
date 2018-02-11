@@ -1,7 +1,11 @@
 package com.kashdeya.tinyprogressions.blocks;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Random;
+
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IItemProvider;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -14,9 +18,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.Random;
 
 public class StandardBlock extends Block implements IItemProvider
 {

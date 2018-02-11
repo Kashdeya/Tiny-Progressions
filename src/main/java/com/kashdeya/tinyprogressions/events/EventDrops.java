@@ -7,71 +7,64 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
+import net.minecraft.block.BlockGrass;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class EventDrops {
 	
 	@SubscribeEvent
-	public static void blockBreak(BlockEvent.HarvestDropsEvent event) {
-		
-		if(ConfigHandler.BoneDrops) {
-			if (event.getState().getBlock() instanceof BlockDirt){
-				event.getDrops().add(new ItemStack(Items.BONE, ConfigHandler.BoneAmmount));
-				event.setDropChance(ConfigHandler.BoneDropsChance);
-			}
-		}
-			
-		if(ConfigHandler.SkullDrops) {
-			if (event.getState().getBlock() instanceof BlockDirt){
-				event.getDrops().add(new ItemStack(Items.SKULL, ConfigHandler.SkullAmmount));
-				event.setDropChance(ConfigHandler.SkullDropsChance);
-			}
-		}
-	}
-	
-	@SubscribeEvent
 	public static void onBlockBreak(BlockEvent.HarvestDropsEvent event) {
-		if (ConfigHandler.stickDrops) {
-			if (event.getState().getBlock().isLeaves(event.getState(), event.getWorld(), event.getPos())) {
-				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.STICK, ConfigHandler.stickDropsAmmount));
-				event.setDropChance(ConfigHandler.stickDropsChance);
-				event.getWorld().spawnEntity(item);
-				}
-		}
 		
 		
-		if (ConfigHandler.appleDrops) {
-			if (event.getState().getBlock().isLeaves(event.getState(), event.getWorld(), event.getPos())) {
-				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.APPLE, ConfigHandler.appleDropsAmmount));
-				event.setDropChance(ConfigHandler.appleDropsChance);
+		Block target = event.getState().getBlock();
+		int trigger = event.getWorld().rand.nextInt(100);
+		if (target == Blocks.LEAVES || target == Blocks.LEAVES2 || OreDictionary.getOres("treeLeaves").contains(new ItemStack(target)) || target instanceof BlockLeaves) {
+			if(trigger < ConfigHandler.peachDropsChance && ConfigHandler.extra_drops) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_peach, ConfigHandler.peachDropsAmount));
 				event.getWorld().spawnEntity(item);
-				}
-		}
-		
-		if (ConfigHandler.extra_drops) {
-			if (event.getState().getBlock().isLeaves(event.getState(), event.getWorld(), event.getPos())) {
-				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_pear, ConfigHandler.pearDropsAmmount));
-				event.setDropChance(ConfigHandler.pearDropsChance);
-				event.getWorld().spawnEntity(item);
-				}
+			}
 			
-			if (event.getState().getBlock().isLeaves(event.getState(), event.getWorld(), event.getPos())) {
-				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_peach, ConfigHandler.peachDropsAmmount));
-				event.setDropChance(ConfigHandler.peachDropsChance);
+			if(trigger < ConfigHandler.pearDropsChance && ConfigHandler.extra_drops) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_pear, ConfigHandler.pearDropsAmount));
 				event.getWorld().spawnEntity(item);
-				}
+			}
+			
+			if(trigger < ConfigHandler.appleDropsChance && ConfigHandler.extra_drops) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.APPLE, ConfigHandler.appleDropsAmount));
+				event.getWorld().spawnEntity(item);
+			}
+			
+			if(trigger < ConfigHandler.stickDropsChance && ConfigHandler.extra_drops) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.STICK, ConfigHandler.stickDropsAmount));
+				event.getWorld().spawnEntity(item);
+			}
 		}
 		
+		if (target == Blocks.DIRT || target == Blocks.GRASS || OreDictionary.getOres("grass").contains(new ItemStack(target)) || OreDictionary.getOres("dirt").contains(new ItemStack(target)) || target instanceof BlockDirt || target instanceof BlockGrass) {
+			if(trigger < ConfigHandler.BoneDropsChance && ConfigHandler.BoneDrops) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.BONE, ConfigHandler.BoneAmount));
+				event.getWorld().spawnEntity(item);
+			}
+			
+			if(trigger < ConfigHandler.SkullDropsChance && ConfigHandler.SkullDrops) {
+				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.SKULL, ConfigHandler.SkullAmount));
+				event.getWorld().spawnEntity(item);
+			}
+		}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)

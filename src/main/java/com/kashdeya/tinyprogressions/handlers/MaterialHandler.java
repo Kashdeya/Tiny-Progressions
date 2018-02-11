@@ -11,15 +11,15 @@ import net.minecraftforge.common.util.EnumHelper;
 public class MaterialHandler {
 
 	// Tools
-	public static final Item.ToolMaterial BONE = EnumHelper.addToolMaterial("boneToolMaterial", 0, 29, 1.0F, 0.5F, 15);
-	public static final Item.ToolMaterial FLINT = EnumHelper.addToolMaterial("flintToolMaterial", 0, 100, 3.0F, 1.5F, 15);
-	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 100.0F, 4.0F, 22);
-	public static final Item.ToolMaterial OBSIDIAN = EnumHelper.addToolMaterial("obsidianToolMaterial", 4, 3561, 10.0F, 6.0F, 10);
-	public static final Item.ToolMaterial EMERALD = EnumHelper.addToolMaterial("emeraldToolMaterial", 4, 1961, 20.0F, 5.0F, 22);
+	public static final Item.ToolMaterial BONE = EnumHelper.addToolMaterial("boneToolMaterial", 0, 49, 1.0F, 1.5F, 15);
+	public static final Item.ToolMaterial FLINT = EnumHelper.addToolMaterial("flintToolMaterial", 0, 89, 3.0F, 2.5F, 15);
+	public static final Item.ToolMaterial BIRTHDAY = EnumHelper.addToolMaterial("birthdayToolMaterial", 4, 3061, 100.0F, 10.0F, 22);
+	public static final Item.ToolMaterial OBSIDIAN = EnumHelper.addToolMaterial("obsidianToolMaterial", 4, 1961, 10.0F, 15.0F, 10);
+	public static final Item.ToolMaterial EMERALD = EnumHelper.addToolMaterial("emeraldToolMaterial", 4, 2961, 20.0F, 20.0F, 22);
 	public static final Item.ToolMaterial KAPPA = EnumHelper.addToolMaterial("kappaToolMaterial", 1, 31513, 5.0F, 2.0F, 22);
 	public static final Item.ToolMaterial BSCIRON = EnumHelper.addToolMaterial("bscIronToolMaterial", 3, 2750, 12.0F, 8.0F, 14);
-	public static final Item.ToolMaterial BSCDIAMOND = EnumHelper.addToolMaterial("bscDiamondToolMaterial", 3, 14549, 16.0F, 5.0F, 10);
-	public static final Item.ToolMaterial BSCGOLD = EnumHelper.addToolMaterial("bscGoldToolMaterial", 3, 788, 16.0F, 2.0F, 22);
+	public static final Item.ToolMaterial BSCDIAMOND = EnumHelper.addToolMaterial("bscDiamondToolMaterial", 3, 4549, 16.0F, 5.0F, 10);
+	public static final Item.ToolMaterial BSCGOLD = EnumHelper.addToolMaterial("bscGoldToolMaterial", 0, 788, 16.0F, 2.0F, 22);
 	// Paxels
 	public static final Item.ToolMaterial PWOOD = EnumHelper.addToolMaterial("pwoodToolMaterial", 0, 59, 2.0F, 5.0F, 15);
 	public static final Item.ToolMaterial PSTONE = EnumHelper.addToolMaterial("pstoneToolMaterial", 1, 131, 4.0F, 7.0F, 5);

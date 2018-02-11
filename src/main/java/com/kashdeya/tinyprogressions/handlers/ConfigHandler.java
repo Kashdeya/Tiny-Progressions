@@ -23,10 +23,10 @@ public class ConfigHandler {
 	public static float pearSaturation = 0.08F;
 	public static int peachAmount = 3;
 	public static float peachSaturation = 0.08F;
-	public static float pearDropsChance = 1.0F;
-	public static int pearDropsAmmount = 1;
-	public static float peachDropsChance = 1.0F;
-	public static int peachDropsAmmount = 1;
+	public static int pearDropsChance = 5;
+	public static int pearDropsAmount = 1;
+	public static int peachDropsChance = 5;
+	public static int peachDropsAmount = 1;
 	
 	// asphalt
 	public static boolean asphalt = true;
@@ -218,17 +218,15 @@ public class ConfigHandler {
 	
 	// Drops
 	public static boolean BoneDrops = true;
-	public static float BoneDropsChance = 1.0F;
-	public static int BoneAmmount = 1;
+	public static int BoneDropsChance = 5;
+	public static int BoneAmount = 1;
 	public static boolean SkullDrops = true;
-	public static float SkullDropsChance = 1.0F;
-	public static int SkullAmmount = 1;
-	public static boolean stickDrops = true;
-	public static float stickDropsChance = 1.0F;
-	public static int stickDropsAmmount = 1;
-	public static boolean appleDrops = true;
-	public static float appleDropsChance = 1.0F;
-	public static int appleDropsAmmount = 1;
+	public static int SkullDropsChance = 5;
+	public static int SkullAmount = 1;
+	public static int stickDropsChance = 5;
+	public static int stickDropsAmount = 1;
+	public static int appleDropsChance = 5;
+	public static int appleDropsAmount = 1;
 	
 	// MISC
 	public static boolean AllowRightClick = true;
@@ -307,7 +305,7 @@ public class ConfigHandler {
 	// Ender Ore
 	public static boolean ender_ore = true;
 	public static boolean ender_mite = true;
-	public static float endermite_spawn = 0.25F;
+	public static int endermite_spawn = 50;
 	public static int ender_ore_frequency = 50;
 	public static int ender_ore_min = 1;
 	public static int ender_ore_max = 35;
@@ -332,7 +330,7 @@ public class ConfigHandler {
 	
 	// Food Stats
 	public static int ToastedAmount = 4;
-	public static float ToastedSaturation = 1.0F;
+	public static float ToastedSaturation = 0.8F;
 
 	// Lava Block
 	public static boolean lava_block = true;

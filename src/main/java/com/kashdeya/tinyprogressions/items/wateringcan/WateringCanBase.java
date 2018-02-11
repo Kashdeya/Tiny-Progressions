@@ -1,5 +1,8 @@
 package com.kashdeya.tinyprogressions.items.wateringcan;
 
+import java.util.Random;
+import java.util.stream.IntStream;
+
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.CanUtil;
@@ -25,9 +28,6 @@ import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
-
-import java.util.Random;
-import java.util.stream.IntStream;
 
 public class WateringCanBase extends Item
 {

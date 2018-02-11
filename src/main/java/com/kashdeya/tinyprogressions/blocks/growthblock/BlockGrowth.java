@@ -43,6 +43,7 @@ public class BlockGrowth extends Block {
 		super(Material.IRON);
 		this.setTickRandomly(true);
 		this.setHardness(8.0F);
+		this.setLightLevel(0.5F);
 		this.setHarvestLevel("pickaxe", 1);
 		this.setResistance(1000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);

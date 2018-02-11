@@ -3,7 +3,6 @@ package com.kashdeya.tinyprogressions.blocks.ores;
 import java.util.Random;
 
 import com.google.common.base.Predicate;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;

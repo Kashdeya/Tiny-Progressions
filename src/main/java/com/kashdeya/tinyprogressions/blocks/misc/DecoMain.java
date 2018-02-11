@@ -1,11 +1,9 @@
 package com.kashdeya.tinyprogressions.blocks.misc;
 
-import com.kashdeya.tinyprogressions.items.misc.ItemBase;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;

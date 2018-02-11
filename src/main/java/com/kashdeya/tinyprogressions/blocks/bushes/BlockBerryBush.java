@@ -1,6 +1,9 @@
 package com.kashdeya.tinyprogressions.blocks.bushes;
 
+import java.util.Random;
+
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -11,8 +14,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.IPlantable;
-
-import java.util.Random;
 
 public class BlockBerryBush extends BlockBush implements IPlantable {
 	

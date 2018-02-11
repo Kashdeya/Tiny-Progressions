@@ -1,13 +1,13 @@
 package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.items.DrinkBase;
+import com.kashdeya.tinyprogressions.items.FoodBase;
 import com.kashdeya.tinyprogressions.items.apple.DiamondApple;
 import com.kashdeya.tinyprogressions.items.apple.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.apple.GoldenApple;
 import com.kashdeya.tinyprogressions.items.apple.IronApple;
 import com.kashdeya.tinyprogressions.items.apple.RedstoneApple;
-import com.kashdeya.tinyprogressions.items.misc.DrinkBase;
-import com.kashdeya.tinyprogressions.items.misc.FoodBase;
 import com.kashdeya.tinyprogressions.items.misc.ItemJuicer;
 
 import net.minecraft.item.Item;

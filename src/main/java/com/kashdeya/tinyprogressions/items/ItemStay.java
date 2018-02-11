@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items.misc;
+package com.kashdeya.tinyprogressions.items;
 
 import java.util.List;
 

@@ -34,7 +34,7 @@ item.corrupted_gem.name=Corrupted Gem
 tooltip.warning_1=Keep away from mouth and eyes!
 tooltip.shard_1=Used to craft Low level Rings and more!
 tooltip.hexa_1=Used to craft Mid level Rings and more!
-tooltip.gem_1=Used to craft High level Rings  and more!
+tooltip.gem_1=Used to craft High level Rings and more!
 
 #Artifacts
 item.starter_ring.name=Steel Band

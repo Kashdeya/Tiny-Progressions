@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 public class BlackberryBush extends BlockBerryBush {
 
 	public BlackberryBush() {
-		this.setUnlocalizedName("blackberry_berry");
+		this.setUnlocalizedName("blackberry_bush");
 	}
 
 	@Override

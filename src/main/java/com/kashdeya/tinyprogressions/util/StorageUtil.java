@@ -1,5 +1,12 @@
 package com.kashdeya.tinyprogressions.util;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.charset.Charset;
+
+import javax.annotation.Nonnull;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import jline.internal.Nullable;
@@ -7,12 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
-
-import javax.annotation.Nonnull;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.nio.charset.Charset;
 
 public class StorageUtil
 {

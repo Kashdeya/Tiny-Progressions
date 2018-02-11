@@ -8,7 +8,6 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -47,6 +46,7 @@ public class Infused extends Block {
 		this.setTickRandomly(true);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setResistance(1000.0F);
+		this.setLightLevel(0.5F);
 		this.setSoundType(SoundType.STONE);
 		this.setHarvestLevel("pickaxe", 1);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 7));

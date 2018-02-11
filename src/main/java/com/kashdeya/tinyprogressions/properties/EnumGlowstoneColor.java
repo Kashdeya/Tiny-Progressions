@@ -1,8 +1,8 @@
 package com.kashdeya.tinyprogressions.properties;
 
-import net.minecraft.util.IStringSerializable;
-
 import java.util.Arrays;
+
+import net.minecraft.util.IStringSerializable;
 
 public enum EnumGlowstoneColor implements IStringSerializable
 {

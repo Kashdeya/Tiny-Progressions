@@ -74,6 +74,8 @@ public class TinyProgressions extends ModRegistry {
 		TinyConfig.initFood();
 		TinyConfig.initExtra();
 		TinyConfig.initOres();
+		TinyConfig.initSupporters();
+		TinyConfig.initReborn();
 		ModFluids.init();
 		
 		TechBlocks.init();

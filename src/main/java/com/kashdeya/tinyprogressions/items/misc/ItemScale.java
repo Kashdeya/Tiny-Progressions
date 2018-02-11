@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.items.misc;
 
 import java.util.List;
 
+import com.kashdeya.tinyprogressions.items.ItemBase;
+
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentTranslation;

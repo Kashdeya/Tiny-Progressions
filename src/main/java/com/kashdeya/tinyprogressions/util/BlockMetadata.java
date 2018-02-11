@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.armor;
+package com.kashdeya.tinyprogressions.util;
 
 import com.kashdeya.tinyprogressions.items.block.MetaItemBlock;
 import com.kashdeya.tinyprogressions.main.Reference;

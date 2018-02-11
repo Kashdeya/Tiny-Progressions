@@ -35,7 +35,7 @@ public class TinyConfig {
 		ConfigHandler.BlockGrowthUpgradeTwo = config.getBoolean("Growth Crystal Tier 3", "Growth Crystal", true, "Enable Growth Crystal Tier 3?\n[Requires Tier 2 to be Enabled]");
 		ConfigHandler.BlockGrowthUpgradeTwoTicks = config.getInt("Growth Crystal Tier 3 Speed", "Growth Crystal", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 10 Ticks or 1/2 a Second]\n[Default*10=400 Ticks]");
 		ConfigHandler.GrowthUpgradeTwoParticalTicks = config.getInt("Growth Crystal Tier 3 Particles", "Growth Crystal", 1000, 50, 1000, "Lower Number gives more Particles");
-		ConfigHandler.ParticalTicks = config.getBoolean("Growth Crystal Particals", "Growth Crystal", false, "Enable Growth Crystal Particals?");
+		ConfigHandler.ParticalTicks = config.getBoolean("Growth Crystal Particles", "Growth Crystal", false, "Enable Growth Crystal Particles?");
 		
 		config.addCustomCategoryComment("Watering Cans", "Remember to water those plants!");
 		ConfigHandler.WateringCan = config.getBoolean("Watering Can", "Watering Cans", true, "Enable Watering Can?");
@@ -85,7 +85,7 @@ public class TinyConfig {
         
         config.load();
         
-		config.addCustomCategoryComment("Custom Packs", "Added for a Custom Packs!\n[If you enable please make a recipe for them, Other wise they do nothing.]");
+		config.addCustomCategoryComment("Custom Packs", "Added for Custom Packs!\n[If you enable please make a recipe for them, Other wise they do nothing.]");
 		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", "Custom Packs", false, "Enable Flint Knife?");
 		ConfigHandler.FlintKnifeDamage = config.getInt("Flint Knife Durability", "Custom Packs", 100, 0, Integer.MAX_VALUE, "Sets the amount of Durability.");
 		ConfigHandler.StoneDust = config.getBoolean("Stone Dust", "Custom Packs", false, "Enable Stone Dust?");
@@ -100,7 +100,7 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment("Withered Bedrock", "Sink Into Madness Block!\n[This item is not a Craftable Block.]\n[To be used with Bedrock Replacer Mod]\n[MAY CAUSE SERVER LAG NEEDS MORE TESTING]");
 		ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", "Withered Bedrock", false, "Enable Withered Bedrock?");
-		ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered Particals", "Withered Bedrock", false, "Enable Player Withered Particals?");
+		ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered Particles", "Withered Bedrock", false, "Enable Player Withered Particles?");
 		ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", "Withered Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from standing on Withered Bedrock.\n[1 = 20Ticks]");
 		
 		config.addCustomCategoryComment("WUB Juice", "WUB WUB WUB!");
@@ -410,45 +410,47 @@ public class TinyConfig {
 		ConfigHandler.redstone_apple = config.getBoolean("Redstone Apple", "Apples", true, "Enable Redstone Apple?");
 		ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression", "Apples", false, "Enable Golden Apple Progression?\n[Only Enable if you have Notch Apple DISABLED.]");
 		
-		config.addCustomCategoryComment("Juices", "Everyone loves juice!\n[Only ENABLE one or the other.]");
-		ConfigHandler.all_juices = config.getBoolean("Vanilla Juices W/O Bottles", "Juices", true, "Enable Juices With out bottles in the recipe?");
-		ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juices With Bottles", "Juices", false, "Enable Juices With bottles in the recipe?");
+		config.addCustomCategoryComment("Juice", "Everyone loves juice!\n[Only ENABLE one or the other.]");
+		ConfigHandler.all_juices = config.getBoolean("Vanilla Juice W/O Bottles", "Juice", true, "Enable Juice W/O bottles in the recipe?");
+		ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juice With Bottles", "Juice", false, "Enable Juice With bottles in the recipe?");
 		
-		config.addCustomCategoryComment("Juices Stats", "Everyone loves juice Stats!");
-		ConfigHandler.AppleAmount = config.getInt("Apple Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.AppleSaturation = config.getFloat("Apple Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.CarrotAmount = config.getInt("Carrot Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.CarrotSaturation = config.getFloat("Carrot Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.PotatoAmount = config.getInt("Potato Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.PotatoSaturation = config.getFloat("Potato Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.BeetAmount = config.getInt("Beet Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BeetSaturation = config.getFloat("Beet Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.CactusAmount = config.getInt("Cactus Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.CactusSaturation = config.getFloat("Cactus Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		config.addCustomCategoryComment("Juice Stats", "Everyone loves juice Stats!");
+		ConfigHandler.AppleAmount = config.getInt("Apple Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.AppleSaturation = config.getFloat("Apple Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.CarrotAmount = config.getInt("Carrot Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.CarrotSaturation = config.getFloat("Carrot Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.PotatoAmount = config.getInt("Potato Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.PotatoSaturation = config.getFloat("Potato Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.BeetAmount = config.getInt("Beet Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BeetSaturation = config.getFloat("Beet Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.CactusAmount = config.getInt("Cactus Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.CactusSaturation = config.getFloat("Cactus Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		ConfigHandler.SlimeAmount = config.getInt("Slime Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.SlimeSaturation = config.getFloat("Slime Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.WheatAmount = config.getInt("Wheat Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.WheatSaturation = config.getFloat("Wheat Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.MelonAmount = config.getInt("Melon Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.MelonSaturation = config.getFloat("Melon Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount", "Juices Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", "Juices Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.SlimeSaturation = config.getFloat("Slime Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.WheatAmount = config.getInt("Wheat Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.WheatSaturation = config.getFloat("Wheat Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.MelonAmount = config.getInt("Melon Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.MelonSaturation = config.getFloat("Melon Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount", "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
-		config.addCustomCategoryComment("Juices Extra", "Everyone loves juice!\n[Only ENABLE one or the other.]");
-		ConfigHandler.ExtraPlantGen = config.getBoolean("Extra Plant Generation", "Juices Extra", true, "Enable Extra Plant Generation?\n[Disable Extra Plant Generation if you want to use Naturas Berries instead!]");
-		ConfigHandler.berryPlantRarity = config.getInt("Extra Plant Generation Rarity", "Juices Extra", 5, 1, Integer.MAX_VALUE, "Sets the Rarity of Berry Plants.\n[The higher the value, the more Plants are generated.]");
-		ConfigHandler.ExtraJuices = config.getBoolean("Extra Juices W/O Bottles", "Juices Extra", true, "Enable Juices With out bottles in the recipe?");
-		ConfigHandler.ExtraJuicesBottles = config.getBoolean("Extra Juices With Bottles", "Juices Extra", false, "Enable Juices With bottles in the recipe?");
+		config.addCustomCategoryComment("Modded Juice", "Everyone loves Modded juice!\n[Only ENABLE one or the other.]");
+		ConfigHandler.ExtraJuices = config.getBoolean("Extra Juice W/O Bottles", "Modded Juice", true, "Enable Juices W/O bottles in the recipe?");
+		ConfigHandler.ExtraJuicesBottles = config.getBoolean("Extra Juice With Bottles", "Modded Juice", false, "Enable Juice With bottles in the recipe?");
 		
-		config.addCustomCategoryComment("Juices Extra Stats", "Everyone loves juice Stats!");
-		ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount", "Juices Extra Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice Saturation Amount", "Juices Extra Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal Amount", "Juices Extra Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice Saturation Amount", "Juices Extra Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount", "Juices Extra Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice Saturation Amount", "Juices Extra Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-		ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount", "Juices Extra Stats", 4, 1, 20, "Sets the Heal Amount.");
-		ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice Saturation Amount", "Juices Extra Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		config.addCustomCategoryComment("Modded Juice Generation", "Extra Berry Plants!\n[Disable Extra Plant Generation if you want to use Naturas Berries instead!]\n[The higher the value, the more Plants are generated.]");
+		ConfigHandler.ExtraPlantGen = config.getBoolean("Extra Plant Generation", "Modded Juice Generation", true, "Enable Extra Plant Generation?");
+		ConfigHandler.berryPlantRarity = config.getInt("Extra Plant Generation Rarity", "Modded Juice Generation", 5, 1, Integer.MAX_VALUE, "Sets the Rarity of Berry Plants.");
+		
+		config.addCustomCategoryComment("Modded Juice Stats", "Everyone loves Modded juice Stats!");
+		ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount", "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal Amount", "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount", "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+		ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount", "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
+		ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		config.addCustomCategoryComment("Extra Food", "Want more food?");
 		ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", "Extra Food", true, "Enable Cooked Bacon?");

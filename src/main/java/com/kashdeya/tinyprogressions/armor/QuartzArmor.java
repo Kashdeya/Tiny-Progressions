@@ -43,7 +43,7 @@ public class QuartzArmor extends ItemArmor {
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.quartz_leggings) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.quartz_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
             if (ArmorHandler.quartz_armor && ArmorHandler.quartz_armor_strength) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, ArmorHandler.quartz_armor_strength_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, ArmorHandler.quartz_armor_strength_lvl, false, false));
             }
         }
     }

@@ -43,7 +43,7 @@ public class RedstoneArmor extends ItemArmor {
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.redstone_leggings) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.redstone_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
             if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, false, false));
             }
         }
     }

@@ -43,7 +43,7 @@ public class LapisArmor extends ItemArmor {
             (!legs .isEmpty()) && (legs.getItem() == TechArmor.lapis_leggings) &&
             (!feet .isEmpty()) && (feet.getItem() == TechArmor.lapis_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
             if (ArmorHandler.lapis_armor && ArmorHandler.lapis_armor_water) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 180, ArmorHandler.lapis_armor_water_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 180, ArmorHandler.lapis_armor_water_lvl, false, false));
             }
         }
     }

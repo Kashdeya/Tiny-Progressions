@@ -41,16 +41,16 @@ public class StoneArmor extends ItemArmor {
         ItemStack head = entity.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
         ItemStack legs = entity.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
         if (!head.isEmpty() && head.getItem() == TechArmor.stone_helmet || entity.capabilities.isCreativeMode || entity.isSpectator()) {
-            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, false, false));
         }
         if (!chest.isEmpty() && chest.getItem() == TechArmor.stone_chestplate || entity.capabilities.isCreativeMode || entity.isSpectator()) {
-            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, false, false));
         }
         if (!legs.isEmpty() && legs.getItem() == TechArmor.stone_leggings || entity.capabilities.isCreativeMode || entity.isSpectator()) {
-            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, false, false));
         }
         if (!feet.isEmpty() && feet.getItem() == TechArmor.stone_boots || entity.capabilities.isCreativeMode || entity.isSpectator()) {
-            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, true, false));
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 180, 0, false, false));
         }
     }
 

@@ -46,10 +46,10 @@ public class LavaArmour extends ItemArmor {
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.lava_leggings) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.lava_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
             if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_fire) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, ArmorHandler.lava_armor_fire_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, ArmorHandler.lava_armor_fire_lvl, false, false));
             }
             if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_resistance) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.lava_armor_resistance_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.lava_armor_resistance_lvl, false, false));
             }
         }
     }

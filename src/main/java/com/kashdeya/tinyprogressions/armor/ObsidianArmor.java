@@ -46,7 +46,7 @@ public class ObsidianArmor extends ItemArmor {
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.obsidian_leggings) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.obsidian_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
             if (ArmorHandler.obsidian_armor && ArmorHandler.obsidian_armor_resistance) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.obsidian_armor_resistance_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.obsidian_armor_resistance_lvl, false, false));
             }
         }
     }

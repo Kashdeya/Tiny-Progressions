@@ -11,8 +11,10 @@ import com.kashdeya.tinyprogressions.registry.recipes.ShapelessRecipe;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.potion.PotionUtils;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockRecipes {
@@ -208,25 +210,26 @@ public class BlockRecipes {
 					"ded",
                 	"ibi",
 					'i', "ingotIron",
-					'b', new ItemStack(TechBlocks.bone_block),
-					'd', new ItemStack(TechBlocks.dirty_glass),
+					'b', "blockBone",
+					'd', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.SWIFTNESS),
 					'e', new ItemStack(Blocks.SEA_LANTERN));
 		}
-		if (ConfigHandler.BlockGrowthUpgrade && ConfigHandler.WateringCanUpgrade && ConfigHandler.BlockGrowth && ConfigHandler.NetherStarBlock) {
+		if (ConfigHandler.BlockGrowthUpgrade && ConfigHandler.BlockGrowth) {
 			GROWTH_UPGRADE = new ShapedRecipe(new ItemStack(TechBlocks.growth_upgrade), 
-					"cwc",
-                	"nen",
+					"cnc",
+                	"wew",
                 	"cnc",
-					'c', new ItemStack(TechBlocks.reinforced_glass),
-					'w', new ItemStack(TechItems.watering_can_upgrade),
-					'e', new ItemStack(TechBlocks.growth_block),
-					'n', new ItemStack(Items.NETHER_STAR));
+					'e', "blockGlass",
+					'w', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.LONG_SWIFTNESS),
+					'c', new ItemStack(TechBlocks.growth_block),
+					'n', "netherStar");
 		}
 		if (ConfigHandler.BlockGrowthUpgradeTwo && ConfigHandler.BlockGrowthUpgrade) {
 			GROWTH_UPGRADE_TWO = new ShapedRecipe(new ItemStack(TechBlocks.growth_upgrade_two), 
-					"c c",
-					" g ",
-					"c c",
+					"cgc",
+					"scs",
+					"cgc",
+					's', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.STRONG_SWIFTNESS),
 					'g', new ItemStack(TechBlocks.growth_upgrade),
 					'c', new ItemStack(Items.END_CRYSTAL));
 		}

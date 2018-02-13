@@ -35,13 +35,6 @@ public class ItemRecipes {
 	
 		public static void init() {
 			// Rings
-			if (ConfigHandler.artifact_rings && ConfigHandler.steel_ingot){
-				STARTER_RING = new ShapedRecipe(new ItemStack(TechItems.starter_ring),
-						"sss",
-						"shs",
-						"sss",
-						's', new ItemStack(TechItems.steel_ingot),
-						'h', new ItemStack(TechItems.stone_hammer));
 				WITHER_RING = new ShapedRecipe(new ItemStack(TechItems.wither_ring), 
 						"sms",
 						"aha",
@@ -81,7 +74,6 @@ public class ItemRecipes {
 						'f', new ItemStack(TechItems.fire_ring),
 						'n', new ItemStack(TechItems.nausea_ring),
 						'p', new ItemStack(TechItems.posion_ring));
-			}
 			// Nether
 			if (ConfigHandler.nether_rod){
 				NETHER_ROD = new ShapedRecipe(new ItemStack(TechItems.nether_rod, 4), 
@@ -215,6 +207,12 @@ public class ItemRecipes {
 						'i', Items.STRING,
 						's', Items.STICK,
 						'c', TechBlocks.hardened_stone);
+				STARTER_RING = new ShapedRecipe(new ItemStack(TechItems.starter_ring),
+						"sss",
+						"shs",
+						"sss",
+						's', new ItemStack(Items.IRON_INGOT),
+						'h', new ItemStack(TechItems.stone_hammer));
 			
 		}
 

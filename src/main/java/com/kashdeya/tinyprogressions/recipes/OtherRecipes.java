@@ -30,7 +30,6 @@ public class OtherRecipes
 	public static void init()
 	{
 		// Corruption
-		if (ConfigHandler.artifact_rings){
 			CORRUPTED_HEXA = new ShapedRecipe(new ItemStack(TechItems.corrupted_hexa),
 					"ccc",
 					"ccc",
@@ -44,7 +43,6 @@ public class OtherRecipes
 					"ccc",
 					'c', new ItemStack(TechItems.corrupted_hexa));
 			CORRUPTED_GEM_2 = new ShapelessRecipe(new ItemStack(TechItems.corrupted_hexa, 9), new ItemStack(TechItems.corrupted_gem));
-		}
 		// WUB WUB JUICE
 		if(ConfigHandler.vasholine){
 			WUB_JUICE = new ShapedRecipe(FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("vasholine"), Fluid.BUCKET_VOLUME)),

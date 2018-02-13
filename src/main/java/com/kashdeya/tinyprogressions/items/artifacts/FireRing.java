@@ -21,7 +21,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber
-public class FireRing extends Item{
+public class FireRing extends Item {
 
 	public FireRing() {
 		super();

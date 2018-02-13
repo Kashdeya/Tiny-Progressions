@@ -24,9 +24,8 @@ public class NauseaRing extends Item {
 		this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	
-	
 	public void onUpdate(ItemStack stack, World worldIn, Entity player, int itemSlot, boolean isSelected) {
-		if(player instanceof EntityLivingBase)
+		if(player instanceof EntityLivingBase && worldIn.isRemote)
 			if(((EntityLivingBase) player).isPotionActive(MobEffects.NAUSEA))
 				((EntityLivingBase) player).removePotionEffect(MobEffects.NAUSEA);
 	}

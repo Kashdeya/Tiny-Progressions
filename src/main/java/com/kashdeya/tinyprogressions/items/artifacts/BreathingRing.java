@@ -6,10 +6,7 @@ import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -24,18 +21,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber
-public class WitherRing extends Item {
-	
-	public WitherRing() {
+public class BreathingRing extends Item {
+
+	public BreathingRing() {
 		super();
 		this.setCreativeTab(TinyProgressions.tabTP);
-	}
-	
-	
-	public void onUpdate(ItemStack stack, World worldIn, Entity player, int itemSlot, boolean isSelected) {
-		if(player instanceof EntityLivingBase && worldIn.isRemote)
-			if(((EntityLivingBase) player).isPotionActive(MobEffects.WITHER))
-				((EntityLivingBase) player).removePotionEffect(MobEffects.WITHER);
 	}
 	
 	@SubscribeEvent
@@ -43,8 +33,8 @@ public class WitherRing extends Item {
 		if(event.getEntity() instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 			
-			if(event.getSource() == DamageSource.WITHER) {
-				if(player.inventory.hasItemStack(new ItemStack(TechItems.wither_ring))) {
+			if(event.getSource() == DamageSource.DROWN) {
+				if(player.inventory.hasItemStack(new ItemStack(TechItems.breathing_ring))) {
 					event.setCanceled(true);
 				}
 			}
@@ -65,6 +55,6 @@ public class WitherRing extends Item {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
 	{
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.witherring_1").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.breathingring_1").getFormattedText());
 	}
 }

@@ -161,10 +161,6 @@ public class TechBlocks {
     public static Block ghost_block;
     
 	public static void init() {
-		// Corrupted Ore
-		if (ConfigHandler.artifact_rings){
-			corrupted_ore = new CorruptedBlock();
-		}
 		// Steel Block
 		if (ConfigHandler.steel_ingot){
 			steel_block = new DecoMain().setOreDictName("blockSteel").setUnlocalizedName("steel_block");
@@ -364,6 +360,8 @@ public class TechBlocks {
 		
 		// Can not turn off
 			ghost_block = new GhostBlock();
+		// Corrupted Ore
+			corrupted_ore = new CorruptedBlock();
 		
 	}
 }

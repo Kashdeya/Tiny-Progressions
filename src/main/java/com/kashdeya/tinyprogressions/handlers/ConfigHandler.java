@@ -1,8 +1,29 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {	
-	// Rings
-	public static boolean artifact_rings = true;
+	// Special Rings
+	public static boolean nausea_ring = true;
+	public static boolean posion_ring = true;
+	public static boolean wither_ring = true;
+	
+	// Potion Rings
+	public static boolean regen_ring = true;
+	public static boolean speed_ring = true;
+	public static boolean fire_ring = true;
+	public static boolean night_ring = true;
+	public static boolean strength_ring = true;
+	public static boolean leap_ring = true;
+	public static boolean breathing_ring = true;
+	public static boolean haste_ring = true;
+	
+	// Basic Rings
+	public static boolean lava_ring = true;
+	public static boolean water_ring = true;
+	// Advanced Rings
+	public static boolean flight_ring = true;
+	public static boolean growth_ring = true;
+	
+	public static boolean master_ring = true;
 	
 	// Wither Rib
 	public static boolean wither_rib = true;

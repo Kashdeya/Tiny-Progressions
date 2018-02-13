@@ -213,7 +213,7 @@ public class TinyConfig {
 		ConfigHandler.wither_rib = config.getBoolean("Wither Rib", "Rib", false, "Enable Wither Rib?");
 		
 		config.addCustomCategoryComment("Artifact Rings", "Needs Steel Enabled to be able to use!\n[More Rings coming SOON]");
-		ConfigHandler.artifact_rings = config.getBoolean("Artifact Rings", "Artifact Rings", true, "Enable Artifact Rings?");
+		//ConfigHandler.artifact_rings = config.getBoolean("Artifact Rings", "Artifact Rings", true, "Enable Artifact Rings?");
 		
 		config.addCustomCategoryComment("Seeds", "Things to plant?");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", "Seeds", true, "Enable Mycelium Seeds?");

@@ -47,13 +47,13 @@ public class DragonArmour extends ItemArmor {
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.dragon_boots)) ||
             (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
             if (ArmorHandler.dragon_armor && ArmorHandler.dragon_resistance) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.dragon_resistance_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 180, ArmorHandler.dragon_resistance_lvl, false, false));
             }
             if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fire) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, ArmorHandler.dragon_fire_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 180, ArmorHandler.dragon_fire_lvl, false, false));
             }
             if (ArmorHandler.dragon_armor && ArmorHandler.dragon_strength) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, ArmorHandler.dragon_strength_lvl, true, false));
+                entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 180, ArmorHandler.dragon_strength_lvl, false, false));
             }
             if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly) {
                 entity.capabilities.allowFlying = true;

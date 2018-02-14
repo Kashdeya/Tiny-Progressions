@@ -26,32 +26,6 @@ item.blueberry_berry.name=Blueberry
 item.maloberry_berry.name=Maloberry
 item.raspberry_berry.name=Raspberry
 
-#Corruption
-tile.corrupted_ore.name=Corrupted Ore
-item.corrupted_shard.name=Corrupted Shard
-item.corrupted_hexa.name=Corrupted Hexa
-item.corrupted_gem.name=Corrupted Gem
-tooltip.warning_1=Keep away from mouth and eyes!
-tooltip.shard_1=Used to craft Low level Rings and more!
-tooltip.hexa_1=Used to craft Mid level Rings and more!
-tooltip.gem_1=Used to craft High level Rings and more!
-
-#Artifacts
-item.starter_ring.name=Steel Band
-item.wither_ring.name=§8Ring Of The Wither
-tooltip.witherring_1=Immunity to Wither
-item.fire_ring.name=§4Ring Of Heat Resistance
-tooltip.firering_1=Immunity to lava and fire
-item.posion_ring.name=§aRing Of Venom
-tooltip.posionring_1=Immunity to Posion
-item.nausea_ring.name=§aRing of Anti Nausea
-tooltip.nausearing_1=Immunity to Nausea
-item.master_ring.name=§aMaster Ring
-tooltip.masterring_1=Immunity to Wither
-tooltip.masterring_2=Immunity to Fire
-tooltip.masterring_3=Immunity to Posion
-tooltip.masterring_4=Immunity to Nausea
-
 #Infinity Bucket
 item.infin_bucket.name=Infinity Water Bucket
 tooltip.infinbucket_1=Provides a lot of water

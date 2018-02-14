@@ -41,7 +41,6 @@ import com.kashdeya.tinyprogressions.blocks.misc.GhostBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.Infused;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
-import com.kashdeya.tinyprogressions.blocks.ores.CorruptedBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
@@ -86,8 +85,6 @@ public class TechBlocks {
 	public static Block ender_ore;
 	// Lava Block
 	public static Block lava_block;
-	// Corrupted Ore
-	public static Block corrupted_ore;
 	// Water Block
 	public static Block water_block;
 	// Hardened Stone
@@ -359,9 +356,6 @@ public class TechBlocks {
 		}
 		
 		// Can not turn off
-			ghost_block = new GhostBlock();
-		// Corrupted Ore
-			corrupted_ore = new CorruptedBlock();
-		
+			ghost_block = new GhostBlock();		
 	}
 }

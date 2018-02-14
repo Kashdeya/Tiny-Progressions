@@ -6,17 +6,6 @@ import com.kashdeya.tinyprogressions.items.FoodBase;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemBaseMeta;
 import com.kashdeya.tinyprogressions.items.ItemStay;
-import com.kashdeya.tinyprogressions.items.artifacts.BreathingRing;
-import com.kashdeya.tinyprogressions.items.artifacts.FireRing;
-import com.kashdeya.tinyprogressions.items.artifacts.LeapRing;
-import com.kashdeya.tinyprogressions.items.artifacts.MasterRing;
-import com.kashdeya.tinyprogressions.items.artifacts.NauseaRing;
-import com.kashdeya.tinyprogressions.items.artifacts.PosionRing;
-import com.kashdeya.tinyprogressions.items.artifacts.RegenRing;
-import com.kashdeya.tinyprogressions.items.artifacts.WitherRing;
-import com.kashdeya.tinyprogressions.items.misc.CorruptedGem;
-import com.kashdeya.tinyprogressions.items.misc.CorruptedHexa;
-import com.kashdeya.tinyprogressions.items.misc.CorruptedShard;
 import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
 import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
 import com.kashdeya.tinyprogressions.items.misc.ItemRib;
@@ -33,27 +22,7 @@ import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 import net.minecraft.item.Item;
 
 public class TechItems {
-	// Special Rings
-	public static Item wither_ring;
-	public static Item posion_ring;
-	public static Item nausea_ring;
-	// Potion Rings
-	public static Item fire_ring;
-	public static Item breathing_ring;
-	public static Item leap_ring;
-	public static Item regen_ring;
-	public static Item speed_ring;
-	public static Item night_ring;
-	public static Item strength_ring;
-	public static Item haste_ring;
-	// basic Rings
-	public static Item lava_ring;
-	public static Item water_ring;
-	// Advanced Rings
 	
-	// MAYBE
-	public static Item master_ring;
-	public static Item starter_ring;
 	// Watering Cans
 	public static Item watering_can;
 	public static Item watering_can_upgrade;
@@ -101,10 +70,6 @@ public class TechItems {
 	public static Item steel_ingot;
 	// Infin Water Bucket
 	public static Item infin_bucket;
-	// Corrupted
-	public static Item corrupted_shard;
-	public static Item corrupted_hexa;
-	public static Item corrupted_gem;
 	// Dust
 	public static Item obsidian_dust;
 		
@@ -114,32 +79,8 @@ public class TechItems {
 			infin_bucket = new InfinBucket().setUnlocalizedName("infin_bucket");
 		}
 		
-		
-		// Master Ring
-			master_ring = new MasterRing().setUnlocalizedName("master_ring");
-		
-		// Potion Rings
-			breathing_ring = new BreathingRing().setUnlocalizedName("breathing_ring");
-			leap_ring = new LeapRing().setUnlocalizedName("leap_ring");
-			fire_ring = new FireRing().setUnlocalizedName("fire_ring");
-			regen_ring = new RegenRing().setUnlocalizedName("regen_ring");
-			//speed_ring = new SpeedRing().setUnlocalizedName("speed_ring");
-			//haste_ring = new HasteRing().setUnlocalizedName("haste_ring");
-			//strength_ring = new StrengthRing().setUnlocalizedName("strength_ring");
-			//night_ring = new NightRing().setUnlocalizedName("night_ring");
-			
-		// Special Rings
-			nausea_ring = new NauseaRing().setUnlocalizedName("nausea_ring");
-			posion_ring = new PosionRing().setUnlocalizedName("posion_ring");
-			wither_ring = new WitherRing().setUnlocalizedName("wither_ring");
-		
-		// Basic Rings
-			//lava_ring = new LavaRing().setUnlocalizedName("lava_ring");
-			//water_ring = new WaterRing().setUnlocalizedName("water_ring");
-		
-		
 		// Steel
-		if (ConfigHandler.steel_ingot && (ConfigHandler.tiny_charcoal || ConfigHandler.tiny_coal)) {
+		if (ConfigHandler.steel_ingot) {
 			steel_ingot = new ItemBase().setOreDictName("ingotSteel").setUnlocalizedName("steel_ingot");
 		}
 		// nether rod
@@ -257,10 +198,5 @@ public class TechItems {
 	    // Can not be turned off
 	    obsidian_dust = new ItemBase().setOreDictName("dustObsidian").setUnlocalizedName("obsidian_dust");
 	    stone_hammer = new ItemStay().setUnlocalizedName("stone_hammer");
-	    starter_ring = new ItemBase().setUnlocalizedName("starter_ring");
-	    // Corrupted
-	    corrupted_shard = new CorruptedShard().setOreDictName("shardCorrupted").setUnlocalizedName("corrupted_shard");
-	    corrupted_hexa = new CorruptedHexa().setOreDictName("hexaCorrupted").setUnlocalizedName("corrupted_hexa");
-	    corrupted_gem = new CorruptedGem().setOreDictName("gemCorrupted").setUnlocalizedName("corrupted_gem");
 	}
 }

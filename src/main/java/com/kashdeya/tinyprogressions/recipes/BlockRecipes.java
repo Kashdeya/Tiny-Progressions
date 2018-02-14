@@ -41,7 +41,7 @@ public class BlockRecipes {
 	public static IRecipe CANE, COMPRESSED_CANE, COMPRESSED_CANE2, COMPRESSED_2_CANE, COMPRESSED_2_CANE2, COMPRESSED_3_CANE, COMPRESSED_3_CANE2, COMPRESSED_4_CANE, COMPRESSED_4_CANE2;
 	public static IRecipe COMPRESSED_5_CANE, COMPRESSED_5_CANE2, COMPRESSED_6_CANE, COMPRESSED_6_CANE2, COMPRESSED_7_CANE, COMPRESSED_7_CANE2, COMPRESSED_8_CANE;
 	public static IRecipe ASPHALT, LAVA_INFUSED_STONE;
-	public static IRecipe STEEL_BLOCK, STEEL_BLOCK2;
+	public static IRecipe STEEL_BLOCK, STEEL_BLOCK2, SECRET_BLOCK;
 	
 	public static void init() {
 		if (ConfigHandler.steel_ingot){
@@ -487,5 +487,11 @@ public class BlockRecipes {
 			}
 		}
 		
+		SECRET_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.ghost_block), 
+				"cgc",
+				"gcg",
+				"cgc",
+				'g', "blockGlassColorless",
+				'c', "cobblestone");
 	}
 }

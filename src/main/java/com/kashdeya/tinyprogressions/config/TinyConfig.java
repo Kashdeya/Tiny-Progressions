@@ -150,14 +150,14 @@ public class TinyConfig {
 		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Gen Frequency", "Lava Source Block Stones", 5, 1, 100, "Sets the Chance of Lavastone.");
 		ConfigHandler.lava_block_min = config.getInt("Lavastone Gen Min", "Lava Source Block Stones", 16, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Gen Max", "Lava Source Block Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", "Lava Source Block Stones", 3, 1, 100, "Sets the Lavastone Vein Size.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", "Lava Source Block Stones", 5, 1, 100, "Sets the Lavastone Vein Size.");
 		
 		config.addCustomCategoryComment("Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", "Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
 		ConfigHandler.water_block_frequency = config.getInt("Waterstone Gen Frequency", "Water Source Block Stones", 5, 1, 100, "Sets the Chance of Waterstone.");
 		ConfigHandler.water_block_min = config.getInt("Waterstone Gen Min", "Water Source Block Stones", 32, 1, 255, "Sets the min Y level.");
 		ConfigHandler.water_block_max = config.getInt("Waterstone Gen Max", "Water Source Block Stones", 48, 1, 255, "Sets the max Y level.");
-		ConfigHandler.water_block_size = config.getInt("Waterstone Gen Size", "Water Source Block Stones", 3, 1, 100, "Sets the Waterstone Vein Size.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Gen Size", "Water Source Block Stones", 5, 1, 100, "Sets the Waterstone Vein Size.");
 		
 		config.addCustomCategoryComment("Ender Ore", "Might as well add this");
 		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", "Ender Ore", true, "Enable Ender Ore?");
@@ -173,7 +173,7 @@ public class TinyConfig {
 		ConfigHandler.charcoal_frequency = config.getInt("Charcoal Block Nether Worldgen Frequency", "Charcoal", 10, 1, 100, "Sets the Chance of Charcoal Block.");
 		ConfigHandler.charcoal_min = config.getInt("Charcoal Block Nether Worldgen Min", "Charcoal", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.charcoal_max = config.getInt("Charcoal Block Nether Worldgen Max", "Charcoal", 128, 1, 255, "Sets the max Y level.");
-		ConfigHandler.charcoal_size = config.getInt("Charcoal Block Nether Worldgen Size", "Charcoal", 20, 1, 100, "Sets the Charcoal Vein Size.");        
+		ConfigHandler.charcoal_size = config.getInt("Charcoal Block Nether Worldgen Size", "Charcoal", 10, 1, 100, "Sets the Charcoal Vein Size.");        
 		
 		if (config.hasChanged())
 	        config.save();
@@ -189,10 +189,10 @@ public class TinyConfig {
         
 		config.addCustomCategoryComment("Dirt Drops", "Extra Drops");
 		ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", "Dirt Drops", true, "Enable Bones to drop from Dirt?");
-		ConfigHandler.BoneDropsChance = config.getInt("Bone Drop Chance", "Dirt Drops", 5, 0, 100, "Sets the Chance of Bones from Dirt.");
+		ConfigHandler.BoneDropsChance = config.getInt("Bone Drop Chance", "Dirt Drops", 1, 0, 100, "Sets the Chance of Bones from Dirt.");
 		ConfigHandler.BoneAmount = config.getInt("Bone Drop Amount", "Dirt Drops", 1, 1, 64, "Sets the Amount of Bones Dropped from Dirt.");
 		ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", "Dirt Drops", true, "Enable Skulls to drop from Dirt?");
-		ConfigHandler.SkullDropsChance = config.getInt("Skull Drop Chance", "Dirt Drops", 5, 0, 100, "Sets the Chance of Skulls from Dirt.");
+		ConfigHandler.SkullDropsChance = config.getInt("Skull Drop Chance", "Dirt Drops", 1, 0, 100, "Sets the Chance of Skulls from Dirt.");
 		ConfigHandler.SkullAmount = config.getInt("Skull Drop Amount", "Dirt Drops", 1, 1, 64, "Sets the Amount of Skulls Dropped from Dirt.");
 		
 		config.addCustomCategoryComment("Bricks", "Because People Love Bricks");
@@ -211,9 +211,6 @@ public class TinyConfig {
 		
 		config.addCustomCategoryComment("Rib", "Used for Crafting!\n[DO NOT ENABLE if Wither Armor is ENABLED.]");
 		ConfigHandler.wither_rib = config.getBoolean("Wither Rib", "Rib", false, "Enable Wither Rib?");
-		
-		config.addCustomCategoryComment("Artifact Rings", "Needs Steel Enabled to be able to use!\n[More Rings coming SOON]");
-		//ConfigHandler.artifact_rings = config.getBoolean("Artifact Rings", "Artifact Rings", true, "Enable Artifact Rings?");
 		
 		config.addCustomCategoryComment("Seeds", "Things to plant?");
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", "Seeds", true, "Enable Mycelium Seeds?");
@@ -243,17 +240,17 @@ public class TinyConfig {
 		config.addCustomCategoryComment("Extra Tree Drops", "Extra Drops");
 		ConfigHandler.extra_drops = config.getBoolean("Extra Fruit Drops", "Extra Tree Drops", true, "Enable Pears and Peaches to drop from leaves?");
 		ConfigHandler.extra_drop_bottle = config.getBoolean("Extra Fruit Drops need bottle to make juice", "Extra Tree Drops", false, "Enable Bottle in recipe?");
-		ConfigHandler.pearDropsChance = config.getInt("Extra Fruit Drops Pear Chance", "Extra Tree Drops", 5, 0, 100, "Sets the Chance of Pears from leaves.");
+		ConfigHandler.pearDropsChance = config.getInt("Extra Fruit Drops Pear Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Pears from leaves.");
 		ConfigHandler.pearDropsAmount = config.getInt("Extra Fruit Drops Pear Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Pears Dropped from leaves.");
-		ConfigHandler.peachDropsChance = config.getInt("Extra Fruit Drops Peach Chance", "Extra Tree Drops", 5, 0, 100, "Sets the Chance of Peaches from leaves.");
+		ConfigHandler.peachDropsChance = config.getInt("Extra Fruit Drops Peach Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Peaches from leaves.");
 		ConfigHandler.peachDropsAmount = config.getInt("Extra Fruit Drops Peach Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Peaches Dropped from leaves.");
 		ConfigHandler.peachAmount = config.getInt("Extra Fruit Drops Peach Juice Heal Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Peach Juice.");
 		ConfigHandler.peachSaturation = config.getFloat("Extra Fruit Drops Peach Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Peach Juice.");
 		ConfigHandler.pearAmount = config.getInt("Extra Fruit Drops Pear Juice Heal Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Pear Juice.");
 		ConfigHandler.pearSaturation = config.getFloat("Extra Fruit Drops Pear Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Pear Juice.");
-		ConfigHandler.stickDropsChance = config.getInt("Extra Fruit Drops Stick Chance", "Extra Tree Drops", 5, 0, 100, "Sets the Chance of Sticks from leaves.");
+		ConfigHandler.stickDropsChance = config.getInt("Extra Fruit Drops Stick Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Sticks from leaves.");
 		ConfigHandler.stickDropsAmount = config.getInt("Extra Fruit Drops Stick Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Sticks Dropped from leaves.");
-		ConfigHandler.appleDropsChance = config.getInt("Extra Fruit Drops Apple Chance", "Extra Tree Drops", 5, 0, 100, "Sets the Chance of Apple from leaves.");
+		ConfigHandler.appleDropsChance = config.getInt("Extra Fruit Drops Apple Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Apple from leaves.");
 		ConfigHandler.appleDropsAmount = config.getInt("Extra Fruit Drops Apple Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Apple Dropped from leaves.");
 
 		

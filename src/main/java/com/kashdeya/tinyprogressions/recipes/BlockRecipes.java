@@ -487,10 +487,11 @@ public class BlockRecipes {
 			}
 		}
 		
-		SECRET_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.ghost_block), 
+		SECRET_BLOCK = new ShapedRecipe(new ItemStack(TechBlocks.ghost_block, 4), 
 				"cgc",
-				"gcg",
+				"ghg",
 				"cgc",
+				'h', TechItems.stone_hammer,
 				'g', "blockGlassColorless",
 				'c', "cobblestone");
 	}

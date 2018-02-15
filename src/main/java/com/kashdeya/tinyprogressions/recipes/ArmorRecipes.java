@@ -27,7 +27,7 @@ public class ArmorRecipes {
 	public static IRecipe REDSTONE_INGOT, REDSTONE_HELMET, REDSTONE_CHESTPLATE, REDSTONE_LEGGINGS, REDSTONE_BOOTS;
 	public static IRecipe QUARTZ_INGOT, QUARTZ_HELMET, QUARTZ_CHESTPLATE, QUARTZ_LEGGINGS, QUARTZ_BOOTS;
 	public static IRecipe EMERALD_HELMET, EMERALD_CHESTPLATE, EMERALD_LEGGINGS, EMERALD_BOOTS;
-	public static IRecipe BAM_TSHIRT;
+	public static IRecipe BAM_TSHIRT, GOODERNESS_TSHIRT;
 	
 	public static void init() {
 		if (ArmorHandler.chain_armor){
@@ -54,9 +54,8 @@ public class ArmorRecipes {
 				's', "chainmail");
 		}
 		
-		if (ArmorHandler.bam_tshirt){
 			BAM_TSHIRT = new ShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), TechArmor.emerald_chestplate);
-		}
+			GOODERNESS_TSHIRT = new ShapelessRecipe(new ItemStack(TechArmor.gooderness_tshirt), TechArmor.obsidian_chestplate);
 		
 		if (ArmorHandler.StoneArmor){
 			STONE_HELMET = new ShapedRecipe(new ItemStack(TechArmor.stone_helmet),

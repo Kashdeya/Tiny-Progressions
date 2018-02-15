@@ -30,7 +30,7 @@ minecraft {
 }
 
 display_version = "${display_version}" ?: "${mcversion}"
-version = "${display_version}-${mod_version}"
+version = "${display_version}-${mod_version}-${release_version}"
 
 processResources
 {

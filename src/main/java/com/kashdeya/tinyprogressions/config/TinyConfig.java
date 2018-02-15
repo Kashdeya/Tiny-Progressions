@@ -92,9 +92,6 @@ public class TinyConfig {
 		ConfigHandler.QuartzKnife = config.getBoolean("Quartz Knife", "Custom Packs", false, "Enable the Quartz Knife and Dust Recipe?");
 		ConfigHandler.QuartzKnifeDamage = config.getInt("Quartz Knife Durability", "Custom Packs", 128, 0, Integer.MAX_VALUE, "Sets the amount of Durability.");
 		
-		config.addCustomCategoryComment("T-Shirt", "Cause it looks freaking AWESOME");
-		ArmorHandler.bam_tshirt = config.getBoolean("bamInati T-Shirt", "T-Shirt", true, "Enable bamInati T-Shirt?");
-		
 		config.addCustomCategoryComment("Happy Birthday Darkosto", "Fun Stuff");
 		ConfigHandler.BirthdayPickaxe = config.getBoolean("Party Pickaxe", "Happy Birthday Darkosto", true, "Enable Party Pickaxe?");
 		

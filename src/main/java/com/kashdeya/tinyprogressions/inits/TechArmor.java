@@ -5,7 +5,6 @@ import com.kashdeya.tinyprogressions.armor.BoneArmor;
 import com.kashdeya.tinyprogressions.armor.DragonArmour;
 import com.kashdeya.tinyprogressions.armor.EmeraldArmor;
 import com.kashdeya.tinyprogressions.armor.FlintArmor;
-import com.kashdeya.tinyprogressions.armor.GoodernessShirt;
 import com.kashdeya.tinyprogressions.armor.LapisArmor;
 import com.kashdeya.tinyprogressions.armor.LavaArmour;
 import com.kashdeya.tinyprogressions.armor.ObsidianArmor;
@@ -96,16 +95,10 @@ public class TechArmor {
 	// bam t-shirt
 	public static ItemArmor bam_tshirt;
 	
-	// gooderness t-shirt
-	public static ItemArmor gooderness_tshirt;
-	
 	public static void init(){
 		
 		// bam t-shirt
 			bam_tshirt = (ItemArmor) new BamShirt(MaterialHandler.bamArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("bam_tshirt");
-		
-		// gooderness t-shirt
-			gooderness_tshirt = (ItemArmor) new GoodernessShirt(MaterialHandler.goodernessArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("gooderness_tshirt");
 		
 		// Emerald Armor
 		if (ArmorHandler.emerald_amor){

@@ -52,10 +52,6 @@ item.c_axe.name=Sea-Axe
 item.bam_tshirt.name=bamInati T-Shirt
 tooltip.bamsarmor_1=The Bearded Blueberry Warriors T-Shirt!
 
-#Gooderness
-item.gooderness_tshirt.name=Gooderness T-Shirt
-tooltip.goodernessarmor_1=The Voice of Madpack!
-
 #TinyCoal
 item.tiny_charcoal.name=Tiny Charcoal
 item.tiny_coal.name=Tiny Coal

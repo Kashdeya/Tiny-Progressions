@@ -11,6 +11,8 @@ tile.asphalt_block.name=Asphalt
 #ghost block
 tile.ghost_block.name="Cobblestone"
 
+item.succ_pearls.name=SUCC THE PEARLS
+
 #Growth Blocks
 tile.growth_block.name=Growth Crystal
 tile.growth_upgrade.name=Growth Crystal Tier 2
@@ -137,6 +139,9 @@ tile.flint_block.name=Compressed Flint Block
 fluid.vasholine=Wub Wub Juice
 tile.vasholine.name=Wub Wub Juice
 tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
+item.wub_gem.name=Wub Gem
+tooltip.wubgem_1=Used to make Wub Wub Juice
+tile.wub_ore.name=Wub Wub Ore
 
 #Watering Cans
 item.watering_can.name=Watering Can

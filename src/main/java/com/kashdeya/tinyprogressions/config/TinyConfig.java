@@ -105,6 +105,7 @@ public class TinyConfig {
 		ConfigHandler.vasholine_heal_amount = config.getFloat("WUB Juice Heal Amount", "WUB Juice", 0.25F, 0.0F, 1.0F, "Sets the amount of heal Wub Juice does per tick.");
 		ConfigHandler.vasholine_mobs = config.getBoolean("WUB Juice Hurts Mobs", "WUB Juice", false, "Enable mobs getting hurt?");	
 		ConfigHandler.vasholine_mobs_amount = config.getFloat("WUB Juice Hurts Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
+		ConfigHandler.wub_block_count = config.getInt("Wub Ore Size", "WUB Juice", 4, 1, 100, "Sets the Wub Ore Vein Size.\n[Used to craft Wub Juice]\n[Generates at 1-12 Y-Level]");
 		
 		config.addCustomCategoryComment("Medical Kit", "Need a little healing?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", "Medical Kit", true, "Enable Medkit?");
@@ -125,6 +126,10 @@ public class TinyConfig {
 		ConfigHandler.bams_pizza_amount = config.getInt("Bams Pizza Heal Amount", "Pizza", 10, 1, 20, "Sets the Heal Amount.");
 		ConfigHandler.bams_pizza_sat = config.getFloat("Bams Pizza Saturation Amount", "Pizza", 1.0F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
+		config.addCustomCategoryComment("Succ Juice", "SUCC THE PEARLS");
+		ConfigHandler.succ_juice = config.getBoolean("Pearl Juice", "Succ Juice", true, "Enable Pearl Juice?");
+		ConfigHandler.succ_juice_bottle = config.getBoolean("Pearl Juice Recipe", "Succ Juice", false, "Enable Pearl Juice require a bottle in recipe?");
+		
 		config.addCustomCategoryComment("Sea Axe", "A Funny Thing");
 		ConfigHandler.c_axe = config.getBoolean("Sea Axe", "Sea Axe", true, "Enable Sea Axe?");
 		ConfigHandler.sea_axe = config.getBoolean("Sea Axe - Axe", "Sea Axe", true, "Enable Sea Axe as a Axe?\n[Axe has 11 attack damage!]\n[Only ENABLE if Sea Axe - Pickaxe is DISABLED!]\n[Sea Axe must be ENABLED for this config to work!]");
@@ -144,26 +149,26 @@ public class TinyConfig {
         
 		config.addCustomCategoryComment("Lava Source Block Stones", "Lavastone!");
 		ConfigHandler.lava_block = config.getBoolean("Lavastone", "Lava Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
-		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Gen Frequency", "Lava Source Block Stones", 5, 1, 100, "Sets the Chance of Lavastone.");
+		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Gen Frequency", "Lava Source Block Stones", 5, 1, 100, "Sets the Chance of Lavastone generating.");
 		ConfigHandler.lava_block_min = config.getInt("Lavastone Gen Min", "Lava Source Block Stones", 16, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Gen Max", "Lava Source Block Stones", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", "Lava Source Block Stones", 5, 1, 100, "Sets the Lavastone Vein Size.");
+		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", "Lava Source Block Stones", 4, 1, 100, "Sets the Lavastone Vein Size.");
 		
 		config.addCustomCategoryComment("Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", "Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");
-		ConfigHandler.water_block_frequency = config.getInt("Waterstone Gen Frequency", "Water Source Block Stones", 5, 1, 100, "Sets the Chance of Waterstone.");
+		ConfigHandler.water_block_frequency = config.getInt("Waterstone Gen Frequency", "Water Source Block Stones", 5, 1, 100, "Sets the Chance of Waterstone generating.");
 		ConfigHandler.water_block_min = config.getInt("Waterstone Gen Min", "Water Source Block Stones", 32, 1, 255, "Sets the min Y level.");
 		ConfigHandler.water_block_max = config.getInt("Waterstone Gen Max", "Water Source Block Stones", 48, 1, 255, "Sets the max Y level.");
-		ConfigHandler.water_block_size = config.getInt("Waterstone Gen Size", "Water Source Block Stones", 5, 1, 100, "Sets the Waterstone Vein Size.");
+		ConfigHandler.water_block_size = config.getInt("Waterstone Gen Size", "Water Source Block Stones", 4, 1, 100, "Sets the Waterstone Vein Size.");
 		
 		config.addCustomCategoryComment("Ender Ore", "Might as well add this");
 		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", "Ender Ore", true, "Enable Ender Ore?");
 		ConfigHandler.ender_mite = config.getBoolean("Endermite", "Ender Ore", true, "Enable Endermite spawn?");
 		ConfigHandler.endermite_spawn = config.getInt("Endermite Spawn", "Ender Ore", 50, 0, 100, "Sets the Chance of Endermites to spawn when Ore is mined.");
-		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", "Ender Ore", 5, 1, 100, "Sets the Chance of Ender ore.");
+		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", "Ender Ore", 5, 1, 100, "Sets the Chance of Ender ore generating.");
 		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", "Ender Ore", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", "Ender Ore", 32, 1, 255, "Sets the max Y level.");
-		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", "Ender Ore", 5, 1, 100, "Sets the Ender Ore Vein Size.");
+		ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", "Ender Ore", 4, 1, 100, "Sets the Ender Ore Vein Size.");
 		
 		config.addCustomCategoryComment("Charcoal", "It's the little things that count right?\n[Charcoal Block must be ENABLED in Main.cfg]");
 		ConfigHandler.CharcoalWorldgen = config.getBoolean("Charcoal Block Nether Worldgen", "Charcoal", true, "Enable the Charcoal Block to spawn in the nether?");

@@ -33,6 +33,11 @@ public class ConfigHandler {
 	public static boolean vasholine_mobs = true;
 	public static float vasholine_mobs_amount = 1.0F;
 	public static float vasholine_heal_amount = 0.5F;
+	public static int wub_block_count = 5;
+	
+	// succ juice
+	public static boolean succ_juice = true;
+	public static boolean succ_juice_bottle = true;
 	
 	// Tiny Coals
 	public static boolean tiny_coal = true;

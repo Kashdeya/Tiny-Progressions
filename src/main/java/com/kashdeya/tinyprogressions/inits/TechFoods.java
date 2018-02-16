@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.inits;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FoodBase;
+import com.kashdeya.tinyprogressions.items.SuccBase;
 import com.kashdeya.tinyprogressions.items.apple.DiamondApple;
 import com.kashdeya.tinyprogressions.items.apple.EmeraldApple;
 import com.kashdeya.tinyprogressions.items.apple.GoldenApple;
@@ -66,8 +67,14 @@ public class TechFoods {
 	// Extra Drops
 	public static Item plump_pear;
 	public static Item plump_peach;
+	//Succ The Pearls
+	public static Item succ_pearls;
 	
 	public static void init(){
+		// Succ Pearls
+		if (ConfigHandler.succ_juice){
+			succ_pearls = new SuccBase(5, 0.25F, true).setAlwaysEdible().setUnlocalizedName("succ_pearls");
+		}
 		// Extra Drops
 		if (ConfigHandler.extra_drops){
 			plump_pear = new FoodBase(3, 0.25F, true).setOreDictName("cropPear").setUnlocalizedName("plump_pear");
@@ -95,9 +102,6 @@ public class TechFoods {
 		    blackberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropBlackberry").setUnlocalizedName("blackberry_berry");
 		    maloberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropMaloberry").setUnlocalizedName("maloberry_berry");
 		}
-		
-		// Juicer (Can not be turned off)
-			juicer = new ItemJuicer().setUnlocalizedName("juicer");
 		
 		// Juices
 		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
@@ -164,6 +168,9 @@ public class TechFoods {
 		    beef_sandwhich = new FoodBase(10, 1.0F, true).setUnlocalizedName("beef_sandwhich");
 		    bacon_sandwhich = new FoodBase(6, 1.0F, true).setUnlocalizedName("bacon_sandwhich");
 	    }
+	    
+		// Juicer (Can not be turned off)
+		juicer = new ItemJuicer().setUnlocalizedName("juicer");
 		
 	}
 }

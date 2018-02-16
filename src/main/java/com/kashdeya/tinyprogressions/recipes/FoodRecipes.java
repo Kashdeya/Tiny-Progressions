@@ -26,7 +26,7 @@ public class FoodRecipes {
 	public static IRecipe DIAMOND_APPLE, EMERALD_APPLE, IRON_APPLE, REDSTONE_APPLE;
 	public static IRecipe GOLDEN_APPLE1, GOLDEN_APPLE2, GOLDEN_APPLE3, GOLDEN_APPLE4;
 	
-	public static IRecipe RAW_BACON;
+	public static IRecipe RAW_BACON, SUCC_PEARLS;
 	public static IRecipe BACON_EGGS, BACON_EGGS_SANDWICH, BREAD_SLICE, BACON_SANDWICH, BEEF_SANDWICH, CHICKEN_SANDWICH, RABBIT_SANDWICH;
 	
 	public static void init() {
@@ -45,11 +45,14 @@ public class FoodRecipes {
                 " b ",
 				'b', Items.BREAD);
 		}
-		// Juicer (Can not be turned off)
-			JUICER = new ShapedRecipe(new ItemStack(TechFoods.juicer), "l",
-                "s",
-				's', "stone",
-				'l', Blocks.STONE_BUTTON);
+		
+		// SUCC THE PEARLS
+		if (ConfigHandler.succ_juice && !ConfigHandler.succ_juice_bottle){
+			SUCC_PEARLS = new ShapelessRecipe(new ItemStack(TechFoods.succ_pearls), Items.ENDER_PEARL, "juicer");
+		}
+		if (ConfigHandler.succ_juice && ConfigHandler.succ_juice_bottle){
+			SUCC_PEARLS = new ShapelessRecipe(new ItemStack(TechFoods.succ_pearls), Items.ENDER_PEARL, "juicer", "glassBottle");
+		}
 		
 		// Extra Drop w/o Bottles
 		if (!ConfigHandler.extra_drop_bottle){
@@ -227,5 +230,11 @@ public class FoodRecipes {
 			
 			RABBIT_SANDWICH = new ShapelessRecipe(new ItemStack(TechFoods.rabbit_sandwhich), TechFoods.bread_slice, Items.COOKED_RABBIT, TechFoods.bread_slice);
 		}
+		
+		// Juicer (Can not be turned off)
+			JUICER = new ShapedRecipe(new ItemStack(TechFoods.juicer), "l",
+					"s",
+					's', "stone",
+					'l', Blocks.STONE_BUTTON);
 	}
 }

@@ -28,6 +28,8 @@ import com.kashdeya.tinyprogressions.util.RemoveItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Enchantments;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -58,6 +60,8 @@ public class TinyProgressions extends ModRegistry {
 
 	public static SimpleNetworkWrapper network;
 	public static Logger logger;
+	
+	public static final SoundEvent ENTITY_SUCC = new SoundEvent(new ResourceLocation("tp:succ.the.pearls"));
 	
 	static { 
 		FluidRegistry.enableUniversalBucket();

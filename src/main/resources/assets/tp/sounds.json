@@ -1,0 +1,8 @@
+{
+	"succ.the.pearls": {
+		"category": "entity",
+        "sounds": [
+            { "name": "tp:suckthepearls" }
+        ]
+    }
+}

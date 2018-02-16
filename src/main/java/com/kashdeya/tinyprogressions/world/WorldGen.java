@@ -21,6 +21,7 @@ public class WorldGen implements IWorldGenerator {
     private WorldGenerator lava_block;
     private WorldGenerator water_block;
     private WorldGenerator charcoal_block;
+    private WorldGenerator wub_ore;
     
     public WorldGen()
     {
@@ -35,6 +36,9 @@ public class WorldGen implements IWorldGenerator {
     	}
     	if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
     		this.charcoal_block = new WorldGenMinable(TechBlocks.charcoal_block.getDefaultState(), ConfigHandler.charcoal_size, BlockMatcher.forBlock(Blocks.MAGMA));
+    	}
+    	if (ConfigHandler.vasholine){
+    		this.wub_ore = new WorldGenMinable(TechBlocks.wub_ore.getDefaultState(), ConfigHandler.wub_block_count, BlockMatcher.forBlock(Blocks.STONE));
     	}
     }
     
@@ -67,6 +71,9 @@ public class WorldGen implements IWorldGenerator {
     	  }
     	  if (ConfigHandler.water_block){
     		  runGenerator(this.water_block, world, random, chunkX, chunkZ, ConfigHandler.water_block_frequency, ConfigHandler.water_block_min, ConfigHandler.water_block_max);
+    	  }
+    	  if (ConfigHandler.vasholine){
+    		  runGenerator(this.wub_ore, world, random, chunkX, chunkZ, 5, 1, 12);
     	  }
     	  break;
       case 1:

@@ -8,10 +8,8 @@ import com.kashdeya.tinyprogressions.registry.recipes.ShapelessRecipe;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.potion.PotionUtils;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -31,14 +29,11 @@ public class OtherRecipes
 		// WUB WUB JUICE
 		if(ConfigHandler.vasholine){
 			WUB_JUICE = new ShapedRecipe(FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("vasholine"), Fluid.BUCKET_VOLUME)),
-					"prp",
-					"wbw",
-					"psp",
-					'p', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER),
-					'r', new ItemStack(Items.REDSTONE),
-					'w', new ItemStack(Items.SPECKLED_MELON),
+					"sss",
+					"sbs",
+					"sss",
 					'b', new ItemStack(Items.BUCKET),
-					's', new ItemStack(Items.SUGAR));
+					's', new ItemStack(TechItems.wub_gem));
 		}
 		
 		// Infin Water Bucket

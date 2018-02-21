@@ -106,6 +106,11 @@ public class TinyConfig {
 		ConfigHandler.vasholine_mobs = config.getBoolean("WUB Juice Hurts Mobs", "WUB Juice", false, "Enable mobs getting hurt?");	
 		ConfigHandler.vasholine_mobs_amount = config.getFloat("WUB Juice Hurts Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
 		ConfigHandler.wub_block_count = config.getInt("Wub Ore Size", "WUB Juice", 4, 1, 100, "Sets the Wub Ore Vein Size.\n[Used to craft Wub Juice]\n[Generates at 1-12 Y-Level]");
+		ConfigHandler.wub_heal_mobs = config.getBoolean("WUB Juice Heals Mobs", "WUB Juice", false, "Enable mobs getting healed?");	
+		ConfigHandler.mob_heal_amount = config.getFloat("WUB Juice Heals Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get healed.");
+		
+		config.addCustomCategoryComment("WUB Juice Extras", "Tools, Weapons and more!\n[Wub Juice must be ENABLED above]\n[More Configs coming soon!]");
+		ConfigHandler.wub_juice_tools = config.getBoolean("Tools & Weapons", "WUB Juice Extras", true, "Enable Extras?");
 		
 		config.addCustomCategoryComment("Medical Kit", "Need a little healing?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", "Medical Kit", true, "Enable Medkit?");
@@ -338,7 +343,7 @@ public class TinyConfig {
 		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", "Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
 		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", "Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
 		
-		config.addCustomCategoryComment("Scythes", "Because I love to farm and stuff!\n[WIP - Enable at your own risk.]\n[Known bug - Dupes Drops]");
+		config.addCustomCategoryComment("Scythes", "Because I love to farm and stuff!\n[WIP - Enable at your own risk.]\n[Known bug - Dupes Drops with modded crops]");
 		ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", "Scythes", false, "Enable Wooden Scythe?");
 		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", "Scythes", false, "Enable Stone Scythe?");
 		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", "Scythes", false, "Enable Golden Scythe?");
@@ -347,14 +352,15 @@ public class TinyConfig {
 		ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", "Scythes", false, "Enable Emerald Scythe?");
 		ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe", "Scythes", false, "Enable Obsidian Scythe?");
 		
-		config.addCustomCategoryComment("MultiTools", "Because I love weird stuff!\n[Requires Other Items in this mod.]");
-		ConfigHandler.wooden_multi = config.getBoolean("Wooden Paxel", "MultiTools", true, "Enable Wooden Paxel?");
-		ConfigHandler.stone_multi = config.getBoolean("Stone Paxel", "MultiTools", true, "Enable Stone Paxel?");
-		ConfigHandler.golden_multi = config.getBoolean("Golden Paxel", "MultiTools", true, "Enable Golden Paxel?");
-		ConfigHandler.iron_multi = config.getBoolean("Iron Paxel", "MultiTools", true, "Enable Iron Paxel?");
-		ConfigHandler.diamond_multi = config.getBoolean("Diamond Paxel", "MultiTools", true, "Enable Diamond Paxel?");
-		ConfigHandler.emerald_multi = config.getBoolean("Emerald Paxel", "MultiTools", true, "Enable Emerald Paxel?");
-		ConfigHandler.obsidian_multi = config.getBoolean("Obsidian Paxel", "MultiTools", true, "Enable Obsidian Paxel?");
+		config.addCustomCategoryComment("Paxels", "Because I love weird stuff!\n[Some May Require Other Items in this mod.]");
+		ConfigHandler.wooden_multi = config.getBoolean("Wooden Paxel", "Paxels", true, "Enable Wooden Paxel?");
+		ConfigHandler.stone_multi = config.getBoolean("Stone Paxel", "Paxels", true, "Enable Stone Paxel?");
+		ConfigHandler.golden_multi = config.getBoolean("Golden Paxel", "Paxels", true, "Enable Golden Paxel?");
+		ConfigHandler.iron_multi = config.getBoolean("Iron Paxel", "Paxels", true, "Enable Iron Paxel?");
+		ConfigHandler.diamond_multi = config.getBoolean("Diamond Paxel", "Paxels", true, "Enable Diamond Paxel?");
+		ConfigHandler.emerald_multi = config.getBoolean("Emerald Paxel", "Paxels", true, "Enable Emerald Paxel?");
+		ConfigHandler.obsidian_multi = config.getBoolean("Obsidian Paxel", "Paxels", true, "Enable Obsidian Paxel?");
+		ConfigHandler.flint_multi = config.getBoolean("Flint Paxel", "Paxels", true, "Enable Flint Paxel?");
 		
 		config.addCustomCategoryComment("Spears", "Don't mess with the long arm of the LAW!");
 		ConfigHandler.spear_reach = config.getInt("A Spears Extended Reach", "Spears", 7, 5, 10, "Sets the Reach of a Spear.\n[Vanilla is 5 blocks!]");

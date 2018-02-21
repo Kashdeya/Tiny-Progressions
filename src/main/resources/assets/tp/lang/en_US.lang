@@ -142,6 +142,14 @@ tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
 item.wub_gem.name=Wub Gem
 tooltip.wubgem_1=Used to make Wub Wub Juice
 tile.wub_ore.name=Wub Wub Ore
+item.wub_paxel.name=Wub Paxel
+tooltip.wubpaxel_1=Mines a 3x3
+item.wub_pickaxe.name=Wub Pickaxe
+item.wub_axe.name=Wub Axe
+item.wub_spade.name=Wub Shovel
+item.wub_sword.name=Wub Sword
+item.wub_hoe.name=Wub Hoe
+
 
 #Watering Cans
 item.watering_can.name=Watering Can
@@ -236,6 +244,7 @@ item.flint_axe.name=Flint Axe
 item.flint_sword.name=Flint Sword
 item.flint_hoe.name=Flint Hoe
 item.flint_knife.name=Flint Knife
+item.flint_multi.name=Flint Paxel
 
 #Flint Armor
 item.flint_helmet.name=Flint Helmet

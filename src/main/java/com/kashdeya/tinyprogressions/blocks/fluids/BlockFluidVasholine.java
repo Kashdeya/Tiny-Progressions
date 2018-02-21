@@ -53,6 +53,9 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer) && ConfigHandler.vasholine_mobs){
 			entity.attackEntityFrom(DamageSource.MAGIC, ConfigHandler.vasholine_mobs_amount);
 		}
+		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer) && ConfigHandler.wub_heal_mobs){
+			((EntityLivingBase) entity).heal(ConfigHandler.mob_heal_amount);
+		}
 	}
 
 	@Override

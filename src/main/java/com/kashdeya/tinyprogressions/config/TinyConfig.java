@@ -121,10 +121,10 @@ public class TinyConfig {
 		ConfigHandler.healinstant = config.getBoolean("Medkit Instant heal", "Medical Kit", false, "Enable Medkit Instant Heal?");
 		ConfigHandler.useDuration = config.getInt("Medkit Use Duration", "Medical Kit", 16, 1, 128, "Sets how long it takes the player to apply the medkit!");
 		
-		config.addCustomCategoryComment("5-Head Kappa Pick", "Fun Stuff");
-		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", "5-Head Kappa Pick", true, "Enable Kappa Pick?");
-		ConfigHandler.kappa_level = config.getInt("Kappa Pick Mining Level", "5-Head Kappa Pick", 1, 0, 3, "Mining Level.");
-		ConfigHandler.kappa_damage = config.getInt("Kappa Pick Mining Level Durability", "5-Head Kappa Pick", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
+		config.addCustomCategoryComment("Kappa Pick", "Fun Stuff\n[Not PicKappa stop asking!]");
+		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", "Kappa Pick", true, "Enable Kappa Pick?");
+		ConfigHandler.kappa_level = config.getInt("Kappa Pick Mining Level", "Kappa Pick", 1, 0, 3, "Mining Level.");
+		ConfigHandler.kappa_damage = config.getInt("Kappa Pick Mining Level Durability", "Kappa Pick", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
 		
 		config.addCustomCategoryComment("Pizza", "Because Pineapple goes on Pizza! Kappa");
 		ConfigHandler.bams_pizza = config.getBoolean("Bams Pizza", "Pizza", true, "Enable Bams Pizza?");
@@ -207,13 +207,13 @@ public class TinyConfig {
 		ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", "Bricks", false, "Enable Diorite Bricks?");
 		ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", "Bricks", false, "Enable Granite Bricks?");
 		
-		config.addCustomCategoryComment("Tiny Coal & Charcoal", "tiny things.\n[Used to make Steel Ingots, Infinity Water Bucket and Artifact Rings]");
+		config.addCustomCategoryComment("Tiny Coal & Charcoal", "tiny things.");
 		ConfigHandler.tiny_charcoal = config.getBoolean("Tiny Charcoal", "Tiny Coal & Charcoal", true, "Enable Tiny Charcoal?");
 		FuelHandler.tiny_charcoal_burntime = config.getInt("Tiny Charcoal Burn Time", "Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Charcoal.");
 		ConfigHandler.tiny_coal = config.getBoolean("Tiny Coal", "Tiny Coal & Charcoal", true, "Enable Tiny Coal?");
 		FuelHandler.tiny_coal_burntime = config.getInt("Tiny Coal Burn Time", "Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Coal.");
 		
-		config.addCustomCategoryComment("Steel", "Used to make Artifact Rings and Deco Block.");
+		config.addCustomCategoryComment("Steel", "Used to craft the Infinity Bucket.\n[Uses oredict and works with other mods]");
 		ConfigHandler.steel_ingot = config.getBoolean("Steel Ingots", "Steel", true, "Enable Steel Ingots?");
 		
 		config.addCustomCategoryComment("Rib", "Used for Crafting!\n[DO NOT ENABLE if Wither Armor is ENABLED.]");
@@ -223,21 +223,21 @@ public class TinyConfig {
 		ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", "Seeds", true, "Enable Mycelium Seeds?");
 		
 		config.addCustomCategoryComment("Torch", "I'll light the way!\n[Do not ENABLE if Tinkers is installed.]");
-		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", "Torch", true, "Enable Stone Torch?");
+		ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", "Torch", false, "Enable Stone Torch?");
 		
 		config.addCustomCategoryComment("Flint", "A little extra flint can help, right?\n[Do not ENABLE is Tinkers is installed.]");
-		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", "Flint", true, "Enable 3 Gravel into Flint Recipe?");
+		ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", "Flint", false, "Enable 3 Gravel into Flint Recipe?");
 		
 		config.addCustomCategoryComment("Harder Stone", "It's the little things that count right?\n[Required for Recipes in this mod.]");
 		ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", "Harder Stone", true, "Enable Hardened Stone?");
 		
-		config.addCustomCategoryComment("Sugar", "even the dead stuff can help!\n[Can be used as FOOD for a small amount.]");
+		config.addCustomCategoryComment("Sugar", "even the dead stuff can help!\n[Can be used as FOOD for a small amount as well.]");
 		ConfigHandler.old_reed = config.getBoolean("Dead Sugar Cane", "Sugar", true, "Enable Dead Sugar Cane?");
 		
 		config.addCustomCategoryComment("Pouch", "More storage anyone?");
 		ConfigHandler.pouch = config.getBoolean("Pouch", "Pouch", true, "Enable Pouch?");
 		
-		config.addCustomCategoryComment("Repair Tablet", "Need some extra durability, eh?\n[Repairs in Players Inventory only.]");
+		config.addCustomCategoryComment("Repair Tablet", "Need some extra durability, eh?\n[Repairs Items in Players Inventory only.]");
 		ConfigHandler.repair_tablet = config.getBoolean("Repair Tablet", "Repair Tablet", true, "Enable Repair Tablet?");
 		ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Tablet Cooldown", "Repair Tablet", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
 		
@@ -280,16 +280,21 @@ public class TinyConfig {
 		ArmorHandler.WoodArmor = config.getBoolean("Wooden Armor", "Armor", true, "Enable Wooden Armor?");
 		ArmorHandler.emerald_amor = config.getBoolean("Emerald Armor", "Armor", true, "Enable Emerald Armor?");
 		ArmorHandler.chain_armor = config.getBoolean("Chain Armor", "Armor", true, "Enable Chain Armor Recipe?");
+		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", "Armor", true, "Enable Lava Armor?");
+		ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", "Armor", true, "Enable Dragon Armor?");
+		ArmorHandler.wither_armor = config.getBoolean("Wither Armor", "Armor", true, "Enable Wither Armor?");
+		ArmorHandler.lapis_armor = config.getBoolean("Lapis Armor", "Armor", true, "Enable Lapis Armor?");
+		ArmorHandler.obsidian_armor = config.getBoolean("Obsidian Armor", "Armor", true, "Enable Obsidian Armor?");
+		ArmorHandler.quartz_armor = config.getBoolean("Quartz Armor", "Armor", true, "Enable Quartz Armor?");
+		ArmorHandler.redstone_armor = config.getBoolean("Redstone Armor", "Armor", true, "Enable Redstone Armor?");
 		
 		config.addCustomCategoryComment("Lava Armor", "What Armor?\n[Needs Emerald armor to be enabled]");
-		ArmorHandler.lava_armor = config.getBoolean("Lava Armor", "Lava Armor", true, "Enable Lava Armor?");
 		ArmorHandler.lava_armor_resistance = config.getBoolean("Lava Armor Resistance", "Lava Armor", true, "Enable Lava Armor Resistance?");
 		ArmorHandler.lava_armor_resistance_lvl = config.getInt("Lava Armor Resistance Level", "Lava Armor", 0, 0, 10, "Resistance Level.");
 		ArmorHandler.lava_armor_fire = config.getBoolean("Lava Armor Fire Resistance", "Lava Armor", true, "Enable Lava Armor Fire Resistance?");
 		ArmorHandler.lava_armor_fire_lvl = config.getInt("Lava Armor Fire Resistance Level", "Lava Armor", 0, 0, 10, "Fire Resistance Level.");
 		
 		config.addCustomCategoryComment("Dragon Armor", "End Game Armor");
-		ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", "Dragon Armor", true, "Enable Dragon Armor?");
 		ArmorHandler.dragon_fly = config.getBoolean("Dragon Armor Allow Flight", "Dragon Armor", true, "Enable Dragon Armor Flight?");
 		ArmorHandler.dragon_resistance = config.getBoolean("Dragon Armor Resistance", "Dragon Armor", true, "Enable Dragon Armor Resistance?");
 		ArmorHandler.dragon_resistance_lvl = config.getInt("Dragon Armor Resistance Level", "Dragon Armor", 1, 0, 10, "Resistance Level.");
@@ -299,7 +304,6 @@ public class TinyConfig {
 		ArmorHandler.dragon_strength_lvl = config.getInt("Dragon Armor Strength Level", "Dragon Armor", 1, 0, 10, "Strength Level.");
 		
 		config.addCustomCategoryComment("Wither Armor", "Mid Game Armor");
-		ArmorHandler.wither_armor = config.getBoolean("Wither Armor", "Wither Armor", true, "Enable Wither Armor?");
 		ArmorHandler.wither_resistance = config.getBoolean("Wither Armor Resistance", "Wither Armor", true, "Enable Wither Armor Resistance?");
 		ArmorHandler.wither_resistance_lvl = config.getInt("Wither Armor Resistance Level", "Wither Armor", 0, 0, 10, "Resistance Level.");
 		ArmorHandler.wither_fire = config.getBoolean("Wither Armor Fire Resistance", "Wither Armor", true, "Enable Wither Armor Fire Resistance?");
@@ -308,22 +312,18 @@ public class TinyConfig {
 		ArmorHandler.wither_strength_lvl = config.getInt("Wither Armor Strength Level", "Wither Armor", 0, 0, 10, "Strength Level.");
 		
 		config.addCustomCategoryComment("Lapis Armor", "Lets go under the water");
-		ArmorHandler.lapis_armor = config.getBoolean("Lapis Armor", "Lapis Armor", true, "Enable Lapis Armor?");
 		ArmorHandler.lapis_armor_water = config.getBoolean("Lapis Armor Water Breathing", "Lapis Armor", true, "Enable Lapis Water Breathing?");
 		ArmorHandler.lapis_armor_water_lvl = config.getInt("Lapis Armor Water Breathing Level", "Lapis Armor", 0, 0, 10, "Water Breathing Level.");
 		
 		config.addCustomCategoryComment("Obsidian Armor", "What?");
-		ArmorHandler.obsidian_armor = config.getBoolean("Obsidian Armor", "Obsidian Armor", true, "Enable Obsidian Armor?");
 		ArmorHandler.obsidian_armor_resistance = config.getBoolean("Obsidian Armor Resistance", "Obsidian Armor", true, "Enable Obsidian Resistance?");
 		ArmorHandler.obsidian_armor_resistance_lvl = config.getInt("Obsidian Armor Resistance Level", "Obsidian Armor", 0, 0, 10, "Resistance Level.");
 		
 		config.addCustomCategoryComment("Quartz Armor", "You went where?");
-		ArmorHandler.quartz_armor = config.getBoolean("Quartz Armor", "Quartz Armor", true, "Enable Quartz Armor?");
 		ArmorHandler.quartz_armor_strength = config.getBoolean("Quartz Armor Strength", "Quartz Armor", true, "Enable Quartz Strength?");
 		ArmorHandler.quartz_armor_strength_lvl = config.getInt("Quartz Armor Strength Level", "Quartz Armor", 0, 0, 10, "Strength Level.");
 		
 		config.addCustomCategoryComment("Redstone Armor", "How fast you want to go?");
-		ArmorHandler.redstone_armor = config.getBoolean("Redstone Armor", "Redstone Armor", true, "Enable Redstone Armor?");
 		ArmorHandler.redstone_armor_speed = config.getBoolean("Redstone Armor Speed", "Redstone Armor", true, "Enable Redstone Speed?");
 		ArmorHandler.redstone_armor_speed_lvl = config.getInt("Redstone Armor Speed Level", "Redstone Armor", 0, 0, 10, "Speed Level.");
 		
@@ -343,7 +343,7 @@ public class TinyConfig {
 		ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", "Flint and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
 		ConfigHandler.FlintTools = config.getBoolean("Flint  Tools & Weapons", "Flint and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
 		
-		config.addCustomCategoryComment("Scythes", "Because I love to farm and stuff!\n[WIP - Enable at your own risk.]\n[Known bug - Dupes Drops with modded crops]");
+		config.addCustomCategoryComment("Scythes", "Because I love to farm and stuff!\n[WIP - Enable at your own risk.]\n[Known bug - May Dupe Drops with some modded crops]");
 		ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", "Scythes", false, "Enable Wooden Scythe?");
 		ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", "Scythes", false, "Enable Stone Scythe?");
 		ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", "Scythes", false, "Enable Golden Scythe?");

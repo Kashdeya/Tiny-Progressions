@@ -22,7 +22,8 @@ public class OtherRecipes
 	public static IRecipe FLINT1, INFIN_WATER_BUCKET;
 	public static IRecipe FLINT_KNIFE, QUARTZ_KNIFE, QUARTZ_DUST;
 	public static IRecipe MYCELIUM_SEEDS;
-	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1, WUB_JUICE;
+	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1;
+	public static IRecipe WUB_JUICE;
 	
 	public static void init()
 	{
@@ -34,6 +35,9 @@ public class OtherRecipes
 					"sss",
 					'b', new ItemStack(Items.BUCKET),
 					's', new ItemStack(TechItems.wub_gem));
+		}
+		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
+			GameRegistry.addSmelting(TechItems.wub_gem, new ItemStack(TechItems.wub_ingot), 1.0F);
 		}
 		
 		// Infin Water Bucket

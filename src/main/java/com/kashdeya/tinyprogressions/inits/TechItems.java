@@ -74,11 +74,15 @@ public class TechItems {
 	public static Item obsidian_dust;
 	// Wub Gem
 	public static Item wub_gem;
+	public static Item wub_ingot;
 		
 	public static void init() {
 		// Wub Gem
 		if (ConfigHandler.vasholine){
 			wub_gem = new ItemBase().setOreDictName("gemWub").setUnlocalizedName("wub_gem");
+		}
+		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
+			wub_ingot = new ItemBase().setOreDictName("ingotWub").setUnlocalizedName("wub_ingot");
 		}
 		// Infin Water Bucket
 		if (ConfigHandler.infin_bucket){

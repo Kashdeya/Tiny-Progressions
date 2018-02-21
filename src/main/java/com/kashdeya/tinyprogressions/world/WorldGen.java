@@ -6,6 +6,7 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 import net.minecraft.block.state.pattern.BlockMatcher;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -53,7 +54,9 @@ public class WorldGen implements IWorldGenerator {
         int x = chunk_X * 16 + rand.nextInt(16);
         int y = minHeight + rand.nextInt(heightDiff);
         int z = chunk_Z * 16 + rand.nextInt(16);
-        generator.generate(world, rand, new BlockPos(x, y, z));
+        BlockPos pos = new BlockPos(x,y,z);
+        generator.generate(world, rand, pos);
+        String biome = world.getBiomeForCoordsBody(pos).getBiomeName();
       }
     }
     
@@ -63,23 +66,23 @@ public class WorldGen implements IWorldGenerator {
       switch (world.provider.getDimension())
       {
       case 0:
-    	  if (ConfigHandler.ender_ore){
+    	  if (ConfigHandler.ender_ore && random.nextInt(2)==1){
     		  runGenerator(this.ender_ore, world, random, chunkX, chunkZ, ConfigHandler.ender_ore_frequency, ConfigHandler.ender_ore_min, ConfigHandler.ender_ore_max);
     	  }
-    	  if (ConfigHandler.lava_block){
+    	  if (ConfigHandler.lava_block && random.nextInt(2)==1){
     		  runGenerator(this.lava_block, world, random, chunkX, chunkZ, ConfigHandler.lava_block_frequency, ConfigHandler.lava_block_min, ConfigHandler.lava_block_max);
     	  }
-    	  if (ConfigHandler.water_block){
+    	  if (ConfigHandler.water_block && random.nextInt(2)==1){
     		  runGenerator(this.water_block, world, random, chunkX, chunkZ, ConfigHandler.water_block_frequency, ConfigHandler.water_block_min, ConfigHandler.water_block_max);
     	  }
-    	  if (ConfigHandler.vasholine){
+    	  if (ConfigHandler.vasholine && random.nextInt(2)==1){// && Biomes.EXTREME_HILLS != null
     		  runGenerator(this.wub_ore, world, random, chunkX, chunkZ, 5, 1, 12);
     	  }
     	  break;
       case 1:
     	  break;
       case -1:
-    	  if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
+    	  if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock && random.nextInt(2)==1){
     		  runGenerator(this.charcoal_block, world, random, chunkX, chunkZ, ConfigHandler.charcoal_frequency, ConfigHandler.charcoal_min, ConfigHandler.charcoal_max);
     	  }
     	  break;

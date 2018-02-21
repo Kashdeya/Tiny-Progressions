@@ -2,8 +2,9 @@ package com.kashdeya.tinyprogressions.world;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+
 import net.minecraft.block.BlockFalling;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
@@ -26,8 +27,6 @@ public class WorldGenQuickSand extends ChunkGeneratorOverworld {
 	@Override
 	public void populate(int x, int z)
     {
-		
-        BlockFalling.fallInstantly = true;
         int i = x * 16;
         int j = z * 16;
         BlockPos blockpos = new BlockPos(i, 0, j);
@@ -46,7 +45,7 @@ public class WorldGenQuickSand extends ChunkGeneratorOverworld {
 	        int i1 = this.rand.nextInt(16) + 8;
 	        int j1 = this.rand.nextInt(256);
 	        int k1 = this.rand.nextInt(16) + 8;
-	        (new WorldGenLakes(Blocks.WATER)).generate(this.world, this.rand, blockpos.add(i1, j1, k1));
+	        (new WorldGenLakes(TechBlocks.quick_sand)).generate(this.world, this.rand, blockpos.add(i1, j1, k1));
 	    }
 		
 	       net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.rand, x, z, flag);

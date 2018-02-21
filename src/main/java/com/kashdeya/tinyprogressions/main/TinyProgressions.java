@@ -102,7 +102,7 @@ public class TinyProgressions extends ModRegistry {
 		MinecraftForge.EVENT_BUS.register(EventDrops.class);
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
-		MinecraftForge.EVENT_BUS.register(WorldGenQuickSand.class);
+		MinecraftForge.TERRAIN_GEN_BUS.register(WorldGenQuickSand.class);
 		
 		// Setup
 		proxy.onPreInitialization(e);

@@ -36,6 +36,9 @@ public class ConfigHandler {
 	public static int wub_block_count = 5;
 	public static boolean wub_heal_mobs = true;
 	public static float mob_heal_amount = 0.5F;
+	public static int wub_block_frequency = 5;
+	public static int wub_block_min = 1;
+	public static int wub_block_max = 32;
 	
 	// wub juics other
 	public static boolean wub_juice_tools = true;

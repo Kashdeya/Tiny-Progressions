@@ -105,12 +105,17 @@ public class TinyConfig {
 		ConfigHandler.vasholine_heal_amount = config.getFloat("WUB Juice Heal Amount", "WUB Juice", 0.25F, 0.0F, 1.0F, "Sets the amount of heal Wub Juice does per tick.");
 		ConfigHandler.vasholine_mobs = config.getBoolean("WUB Juice Hurts Mobs", "WUB Juice", false, "Enable mobs getting hurt?");	
 		ConfigHandler.vasholine_mobs_amount = config.getFloat("WUB Juice Hurts Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
-		ConfigHandler.wub_block_count = config.getInt("Wub Ore Size", "WUB Juice", 4, 1, 100, "Sets the Wub Ore Vein Size.\n[Used to craft Wub Juice]\n[Generates at 1-12 Y-Level]");
 		ConfigHandler.wub_heal_mobs = config.getBoolean("WUB Juice Heals Mobs", "WUB Juice", false, "Enable mobs getting healed?");	
 		ConfigHandler.mob_heal_amount = config.getFloat("WUB Juice Heals Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get healed.");
 		
 		config.addCustomCategoryComment("WUB Juice Extras", "Tools, Weapons and more!\n[Wub Juice must be ENABLED above]\n[More Configs coming soon!]");
 		ConfigHandler.wub_juice_tools = config.getBoolean("Tools & Weapons", "WUB Juice Extras", true, "Enable Extras?");
+		
+		config.addCustomCategoryComment("WUB Juice Ore", "WUB WUB WUB!\n[Requires WUB Juice to be ENABLED]\n[Used to craft WUB Juice, Tools & Weapons and more.]");
+		ConfigHandler.wub_block_count = config.getInt("Wub Ore Gen Size", "WUB Juice Ore", 5, 1, 100, "Sets the Wub Ore Vein Size.");
+		ConfigHandler.wub_block_frequency = config.getInt("Wub Ore Gen Chance", "WUB Juice Ore", 5, 1, 100, "Sets the Chance of Wub Ore generating.");
+		ConfigHandler.wub_block_min = config.getInt("Wub Ore Gen Min", "WUB Juice Ore", 1, 1, 255, "Sets the min Y level.");
+		ConfigHandler.wub_block_max = config.getInt("Wub Ore Gen Max", "WUB Juice Ore", 32, 1, 255, "Sets the max Y level.");
 		
 		config.addCustomCategoryComment("Medical Kit", "Need a little healing?");
 		ConfigHandler.MedKit = config.getBoolean("Medkit", "Medical Kit", true, "Enable Medkit?");
@@ -155,7 +160,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment("Lava Source Block Stones", "Lavastone!");
 		ConfigHandler.lava_block = config.getBoolean("Lavastone", "Lava Source Block Stones", true, "Enable Lavastone?\n[Turns into a lava source block when broke]");
 		ConfigHandler.lava_block_frequency = config.getInt("Lavastone Gen Frequency", "Lava Source Block Stones", 5, 1, 100, "Sets the Chance of Lavastone generating.");
-		ConfigHandler.lava_block_min = config.getInt("Lavastone Gen Min", "Lava Source Block Stones", 16, 1, 255, "Sets the min Y level.");
+		ConfigHandler.lava_block_min = config.getInt("Lavastone Gen Min", "Lava Source Block Stones", 12, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Gen Max", "Lava Source Block Stones", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", "Lava Source Block Stones", 4, 1, 100, "Sets the Lavastone Vein Size.");
 		

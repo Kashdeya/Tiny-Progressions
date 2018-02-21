@@ -5,87 +5,69 @@ import java.util.Random;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockMatcher;
-import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGen implements IWorldGenerator {
 	
-    private WorldGenerator ender_ore;
-    private WorldGenerator lava_block;
-    private WorldGenerator water_block;
-    private WorldGenerator charcoal_block;
-    private WorldGenerator wub_ore;
-    
-    public WorldGen()
-    {
-    	if (ConfigHandler.ender_ore){
-    		this.ender_ore = new WorldGenMinable(TechBlocks.ender_ore.getDefaultState(), ConfigHandler.ender_ore_size, BlockMatcher.forBlock(Blocks.STONE));
-    	}
-    	if (ConfigHandler.lava_block){
-    		this.lava_block = new WorldGenMinable(TechBlocks.lava_block.getDefaultState(), ConfigHandler.lava_block_size, BlockMatcher.forBlock(Blocks.STONE));
-    	}
-    	if (ConfigHandler.water_block){
-    		this.water_block = new WorldGenMinable(TechBlocks.water_block.getDefaultState(), ConfigHandler.water_block_size, BlockMatcher.forBlock(Blocks.STONE));
-    	}
-    	if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
-    		this.charcoal_block = new WorldGenMinable(TechBlocks.charcoal_block.getDefaultState(), ConfigHandler.charcoal_size, BlockMatcher.forBlock(Blocks.MAGMA));
-    	}
-    	if (ConfigHandler.vasholine){
-    		this.wub_ore = new WorldGenMinable(TechBlocks.wub_ore.getDefaultState(), ConfigHandler.wub_block_count, BlockMatcher.forBlock(Blocks.STONE));
-    	}
-    }
-    
-    private void runGenerator(WorldGenerator generator, World world, Random rand, int chunk_X, int chunk_Z, int chancesToSpawn, int minHeight, int maxHeight)
-    {
-      if (minHeight < 0 || maxHeight > 256 || minHeight > maxHeight) {
-        throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
-      }
-      int heightDiff = maxHeight - minHeight + 1;
-      for (int i = 0; i < chancesToSpawn; i++)
-      {
-        int x = chunk_X * 16 + rand.nextInt(16);
-        int y = minHeight + rand.nextInt(heightDiff);
-        int z = chunk_Z * 16 + rand.nextInt(16);
-        BlockPos pos = new BlockPos(x,y,z);
-        generator.generate(world, rand, pos);
-        String biome = world.getBiomeForCoordsBody(pos).getBiomeName();
-      }
-    }
-    
-    @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
-    {
-      switch (world.provider.getDimension())
-      {
-      case 0:
-    	  if (ConfigHandler.ender_ore && random.nextInt(2)==1){
-    		  runGenerator(this.ender_ore, world, random, chunkX, chunkZ, ConfigHandler.ender_ore_frequency, ConfigHandler.ender_ore_min, ConfigHandler.ender_ore_max);
-    	  }
-    	  if (ConfigHandler.lava_block && random.nextInt(2)==1){
-    		  runGenerator(this.lava_block, world, random, chunkX, chunkZ, ConfigHandler.lava_block_frequency, ConfigHandler.lava_block_min, ConfigHandler.lava_block_max);
-    	  }
-    	  if (ConfigHandler.water_block && random.nextInt(2)==1){
-    		  runGenerator(this.water_block, world, random, chunkX, chunkZ, ConfigHandler.water_block_frequency, ConfigHandler.water_block_min, ConfigHandler.water_block_max);
-    	  }
-    	  if (ConfigHandler.vasholine && random.nextInt(2)==1){// && Biomes.EXTREME_HILLS != null
-    		  runGenerator(this.wub_ore, world, random, chunkX, chunkZ, 5, 1, 12);
-    	  }
-    	  break;
-      case 1:
-    	  break;
-      case -1:
-    	  if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock && random.nextInt(2)==1){
-    		  runGenerator(this.charcoal_block, world, random, chunkX, chunkZ, ConfigHandler.charcoal_frequency, ConfigHandler.charcoal_min, ConfigHandler.charcoal_max);
-    	  }
-    	  break;
-      }
-    }
+	@Override
+	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+		if (world.provider.getDimension() == 0) { // the overworld
+			generateOverworld(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+		}
+		if (world.provider.getDimension() == -1) { // the nether
+			generateNether(random, chunkX, chunkZ, world, chunkGenerator, chunkProvider);
+		}
+	}
+
+	private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+		if (ConfigHandler.vasholine){
+			generateOre(TechBlocks.wub_ore.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.wub_block_min, ConfigHandler.wub_block_max, 1 + random.nextInt(ConfigHandler.wub_block_count), ConfigHandler.wub_block_frequency);
+		}
+		if (ConfigHandler.ender_ore){
+			generateOre(TechBlocks.ender_ore.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.ender_ore_min, ConfigHandler.ender_ore_max, 1 + random.nextInt(ConfigHandler.ender_ore_size), ConfigHandler.ender_ore_frequency);
+		}
+		if (ConfigHandler.lava_block){
+			generateOre(TechBlocks.lava_block.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.lava_block_min, ConfigHandler.lava_block_max, 1 + random.nextInt(ConfigHandler.lava_block_size), ConfigHandler.lava_block_frequency);
+		}
+		if (ConfigHandler.water_block){
+			generateOre(TechBlocks.water_block.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.water_block_min, ConfigHandler.water_block_max, 1 + random.nextInt(ConfigHandler.water_block_size), ConfigHandler.water_block_frequency);
+		}
+	}
+	
+	private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+		if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
+			generateNetherOre(TechBlocks.charcoal_block.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.charcoal_min, ConfigHandler.charcoal_max, 1 + random.nextInt(ConfigHandler.charcoal_size), ConfigHandler.charcoal_frequency, BlockMatcher.forBlock(Blocks.MAGMA));
+		}
+	}
+	
+	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {
+		int deltaY = maxY - minY;
+	
+		for (int i = 0; i < chances; i++) {
+			BlockPos pos = new BlockPos(x + random.nextInt(16), minY + random.nextInt(deltaY), z + random.nextInt(16));
+	
+			WorldGenMinable generator = new WorldGenMinable(ore, size);
+			generator.generate(world, random, pos);
+		}
+	}
+	
+	private void generateNetherOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances, BlockMatcher blockMatcher) {
+		int deltaY = maxY - minY;
+	
+		for (int i = 0; i < chances; i++) {
+			BlockPos pos = new BlockPos(x + random.nextInt(16), minY + random.nextInt(deltaY), z + random.nextInt(16));
+	
+			WorldGenMinable generator = new WorldGenMinable(ore, size);
+			generator.generate(world, random, pos);
+		}
+	}
+
 }

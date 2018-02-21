@@ -89,6 +89,7 @@ public class WubMulti extends MultiMain{
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
             tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.wubpaxel_1").getFormattedText());
+            tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.wubpaxel_2").getFormattedText());
     }
 
 }

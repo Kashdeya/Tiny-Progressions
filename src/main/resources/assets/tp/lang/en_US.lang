@@ -11,6 +11,7 @@ tile.asphalt_block.name=Asphalt
 #ghost block
 tile.ghost_block.name="Cobblestone"
 
+#SUCC THE PEARLS
 item.succ_pearls.name=SUCC THE PEARLS
 
 #Growth Blocks
@@ -144,6 +145,7 @@ tooltip.wubgem_1=Used to make Wub Wub Juice
 tile.wub_ore.name=Wub Wub Ore
 item.wub_paxel.name=Wub Paxel
 tooltip.wubpaxel_1=Mines a 3x3
+tooltip.wubpaxel_2=Mines 1 block when holding Shift
 item.wub_pickaxe.name=Wub Pickaxe
 item.wub_axe.name=Wub Axe
 item.wub_spade.name=Wub Shovel

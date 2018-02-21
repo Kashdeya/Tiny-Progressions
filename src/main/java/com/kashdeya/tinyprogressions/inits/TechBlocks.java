@@ -26,6 +26,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
 import com.kashdeya.tinyprogressions.blocks.decorations.LampColored;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
+import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
 import com.kashdeya.tinyprogressions.blocks.decorations.Slabs;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
@@ -159,8 +160,14 @@ public class TechBlocks {
     public static Block steel_block;
     // Ghost Block
     public static Block ghost_block;
+    // quicksand
+    public static Block quick_sand;
     
 	public static void init() {
+		// quicksand
+		if (ConfigHandler.quick_sand){
+			quick_sand = new QuickSand().setUnlocalizedName("quick_sand");
+		}
 		// wub ore
 		if (ConfigHandler.vasholine){
 			wub_ore = new WubOre().setUnlocalizedName("wub_ore");

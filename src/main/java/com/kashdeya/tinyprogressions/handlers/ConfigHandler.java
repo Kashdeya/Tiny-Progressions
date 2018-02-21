@@ -13,6 +13,9 @@ public class ConfigHandler {
 	// steel
 	public static boolean steel_ingot = true;
 	
+	// quicksand
+	public static boolean quick_sand = true;
+	
 	// Extra Drops
 	public static boolean extra_drops = true;
 	public static boolean extra_drop_bottle = true;

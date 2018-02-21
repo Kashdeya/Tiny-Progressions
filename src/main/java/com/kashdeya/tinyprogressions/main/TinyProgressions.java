@@ -24,6 +24,7 @@ import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;
 import com.kashdeya.tinyprogressions.util.OreDict;
 import com.kashdeya.tinyprogressions.util.RemoveItems;
+import com.kashdeya.tinyprogressions.world.WorldGenQuickSand;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Enchantments;
@@ -101,6 +102,7 @@ public class TinyProgressions extends ModRegistry {
 		MinecraftForge.EVENT_BUS.register(EventDrops.class);
 		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
 		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
+		MinecraftForge.EVENT_BUS.register(WorldGenQuickSand.class);
 		
 		// Setup
 		proxy.onPreInitialization(e);

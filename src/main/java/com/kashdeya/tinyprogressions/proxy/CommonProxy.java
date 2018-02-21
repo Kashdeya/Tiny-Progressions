@@ -28,7 +28,6 @@ public class CommonProxy {
 		GameRegistry.registerWorldGenerator(new WorldGen(), 0);
 		GameRegistry.registerWorldGenerator(new PlantGen(), 0);
 
-
 		// register messages from client to server
 		TinyProgressions.network = NetworkRegistry.INSTANCE.newSimpleChannel("network");
 

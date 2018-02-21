@@ -22,6 +22,7 @@ import com.kashdeya.tinyprogressions.items.bsc.BscIronPickaxe;
 import com.kashdeya.tinyprogressions.items.bsc.BscIronSpade;
 import com.kashdeya.tinyprogressions.items.bsc.BscIronSword;
 import com.kashdeya.tinyprogressions.items.multi.EmeraldMulti;
+import com.kashdeya.tinyprogressions.items.multi.FlintMulti;
 import com.kashdeya.tinyprogressions.items.multi.MultiMain;
 import com.kashdeya.tinyprogressions.items.multi.ObsidianMulti;
 import com.kashdeya.tinyprogressions.items.scythes.EmeraldScythe;
@@ -59,6 +60,12 @@ import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianHoe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSpade;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSword;
+import com.kashdeya.tinyprogressions.items.tools.wub.WubAxe;
+import com.kashdeya.tinyprogressions.items.tools.wub.WubHoe;
+import com.kashdeya.tinyprogressions.items.tools.wub.WubMulti;
+import com.kashdeya.tinyprogressions.items.tools.wub.WubPickaxe;
+import com.kashdeya.tinyprogressions.items.tools.wub.WubSpade;
+import com.kashdeya.tinyprogressions.items.tools.wub.WubSword;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -108,6 +115,7 @@ public class TechTools {
 	public static Item emerald_multi;
 	public static Item diamond_multi;
 	public static Item obsidian_multi;
+	public static Item flint_multi;
 	// Battle
 	public static Item wooden_battle;
 	public static Item stone_battle;
@@ -163,8 +171,24 @@ public class TechTools {
 	public static Item nether_spade;
 	// c axe
 	public static Item c_axe;
+	// Wub Extras
+	public static Item wub_axe;
+	public static Item wub_pickaxe;
+	public static Item wub_spade;
+	public static Item wub_hoe;
+	public static Item wub_sword;
+	public static Item wub_paxel;
 	
 	public static void init(){
+		// wub extras
+		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
+			wub_pickaxe = new WubPickaxe(MaterialHandler.WUBWUB).setUnlocalizedName("wub_pickaxe");
+			wub_axe = new WubAxe(MaterialHandler.WUBWUB, 8.0F, -1.2F).setUnlocalizedName("wub_axe");
+			wub_spade = new WubSpade(MaterialHandler.WUBWUB).setUnlocalizedName("wub_spade");
+			wub_sword = new WubSword(MaterialHandler.WUBWUB).setUnlocalizedName("wub_sword");
+			wub_hoe = new WubHoe(MaterialHandler.WUBWUB).setUnlocalizedName("wub_hoe");
+			wub_paxel = new WubMulti(MaterialHandler.PWUBWUB).setUnlocalizedName("wub_paxel").setMaxDamage(DamageHandler.wub_multi);
+		}
 		// nether tools and weapons
 		if (ConfigHandler.nether_rod && ConfigHandler.nether_iron_tools_weapons){
 			nether_iron_pickaxe = new BasePickaxe(Item.ToolMaterial.IRON).setUnlocalizedName("nether_iron_pickaxe");
@@ -226,7 +250,7 @@ public class TechTools {
 		// Flint
 		if (ConfigHandler.FlintTools){
 			flint_pickaxe = new FlintPickaxe(MaterialHandler.FLINT).setUnlocalizedName("flint_pickaxe");
-			flint_axe = new FlintAxe(MaterialHandler.FLINT, 7.0F, -1.2F).setUnlocalizedName("flint_axe");
+			flint_axe = new FlintAxe(MaterialHandler.FLINT, 6.5F, -1.2F).setUnlocalizedName("flint_axe");
 			flint_spade = new FlintSpade(MaterialHandler.FLINT).setUnlocalizedName("flint_spade");
 			flint_sword = new FlintSword(MaterialHandler.FLINT).setUnlocalizedName("flint_sword");
 			flint_hoe = new FlintHoe(MaterialHandler.FLINT).setUnlocalizedName("flint_hoe");
@@ -234,7 +258,7 @@ public class TechTools {
 		// Bone
 		if (ConfigHandler.BoneTools){
 			bone_pickaxe = new BonePickaxe(MaterialHandler.BONE).setUnlocalizedName("bone_pickaxe");
-			bone_axe = new BoneAxe(MaterialHandler.BONE, 5.0F, -1.2F).setUnlocalizedName("bone_axe");
+			bone_axe = new BoneAxe(MaterialHandler.BONE, 5.5F, -1.2F).setUnlocalizedName("bone_axe");
 			bone_spade = new BoneSpade(MaterialHandler.BONE).setUnlocalizedName("bone_spade");
 			bone_sword = new BoneSword(MaterialHandler.BONE).setUnlocalizedName("bone_sword");
 			bone_hoe = new BoneHoe(MaterialHandler.BONE).setUnlocalizedName("bone_hoe");
@@ -304,6 +328,9 @@ public class TechTools {
 		// Multi
 		if (ConfigHandler.wooden_multi){
 			wooden_multi = new MultiMain(MaterialHandler.PWOOD).setUnlocalizedName("wooden_multi").setMaxDamage(DamageHandler.wooden_multi);
+		}
+		if (ConfigHandler.flint_multi){
+			flint_multi = new FlintMulti(MaterialHandler.PFLINT).setUnlocalizedName("flint_multi").setMaxDamage(DamageHandler.flint_multi);
 		}
 		if (ConfigHandler.stone_multi){
 			stone_multi = new MultiMain(MaterialHandler.PSTONE).setUnlocalizedName("stone_multi").setMaxDamage(DamageHandler.stone_multi);

@@ -20,6 +20,7 @@ public class MaterialHandler {
 	public static final Item.ToolMaterial BSCIRON = EnumHelper.addToolMaterial("bscIronToolMaterial", 3, 2750, 12.0F, 8.0F, 14);
 	public static final Item.ToolMaterial BSCDIAMOND = EnumHelper.addToolMaterial("bscDiamondToolMaterial", 3, 4549, 16.0F, 5.0F, 10);
 	public static final Item.ToolMaterial BSCGOLD = EnumHelper.addToolMaterial("bscGoldToolMaterial", 0, 788, 16.0F, 2.0F, 22);
+	public static final Item.ToolMaterial WUBWUB = EnumHelper.addToolMaterial("wubwubToolMaterial", 4, 3261, 25.0F, 25.0F, 22);
 	// Paxels
 	public static final Item.ToolMaterial PWOOD = EnumHelper.addToolMaterial("pwoodToolMaterial", 0, 59, 2.0F, 5.0F, 15);
 	public static final Item.ToolMaterial PSTONE = EnumHelper.addToolMaterial("pstoneToolMaterial", 1, 131, 4.0F, 7.0F, 5);
@@ -28,6 +29,8 @@ public class MaterialHandler {
 	public static final Item.ToolMaterial PGOLD = EnumHelper.addToolMaterial("pgoldToolMaterial", 0, 32, 100.0F, 0.0F, 22);
 	public static final Item.ToolMaterial POBSIDIAN = EnumHelper.addToolMaterial("pobsidianToolMaterial", 4, 3000, 10.0F, 15.0F, 10);
 	public static final Item.ToolMaterial PEMERALD = EnumHelper.addToolMaterial("pemeraldToolMaterial", 4, 4000, 20.0F, 20.0F, 22);
+	public static final Item.ToolMaterial PFLINT = EnumHelper.addToolMaterial("pflintToolMaterial", 0, 89, 4.0F, 5.5F, 15);
+	public static final Item.ToolMaterial PWUBWUB = EnumHelper.addToolMaterial("pwubwubToolMaterial", 4, 4250, 25.0F, 25.0F, 22);
 	// SeaAxe
 	public static final Item.ToolMaterial SEAIRON = EnumHelper.addToolMaterial("seaIronToolMaterial", 3, 2750, 10.0F, 10.0F, 22);
 	// Armor
@@ -44,7 +47,7 @@ public class MaterialHandler {
 	public static final ArmorMaterial quartzArmourMaterial = EnumHelper.addArmorMaterial("quartzArmourMaterial", "tp:quartz", 20, new int[]{1, 4, 5, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.2F);
 	public static final ArmorMaterial emeraldArmourMaterial = EnumHelper.addArmorMaterial("emeraldArmourMaterial", "tp:emerald", 43, new int[]{4, 7, 9, 4}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4.0F);
 	public static final ArmorMaterial bamArmourMaterial = EnumHelper.addArmorMaterial("bamArmourMaterial", "tp:bam_tshirt", 43, new int[]{4, 7, 9, 4}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4.5F);
-	public static final ArmorMaterial goodernessArmourMaterial = EnumHelper.addArmorMaterial("goodernessArmourMaterial", "tp:gooderness_tshirt", 43, new int[]{3, 6, 8, 3}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.5F);
+	//public static final ArmorMaterial goodernessArmourMaterial = EnumHelper.addArmorMaterial("goodernessArmourMaterial", "tp:gooderness_tshirt", 43, new int[]{3, 6, 8, 3}, 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.5F);
 	// Fluids
 	public static Material VASHOLINE = new MaterialLiquid(MapColor.COLORS[14]);
 }

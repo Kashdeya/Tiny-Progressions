@@ -2,17 +2,24 @@ package com.kashdeya.tinyprogressions.handlers;
 
 public class DamageHandler {
 	// Emerald
-	public static int emerald_axe = 1961;
-	public static int emerald_pickaxe = 1961;
-	public static int emerald_spade = 1961;
-	public static int emerald_hoe = 1961;
-	public static int emerald_sword = 1961;
+	public static int emerald_axe = 2961;
+	public static int emerald_pickaxe = 2961;
+	public static int emerald_spade = 2961;
+	public static int emerald_hoe = 2961;
+	public static int emerald_sword = 2961;
+	// Wub WUb
+	public static int wub_axe = 3261;
+	public static int wub_pickaxe = 3261;
+	public static int wub_spade = 3261;
+	public static int wub_hoe = 3261;
+	public static int wub_sword = 3261;
+	public static int wub_multi = 4250;
 	// Obsidian
-	public static int obsidian_axe = 2561;
-	public static int obsidian_pickaxe = 2561;
-	public static int obsidian_spade = 2561;
-	public static int obsidian_hoe = 2561;
-	public static int obsidian_sword = 2561;
+	public static int obsidian_axe = 1961;
+	public static int obsidian_pickaxe = 1961;
+	public static int obsidian_spade = 1961;
+	public static int obsidian_hoe = 1961;
+	public static int obsidian_sword = 1961;
 	// Scythe
 	public static int wooden_scythe = 59;
 	public static int stone_scythe = 131;
@@ -29,6 +36,7 @@ public class DamageHandler {
 	public static int emerald_multi = 4000;
 	public static int diamond_multi = 1561;
 	public static int obsidian_multi = 3000;
+	public static int flint_multi = 89;
 	// Battle
 	public static int wooden_battle = 59;
 	public static int stone_battle = 131;

@@ -34,6 +34,11 @@ public class ConfigHandler {
 	public static float vasholine_mobs_amount = 1.0F;
 	public static float vasholine_heal_amount = 0.5F;
 	public static int wub_block_count = 5;
+	public static boolean wub_heal_mobs = true;
+	public static float mob_heal_amount = 0.5F;
+	
+	// wub juics other
+	public static boolean wub_juice_tools = true;
 	
 	// succ juice
 	public static boolean succ_juice = true;
@@ -284,6 +289,7 @@ public class ConfigHandler {
 	public static boolean emerald_multi = true;
 	public static boolean diamond_multi = true;
 	public static boolean obsidian_multi = true;
+	public static boolean flint_multi = true;
 	
 	// Battle
 	public static boolean wooden_battle = true;

@@ -31,7 +31,7 @@ public class EventDrops {
 		
 		
 		Block target = event.getState().getBlock();
-		int trigger = event.getWorld().rand.nextInt(100);
+		int trigger = event.getWorld().rand.nextInt(1000);
 		if (target == Blocks.LEAVES || target == Blocks.LEAVES2 || OreDictionary.getOres("treeLeaves").contains(new ItemStack(target)) || target instanceof BlockLeaves) {
 			if(trigger < ConfigHandler.peachDropsChance && ConfigHandler.extra_drops) {
 				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_peach, ConfigHandler.peachDropsAmount));

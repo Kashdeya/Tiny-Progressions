@@ -183,7 +183,7 @@ public class TechTools {
 		// wub extras
 		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
 			wub_pickaxe = new WubPickaxe(MaterialHandler.WUBWUB).setUnlocalizedName("wub_pickaxe");
-			wub_axe = new WubAxe(MaterialHandler.WUBWUB, 8.0F, -1.2F).setUnlocalizedName("wub_axe");
+			wub_axe = new WubAxe(MaterialHandler.WUBWUB, 11.0F, -1.2F).setUnlocalizedName("wub_axe");
 			wub_spade = new WubSpade(MaterialHandler.WUBWUB).setUnlocalizedName("wub_spade");
 			wub_sword = new WubSword(MaterialHandler.WUBWUB).setUnlocalizedName("wub_sword");
 			wub_hoe = new WubHoe(MaterialHandler.WUBWUB).setUnlocalizedName("wub_hoe");
@@ -228,21 +228,21 @@ public class TechTools {
 		// bsc tools and weapons
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_iron_tools_weapons){
 			bsc_iron_pickaxe = new BscIronPickaxe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_pickaxe");
-			bsc_iron_axe = new BscIronAxe(MaterialHandler.BSCIRON, 7.0F, -1.2F).setUnlocalizedName("bsc_iron_axe");
+			bsc_iron_axe = new BscIronAxe(MaterialHandler.BSCIRON, 8.0F, -1.2F).setUnlocalizedName("bsc_iron_axe");
 			bsc_iron_spade = new BscIronSpade(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_spade");
 			bsc_iron_sword = new BscIronSword(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_sword");
 			bsc_iron_hoe = new BscIronHoe(MaterialHandler.BSCIRON).setUnlocalizedName("bsc_iron_hoe");
 		}
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_gold_tools_weapons){
 			bsc_gold_pickaxe = new BscGoldPickaxe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_pickaxe");
-			bsc_gold_axe = new BscGoldAxe(MaterialHandler.BSCGOLD, 7.0F, -1.2F).setUnlocalizedName("bsc_gold_axe");
+			bsc_gold_axe = new BscGoldAxe(MaterialHandler.BSCGOLD, 6.0F, -1.2F).setUnlocalizedName("bsc_gold_axe");
 			bsc_gold_spade = new BscGoldSpade(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_spade");
 			bsc_gold_sword = new BscGoldSword(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_sword");
 			bsc_gold_hoe = new BscGoldHoe(MaterialHandler.BSCGOLD).setUnlocalizedName("bsc_gold_hoe");
 		}
 		if (ConfigHandler.bsc_rod && ConfigHandler.bsc_diamond_tools_weapons){
 			bsc_diamond_pickaxe = new BscDiamondPickaxe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_pickaxe");
-			bsc_diamond_axe = new BscDiamondAxe(MaterialHandler.BSCDIAMOND, 7.0F, -1.2F).setUnlocalizedName("bsc_diamond_axe");
+			bsc_diamond_axe = new BscDiamondAxe(MaterialHandler.BSCDIAMOND, 8.0F, -1.2F).setUnlocalizedName("bsc_diamond_axe");
 			bsc_diamond_spade = new BscDiamondSpade(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_spade");
 			bsc_diamond_sword = new BscDiamondSword(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_sword");
 			bsc_diamond_hoe = new BscDiamondHoe(MaterialHandler.BSCDIAMOND).setUnlocalizedName("bsc_diamond_hoe");
@@ -295,7 +295,7 @@ public class TechTools {
 		}
 		// Emerald
 		if (ConfigHandler.emerald_axe){
-		    emerald_axe = new EmeraldAxe(MaterialHandler.EMERALD, 7.0F, -1.2F).setUnlocalizedName("emerald_axe").setMaxDamage(DamageHandler.emerald_axe);
+		    emerald_axe = new EmeraldAxe(MaterialHandler.EMERALD, 10.0F, -1.2F).setUnlocalizedName("emerald_axe").setMaxDamage(DamageHandler.emerald_axe);
 		}
 		if (ConfigHandler.emerald_pickaxe){
 			emerald_pickaxe = new EmeraldPickaxe(MaterialHandler.EMERALD).setUnlocalizedName("emerald_pickaxe").setMaxDamage(DamageHandler.emerald_pickaxe);
@@ -311,7 +311,7 @@ public class TechTools {
 		}
 		// Obsidian
 		if (ConfigHandler.obsidian_axe){
-		    obsidian_axe = new ObsidianAxe(MaterialHandler.OBSIDIAN, 13.0F, -1.2F).setUnlocalizedName("obsidian_axe").setMaxDamage(DamageHandler.obsidian_axe);
+		    obsidian_axe = new ObsidianAxe(MaterialHandler.OBSIDIAN, 9.0F, -1.2F).setUnlocalizedName("obsidian_axe").setMaxDamage(DamageHandler.obsidian_axe);
 		}
 		if (ConfigHandler.obsidian_pickaxe){
 			obsidian_pickaxe = new ObsidianPickaxe(MaterialHandler.OBSIDIAN).setUnlocalizedName("obsidian_pickaxe").setMaxDamage(DamageHandler.obsidian_pickaxe);
@@ -352,25 +352,25 @@ public class TechTools {
 		}
 		// Battle
 		if (ConfigHandler.wooden_battle){
-			wooden_battle = new BattleMain(ToolMaterial.WOOD, 8.0F, -1.2F).setUnlocalizedName("wooden_battle").setMaxDamage(DamageHandler.wooden_battle);
+			wooden_battle = new BattleMain(ToolMaterial.WOOD, 6.0F, -1.2F).setUnlocalizedName("wooden_battle").setMaxDamage(DamageHandler.wooden_battle);
 		}
 		if (ConfigHandler.stone_battle){
-			stone_battle = new BattleMain(ToolMaterial.STONE, 10.0F, -1.2F).setUnlocalizedName("stone_battle").setMaxDamage(DamageHandler.stone_battle);
+			stone_battle = new BattleMain(ToolMaterial.STONE, 8.0F, -1.2F).setUnlocalizedName("stone_battle").setMaxDamage(DamageHandler.stone_battle);
 		}
 		if (ConfigHandler.golden_battle){
-			golden_battle = new BattleMain(ToolMaterial.GOLD, 8.0F, -1.2F).setUnlocalizedName("golden_battle").setMaxDamage(DamageHandler.golden_battle);
+			golden_battle = new BattleMain(ToolMaterial.GOLD, 6.0F, -1.2F).setUnlocalizedName("golden_battle").setMaxDamage(DamageHandler.golden_battle);
 		}
 		if (ConfigHandler.iron_battle){
-			iron_battle = new BattleMain(ToolMaterial.IRON, 11.0F, -1.2F).setUnlocalizedName("iron_battle").setMaxDamage(DamageHandler.iron_battle);
+			iron_battle = new BattleMain(ToolMaterial.IRON, 8.0F, -1.2F).setUnlocalizedName("iron_battle").setMaxDamage(DamageHandler.iron_battle);
 		}
 		if (ConfigHandler.diamond_battle){
-			diamond_battle = new BattleMain(ToolMaterial.DIAMOND, 12.0F, -1.2F).setUnlocalizedName("diamond_battle").setMaxDamage(DamageHandler.diamond_battle);
+			diamond_battle = new BattleMain(ToolMaterial.DIAMOND, 8.0F, -1.2F).setUnlocalizedName("diamond_battle").setMaxDamage(DamageHandler.diamond_battle);
 		}
 		if (ConfigHandler.emerald_battle){
-			emerald_battle = new EmeraldBattle(MaterialHandler.EMERALD, 25.0F, -1.2F).setUnlocalizedName("emerald_battle").setMaxDamage(DamageHandler.emerald_battle);
+			emerald_battle = new EmeraldBattle(MaterialHandler.EMERALD, 10.0F, -1.2F).setUnlocalizedName("emerald_battle").setMaxDamage(DamageHandler.emerald_battle);
 		}
 		if (ConfigHandler.obsidian_battle){
-			obsidian_battle = new ObsidianBattle(MaterialHandler.OBSIDIAN, 20.0F, -1.2F).setUnlocalizedName("obsidian_battle").setMaxDamage(DamageHandler.obsidian_battle);
+			obsidian_battle = new ObsidianBattle(MaterialHandler.OBSIDIAN, 9.0F, -1.2F).setUnlocalizedName("obsidian_battle").setMaxDamage(DamageHandler.obsidian_battle);
 		}
 		// Spear
 		if (ConfigHandler.wooden_spear){

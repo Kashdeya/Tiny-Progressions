@@ -10,7 +10,7 @@ import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
 import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
 import com.kashdeya.tinyprogressions.items.misc.ItemRib;
 import com.kashdeya.tinyprogressions.items.misc.ItemScale;
-import com.kashdeya.tinyprogressions.items.misc.MedKit;
+import com.kashdeya.tinyprogressions.items.misc.LargeMedKit;
 import com.kashdeya.tinyprogressions.items.misc.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.misc.Pouch;
 import com.kashdeya.tinyprogressions.items.misc.QuartzKnife;
@@ -31,7 +31,6 @@ public class TechItems {
 	public static Item quartz_dust;
 	// Misc Items
 	public static Item mycelium_seeds;
-	public static Item med_kit;
 	public static Item dead_reed;
 	// Stone Dust
 	public static Item stone_dust;
@@ -75,6 +74,11 @@ public class TechItems {
 	// Wub Gem
 	public static Item wub_gem;
 	public static Item wub_ingot;
+	// Healing Items
+	public static Item bandage;
+	public static Item small_medkit;
+	public static Item medium_medkit;
+	public static Item large_med_kit;
 		
 	public static void init() {
 		// Wub Gem
@@ -140,7 +144,7 @@ public class TechItems {
 		
 		// Medkit
 		if (ConfigHandler.MedKit) {
-			med_kit = new MedKit();
+			large_med_kit = new LargeMedKit();
 		}
 		
 		// Tiny Coal & Charcoal

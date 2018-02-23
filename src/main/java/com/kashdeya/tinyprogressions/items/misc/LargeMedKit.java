@@ -27,11 +27,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MedKit extends Item {
+public class LargeMedKit extends Item {
 	
-	public MedKit() {
+	public LargeMedKit() {
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("med_kit");
+		this.setUnlocalizedName("large_med_kit");
 		this.setMaxStackSize(ConfigHandler.healStack);
 	}
 	
@@ -40,35 +40,39 @@ public class MedKit extends Item {
 		if (entityLiving instanceof EntityPlayer) {
 			Random random = new Random();
 			EntityPlayer entityplayer = (EntityPlayer)entityLiving;
-	        this.onItemUse(stack, worldIn, entityplayer);
+			if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
+				this.onItemUse(stack, worldIn, entityplayer);
+			}
 	        worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
 	        
 	        if (entityplayer instanceof EntityPlayerMP)
             {
+	        	if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
                 CriteriaTriggers.CONSUME_ITEM.trigger((EntityPlayerMP)entityplayer, stack);
+	        	}
             }
-	        
 	    }
 		
 		if (entityLiving instanceof EntityPlayer && !((EntityPlayer)entityLiving).capabilities.isCreativeMode) {
+			if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
 			stack.shrink(1);
+			}
 	    }
 		return stack;
 	}
 	
 	protected void onItemUse(ItemStack stack, World worldIn, EntityPlayer player) {
-		if (ConfigHandler.enableRegeneration){
-			player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, ConfigHandler.healDuration * 20, ConfigHandler.healLevel, false, false));
+		if (player.getHealth() < player.getMaxHealth()){
+		player.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1 * 20, 0, false, false));
+		player.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, ConfigHandler.largeBoostTime * 20, 2, false, false));
 		}
-		if (ConfigHandler.healinstant){
-		    player.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1 * 20, 0, false, false));
-		}
+		// Saving for a later date
+		//player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(22);
 	}
 	
-	// ConfigHandler.useDuration
 	@Override
 	public int getMaxItemUseDuration(ItemStack stack) {
-	    return 16;
+	    return ConfigHandler.useDuration;
 	}
 	  
 	@Override
@@ -78,8 +82,8 @@ public class MedKit extends Item {
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-		playerIn.setActiveHand(handIn);
-		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
+			playerIn.setActiveHand(handIn);
+			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
 	}
 	  
 	@Override

@@ -82,7 +82,7 @@ public class ItemRecipes {
 			
 			// Medkit
 			if (ConfigHandler.MedKit) {
-				MEDKIT = new ShapedRecipe(new ItemStack(TechItems.med_kit), 
+				MEDKIT = new ShapedRecipe(new ItemStack(TechItems.large_med_kit), 
 						"prp",
 						"rgr",
 						"lrl",

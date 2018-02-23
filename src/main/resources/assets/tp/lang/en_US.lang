@@ -216,7 +216,10 @@ item.redstone_apple.name=Redstone Apple
 item.golden_apple.name=Gold Apple
 
 #Medkit
-item.med_kit.name=Medkit
+item.bandage.name=Bandage
+item.small_med_kit.name=Small Medkit
+item.medium_med_kit.name=Medium Medkit
+item.large_med_kit.name=Large Medkit
 
 #Lapis Armor
 tooltip.lapisarmor_1=Full set gives you Water breathing!

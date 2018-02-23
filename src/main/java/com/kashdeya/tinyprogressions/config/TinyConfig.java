@@ -118,24 +118,23 @@ public class TinyConfig {
 		ConfigHandler.wub_block_max = config.getInt("Wub Ore Gen Max", "WUB Juice Ore", 32, 1, 255, "Sets the max Y level.");
 		
 		config.addCustomCategoryComment("Medical Kits", "Need a little healing?");
-		// Bandage
-		ConfigHandler.bandage = config.getBoolean("Bandage", "Medical Kits", true, "Enable Bandage?");
-		ConfigHandler.bandageHealStack = config.getInt("Bandage Stacksize", "Medical Kits", 8, 1, 64, "Sets the Stacksize of the Bandage!");
-		// Small Medkit
-		ConfigHandler.small_medkit = config.getBoolean("Small Medkit", "Medical Kits", true, "Enable Small Medkit?");
-		ConfigHandler.smallHealStack = config.getInt("Small Medkit Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Small Medkit!");
-		ConfigHandler.smallDuration = config.getInt("Small Medkit Use Duration", "Medical Kits", 8, 1, 128, "Sets how long it takes the player to apply the Small Medkit!");
-		ConfigHandler.smallBoostTime = config.getInt("Small Medkit Boost Time", "Medical Kits", 5, 1, 128, "Sets how long the player has extra hearts!");
-		// Medium Medkit
-		ConfigHandler.medium_medkit = config.getBoolean("Medium Medkit", "Medical Kits", true, "Enable Medium Medkit?");
-		ConfigHandler.mediumHealStack = config.getInt("Medium Medkit Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Medium Medkit!");
-		ConfigHandler.mediumDuration = config.getInt("Medium Medkit Use Duration", "Medical Kits", 16, 1, 128, "Sets how long it takes the player to apply the Small Medkit!");
-		ConfigHandler.mediumBoostTime = config.getInt("Medium Medkit Boost Time", "Medical Kits", 15, 1, 128, "Sets how long the player has extra hearts!");
-		//Large Medkit
-		ConfigHandler.MedKit = config.getBoolean("Large Medkit", "Medical Kits", true, "Enable Medkit?");
-		ConfigHandler.healStack = config.getInt("Large Medkit Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Medkit!");
-		ConfigHandler.useDuration = config.getInt("Large Medkit Use Duration", "Medical Kits", 32, 1, 128, "Sets how long it takes the player to apply the medkit!");
-		ConfigHandler.largeBoostTime = config.getInt("Large Medkit Boost Time", "Medical Kits", 30, 1, 128, "Sets how long the player has extra hearts!");
+		// Enable
+		ConfigHandler.medical_kits = config.getBoolean("Enable Medical Kits", "Medical Kits", true, "Enable Medical Kits?");
+		// Small Bandage
+		ConfigHandler.smallBandageHealStack = config.getInt("Small Medical Bandage Stacksize", "Medical Kits", 8, 1, 64, "Sets the Stacksize of the Bandage!");
+		ConfigHandler.smallBandageRegen = config.getInt("Small Medical Bandage Regen Time", "Medical Kits", 5, 1, 30, "Sets the length of regen!");
+		// Large Bandage
+		ConfigHandler.largeBandageStack = config.getInt("Large Medical Bandage Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Small Medkit!");
+		ConfigHandler.largeBandageDuration = config.getInt("Large Medical Bandage Use Duration", "Medical Kits", 4, 1, 64, "Sets how long it takes the player to apply the Small Medkit!");
+		ConfigHandler.largeBandageBoostTime = config.getInt("Large Medical Bandage Boost Time", "Medical Kits", 15, 1, 120, "Sets how long the player has extra hearts!");
+		// Small Med kit
+		ConfigHandler.smallMedHealStack = config.getInt("Small Medical Kit Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Medium Medkit!");
+		ConfigHandler.smallMedDuration = config.getInt("Small Medical Kit Use Duration", "Medical Kits", 8, 1, 64, "Sets how long it takes the player to apply the Medium Medkit!");
+		ConfigHandler.smallMedBoostTime = config.getInt("Small Medical Kit Boost Time", "Medical Kits", 30, 1, 240, "Sets how long the player has extra hearts!");
+		//Large Med kit
+		ConfigHandler.LargeMedHealStack = config.getInt("Large Medical Kit Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Large Medkit!");
+		ConfigHandler.LargeMedDuration = config.getInt("Large Medical Kit Use Duration", "Medical Kits", 16, 1, 64, "Sets how long it takes the player to apply the Large Medkit!");
+		ConfigHandler.largeMedBoostTime = config.getInt("Large Medical Kit Boost Time", "Medical Kits", 60, 1, 300, "Sets how long the player has extra hearts!");
 		
 		config.addCustomCategoryComment("Kappa Pick", "Fun Stuff\n[Not PicKappa stop asking!]");
 		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", "Kappa Pick", true, "Enable Kappa Pick?");

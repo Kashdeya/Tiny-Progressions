@@ -184,10 +184,7 @@ public class TechBlocks {
 		if (ConfigHandler.asphalt){
 			asphalt_block = new Asphalt();
 		}
-		// nether blocks
-		if (ConfigHandler.nether_rod){
-			soul_sandstone = new CompressedBlocks("soul_sandstone", Material.ROCK, SoundType.STONE, TechBlocks.soul_sandstone, 1, 1).setHardness(0.4F).setResistance(10.0F);
-		}
+		// Compressed Blocks
 		if (ConfigHandler.nether_compressed_blocks){
 			compressed_nether_block = new CompressedBlocks("compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.compressed_nether_block, 1, 1).setHardness(0.4F).setResistance(10.0F);
 			double_compressed_nether_block = new CompressedBlocks("double_compressed_nether_block", Material.ROCK, SoundType.STONE, TechBlocks.double_compressed_nether_block, 1, 1).setHardness(0.8F).setResistance(20.0F);
@@ -370,6 +367,7 @@ public class TechBlocks {
 		}
 		
 		// Can not turn off
-			ghost_block = new GhostBlock();		
+			ghost_block = new GhostBlock();
+			soul_sandstone = new CompressedBlocks("soul_sandstone", Material.ROCK, SoundType.STONE, TechBlocks.soul_sandstone, 1, 1).setHardness(0.4F).setResistance(10.0F);
 	}
 }

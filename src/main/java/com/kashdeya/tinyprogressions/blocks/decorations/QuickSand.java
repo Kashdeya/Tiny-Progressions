@@ -18,7 +18,8 @@ public class QuickSand extends Block {
 
 	public QuickSand() {
 		super(Material.SAND);
-		this.setHardness(28F);
+		this.setHarvestLevel("shovel", 0);
+		this.setHardness(0.4F);
 		this.setSoundType(SoundType.SAND);
 		this.setCreativeTab(TinyProgressions.tabTP);
 	}

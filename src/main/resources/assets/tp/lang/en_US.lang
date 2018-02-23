@@ -151,6 +151,7 @@ item.wub_axe.name=Wub Axe
 item.wub_spade.name=Wub Shovel
 item.wub_sword.name=Wub Sword
 item.wub_hoe.name=Wub Hoe
+item.wub_ingot.name=Wub Ingot
 
 
 #Watering Cans
@@ -215,11 +216,23 @@ item.redstone_apple.name=Redstone Apple
 #AppleProgression
 item.golden_apple.name=Gold Apple
 
+#Quick Sand
+tile.quick_sand.name=Quick Sand
+
 #Medkit
-item.bandage.name=Bandage
-item.small_med_kit.name=Small Medkit
-item.medium_med_kit.name=Medium Medkit
-item.large_med_kit.name=Large Medkit
+item.small_bandage.name=Small Medical Bandage
+item.large_bandage.name=Large Medical Bandage
+item.small_med_kit.name=Small Medical Kit
+item.large_med_kit.name=Large Medical kit
+
+#Medkit Tooltip
+tooltip.medkit_1=Instant Heals Player!
+tooltip.medkits=Medical item can only be used if player is hurt!
+tooltip.smallmedkit_2=Provides 4 extra health for a short time!
+tooltip.largemedkit_2=Provides 6 extra health for a short time!
+tooltip.bandage_1=Provides a short shot of regen!
+tooltip.bandage_2=Regen does NOT stack!
+tooltip.largebandage_1=Provides 2 extra health for a short time!
 
 #Lapis Armor
 tooltip.lapisarmor_1=Full set gives you Water breathing!
@@ -332,9 +345,6 @@ tooltip.obsidian_1=Wither Proof!
 #Birthday Pickaxe Tooltip
 tooltip.birthday_1=Super Fast Pickaxe!
 tooltip.birthday_2=Right-click for a Surprise!
-
-#Medkit Tooltip
-tooltip.medkit=Heals Player!
 
 #Mycelium Tooltip
 tooltip.seeds=Right Click on Dirt!

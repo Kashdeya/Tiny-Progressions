@@ -6,11 +6,14 @@ import com.kashdeya.tinyprogressions.items.FoodBase;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemBaseMeta;
 import com.kashdeya.tinyprogressions.items.ItemStay;
+import com.kashdeya.tinyprogressions.items.medkits.SmallBandage;
+import com.kashdeya.tinyprogressions.items.medkits.LargeMedKit;
+import com.kashdeya.tinyprogressions.items.medkits.SmallMedkit;
+import com.kashdeya.tinyprogressions.items.medkits.LargeBandage;
 import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
 import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
 import com.kashdeya.tinyprogressions.items.misc.ItemRib;
 import com.kashdeya.tinyprogressions.items.misc.ItemScale;
-import com.kashdeya.tinyprogressions.items.misc.LargeMedKit;
 import com.kashdeya.tinyprogressions.items.misc.MyceliumSeeds;
 import com.kashdeya.tinyprogressions.items.misc.Pouch;
 import com.kashdeya.tinyprogressions.items.misc.QuartzKnife;
@@ -75,9 +78,9 @@ public class TechItems {
 	public static Item wub_gem;
 	public static Item wub_ingot;
 	// Healing Items
-	public static Item bandage;
-	public static Item small_medkit;
-	public static Item medium_medkit;
+	public static Item small_bandage;
+	public static Item large_bandage;
+	public static Item small_med_kit;
 	public static Item large_med_kit;
 		
 	public static void init() {
@@ -143,7 +146,10 @@ public class TechItems {
 	    }
 		
 		// Medkit
-		if (ConfigHandler.MedKit) {
+		if (ConfigHandler.medical_kits){
+			small_bandage = new SmallBandage();
+			large_bandage = new LargeBandage();
+			small_med_kit = new SmallMedkit();
 			large_med_kit = new LargeMedKit();
 		}
 		

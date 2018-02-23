@@ -20,7 +20,7 @@ public class ItemRecipes {
 	
 	public static IRecipe WATERING_CAN, WATERING_CAN_UPGRADE;
 
-	public static IRecipe MEDKIT;
+	public static IRecipe SMALL_BANDAGE, LARGE_BANDAGE, SMALL_MEDKIT, LARGE_MEDKIT;
 	public static IRecipe ENDERPEARL;
 	public static IRecipe REPAIR_TABLET;
 	
@@ -68,7 +68,7 @@ public class ItemRecipes {
 						" i ",
 						'i', "ingotIron",
 						'd', "dyeWhite",
-						'w', Items.WATER_BUCKET);
+						'w', new ItemStack(Items.WATER_BUCKET));
 			}
 			if (ConfigHandler.WateringCanUpgrade && ConfigHandler.WateringCan) {
 				WATERING_CAN_UPGRADE = new ShapedRecipe(new ItemStack(TechItems.watering_can_upgrade), 
@@ -76,20 +76,37 @@ public class ItemRecipes {
 						"owo",
 						" o ",
 						'o', "ingotReinforcedObsidian",
-						'n', Items.NETHER_STAR,
-						'w', TechItems.watering_can);
+						'n', new ItemStack(Items.NETHER_STAR),
+						'w', new ItemStack(TechItems.watering_can));
 			}
 			
 			// Medkit
-			if (ConfigHandler.MedKit) {
-				MEDKIT = new ShapedRecipe(new ItemStack(TechItems.large_med_kit), 
-						"prp",
-						"rgr",
-						"lrl",
-						'p', "paper",
-						'r', "dyeRed",
+			if (ConfigHandler.medical_kits) {
+				// Small bandage
+				SMALL_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.small_bandage, 8), 
+						" p ",
+						"psp",
+						" p ",
+						'p', new ItemStack(Items.PAPER),
+						's', new ItemStack(Items.SLIME_BALL));
+				// Large Bandage
+				LARGE_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.large_bandage), 
+						"bsb",
+						"sls",
+						"bsb",
 						'l', "leather",
-						'g', Items.SPECKLED_MELON);
+						's', "string",
+						'b', new ItemStack(TechItems.small_bandage));
+				// Small Med Kit
+				SMALL_MEDKIT = new ShapedRecipe(new ItemStack(TechItems.small_med_kit), 
+						"bb",
+						"bb",
+						'b', new ItemStack(TechItems.large_bandage));				
+				// Large Med Kit
+				LARGE_MEDKIT = new ShapedRecipe(new ItemStack(TechItems.large_med_kit), 
+						"mm",
+						"mm",
+						'm', new ItemStack(TechItems.small_med_kit));
 			}
 			
 			// Ender Dust

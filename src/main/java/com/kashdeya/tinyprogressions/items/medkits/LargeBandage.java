@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items.misc;
+package com.kashdeya.tinyprogressions.items.medkits;
 
 import java.util.List;
 import java.util.Random;
@@ -27,12 +27,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class LargeMedKit extends Item {
+public class LargeBandage extends Item {
 	
-	public LargeMedKit() {
+	public LargeBandage() {
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("large_med_kit");
-		this.setMaxStackSize(ConfigHandler.healStack);
+		this.setUnlocalizedName("large_bandage");
+		this.setMaxStackSize(ConfigHandler.largeBandageStack);
 	}
 	
 	@Override
@@ -48,14 +48,14 @@ public class LargeMedKit extends Item {
 	        if (entityplayer instanceof EntityPlayerMP)
             {
 	        	if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
-                CriteriaTriggers.CONSUME_ITEM.trigger((EntityPlayerMP)entityplayer, stack);
+	        		CriteriaTriggers.CONSUME_ITEM.trigger((EntityPlayerMP)entityplayer, stack);
 	        	}
             }
 	    }
 		
 		if (entityLiving instanceof EntityPlayer && !((EntityPlayer)entityLiving).capabilities.isCreativeMode) {
 			if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
-			stack.shrink(1);
+				stack.shrink(1);
 			}
 	    }
 		return stack;
@@ -63,16 +63,14 @@ public class LargeMedKit extends Item {
 	
 	protected void onItemUse(ItemStack stack, World worldIn, EntityPlayer player) {
 		if (player.getHealth() < player.getMaxHealth()){
-		player.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1 * 20, 0, false, false));
-		player.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, ConfigHandler.largeBoostTime * 20, 2, false, false));
+			player.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 1 * 20, 0, false, false));
+			player.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, ConfigHandler.largeBandageBoostTime * 20, 0, false, false));
 		}
-		// Saving for a later date
-		//player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(22);
 	}
 	
 	@Override
 	public int getMaxItemUseDuration(ItemStack stack) {
-	    return ConfigHandler.useDuration;
+	    return ConfigHandler.largeBandageDuration;
 	}
 	  
 	@Override
@@ -82,14 +80,19 @@ public class LargeMedKit extends Item {
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
+		if (playerIn.getHealth() < playerIn.getMaxHealth()){
 			playerIn.setActiveHand(handIn);
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
+		}
+		return new ActionResult<ItemStack>(EnumActionResult.FAIL, playerIn.getHeldItem(handIn));
 	}
 	  
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.medkit").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.medkit_1").getFormattedText());
+		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.largebandage_1").getFormattedText());
+		tooltip.add(TextFormatting.RED + new TextComponentTranslation("tooltip.medkits").getFormattedText());
 	}
 	
 }

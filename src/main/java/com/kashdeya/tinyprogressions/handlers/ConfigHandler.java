@@ -246,23 +246,21 @@ public class ConfigHandler {
 	public static boolean MyceliumSeeds = true;
 	
 	// Medkits
-	public static boolean bandage = true;
-	public static int bandageHealStack = 8;
+	public static boolean medical_kits = true;
+	public static int smallBandageHealStack = 8;
+	public static int smallBandageRegen = 5;
 	//sm
-	public static boolean small_medkit = true;
-	public static int smallHealStack = 16;
-	public static int smallDuration = 8;
-	public static int smallBoostTime = 5;
+	public static int largeBandageStack = 16;
+	public static int largeBandageDuration = 4;
+	public static int largeBandageBoostTime = 15;
 	//med
-	public static boolean medium_medkit = true;
-	public static int mediumHealStack = 16;
-	public static int mediumDuration = 16;
-	public static int mediumBoostTime = 10;
+	public static int smallMedHealStack = 16;
+	public static int smallMedDuration = 5;
+	public static int smallMedBoostTime = 30;
 	//lrg
-	public static boolean MedKit = true;
-	public static int healStack = 16;
-	public static int useDuration = 32;
-	public static int largeBoostTime = 20;
+	public static int LargeMedHealStack = 16;
+	public static int LargeMedDuration = 16;
+	public static int largeMedBoostTime = 60;
 	
 	// Flint Items & More
 	public static boolean FlintTools = true;

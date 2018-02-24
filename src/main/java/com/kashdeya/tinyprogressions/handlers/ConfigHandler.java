@@ -36,12 +36,20 @@ public class ConfigHandler {
 	public static boolean vasholine_mobs = true;
 	public static float vasholine_mobs_amount = 1.0F;
 	public static float vasholine_heal_amount = 0.5F;
-	public static int wub_block_count = 5;
 	public static boolean wub_heal_mobs = true;
 	public static float mob_heal_amount = 0.5F;
+	
+	public static boolean overworld_wub = true;
+	public static int wub_block_count = 5;
 	public static int wub_block_frequency = 5;
 	public static int wub_block_min = 1;
 	public static int wub_block_max = 32;
+	
+	public static boolean nether_wub = true;
+	public static int nether_wub_block_count = 5;
+	public static int nether_wub_block_frequency = 5;
+	public static int nether_wub_block_min = 1;
+	public static int nether_wub_block_max = 60;
 	
 	// wub juics other
 	public static boolean wub_juice_tools = true;

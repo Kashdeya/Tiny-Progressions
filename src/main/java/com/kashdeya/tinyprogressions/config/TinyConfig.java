@@ -108,14 +108,21 @@ public class TinyConfig {
 		ConfigHandler.wub_heal_mobs = config.getBoolean("WUB Juice Heals Mobs", "WUB Juice", false, "Enable mobs getting healed?");	
 		ConfigHandler.mob_heal_amount = config.getFloat("WUB Juice Heals Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get healed.");
 		
-		config.addCustomCategoryComment("WUB Juice Extras", "Tools, Weapons and more!\n[Wub Juice must be ENABLED above]\n[More Configs coming soon!]");
+		config.addCustomCategoryComment("WUB Juice Extras", "Tools, Weapons and more!\n[Wub Juice must be ENABLED above]\n[Overworld or Nether Wub Ore must be ENABLED]\n[More Configs coming soon!]");
 		ConfigHandler.wub_juice_tools = config.getBoolean("Tools & Weapons", "WUB Juice Extras", true, "Enable Extras?");
 		
 		config.addCustomCategoryComment("WUB Juice Ore", "WUB WUB WUB!\n[Requires WUB Juice to be ENABLED]\n[Used to craft WUB Juice, Tools & Weapons and more.]");
-		ConfigHandler.wub_block_count = config.getInt("Wub Ore Gen Size", "WUB Juice Ore", 5, 1, 100, "Sets the Wub Ore Vein Size.");
-		ConfigHandler.wub_block_frequency = config.getInt("Wub Ore Gen Chance", "WUB Juice Ore", 5, 1, 100, "Sets the Chance of Wub Ore generating.");
-		ConfigHandler.wub_block_min = config.getInt("Wub Ore Gen Min", "WUB Juice Ore", 1, 1, 255, "Sets the min Y level.");
-		ConfigHandler.wub_block_max = config.getInt("Wub Ore Gen Max", "WUB Juice Ore", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.overworld_wub = config.getBoolean("Overworld Wub Ore", "WUB Juice Ore", true, "Enable Overworld Wub Ore?");
+		ConfigHandler.wub_block_count = config.getInt("Overworld Wub Ore Gen Size", "WUB Juice Ore", 5, 1, 100, "Sets the Overworld Wub Ore Vein Size.");
+		ConfigHandler.wub_block_frequency = config.getInt("Overworld Wub Ore Gen Chance", "WUB Juice Ore", 5, 1, 100, "Sets the Chance of Overworld Wub Ore generating.");
+		ConfigHandler.wub_block_min = config.getInt("Overworld Wub Ore Gen Min", "WUB Juice Ore", 1, 1, 255, "Sets the Overworld min Y level.");
+		ConfigHandler.wub_block_max = config.getInt("Overworld Wub Ore Gen Max", "WUB Juice Ore", 32, 1, 255, "Sets the Overworld max Y level.");
+		
+		ConfigHandler.nether_wub = config.getBoolean("Nether Wub Ore", "WUB Juice Ore", true, "Enable Nether Wub Ore?");
+		ConfigHandler.nether_wub_block_count = config.getInt("Nether Wub Ore Gen Size", "WUB Juice Ore", 5, 1, 100, "Sets the Nether Wub Ore Vein Size.");
+		ConfigHandler.nether_wub_block_frequency = config.getInt("Nether Wub Ore Gen Chance", "WUB Juice Ore", 5, 1, 100, "Sets the Chance of Nether Wub Ore generating.");
+		ConfigHandler.nether_wub_block_min = config.getInt("Nether Wub Ore Gen Min", "WUB Juice Ore", 1, 1, 120, "Sets the Nether min Y level.");
+		ConfigHandler.nether_wub_block_max = config.getInt("Nether Wub Ore Gen Max", "WUB Juice Ore", 60, 1, 120, "Sets the Nether max Y level.");
 		
 		config.addCustomCategoryComment("Medical Kits", "Need a little healing?");
 		// Enable

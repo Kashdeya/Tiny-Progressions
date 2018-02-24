@@ -28,7 +28,7 @@ public class WorldGen implements IWorldGenerator {
 	}
 
 	private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if (ConfigHandler.vasholine){
+		if (ConfigHandler.vasholine && ConfigHandler.overworld_wub){
 			generateOre(TechBlocks.wub_ore.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.wub_block_min, ConfigHandler.wub_block_max, 1 + random.nextInt(ConfigHandler.wub_block_count), ConfigHandler.wub_block_frequency);
 		}
 		if (ConfigHandler.ender_ore){
@@ -45,6 +45,9 @@ public class WorldGen implements IWorldGenerator {
 	private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		if (ConfigHandler.CharcoalWorldgen && ConfigHandler.CharcoalBlock){
 			generateNetherOre(TechBlocks.charcoal_block.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.charcoal_min, ConfigHandler.charcoal_max, 1 + random.nextInt(ConfigHandler.charcoal_size), ConfigHandler.charcoal_frequency, BlockMatcher.forBlock(Blocks.MAGMA));
+		}
+		if (ConfigHandler.vasholine && ConfigHandler.nether_wub){
+			generateNetherOre(TechBlocks.nether_wub_ore.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.nether_wub_block_min, ConfigHandler.nether_wub_block_max, 1 + random.nextInt(ConfigHandler.nether_wub_block_count), ConfigHandler.nether_wub_block_frequency, BlockMatcher.forBlock(Blocks.NETHERRACK));
 		}
 	}
 	

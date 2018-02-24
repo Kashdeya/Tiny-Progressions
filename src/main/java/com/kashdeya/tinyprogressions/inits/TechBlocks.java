@@ -44,6 +44,7 @@ import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
+import com.kashdeya.tinyprogressions.blocks.ores.NetherWubOre;
 import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.WubOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
@@ -87,6 +88,7 @@ public class TechBlocks {
 	public static Block ender_ore;
 	// wub ore
 	public static Block wub_ore;
+	public static Block nether_wub_ore;
 	// Lava Block
 	public static Block lava_block;
 	// Water Block
@@ -171,6 +173,7 @@ public class TechBlocks {
 		// wub ore
 		if (ConfigHandler.vasholine){
 			wub_ore = new WubOre().setUnlocalizedName("wub_ore");
+			nether_wub_ore = new NetherWubOre().setUnlocalizedName("nether_wub_ore");
 		}
 		// Steel Block
 		if (ConfigHandler.steel_ingot){

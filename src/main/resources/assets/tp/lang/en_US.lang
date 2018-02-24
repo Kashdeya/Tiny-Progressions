@@ -143,6 +143,7 @@ tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
 item.wub_gem.name=Wub Gem
 tooltip.wubgem_1=Used to make Wub Wub Juice
 tile.wub_ore.name=Wub Wub Ore
+tile.nether_wub_ore.name=Nether Wub Wub Ore
 item.wub_paxel.name=Wub Paxel
 tooltip.wubpaxel_1=Mines a 3x3
 tooltip.wubpaxel_2=Mines 1 block when holding Shift
@@ -550,7 +551,7 @@ item.bacon_eggs_sandwhich.name=Bacon & Egg Sandwich
 item.chicken_sandwhich.name=Chicken Sandwich
 item.beef_sandwhich.name=Beef Sandwich
 item.bacon_sandwhich.name=Bacon Sandwich
-item.bams_pizza.name=Bams Pizza
+item.bams_pizza.name=Bams Pineapple Pizza
 
 #Repair Tablet
 item.repair_tablet.name=Repair Tablet

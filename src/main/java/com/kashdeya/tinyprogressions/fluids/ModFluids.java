@@ -16,7 +16,7 @@ public class ModFluids {
 
 	public static final ModFluids INSTANCE = new ModFluids();
 
-	public static Fluid VASHOLINE = new Fluid("vasholine", new ResourceLocation(Reference.MOD_ID, "fluids/wub_juice_still"), new ResourceLocation(Reference.MOD_ID, "fluids/wub_juice_flow")).setDensity(6000).setViscosity(6000).setUnlocalizedName("vasholine");
+	public static Fluid VASHOLINE = new Fluid("vasholine", new ResourceLocation(Reference.MOD_ID, "fluids/wub_juice_still"), new ResourceLocation(Reference.MOD_ID, "fluids/wub_juice_flow")).setDensity(3000).setViscosity(1500).setUnlocalizedName("vasholine");
 
 	private ModFluids() {
 	}

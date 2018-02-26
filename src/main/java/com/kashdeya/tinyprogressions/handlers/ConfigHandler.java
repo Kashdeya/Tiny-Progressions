@@ -39,6 +39,10 @@ public class ConfigHandler {
 	public static boolean wub_heal_mobs = true;
 	public static float mob_heal_amount = 0.5F;
 	
+	public static boolean wub_weakness = true;
+	public static boolean wub_blindness = true;
+	public static boolean wub_fatigue = true;
+	
 	public static boolean overworld_wub = true;
 	public static int wub_block_count = 5;
 	public static int wub_block_frequency = 5;

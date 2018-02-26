@@ -103,12 +103,15 @@ public class TinyConfig {
 		config.addCustomCategoryComment("WUB Juice", "WUB WUB WUB!");
 		ConfigHandler.vasholine = config.getBoolean("WUB Juice", "WUB Juice", true, "Enable WUB Juice?");
 		ConfigHandler.vasholine_heal_amount = config.getFloat("WUB Juice Heal Amount", "WUB Juice", 0.25F, 0.0F, 1.0F, "Sets the amount of heal Wub Juice does per tick.");
-		ConfigHandler.vasholine_mobs = config.getBoolean("WUB Juice Hurts Mobs", "WUB Juice", false, "Enable mobs getting hurt?");	
+		ConfigHandler.vasholine_mobs = config.getBoolean("WUB Juice Hurts Mobs", "WUB Juice", true, "Enable mobs getting hurt?");	
 		ConfigHandler.vasholine_mobs_amount = config.getFloat("WUB Juice Hurts Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get hurt.");
 		ConfigHandler.wub_heal_mobs = config.getBoolean("WUB Juice Heals Mobs", "WUB Juice", false, "Enable mobs getting healed?");	
 		ConfigHandler.mob_heal_amount = config.getFloat("WUB Juice Heals Mobs Amount", "WUB Juice", 0.01F, 0.0F, 1.0F, "Sets the amount mobs get healed.");
+		ConfigHandler.wub_weakness = config.getBoolean("WUB Juice Side Effect Weakness", "WUB Juice", true, "Enable Weakness while being healed?");
+		ConfigHandler.wub_blindness = config.getBoolean("WUB Juice Side Effect Blindness", "WUB Juice", true, "Enable Blindness while being healed?");
+		ConfigHandler.wub_fatigue = config.getBoolean("WUB Juice Side Effect Mining Fatigue", "WUB Juice", true, "Enable Mining Fatigue while being healed?");
 		
-		config.addCustomCategoryComment("WUB Juice Extras", "Tools, Weapons and more!\n[Wub Juice must be ENABLED above]\n[Overworld or Nether Wub Ore must be ENABLED]\n[More Configs coming soon!]");
+		config.addCustomCategoryComment("WUB Juice Extras", "Tools, Weapons and more!\n[Wub Juice must be ENABLED above]\n[Overworld or Nether Wub Ore must be ENABLED below]\n[More Configs coming soon!]");
 		ConfigHandler.wub_juice_tools = config.getBoolean("Tools & Weapons", "WUB Juice Extras", true, "Enable Extras?");
 		
 		config.addCustomCategoryComment("WUB Juice Ore", "WUB WUB WUB!\n[Requires WUB Juice to be ENABLED]\n[Used to craft WUB Juice, Tools & Weapons and more.]");
@@ -124,24 +127,24 @@ public class TinyConfig {
 		ConfigHandler.nether_wub_block_min = config.getInt("Nether Wub Ore Gen Min", "WUB Juice Ore", 1, 1, 120, "Sets the Nether min Y level.");
 		ConfigHandler.nether_wub_block_max = config.getInt("Nether Wub Ore Gen Max", "WUB Juice Ore", 60, 1, 120, "Sets the Nether max Y level.");
 		
-		config.addCustomCategoryComment("Medical Kits", "Need a little healing?");
+		config.addCustomCategoryComment("Medical Items", "Need a little healing?\n[Each teir requires the lower teir for crafting!]\n[Medical Items can now only be used if player is hurt!]");
 		// Enable
-		ConfigHandler.medical_kits = config.getBoolean("Enable Medical Kits", "Medical Kits", true, "Enable Medical Kits?");
+		ConfigHandler.medical_kits = config.getBoolean("Enable Medical Items", "Medical Items", true, "Enable Medical Items?");
 		// Small Bandage
-		ConfigHandler.smallBandageHealStack = config.getInt("Small Medical Bandage Stacksize", "Medical Kits", 8, 1, 64, "Sets the Stacksize of the Bandage!");
-		ConfigHandler.smallBandageRegen = config.getInt("Small Medical Bandage Regen Time", "Medical Kits", 5, 1, 30, "Sets the length of regen!");
+		ConfigHandler.smallBandageHealStack = config.getInt("Teir 1 Meical Item Stacksize", "Medical Items", 8, 1, 64, "Sets the Stacksize of the Small Medical Bandage!");
+		ConfigHandler.smallBandageRegen = config.getInt("Teir 1 Meical Item Regen Time", "Medical Items", 5, 1, 30, "Sets the length of regen of the Small Medical Bandage!\n[Does not stack]");
 		// Large Bandage
-		ConfigHandler.largeBandageStack = config.getInt("Large Medical Bandage Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Small Medkit!");
-		ConfigHandler.largeBandageDuration = config.getInt("Large Medical Bandage Use Duration", "Medical Kits", 4, 1, 64, "Sets how long it takes the player to apply the Small Medkit!");
-		ConfigHandler.largeBandageBoostTime = config.getInt("Large Medical Bandage Boost Time", "Medical Kits", 15, 1, 120, "Sets how long the player has extra hearts!");
+		ConfigHandler.largeBandageStack = config.getInt("Teir 2 Meical Item Stacksize", "Medical Items", 16, 1, 64, "Sets the Stacksize of the Large Medical Bandage!");
+		ConfigHandler.largeBandageDuration = config.getInt("Teir 2 Meical Item Use Duration", "Medical Items", 4, 1, 64, "Sets how long it takes the player to apply the Large Medical Bandage!");
+		ConfigHandler.largeBandageBoostTime = config.getInt("Teir 2 Meical Item Boost Time", "Medical Items", 15, 0, 120, "Sets how long the player has 2 extra hearts on the Large Medical Bandage!\n[Does not stack]");
 		// Small Med kit
-		ConfigHandler.smallMedHealStack = config.getInt("Small Medical Kit Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Medium Medkit!");
-		ConfigHandler.smallMedDuration = config.getInt("Small Medical Kit Use Duration", "Medical Kits", 8, 1, 64, "Sets how long it takes the player to apply the Medium Medkit!");
-		ConfigHandler.smallMedBoostTime = config.getInt("Small Medical Kit Boost Time", "Medical Kits", 30, 1, 240, "Sets how long the player has extra hearts!");
+		ConfigHandler.smallMedHealStack = config.getInt("Teir 3 Meical Item Stacksize", "Medical Items", 16, 1, 64, "Sets the Stacksize of the Small Medical Kit!");
+		ConfigHandler.smallMedDuration = config.getInt("Teir 3 Meical Item Use Duration", "Medical Items", 8, 1, 64, "Sets how long it takes the player to apply the Small Medical Kit!");
+		ConfigHandler.smallMedBoostTime = config.getInt("Teir 3 Meical Item Boost Time", "Medical Items", 30, 0, 240, "Sets how long the player has 4 extra hearts on the Small Medical Kit!\n[Does not stack]");
 		//Large Med kit
-		ConfigHandler.LargeMedHealStack = config.getInt("Large Medical Kit Stacksize", "Medical Kits", 16, 1, 64, "Sets the Stacksize of the Large Medkit!");
-		ConfigHandler.LargeMedDuration = config.getInt("Large Medical Kit Use Duration", "Medical Kits", 16, 1, 64, "Sets how long it takes the player to apply the Large Medkit!");
-		ConfigHandler.largeMedBoostTime = config.getInt("Large Medical Kit Boost Time", "Medical Kits", 60, 1, 300, "Sets how long the player has extra hearts!");
+		ConfigHandler.LargeMedHealStack = config.getInt("Teir 4 Meical Item Stacksize", "Medical Items", 16, 1, 64, "Sets the Stacksize of the Large Medical Kit!");
+		ConfigHandler.LargeMedDuration = config.getInt("Teir 4 Meical Item Use Duration", "Medical Items", 16, 1, 64, "Sets how long it takes the player to apply the Large Medical Kit!");
+		ConfigHandler.largeMedBoostTime = config.getInt("Teir 4 Meical Item Boost Time", "Medical Items", 60, 0, 300, "Sets how long the player has 6 extra hearts on the Large Medical Kit!\n[Does not stack]");
 		
 		config.addCustomCategoryComment("Kappa Pick", "Fun Stuff\n[Not PicKappa stop asking!]");
 		ConfigHandler.kappa_pick = config.getBoolean("Kappa Pick", "Kappa Pick", true, "Enable Kappa Pick?");
@@ -191,7 +194,7 @@ public class TinyConfig {
 		config.addCustomCategoryComment("Ender Ore", "Might as well add this");
 		ConfigHandler.ender_ore = config.getBoolean("Ender Ore", "Ender Ore", true, "Enable Ender Ore?");
 		ConfigHandler.ender_mite = config.getBoolean("Endermite", "Ender Ore", true, "Enable Endermite spawn?");
-		ConfigHandler.endermite_spawn = config.getInt("Endermite Spawn", "Ender Ore", 50, 0, 100, "Sets the Chance of Endermites to spawn when Ore is mined.");
+		ConfigHandler.endermite_spawn = config.getInt("Endermite Spawn", "Ender Ore", 25, 0, 100, "Sets the Chance of Endermites to spawn when Ore is mined.");
 		ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency", "Ender Ore", 5, 1, 100, "Sets the Chance of Ender ore generating.");
 		ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", "Ender Ore", 1, 1, 255, "Sets the min Y level.");
 		ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", "Ender Ore", 32, 1, 255, "Sets the max Y level.");
@@ -374,7 +377,7 @@ public class TinyConfig {
 		ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", "Scythes", false, "Enable Emerald Scythe?");
 		ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe", "Scythes", false, "Enable Obsidian Scythe?");
 		
-		config.addCustomCategoryComment("Paxels", "Because I love weird stuff!\n[Some May Require Other Items in this mod.]");
+		config.addCustomCategoryComment("Paxels", "Because I love weird stuff!\n[Requires Other Items in this mod.]");
 		ConfigHandler.wooden_multi = config.getBoolean("Wooden Paxel", "Paxels", true, "Enable Wooden Paxel?");
 		ConfigHandler.stone_multi = config.getBoolean("Stone Paxel", "Paxels", true, "Enable Stone Paxel?");
 		ConfigHandler.golden_multi = config.getBoolean("Golden Paxel", "Paxels", true, "Enable Golden Paxel?");
@@ -495,7 +498,7 @@ public class TinyConfig {
 		ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation Amount", "Extra Food Stats", 0.7F, 0.0F, 1.0F, "Sets the Saturation Amount.");
 		
 		config.addCustomCategoryComment("Food Eat Duration", "How long it takes to eat food.");
-		ConfigHandler.eat_timer = config.getInt("Eat Duration", "Food Eat Duration", 16, 8, Integer.MAX_VALUE, "Sets how long it takes to eat TP food.");
+		ConfigHandler.eat_timer = config.getInt("Eat Duration", "Food Eat Duration", 32, 8, Integer.MAX_VALUE, "Sets how long it takes to eat TP food.");
 		
 		if (config.hasChanged())
         config.save();

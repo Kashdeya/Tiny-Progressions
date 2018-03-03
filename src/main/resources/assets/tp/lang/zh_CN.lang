@@ -8,6 +8,12 @@ tile.emerald_cobblegen_block.name=究极造石机
 #asphalt
 tile.asphalt_block.name=沥青
 
+#ghost block
+tile.ghost_block.name="圆石"
+
+#SUCC THE PEARLS
+item.succ_pearls.name=SUCC THE PEARLS
+
 #Growth Blocks
 tile.growth_block.name=生长晶体
 tile.growth_upgrade.name=高级生长晶体
@@ -23,22 +29,6 @@ item.blueberry_berry.name=蓝莓
 item.maloberry_berry.name=桑椹
 item.raspberry_berry.name=树莓
 
-
-#Artifacts
-item.wither_ring.name=§8凋零戒指
-tooltip.witherring_1=免疫凋零效果
-item.fire_ring.name=§4炽热戒指
-tooltip.firering_1=免疫熔岩以及火的伤害
-item.posion_ring.name=§a毒液戒指
-tooltip.posionring_1=免疫中毒效果
-item.nausea_ring.name=§a反胃抗性戒指
-tooltip.nausearing_1=免疫反胃效果
-item.master_ring.name=§a通灵之戒
-tooltip.masterring_1=免疫凋零效果
-tooltip.masterring_2=免疫熔岩以及火的伤害
-tooltip.masterring_3=免疫中毒效果
-tooltip.masterring_4=免疫反胃效果
-
 #Infinity Bucket
 item.infin_bucket.name=无尽之桶
 tooltip.infinbucket_1=提供无限水源
@@ -46,6 +36,13 @@ tooltip.infinbucket_1=提供无限水源
 #Steel
 tile.steel_block.name=钢块
 item.steel_ingot.name=钢锭
+
+#Dust
+item.obsidian_dust.name=黑曜石粉
+
+#Tree Drops
+item.plump_pear.name=梨子
+item.plump_peach.name=桃子
 
 #Infused Lava Block
 tile.lava_infused_stone.name=脉冲熔岩石
@@ -56,6 +53,7 @@ tooltip.infused_3=放置在水周围会凝结为圆石
 #JonBam Items
 item.c_axe.name=C-斧
 item.bam_tshirt.name=Bam-体恤衫
+tooltip.bamsarmor_1=The Bearded Blueberry Warriors T-Shirt!
 
 #TinyCoal
 item.tiny_charcoal.name=小块木炭
@@ -122,6 +120,8 @@ item.raspberry_juice.name=树莓汁
 item.blueberry_juice.name=蓝莓汁
 item.blackberry_juice.name=黑莓汁
 item.maloberry_juice.name=桑椹汁
+item.pear_juice.name=梨汁
+item.peach_juice.name=桃汁
 
 #Kappa
 item.kappa_pick.name=Kappa Pick
@@ -137,9 +137,23 @@ tile.netherstar_block.name=压缩下界之星块
 tile.flint_block.name=压缩燧石块
 
 #Fluids
-fluid.vasholine=Wub Wub Juice
-tile.vasholine.name=Wub Wub Juice
+fluid.vasholine=Wub Wub 汁
+tile.vasholine.name=Wub Wub 汁
 tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
+item.wub_gem.name=Wub 宝石
+tooltip.wubgem_1=用于制作 Wub Wub Juice
+tile.wub_ore.name=Wub Wub 矿石
+tile.nether_wub_ore.name=地狱 Wub Wub 矿石
+item.wub_paxel.name=Wub paxel
+tooltip.wubpaxel_1=挖掘 3x3 范围
+tooltip.wubpaxel_2=按住 Shift 键为标准模式
+item.wub_pickaxe.name=Wub 镐
+item.wub_axe.name=Wub 斧
+item.wub_spade.name=Wub 铲
+item.wub_sword.name=Wub 剑
+item.wub_hoe.name=Wub 锄
+item.wub_ingot.name=Wub 锭
+
 
 #Watering Cans
 item.watering_can.name=洒水壶

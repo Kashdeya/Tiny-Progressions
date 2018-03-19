@@ -54,8 +54,6 @@ public class ArmorRecipes {
 				's', "chainmail");
 		}
 		
-			BAM_TSHIRT = new ShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), TechArmor.emerald_chestplate);
-		
 		if (ArmorHandler.StoneArmor){
 			STONE_HELMET = new ShapedRecipe(new ItemStack(TechArmor.stone_helmet),
 				"sss",
@@ -383,6 +381,8 @@ public class ArmorRecipes {
 				"d d",
 				"d d",
 				'd', Items.EMERALD);
+		    
+		    BAM_TSHIRT = new ShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), TechArmor.emerald_chestplate);
 		}
 	}
 

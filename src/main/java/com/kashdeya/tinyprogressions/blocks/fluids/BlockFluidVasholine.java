@@ -59,8 +59,8 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 			if (ConfigHandler.wub_fatigue){	
 				((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.MINING_FATIGUE, 20, 0, false, false));
 			}
-			entity.rotationYaw -= (world.rand.nextFloat() - world.rand.nextFloat()) * 5.0D;
-			entity.prevRotationYaw += (world.rand.nextFloat() + world.rand.nextFloat()) * 15.0D;
+			entity.rotationYaw -= (world.rand.nextFloat() - world.rand.nextFloat()) * 0.5D;
+			entity.prevRotationYaw += (world.rand.nextFloat() + world.rand.nextFloat()) * 0.5D;
 		}
 		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer) && ConfigHandler.vasholine_mobs){
 			entity.attackEntityFrom(DamageSource.MAGIC, ConfigHandler.vasholine_mobs_amount);

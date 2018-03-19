@@ -83,14 +83,14 @@ public class ItemRecipes {
 			// Medkit
 			if (ConfigHandler.medical_kits) {
 				// Small bandage
-				SMALL_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.small_bandage, 8), 
+				SMALL_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.small_bandage, 4), 
 						" p ",
 						"psp",
 						" p ",
 						'p', new ItemStack(Items.PAPER),
 						's', new ItemStack(Items.SLIME_BALL));
 				// Large Bandage
-				LARGE_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.large_bandage), 
+				LARGE_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.large_bandage, 4), 
 						"bsb",
 						"sls",
 						"bsb",
@@ -98,7 +98,7 @@ public class ItemRecipes {
 						's', "string",
 						'b', new ItemStack(TechItems.small_bandage));
 				// Small Med Kit
-				SMALL_MEDKIT = new ShapedRecipe(new ItemStack(TechItems.small_med_kit), 
+				SMALL_MEDKIT = new ShapedRecipe(new ItemStack(TechItems.small_med_kit, 2), 
 						"bb",
 						"bb",
 						'b', new ItemStack(TechItems.large_bandage));				

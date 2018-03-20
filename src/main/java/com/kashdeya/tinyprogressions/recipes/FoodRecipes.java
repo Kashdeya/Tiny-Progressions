@@ -34,8 +34,8 @@ public class FoodRecipes {
 		// bsc cookie
 		if (ConfigHandler.bsc_sugar_cookie){
 			BSC_SUGAR_COOKIE = new ShapedRecipe(new ItemStack(TechFoods.bsc_sugar_cookie, 8), "wsw",
-				'w', Items.WHEAT,
-				's', Items.SUGAR);
+				'w', new ItemStack(Items.WHEAT),
+				's', new ItemStack(Items.SUGAR));
 		}
 		
 		// Bams Pizza 
@@ -43,15 +43,15 @@ public class FoodRecipes {
 			BAMS_PIZZA = new ShapedRecipe(new ItemStack(TechFoods.bams_pizza), "bbb",
                 " b ",
                 " b ",
-				'b', Items.BREAD);
+				'b', new ItemStack(Items.BREAD));
 		}
 		
 		// SUCC THE PEARLS
 		if (ConfigHandler.succ_juice && !ConfigHandler.succ_juice_bottle){
-			SUCC_PEARLS = new ShapelessRecipe(new ItemStack(TechFoods.succ_pearls), Items.ENDER_PEARL, "juicer");
+			SUCC_PEARLS = new ShapelessRecipe(new ItemStack(TechFoods.succ_pearls), new ItemStack(Items.ENDER_PEARL), "juicer");
 		}
 		if (ConfigHandler.succ_juice && ConfigHandler.succ_juice_bottle){
-			SUCC_PEARLS = new ShapelessRecipe(new ItemStack(TechFoods.succ_pearls), Items.ENDER_PEARL, "juicer", "glassBottle");
+			SUCC_PEARLS = new ShapelessRecipe(new ItemStack(TechFoods.succ_pearls), new ItemStack(Items.ENDER_PEARL), "juicer", "glassBottle");
 		}
 		
 		// Extra Drop w/o Bottles

@@ -154,125 +154,125 @@ public class ArmorRecipes {
 			WOODEN_HELMET = new ShapedRecipe(new ItemStack(TechArmor.wooden_helmet),
 				"lll",
 				"l l",
-				'l', Blocks.LOG);
+				'l', new ItemStack(Blocks.LOG));
 			
 			WOODEN_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.wooden_chestplate),
 				"l l",
 				"lll",
 				"lll",
-				'l', Blocks.LOG);
+				'l', new ItemStack(Blocks.LOG));
 			
 			WOODEN_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.wooden_leggings),
 				"lll",
 				"l l",
 				"l l",
-				'l', Blocks.LOG);
+				'l', new ItemStack(Blocks.LOG));
 			
 			WOODEN_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.wooden_boots),
 				"l l",
 				"l l",
-				'l', Blocks.LOG);
+				'l', new ItemStack(Blocks.LOG));
 			WOODEN2_HELMET = new ShapedRecipe(new ItemStack(TechArmor.wooden_helmet),
 				"lll",
 				"l l",
-				'l', Blocks.LOG2);
+				'l', new ItemStack(Blocks.LOG2));
 			
 			WOODEN2_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.wooden_chestplate),
 				"l l",
 				"lll",
 				"lll",
-				'l', Blocks.LOG2);
+				'l', new ItemStack(Blocks.LOG2));
 			
 			WOODEN2_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.wooden_leggings),
 				"lll",
 				"l l",
 				"l l",
-				'l', Blocks.LOG2);
+				'l', new ItemStack(Blocks.LOG2));
 			
 			WOODEN2_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.wooden_boots),
 				"l l",
 				"l l",
-				'l', Blocks.LOG2);
+				'l', new ItemStack(Blocks.LOG2));
 		}
 		
 		if (ArmorHandler.lava_armor){
 			LAVA_HELMET = new ShapedRecipe(new ItemStack(TechArmor.lava_helmet),
 				"bbb",
 				"cdc",
-				'b', Blocks.MAGMA,
-				'c', Items.MAGMA_CREAM,
-				'd', TechArmor.emerald_helmet);
+				'b', new ItemStack(Blocks.MAGMA),
+				'c', new ItemStack(Items.MAGMA_CREAM),
+				'd', new ItemStack(TechArmor.emerald_helmet));
 			
 			LAVA_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.lava_chestplate),
 				"b b",
 				"cdc",
 				"bbb",
-				'b', Blocks.MAGMA,
-				'c', Items.MAGMA_CREAM,
-				'd', TechArmor.emerald_chestplate);
+				'b', new ItemStack(Blocks.MAGMA),
+				'c', new ItemStack(Items.MAGMA_CREAM),
+				'd', new ItemStack(TechArmor.emerald_chestplate));
 			
 			LAVA_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.lava_leggings),
 				"bdb",
 				"c c",
 				"b b",
-				'b', Blocks.MAGMA,
-				'c', Items.MAGMA_CREAM,
-				'd', TechArmor.emerald_leggings);
+				'b', new ItemStack(Blocks.MAGMA),
+				'c', new ItemStack(Items.MAGMA_CREAM),
+				'd', new ItemStack(TechArmor.emerald_leggings));
 			
 			LAVA_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.lava_boots),
 				"bdb",
 				"c c",
-				'b', Blocks.MAGMA,
-				'c', Items.MAGMA_CREAM,
-				'd', TechArmor.emerald_boots);
+				'b', new ItemStack(Blocks.MAGMA),
+				'c', new ItemStack(Items.MAGMA_CREAM),
+				'd', new ItemStack(TechArmor.emerald_boots));
 		}
 		
 		if (ArmorHandler.wither_armor){
 			WITHER_HELMET = new ShapedRecipe(new ItemStack(TechArmor.wither_helmet),
 				"www",
 				"w w",
-				'w', TechItems.wither_rib);
+				'w', new ItemStack(TechItems.wither_rib));
 			
 			WITHER_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.wither_chestplate),
 				"w w",
 				"www",
 				"www",
-				'w', TechItems.wither_rib);
+				'w', new ItemStack(TechItems.wither_rib));
 			
 			WITHER_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.wither_leggings),
 				"www",
 				"w w",
 				"w w",
-				'w', TechItems.wither_rib);
+				'w', new ItemStack(TechItems.wither_rib));
 			
 			WITHER_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.wither_boots),
 				"w w",
 				"w w",
-				'w', TechItems.wither_rib);
+				'w', new ItemStack(TechItems.wither_rib));
 		}
 		
 		if (ArmorHandler.dragon_armor){
 			DRAGON_HELMET = new ShapedRecipe(new ItemStack(TechArmor.dragon_helmet),
 				"ddd",
 				"d d",
-				'd', TechItems.dragon_scale);
+				'd', new ItemStack(TechItems.dragon_scale));
 			
 			DRAGON_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.dragon_chestplate),
 				"d d",
 				"ddd",
 				"ddd",
-				'd', TechItems.dragon_scale);
+				'd', new ItemStack(TechItems.dragon_scale));
 			
 			DRAGON_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.dragon_leggings),
 				"ddd",
 				"d d",
 				"d d",
-				'd', TechItems.dragon_scale);
+				'd', new ItemStack(TechItems.dragon_scale));
 			
 		   	DRAGON_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.dragon_boots),
 				"d d",
 				"d d",
-				'd', TechItems.dragon_scale);
+				'd', new ItemStack(TechItems.dragon_scale));
 		}
 		
 		if (ArmorHandler.lapis_armor){
@@ -283,106 +283,106 @@ public class ArmorRecipes {
 			LAPIS_HELMET = new ShapedRecipe(new ItemStack(TechArmor.lapis_helmet),
 				"ddd",
 				"d d",
-				'd', TechItems.lapis_ingot);
+				'd', new ItemStack(TechItems.lapis_ingot));
 			
 			LAPIS_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.lapis_chestplate),
 				"d d",
 				"ddd",
 				"ddd",
-				'd', TechItems.lapis_ingot);
+				'd', new ItemStack(TechItems.lapis_ingot));
 			
 			LAPIS_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.lapis_leggings),
 				"ddd",
 				"d d",
 				"d d",
-				'd', TechItems.lapis_ingot);
+				'd', new ItemStack(TechItems.lapis_ingot));
 			
 		   	LAPIS_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.lapis_boots),
 				"d d",
 				"d d",
-				'd', TechItems.lapis_ingot);
+				'd', new ItemStack(TechItems.lapis_ingot));
 		}
 		
 		if (ArmorHandler.redstone_armor){
 			REDSTONE_INGOT = new ShapedRecipe(new ItemStack(TechItems.redstone_ingot),
 				"ddd",
 				"ddd",
-				'd', Items.REDSTONE);
+				'd', new ItemStack(Items.REDSTONE));
 			REDSTONE_HELMET = new ShapedRecipe(new ItemStack(TechArmor.redstone_helmet),
 				"ddd",
 				"d d",
-				'd', TechItems.redstone_ingot);
+				'd', new ItemStack(TechItems.redstone_ingot));
 			
 			REDSTONE_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.redstone_chestplate),
 				"d d",
 				"ddd",
 				"ddd",
-				'd', TechItems.redstone_ingot);
+				'd', new ItemStack(TechItems.redstone_ingot));
 			
 			REDSTONE_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.redstone_leggings),
 				"ddd",
 				"d d",
 				"d d",
-				'd', TechItems.redstone_ingot);
+				'd', new ItemStack(TechItems.redstone_ingot));
 			
 		   	REDSTONE_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.redstone_boots),
 				"d d",
 				"d d",
-				'd', TechItems.redstone_ingot);
+				'd', new ItemStack(TechItems.redstone_ingot));
 		}
 		
 		if (ArmorHandler.quartz_armor){
 			QUARTZ_INGOT = new ShapedRecipe(new ItemStack(TechItems.quartz_ingot),
 				"ddd",
 				"ddd",
-				'd', Items.QUARTZ);
+				'd', new ItemStack(Items.QUARTZ));
 			QUARTZ_HELMET = new ShapedRecipe(new ItemStack(TechArmor.quartz_helmet),
 				"ddd",
 				"d d",
-				'd', TechItems.quartz_ingot);
+				'd', new ItemStack(TechItems.quartz_ingot));
 
 			QUARTZ_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.quartz_chestplate),
 				"d d",
 				"ddd",
 				"ddd",
-				'd', TechItems.quartz_ingot);
+				'd', new ItemStack(TechItems.quartz_ingot));
 
 			QUARTZ_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.quartz_leggings),
 				"ddd",
 				"d d",
 				"d d",
-				'd', TechItems.quartz_ingot);
+				'd', new ItemStack(TechItems.quartz_ingot));
 			
 		   	QUARTZ_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.quartz_boots),
 				"d d",
 				"d d",
-				'd', TechItems.quartz_ingot);
+				'd', new ItemStack(TechItems.quartz_ingot));
 		}
 		
 		if (ArmorHandler.emerald_amor){
 			EMERALD_HELMET = new ShapedRecipe(new ItemStack(TechArmor.emerald_helmet),
 				"ddd",
 				"d d",
-				'd', Items.EMERALD);
+				'd', new ItemStack(Items.EMERALD));
 			
 			EMERALD_CHESTPLATE = new ShapedRecipe(new ItemStack(TechArmor.emerald_chestplate),
 				"d d",
 				"ddd",
 				"ddd",
-				'd', Items.EMERALD);
+				'd', new ItemStack(Items.EMERALD));
 			
 			EMERALD_LEGGINGS = new ShapedRecipe(new ItemStack(TechArmor.emerald_leggings),
 				"ddd",
 				"d d",
 				"d d",
-				'd', Items.EMERALD);
+				'd', new ItemStack(Items.EMERALD));
 			
 		    EMERALD_BOOTS = new ShapedRecipe(new ItemStack(TechArmor.emerald_boots),
 				"d d",
 				"d d",
-				'd', Items.EMERALD);
+				'd', new ItemStack(Items.EMERALD));
 		    
-		    BAM_TSHIRT = new ShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), TechArmor.emerald_chestplate);
+		    BAM_TSHIRT = new ShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), new ItemStack(TechArmor.emerald_chestplate));
 		}
 	}
 

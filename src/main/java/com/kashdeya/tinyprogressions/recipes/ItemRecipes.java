@@ -35,14 +35,14 @@ public class ItemRecipes {
 				NETHER_ROD = new ShapedRecipe(new ItemStack(TechItems.nether_rod, 4), 
 						"i",
 						"i",
-						'i', TechBlocks.soul_sandstone);
+						'i', new ItemStack(TechBlocks.soul_sandstone));
 			}
 			// bsc
 			if (ConfigHandler.bsc_rod) {
 				BSC_ROD = new ShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), 
 						"i",
 						"i",
-						'i', TechBlocks.compressed_sugar_cane);
+						'i', new ItemStack(TechBlocks.compressed_sugar_cane));
 			}
 			
 			// Glowstone Dust
@@ -55,7 +55,7 @@ public class ItemRecipes {
 							"ddd",
 							"dgd",
 							"ddd",
-							'g', Items.GLOWSTONE_DUST,
+							'g', new ItemStack(Items.GLOWSTONE_DUST),
 							'd', EnumDustColor.values()[i].getCraftingOredict());
 				}
 			}
@@ -117,40 +117,40 @@ public class ItemRecipes {
 						'e', "dustEnder");
 			}
 			
-			// Medkit
+			// repair kit
 			if (ConfigHandler.repair_tablet) {
 				REPAIR_TABLET = new ShapedRecipe(new ItemStack(TechItems.repair_tablet), 
 						"plp",
 						"rgr",
 						"prp",
-						'p', TechBlocks.hardened_stone,
-						'r', Items.GHAST_TEAR,
-						'l', Items.NETHER_STAR,
-						'g', TechItems.redstone_ingot);
+						'p', new ItemStack(TechBlocks.hardened_stone),
+						'r', new ItemStack(Items.GHAST_TEAR),
+						'l', new ItemStack(Items.NETHER_STAR),
+						'g', new ItemStack(TechItems.redstone_ingot));
 			}
 			
 			// Tiny Coal & Charcoal
 			if (ConfigHandler.tiny_charcoal) {
-				TINY_CHARCOAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new ItemStack(Items.COAL, 1, 1), TechItems.stone_hammer);
+				TINY_CHARCOAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new ItemStack(Items.COAL, 1, 1), new ItemStack(TechItems.stone_hammer));
 				CHARCOAL1 = new ShapedRecipe(new ItemStack(Items.COAL, 1, 1),
 						
 						"sss",
 						"s s",
 						"sss",
-						's', TechItems.tiny_charcoal);
+						's', new ItemStack(TechItems.tiny_charcoal));
 			}
 			if (ConfigHandler.tiny_coal) {
-				TINY_COAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), new ItemStack(Items.COAL, 1, 0), TechItems.stone_hammer);
+				TINY_COAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), new ItemStack(Items.COAL, 1, 0), new ItemStack(TechItems.stone_hammer));
 				COAL = new ShapedRecipe(new ItemStack(Items.COAL, 1, 0), 
 						"sss",
 						"s s",
 						"sss",
-						's', TechItems.tiny_coal);
+						's', new ItemStack(TechItems.tiny_coal));
 			}
 			
 			// Chainmail part
 			if (ArmorHandler.chain_armor){
-				CHAINMAIL_PART = new ShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), Items.IRON_INGOT, TechItems.stone_hammer);
+				CHAINMAIL_PART = new ShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), new ItemStack(Items.IRON_INGOT), new ItemStack(TechItems.stone_hammer));
 			}
 			
 			// Steel
@@ -159,15 +159,15 @@ public class ItemRecipes {
 						"sss",
 						"ihi",
 						"sss",
-						'h', TechItems.stone_hammer,
-						'i', Items.IRON_INGOT,
+						'h', new ItemStack(TechItems.stone_hammer),
+						'i', new ItemStack(Items.IRON_INGOT),
 						's', new ItemStack(Items.COAL, 1, 0));
 				STEEL_INGOT1 = new ShapedRecipe(new ItemStack(TechItems.steel_ingot, 2), 
 						"sss",
 						"ihi",
 						"sss",
-						'h', TechItems.stone_hammer,
-						'i', Items.IRON_INGOT,
+						'h', new ItemStack(TechItems.stone_hammer),
+						'i', new ItemStack(Items.IRON_INGOT),
 						's', new ItemStack(Items.COAL, 1, 1));
 			}
 			
@@ -177,9 +177,9 @@ public class ItemRecipes {
 						"cic",
 						"isi",
 						" s ",
-						'i', Items.STRING,
-						's', Items.STICK,
-						'c', TechBlocks.hardened_stone);
+						'i', new ItemStack(Items.STRING),
+						's', new ItemStack(Items.STICK),
+						'c', new ItemStack(TechBlocks.hardened_stone));
 			
 		}
 

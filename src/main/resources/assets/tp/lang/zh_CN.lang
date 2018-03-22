@@ -9,7 +9,7 @@ tile.emerald_cobblegen_block.name=究极造石机
 tile.asphalt_block.name=沥青
 
 #ghost block
-tile.ghost_block.name="圆石"
+tile.ghost_block.name=幽灵方块
 
 #SUCC THE PEARLS
 item.succ_pearls.name=SUCC THE PEARLS
@@ -53,7 +53,7 @@ tooltip.infused_3=放置在水周围会凝结为圆石
 #JonBam Items
 item.c_axe.name=C-斧
 item.bam_tshirt.name=Bam-体恤衫
-tooltip.bamsarmor_1=The Bearded Blueberry Warriors T-Shirt!
+tooltip.bamsarmor_1=来自Bearded Blueberry Warriors的体恤衫！
 
 #TinyCoal
 item.tiny_charcoal.name=小块木炭
@@ -139,9 +139,9 @@ tile.flint_block.name=压缩燧石块
 #Fluids
 fluid.vasholine=Wub Wub 汁
 tile.vasholine.name=Wub Wub 汁
-tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
+tooltip.vasholine_1=最适合干燥，流血，轻微损伤，擦伤与烫伤的人使用！
 item.wub_gem.name=Wub 宝石
-tooltip.wubgem_1=用于制作 Wub Wub Juice
+tooltip.wubgem_1=用于制作 Wub Wub 汁
 tile.wub_ore.name=Wub Wub 矿石
 tile.nether_wub_ore.name=地狱 Wub Wub 矿石
 item.wub_paxel.name=Wub paxel
@@ -217,8 +217,23 @@ item.redstone_apple.name=红石苹果
 #AppleProgression
 item.golden_apple.name=金苹果
 
+#Quick Sand
+tile.quick_sand.name=石英沙
+
 #Medkit
-item.med_kit.name=医疗包
+item.small_bandage.name=小型医疗绷带
+item.large_bandage.name=大型医疗绷带
+item.small_med_kit.name=小型医疗包
+item.large_med_kit.name=大型医疗包
+
+#Medkit Tooltip
+tooltip.medkit_1=立刻治愈玩家！
+tooltip.medkits=只有玩家受伤时才能使用！
+tooltip.smallmedkit_2=在短时间内恢复4点生命值！
+tooltip.largemedkit_2=在短时间内恢复6点生命值！
+tooltip.bandage_1=提供短暂再生效果！
+tooltip.bandage_2=恢复效果不能叠加！
+tooltip.largebandage_1=在短时间内恢复2点生命值！
 
 #Lapis Armor
 tooltip.lapisarmor_1=全套效果：水下呼吸
@@ -248,6 +263,7 @@ item.flint_axe.name=燧石斧
 item.flint_sword.name=燧石剑
 item.flint_hoe.name=燧石锄
 item.flint_knife.name=燧石匕首
+item.flint_multi.name=燧石Paxel
 
 #Flint Armor
 item.flint_helmet.name=燧石头盔
@@ -330,9 +346,6 @@ tooltip.obsidian_1=凋零的证明！
 #Birthday Pickaxe Tooltip
 tooltip.birthday_1=神速力镐！
 tooltip.birthday_2=右击会有惊喜！
-
-#Medkit Tooltip
-tooltip.medkit=治愈玩家！
 
 #Mycelium Tooltip
 tooltip.seeds=右击泥土将其感染为菌丝！
@@ -417,19 +430,15 @@ item.diamond_spear.name=钻石长矛
 item.emerald_spear.name=绿宝石长矛
 item.obsidian_spear.name=黑曜石长矛
 
-#Lava Armor
+#Magma Armor
 item.lava_helmet.name=熔岩头盔
 item.lava_chestplate.name=熔岩胸甲
 item.lava_leggings.name=熔岩护腿
 item.lava_boots.name=熔岩护腿
 
-#Lava Crystal
-item.lava_crystal.name=熔岩水晶
-tile.lava_crystal_block.name=熔岩水晶块
-
 #Lava Armor Tooltip
 tooltip.lavaarmor_1=全套效果：
-tooltip.lavaarmor_2=免疫火焰伤害
+tooltip.lavaarmor_2=防火
 tooltip.lavaarmor_3=抗性提升
 
 #Wither Armor
@@ -542,7 +551,7 @@ item.bacon_eggs_sandwhich.name=煎蛋腌肉三明治
 item.chicken_sandwhich.name=鸡肉三明治
 item.beef_sandwhich.name=牛肉三明治
 item.bacon_sandwhich.name=腌肉三明治
-item.bams_pizza.name=Bam 披萨
+item.bams_pizza.name=Bams 菠萝披萨
 
 #Repair Tablet
 item.repair_tablet.name=万用修理器

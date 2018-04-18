@@ -12,20 +12,22 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class WateringCan extends WateringCanBase {
-	
-	public WateringCan(){
-		super();
-		this.setUnlocalizedName("watering_can");
-		this.setWateringRange(1);
-		this.setWateringChance(ConfigHandler.WateringCanChance);
-	}
+public class WateringCan extends WateringCanBase
+{
+    public WateringCan()
+    {
+        super();
+        this.setUnlocalizedName("watering_can");
+        this.setWateringEffectRange(1);
+        this.setWateringEffectChance(ConfigHandler.WateringCanChance);
+    }
 
     @Override
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.can_1").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.can_2").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.can_3").getFormattedText());
-	}
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
+    {
+        tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.can_1").getFormattedText());
+        tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.can_2").getFormattedText());
+        tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.can_3").getFormattedText());
+    }
 }

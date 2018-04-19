@@ -156,7 +156,7 @@ public class WateringCanBase extends Item
 
     private void attemptWaterParticleTick(World world, BlockPos position)
     {
-        if (getWaterParticlesEnabled())
+        if (world.isRemote && getWaterParticlesEnabled())
         {
             Random rand = new Random();
             int range = getWateringEffectRange();

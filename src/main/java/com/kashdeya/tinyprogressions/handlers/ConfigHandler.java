@@ -45,13 +45,13 @@ public class ConfigHandler {
 	
 	public static boolean overworld_wub = true;
 	public static int wub_block_count = 5;
-	public static int wub_block_frequency = 5;
+	public static int wub_block_frequency = 50;
 	public static int wub_block_min = 1;
 	public static int wub_block_max = 32;
 	
 	public static boolean nether_wub = true;
 	public static int nether_wub_block_count = 5;
-	public static int nether_wub_block_frequency = 5;
+	public static int nether_wub_block_frequency = 50;
 	public static int nether_wub_block_min = 1;
 	public static int nether_wub_block_max = 60;
 	

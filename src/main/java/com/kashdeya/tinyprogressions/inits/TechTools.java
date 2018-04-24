@@ -61,6 +61,7 @@ import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSpade;
 import com.kashdeya.tinyprogressions.items.tools.obsidian.ObsidianSword;
 import com.kashdeya.tinyprogressions.items.tools.wub.WubAxe;
+import com.kashdeya.tinyprogressions.items.tools.wub.WubHammer;
 import com.kashdeya.tinyprogressions.items.tools.wub.WubHoe;
 import com.kashdeya.tinyprogressions.items.tools.wub.WubMulti;
 import com.kashdeya.tinyprogressions.items.tools.wub.WubPickaxe;
@@ -178,6 +179,7 @@ public class TechTools {
 	public static Item wub_hoe;
 	public static Item wub_sword;
 	public static Item wub_paxel;
+	public static Item wub_hammer;
 	
 	public static void init(){
 		// wub extras
@@ -188,6 +190,7 @@ public class TechTools {
 			wub_sword = new WubSword(MaterialHandler.WUBWUB).setUnlocalizedName("wub_sword");
 			wub_hoe = new WubHoe(MaterialHandler.WUBWUB).setUnlocalizedName("wub_hoe");
 			wub_paxel = new WubMulti(MaterialHandler.PWUBWUB).setUnlocalizedName("wub_paxel").setMaxDamage(DamageHandler.wub_multi);
+			wub_hammer = new WubHammer(MaterialHandler.PWUBWUB).setUnlocalizedName("wub_hammer").setMaxDamage(DamageHandler.wub_pickaxe);
 		}
 		// nether tools and weapons
 		if (ConfigHandler.nether_rod && ConfigHandler.nether_iron_tools_weapons){

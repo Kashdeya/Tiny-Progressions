@@ -28,7 +28,7 @@ public class ToolsRecipes {
 	public static IRecipe WOODEN_MULTI, STONE_MULTI, IRON_MULTI, GOLD_MULTI, DIAMOND_MULTI, EMERALD_MULTI, OBSIDIAN_MULTI;
 	public static IRecipe WOODEN_BATTLE, STONE_BATTLE, IRON_BATTLE, GOLD_BATTLE, DIAMOND_BATTLE, EMERALD_BATTLE, OBSIDIAN_BATTLE;
 	public static IRecipe WOODEN_SPEAR, STONE_SPEAR, IRON_SPEAR, GOLD_SPEAR, DIAMOND_SPEAR, EMERALD_SPEAR, OBSIDIAN_SPEAR;
-	public static IRecipe WUB_AXE, WUB_AXE2, WUB_HOE2, WUB_PICKAXE, WUB_SPADE, WUB_HOE, WUB_SWORD, WUB_PAXEL;
+	public static IRecipe WUB_AXE, WUB_AXE2, WUB_HOE2, WUB_PICKAXE, WUB_SPADE, WUB_HOE, WUB_SWORD, WUB_PAXEL, WUB_HAMMER;
 	
 	public static void init() {
 		// Wub Tools
@@ -37,43 +37,43 @@ public class ToolsRecipes {
 					"ii ",
 	                "is ",
 	                " s ",
-					'i', new ItemStack(TechItems.wub_gem),
+					'i', new ItemStack(TechItems.wub_ingot),
 					's', "stickWood");
 			WUB_AXE2 = new ShapedRecipe(new ItemStack(TechTools.wub_axe), 
 					" ii",
 	                " si",
 	                " s ",
-					'i', new ItemStack(TechItems.wub_gem),
+					'i', new ItemStack(TechItems.wub_ingot),
 					's', "stickWood");
 			WUB_HOE = new ShapedRecipe(new ItemStack(TechTools.wub_hoe), 
 					"ii ",
 	                " s ",
 	                " s ",
-					'i', new ItemStack(TechItems.wub_gem),
+					'i', new ItemStack(TechItems.wub_ingot),
 					's', "stickWood");
 			WUB_HOE2 = new ShapedRecipe(new ItemStack(TechTools.wub_hoe), 
 					" ii",
 	                " s ",
 	                " s ",
-					'i', new ItemStack(TechItems.wub_gem),
+					'i', new ItemStack(TechItems.wub_ingot),
 					's', "stickWood");
 			WUB_PICKAXE = new ShapedRecipe(new ItemStack(TechTools.wub_pickaxe), 
 					"iii",
 	                " s ",
 	                " s ",
-					'i', new ItemStack(TechItems.wub_gem),
+					'i', new ItemStack(TechItems.wub_ingot),
 					's', "stickWood");
 			WUB_SPADE = new ShapedRecipe(new ItemStack(TechTools.wub_spade), 
 					"i",
 	                "s",
 	                "s",
-					'i', new ItemStack(TechItems.wub_gem),
+					'i', new ItemStack(TechItems.wub_ingot),
 					's', "stickWood");
 			WUB_SWORD = new ShapedRecipe(new ItemStack(TechTools.wub_sword), 
 					"i",
 	                "i",
 	                "s",
-					'i', new ItemStack(TechItems.wub_gem),
+					'i', new ItemStack(TechItems.wub_ingot),
 					's', "stickWood");
 			WUB_PAXEL = new ShapedRecipe(new ItemStack(TechTools.wub_paxel), 
 					"asp",
@@ -82,6 +82,12 @@ public class ToolsRecipes {
 	                'a', new ItemStack(TechTools.wub_axe),
 	                's', new ItemStack(TechTools.wub_spade),
 	                'p', new ItemStack(TechTools.wub_pickaxe),
+					'i', "stickWood");
+			WUB_HAMMER = new ShapedRecipe(new ItemStack(TechTools.wub_hammer), 
+					"aaa",
+	                "aia",
+	                " i ",
+	                'a', new ItemStack(TechItems.wub_ingot),
 					'i', "stickWood");
 		}
 		// c axe

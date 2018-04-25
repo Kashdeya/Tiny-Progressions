@@ -1,3 +1,11 @@
+#Shears
+item.wooden_shears.name=Wooden Shears
+item.golden_shears.name=Golden Shears
+item.diamond_shears.name=Diamond Shears
+item.emerald_shears.name=Emerald Shears
+item.flint_shears.name=Flint Shears
+item.stone_shears.name=Stone Shears
+
 #Tech Blocks
 tile.cobblegen_block.name=Cobblestone Generator
 tile.iron_cobblegen_block.name=Cobblestone Generator Tier 2

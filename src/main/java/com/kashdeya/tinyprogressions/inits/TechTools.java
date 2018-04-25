@@ -30,6 +30,7 @@ import com.kashdeya.tinyprogressions.items.scythes.ObsidianScythe;
 import com.kashdeya.tinyprogressions.items.scythes.ScytheMain;
 import com.kashdeya.tinyprogressions.items.seaxe.SeaIronAxe;
 import com.kashdeya.tinyprogressions.items.seaxe.SeaIronPickaxe;
+import com.kashdeya.tinyprogressions.items.shears.ShearsBase;
 import com.kashdeya.tinyprogressions.items.spears.EmeraldSpear;
 import com.kashdeya.tinyprogressions.items.spears.ObsidianSpear;
 import com.kashdeya.tinyprogressions.items.spears.SpearMain;
@@ -180,8 +181,35 @@ public class TechTools {
 	public static Item wub_sword;
 	public static Item wub_paxel;
 	public static Item wub_hammer;
+	// Shears
+	public static Item wooden_shears;
+	public static Item golden_shears;
+	public static Item diamond_shears;
+	public static Item emerald_shears;
+	public static Item flint_shears;
+	public static Item stone_shears;
+	
 	
 	public static void init(){
+		// Shears
+		if (ConfigHandler.wooden_shears) {
+			wooden_shears = new ShearsBase().setUnlocalizedName("wooden_shears").setMaxDamage(59);
+		}
+		if (ConfigHandler.golden_shears) {
+			golden_shears = new ShearsBase().setUnlocalizedName("golden_shears").setMaxDamage(32);
+		}
+		if (ConfigHandler.diamond_shears) {
+			diamond_shears = new ShearsBase().setUnlocalizedName("diamond_shears").setMaxDamage(1561);
+		}
+		if (ConfigHandler.emerald_shears) {
+			emerald_shears = new ShearsBase().setUnlocalizedName("emerald_shears").setMaxDamage(1061);
+		}
+		if (ConfigHandler.flint_shears) {
+			flint_shears = new ShearsBase().setUnlocalizedName("flint_shears").setMaxDamage(81);
+		}
+		if (ConfigHandler.stone_shears) {
+			stone_shears = new ShearsBase().setUnlocalizedName("stone_shears").setMaxDamage(131);
+		}
 		// wub extras
 		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
 			wub_pickaxe = new WubPickaxe(MaterialHandler.WUBWUB).setUnlocalizedName("wub_pickaxe");

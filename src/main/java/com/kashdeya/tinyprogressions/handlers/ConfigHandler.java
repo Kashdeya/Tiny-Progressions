@@ -1,6 +1,16 @@
 package com.kashdeya.tinyprogressions.handlers;
 
+import net.minecraft.item.Item;
+
 public class ConfigHandler {	
+	// Shears
+	public static boolean wooden_shears = true; 
+	public static boolean golden_shears = true; 
+	public static boolean diamond_shears = true;
+	public static boolean emerald_shears = true;
+	public static boolean flint_shears = true;  
+	public static boolean stone_shears = true;
+	
 	// Wither Rib
 	public static boolean wither_rib = true;
 	

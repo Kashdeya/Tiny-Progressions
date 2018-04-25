@@ -202,11 +202,11 @@ public class TinyConfig {
 		ConfigHandler.wub_block_max = config.getInt("Overworld Wub Ore Gen Max", "WUB Juice Overworld Ore", 255, 1, 255, "Sets the Overworld max Y level.");
 		
 		config.addCustomCategoryComment("WUB Juice Nether Ore", "[Requires WUB Juice to be ENABLED in the Supporters.cfg]");
-		ConfigHandler.nether_wub = config.getBoolean("Nether Wub Ore", "WUB Nether Juice Ore", true, "Enable Nether Wub Ore?");
-		ConfigHandler.nether_wub_block_count = config.getInt("Nether Wub Ore Gen Size", "WUB Nether Juice Ore", 5, 1, 100, "Sets the Nether Wub Ore Vein Size.");
-		ConfigHandler.nether_wub_block_frequency = config.getInt("Nether Wub Ore Gen Chance", "WUB Nether Juice Ore", 50, 1, 100, "Sets the Chance of Nether Wub Ore generating.");
-		ConfigHandler.nether_wub_block_min = config.getInt("Nether Wub Ore Gen Min", "WUB Nether Juice Ore", 1, 1, 120, "Sets the Nether min Y level.");
-		ConfigHandler.nether_wub_block_max = config.getInt("Nether Wub Ore Gen Max", "WUB Nether Juice Ore", 120, 1, 120, "Sets the Nether max Y level.");
+		ConfigHandler.nether_wub = config.getBoolean("Nether Wub Ore", "WUB Juice Nether Ore", true, "Enable Nether Wub Ore?");
+		ConfigHandler.nether_wub_block_count = config.getInt("Nether Wub Ore Gen Size", "WUB Juice Nether Ore", 5, 1, 100, "Sets the Nether Wub Ore Vein Size.");
+		ConfigHandler.nether_wub_block_frequency = config.getInt("Nether Wub Ore Gen Chance", "WUB Juice Nether Ore", 50, 1, 100, "Sets the Chance of Nether Wub Ore generating.");
+		ConfigHandler.nether_wub_block_min = config.getInt("Nether Wub Ore Gen Min", "WUB Juice Nether Ore", 1, 1, 120, "Sets the Nether min Y level.");
+		ConfigHandler.nether_wub_block_max = config.getInt("Nether Wub Ore Gen Max", "WUB Juice Nether Ore", 120, 1, 120, "Sets the Nether max Y level.");
 		
 		if (config.hasChanged())
 	        config.save();
@@ -285,7 +285,15 @@ public class TinyConfig {
 		ConfigHandler.stickDropsAmount = config.getInt("Extra Fruit Drops Stick Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Sticks Dropped from leaves.");
 		ConfigHandler.appleDropsChance = config.getInt("Extra Fruit Drops Apple Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Apple from leaves.");
 		ConfigHandler.appleDropsAmount = config.getInt("Extra Fruit Drops Apple Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Apple Dropped from leaves.");
-
+		
+		config.addCustomCategoryComment("Extra Shears", "Because people love more shears!");
+		ConfigHandler.wooden_shears = config.getBoolean("Wooden Shears", "Extra Shears", true, "Enable Wooden Shears?");
+		ConfigHandler.golden_shears = config.getBoolean("Golden Shears", "Extra Shears", true, "Enable Golden Shears?");
+		ConfigHandler.diamond_shears = config.getBoolean("Diamond Shears", "Extra Shears", true, "Enable Diamond Shears?");
+		ConfigHandler.emerald_shears = config.getBoolean("Emerald Shears", "Extra Shears", true, "Enable Emerald Shears?");
+		ConfigHandler.flint_shears = config.getBoolean("Flint Shears", "Extra Shears", true, "Enable Flint Shears?");
+		ConfigHandler.stone_shears = config.getBoolean("Stone Shears", "Extra Shears", true, "Enable Stone Shears?");
+		
 		
 		if (config.hasChanged())
         config.save();

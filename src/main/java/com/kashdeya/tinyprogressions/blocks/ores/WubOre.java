@@ -27,7 +27,7 @@ public class WubOre extends Block implements IOreDictEntry {
         super(Material.ROCK);
         this.setHardness(2.0F);
         this.setResistance(10.0F);
-        this.setHarvestLevel("pickaxe", 1);
+        this.setHarvestLevel("pickaxe", 3);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setUnlocalizedName("wub_ore");

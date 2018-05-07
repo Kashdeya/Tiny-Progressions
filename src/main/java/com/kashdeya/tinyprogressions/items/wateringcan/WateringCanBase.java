@@ -1,17 +1,12 @@
 package com.kashdeya.tinyprogressions.items.wateringcan;
 
-import java.util.Random;
-import java.util.stream.IntStream;
-
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.CanUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
@@ -23,24 +18,21 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.RayTraceResult.Type;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.event.ForgeEventFactory;
+
+import java.util.Random;
 
 public class WateringCanBase extends Item
 {
+    private int effectRange = 1;
+    private int effectChance = 100;
+    private int effectCoolDownTicks = 4;
 
-    private int     range            = 1;
-    private int     waterChance      = 100;
+    private boolean waterParticlesEnabled = true;
+    private int waterParticleCoolDownTicks = 2;
 
-    private boolean canWater         = false;
-    private boolean showParticlTicks = false;
-
-    private boolean forceActive      = false;
-
-    private long    ticksInUse;
+    private int ticksUsedCount = 0;
 
     public WateringCanBase()
     {
@@ -48,46 +40,34 @@ public class WateringCanBase extends Item
         this.setCreativeTab(TinyProgressions.tabTP);
     }
 
-    protected void setWateringRange(int newRange)
+    protected int getWateringEffectRange()
     {
-        this.range = newRange;
+        return this.effectRange;
     }
 
-    protected void setWateringChance(int newChance)
+    protected void setWateringEffectRange(int value)
     {
-        this.waterChance = newChance;
+        this.effectRange = value;
     }
-    
-    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
-    {
-        ticksInUse++;
 
-        if(ticksInUse % 4 == 0)
-        {
-            showParticlTicks = true;
-            canWater = true;
-        }
-        
-        if(forceActive && entityIn instanceof EntityPlayer)
-        {
-            EntityPlayer player = (EntityPlayer)entityIn;
-            
-            if(!isSelected)
-            {
-                ItemStack offhand = player.getHeldItem(EnumHand.OFF_HAND);
-                
-                if(offhand.getItem() != TechItems.watering_can && offhand.getItem() != TechItems.watering_can_upgrade)
-                    forceActive = false;
-            }
-            
-            RayTraceResult raytrace = rayTrace(worldIn, player, false);
-            
-            if(raytrace.typeOfHit == Type.BLOCK)
-            {
-                attemptWaterParticles(worldIn, raytrace.getBlockPos());
-                attemptWater(worldIn, raytrace.getBlockPos());
-            }
-        }
+    protected int getWateringEffectChance()
+    {
+        return this.effectChance;
+    }
+
+    protected void setWateringEffectChance(int value)
+    {
+        this.effectChance = value;
+    }
+
+    protected boolean getWaterParticlesEnabled()
+    {
+        return this.waterParticlesEnabled;
+    }
+
+    protected void setWaterParticlesEnabled(boolean value)
+    {
+        this.waterParticlesEnabled = value;
     }
 
     @Override
@@ -99,137 +79,122 @@ public class WateringCanBase extends Item
     @Override
     public EnumRarity getRarity(ItemStack stack)
     {
-        return hasEffect(stack) ? EnumRarity.UNCOMMON : EnumRarity.COMMON;
+        return EnumRarity.UNCOMMON;
     }
 
     @Override
-    public boolean hasEffect(ItemStack stack)
+    public boolean doesSneakBypassUse(ItemStack stack, IBlockAccess world, BlockPos pos, EntityPlayer player)
     {
-        return forceActive;
+        return false;
     }
 
-    int clicks = 0;
-
     @Override
-    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing,
-            float hitX, float hitY, float hitZ)
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        if(!world.isRemote && player.isSneaking())
+        ItemStack mainhand = player.getHeldItemMainhand();
+        ItemStack offhand = player.getHeldItemOffhand();
+
+        // Ensure the player is actually holding a watering can and can use it.
+        if ((!isWateringCanStack(mainhand) || !player.canPlayerEdit(pos, facing, mainhand)) &&
+            (!isWateringCanStack(offhand) || !player.canPlayerEdit(pos, facing, offhand)))
+            return EnumActionResult.FAIL;
+
+        if (!worldIn.isRemote)
         {
-            int wateringcanCount = (int) IntStream.range(0, player.inventory.getSizeInventory()).mapToObj(i -> player.inventory.getStackInSlot(i)).filter(itemstack -> itemstack != ItemStack.EMPTY).map(ItemStack::getItem).filter(item -> item == TechItems.watering_can || item == TechItems.watering_can_upgrade).count();
+            ticksUsedCount++;
 
-            if(wateringcanCount <= 1)
-            {
-                if(wateringcanCount == 1)   // This should always be true given the above check (we should never get a count of 0)
-                    forceActive = !forceActive;
-                
+            // Ensure that we're following effect cool down.
+            if (ticksUsedCount % effectCoolDownTicks != 0)
                 return EnumActionResult.FAIL;
-            }
-            
-            forceActive = false;
-            player.sendMessage(new TextComponentTranslation("item.watering_can.invalidusage"));
-        }
 
-        if(!player.canPlayerEdit(pos.offset(facing), facing, player.getHeldItem(hand)))
-        {
+            attemptWaterTick(worldIn, pos);
             return EnumActionResult.FAIL;
         }
+        else
+        {
+            // Ensure that we're following particle cool down.
+            if (ticksUsedCount % waterParticleCoolDownTicks != 0)
+                return EnumActionResult.FAIL;
 
-        attemptWaterParticles(world, pos);
-        return attemptWater(world, pos);
+
+            attemptWaterParticleTick(worldIn, pos);
+            return EnumActionResult.FAIL;
+        }
     }
 
-    private EnumActionResult attemptWater(World world, BlockPos pos)
+    private EnumActionResult attemptWaterTick(World world, BlockPos position)
     {
-        // only tick if canWater is true (Basically after the duration runs out
-        // getMaxDuration)
-        if(!world.isRemote && canWater)
+        if (!world.isRemote)
         {
-            canWater = false;
             int chance = CanUtil.randInt(1, 100);
-            if(chance <= waterChance)
+            if (chance <= getWateringEffectChance())
             {
-                for(int xAxis = -range; xAxis <= range; xAxis++)
+                int range = getWateringEffectRange();
+                for (int x = -range; x <= range; x++)
                 {
-                    for(int zAxis = -range; zAxis <= range; zAxis++)
+                    for (int z = -range; z <= range; z++)
                     {
-                        for(int yAxis = -range; yAxis <= range; yAxis++)
+                        for (int y = -range; y <= range; y++)
                         {
-                            Block checkBlock = world.getBlockState(pos.add(xAxis, yAxis, zAxis)).getBlock();
+                            BlockPos offsetPosition = position.add(x, y, z);
+                            Block block = world.getBlockState(offsetPosition).getBlock();
 
-                            if(checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM
-                                    || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS
-                                    || checkBlock == Blocks.CHORUS_FLOWER)
+                            if (isGrowableBlock(block))
                             {
-                                world.scheduleBlockUpdate(pos.add(xAxis, yAxis, zAxis), checkBlock, 0, 1);
+                                world.scheduleBlockUpdate(offsetPosition, block, 0, 1);
                             }
                         }
                     }
                 }
+
                 return EnumActionResult.FAIL;
             }
         }
+
         return EnumActionResult.FAIL;
     }
-    
-	private void attemptWaterParticles(World world, BlockPos pos)
+
+    private void attemptWaterParticleTick(World world, BlockPos position)
     {
-        // Dont show particals if you cant water yet.
-        if(this.showParticlTicks)
+        if (world.isRemote && getWaterParticlesEnabled())
         {
-            this.showParticlTicks = false;
-
             Random rand = new Random();
-            for(int x = -range; x <= range; x++)
+            int range = getWateringEffectRange();
+            for (int x = -range; x <= range; x++)
             {
-                for(int z = -range; z <= range; z++)
+                for (int z = -range; z <= range; z++)
                 {
-                    double d0 = pos.add(x, 0, z).getX() + rand.nextFloat();
-                    double d1 = pos.add(x, 0, z).getY() + 1.0D;
-                    double d2 = pos.add(x, 0, z).getZ() + rand.nextFloat();
+                    double xPos = position.add(x, 0, z).getX() + rand.nextFloat();
+                    double yPos = position.add(x, 0, z).getY() + 1.0D;
+                    double zPos = position.add(x, 0, z).getZ() + rand.nextFloat();
 
-                    IBlockState checkSolidState = world.getBlockState(pos);
-                    Block checkSolid = checkSolidState.getBlock();
-                    if((checkSolid.isFullCube(checkSolidState)) || ((checkSolid instanceof BlockFarmland)))
+                    IBlockState blockState = world.getBlockState(position);
+                    Block block = blockState.getBlock();
+
+                    if (blockState.isFullCube() || block instanceof BlockFarmland)
                     {
-                        d1 += 1.0D;
+                        yPos += 1.0D;
                     }
 
-                    world.spawnParticle(EnumParticleTypes.WATER_DROP, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[5]);
+                    world.spawnParticle(EnumParticleTypes.WATER_DROP, xPos, yPos, zPos, 0.0D, 0.0D, 0.0D, new int[5]);
                 }
             }
         }
     }
 
-    public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player,
-            EnumHand hand)
+    private boolean isGrowableBlock(Block block)
     {
+        return block instanceof IGrowable ||
+               block == Blocks.MYCELIUM ||
+               block == Blocks.CACTUS ||
+               block == Blocks.REEDS ||
+               block == Blocks.CHORUS_FLOWER;
+    }
 
-        IBlockState iblockstate = worldIn.getBlockState(target);
-
-        int hook = ForgeEventFactory.onApplyBonemeal(player, worldIn, target, iblockstate, stack, hand);
-        if(hook != 0)
-            return hook > 0;
-
-        if((iblockstate.getBlock() instanceof IGrowable && iblockstate.getBlock() != Blocks.GRASS))
-        {
-            IGrowable igrowable = (IGrowable)iblockstate.getBlock();
-
-            if(igrowable.canGrow(worldIn, target, iblockstate, worldIn.isRemote))
-            {
-                if(!worldIn.isRemote)
-                {
-                    if(igrowable.canUseBonemeal(worldIn, worldIn.rand, target, iblockstate))
-                    {
-                        igrowable.grow(worldIn, worldIn.rand, target, iblockstate);
-                    }
-
-                    stack.setCount(stack.getCount() - 1);
-                }
-
-                return true;
-            }
-        }
-        return false;
+    private boolean isWateringCanStack(ItemStack stack)
+    {
+        return !stack.isEmpty() &&
+               (stack.getItem() == TechItems.watering_can ||
+                stack.getItem() == TechItems.watering_can_upgrade);
     }
 }

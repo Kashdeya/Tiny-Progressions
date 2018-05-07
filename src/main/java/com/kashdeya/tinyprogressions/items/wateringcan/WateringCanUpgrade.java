@@ -12,20 +12,22 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class WateringCanUpgrade extends WateringCanBase {
-	
-	public WateringCanUpgrade(){
-		super();
-		this.setUnlocalizedName("watering_can_upgrade");
-		this.setWateringRange(2);
-		this.setWateringChance(ConfigHandler.WateringCanUpgradeChance);
-	}
+public class WateringCanUpgrade extends WateringCanBase
+{
+    public WateringCanUpgrade()
+    {
+        super();
+        this.setUnlocalizedName("watering_can_upgrade");
+        this.setWateringEffectRange(2);
+        this.setWateringEffectChance(ConfigHandler.WateringCanUpgradeChance);
+    }
 
     @Override
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_1").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_2").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_3").getFormattedText());
-	}
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
+    {
+        tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_1").getFormattedText());
+        tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_2").getFormattedText());
+        tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.canupgrade_3").getFormattedText());
+    }
 }

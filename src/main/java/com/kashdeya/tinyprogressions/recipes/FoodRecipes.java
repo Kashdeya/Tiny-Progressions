@@ -55,12 +55,12 @@ public class FoodRecipes {
 		}
 		
 		// Extra Drop w/o Bottles
-		if (!ConfigHandler.extra_drop_bottle){
+		if (!ConfigHandler.extra_drop_bottle && ConfigHandler.extra_drops){
 			PEAR_JUICE = new ShapelessRecipe(new ItemStack(TechFoods.pear_juice), "juicer", TechFoods.plump_pear);
 			PEACH_JUICE = new ShapelessRecipe(new ItemStack(TechFoods.peach_juice), "juicer", TechFoods.plump_peach);
 		}
 		// Extra Drops Bottles
-		if (ConfigHandler.extra_drop_bottle){
+		if (ConfigHandler.extra_drop_bottle && ConfigHandler.extra_drops){
 			PEAR_JUICE2 = new ShapelessRecipe(new ItemStack(TechFoods.pear_juice), "juicer", TechFoods.plump_pear, "glassBottle");
 			PEACH_JUICE2 = new ShapelessRecipe(new ItemStack(TechFoods.peach_juice), "juicer", TechFoods.plump_peach, "glassBottle");
 		}

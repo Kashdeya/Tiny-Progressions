@@ -43,12 +43,12 @@ public class EventDrops {
 				event.getWorld().spawnEntity(item);
 			}
 			
-			if(trigger < ConfigHandler.appleDropsChance && ConfigHandler.extra_drops) {
+			if(trigger < ConfigHandler.appleDropsChance && ConfigHandler.extra_drops_vanilla) {
 				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.APPLE, ConfigHandler.appleDropsAmount));
 				event.getWorld().spawnEntity(item);
 			}
 			
-			if(trigger < ConfigHandler.stickDropsChance && ConfigHandler.extra_drops) {
+			if(trigger < ConfigHandler.stickDropsChance && ConfigHandler.extra_drops_vanilla) {
 				EntityItem item = new EntityItem(event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.STICK, ConfigHandler.stickDropsAmount));
 				event.getWorld().spawnEntity(item);
 			}

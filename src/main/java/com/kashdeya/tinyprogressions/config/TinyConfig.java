@@ -281,10 +281,13 @@ public class TinyConfig {
 		ConfigHandler.peachSaturation = config.getFloat("Extra Fruit Drops Peach Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Peach Juice.");
 		ConfigHandler.pearAmount = config.getInt("Extra Fruit Drops Pear Juice Heal Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Pear Juice.");
 		ConfigHandler.pearSaturation = config.getFloat("Extra Fruit Drops Pear Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Pear Juice.");
-		ConfigHandler.stickDropsChance = config.getInt("Extra Fruit Drops Stick Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Sticks from leaves.");
-		ConfigHandler.stickDropsAmount = config.getInt("Extra Fruit Drops Stick Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Sticks Dropped from leaves.");
-		ConfigHandler.appleDropsChance = config.getInt("Extra Fruit Drops Apple Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Apple from leaves.");
-		ConfigHandler.appleDropsAmount = config.getInt("Extra Fruit Drops Apple Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Apple Dropped from leaves.");
+		
+		config.addCustomCategoryComment("Extra Tree Drops Vanilla", "Extra Drops Vanilla");
+		ConfigHandler.extra_drops_vanilla = config.getBoolean("Extra Tree Drops Vanilla", "Extra Tree Drops Vanilla", true, "Enable Extra Sticks and Apples to drop from leaves?");
+		ConfigHandler.stickDropsChance = config.getInt("Extra Tree Drops Stick Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Sticks from leaves.");
+		ConfigHandler.stickDropsAmount = config.getInt("Extra Tree Drops Stick Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Sticks Dropped from leaves.");
+		ConfigHandler.appleDropsChance = config.getInt("Extra Tree Drops Apple Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Apple from leaves.");
+		ConfigHandler.appleDropsAmount = config.getInt("Extra Tree Drops Apple Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Apple Dropped from leaves.");
 		
 		config.addCustomCategoryComment("Extra Shears", "Because people love more shears!");
 		ConfigHandler.wooden_shears = config.getBoolean("Wooden Shears", "Extra Shears", true, "Enable Wooden Shears?");

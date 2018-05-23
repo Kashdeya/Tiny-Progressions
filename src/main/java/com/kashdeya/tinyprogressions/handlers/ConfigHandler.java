@@ -28,6 +28,7 @@ public class ConfigHandler {
 	
 	// Extra Drops
 	public static boolean extra_drops = true;
+	public static boolean extra_drops_vanilla = true;
 	public static boolean extra_drop_bottle = true;
 	public static int pearAmount = 3;
 	public static float pearSaturation = 0.08F;

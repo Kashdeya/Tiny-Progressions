@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.recipes;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.inits.TechTools;
 import com.kashdeya.tinyprogressions.registry.recipes.ShapedRecipe;
 import com.kashdeya.tinyprogressions.registry.recipes.ShapelessRecipe;
 
@@ -23,10 +24,54 @@ public class OtherRecipes
 	public static IRecipe FLINT_KNIFE, QUARTZ_KNIFE, QUARTZ_DUST;
 	public static IRecipe MYCELIUM_SEEDS;
 	public static IRecipe OBSIDIAN_INGOT, OBSIDIAN1;
-	public static IRecipe WUB_JUICE;
+	public static IRecipe WUB_JUICE, WOODEN_SHEARS, GOLDEN_SHEARS, DIAMOND_SHEARS, EMERALD_SHEARS, FLINT_SHEARS, STONE_SHEARS;
 	
 	public static void init()
 	{
+		// Shears
+		if (ConfigHandler.wooden_shears){
+			WOODEN_SHEARS = new ShapedRecipe(new ItemStack(TechTools.wooden_shears), 
+					"sp",
+			        "ps",
+					's', "stickWood",
+					'p', "plankWood");
+		}
+		if (ConfigHandler.golden_shears){
+			GOLDEN_SHEARS = new ShapedRecipe(new ItemStack(TechTools.golden_shears), 
+					"sp",
+			        "ps",
+					's', "stickWood",
+					'p', "ingotGold");
+		}
+		if (ConfigHandler.diamond_shears){
+			DIAMOND_SHEARS = new ShapedRecipe(new ItemStack(TechTools.diamond_shears), 
+					"sp",
+			        "ps",
+					's', "stickWood",
+					'p', "gemDiamond");
+		}
+		if (ConfigHandler.emerald_shears){
+			EMERALD_SHEARS = new ShapedRecipe(new ItemStack(TechTools.emerald_shears), 
+					"sp",
+			        "ps",
+					's', "stickWood",
+					'p', "gemEmerald");
+		}
+		if (ConfigHandler.flint_shears){
+			FLINT_SHEARS = new ShapedRecipe(new ItemStack(TechTools.flint_shears), 
+					"sp",
+			        "ps",
+					's', "stickWood",
+					'p', new ItemStack(Items.FLINT));
+		}
+		if (ConfigHandler.stone_shears){
+			STONE_SHEARS = new ShapedRecipe(new ItemStack(TechTools.stone_shears), 
+					"sp",
+			        "ps",
+					's', "stickWood",
+					'p', "stone");
+		}
+				
 		// WUB WUB JUICE
 		if(ConfigHandler.vasholine){
 			WUB_JUICE = new ShapedRecipe(FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("vasholine"), Fluid.BUCKET_VOLUME)),

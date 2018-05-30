@@ -63,6 +63,9 @@ public class TinyConfig {
 		config.addCustomCategoryComment("Dirty Glass", "Just a little dirty!");
 		ConfigHandler.DirtyGlass = config.getBoolean("Dirty Glass Block", "Dirty Glass", true, "Enable Dirty Glass Block?\n[Required for Other Items in this mod.]");
 		
+		config.addCustomCategoryComment("Glowstone Glass", "Just a little light!");
+		ConfigHandler.glowstone_glass = config.getBoolean("Glowstone Glass Block", "Glowstone Glass", true, "Enable Glowstone Glass Block?");
+		
 		config.addCustomCategoryComment("Charcoal", "It's the little things that count right?");
 		ConfigHandler.CharcoalBlock = config.getBoolean("Charcoal Block", "Charcoal", true, "Enable the Charcoal Block?");
 		FuelHandler.CharcoalBlockBurn = config.getInt("Charcoal Block Burn Time", "Charcoal", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");

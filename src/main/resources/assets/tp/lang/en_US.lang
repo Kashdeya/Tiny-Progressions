@@ -48,6 +48,9 @@ item.steel_ingot.name=Steel Ingot
 #Dust
 item.obsidian_dust.name=Obsidian Dust
 
+#Glowstone Glass
+tile.glowstone_glass.name=Glowstone Glass
+
 #Tree Drops
 item.plump_pear.name=Plump Pear
 item.plump_peach.name=Plump Peach

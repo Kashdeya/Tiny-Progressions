@@ -21,6 +21,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.Asphalt;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneColored;
+import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneGlass;
 import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
@@ -164,8 +165,14 @@ public class TechBlocks {
     public static Block ghost_block;
     // quicksand
     public static Block quick_sand;
+    // Glowstone Glass
+    public static Block glowstone_glass;
     
 	public static void init() {
+		// glowstone glass
+		if (ConfigHandler.glowstone_glass) {
+			glowstone_glass = new GlowstoneGlass().setUnlocalizedName("glowstone_glass");
+		}
 		// quicksand
 		if (ConfigHandler.quick_sand){
 			quick_sand = new QuickSand().setUnlocalizedName("quick_sand");

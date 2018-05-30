@@ -3,6 +3,8 @@ package com.kashdeya.tinyprogressions.handlers;
 import net.minecraft.item.Item;
 
 public class ConfigHandler {	
+	// glowstone glass
+	public static boolean glowstone_glass = true;
 	// Shears
 	public static boolean wooden_shears = true; 
 	public static boolean golden_shears = true; 

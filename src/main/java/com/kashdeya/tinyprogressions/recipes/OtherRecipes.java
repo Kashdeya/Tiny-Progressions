@@ -164,6 +164,5 @@ public class OtherRecipes
         if (ConfigHandler.old_reed) {
             SUGAR1 = new ShapelessRecipe(new ItemStack(Items.SUGAR), new ItemStack(TechItems.dead_reed));
         }
-
 	}
 }

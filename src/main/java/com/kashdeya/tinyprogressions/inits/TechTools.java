@@ -189,7 +189,6 @@ public class TechTools {
 	public static Item flint_shears;
 	public static Item stone_shears;
 	
-	
 	public static void init(){
 		// Shears
 		if (ConfigHandler.wooden_shears) {

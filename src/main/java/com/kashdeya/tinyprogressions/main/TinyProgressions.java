@@ -19,6 +19,7 @@ import com.kashdeya.tinyprogressions.recipes.ArmorRecipes;
 import com.kashdeya.tinyprogressions.recipes.BlockRecipes;
 import com.kashdeya.tinyprogressions.recipes.FoodRecipes;
 import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
+import com.kashdeya.tinyprogressions.recipes.OreDictRecipes;
 import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
 import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;
@@ -126,12 +127,14 @@ public class TinyProgressions extends ModRegistry {
 		ArmorRecipes.init();
 		FoodRecipes.init();
 		OtherRecipes.init();
+		//OreDictRecipes.init();
 		register(BlockRecipes.class);
 		register(ItemRecipes.class);
 		register(ToolsRecipes.class);
 		register(ArmorRecipes.class);
 		register(FoodRecipes.class);
 		register(OtherRecipes.class);
+		//register(OreDictRecipes.class);
 		
 		IForgeRegistryModifiable<IRecipe> registry = (IForgeRegistryModifiable<IRecipe>) event.getRegistry();
 

@@ -19,7 +19,6 @@ import com.kashdeya.tinyprogressions.recipes.ArmorRecipes;
 import com.kashdeya.tinyprogressions.recipes.BlockRecipes;
 import com.kashdeya.tinyprogressions.recipes.FoodRecipes;
 import com.kashdeya.tinyprogressions.recipes.ItemRecipes;
-import com.kashdeya.tinyprogressions.recipes.OreDictRecipes;
 import com.kashdeya.tinyprogressions.recipes.OtherRecipes;
 import com.kashdeya.tinyprogressions.recipes.ToolsRecipes;
 import com.kashdeya.tinyprogressions.registry.ModRegistry;

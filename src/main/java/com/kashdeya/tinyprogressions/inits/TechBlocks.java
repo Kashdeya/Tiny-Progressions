@@ -43,6 +43,7 @@ import com.kashdeya.tinyprogressions.blocks.misc.GhostBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.Infused;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
+import com.kashdeya.tinyprogressions.blocks.oredoubler.OreDoublerBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.NetherWubOre;
@@ -69,6 +70,7 @@ public class TechBlocks {
 	public static Block diamond_cobblegen_block;
 	public static Block emerald_cobblegen_block;
 	public static Block blaze_cobblegen_block;
+	public static Block ore_doubler_block;
 	// Deco Blocks
 	public static Block charcoal_block;
 	public static Block reinforced_glass;
@@ -272,6 +274,8 @@ public class TechBlocks {
 		if (ConfigHandler.EmeraldCobblegen) {
 			emerald_cobblegen_block = new EmeraldCobblegen();
 		}
+		if(ConfigHandler.OreDoublerFurnace)
+			ore_doubler_block = new OreDoublerBlock(100); // 200 is vanilla furnace speed
 
 		// Deco Blocks
 		if (ConfigHandler.StoneTorch) {

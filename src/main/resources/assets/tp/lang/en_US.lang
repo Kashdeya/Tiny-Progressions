@@ -12,7 +12,7 @@ tile.iron_cobblegen_block.name=Cobblestone Generator Tier 2
 tile.diamond_cobblegen_block.name=Cobblestone Generator Tier 3
 tile.blaze_cobblegen_block.name=Cobblestone Generator Tier 4
 tile.emerald_cobblegen_block.name=Cobblestone Generator Tier 5
-
+tile.ore_doubler_furnace_block.name=What ever you want??!!
 #asphalt
 tile.asphalt_block.name=Asphalt
 

@@ -1,8 +1,7 @@
 package com.kashdeya.tinyprogressions.handlers;
 
-import net.minecraft.item.Item;
-
 public class ConfigHandler {	
+
 	// glowstone glass
 	public static boolean glowstone_glass = true;
 	// Shears
@@ -214,6 +213,9 @@ public class ConfigHandler {
 	public static boolean DiamondCobblegen = true;
 	public static boolean EmeraldCobblegen = true;
 	public static boolean BlazeCobblegen = true;
+	
+	// Furnaces
+	public static final boolean OreDoublerFurnace = true;
 	
 	// Growth Crystals
 	public static boolean BlockGrowth = true;

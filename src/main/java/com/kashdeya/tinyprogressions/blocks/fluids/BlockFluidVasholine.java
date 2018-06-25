@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import com.kashdeya.tinyprogressions.fluids.ModFluids;
-import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;

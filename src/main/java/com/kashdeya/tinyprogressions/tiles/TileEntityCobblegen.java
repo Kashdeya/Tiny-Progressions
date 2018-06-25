@@ -162,6 +162,7 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 	{
 		return index == 0 && stack != ItemStack.EMPTY && stack.getItem() == Item.getItemFromBlock(Blocks.COBBLESTONE);
 	}
+	
 
 	@Override
 	public void update()

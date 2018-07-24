@@ -33,7 +33,7 @@ public class BlockRecipes {
 	public static IRecipe HARDENED_STONE_STAIRS, HARDENED_STONEBRICKS_STAIRS, HARDENED_STONESMALLBRICKS_STAIRS;
 	public static IRecipe HARDENED_STONE_SLAB, HARDENED_STONEBRICKS_SLAB, HARDENED_STONESMALLBRICKS_SLAB;
 	public static IRecipe FMF_BLOCK;
-	public static IRecipe LAMP;
+	public static IRecipe LAMP, IRONFURNACE;
 	public static IRecipe[] COLORED_GLOWSTONE, COLORED_LAMPS;
 	public static IRecipe NETHERRACK, COMPRESSED_NETHER, COMPRESSED_NETHER2, COMPRESSED_2_NETHER, COMPRESSED_2_NETHER2, COMPRESSED_3_NETHER, COMPRESSED_3_NETHER2, COMPRESSED_4_NETHER, COMPRESSED_4_NETHER2;
 	public static IRecipe COMPRESSED_5_NETHER, COMPRESSED_5_NETHER2, COMPRESSED_6_NETHER, COMPRESSED_6_NETHER2, COMPRESSED_7_NETHER, COMPRESSED_7_NETHER2, COMPRESSED_8_NETHER;
@@ -44,6 +44,14 @@ public class BlockRecipes {
 	public static IRecipe STEEL_BLOCK, STEEL_BLOCK2, SECRET_BLOCK, GLOWSTONE_GLASS;
 	
 	public static void init() {
+		if (ConfigHandler.iron_furnace) {
+			IRONFURNACE = new ShapedRecipe(new ItemStack(TechBlocks.iron_furnace_block), 
+					"ifi",
+	                "fif",
+	                "ifi",
+					'i', "ingotIron",
+					'f', new ItemStack(Blocks.FURNACE));
+		}
 		if (ConfigHandler.glowstone_glass) {
 			GLOWSTONE_GLASS = new ShapedRecipe(new ItemStack(TechBlocks.glowstone_glass), 
 					"ggg",

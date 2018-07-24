@@ -49,6 +49,9 @@ public class WorldGen implements IWorldGenerator {
 		if (ConfigHandler.vasholine && ConfigHandler.nether_wub){
 			generateNetherOre(TechBlocks.nether_wub_ore.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.nether_wub_block_min, ConfigHandler.nether_wub_block_max, 1 + random.nextInt(ConfigHandler.nether_wub_block_count), ConfigHandler.nether_wub_block_frequency, BlockMatcher.forBlock(Blocks.NETHERRACK));
 		}
+		if (ConfigHandler.nether_lava_block){
+			generateOre(TechBlocks.nether_lava_block.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, ConfigHandler.nether_lava_block_min, ConfigHandler.nether_lava_block_max, 1 + random.nextInt(ConfigHandler.nether_lava_block_size), ConfigHandler.nether_lava_block_frequency);
+		}
 	}
 	
 	private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) {

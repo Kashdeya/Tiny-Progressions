@@ -98,7 +98,9 @@ public class TechArmor {
 	public static void init(){
 		
 		// bam t-shirt
+		if (ArmorHandler.emerald_amor && ArmorHandler.bam_tshirt) {
 			bam_tshirt = (ItemArmor) new BamShirt(MaterialHandler.bamArmourMaterial, 1, EntityEquipmentSlot.CHEST).setUnlocalizedName("bam_tshirt");
+		}
 		
 		// Emerald Armor
 		if (ArmorHandler.emerald_amor){

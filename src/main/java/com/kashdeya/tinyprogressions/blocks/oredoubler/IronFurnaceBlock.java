@@ -31,12 +31,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class OreDoublerBlock extends BlockHorizontal implements ITileEntityProvider{
+public class IronFurnaceBlock extends BlockHorizontal implements ITileEntityProvider{
 
 	public static final PropertyBool ISBURNING = PropertyBool.create("isburning");
 	private int cookSpeedInTicks = 100;
 	
-	public OreDoublerBlock(int cookSpeedInTicksIn) {
+	public IronFurnaceBlock(int cookSpeedInTicksIn) {
 		
 		super(Material.ROCK);
 		this.setHardness(1F);
@@ -44,7 +44,7 @@ public class OreDoublerBlock extends BlockHorizontal implements ITileEntityProvi
 		this.setResistance(1000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(SoundType.STONE);
-		this.setUnlocalizedName("ore_doubler_furnace_block");
+		this.setUnlocalizedName("iron_furnace_block");
 		this.cookSpeedInTicks = cookSpeedInTicksIn;
 	}
 	
@@ -65,7 +65,7 @@ public class OreDoublerBlock extends BlockHorizontal implements ITileEntityProvi
     @SuppressWarnings("incomplete-switch")
     public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (OreDoublerBlock.isBurning(stateIn))
+        if (IronFurnaceBlock.isBurning(stateIn))
         {
             EnumFacing enumfacing = (EnumFacing)stateIn.getValue(FACING);
             double d0 = (double)pos.getX() + 0.5D;

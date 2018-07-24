@@ -76,6 +76,9 @@ public class TinyConfig {
 		config.addCustomCategoryComment("Floaty Block", "May save you from certain death!");
 		ConfigHandler.angel_block = config.getBoolean("Floaty McFloaty Block", "Floaty Block", true, "Enable Floaty McFloaty Block?");
 		
+		config.addCustomCategoryComment("Furnaces", "more power!\nMore furnaces coming soon!\nIron furnace burns at a 100tps where vanilla is 200tps!");
+		ConfigHandler.iron_furnace = config.getBoolean("Iron Furnace", "Furnaces", true, "Enable Iron Furnace Block?");
+		
 		if (config.hasChanged())
         config.save();
 	}
@@ -87,6 +90,9 @@ public class TinyConfig {
         config = new Configuration(f, configVersion);
         
         config.load();
+        
+        config.addCustomCategoryComment("Bam T-Shirt", "op op op!");
+		ArmorHandler.bam_tshirt = config.getBoolean("Bam T-Shirt", "Blueberry Warrior", false, "Enable Bam T-Shirt?");
         
 		config.addCustomCategoryComment("Custom Packs", "Added for Custom Packs!\n[If you enable please make a recipe for them, Other wise they do nothing.]");
 		ConfigHandler.FlintKnife = config.getBoolean("Flint Knife", "Custom Packs", false, "Enable Flint Knife?");
@@ -173,6 +179,13 @@ public class TinyConfig {
 		ConfigHandler.lava_block_min = config.getInt("Lavastone Gen Min", "Lava Source Block Stones", 12, 1, 255, "Sets the min Y level.");
 		ConfigHandler.lava_block_max = config.getInt("Lavastone Gen Max", "Lava Source Block Stones", 32, 1, 255, "Sets the max Y level.");
 		ConfigHandler.lava_block_size = config.getInt("Lavastone Gen Size", "Lava Source Block Stones", 4, 1, 100, "Sets the Lavastone Vein Size.");
+		
+		config.addCustomCategoryComment("Nether Lava Source Block Stones", "Nether Lavastone!");
+		ConfigHandler.nether_lava_block = config.getBoolean("Nether Lavastone", "Nether Lava Source Block Stones", true, "Enable Nether Lavastone?\n[Turns into a lava source block when broke]");
+		ConfigHandler.nether_lava_block_frequency = config.getInt("Nether Lavastone Gen Frequency", "Nether Lava Source Block Stones", 5, 1, 100, "Sets the Chance of Nether Lavastone generating.");
+		ConfigHandler.nether_lava_block_min = config.getInt("Nether Lavastone Gen Min", "Nether Lava Source Block Stones", 12, 1, 255, "Sets the min Y level.");
+		ConfigHandler.nether_lava_block_max = config.getInt("Nether Lavastone Gen Max", "Nether Lava Source Block Stones", 32, 1, 255, "Sets the max Y level.");
+		ConfigHandler.nether_lava_block_size = config.getInt("Nether Lavastone Gen Size", "Nether Lava Source Block Stones", 4, 1, 100, "Sets the Nether Lavastone Vein Size.");
 		
 		config.addCustomCategoryComment("Water Source Block Stones", "Waterstone!");
 		ConfigHandler.water_block = config.getBoolean("Waterstone", "Water Source Block Stones", true, "Enable Waterstone?\n[Turns into a water source block when broke]");

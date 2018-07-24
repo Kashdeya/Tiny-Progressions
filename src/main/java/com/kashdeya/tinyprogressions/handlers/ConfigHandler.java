@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ConfigHandler {	
-
+	
 	// glowstone glass
 	public static boolean glowstone_glass = true;
 	// Shears
@@ -215,7 +215,7 @@ public class ConfigHandler {
 	public static boolean BlazeCobblegen = true;
 	
 	// Furnaces
-	public static final boolean OreDoublerFurnace = true;
+	public static boolean iron_furnace = true;
 	
 	// Growth Crystals
 	public static boolean BlockGrowth = true;
@@ -383,6 +383,11 @@ public class ConfigHandler {
 
 	// Lava Block
 	public static boolean lava_block = true;
+	public static boolean nether_lava_block = true;
+	public static int nether_lava_block_frequency = 5;
+	public static int nether_lava_block_min = 16;
+	public static int nether_lava_block_max = 32;
+	public static int nether_lava_block_size = 3;
 	public static boolean lava_block_recipe = true;
 	public static int lava_block_frequency = 5;
 	public static int lava_block_min = 16;

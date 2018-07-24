@@ -382,6 +382,9 @@ public class ArmorRecipes {
 				"d d",
 				'd', new ItemStack(Items.EMERALD));
 		    
+		}
+		
+		if (ArmorHandler.emerald_amor && ArmorHandler.bam_tshirt){
 		    BAM_TSHIRT = new ShapelessRecipe(new ItemStack(TechArmor.bam_tshirt), new ItemStack(TechArmor.emerald_chestplate));
 		}
 	}

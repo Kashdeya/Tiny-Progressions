@@ -43,9 +43,10 @@ import com.kashdeya.tinyprogressions.blocks.misc.GhostBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.Infused;
 import com.kashdeya.tinyprogressions.blocks.misc.TowerBuilder;
 import com.kashdeya.tinyprogressions.blocks.misc.WaterHarvester;
-import com.kashdeya.tinyprogressions.blocks.oredoubler.OreDoublerBlock;
+import com.kashdeya.tinyprogressions.blocks.oredoubler.IronFurnaceBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
+import com.kashdeya.tinyprogressions.blocks.ores.NetherLavaBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.NetherWubOre;
 import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.WubOre;
@@ -70,7 +71,7 @@ public class TechBlocks {
 	public static Block diamond_cobblegen_block;
 	public static Block emerald_cobblegen_block;
 	public static Block blaze_cobblegen_block;
-	public static Block ore_doubler_block;
+	public static Block iron_furnace_block;
 	// Deco Blocks
 	public static Block charcoal_block;
 	public static Block reinforced_glass;
@@ -94,6 +95,7 @@ public class TechBlocks {
 	public static Block nether_wub_ore;
 	// Lava Block
 	public static Block lava_block;
+	public static Block nether_lava_block;
 	// Water Block
 	public static Block water_block;
 	// Hardened Stone
@@ -274,8 +276,8 @@ public class TechBlocks {
 		if (ConfigHandler.EmeraldCobblegen) {
 			emerald_cobblegen_block = new EmeraldCobblegen();
 		}
-		if(ConfigHandler.OreDoublerFurnace)
-			ore_doubler_block = new OreDoublerBlock(100); // 200 is vanilla furnace speed
+		if(ConfigHandler.iron_furnace)
+			iron_furnace_block = new IronFurnaceBlock(100); // 200 is vanilla furnace speed
 
 		// Deco Blocks
 		if (ConfigHandler.StoneTorch) {
@@ -367,6 +369,9 @@ public class TechBlocks {
 		// Lava & Water Blocks
 		if (ConfigHandler.lava_block) {
 			lava_block = new LavaBlock();
+		}
+		if (ConfigHandler.nether_lava_block) {
+			nether_lava_block = new NetherLavaBlock();
 		}
 		if (ConfigHandler.water_block) {
 			water_block = new WaterBlock();

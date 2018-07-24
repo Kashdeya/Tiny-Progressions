@@ -1,14 +1,14 @@
 {
 	"forge_marker": 1,
 		"defaults": {
-    	"model": "tp:ore_doubler"
+    	"model": "tp:iron_furnace"
   	},
     "variants": {
         "facing": { 
-			"north": { "model": "tp:ore_doubler"},
-			"south": { "model": "tp:ore_doubler", "y": 180 },
-			"west":  { "model": "tp:ore_doubler", "y": 270 },
-			"east":  { "model": "tp:ore_doubler", "y": 90}
+			"north": { "model": "tp:iron_furnace"},
+			"south": { "model": "tp:iron_furnace", "y": 180 },
+			"west":  { "model": "tp:iron_furnace", "y": 270 },
+			"east":  { "model": "tp:iron_furnace", "y": 90}
 		},
 		"isburning": {
 			"true": {

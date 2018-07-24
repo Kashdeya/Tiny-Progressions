@@ -12,7 +12,7 @@ tile.iron_cobblegen_block.name=Cobblestone Generator Tier 2
 tile.diamond_cobblegen_block.name=Cobblestone Generator Tier 3
 tile.blaze_cobblegen_block.name=Cobblestone Generator Tier 4
 tile.emerald_cobblegen_block.name=Cobblestone Generator Tier 5
-tile.ore_doubler_furnace_block.name=What ever you want??!!
+tile.iron_furnace_block.name=Iron Furnace
 #asphalt
 tile.asphalt_block.name=Asphalt
 
@@ -92,6 +92,7 @@ tile.smooth_endstone.name=Smooth EndStone
 tile.old_reed.name=Dried up Reed
 item.dead_reed.name=Dried up Sugar cane
 tile.lava_block.name=Lava Source Stone
+tile.nether_lava_block.name=Nether Lava Source Stone
 tile.water_block.name=Water Source Stone
 tile.soul_sandstone.name=Soul Sandstone
 

@@ -1,7 +1,7 @@
 package com.kashdeya.tinyprogressions.handlers;
 
 public class ArmorHandler {
-	
+		
 	// Chainmail Amor
 	public static boolean chain_armor = true;
 	

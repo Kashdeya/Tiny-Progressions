@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.tiles;
 
-import com.kashdeya.tinyprogressions.blocks.oredoubler.OreDoublerBlock;
+import com.kashdeya.tinyprogressions.blocks.oredoubler.IronFurnaceBlock;
 import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
@@ -141,7 +141,7 @@ public class TileEntityOreDoubler extends TileEntity implements  ITickable{
 	            if (flag != this.isBurning())
 	            {
 	                flag1 = true;
-	                OreDoublerBlock.setBurning( this.world, this.pos, this.isBurning());
+	                IronFurnaceBlock.setBurning( this.world, this.pos, this.isBurning());
 	            }
 	        }
 
@@ -247,7 +247,7 @@ public class TileEntityOreDoubler extends TileEntity implements  ITickable{
 	@Override
 	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
 	{
-		if(oldState.getBlock() == TechBlocks.ore_doubler_block && newSate.getBlock() == TechBlocks.ore_doubler_block){
+		if(oldState.getBlock() == TechBlocks.iron_furnace_block && newSate.getBlock() == TechBlocks.iron_furnace_block){
 			return false;
 		}
 		else 

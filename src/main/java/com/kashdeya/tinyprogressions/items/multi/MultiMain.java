@@ -21,7 +21,8 @@ public class MultiMain extends ItemPickaxe {
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setMaxStackSize(1);
 	}
-	
+
+	@Override
 	public Set<String> getToolClasses(ItemStack stack) {
 		return ImmutableSet.of("pickaxe", "spade", "axe");
 	}

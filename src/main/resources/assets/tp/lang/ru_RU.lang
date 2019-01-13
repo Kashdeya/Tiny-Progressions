@@ -1,0 +1,644 @@
+#Shears
+item.wooden_shears.name=Деревянные ножницы
+item.golden_shears.name=Золотые ножницы
+item.diamond_shears.name=Алмазные ножницы
+item.emerald_shears.name=Изумрудные ножницы
+item.flint_shears.name=Кремневые ножницы
+item.stone_shears.name=Каменные ножницы
+
+#Tech Blocks
+tile.cobblegen_block.name=Генератор булыжника
+tile.iron_cobblegen_block.name=Генератор булыжника 2-го уровня
+tile.diamond_cobblegen_block.name=Генератор булыжника 3-го уровня
+tile.blaze_cobblegen_block.name=Генератор булыжника 4-го уровня
+tile.emerald_cobblegen_block.name=Генератор булыжника 5-го уровня
+tile.iron_furnace_block.name=Железная печь
+#asphalt
+tile.asphalt_block.name=Асфальт
+
+#ghost block
+tile.ghost_block.name="Булыжник"
+
+#SUCC THE PEARLS
+item.succ_pearls.name=SUCC THE PEARLS
+
+#Growth Blocks
+tile.growth_block.name=Кристалл роста
+tile.growth_upgrade.name=Кристалл роста 2-го уровня
+tile.growth_upgrade_two.name=Кристалл роста 3-го уровня
+
+#Bushes and Berries
+tile.blackberry_bush.name=Куст Ежевики
+tile.blueberry_bush.name=Куст Черники
+tile.maloberry_bush.name=Куст Смородины
+tile.raspberry_bush.name=Куст Малины
+item.blackberry_berry.name=Ежевика
+item.blueberry_berry.name=Черника
+item.maloberry_berry.name=Смородина
+item.raspberry_berry.name=Малина
+
+#Infinity Bucket
+item.infin_bucket.name=Ведро с бесконечной водой
+tooltip.infinbucket_1=Обеспечивает неограниченным количеством воды
+
+#Steel
+tile.steel_block.name=Стальной блок
+item.steel_ingot.name=Стальной слиток
+
+#Dust
+item.obsidian_dust.name=Обсидиановая пыль
+
+#Glowstone Glass
+tile.glowstone_glass.name=Светокаменное стекло
+
+#Tree Drops
+item.plump_pear.name=Спелая груша
+item.plump_peach.name=Спелый персик
+
+#Infused Lava Block
+tile.lava_infused_stone.name=Камень наполненный лавой
+tooltip.infused_1=Используется для создания Булыжника и Обсидиана
+tooltip.infused_2=Поместите воду рядом с ним, чтобы создать Обсидиан
+tooltip.infused_3=Поместите воду в 1-2 блоках, чтобы создать Булыжник
+
+#JonBam Items
+item.c_axe.name=Морской топор
+item.bam_tshirt.name=bamInati T-Shirt
+tooltip.bamsarmor_1=The Bearded Blueberry Warriors T-Shirt!
+
+#TinyCoal
+item.tiny_charcoal.name=Крошечный древесный уголь
+item.tiny_coal.name=Крошечный уголь
+
+#Stone Hammer
+item.stone_hammer.name=Каменный молот
+
+#Chainmail Parts
+item.chainmail_part.name=Часть кольчуги
+
+#Tooltip
+tooltip.stay_1=Используется только для крафта!
+
+#Withered Block
+tile.withered_block.name=Withered Bedrock
+
+#Deco Blocks
+tile.charcoal_block.name=Блок древесного угля
+tile.dirty_glass.name=Грязное стекло
+tile.diorite_brick.name=Диоритовый кирпич
+tile.granite_brick.name=Гранитовый кирпич
+tile.andesite_brick.name=Андезитовый кирпич
+tile.smooth_endstone.name=Гладкий эндерняк
+tile.old_reed.name=Засохший тростник
+item.dead_reed.name=Засохший сахарный тростник
+tile.lava_block.name=Источник лавы в камне
+tile.nether_lava_block.name=Источник лавы в незерите
+tile.water_block.name=Источник воды в камне
+tile.soul_sandstone.name=Песчаник душ
+
+#Hardened Stone
+tile.unhardened_stone.name=Незатвердевший камень
+tile.hardened_stone.name=Затвердевший камень
+tile.hardened_stone_bricks.name=Кирпичи из затвердевшего камня
+tile.hardened_stone_smallbricks.name=Маленькие кирпичи из затвердевшего камня
+
+tile.hardened_stone_stairs.name=Ступеньки из затвердевшего камня
+tile.hardened_stone_smallbricks_stairs.name=Ступеньки из малелького затвердевшего кирпича
+tile.hardened_stone_bricks_stairs.name=Ступеньки из затвердевшего каменного кирпича
+
+tile.hardened_stone_slab_half.name=Плита из затвердевшего камня
+tile.hardened_stone_slab_double.name=Плита из затвердевшего камня
+tile.hardened_stone_bricks_slab_half.name=Плита из кирпичей затвердевшего камня
+tile.hardened_stone_bricks_slab_double.name=Плита из затвердевших каменных кирпичей
+tile.hardened_stone_smallbricks_slab_half.name=Плита из маленьких затвердевших кирпичей
+tile.hardened_stone_smallbricks_slab_double.name=Плита из маленьких затвердевших кирпичей
+
+#Stone Torch
+tile.stone_torch.name=Каменный факел
+item.stone_stick.name=Каменная палка
+
+#Juices
+item.juicer.name=Соковыжималка
+item.apple_juice.name=Яблочный сок
+item.carrot_juice.name=Морковный сок
+item.potatoe_juice.name=Картофельный сок
+item.beet_juice.name=Свекольный сок
+item.cactus_juice.name=Кактусовый сок
+item.slime_juice.name=Слизневый сок
+item.wheat_juice.name=Пшеничный сок
+item.melon_juice.name=Арбузный сок
+item.pumpkin_juice.name=Тыквенный сок
+item.raspberry_juice.name=Малиновый сок
+item.blueberry_juice.name=Черничный сок
+item.blackberry_juice.name=Ежевичный сок
+item.maloberry_juice.name=Смородиновый сок
+item.pear_juice.name=Грушевый сок
+item.peach_juice.name=Персиковый сок
+
+#Kappa
+item.kappa_pick.name=Kappa Pick
+
+#Reinforced Blocks
+tile.reinforced_glass.name=Укреплённое стекло
+tile.reinforced_obsidian.name=Укреплённый обсидиан
+
+#Compressed Blocks
+tile.flesh_block.name=Блок сжатой плоти
+tile.bone_block.name=Блок сжатых костей
+tile.netherstar_block.name=Блок сжатых Звёзд из Незера
+tile.flint_block.name=Блок сжатого кремния
+
+#Fluids
+fluid.vasholine=Wub Wub Juice
+tile.vasholine.name=Wub Wub Juice
+tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
+item.wub_gem.name=Wub Gem
+tooltip.wubgem_1=Used to make Wub Wub Juice
+tile.wub_ore.name=Wub Wub Ore
+tile.nether_wub_ore.name=Nether Wub Wub Ore
+item.wub_paxel.name=Wub Paxel
+tooltip.wubhammer_1=Mines a 3x3
+item.wub_hammer.name=Wub Hammer
+item.wub_pickaxe.name=Wub Pickaxe
+item.wub_axe.name=Wub Axe
+item.wub_spade.name=Wub Shovel
+item.wub_sword.name=Wub Sword
+item.wub_hoe.name=Wub Hoe
+item.wub_ingot.name=Wub Ingot
+
+
+#Watering Cans
+item.watering_can.name=Лейка
+item.watering_can_upgrade.name=Усиленная лейка
+item.watering_can.invalidusage=Невозможно активировать, если в вашем инвентаре более 1 лейки!
+
+#Quartz
+item.quartz_dust.name=Обогащенная кварцем железная пыль
+item.quartz_knife.name=Кварцевый Нож
+
+#Extra Ingots
+item.flint_ingot.name=Кремневый cлиток - [WIP]
+item.redstone_ingot.name=Редстоуновый слиток
+item.lapis_ingot.name=Лазуритовый слиток
+item.quartz_ingot.name=Кварцевый слиток
+item.reinforced_obsidian_ingot.name=Укреплённый обсидиановый слиток
+
+#Stone Dust
+item.stone_dust.name=Каменная пыль
+
+#Ender Ore
+tile.ender_ore.name=Эндер-руда
+item.ender_dust.name=Эндер-пыль
+
+#Goodies
+item.birthday_pickaxe.name=Кирка для вечеринки
+
+#Creative Tabs
+itemGroup.tiny_progressions=Tiny Progressions
+
+#Armor
+item.stone_helmet.name=Каменный шлем
+item.stone_chestplate.name=Каменный нагрудник
+item.stone_leggings.name=Каменные поножи
+item.stone_boots.name=Каменные ботинки
+
+item.wooden_helmet.name=Деревянный шлем
+item.wooden_chestplate.name=Деревянный нагрудник
+item.wooden_leggings.name=Деревянные поножи
+item.wooden_boots.name=Деревянные ботинки
+
+item.obsidian_helmet.name=Обсидиановый шлем
+item.obsidian_chestplate.name=Обсидиановый нагрудник
+item.obsidian_leggings.name=Обсидиановые поножи
+item.obsidian_boots.name=Обсидиановые ботинки
+
+item.emerald_helmet.name=Изумрудный шлем
+item.emerald_chestplate.name=Изумрудный нагрудник
+item.emerald_leggings.name=Изумрудные поножи
+item.emerald_boots.name=Изумрудные ботинки
+
+#MISC
+item.mycelium_seeds.name=Семена мицелия
+
+#Apple
+item.diamond_apple.name=Алмазное яблоко
+item.emerald_apple.name=Изумрудное яблоко
+item.iron_apple.name=Железное яблоко
+item.redstone_apple.name=Редстоуновое яблоко
+
+#AppleProgression
+item.golden_apple.name=Золотое яблоко
+
+#Quick Sand
+tile.quick_sand.name=Зыбучий песок
+
+#Medkit
+item.small_bandage.name=Малая медицинская повязка
+item.large_bandage.name=Средняя медицинская повязка
+item.small_med_kit.name=Малая аптечка
+item.large_med_kit.name=Средняя аптечка
+
+#Medkit Tooltip
+tooltip.medkit_1=Мгновенное исцеление игрока!
+tooltip.medkits=Аптечка может быть использована только если игрок ранен!
+tooltip.smallmedkit_2=Восстанавливает 4 сердца за короткое время!
+tooltip.largemedkit_2=Восстанавливает 6 сердец за короткое время!
+tooltip.bandage_1=Даёт кратковременный эффект регенерации!
+tooltip.bandage_2=Эффект регенерации не может быть наложен!
+tooltip.largebandage_1=Восстанавливает 2 сердца за короткое время!!
+
+#Lapis Armor
+tooltip.lapisarmor_1=Полный сет брони даёт эффект - Подводного дыхания!
+item.lapis_helmet.name=Лазуритовый шлем
+item.lapis_chestplate.name=Лазуритовый нагрудник
+item.lapis_leggings.name=Лазуритовые поножи
+item.lapis_boots.name=Лазуритовые ботинки
+
+#Redstone Armor
+tooltip.redstonearmor_1=Полный сет брони даёт эффект - Скорости!
+item.redstone_helmet.name=Редстоуновый шлем
+item.redstone_chestplate.name=Редстоуновый нагрудник
+item.redstone_leggings.name=Редстоуновые поножи
+item.redstone_boots.name=Редстоуновые ботинки
+
+#Quartz Armor
+tooltip.quartzarmor_1=Полный сет брони даёт эффект - Сопротивления!
+item.quartz_helmet.name=Кварцевый шлем
+item.quartz_chestplate.name=Кварцевый нагрудник
+item.quartz_leggings.name=Кварцевые поножи
+item.quartz_boots.name=Кварцевые ботинки
+
+#Flint Weapons & Tools
+item.flint_pickaxe.name=Кремневая кирка
+item.flint_spade.name=Кремневая лопата
+item.flint_axe.name=Кремневый топор
+item.flint_sword.name=Кремневый меч
+item.flint_hoe.name=Кремневая мотыга
+item.flint_knife.name=Кремневый нож
+item.flint_multi.name=Кремневый паксель
+
+#Flint Armor
+item.flint_helmet.name=Кремневый шлем
+item.flint_chestplate.name=Кремневый нагрудник
+item.flint_leggings.name=Кремневые поножи
+item.flint_boots.name=Кремневые ботинки
+
+#Bone Weapons & Tools
+item.bone_pickaxe.name=Костяная кирка
+item.bone_spade.name=Костяная лопата
+item.bone_axe.name=Костяной топор
+item.bone_sword.name=Костяной меч
+item.bone_hoe.name=Костяная мотыга
+
+#Bone Armor
+item.bone_helmet.name=Костяной шлем
+item.bone_chestplate.name=Костяной нагрудник
+item.bone_leggings.name=Костяные поножи
+item.bone_boots.name=Костяные ботинки
+
+#Cobblegen
+tooltip.cobblegen_1=Вмещает только 32 блока!
+tooltip.cobblegen_2=Создаёт 1 булыжник каждые 40 тиков!
+tooltip.cobblegen_3=Вы можете разместить над ним Хранилище для выхода!
+tooltip.cobblegen_4=Воронка под ним также послужит для выхода!
+
+#IronCobblegen
+tooltip.ironcobblegen_1=Вмещает только 64 блока!
+tooltip.ironcobblegen_2Создаёт 1 булыжник каждые 20 тиков!
+tooltip.ironcobblegen_3=Вы можете разместить над ним Хранилище для выхода!
+tooltip.ironcobblegen_4=Воронка под ним также послужит для выхода!
+
+#DiamondCobblegen
+tooltip.diamondcobblegen_1=Вмещает только 64 блока
+tooltip.diamondcobblegen_2=Создаёт 1 булыжник каждые 10 тиков!
+tooltip.diamondcobblegen_3=Вы можете разместить над ним Хранилище для выхода!
+tooltip.diamondcobblegen_4=Воронка под ним также послужит для выхода!
+
+#BlazeCobblegen
+tooltip.blazecobblegen_1=Вмещает только 64 блока!
+tooltip.blazecobblegen_2=Создаёт 1 булыжник каждые 5 тиков!
+tooltip.blazecobblegen_3=Вы можете разместить над ним Хранилище для выхода!
+tooltip.blazecobblegen_4=Воронка под ним также послужит для выхода!
+
+#EmeraldCobblegen
+tooltip.emeraldcobblegen_1=Вмещает только 64 блока!
+tooltip.emeraldcobblegen_2=Создаёт 1 булыжник каждый тик!
+tooltip.emeraldcobblegen_3=Вы можете разместить над ним Хранилище для выхода!
+tooltip.emeraldcobblegen_4=Воронка под ним также послужит для выхода!
+
+#Growth Crystal Tooltips
+tooltip.growth_1=Медленный рост!
+tooltip.growth_2=Работает на ферме 9х9!
+tooltip.growth_3=Проверяет до 2 блоков вверх или вниз!
+
+#Growth Crystal Upgrade Tooltips
+tooltip.growthupgrade_1=Быстрый рост!
+tooltip.growthupgrade_2=Работает на ферме 9х9!
+tooltip.growthupgrade_3=Проверяет до 5 блоков вверх или вниз!
+tooltip.growthupgrade_4=Может использоваться как Источник Воды!
+tooltip.growthupgrade_5=Губки не могут быть размещены вокруг!
+
+#Growth Crystal Upgrade Two Tooltips
+tooltip.growthupgrade2_1=Самый быстрый рост!
+tooltip.growthupgrade2_2=Работает на ферме 9х9!
+tooltip.growthupgrade2_3=Проверяет до 10 блоков вверх или вниз!
+tooltip.growthupgrade2_4=Может использоваться как Источник Воды!
+tooltip.growthupgrade2_5=Губки не могут быть размещены вокруг! 
+
+#Nether Star Block Tooltips
+tooltip.netherstar_1=Может использоваться как основа для Маяков!
+
+#Armor Tooltip
+tooltip.armor_1=Дает вам Медлительность!
+
+#Reinforced Blocks Tooltips
+tooltip.glass_1=Защищён от Визера!
+tooltip.obsidian_1=Защищён от Визера!
+
+#Birthday Pickaxe Tooltip
+tooltip.birthday_1=Супер быстрая кирка!
+tooltip.birthday_2=Щелкните ПКМ для сюрприза!
+
+#Mycelium Tooltip
+tooltip.seeds=ПКМ по земле!
+
+#Diamond Apple Tooltips
+tooltip.apple_1=Огнестойкость
+tooltip.apple_2=Регенерация
+tooltip.apple_3=Сопротивление
+tooltip.apple_4=Скорость
+
+#Emerald Apple Tooltips
+tooltip.emerald_apple_1=Поглощение
+tooltip.emerald_apple_2=Скорость
+tooltip.emerald_apple_3=Насыщение
+
+#Iron Apple Tooltips
+tooltip.iron_apple_1=Насыщение
+tooltip.iron_apple_2=Сопротивление
+
+#Redstone Apple Tooltips
+tooltip.redstone_apple_1=Спешка
+tooltip.redstone_apple_2=Насыщение
+
+#Knife Tooltip
+tooltip.knife=Очень острый, обращайтесь с осторожностью!
+
+#Scythes
+item.wooden_scythe.name=Деревянная коса
+item.stone_scythe.name=Каменная коса
+item.golden_scythe.name=Золотая коса
+item.iron_scythe.name=Железная коса
+item.diamond_scythe.name=Алмазная коса
+item.emerald_scythe.name=Изумрудная коса
+item.obsidian_scythe.name=Обсидиановая коса
+
+#Emerald Tools
+item.emerald_axe.name=Изумрудный топор
+item.emerald_pickaxe.name=Изумрудная кирка
+item.emerald_spade.name=Изумрудная лопата
+item.emerald_hoe.name=Изумрудная мотыга
+item.emerald_sword.name=Изумрудный меч
+
+#Obsidian Tools
+item.obsidian_axe.name=Обсидиановый топор
+item.obsidian_pickaxe.name=Обсидиановая кирка
+item.obsidian_spade.name=Обсидиановая лопата
+item.obsidian_hoe.name=Обсидиановая мотыга
+item.obsidian_sword.name=Обсидиановый меч
+
+#Watering Cans Tooltips
+tooltip.can_1=Используется для полива грядок!
+tooltip.can_2=Поливает площадь 3х3!
+tooltip.can_3=Нажмите Shift+ПКМ для активации!
+tooltip.canupgrade_1=Лучший способ полива!
+tooltip.canupgrade_2=Поливает площадь 5х5!
+tooltip.canupgrade_3=Нажмите Shift+ПКМ для активации!
+
+#MultiTools
+item.wooden_multi.name=Деревянный паксель
+item.stone_multi.name=Каменный паксель
+item.golden_multi.name=Золотой паксель
+item.iron_multi.name=Железный паксель
+item.diamond_multi.name=Алмазный паксель
+item.emerald_multi.name=Изумрудный паксель
+item.obsidian_multi.name=Обсидиановый паксель
+
+#BattleAxes
+item.wooden_battle.name=Деревянный боевой топор
+item.stone_battle.name=Каменный боевой топор
+item.golden_battle.name=Золотой боевой топор
+item.iron_battle.name=Железный боевой топор
+item.diamond_battle.name=Алмазный боевой топор
+item.emerald_battle.name=Изумрудный боевой топор
+item.obsidian_battle.name=Обсидиановый боевой топор
+
+#Spears
+item.wooden_spear.name=Деревянное копьё
+item.stone_spear.name=Каменное копьё
+item.golden_spear.name=Золотое копьё
+item.iron_spear.name=Железное копьё
+item.diamond_spear.name=Алмазное копьё
+item.emerald_spear.name=Изумрудное копьё
+item.obsidian_spear.name=Обсидиановое копьё
+
+#Magma Armor
+item.lava_helmet.name=Магмовый шлем
+item.lava_chestplate.name=Магмовый нагрудник
+item.lava_leggings.name=Магмовые поножи
+item.lava_boots.name=Магмовые ботинки
+
+#Lava Armor Tooltip
+tooltip.lavaarmor_1=Полный сет брони даёт:
+tooltip.lavaarmor_2=Огнестойкость
+tooltip.lavaarmor_3=Сопротивление
+
+#Wither Armor
+item.wither_helmet.name=Шлем Визера
+item.wither_chestplate.name=Нагрудник Визера
+item.wither_leggings.name=Поножи Визера
+item.wither_boots.name=Ботинки Визера
+
+#Dragon Armor
+item.dragon_helmet.name=Шлем Дракона
+item.dragon_chestplate.name=Нагрудник Дракона
+item.dragon_leggings.name=Поножи Дракона
+item.dragon_boots.name=Ботинки Дракона
+
+#Mob Drops
+item.dragon_scale.name=Чешуя дракона
+tooltip.scale_1=Выпадает с Дракона
+item.wither_rib.name=Ребро Визера
+tooltip.rib_1=Выпадает с Визеров
+
+#Wither Tooltips
+tooltip.witherarmor_1=Полный сет брони даёт:
+tooltip.witherarmor_2=Сила
+tooltip.witherarmor_3=Огнестойкость
+tooltip.witherarmor_4=Сопротивление
+
+#Dragon Tooltips
+tooltip.dragonarmor_1=Полный сет брони даёт возможность Полёта!
+tooltip.dragonarmor_2=Сила
+tooltip.dragonarmor_3=Огнейстойкость
+tooltip.dragonarmor_4=Сопротивление
+
+#Obsidian Tooltips
+tooltip.obsidianarmor_1=Полный сет брони даёт:
+tooltip.obsidianarmor_2=Сопротивление
+
+#Pouch
+item.pouch.name=Большой мешок
+
+#Angel Block
+tile.fmf_block.name=Плавучий McFloaty блок
+
+#Glowstone Dust
+item.black_dust.name=Чёрная светокаменная пыль
+item.blue_dust.name=Синяя светокаменная пыль
+item.brown_dust.name=Коричневая светокаменная пыль
+item.cyan_dust.name=Бирюзовая светокаменная пыль
+item.gray_dust.name=Серая светокаменная пыль
+item.green_dust.name=Зелёная светокаменная пыль
+item.lightblue_dust.name=Голубая светокаменная пыль
+item.lime_dust.name=Лаймовая светокаменная пыль
+item.magenta_dust.name=Пурпурная светокаменная пыль
+item.orange_dust.name=Оранжевая светокаменная пыль
+item.pink_dust.name=Розовая светокаменная пыль
+item.purple_dust.name=Фиолетовая светокаменная пыль
+item.red_dust.name=Красная светокаменная пыль
+item.silver_dust.name=Светло-серая светокаменная пыль
+item.white_dust.name=Белая светокаменная пыль
+
+#Colored Glowstone
+tile.black_glowstone.name=Чёрный светокамень
+tile.blue_glowstone.name=Синий светокамень
+tile.brown_glowstone.name=Коричневый светокамень
+tile.cyan_glowstone.name=Бирюзовый светокамень
+tile.gray_glowstone.name=Серый светокамень
+tile.green_glowstone.name=Зелёный светокамень
+tile.lightblue_glowstone.name=Голубой светокамень
+tile.lime_glowstone.name=Лаймовый светокамень
+tile.magenta_glowstone.name=Пурпурный светокамень
+tile.orange_glowstone.name=Оранжевый светокамень
+tile.pink_glowstone.name=Розовый светокамень
+tile.purple_glowstone.name=Фиолевый светокамень
+tile.red_glowstone.name=Красный светокамень
+tile.silver_glowstone.name=Светло-сервый светокамень
+tile.white_glowstone.name=Белый светокамень
+
+#Lamps
+tile.black_lamp.name=Чёрная лампа
+tile.blue_lamp.name=Синяя лампа
+tile.brown_lamp.name=Коричневая лампа
+tile.cyan_lamp.name=Бирюзовая лампа
+tile.gray_lamp.name=Серая лампа
+tile.green_lamp.name=Зелёная лампа
+tile.lightblue_lamp.name=Голубая лампа
+tile.lime_lamp.name=Лаймовая лампа
+tile.magenta_lamp.name=Пурпурная лампа
+tile.orange_lamp.name=Оранжевая лампа
+tile.pink_lamp.name=Розовая лампа
+tile.purple_lamp.name=Фиолетовая лампа
+tile.red_lamp.name=Красная лампа
+tile.silver_lamp.name=Светло-серая лампа
+tile.white_lamp.name=Белая лампа
+tile.yellow_lamp.name=Жёлтая лампа
+tile.lamp.name=Лампа
+
+#Extra Food
+item.raw_bacon.name=Сырой бекон
+item.cooked_bacon.name=Приготовленный бекон
+item.monster_jerky.name=Вяленое мясо монстра
+item.toasted_bread.name=Поджаренный хлеб
+item.fried_egg.name=Яичница
+item.cooked_mushroom_brown.name=Приготовленный коричневый гриб
+item.cooked_mushroom_red.name=Приготовленный красный гриб
+item.bacon_eggs.name=Бекон и Яйца
+item.little_candy.name=Конфета
+item.cooked_apple.name=Приготовленное яблоко
+item.bread_slice.name=Ломтик хлеба
+item.rabbit_sandwhich.name=Сэндвич с кроликом
+item.bacon_eggs_sandwhich.name=Яичный сэндвич с беконом
+item.chicken_sandwhich.name=Сэндвич с курицей
+item.beef_sandwhich.name=Сэндвич с говядиной
+item.bacon_sandwhich.name=Сэндвич с беконом
+item.bams_pizza.name=Пицца
+
+#Repair Tablet
+item.repair_tablet.name=Планшет починки
+tooltip.tablet_1=Чинит предметы в инвентаре игроков
+tooltip.tablet_2=Восстанавливает 1 прочность каждые 10 сек.
+
+#bsc
+tile.compressed_sugar_cane.name=Сжатый сахарный тростник
+tile.double_compressed_sugar_cane.name=Дважды сжатый сахарный тростник
+tile.triple_compressed_sugar_cane.name=Трижды сжатый сахарный тростник
+tile.quadruple_compressed_sugar_cane.name=Четырёхкратно сжатый сахарный тростник
+tile.quintuple_compressed_sugar_cane.name=Пятикратно сжатый сахарный тростник
+tile.sextuple_compressed_sugar_cane.name=Шестикратно сжатый сахарный тростник
+tile.septuple_compressed_sugar_cane.name=Семикратно сжатый сахарный тростник
+tile.octuple_compressed_sugar_cane.name=Восьмикратно сжатый сахарный тростник
+
+tile.compressed_sugar.name=Сжатый сахар
+tile.double_compressed_sugar.name=Дважды сжатый сахар
+
+item.bsc_rod.name=Стержень из сахарного тростника
+item.bsc_sugar_cookie.name=Сахарное печенье
+
+item.bsc_iron_sword.name=Железный тростниковый меч
+item.bsc_gold_sword.name=Золотой тростниковый меч
+item.bsc_diamond_sword.name=Алмазный тростниковый меч
+
+item.bsc_iron_pickaxe.name=Железная тростниковая кирка
+item.bsc_gold_pickaxe.name=Золотая тростниковая кирка
+item.bsc_diamond_pickaxe.name=Алмазная тростниковая кирка
+
+item.bsc_iron_axe.name=Железный тростниковый топор
+item.bsc_gold_axe.name=Золотой тростниковый топор
+item.bsc_diamond_axe.name=Алмазный тростниковый топор
+
+item.bsc_iron_hoe.name=Железная тростниковая мотыга
+item.bsc_gold_hoe.name=Золотая тростниковая мотыга
+item.bsc_diamond_hoe.name=Алмазная тростниковая мотыга
+
+item.bsc_iron_spade.name=Железная тростниковая лопата
+item.bsc_gold_spade.name=Золотая тростниковая лопата
+item.bsc_diamond_spade.name=Алмазная тростниковая лопата
+
+#Nether
+tile.compressed_nether_block.name=Сжатый незерит
+tile.double_compressed_nether_block.name=Дважды сжатый незерит
+tile.triple_compressed_nether_block.name=Трижды сжатый незерит
+tile.quadruple_compressed_nether_block.name=Четырёхкратно сжатый незерит
+tile.quintuple_compressed_nether_block.name=Пятикратно сжатый незерит
+tile.sextuple_compressed_nether_block.name=Шестикратно сжатый незерит
+tile.septuple_compressed_nether_block.name=Семикратно сжатый незерит
+tile.octuple_compressed_nether_block.name=Восьмикратно сжатый незерит
+
+item.nether_rod.name=Незеритовый стержень
+
+item.nether_iron_sword.name=Железный незеритовый меч
+item.nether_gold_sword.name=Золотой незеритовый меч
+item.nether_diamond_sword.name=Алмазный незеритовый меч
+item.nether_sword.name=Незеритовый меч
+
+item.nether_iron_pickaxe.name=Железная незеритовая кирка
+item.nether_gold_pickaxe.name=Золотая незеритовая кирка
+item.nether_diamond_pickaxe.name=Алмазная незеритовая кирка
+item.nether_pickaxe.name=Незеритовая кирка
+
+item.nether_iron_axe.name=Железный незеритовый топор
+item.nether_gold_axe.name=Золотой незеритовый топор
+item.nether_diamond_axe.name=Алмазный незеритовый топор
+item.nether_axe.name=Незеритовый топор
+
+item.nether_iron_hoe.name=Железная незеритовая мотыга
+item.nether_gold_hoe.name=Золотая незеритовая мотыга
+item.nether_diamond_hoe.name=Алмазная незеритовая мотыга
+item.nether_hoe.name=Незеритовая мотыга
+
+item.nether_iron_spade.name=Железная незеритовая лопата
+item.nether_gold_spade.name=Золотая незеритовая лопата
+item.nether_diamond_spade.name=Алмазная незеритовая лопата
+item.nether_spade.name=Незеритовая кирка

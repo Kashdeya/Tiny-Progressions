@@ -43,6 +43,7 @@ public class WubHammer extends ItemPickaxe{
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
             RayTraceResult result = rayTrace(world, player, false);
+	    if (result.sideHit == null) return false;
             EnumFacing sideHit = result.sideHit;
 
             int xDist, yDist, zDist;

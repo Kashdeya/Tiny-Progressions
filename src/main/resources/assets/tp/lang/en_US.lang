@@ -191,7 +191,7 @@ tile.ender_ore.name=Ender Ore
 item.ender_dust.name=Ender Dust
 
 #Goodies
-item.birthday_pickaxe.name=Party Pickaxe
+item.BirthdayPickaxe.name=Party Pickaxe
 
 #Creative Tabs
 itemGroup.tiny_progressions=Tiny Progressions

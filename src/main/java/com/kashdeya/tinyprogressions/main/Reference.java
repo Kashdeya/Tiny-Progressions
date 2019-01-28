@@ -4,7 +4,7 @@ public class Reference {
 	// Mod Constants
 	public static final String MOD_ID = "tp";
 	public static final String MOD_NAME = "Tiny Progressions";
-	public static final String VERSION = "3.2.31";
+	public static final String VERSION = "3.2.32";
 	
 	// Minecraft
 	public static final String MINECRAFT = "[1.12.2]";

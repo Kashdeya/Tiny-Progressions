@@ -1,20 +1,22 @@
 package com.kashdeya.tinyprogressions.tiles;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-
-import net.minecraft.init.Blocks;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.wrapper.InvWrapper;
-
 public class TileEntityIronCobblegen extends TileEntityCobblegen {
 
+
+	@Override
+	public int getCycleUpdate() {
+		return 20;
+	}
+	
+	@Override
+	public int getMaxStackSize() {
+		return 64;
+	}
+	
+	
+	
+	
+	/*
 	@Override
 	public int getInventoryStackLimit() {
 		return 64;
@@ -24,7 +26,8 @@ public class TileEntityIronCobblegen extends TileEntityCobblegen {
 	public String getName() {
 		return TechBlocks.iron_cobblegen_block.getLocalizedName();
 	}
-
+*/
+	/*
 	@Override
 	public void update() {
 
@@ -90,5 +93,5 @@ public class TileEntityIronCobblegen extends TileEntityCobblegen {
     public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
         return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ||
         super.hasCapability(capability, facing);
-    }
+    }*/
 }

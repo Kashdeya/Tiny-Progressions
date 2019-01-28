@@ -2,30 +2,209 @@ package com.kashdeya.tinyprogressions.tiles;
 
 import javax.annotation.Nullable;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class TileEntityCobblegen extends TileEntity implements ISidedInventory, ITickable
+public class TileEntityCobblegen extends TileEntity implements  ITickable //ISidedInventory,
 {
-	ItemStack stack = ItemStack.EMPTY;
+	//ItemStack stack = ItemStack.EMPTY;
 	int cycle = 0;
 	
+	public InventoryStorage outputInventory = new InventoryStorage(1) {
+	    	@Override
+			public boolean canInsertSlot(int slot, ItemStack stack) { return false; }
+	    	@Override
+		    public void writeToNBT(NBTTagCompound compound)  { 	compound.setTag("outputInventory", serializeNBT());    }
+	    	@Override 
+		    public void readFromNBT(NBTTagCompound compound) { 	deserializeNBT(compound.getCompoundTag("outputInventory"));  }
+	    };
+	    
+	public int getCycleUpdate() {
+		return 40;
+	}
+	
+	public int getMaxStackSize() {
+		return 32;
+	}
+	
+	public ItemStack getStack() {
+		return outputInventory.getStackInSlot(0);
+	}
+	
+	@Override
+	public void update()
+	{
+		if(world.isRemote)
+			return;
+
+		cycle++;
+		
+		if(cycle >= getCycleUpdate())
+		{
+			cycle = 0;
+			
+			if(getStack() == ItemStack.EMPTY || getStack().getItem() != Item.getItemFromBlock(Blocks.COBBLESTONE))
+			{
+				outputInventory.setStackInSlot(0, new ItemStack(Blocks.COBBLESTONE));
+			} 
+			else
+			{
+				getStack().setCount(Math.min(getMaxStackSize(), getStack().getCount() + 1));
+			}
+			
+			this.outputInventory.setStackInSlot(0, getStack());
+			
+			TileEntity tile = world.getTileEntity(pos.offset(EnumFacing.UP));
+			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
+				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
+
+				if (this.outputInventory.getStackInSlot(0) != ItemStack.EMPTY) {
+					ItemStack stack = this.outputInventory.getStackInSlot(0).copy();
+					stack.setCount(1);
+					ItemStack stack1 = ItemHandlerHelper.insertItem(handler, stack, true);
+					if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0) {
+						ItemHandlerHelper.insertItem(handler, this.outputInventory.extractItemInternal(0, 1, false), false);
+						markDirty();
+					}
+				}
+			}
+
+			else if (tile instanceof IInventory) {
+				IInventory iinventory = (IInventory) tile;
+				if (isInventoryFull(iinventory, EnumFacing.UP)) {
+					System.out.println("Full");
+					return;
+				} else {
+					if (this.outputInventory.getStackInSlot(0) != ItemStack.EMPTY) {
+						ItemStack stack = this.outputInventory.getStackInSlot(0).copy();
+						ItemStack stack1 = putStackInInventoryAllSlots(iinventory, this.outputInventory.extractItemInternal(0, 1, false), EnumFacing.UP);
+						if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0)
+							iinventory.markDirty();
+						else
+							this.outputInventory.setStackInSlot(0, stack);
+					}
+				}
+			}
+			markDirty();
+		}
+	}
+
+	protected boolean isInventoryFull(IInventory inventoryIn, EnumFacing side) {
+		if (inventoryIn instanceof ISidedInventory) {
+			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
+			int[] aint = isidedinventory.getSlotsForFace(side);
+
+			for (int k : aint) {
+				ItemStack itemstack1 = isidedinventory.getStackInSlot(k);
+
+				if (itemstack1 == ItemStack.EMPTY || itemstack1.getCount() != itemstack1.getMaxStackSize())
+					return false;
+			}
+		} else {
+			int i = inventoryIn.getSizeInventory();
+
+			for (int j = 0; j < i; ++j) {
+				ItemStack itemstack = inventoryIn.getStackInSlot(j);
+
+				if (itemstack == ItemStack.EMPTY || itemstack.getCount() != itemstack.getMaxStackSize())
+					return false;
+			}
+		}
+
+		return true;
+	}
+
+	public static ItemStack putStackInInventoryAllSlots(IInventory inventoryIn, ItemStack stack,
+			@Nullable EnumFacing side) {
+		if (inventoryIn instanceof ISidedInventory && side != null && !(inventoryIn instanceof TileEntityCobblegen) && inventoryIn.isItemValidForSlot(0, stack.copy())) {
+			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
+			int[] aint = isidedinventory.getSlotsForFace(side);
+
+			for (int k = 0; k < aint.length && stack != ItemStack.EMPTY && stack.getCount() > 0; ++k)
+				stack = insertStack(inventoryIn, stack, aint[k], side);
+		} else {
+			int i = inventoryIn.getSizeInventory();
+
+			for (int j = 0; j < i && stack != ItemStack.EMPTY && stack.getCount() > 0; ++j)
+				stack = insertStack(inventoryIn, stack, j, side);
+		}
+
+		if (stack != ItemStack.EMPTY && stack.getCount() == 0)
+			stack = ItemStack.EMPTY;
+
+		return stack;
+	}
+
+	private static ItemStack insertStack(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
+		ItemStack itemstack = inventoryIn.getStackInSlot(index);
+
+		if (canInsertItemInSlot(inventoryIn, stack, index, side)) {
+			if (itemstack == ItemStack.EMPTY) {
+				// Forge: BUGFIX: Again, make things respect max stack sizes.
+				int max = Math.min(stack.getMaxStackSize(), inventoryIn.getInventoryStackLimit());
+				if (max >= stack.getCount()) {
+					inventoryIn.setInventorySlotContents(index, stack);
+					stack = ItemStack.EMPTY;
+				} else
+					inventoryIn.setInventorySlotContents(index, stack.splitStack(max));
+
+			} else if (canCombine(itemstack, stack)) {
+				// Forge: BUGFIX: Again, make things respect max stack sizes.
+				int max = Math.min(stack.getMaxStackSize(), inventoryIn.getInventoryStackLimit());
+				if (max > itemstack.getCount()) {
+					int i = max - itemstack.getCount();
+					int j = Math.min(stack.getCount(), i);
+					stack.setCount(stack.getCount() - j);
+					itemstack.setCount(itemstack.getCount() + j);
+				}
+			}
+		}
+
+		return stack;
+	}
+
+	private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
+		return inventoryIn.isItemValidForSlot(index, stack) && (!(inventoryIn instanceof ISidedInventory) || ((ISidedInventory) inventoryIn).canInsertItem(index, stack, side));
+	}
+
+	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
+		return stack1.getItem() == stack2.getItem() && (stack1.getMetadata() == stack2.getMetadata() && (stack1.getCount() <= stack1.getMaxStackSize() && ItemStack.areItemStackTagsEqual(stack1, stack2)));
+	}
+
+	@SuppressWarnings("unchecked")
+    @Override
+    public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+        if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+            return (T) this.outputInventory;
+        }
+        return super.getCapability(capability, facing);
+    }
+		
+    @Override
+    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ||
+        super.hasCapability(capability, facing);
+    }
+/*
+	@Override
+	public boolean isEmpty() {
+        return stack.isEmpty();
+	}
+	
+	/*
 	@Override
 	public int getSizeInventory()
 	{
@@ -164,162 +343,63 @@ public class TileEntityCobblegen extends TileEntity implements ISidedInventory, 
 	}
 	
 
-	@Override
-	public void update()
-	{
-		if(world.isRemote)
-			return;
-
-		cycle++;
-		
-		if(cycle >= 40)
+	    @Override
+		public void update()
 		{
-			cycle = 0;
-			
-			if(stack == ItemStack.EMPTY)
-			{
-				stack = new ItemStack(Blocks.COBBLESTONE);
-			} else
-			{
-				stack.setCount(Math.min(32, stack.getCount() + 1));
-			}
-			
-			this.setInventorySlotContents(0, stack);
-			
-			TileEntity tile = world.getTileEntity(pos.offset(EnumFacing.UP));
-			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
-				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
+			if(world.isRemote)
+				return;
 
-				if (getStackInSlot(0) != ItemStack.EMPTY) {
-					ItemStack stack = getStackInSlot(0).copy();
-					stack.setCount(1);
-					ItemStack stack1 = ItemHandlerHelper.insertItem(handler, stack, true);
-					if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0) {
-						ItemHandlerHelper.insertItem(handler, this.decrStackSize(0, 1), false);
-						markDirty();
-					}
+			cycle++;
+			
+			if(cycle >= 40)
+			{
+				cycle = 0;
+				
+				if(stack == ItemStack.EMPTY)
+				{
+					stack = new ItemStack(Blocks.COBBLESTONE);
+				} else
+				{
+					stack.setCount(Math.min(32, stack.getCount() + 1));
 				}
-			}
+				
+				this.setInventorySlotContents(0, stack);
+				
+				TileEntity tile = world.getTileEntity(pos.offset(EnumFacing.UP));
+				if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
+					IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
 
-			else if (tile instanceof IInventory) {
-				IInventory iinventory = (IInventory) tile;
-				if (isInventoryFull(iinventory, EnumFacing.UP)) {
-					System.out.println("Full");
-					return;
-				} else {
 					if (getStackInSlot(0) != ItemStack.EMPTY) {
 						ItemStack stack = getStackInSlot(0).copy();
-						ItemStack stack1 = putStackInInventoryAllSlots(iinventory, decrStackSize(0, 1), EnumFacing.UP);
-						if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0)
-							iinventory.markDirty();
-						else
-							setInventorySlotContents(0, stack);
+						stack.setCount(1);
+						ItemStack stack1 = ItemHandlerHelper.insertItem(handler, stack, true);
+						if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0) {
+							ItemHandlerHelper.insertItem(handler, this.decrStackSize(0, 1), false);
+							markDirty();
+						}
 					}
 				}
-			}
-			markDirty();
-		}
-	}
 
-	protected boolean isInventoryFull(IInventory inventoryIn, EnumFacing side) {
-		if (inventoryIn instanceof ISidedInventory) {
-			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
-			int[] aint = isidedinventory.getSlotsForFace(side);
-
-			for (int k : aint) {
-				ItemStack itemstack1 = isidedinventory.getStackInSlot(k);
-
-				if (itemstack1 == ItemStack.EMPTY || itemstack1.getCount() != itemstack1.getMaxStackSize())
-					return false;
-			}
-		} else {
-			int i = inventoryIn.getSizeInventory();
-
-			for (int j = 0; j < i; ++j) {
-				ItemStack itemstack = inventoryIn.getStackInSlot(j);
-
-				if (itemstack == ItemStack.EMPTY || itemstack.getCount() != itemstack.getMaxStackSize())
-					return false;
-			}
-		}
-
-		return true;
-	}
-
-	public static ItemStack putStackInInventoryAllSlots(IInventory inventoryIn, ItemStack stack,
-			@Nullable EnumFacing side) {
-		if (inventoryIn instanceof ISidedInventory && side != null && !(inventoryIn instanceof TileEntityCobblegen) && inventoryIn.isItemValidForSlot(0, stack.copy())) {
-			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
-			int[] aint = isidedinventory.getSlotsForFace(side);
-
-			for (int k = 0; k < aint.length && stack != ItemStack.EMPTY && stack.getCount() > 0; ++k)
-				stack = insertStack(inventoryIn, stack, aint[k], side);
-		} else {
-			int i = inventoryIn.getSizeInventory();
-
-			for (int j = 0; j < i && stack != ItemStack.EMPTY && stack.getCount() > 0; ++j)
-				stack = insertStack(inventoryIn, stack, j, side);
-		}
-
-		if (stack != ItemStack.EMPTY && stack.getCount() == 0)
-			stack = ItemStack.EMPTY;
-
-		return stack;
-	}
-
-	private static ItemStack insertStack(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
-		ItemStack itemstack = inventoryIn.getStackInSlot(index);
-
-		if (canInsertItemInSlot(inventoryIn, stack, index, side)) {
-			if (itemstack == ItemStack.EMPTY) {
-				// Forge: BUGFIX: Again, make things respect max stack sizes.
-				int max = Math.min(stack.getMaxStackSize(), inventoryIn.getInventoryStackLimit());
-				if (max >= stack.getCount()) {
-					inventoryIn.setInventorySlotContents(index, stack);
-					stack = ItemStack.EMPTY;
-				} else
-					inventoryIn.setInventorySlotContents(index, stack.splitStack(max));
-
-			} else if (canCombine(itemstack, stack)) {
-				// Forge: BUGFIX: Again, make things respect max stack sizes.
-				int max = Math.min(stack.getMaxStackSize(), inventoryIn.getInventoryStackLimit());
-				if (max > itemstack.getCount()) {
-					int i = max - itemstack.getCount();
-					int j = Math.min(stack.getCount(), i);
-					stack.setCount(stack.getCount() - j);
-					itemstack.setCount(itemstack.getCount() + j);
+				else if (tile instanceof IInventory) {
+					IInventory iinventory = (IInventory) tile;
+					if (isInventoryFull(iinventory, EnumFacing.UP)) {
+						System.out.println("Full");
+						return;
+					} else {
+						if (getStackInSlot(0) != ItemStack.EMPTY) {
+							ItemStack stack = getStackInSlot(0).copy();
+							ItemStack stack1 = putStackInInventoryAllSlots(iinventory, decrStackSize(0, 1), EnumFacing.UP);
+							if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0)
+								iinventory.markDirty();
+							else
+								setInventorySlotContents(0, stack);
+						}
+					}
 				}
+				markDirty();
 			}
-		}
-
-		return stack;
-	}
-
-	private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
-		return inventoryIn.isItemValidForSlot(index, stack) && (!(inventoryIn instanceof ISidedInventory) || ((ISidedInventory) inventoryIn).canInsertItem(index, stack, side));
-	}
-
-	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
-		return stack1.getItem() == stack2.getItem() && (stack1.getMetadata() == stack2.getMetadata() && (stack1.getCount() <= stack1.getMaxStackSize() && ItemStack.areItemStackTagsEqual(stack1, stack2)));
-	}
-
-	@SuppressWarnings("unchecked")
-    @Override
-    public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-        if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-            return (T) new InvWrapper(this);
-        }
-        return super.getCapability(capability, facing);
-    }
-		
-    @Override
-    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ||
-        super.hasCapability(capability, facing);
-    }
-
-	@Override
-	public boolean isEmpty() {
-        return stack.isEmpty();
-	}
+		}*/
+	    
+	    
+	    
 }

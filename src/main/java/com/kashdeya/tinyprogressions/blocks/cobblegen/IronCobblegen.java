@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.cobblegen;
 import java.util.List;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityIronCobblegen;
 
 import net.minecraft.block.Block;
@@ -13,7 +14,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
@@ -72,7 +72,7 @@ public class IronCobblegen extends Block implements ITileEntityProvider{
     		
     		if(!player.isSneaking())
     		{
-        		ItemStack stack = ttest.removeStackFromSlot(0);
+        		ItemStack stack = ttest.outputInventory.getAndRemoveSlot(0);
         		
 	    		if(stack != null)
 	    		{
@@ -84,7 +84,7 @@ public class IronCobblegen extends Block implements ITileEntityProvider{
 	    		}
     		} else
     		{
-        		ItemStack stack = ttest.getStackInSlot(0);
+        		ItemStack stack = ttest.outputInventory.getStackInSlot(0);
     			player.sendMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
     		}
     	}
@@ -99,7 +99,7 @@ public class IronCobblegen extends Block implements ITileEntityProvider{
         
         if (tile != null && tile instanceof TileEntityIronCobblegen)
         {
-            InventoryHelper.dropInventoryItems(world, pos, (TileEntityIronCobblegen)tile);
+        	((TileEntityCobblegen) tile).outputInventory.dropInventory(world, pos);
         }
         
         super.breakBlock(world, pos, state);

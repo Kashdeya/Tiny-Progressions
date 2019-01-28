@@ -37,14 +37,15 @@ public class NetherStarBlock extends Block {
 		this.setLightOpacity(1);
 		this.setSoundType(SoundType.STONE);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("netherstar_block");
+		this.setTranslationKey("netherstar_block");
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.CUTOUT_MIPPED;
-	}
+	@Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer()
+    {
+        return BlockRenderLayer.CUTOUT_MIPPED;
+    }
 	
 	@Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)

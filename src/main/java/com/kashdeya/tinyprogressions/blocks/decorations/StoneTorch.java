@@ -10,7 +10,7 @@ public class StoneTorch extends BlockTorch implements IOreDictEntry{
 	public StoneTorch()
     {
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("stone_torch");
+        this.setTranslationKey("stone_torch");
         this.setLightLevel(1.0F);
     }
 	

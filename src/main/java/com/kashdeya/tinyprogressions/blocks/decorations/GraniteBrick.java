@@ -26,7 +26,7 @@ public class GraniteBrick extends Block implements IOreDictEntry {
         this.setResistance(10.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("granite_brick");
+        this.setTranslationKey("granite_brick");
     }
 	
 	@Override

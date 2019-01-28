@@ -23,7 +23,7 @@ public class PlantGen implements IWorldGenerator{
         
         final BlockPos blockPos = world.getHeight(new BlockPos(x, 0, z));
         final BlockPos chunkPos = new BlockPos(x, 0, z);
-        final Biome biome = world.getChunkFromBlockCoords(chunkPos).getBiome(chunkPos, world.getBiomeProvider());
+        final Biome biome = world.getChunk(chunkPos).getBiome(chunkPos, world.getBiomeProvider());
         
         if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.HOT) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD)){
 	        if (ConfigHandler.old_reed) {

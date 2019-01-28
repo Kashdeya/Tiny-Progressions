@@ -25,7 +25,7 @@ public class UnhardenedBlock extends Block{
         this.setResistance(10.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("unhardened_stone");
+        this.setTranslationKey("unhardened_stone");
     }
 	
 	@Override

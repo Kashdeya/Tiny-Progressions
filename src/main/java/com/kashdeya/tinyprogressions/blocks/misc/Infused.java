@@ -41,7 +41,7 @@ public class Infused extends Block {
 
 	public Infused() {
 		super(Material.LAVA);
-		this.setUnlocalizedName("lava_infused_stone");
+		this.setTranslationKey("lava_infused_stone");
 		this.setHardness(2.0F);
 		this.setTickRandomly(true);
 		this.setCreativeTab(TinyProgressions.tabTP);
@@ -52,8 +52,10 @@ public class Infused extends Block {
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 7));
 	}
 	
-	@SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer() {
+	@Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer()
+    {
         return BlockRenderLayer.CUTOUT;
     }
 

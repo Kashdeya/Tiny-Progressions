@@ -25,6 +25,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
@@ -46,7 +47,7 @@ public class LavaBlock extends Block implements IOreDictEntry {
         this.setResistance(5.0F);
         this.setLightLevel(0.2F);
         this.setTickRandomly(true);
-        this.setUnlocalizedName("lava_block");
+        this.setTranslationKey("lava_block");
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
     }
@@ -56,11 +57,14 @@ public class LavaBlock extends Block implements IOreDictEntry {
         return "oreLavaBlock";
     }
 
+	@Override
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer()
+    {
         return BlockRenderLayer.CUTOUT;
     }
-
+	
+	
     @Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
         return false;
@@ -121,6 +125,7 @@ public class LavaBlock extends Block implements IOreDictEntry {
         return entityIn.isImmuneToFire();
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
         int i = source.getCombinedLight(pos, 0);
@@ -132,6 +137,7 @@ public class LavaBlock extends Block implements IOreDictEntry {
         return (k > l ? k : l) | (i1 > j1 ? i1 : j1) << 16;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState worldIn, World pos, BlockPos state, Random rand) {
         double d0 = (double) state.getX();

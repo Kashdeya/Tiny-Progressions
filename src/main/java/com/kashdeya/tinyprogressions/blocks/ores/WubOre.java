@@ -30,7 +30,7 @@ public class WubOre extends Block implements IOreDictEntry {
         this.setHarvestLevel("pickaxe", 3);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("wub_ore");
+        this.setTranslationKey("wub_ore");
     }
     
 	@Override
@@ -44,11 +44,12 @@ public class WubOre extends Block implements IOreDictEntry {
         return false;
     }
     
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.CUTOUT;
-	}
+	@Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer()
+    {
+        return BlockRenderLayer.CUTOUT;
+    }
     
     @Override
     public int quantityDropped(Random rand) {

@@ -25,7 +25,7 @@ public class FlintBlock extends Block implements IOreDictEntry{
 		this.setResistance(5.0F);
 		this.setSoundType(SoundType.STONE);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("flint_block");
+		this.setTranslationKey("flint_block");
 	}
 	
 	@Override

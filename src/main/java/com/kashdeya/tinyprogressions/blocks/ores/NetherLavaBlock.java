@@ -46,7 +46,7 @@ public class NetherLavaBlock extends Block implements IOreDictEntry {
         this.setResistance(5.0F);
         this.setLightLevel(0.2F);
         this.setTickRandomly(true);
-        this.setUnlocalizedName("nether_lava_block");
+        this.setTranslationKey("nether_lava_block");
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
     }
@@ -56,8 +56,10 @@ public class NetherLavaBlock extends Block implements IOreDictEntry {
         return "oreLavaBlock";
     }
 
+	@Override
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer()
+    {
         return BlockRenderLayer.CUTOUT;
     }
 
@@ -121,6 +123,7 @@ public class NetherLavaBlock extends Block implements IOreDictEntry {
         return entityIn.isImmuneToFire();
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
         int i = source.getCombinedLight(pos, 0);
@@ -132,6 +135,7 @@ public class NetherLavaBlock extends Block implements IOreDictEntry {
         return (k > l ? k : l) | (i1 > j1 ? i1 : j1) << 16;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState worldIn, World pos, BlockPos state, Random rand) {
         double d0 = (double) state.getX();

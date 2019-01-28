@@ -31,7 +31,7 @@ public class SmallMedkit extends Item {
 	
 	public SmallMedkit() {
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("small_med_kit");
+		this.setTranslationKey("small_med_kit");
 		this.setMaxStackSize(ConfigHandler.smallMedHealStack);
 	}
 	

@@ -55,7 +55,7 @@ public class BlockGrowthUpgradeTwo extends Block {
 		this.setResistance(2000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName("growth_upgrade_two");
+		this.setTranslationKey("growth_upgrade_two");
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 7));
 	}
 	
@@ -74,11 +74,14 @@ public class BlockGrowthUpgradeTwo extends Block {
 		return 0;
 	}
     
+	@Override
     @SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.CUTOUT;
-	}
+    public BlockRenderLayer getRenderLayer()
+    {
+        return BlockRenderLayer.CUTOUT;
+    }
+    
+	
     
     @Override
     public boolean isOpaqueCube(IBlockState state)

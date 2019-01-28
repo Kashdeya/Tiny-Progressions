@@ -9,9 +9,10 @@ public class TabTP extends CreativeTabs {
 	public TabTP(String label) {
 		super(label);
 	}
-	
+
 	@Override
-	public ItemStack getTabIconItem() {
+	public ItemStack createIcon() {
+		// TODO Auto-generated method stub
 		return new ItemStack(Items.NETHER_STAR);
 	}
 

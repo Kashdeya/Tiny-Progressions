@@ -234,7 +234,7 @@ public class InternalRegistry
 				((IModelRegistrar) item).registerModels();
 				return;
 			}
-			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getResourcePath()), "inventory"));
+			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getPath()), "inventory"));
 		});
 
 		blocks.forEach((key, block) -> {
@@ -242,7 +242,7 @@ public class InternalRegistry
 				((IModelRegistrar) block).registerModels();
 				return;
 			}
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getResourcePath()), "inventory"));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, key.getPath()), "inventory"));
 			if (block instanceof BlockFluidClassic)
 				ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(new IProperty[]{BlockFluidClassic.LEVEL}).build());
 		});

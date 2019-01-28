@@ -37,7 +37,7 @@ public class ReinforcedGlass extends BlockGlass implements IOreDictEntry
         this.setHarvestLevel("pickaxe", 1);
         this.setSoundType(SoundType.GLASS);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("reinforced_glass");
+        this.setTranslationKey("reinforced_glass");
     }
     
     @Override
@@ -60,8 +60,9 @@ public class ReinforcedGlass extends BlockGlass implements IOreDictEntry
       return false;
     }
     
+	@Override
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer()
+    public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

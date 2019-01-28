@@ -17,7 +17,7 @@ public class KappaPick extends ItemPickaxe{
         this.material = material;
         this.maxStackSize = 1;
         this.setHarvestLevel("pickaxe", ConfigHandler.kappa_level);
-		this.setUnlocalizedName("kappa_pick");
+		this.setTranslationKey("kappa_pick");
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	}
 }

@@ -32,7 +32,7 @@ public class WitheredBlock extends Block {
         this.setResistance(6000000.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("withered_block");
+        this.setTranslationKey("withered_block");
         this.disableStats();
     }
     

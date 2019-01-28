@@ -16,7 +16,7 @@ public class WateringCanUpgrade extends WateringCanBase {
 	
 	public WateringCanUpgrade(){
 		super();
-		this.setUnlocalizedName("watering_can_upgrade");
+		this.setTranslationKey("watering_can_upgrade");
 		this.setWateringRange(2);
 		this.setWateringChance(ConfigHandler.WateringCanUpgradeChance);
 	}

@@ -16,6 +16,6 @@ public class TowerBuilder extends Block {
         this.setResistance(10.0F);// needs changed!
         this.setSoundType(SoundType.WOOD);// needs changed!
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("tower_builder");
+        this.setTranslationKey("tower_builder");
     }
 }

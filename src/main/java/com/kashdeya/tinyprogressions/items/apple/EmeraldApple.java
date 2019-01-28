@@ -24,7 +24,7 @@ public class EmeraldApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("emerald_apple");
+	    this.setTranslationKey("emerald_apple");
 	  }
 	  
 	  @Override

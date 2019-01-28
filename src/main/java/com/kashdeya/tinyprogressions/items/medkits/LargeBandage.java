@@ -31,7 +31,7 @@ public class LargeBandage extends Item {
 	
 	public LargeBandage() {
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("large_bandage");
+		this.setTranslationKey("large_bandage");
 		this.setMaxStackSize(ConfigHandler.largeBandageStack);
 	}
 	

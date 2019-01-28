@@ -25,7 +25,7 @@ public class Asphalt extends Block{
         this.setResistance(100.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("asphalt_block");
+        this.setTranslationKey("asphalt_block");
     }
 	
 	/**

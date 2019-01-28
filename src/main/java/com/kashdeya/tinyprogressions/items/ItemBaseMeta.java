@@ -27,7 +27,7 @@ public class ItemBaseMeta extends ItemBase implements IModelRegistrar, IMetadata
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
 		return "item." + unlocalNames[stack.getItemDamage()];
 	}

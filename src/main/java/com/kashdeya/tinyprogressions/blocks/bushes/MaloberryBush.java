@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 public class MaloberryBush extends BlockBerryBush {
 
 	public MaloberryBush() {
-		this.setUnlocalizedName("maloberry_bush");
+		this.setTranslationKey("maloberry_bush");
 	}
 
 	@Override

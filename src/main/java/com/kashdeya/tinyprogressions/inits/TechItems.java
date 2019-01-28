@@ -86,30 +86,30 @@ public class TechItems {
 	public static void init() {
 		// Wub Gem
 		if (ConfigHandler.vasholine){
-			wub_gem = new ItemBase().setOreDictName("gemWub").setUnlocalizedName("wub_gem");
+			wub_gem = new ItemBase().setOreDictName("gemWub").setTranslationKey("wub_gem");
 		}
 		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
-			wub_ingot = new ItemBase().setOreDictName("ingotWub").setUnlocalizedName("wub_ingot");
+			wub_ingot = new ItemBase().setOreDictName("ingotWub").setTranslationKey("wub_ingot");
 		}
 		// Infin Water Bucket
 		if (ConfigHandler.infin_bucket){
-			infin_bucket = new InfinBucket().setUnlocalizedName("infin_bucket");
+			infin_bucket = new InfinBucket().setTranslationKey("infin_bucket");
 		}
 		// Steel
 		if (ConfigHandler.steel_ingot) {
-			steel_ingot = new ItemBase().setOreDictName("ingotSteel").setUnlocalizedName("steel_ingot");
+			steel_ingot = new ItemBase().setOreDictName("ingotSteel").setTranslationKey("steel_ingot");
 		}
 		// nether rod
 		if (ConfigHandler.nether_rod){
-			nether_rod = new ItemBase().setOreDictName("stickNether").setUnlocalizedName("nether_rod");
+			nether_rod = new ItemBase().setOreDictName("stickNether").setTranslationKey("nether_rod");
 		}
 		// Chainmail
 		if (ArmorHandler.chain_armor){
-			chainmail_part = new ItemBase().setOreDictName("chainmail").setUnlocalizedName("chainmail_part");
+			chainmail_part = new ItemBase().setOreDictName("chainmail").setTranslationKey("chainmail_part");
 		}
 		// bsc rod
 		if (ConfigHandler.bsc_rod){
-			bsc_rod = new ItemBase().setOreDictName("stickCane").setUnlocalizedName("bsc_rod");
+			bsc_rod = new ItemBase().setOreDictName("stickCane").setTranslationKey("bsc_rod");
 		}
 		
 		// Watering Cans
@@ -123,26 +123,26 @@ public class TechItems {
 		// Quartz Items
 		if (ConfigHandler.QuartzKnife) {
 			quartz_knife = new QuartzKnife();
-			quartz_dust = new ItemBase().setUnlocalizedName("quartz_dust");
+			quartz_dust = new ItemBase().setTranslationKey("quartz_dust");
 		}
 		
 	    // Drops
 	    if (ArmorHandler.dragon_armor){
-		    dragon_scale = new ItemScale().setOreDictName("dragonScale").setUnlocalizedName("dragon_scale");
+		    dragon_scale = new ItemScale().setOreDictName("dragonScale").setTranslationKey("dragon_scale");
 	    }
 	    if (ArmorHandler.wither_armor || ConfigHandler.wither_rib){
-		    wither_rib = new ItemRib().setOreDictName("witherRib").setUnlocalizedName("wither_rib");
+		    wither_rib = new ItemRib().setOreDictName("witherRib").setTranslationKey("wither_rib");
 	    }
 	    
 		// Misc Items
 		if (ConfigHandler.StoneTorch) {
-			stone_stick = new ItemBase().setOreDictName("stickStone").setUnlocalizedName("stone_stick");
+			stone_stick = new ItemBase().setOreDictName("stickStone").setTranslationKey("stone_stick");
 		}
 		if (ConfigHandler.MyceliumSeeds) {
 			mycelium_seeds = new MyceliumSeeds();
 		}
 		if (ConfigHandler.old_reed){
-	    		dead_reed = new FoodBase(1, 0.15F, false).setOreDictName("sugarcane").setUnlocalizedName("dead_reed");
+	    		dead_reed = new FoodBase(1, 0.15F, false).setOreDictName("sugarcane").setTranslationKey("dead_reed");
 	    }
 		
 		// Medkit
@@ -155,23 +155,23 @@ public class TechItems {
 		
 		// Tiny Coal & Charcoal
 		if (ConfigHandler.tiny_charcoal){
-			tiny_charcoal = new ItemBase().setOreDictName("dustCharcoal").setUnlocalizedName("tiny_charcoal");
+			tiny_charcoal = new ItemBase().setOreDictName("dustCharcoal").setTranslationKey("tiny_charcoal");
 		}
 		if (ConfigHandler.tiny_coal){
-			tiny_coal = new ItemBase().setOreDictName("dustCoal").setUnlocalizedName("tiny_coal");
+			tiny_coal = new ItemBase().setOreDictName("dustCoal").setTranslationKey("tiny_coal");
 		}
 		
 		// Stone Dust
 		if (ConfigHandler.StoneDust) {
-			stone_dust = new ItemBase().setUnlocalizedName("stone_dust");
+			stone_dust = new ItemBase().setTranslationKey("stone_dust");
 		}
 		
 		// Ingot
 		if (ArmorHandler.FlintArmor) {
-			flint_ingot = new ItemBase().setOreDictName("ingotFlint").setUnlocalizedName("flint_ingot");
+			flint_ingot = new ItemBase().setOreDictName("ingotFlint").setTranslationKey("flint_ingot");
 		}
 		if (ConfigHandler.ReinforcedObsidian) {
-			reinforced_obsidian_ingot = new ItemBase().setOreDictName("ingotReinforcedObsidian").setUnlocalizedName("reinforced_obsidian_ingot");
+			reinforced_obsidian_ingot = new ItemBase().setOreDictName("ingotReinforcedObsidian").setTranslationKey("reinforced_obsidian_ingot");
 		}
 		
 		// Flint Knife
@@ -181,12 +181,12 @@ public class TechItems {
 		
 		// Ender Dust
 		if (ConfigHandler.ender_ore) {
-			ender_dust = new ItemBase().setOreDictName("dustEnder").setUnlocalizedName("ender_dust");
+			ender_dust = new ItemBase().setOreDictName("dustEnder").setTranslationKey("ender_dust");
 		}
 		
 		// Pouch
 		if (ConfigHandler.pouch) {
-			pouch = new Pouch().setUnlocalizedName("pouch");
+			pouch = new Pouch().setTranslationKey("pouch");
 		}
 		
 	    // Glowstone Dust
@@ -196,26 +196,26 @@ public class TechItems {
 	    
 	    // Lapis armor
 	    if (ArmorHandler.lapis_armor){
-	    	lapis_ingot = new ItemBase().setOreDictName("ingotLapis").setUnlocalizedName("lapis_ingot");
+	    	lapis_ingot = new ItemBase().setOreDictName("ingotLapis").setTranslationKey("lapis_ingot");
 	    }
 	    
 	    // Redstone Amor
 	    if (ArmorHandler.redstone_armor){
-	    	redstone_ingot = new ItemBase().setOreDictName("ingotRedstone").setUnlocalizedName("redstone_ingot");
+	    	redstone_ingot = new ItemBase().setOreDictName("ingotRedstone").setTranslationKey("redstone_ingot");
 	    }
 	    
 	    // Quartz Amor
 	    if (ArmorHandler.quartz_armor){
-	    	quartz_ingot = new ItemBase().setOreDictName("ingotQuartz").setUnlocalizedName("quartz_ingot");
+	    	quartz_ingot = new ItemBase().setOreDictName("ingotQuartz").setTranslationKey("quartz_ingot");
 	    }
 	    
 	    // Repair Tablet
 	    if (ConfigHandler.repair_tablet){
-	    	repair_tablet = new RepairTablet().setUnlocalizedName("repair_tablet");
+	    	repair_tablet = new RepairTablet().setTranslationKey("repair_tablet");
 	    }
 	    
 	    // Can not be turned off
-	    obsidian_dust = new ItemBase().setOreDictName("dustObsidian").setUnlocalizedName("obsidian_dust");
-	    stone_hammer = new ItemStay().setUnlocalizedName("stone_hammer");
+	    obsidian_dust = new ItemBase().setOreDictName("dustObsidian").setTranslationKey("obsidian_dust");
+	    stone_hammer = new ItemStay().setTranslationKey("stone_hammer");
 	}
 }

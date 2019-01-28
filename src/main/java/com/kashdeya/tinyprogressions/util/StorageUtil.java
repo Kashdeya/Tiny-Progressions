@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import jline.internal.Nullable;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTTagCompound;

@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 public class RaspberryBush extends BlockBerryBush {
 
 	public RaspberryBush() {
-		this.setUnlocalizedName("raspberry_bush");
+		this.setTranslationKey("raspberry_bush");
 	}
 
 	@Override

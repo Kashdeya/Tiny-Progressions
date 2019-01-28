@@ -22,7 +22,7 @@ public class FlintKnife extends Item {
 		this.setMaxDamage(ConfigHandler.FlintKnifeDamage);
 		super.setContainerItem(this);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("flint_knife");
+		this.setTranslationKey("flint_knife");
 	}
 	
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)

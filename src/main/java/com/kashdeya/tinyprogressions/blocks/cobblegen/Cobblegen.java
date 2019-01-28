@@ -16,6 +16,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
@@ -40,14 +41,21 @@ public class Cobblegen extends Block implements ITileEntityProvider{
     	this.setLightOpacity(1);
     	this.setCreativeTab(TinyProgressions.tabTP);
     	this.setSoundType(SoundType.STONE);
-    	this.setUnlocalizedName("cobblegen_block");
+    	this.setTranslationKey("cobblegen_block");
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.CUTOUT_MIPPED;
-	}
+	@Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer()
+    {
+        return BlockRenderLayer.CUTOUT_MIPPED;
+    }
+    
+    @Override
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
+    }
 	
 	@Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)

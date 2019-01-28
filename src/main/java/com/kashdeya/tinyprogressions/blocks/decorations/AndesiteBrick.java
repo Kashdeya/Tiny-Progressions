@@ -26,7 +26,7 @@ public class AndesiteBrick extends Block implements IOreDictEntry {
         this.setResistance(10.0F);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("andesite_brick");
+        this.setTranslationKey("andesite_brick");
     }
 	
 	@Override

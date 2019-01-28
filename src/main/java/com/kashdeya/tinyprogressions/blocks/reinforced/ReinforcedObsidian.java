@@ -36,7 +36,7 @@ public class ReinforcedObsidian extends Block implements IOreDictEntry {
         this.setHarvestLevel("pickaxe", 2);
         this.setSoundType(SoundType.ANVIL);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("reinforced_obsidian");
+        this.setTranslationKey("reinforced_obsidian");
     }
 	
 	@Override

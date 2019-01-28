@@ -35,7 +35,7 @@ public class QuickSand extends Block {
 	}
 
 	@Override
-    public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+    public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entity) {
 		entity.isAirBorne = false;
 		entity.setInWeb();
 	}

@@ -24,7 +24,7 @@ public class Pouch extends Item
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, NBTTagCompound nbt)
     {
-        return new StorageProvider(String.format("%s.name", stack.getUnlocalizedName().substring(5)), 54);
+        return new StorageProvider(String.format("%s.name", stack.getTranslationKey().substring(5)), 54);
     }
      
     @Override

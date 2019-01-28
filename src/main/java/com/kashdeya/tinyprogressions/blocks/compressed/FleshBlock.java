@@ -24,7 +24,7 @@ public class FleshBlock extends BlockFalling{
 		this.setResistance(5.0F);
 		this.setSoundType(SoundType.SAND);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("flesh_block");
+		this.setTranslationKey("flesh_block");
 	}
 	
 	/**

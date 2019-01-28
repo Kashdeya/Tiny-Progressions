@@ -44,7 +44,7 @@ public class WaterBlock extends Block implements IOreDictEntry {
         this.setResistance(5.0F);
         this.setTickRandomly(true);
         this.setSoundType(SoundType.STONE);
-        this.setUnlocalizedName("water_block");
+        this.setTranslationKey("water_block");
         this.setCreativeTab(TinyProgressions.tabTP);
     }
 
@@ -53,8 +53,10 @@ public class WaterBlock extends Block implements IOreDictEntry {
         return "oreWaterBlock";
     }
 
+	@Override
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer()
+    {
         return BlockRenderLayer.CUTOUT;
     }
 

@@ -40,7 +40,7 @@ public class BirthdayPickaxe extends ItemTool {
         this.material = material;
         this.maxStackSize = 1;
         this.setHarvestLevel("pickaxe", 4);
-		this.setUnlocalizedName("BirthdayPickaxe");
+		this.setTranslationKey("BirthdayPickaxe");
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	 

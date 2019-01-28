@@ -38,7 +38,7 @@ public class StandardBlock extends Block implements IItemProvider
 	
 	public StandardBlock setUnlocalName(String name)
 	{
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		return this;
 	}
 	
@@ -79,11 +79,14 @@ public class StandardBlock extends Block implements IItemProvider
 		return itemBlock;
 	}
 	
-	@SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer()
+	
+	@Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer()
     {
-		return renderLayer;
+        return renderLayer;
     }
+    
 	
 	@Override
     public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)

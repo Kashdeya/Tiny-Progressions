@@ -73,47 +73,47 @@ public class TechFoods {
 	public static void init(){
 		// Succ Pearls
 		if (ConfigHandler.succ_juice){
-			succ_pearls = new SuccBase(5, 0.25F, true).setAlwaysEdible().setUnlocalizedName("succ_pearls");
+			succ_pearls = new SuccBase(5, 0.25F, true).setAlwaysEdible().setTranslationKey("succ_pearls");
 		}
 		// Extra Drops
 		if (ConfigHandler.extra_drops){
-			plump_pear = new FoodBase(3, 0.25F, true).setOreDictName("cropPear").setUnlocalizedName("plump_pear");
-			plump_peach = new FoodBase(3, 0.25F, true).setOreDictName("cropPeach").setUnlocalizedName("plump_peach");
-			pear_juice = new DrinkBase(ConfigHandler.pearAmount, ConfigHandler.pearSaturation, false).setUnlocalizedName("pear_juice");
-			peach_juice = new DrinkBase(ConfigHandler.peachAmount, ConfigHandler.peachSaturation, false).setUnlocalizedName("peach_juice");
+			plump_pear = new FoodBase(3, 0.25F, true).setOreDictName("cropPear").setTranslationKey("plump_pear");
+			plump_peach = new FoodBase(3, 0.25F, true).setOreDictName("cropPeach").setTranslationKey("plump_peach");
+			pear_juice = new DrinkBase(ConfigHandler.pearAmount, ConfigHandler.pearSaturation, false).setTranslationKey("pear_juice");
+			peach_juice = new DrinkBase(ConfigHandler.peachAmount, ConfigHandler.peachSaturation, false).setTranslationKey("peach_juice");
 		}
 		// bsc cookie
 		if (ConfigHandler.bsc_sugar_cookie){
-			bsc_sugar_cookie = new FoodBase(1, 1.0F, true).setUnlocalizedName("bsc_sugar_cookie");
+			bsc_sugar_cookie = new FoodBase(1, 1.0F, true).setTranslationKey("bsc_sugar_cookie");
 		}
 		// Bams Pizza
 		if (ConfigHandler.bams_pizza){
-			bams_pizza = new FoodBase(ConfigHandler.bams_pizza_amount, ConfigHandler.bams_pizza_sat, true).setUnlocalizedName("bams_pizza");
+			bams_pizza = new FoodBase(ConfigHandler.bams_pizza_amount, ConfigHandler.bams_pizza_sat, true).setTranslationKey("bams_pizza");
 		}
 		
 		// Natura Juices
 		if (ConfigHandler.ExtraJuices || ConfigHandler.ExtraJuicesBottles){
-			raspberry_juice = new DrinkBase(ConfigHandler.RaspberryAmount, ConfigHandler.RaspberrySaturation, false).setUnlocalizedName("raspberry_juice");
-			blueberry_juice = new DrinkBase(ConfigHandler.BlueberryAmount, ConfigHandler.BlueberrySaturation, false).setUnlocalizedName("blueberry_juice");
-			blackberry_juice = new DrinkBase(ConfigHandler.BlackberryAmount, ConfigHandler.BlackberrySaturation, false).setUnlocalizedName("blackberry_juice");
-			maloberry_juice = new DrinkBase(ConfigHandler.MaloberryAmount, ConfigHandler.MaloberrySaturation, false).setUnlocalizedName("maloberry_juice");
-			raspberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropRaspberry").setUnlocalizedName("raspberry_berry");
-		    blueberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropBlueberry").setUnlocalizedName("blueberry_berry");
-		    blackberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropBlackberry").setUnlocalizedName("blackberry_berry");
-		    maloberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropMaloberry").setUnlocalizedName("maloberry_berry");
+			raspberry_juice = new DrinkBase(ConfigHandler.RaspberryAmount, ConfigHandler.RaspberrySaturation, false).setTranslationKey("raspberry_juice");
+			blueberry_juice = new DrinkBase(ConfigHandler.BlueberryAmount, ConfigHandler.BlueberrySaturation, false).setTranslationKey("blueberry_juice");
+			blackberry_juice = new DrinkBase(ConfigHandler.BlackberryAmount, ConfigHandler.BlackberrySaturation, false).setTranslationKey("blackberry_juice");
+			maloberry_juice = new DrinkBase(ConfigHandler.MaloberryAmount, ConfigHandler.MaloberrySaturation, false).setTranslationKey("maloberry_juice");
+			raspberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropRaspberry").setTranslationKey("raspberry_berry");
+		    blueberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropBlueberry").setTranslationKey("blueberry_berry");
+		    blackberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropBlackberry").setTranslationKey("blackberry_berry");
+		    maloberry_berry = new FoodBase(3, 0.15F, true).setOreDictName("cropMaloberry").setTranslationKey("maloberry_berry");
 		}
 		
 		// Juices
 		if (ConfigHandler.all_juices || ConfigHandler.JuiceBottles){
-			apple_juice = new DrinkBase(ConfigHandler.AppleAmount, ConfigHandler.AppleSaturation, false).setUnlocalizedName("apple_juice");
-			carrot_juice = new DrinkBase(ConfigHandler.CarrotAmount, ConfigHandler.CarrotSaturation, false).setUnlocalizedName("carrot_juice");
-			potatoe_juice = new DrinkBase(ConfigHandler.PotatoAmount, ConfigHandler.PotatoSaturation, false).setUnlocalizedName("potatoe_juice");
-			beet_juice = new DrinkBase(ConfigHandler.BeetAmount, ConfigHandler.BeetSaturation, false).setUnlocalizedName("beet_juice");
-			cactus_juice = new DrinkBase(ConfigHandler.CactusAmount, ConfigHandler.CactusSaturation, false).setUnlocalizedName("cactus_juice");
-			slime_juice = new DrinkBase(ConfigHandler.SlimeAmount, ConfigHandler.SlimeSaturation, false).setUnlocalizedName("slime_juice");
-			wheat_juice = new DrinkBase(ConfigHandler.WheatAmount, ConfigHandler.WheatSaturation, false).setUnlocalizedName("wheat_juice");
-			melon_juice = new DrinkBase(ConfigHandler.MelonAmount, ConfigHandler.MelonSaturation, false).setUnlocalizedName("melon_juice");
-			pumpkin_juice = new DrinkBase(ConfigHandler.PumpkinAmount, ConfigHandler.PumpkinSaturation, false).setUnlocalizedName("pumpkin_juice");
+			apple_juice = new DrinkBase(ConfigHandler.AppleAmount, ConfigHandler.AppleSaturation, false).setTranslationKey("apple_juice");
+			carrot_juice = new DrinkBase(ConfigHandler.CarrotAmount, ConfigHandler.CarrotSaturation, false).setTranslationKey("carrot_juice");
+			potatoe_juice = new DrinkBase(ConfigHandler.PotatoAmount, ConfigHandler.PotatoSaturation, false).setTranslationKey("potatoe_juice");
+			beet_juice = new DrinkBase(ConfigHandler.BeetAmount, ConfigHandler.BeetSaturation, false).setTranslationKey("beet_juice");
+			cactus_juice = new DrinkBase(ConfigHandler.CactusAmount, ConfigHandler.CactusSaturation, false).setTranslationKey("cactus_juice");
+			slime_juice = new DrinkBase(ConfigHandler.SlimeAmount, ConfigHandler.SlimeSaturation, false).setTranslationKey("slime_juice");
+			wheat_juice = new DrinkBase(ConfigHandler.WheatAmount, ConfigHandler.WheatSaturation, false).setTranslationKey("wheat_juice");
+			melon_juice = new DrinkBase(ConfigHandler.MelonAmount, ConfigHandler.MelonSaturation, false).setTranslationKey("melon_juice");
+			pumpkin_juice = new DrinkBase(ConfigHandler.PumpkinAmount, ConfigHandler.PumpkinSaturation, false).setTranslationKey("pumpkin_juice");
 		}
 		
 		// Apples
@@ -135,42 +135,42 @@ public class TechFoods {
 		
 		// Extra Food
 		if (ConfigHandler.CookedBacon){
-		    raw_bacon = new FoodBase(1, 0.1F, true).setUnlocalizedName("raw_bacon");
-		    cooked_bacon = new FoodBase(3, 0.3F, true).setUnlocalizedName("cooked_bacon");
+		    raw_bacon = new FoodBase(1, 0.1F, true).setTranslationKey("raw_bacon");
+		    cooked_bacon = new FoodBase(3, 0.3F, true).setTranslationKey("cooked_bacon");
 	    }
 	    if (ConfigHandler.MonsterJerky){
-		    monster_jerky = new FoodBase(4, 0.5F, true).setUnlocalizedName("monster_jerky");
+		    monster_jerky = new FoodBase(4, 0.5F, true).setTranslationKey("monster_jerky");
 	    }
 	    if (ConfigHandler.ToastedBread){
-		    toasted_bread = new FoodBase(ConfigHandler.ToastedAmount, ConfigHandler.ToastedSaturation, true).setUnlocalizedName("toasted_bread");
+		    toasted_bread = new FoodBase(ConfigHandler.ToastedAmount, ConfigHandler.ToastedSaturation, true).setTranslationKey("toasted_bread");
 	    }
 	    if (ConfigHandler.FriedEgg){
-		    fried_egg = new FoodBase(4, 0.6F, true).setUnlocalizedName("fried_egg");
+		    fried_egg = new FoodBase(4, 0.6F, true).setTranslationKey("fried_egg");
 	    }
 	    if (ConfigHandler.CookedMushrooms){
-		    cooked_mushroom_brown = new FoodBase(2, 0.3F, false).setUnlocalizedName("cooked_mushroom_brown");
-		    cooked_mushroom_red = new FoodBase(2, 0.3F, false).setUnlocalizedName("cooked_mushroom_red");
+		    cooked_mushroom_brown = new FoodBase(2, 0.3F, false).setTranslationKey("cooked_mushroom_brown");
+		    cooked_mushroom_red = new FoodBase(2, 0.3F, false).setTranslationKey("cooked_mushroom_red");
 	    }
 	    if (ConfigHandler.BaconEggs){
-		    bacon_eggs = new FoodBase(6, 0.7F, false).setUnlocalizedName("bacon_eggs");
+		    bacon_eggs = new FoodBase(6, 0.7F, false).setTranslationKey("bacon_eggs");
 	    }
 	    if (ConfigHandler.LittleCandy){
-		    little_candy = new FoodBase(1, 0.6F, true).setUnlocalizedName("little_candy");
+		    little_candy = new FoodBase(1, 0.6F, true).setTranslationKey("little_candy");
 	    }
 	    if (ConfigHandler.CookedApple){
-		    cooked_apple = new FoodBase(8, 0.75F, true).setUnlocalizedName("cooked_apple");
+		    cooked_apple = new FoodBase(8, 0.75F, true).setTranslationKey("cooked_apple");
 	    }
 	    if (ConfigHandler.Sandwiches){
-	    	bread_slice = new FoodBase(1, 0.1F, true).setUnlocalizedName("bread_slice");
-		    rabbit_sandwhich = new FoodBase(8, 1.0F, true).setUnlocalizedName("rabbit_sandwhich");
-		    bacon_eggs_sandwhich = new FoodBase(9, 1.0F, true).setUnlocalizedName("bacon_eggs_sandwhich");
-		    chicken_sandwhich = new FoodBase(8, 1.0F, true).setUnlocalizedName("chicken_sandwhich");
-		    beef_sandwhich = new FoodBase(10, 1.0F, true).setUnlocalizedName("beef_sandwhich");
-		    bacon_sandwhich = new FoodBase(6, 1.0F, true).setUnlocalizedName("bacon_sandwhich");
+	    	bread_slice = new FoodBase(1, 0.1F, true).setTranslationKey("bread_slice");
+		    rabbit_sandwhich = new FoodBase(8, 1.0F, true).setTranslationKey("rabbit_sandwhich");
+		    bacon_eggs_sandwhich = new FoodBase(9, 1.0F, true).setTranslationKey("bacon_eggs_sandwhich");
+		    chicken_sandwhich = new FoodBase(8, 1.0F, true).setTranslationKey("chicken_sandwhich");
+		    beef_sandwhich = new FoodBase(10, 1.0F, true).setTranslationKey("beef_sandwhich");
+		    bacon_sandwhich = new FoodBase(6, 1.0F, true).setTranslationKey("bacon_sandwhich");
 	    }
 	    
 		// Juicer (Can not be turned off)
-		juicer = new ItemJuicer().setUnlocalizedName("juicer");
+		juicer = new ItemJuicer().setTranslationKey("juicer");
 		
 	}
 }

@@ -1,6 +1,7 @@
 package com.kashdeya.tinyprogressions.capabilities;
 
-import jline.internal.Nullable;
+import javax.annotation.Nullable;
+
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;

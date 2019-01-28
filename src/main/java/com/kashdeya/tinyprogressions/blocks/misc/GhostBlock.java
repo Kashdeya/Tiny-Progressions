@@ -23,7 +23,7 @@ public class GhostBlock extends Block {
         this.setHarvestLevel("pickaxe", 1);
         this.setResistance(10.0F);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("ghost_block");
+        this.setTranslationKey("ghost_block");
     }
 	
     /**

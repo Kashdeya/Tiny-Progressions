@@ -25,7 +25,7 @@ public class SmallBandage extends Item {
 	
 	public SmallBandage() {
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("small_bandage");
+		this.setTranslationKey("small_bandage");
 		this.setMaxStackSize(ConfigHandler.smallBandageHealStack);
 	}
 	

@@ -24,7 +24,7 @@ public class IronApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("iron_apple");
+	    this.setTranslationKey("iron_apple");
 	  }
 	  
 	  @Override

@@ -16,6 +16,6 @@ public class BridgeBuilder extends Block {
         this.setResistance(10.0F);// needs changed!
         this.setSoundType(SoundType.WOOD);// needs changed!
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("bridge_builder");
+        this.setTranslationKey("bridge_builder");
     }
 }

@@ -175,20 +175,20 @@ public class TechBlocks {
 	public static void init() {
 		// glowstone glass
 		if (ConfigHandler.glowstone_glass) {
-			glowstone_glass = new GlowstoneGlass().setUnlocalizedName("glowstone_glass");
+			glowstone_glass = new GlowstoneGlass().setTranslationKey("glowstone_glass");
 		}
 		// quicksand
 		if (ConfigHandler.quick_sand){
-			quick_sand = new QuickSand().setUnlocalizedName("quick_sand");
+			quick_sand = new QuickSand().setTranslationKey("quick_sand");
 		}
 		// wub ore
 		if (ConfigHandler.vasholine){
-			wub_ore = new WubOre().setUnlocalizedName("wub_ore");
-			nether_wub_ore = new NetherWubOre().setUnlocalizedName("nether_wub_ore");
+			wub_ore = new WubOre().setTranslationKey("wub_ore");
+			nether_wub_ore = new NetherWubOre().setTranslationKey("nether_wub_ore");
 		}
 		// Steel Block
 		if (ConfigHandler.steel_ingot){
-			steel_block = new DecoMain().setOreDictName("blockSteel").setUnlocalizedName("steel_block");
+			steel_block = new DecoMain().setOreDictName("blockSteel").setTranslationKey("steel_block");
 		}
 		// Lava Infused Stone Block
 		if (ConfigHandler.lava_infused_stone){
@@ -301,25 +301,25 @@ public class TechBlocks {
 			hardened_stone_bricks = new HardenedBlocks("hardened_stone_bricks", Material.ROCK, TechBlocks.hardened_stone_bricks, 1, 1);
 			hardened_stone_smallbricks = new HardenedBlocks("hardened_stone_smallbricks", Material.ROCK, TechBlocks.hardened_stone_smallbricks, 1, 1);
 			
-			hardened_stone_stairs = new Stairs(hardened_stone).setUnlocalizedName("hardened_stone_stairs");
-            hardened_stone_bricks_stairs = new Stairs(hardened_stone_bricks).setUnlocalizedName("hardened_stone_bricks_stairs");
-            hardened_stone_smallbricks_stairs = new Stairs(hardened_stone_smallbricks).setUnlocalizedName("hardened_stone_smallbricks_stairs");
+			hardened_stone_stairs = new Stairs(hardened_stone).setTranslationKey("hardened_stone_stairs");
+            hardened_stone_bricks_stairs = new Stairs(hardened_stone_bricks).setTranslationKey("hardened_stone_bricks_stairs");
+            hardened_stone_smallbricks_stairs = new Stairs(hardened_stone_smallbricks).setTranslationKey("hardened_stone_smallbricks_stairs");
             
-            hardened_stone_slab_double = new Slabs().setDropped(hardened_stone_slab_half).setUnlocalizedName("hardened_stone_slab_double");
-            hardened_stone_slab_half = new Slabs((BlockSlab)hardened_stone_slab_double).setUnlocalizedName("hardened_stone_slab_half");
+            hardened_stone_slab_double = new Slabs().setDropped(hardened_stone_slab_half).setTranslationKey("hardened_stone_slab_double");
+            hardened_stone_slab_half = new Slabs((BlockSlab)hardened_stone_slab_double).setTranslationKey("hardened_stone_slab_half");
 
-            hardened_stone_bricks_slab_double = new Slabs().setDropped(hardened_stone_bricks_slab_half).setUnlocalizedName("hardened_stone_bricks_slab_double");
-            hardened_stone_bricks_slab_half = new Slabs((BlockSlab)hardened_stone_bricks_slab_double).setUnlocalizedName("hardened_stone_bricks_slab_half");
+            hardened_stone_bricks_slab_double = new Slabs().setDropped(hardened_stone_bricks_slab_half).setTranslationKey("hardened_stone_bricks_slab_double");
+            hardened_stone_bricks_slab_half = new Slabs((BlockSlab)hardened_stone_bricks_slab_double).setTranslationKey("hardened_stone_bricks_slab_half");
             
-            hardened_stone_smallbricks_slab_double = new Slabs().setDropped(hardened_stone_smallbricks_slab_half).setUnlocalizedName("hardened_stone_smallbricks_slab_double");
-            hardened_stone_smallbricks_slab_half = new Slabs((BlockSlab)hardened_stone_smallbricks_slab_double).setUnlocalizedName("hardened_stone_smallbricks_slab_half");
+            hardened_stone_smallbricks_slab_double = new Slabs().setDropped(hardened_stone_smallbricks_slab_half).setTranslationKey("hardened_stone_smallbricks_slab_double");
+            hardened_stone_smallbricks_slab_half = new Slabs((BlockSlab)hardened_stone_smallbricks_slab_double).setTranslationKey("hardened_stone_smallbricks_slab_half");
 		}
 		if (ConfigHandler.old_reed) {
 			old_reed = new OldReed();
 		}
 		// Lamps
 		if (ConfigHandler.ColorLamps){
-			lamp = new Lamp().setUnlocalizedName("lamp");
+			lamp = new Lamp().setTranslationKey("lamp");
 			colored_lamp = new LampColored();
 		}
 		// Glowstone

@@ -24,7 +24,7 @@ public class RedstoneApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("redstone_apple");
+	    this.setTranslationKey("redstone_apple");
 	  }
 	  
 	  @Override

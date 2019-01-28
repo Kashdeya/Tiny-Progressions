@@ -16,6 +16,6 @@ public class WaterHarvester extends Block {
         this.setResistance(10.0F);// needs changed!
         this.setSoundType(SoundType.STONE);// needs changed!
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("water_harvester");
+        this.setTranslationKey("water_harvester");
     }
 }

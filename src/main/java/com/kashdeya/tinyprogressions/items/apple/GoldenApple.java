@@ -17,7 +17,7 @@ public class GoldenApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("golden_apple");
+	    this.setTranslationKey("golden_apple");
 	  }
 	  
 	  @Override

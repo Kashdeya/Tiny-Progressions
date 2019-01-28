@@ -25,7 +25,7 @@ public class BoneBlock extends Block implements IOreDictEntry{
 		this.setResistance(5.0F);
 		this.setSoundType(SoundType.GROUND);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("bone_block");
+		this.setTranslationKey("bone_block");
 	}
 	
 	@Override

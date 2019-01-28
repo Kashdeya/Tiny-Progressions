@@ -21,7 +21,7 @@ public class CompressedBlocks extends Block{
 		this.meta = meta;
 		this.least_quantity = least_quantity;
 		this.most_quantity = most_quantity;
-		this.setUnlocalizedName(unlocalizedName);
+		this.setTranslationKey(unlocalizedName);
 		this.setHarvestLevel("pickaxe", 1);
         this.setSoundType(sound);
         this.setCreativeTab(TinyProgressions.tabTP);

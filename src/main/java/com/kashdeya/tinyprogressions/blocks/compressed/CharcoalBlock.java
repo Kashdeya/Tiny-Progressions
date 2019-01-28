@@ -23,7 +23,7 @@ public class CharcoalBlock extends Block implements IOreDictEntry{
 		this.setHarvestLevel("pickaxe", 1);
 		this.setSoundType(SoundType.STONE);
 		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setUnlocalizedName("charcoal_block");
+		this.setTranslationKey("charcoal_block");
 	}
 	
 	@Override

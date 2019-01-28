@@ -44,7 +44,7 @@ public class IronFurnaceBlock extends BlockHorizontal implements ITileEntityProv
 		this.setResistance(1000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(SoundType.STONE);
-		this.setUnlocalizedName("iron_furnace_block");
+		this.setTranslationKey("iron_furnace_block");
 		this.cookSpeedInTicks = cookSpeedInTicksIn;
 	}
 	
@@ -153,7 +153,7 @@ public class IronFurnaceBlock extends BlockHorizontal implements ITileEntityProv
 	@Override
 	public IBlockState getStateFromMeta(int meta)
 	{
-		 return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta)).withProperty(ISBURNING, (meta >> 2) == 1 ? true : false);
+		 return this.getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta)).withProperty(ISBURNING, (meta >> 2) == 1 ? true : false);
 	}
 
 	/**

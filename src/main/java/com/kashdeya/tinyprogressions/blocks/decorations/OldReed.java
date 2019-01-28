@@ -31,7 +31,7 @@ public class OldReed extends BlockBush implements IShearable {
         this.setCreativeTab(TinyProgressions.tabTP);
         this.setHardness(0.0F);
         this.setSoundType(SoundType.PLANT);
-        this.setUnlocalizedName("old_reed");
+        this.setTranslationKey("old_reed");
     }
 	
 	@Override

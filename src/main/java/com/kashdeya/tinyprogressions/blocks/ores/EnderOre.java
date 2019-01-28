@@ -15,6 +15,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityEndermite;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
@@ -36,7 +37,7 @@ public class EnderOre extends Block implements IOreDictEntry {
         this.setHarvestLevel("pickaxe", 1);
         this.setSoundType(SoundType.STONE);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("ender_ore");
+        this.setTranslationKey("ender_ore");
     }
     
 	@Override
@@ -51,8 +52,8 @@ public class EnderOre extends Block implements IOreDictEntry {
     }
 	
     @Override
-    public void onBlockDestroyedByPlayer(World world, BlockPos pos, IBlockState state) {
-    	if (ConfigHandler.ender_mite){
+    public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player){
+    	if (ConfigHandler.ender_mite && !world.isRemote){
             int x = pos.getX();
             int y = pos.getY();
             int z = pos.getZ();
@@ -97,11 +98,13 @@ public class EnderOre extends Block implements IOreDictEntry {
         }
     }
     
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.CUTOUT;
-	}
+	
+	@Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer()
+    {
+        return BlockRenderLayer.CUTOUT;
+    }
     
     @Override
     public int quantityDropped(Random rand) {

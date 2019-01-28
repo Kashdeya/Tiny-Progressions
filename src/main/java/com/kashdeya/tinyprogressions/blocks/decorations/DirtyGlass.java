@@ -26,7 +26,7 @@ public class DirtyGlass extends BlockGlass implements IOreDictEntry
         this.setHardness(0.3F);
         this.setSoundType(SoundType.GLASS);
         this.setCreativeTab(TinyProgressions.tabTP);
-        this.setUnlocalizedName("dirty_glass");
+        this.setTranslationKey("dirty_glass");
     }
     
     @Override

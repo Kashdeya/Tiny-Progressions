@@ -48,14 +48,16 @@ public class BlockGrowth extends Block {
 		this.setResistance(1000.0F);
 		this.setCreativeTab(TinyProgressions.tabTP);
 		this.setSoundType(SoundType.METAL);
-		this.setUnlocalizedName("growth_block");
+		this.setTranslationKey("growth_block");
 	}
     
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer()
-	{
-		return BlockRenderLayer.CUTOUT;
-	}
+	@Override
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer()
+    {
+        return BlockRenderLayer.CUTOUT;
+    }
+    
 	
 	@Override
     public boolean isOpaqueCube(IBlockState state)

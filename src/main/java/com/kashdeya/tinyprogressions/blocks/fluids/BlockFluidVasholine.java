@@ -30,7 +30,7 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 
 	public BlockFluidVasholine() {
 		super(ModFluids.VASHOLINE, MaterialHandler.VASHOLINE);
-		setUnlocalizedName("vasholine");
+		setTranslationKey("vasholine");
 		this.setLightLevel(1.0F);
 	}
 
@@ -45,7 +45,7 @@ public class BlockFluidVasholine extends BlockFluidClassic {
 	}	
 
 	@Override
-	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+	public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 		if (entity instanceof EntityPlayer) {
 			if(world.getTotalWorldTime()%20 == 0 && ((EntityPlayer) entity).getHealth() < ((EntityPlayer) entity).getMaxHealth()) // add whatever time you want here 20 = every 1 second
 				((EntityPlayer) entity).heal(ConfigHandler.vasholine_heal_amount);

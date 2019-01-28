@@ -24,7 +24,7 @@ public class DiamondApple extends ItemFood
 	    super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
-	    this.setUnlocalizedName("diamond_apple");
+	    this.setTranslationKey("diamond_apple");
 	  }
 	  
 	  @Override

@@ -65,9 +65,9 @@ public class Slabs extends BlockSlab implements IItemProvider
     }
     
     @Override
-    public String getUnlocalizedName(int meta)
+    public String getTranslationKey(int meta)
     {
-        return getUnlocalizedName();
+        return getTranslationKey();
     }
     
     @Override

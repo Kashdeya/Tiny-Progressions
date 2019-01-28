@@ -191,7 +191,7 @@ tile.ender_ore.name=Эндер-руда
 item.ender_dust.name=Эндер-пыль
 
 #Goodies
-item.birthday_pickaxe.name=Кирка для вечеринки
+item.BirthdayPickaxe.name=Кирка для вечеринки
 
 #Creative Tabs
 itemGroup.tiny_progressions=Tiny Progressions

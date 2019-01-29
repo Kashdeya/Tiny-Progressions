@@ -81,7 +81,7 @@ public class WateringCanBase extends Item
             }
             
             RayTraceResult raytrace = rayTrace(worldIn, player, false);
-            if( raytrace != null && raytrace.typeOfHit == Type.BLOCK)
+            if(raytrace != null && raytrace.typeOfHit == Type.BLOCK)
             {
                 attemptWaterParticles(worldIn, raytrace.getBlockPos());
                 attemptWater(worldIn, raytrace.getBlockPos());

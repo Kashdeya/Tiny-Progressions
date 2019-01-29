@@ -91,7 +91,7 @@ public class OtherRecipes
 					"wew",
 	                "sws",
 	                " s ",
-					's', new ItemStack(TechItems.steel_ingot),
+					's', "ingotSteel",
 					'w', new ItemStack(Items.WATER_BUCKET),
 					'e', new ItemStack(Items.ENDER_EYE));
 		}

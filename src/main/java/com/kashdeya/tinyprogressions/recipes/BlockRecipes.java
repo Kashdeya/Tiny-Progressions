@@ -1,6 +1,7 @@
 package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.handlers.NBTIngredient;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.properties.EnumDustColor;
@@ -93,7 +94,7 @@ public class BlockRecipes {
 					"cc",
 					"cc",
 					'c', new ItemStack(Blocks.SOUL_SAND));
-			SOUL_SAND = new ShapelessRecipe(new ItemStack(Blocks.SOUL_SAND, 9), new ItemStack(TechBlocks.soul_sandstone));
+			SOUL_SAND = new ShapelessRecipe(new ItemStack(Blocks.SOUL_SAND, 4), new ItemStack(TechBlocks.soul_sandstone));
 		}
 		if (ConfigHandler.nether_compressed_blocks){
 			NETHERRACK = new ShapelessRecipe(new ItemStack(Blocks.NETHERRACK, 9), new ItemStack(TechBlocks.compressed_nether_block));
@@ -245,7 +246,7 @@ public class BlockRecipes {
 					"cgc",
 					"scs",
 					"cgc",
-					's', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.STRONG_SWIFTNESS),
+					's', new NBTIngredient(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.STRONG_SWIFTNESS)),
 					'g', new ItemStack(TechBlocks.growth_upgrade),
 					'c', new ItemStack(Items.END_CRYSTAL));
 		}

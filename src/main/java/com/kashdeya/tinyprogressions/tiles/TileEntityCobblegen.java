@@ -85,7 +85,6 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 			else if (tile instanceof IInventory) {
 				IInventory iinventory = (IInventory) tile;
 				if (isInventoryFull(iinventory, EnumFacing.UP)) {
-					System.out.println("Full");
 					return;
 				} else {
 					if (this.outputInventory.getStackInSlot(0) != ItemStack.EMPTY) {

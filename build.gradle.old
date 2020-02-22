@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
+
+version = "${version}"
+group= "com.kashdeya.tinyprogressions" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "tinyprogressions"
+
+sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    runDir = "run"
+	mappings = "${mappings_version}"
+    version = "${mcversion}-${forge_version}"
+    replaceIn "${mod_info_path}"
+    replace "%VERSION%", "${version}"
+    replace "%FORGE_VERSION%", "${forge_version}"
+}
+
+display_version = "${display_version}" ?: "${mcversion}"
+version = "${display_version}-${mod_version}-${release_version}"
+
+processResources
+{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

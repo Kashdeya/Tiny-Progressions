@@ -5,8 +5,7 @@ import java.util.Random;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
-import net.minecraft.block.state.pattern.BlockMatcher;
-import net.minecraft.init.Blocks;
+import net.minecraft.block.pattern.BlockMatcher;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;

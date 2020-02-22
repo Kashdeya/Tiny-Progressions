@@ -7,13 +7,13 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.models.IModelRegistrar;
 import com.kashdeya.tinyprogressions.registry.utils.IMetadata;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import javafx.geometry.Side;
+import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemBaseMeta extends ItemBase implements IModelRegistrar, IMetadata

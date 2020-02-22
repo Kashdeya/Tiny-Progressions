@@ -3,8 +3,6 @@ package com.kashdeya.tinyprogressions.container;
 import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class PouchContainer extends Container

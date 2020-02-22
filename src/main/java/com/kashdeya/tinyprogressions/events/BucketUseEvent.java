@@ -4,7 +4,7 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class BucketUseEvent {
     @SubscribeEvent

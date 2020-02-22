@@ -3,11 +3,11 @@ package com.kashdeya.tinyprogressions.container;
 import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 import com.kashdeya.tinyprogressions.tiles.TileEntityOreDoubler;
 
+import javafx.geometry.Side;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.IContainerListener;
+import net.minecraft.inventory.container.IContainerListener;
 import net.minecraft.util.EnumFacing;
-import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 

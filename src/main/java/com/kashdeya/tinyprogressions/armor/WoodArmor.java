@@ -2,8 +2,8 @@ package com.kashdeya.tinyprogressions.armor;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;

@@ -30,7 +30,7 @@ public class Pouch extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
     {
-        player.openGui(TinyProgressions.instance, 0, world, 0, 0, 0);
+        player.openGui(TinyProgressions.INSTANCE, 0, world, 0, 0, 0);
         return ActionResult.newResult(EnumActionResult.SUCCESS, player.getHeldItem(hand));
     }
 }

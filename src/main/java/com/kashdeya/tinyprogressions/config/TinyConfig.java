@@ -7,8 +7,6 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
 
-import net.minecraftforge.common.config.Configuration;
-
 public class TinyConfig {
 	
 	public static Configuration config;

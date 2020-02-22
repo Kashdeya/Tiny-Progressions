@@ -5,18 +5,17 @@ import java.util.Random;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityOreDoubler;
 
+import javafx.geometry.Side;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.state.IProperty;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -24,11 +23,12 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
+import net.minecraft.world.chunk.BlockStateContainer;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class IronFurnaceBlock extends BlockHorizontal implements ITileEntityProvider{
@@ -56,7 +56,7 @@ public class IronFurnaceBlock extends BlockHorizontal implements ITileEntityProv
 	@Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-		playerIn.openGui(TinyProgressions.instance, 1, worldIn, pos.getX(), pos.getY(), pos.getZ());
+		playerIn.openGui(TinyProgressions.INSTANCE, 1, worldIn, pos.getX(), pos.getY(), pos.getZ());
 			
 		return true;
     }

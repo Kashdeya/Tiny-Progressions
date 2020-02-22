@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.items.tools.obsidian;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;

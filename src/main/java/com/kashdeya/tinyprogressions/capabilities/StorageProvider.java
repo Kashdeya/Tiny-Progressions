@@ -2,15 +2,16 @@ package com.kashdeya.tinyprogressions.capabilities;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.Capability.IStorage;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>, Capability.IStorage<IStorage<?>>
+public class StorageProvider implements ICapabilitySerializable<CompoundNBT>, Capability.IStorage<IStorage<?>>
 {
     private final InventoryStorage instance;
  
@@ -29,42 +30,42 @@ public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>,
         instance = new InventoryStorage(name, inventorySize);
     }
     
-    @Override
-    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing)
+    public boolean hasCapability(Capability<?> capability, @Nullable Direction facing)
     {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
+        return capability.equals(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
+    }
+    
+    
+	@Override
+	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+        return hasCapability(cap, side) ? cap : null;
     }
  
 	@Override
-    @SuppressWarnings("unchecked")
-    public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing)
-    {
-        return hasCapability(capability, facing) ? (T)instance : null;
-    }
- 
-    @Override
-    public NBTBase writeNBT(Capability<IStorage<?>> capability, IStorage<?> instance, EnumFacing side)
-    {
+	public INBT writeNBT(Capability<IStorage<?>> capability, IStorage<?> instance, Direction side) {
         return serializeNBT();
     }
  
-    @Override
-    public void readNBT(Capability<IStorage<?>> capability, IStorage<?> instance, EnumFacing facing, NBTBase nbt)
-    {
-        deserializeNBT((NBTTagCompound)nbt);
+
+	@Override
+	public void readNBT(Capability<IStorage<?>> capability, IStorage<?> instance, Direction side, INBT nbt) {
+        deserializeNBT((CompoundNBT)nbt);
     }
 
     @Override
-    public NBTTagCompound serializeNBT()
+    public CompoundNBT serializeNBT()
     {
-        NBTTagCompound compound = new NBTTagCompound();
+    	CompoundNBT compound = new CompoundNBT();
         instance.writeToNBT(compound);
         return compound;
     }
 
     @Override
-    public void deserializeNBT(NBTTagCompound nbt)
+    public void deserializeNBT(CompoundNBT nbt)
     {
         instance.readFromNBT(nbt);
     }
+
+    
+
 }

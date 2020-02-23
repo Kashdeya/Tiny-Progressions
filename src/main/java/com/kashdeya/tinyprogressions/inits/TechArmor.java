@@ -1,24 +1,5 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import com.kashdeya.tinyprogressions.armor.BamShirt;
-import com.kashdeya.tinyprogressions.armor.BoneArmor;
-import com.kashdeya.tinyprogressions.armor.DragonArmour;
-import com.kashdeya.tinyprogressions.armor.EmeraldArmor;
-import com.kashdeya.tinyprogressions.armor.FlintArmor;
-import com.kashdeya.tinyprogressions.armor.LapisArmor;
-import com.kashdeya.tinyprogressions.armor.LavaArmour;
-import com.kashdeya.tinyprogressions.armor.ObsidianArmor;
-import com.kashdeya.tinyprogressions.armor.QuartzArmor;
-import com.kashdeya.tinyprogressions.armor.RedstoneArmor;
-import com.kashdeya.tinyprogressions.armor.StoneArmor;
-import com.kashdeya.tinyprogressions.armor.WitherArmour;
-import com.kashdeya.tinyprogressions.armor.WoodArmor;
-import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
-import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
-
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorItem;
 
 public class TechArmor {
@@ -97,6 +78,7 @@ public class TechArmor {
 	// bam t-shirt
 	public static ArmorItem bam_tshirt;
 	
+	//TODO change how its initialized. 
 	public static void init(){
 		
 //		// bam t-shirt
@@ -199,5 +181,5 @@ public class TechArmor {
 //		   	redstone_leggings = (ArmorItem) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 2, EquipmentSlotType.LEGS).setTranslationKey("redstone_leggings");
 //		   	redstone_boots = (ArmorItem) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EquipmentSlotType.FEET).setTranslationKey("redstone_boots");
 //		}
-//	}
+	}
 }

@@ -1,7 +1,14 @@
 package com.kashdeya.tinyprogressions.tiles;
 
+import net.minecraft.tileentity.TileEntityType;
+
 public class TileEntityIronCobblegen extends TileEntityCobblegen {
 
+
+	public TileEntityIronCobblegen(TileEntityType<?> tileEntityTypeIn) {
+		super(tileEntityTypeIn);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public int getCycleUpdate() {

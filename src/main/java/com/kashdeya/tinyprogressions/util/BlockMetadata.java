@@ -27,7 +27,7 @@ public class BlockMetadata extends Block implements IModelRegistrar, IMetadata, 
 	public BlockMetadata(Material material, String[] unlocalNames)
 	{
 		super(material);
-        setCreativeTab(TinyProgressions.tabTP);
+        setCreativeTab(TinyProgressions.TAB);
 		this.unlocalNames = unlocalNames;
 	}
 	

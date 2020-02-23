@@ -6,6 +6,7 @@ import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.util.ResourceLocation;
 
@@ -16,7 +17,7 @@ public class RemoveItems {
 	public static void initRemove() {
 		
 		if (ConfigHandler.ApplePro){
-			removeRecipe(new ItemStack(Items.GOLDEN_APPLE, 1, 0));
+			removeRecipe(new ItemStack(Items.GOLDEN_APPLE, 1));
 		}
 		
 	}

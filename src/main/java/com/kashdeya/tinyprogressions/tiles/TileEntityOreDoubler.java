@@ -12,6 +12,7 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -22,7 +23,12 @@ import net.minecraftforge.items.CapabilityItemHandler;
 public class TileEntityOreDoubler extends TileEntity implements  ITickable{
     
 	
-    /** The number of ticks that the furnace will keep burning */
+    public TileEntityOreDoubler(TileEntityType<?> tileEntityTypeIn) {
+		super(tileEntityTypeIn);
+		// TODO Auto-generated constructor stub
+	}
+
+	/** The number of ticks that the furnace will keep burning */
     private int furnaceBurnTime;
     /** The number of ticks that a fresh copy of the currently-burning item would keep the furnace burning for */
     private int currentItemBurnTime;

@@ -1,11 +1,11 @@
 package com.kashdeya.tinyprogressions.capabilities;
 
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -36,7 +36,7 @@ public class InventoryStorage extends ItemStackHandler
 	 
 	    public ITextComponent getDisplayName()
 	    {
-	        return new TextComponentTranslation(name);
+	        return new TranslationTextComponent(name);
 	    }
 	    
 	    
@@ -150,20 +150,20 @@ public class InventoryStorage extends ItemStackHandler
 	        	ItemStack stack = getAndRemoveSlot(i);
 	        	
 	        	if(!stack.isEmpty()){
-	        		world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY()+1, pos.getZ(), stack));
+	        		world.addEntity(new ItemEntity(world, pos.getX(), pos.getY()+1, pos.getZ(), stack));
 	        	}
 	        }
 		}
 	    
 	    
-	    public void writeToNBT(NBTTagCompound compound)
+	    public void writeToNBT(CompoundNBT compound)
 	    {
-	    	compound.setTag("Inventory", serializeNBT());
+	    	compound.put("Inventory", serializeNBT());
         }
 	     
-	    public void readFromNBT(NBTTagCompound compound)
+	    public void readFromNBT(CompoundNBT compound)
 	    {
-	    	deserializeNBT(compound.getCompoundTag("Inventory"));
+	    	deserializeNBT(compound.getCompound("Inventory"));
 	    }
 
 }

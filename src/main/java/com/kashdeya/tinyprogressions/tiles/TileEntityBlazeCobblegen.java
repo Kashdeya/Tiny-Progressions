@@ -1,6 +1,13 @@
 package com.kashdeya.tinyprogressions.tiles;
 
+import net.minecraft.tileentity.TileEntityType;
+
 public class TileEntityBlazeCobblegen extends TileEntityCobblegen {
+
+	public TileEntityBlazeCobblegen(TileEntityType<?> tileEntityTypeIn) {
+		super(tileEntityTypeIn);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public int getCycleUpdate() {

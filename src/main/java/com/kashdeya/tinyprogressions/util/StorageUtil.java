@@ -11,8 +11,9 @@ import javax.annotation.Nullable;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 
 public class StorageUtil
@@ -22,7 +23,7 @@ public class StorageUtil
         if(itemstack == null || itemstack.isEmpty())
             return new byte[0];
         
-        NBTTagCompound nbt = itemstack.writeToNBT(new NBTTagCompound());
+        CompoundNBT nbt = itemstack.write(new CompoundNBT());
         
         String id = nbt.getString("id");
         if(id.equals("minecraft:air"))
@@ -35,8 +36,8 @@ public class StorageUtil
         short damage = nbt.getShort("Damage");
         boolean vanilla = id.startsWith("minecraft:") && id.indexOf(':', "minecraft:".length()) < 0;
         
-        NBTTagCompound tag = nbt.hasKey("tag") ? nbt.getCompoundTag("tag") : null;
-        NBTTagCompound forgeCaps = nbt.hasKey("ForgeCaps") ? nbt.getCompoundTag("ForgeCaps") : null;
+        CompoundNBT tag = nbt.hasUniqueId("tag") ? nbt.getCompound("tag") : null;
+        CompoundNBT forgeCaps = nbt.hasUniqueId("ForgeCaps") ? nbt.getCompound("ForgeCaps") : null;
         
         byte type = 0;
         if(damage != 0)
@@ -118,7 +119,7 @@ public class StorageUtil
         else
             damage = 0;
         
-        NBTTagCompound tags;
+        CompoundNBT tags;
         if((type & 0x2) != 0)
         {
             try
@@ -133,7 +134,7 @@ public class StorageUtil
         else
             tags = null;
         
-        NBTTagCompound forgeCaps;
+        CompoundNBT forgeCaps;
         if((type & 0x4) != 0)
         {
             try
@@ -151,17 +152,17 @@ public class StorageUtil
         if(buffer.readableBytes() > 0)
             return ItemStack.EMPTY;
         
-        NBTTagCompound finalTag = new NBTTagCompound();
-        finalTag.setString("id", id);
-        finalTag.setByte("Count", count);
-        finalTag.setShort("Damage", damage);
+        CompoundNBT finalTag = new CompoundNBT();
+        finalTag.putString("id", id);
+        finalTag.putByte("Count", count);
+        finalTag.putShort("Damage", damage);
         
         if(tags != null)
-            finalTag.setTag("tag", tags);
+            finalTag.put("tag", tags);
         if(forgeCaps != null)
-            finalTag.setTag("ForgeCaps", forgeCaps);
+            finalTag.put("ForgeCaps", forgeCaps);
         
-        return new ItemStack(finalTag);
+        return ItemStack.read(finalTag);
     }
     
     private static PacketBuffer writeSmallString(PacketBuffer buffer, String string)
@@ -191,7 +192,7 @@ public class StorageUtil
         return new String(bytes, Charset.forName("UTF-8"));
     }
     
-    private static PacketBuffer writeNBT(PacketBuffer buffer, NBTTagCompound nbt) throws IOException
+    private static PacketBuffer writeNBT(PacketBuffer buffer, CompoundNBT nbt) throws IOException
     {
         if(nbt == null)
         {
@@ -208,7 +209,7 @@ public class StorageUtil
         return buffer;
     }
     
-    private static NBTTagCompound readNBTChecked(PacketBuffer buffer) throws IOException
+    private static CompoundNBT readNBTChecked(PacketBuffer buffer) throws IOException
     {
         int length = buffer.readUnsignedShort();
         

@@ -4,14 +4,16 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -19,6 +21,10 @@ import net.minecraftforge.items.ItemHandlerHelper;
 
 public class TileEntityCobblegen extends TileEntity implements  ITickable //ISidedInventory,
 {
+	public TileEntityCobblegen(TileEntityType<?> tileEntityTypeIn) {
+		super(tileEntityTypeIn);
+	}
+
 	//ItemStack stack = ItemStack.EMPTY;
 	int cycle = 0;
 	
@@ -26,9 +32,9 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 	    	@Override
 			public boolean canInsertSlot(int slot, ItemStack stack) { return false; }
 	    	@Override
-		    public void writeToNBT(NBTTagCompound compound)  { 	compound.setTag("outputInventory", serializeNBT());    }
+		    public void writeToNBT(CompoundNBT compound)  { 	compound.put("outputInventory", serializeNBT());    }
 	    	@Override 
-		    public void readFromNBT(NBTTagCompound compound) { 	deserializeNBT(compound.getCompoundTag("outputInventory"));  }
+		    public void readFromNBT(CompoundNBT compound) { 	deserializeNBT(compound.getCompound("outputInventory"));  }
 	    };
 	    
 	public int getCycleUpdate() {
@@ -66,9 +72,9 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 			
 			this.outputInventory.setStackInSlot(0, getStack());
 			
-			TileEntity tile = world.getTileEntity(pos.offset(EnumFacing.UP));
-			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
-				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
+			TileEntity tile = world.getTileEntity(pos.offset(Direction.UP));
+			if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN)) {
+				IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN);
 
 				if (this.outputInventory.getStackInSlot(0) != ItemStack.EMPTY) {
 					ItemStack stack = this.outputInventory.getStackInSlot(0).copy();
@@ -83,12 +89,12 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 
 			else if (tile instanceof IInventory) {
 				IInventory iinventory = (IInventory) tile;
-				if (isInventoryFull(iinventory, EnumFacing.UP)) {
+				if (isInventoryFull(iinventory, Direction.UP)) {
 					return;
 				} else {
 					if (this.outputInventory.getStackInSlot(0) != ItemStack.EMPTY) {
 						ItemStack stack = this.outputInventory.getStackInSlot(0).copy();
-						ItemStack stack1 = putStackInInventoryAllSlots(iinventory, this.outputInventory.extractItemInternal(0, 1, false), EnumFacing.UP);
+						ItemStack stack1 = putStackInInventoryAllSlots(iinventory, this.outputInventory.extractItemInternal(0, 1, false), Direction.UP);
 						if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0)
 							iinventory.markDirty();
 						else
@@ -100,7 +106,7 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 		}
 	}
 
-	protected boolean isInventoryFull(IInventory inventoryIn, EnumFacing side) {
+	protected boolean isInventoryFull(IInventory inventoryIn, Direction side) {
 		if (inventoryIn instanceof ISidedInventory) {
 			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
 			int[] aint = isidedinventory.getSlotsForFace(side);
@@ -126,7 +132,7 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 	}
 
 	public static ItemStack putStackInInventoryAllSlots(IInventory inventoryIn, ItemStack stack,
-			@Nullable EnumFacing side) {
+			@Nullable Direction side) {
 		if (inventoryIn instanceof ISidedInventory && side != null && !(inventoryIn instanceof TileEntityCobblegen) && inventoryIn.isItemValidForSlot(0, stack.copy())) {
 			ISidedInventory isidedinventory = (ISidedInventory) inventoryIn;
 			int[] aint = isidedinventory.getSlotsForFace(side);
@@ -146,7 +152,7 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 		return stack;
 	}
 
-	private static ItemStack insertStack(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
+	private static ItemStack insertStack(IInventory inventoryIn, ItemStack stack, int index, Direction side) {
 		ItemStack itemstack = inventoryIn.getStackInSlot(index);
 
 		if (canInsertItemInSlot(inventoryIn, stack, index, side)) {
@@ -174,7 +180,7 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 		return stack;
 	}
 
-	private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side) {
+	private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, Direction side) {
 		return inventoryIn.isItemValidForSlot(index, stack) && (!(inventoryIn instanceof ISidedInventory) || ((ISidedInventory) inventoryIn).canInsertItem(index, stack, side));
 	}
 
@@ -184,7 +190,7 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 
 	@SuppressWarnings("unchecked")
     @Override
-    public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+    public <T> T getCapability(Capability<T> capability, Direction facing) {
         if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             return (T) this.outputInventory;
         }
@@ -192,7 +198,7 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
     }
 		
     @Override
-    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+    public boolean hasCapability(Capability<?> capability, Direction facing) {
         return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ||
         super.hasCapability(capability, facing);
     }
@@ -323,19 +329,19 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 	}
 
 	@Override
-	public int[] getSlotsForFace(EnumFacing side)
+	public int[] getSlotsForFace(Direction side)
 	{
 		return new int[]{0};
 	}
 
 	@Override
-	public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction)
+	public boolean canInsertItem(int index, ItemStack itemStackIn, Direction direction)
 	{
 		return false;
 	}
 
 	@Override
-	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction)
+	public boolean canExtractItem(int index, ItemStack stack, Direction direction)
 	{
 		return index == 0 && stack != ItemStack.EMPTY && stack.getItem() == Item.getItemFromBlock(Blocks.COBBLESTONE);
 	}
@@ -363,9 +369,9 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 				
 				this.setInventorySlotContents(0, stack);
 				
-				TileEntity tile = world.getTileEntity(pos.offset(EnumFacing.UP));
-				if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
-					IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
+				TileEntity tile = world.getTileEntity(pos.offset(Direction.UP));
+				if (tile != null && tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN)) {
+					IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN);
 
 					if (getStackInSlot(0) != ItemStack.EMPTY) {
 						ItemStack stack = getStackInSlot(0).copy();
@@ -380,13 +386,13 @@ public class TileEntityCobblegen extends TileEntity implements  ITickable //ISid
 
 				else if (tile instanceof IInventory) {
 					IInventory iinventory = (IInventory) tile;
-					if (isInventoryFull(iinventory, EnumFacing.UP)) {
+					if (isInventoryFull(iinventory, Direction.UP)) {
 						System.out.println("Full");
 						return;
 					} else {
 						if (getStackInSlot(0) != ItemStack.EMPTY) {
 							ItemStack stack = getStackInSlot(0).copy();
-							ItemStack stack1 = putStackInInventoryAllSlots(iinventory, decrStackSize(0, 1), EnumFacing.UP);
+							ItemStack stack1 = putStackInInventoryAllSlots(iinventory, decrStackSize(0, 1), Direction.UP);
 							if (stack1 == ItemStack.EMPTY || stack1.getCount() == 0)
 								iinventory.markDirty();
 							else

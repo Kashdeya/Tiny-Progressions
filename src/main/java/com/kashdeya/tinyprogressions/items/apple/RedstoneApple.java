@@ -9,6 +9,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
+import net.minecraft.item.Food;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -17,11 +18,11 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class RedstoneApple extends ItemFood
+public class RedstoneApple extends Food
 {
 	  public RedstoneApple(int amount, float saturation, boolean isWolfFood)
 	  {
-	    super(amount, saturation, isWolfFood);
+		  super(amount, saturation, isWolfFood);
 	    this.setCreativeTab(TinyProgressions.tabTP);
 	    this.setAlwaysEdible();
 	    this.setTranslationKey("redstone_apple");

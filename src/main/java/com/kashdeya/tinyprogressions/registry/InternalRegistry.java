@@ -8,6 +8,12 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class InternalRegistry
 {
+	
+	
+	
+	
+	
+	
 //	private static Map<ResourceLocation, Block> blocks = Maps.newHashMap();
 //	private static Map<ResourceLocation, Item> items = Maps.newHashMap();
 //	private static Map<ResourceLocation, IRecipe> recipes = Maps.newHashMap();

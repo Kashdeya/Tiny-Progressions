@@ -1,14 +1,11 @@
 package com.kashdeya.tinyprogressions.items.tools.base;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.IItemTier;
 
-import net.minecraft.item.ItemAxe;
-
-public class BaseAxe extends ItemAxe{
+public class BaseAxe extends AxeItem{
 	
-	public BaseAxe(ToolMaterial material, float damage, float speed){
-		super(material, damage, speed);
-		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setMaxStackSize(1);
+	public BaseAxe(IItemTier material, float damage, float speed, Properties prop){
+		super(material, damage, speed, prop);
 	}
 }

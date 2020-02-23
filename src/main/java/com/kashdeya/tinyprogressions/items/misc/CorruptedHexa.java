@@ -2,37 +2,39 @@ package com.kashdeya.tinyprogressions.items.misc;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import com.kashdeya.tinyprogressions.items.ItemBase;
 
-import javafx.geometry.Side;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class CorruptedHexa extends ItemBase {
-	
+
 	public CorruptedHexa() {
-		setMaxStackSize(1);
+		super(new Properties().maxStackSize(1));
 	}
-	
+
 	public void onUpdate(ItemStack stack, World worldIn, Entity player, int itemSlot, boolean isSelected) {
-		if(player instanceof EntityPlayer)
-			((EntityPlayer) player).addPotionEffect(new PotionEffect(MobEffects.POISON, 20 * 20, 0, true, true));
+		if (player instanceof PlayerEntity)
+			((PlayerEntity) player).addPotionEffect(new EffectInstance(Effects.POISON, 20 * 20, 0, true, true));
 	}
-	
-	
+
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
-	{
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.warning_1").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.hexa_1").getFormattedText());
+	@OnlyIn(Dist.CLIENT)
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		tooltip.add(new TranslationTextComponent("tooltip.warning_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+		tooltip.add(new TranslationTextComponent("tooltip.hexa_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
 	}
 }

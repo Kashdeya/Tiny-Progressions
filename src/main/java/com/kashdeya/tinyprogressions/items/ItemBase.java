@@ -8,9 +8,8 @@ import net.minecraft.item.Item;
 public class ItemBase extends Item implements IOreDictEntry{
 	String oredictName;
 	
-	public ItemBase() {
-		super();
-		this.setCreativeTab(TinyProgressions.tabTP);
+	public ItemBase(Properties properties) {
+		super(properties.group(TinyProgressions.TAB));
 	}
 	
 	public ItemBase setOreDictName(String oredictName)

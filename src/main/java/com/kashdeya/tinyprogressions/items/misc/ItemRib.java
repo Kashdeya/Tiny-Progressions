@@ -2,23 +2,30 @@ package com.kashdeya.tinyprogressions.items.misc;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import com.kashdeya.tinyprogressions.items.ItemBase;
 
-import javafx.geometry.Side;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ItemRib extends ItemBase {
 	
+	public ItemRib(Properties properties) {
+		super(properties);
+	}
+
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
-	{
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.rib_1").getFormattedText());
+	@OnlyIn(Dist.CLIENT)
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		tooltip.add(new TranslationTextComponent("tooltip.rib_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
 	}
 	
 }

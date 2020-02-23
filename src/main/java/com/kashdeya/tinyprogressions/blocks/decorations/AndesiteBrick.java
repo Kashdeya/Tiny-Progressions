@@ -15,18 +15,20 @@ import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 
 public class AndesiteBrick extends Block implements IOreDictEntry {
 	
 	public AndesiteBrick()
     {
-        super(Material.ROCK);
-        this.setHardness(1.5F);
-        this.setHarvestLevel("pickaxe", 1);
-        this.setResistance(10.0F);
-        this.setSoundType(SoundType.STONE);
-        this.setCreativeTab(TinyProgressions.tabTP);
-        this.setTranslationKey("andesite_brick");
+        super(Properties.create(Material.ROCK)
+        		.hardnessAndResistance(1.5F, 10F)
+        		.harvestLevel(1)
+        		.harvestTool(ToolType.PICKAXE)
+        		.sound(SoundType.STONE));
+        
+//        this.setCreativeTab(TinyProgressions.tabTP);
+//        this.setTranslationKey("andesite_brick");
     }
 	
 	@Override

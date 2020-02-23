@@ -21,7 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class StandardBlock extends Block implements IItemProvider
 {
-	private ItemBlock itemBlock;
+	private Item itemBlock;
 	private BlockRenderLayer renderLayer;
 	
 	public StandardBlock(Material material)

@@ -2,75 +2,97 @@ package com.kashdeya.tinyprogressions.blocks.cobblegen;
 
 import java.util.List;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import javax.annotation.Nullable;
+
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 
-import javafx.geometry.Side;
 import net.minecraft.block.Block;
-import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumBlockRenderType;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.common.ToolType;
 
-public class Cobblegen extends Block implements ITileEntityProvider{
+public class Cobblegen extends Block{
 
-	public Cobblegen()
-	{
-		super(Material.IRON);
-    	this.setHardness(1.0F);
-    	this.setHarvestLevel("pickaxe", 1);
-    	this.setResistance(1000.0F);
-    	this.setLightLevel(0.5F);
-    	this.setLightOpacity(1);
-    	this.setCreativeTab(TinyProgressions.tabTP);
-    	this.setSoundType(SoundType.STONE);
-    	this.setTranslationKey("cobblegen_block");
+	
+	//TODO Move latter....
+	static {
+		Block blazeCobbleGen   = new Cobblegen(5, 64, Properties.create(Material.IRON));
+		Block diamondCobbleGen = new Cobblegen(10, 64, Properties.create(Material.IRON));
+		Block emeraldCobbleGen = new Cobblegen(1, 64, Properties.create(Material.IRON));
+		Block ironCobbleGen    = new Cobblegen(20, 64, Properties.create(Material.IRON));
 	}
 	
+	int cycleUpdate;
+	int stackSize;
+	
+	
+	public Cobblegen(int cycleUpdate, int stackSize, Properties properties)
+	{
+		super(properties
+				.hardnessAndResistance(1.0F, 1000.0F)
+				.lightValue(1)
+				.sound(SoundType.STONE)
+				.harvestTool(ToolType.PICKAXE)
+				.harvestLevel(1));
+		
+//		this.setTranslationKey("iron_cobblegen_block");
+//		this.setTranslationKey("emerald_cobblegen_block");
+//		this.setTranslationKey("diamond_cobblegen_block");
+//		this.setTranslationKey("blaze_cobblegen_block");
+		
+		this.cycleUpdate = cycleUpdate;
+		this.stackSize = stackSize;
+	}
+	
+	
+
 	@Override
-    @SideOnly(Side.CLIENT)
     public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT_MIPPED;
     }
-    
-    @Override
-    public EnumBlockRenderType getRenderType(IBlockState state)
-    {
-        return EnumBlockRenderType.MODEL;
-    }
-	
+
 	@Override
-    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
-    {
-        return false;
-    }
-	
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+     }
+
+//TODO
+//	@Override
+//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
+//    {
+//        return false;
+//    }
+//	
 	@Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
+    public boolean onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit)
     {
-    	if(world.isRemote)
+    	if(worldIn.isRemote)
     	{
     		return true;
     	}
     	
-    	TileEntity tile = world.getTileEntity(pos);
+    	TileEntity tile = worldIn.getTileEntity(pos);
     	
     	if(tile != null && tile instanceof TileEntityCobblegen)
     	{
@@ -78,7 +100,7 @@ public class Cobblegen extends Block implements ITileEntityProvider{
     		
     		if(!player.isSneaking())
     		{
-        		ItemStack stack = ttest.outputInventory.getAndRemoveSlot(0);
+        		ItemStack stack = ttest.getInventory().getAndRemoveSlot(0);
         		
 	    		if(stack != null)
 	    		{
@@ -90,8 +112,8 @@ public class Cobblegen extends Block implements ITileEntityProvider{
 	    		}
     		} else
     		{
-        		ItemStack stack = ttest.outputInventory.getStackInSlot(0);
-    			player.sendMessage(new TextComponentString(Blocks.COBBLESTONE.getLocalizedName() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
+        		ItemStack stack = ttest.getInventory().getStackInSlot(0);
+    			player.sendMessage(new TranslationTextComponent(Blocks.COBBLESTONE.getNameTextComponent() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
     		}
     	}
     	
@@ -99,32 +121,34 @@ public class Cobblegen extends Block implements ITileEntityProvider{
     }
 
 	@Override
-    public void breakBlock(World world, BlockPos pos, IBlockState state)
-    {
-        TileEntity tile = world.getTileEntity(pos);
+	public void onReplaced(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (oldState.getBlock() != newState.getBlock()) {
+			TileEntity tile =worldIn.getTileEntity(pos);
+			
+			if (tile != null && tile instanceof TileEntityCobblegen)
+			{
+				((TileEntityCobblegen) tile).getInventory().dropInventory(worldIn, pos);
+			}
         
-        if (tile != null && tile instanceof TileEntityCobblegen)
-        {
-        	((TileEntityCobblegen) tile).outputInventory.dropInventory(world, pos);
-        }
-        
-        super.breakBlock(world, pos, state);
+		}
+		super.onReplaced(oldState, worldIn, pos, newState, isMoving);
     }
     
-    @Override
-	public TileEntity createNewTileEntity(World worldIn, int meta)
-	{
-		return new TileEntityCobblegen();
+	@Nullable
+	@Override
+	public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
+		
+		return new TileEntityCobblegen().setGenStats(cycleUpdate, cycleUpdate);
 	}
     
     @Override
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
-    {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_1").getFormattedText());
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_2").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_3").getFormattedText());
-		tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.cobblegen_4").getFormattedText());
+    @OnlyIn(Dist.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_3").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_4").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+
     }
 
 }

@@ -1,8 +1,16 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import com.kashdeya.tinyprogressions.main.Reference;
+
 import net.minecraft.block.Block;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class TechBlocks {
+	
+	
+	public static final DeferredRegister<Block> BLOCK_REGISTEY = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
+	
 	// Tech Blocks
 	public static Block growth_block;
 	public static Block growth_upgrade;

@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
+import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -17,16 +18,29 @@ import net.minecraftforge.common.ToolType;
 
 public class MultiMain extends PickaxeItem {
 	
-	public MultiMain(IItemTier tier, Properties properties) {
-		//TODO the attach damge and speed need updateing.
-		super(tier, 5, 5,  properties.group(TinyProgressions.TAB));
+	//TOD Move Later Also tweak the settings I think.
+	static
+	{
+		MultiMain flintMulti =    new MultiMain(ItemToolModTier.PFLINT,   0,0,1, new Properties());
+		MultiMain emeraldMulti =  new MultiMain(ItemToolModTier.PEMERALD, 0,0,3, new Properties());
+		MultiMain obsidianMulti = new MultiMain(ItemToolModTier.POBSIDIAN,0,0,4,new Properties());
+	}
+	
+	public MultiMain(IItemTier tier, int baseDmg, int baseSpeed, int level, Properties properties) {
+		super(tier, baseDmg, baseSpeed,  properties.group(TinyProgressions.TAB));
 		
+		properties
+		.addToolType(ToolType.PICKAXE, level)
+		.addToolType(ToolType.SHOVEL, level)
+		.addToolType(ToolType.AXE, level)
+		.maxStackSize(1)
+		.group(TinyProgressions.TAB);
 	}
 
-	@Override
-	public Set<ToolType> getToolTypes(ItemStack stack) {
-		return ImmutableSet.of(ToolType.PICKAXE, ToolType.SHOVEL, ToolType.AXE);
-	}
+//	@Override
+//	public Set<ToolType> getToolTypes(ItemStack stack) {
+//		return ImmutableSet.of(ToolType.PICKAXE, ToolType.SHOVEL, ToolType.AXE);
+//	}
 
 	private static Set<Block> effectiveAgainst = Sets.newHashSet(
 		Blocks.ACACIA_PLANKS, Blocks.BIRCH_PLANKS, Blocks.DARK_OAK_PLANKS, Blocks.JUNGLE_PLANKS, Blocks.SPRUCE_PLANKS,

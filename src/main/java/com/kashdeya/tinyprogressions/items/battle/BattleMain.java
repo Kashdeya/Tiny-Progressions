@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
+import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -18,6 +19,14 @@ import net.minecraft.item.Items;
 
 public class BattleMain extends AxeItem {
 
+	//TO move later
+	static
+	{
+		BattleMain emeraldBattle = new BattleMain(ItemToolModTier.EMERALD  , 0, 0);
+		BattleMain obsidianBattle = new BattleMain(ItemToolModTier.OBSIDIAN, 0, 0);
+	}
+	
+	
 	public BattleMain(IItemTier material, float damage, float speed)
     {
         super(material, damage, speed, new Properties().maxStackSize(1).group(TinyProgressions.TAB));

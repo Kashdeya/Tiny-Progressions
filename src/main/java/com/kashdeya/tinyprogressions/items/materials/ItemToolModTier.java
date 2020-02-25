@@ -1,6 +1,7 @@
 package com.kashdeya.tinyprogressions.items.materials;
 
 import com.google.common.base.Supplier;
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Items;
@@ -15,7 +16,7 @@ public enum ItemToolModTier implements IItemTier
 	BIRTHDAY   (4, 3061,  100.0F, 10.0F, 22,() -> { return Ingredient.fromItems(Items.AIR); }),
 	OBSIDIAN   (4, 1961,  9.0F,   4.0F,  10,() -> { return Ingredient.fromItems(Items.OBSIDIAN); }),
 	EMERALD    (4, 2961,  10.0F,  5.0F,  22,() -> { return Ingredient.fromItems(Items.EMERALD); }),
-	KAPPA      (1, 31513, 5.0F,   2.0F,  22,() -> { return Ingredient.fromItems(Items.AIR); }),
+	KAPPA      (ConfigHandler.kappa_level, 31513, 5.0F,   2.0F,  22,() -> { return Ingredient.fromItems(Items.AIR); }),
 	BSCIRON    (3, 2750,  12.0F,  8.0F,  14,() -> { return Ingredient.fromItems(Items.AIR); }),
 	BSCDIAMOND (3, 4549,  16.0F,  5.0F,  10,() -> { return Ingredient.fromItems(Items.AIR); }),
 	BSCGOLD    (0, 788,   16.0F,  2.0F,  22,() -> { return Ingredient.fromItems(Items.AIR); }),

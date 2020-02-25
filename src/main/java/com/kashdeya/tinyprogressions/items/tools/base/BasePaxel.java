@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items.multi;
+package com.kashdeya.tinyprogressions.items.tools.base;
 
 import java.util.Set;
 
@@ -16,23 +16,24 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraftforge.common.ToolType;
 
-public class MultiMain extends PickaxeItem {
+public class BasePaxel extends PickaxeItem {
 	
 	//TOD Move Later Also tweak the settings I think.
 	static
 	{
-		MultiMain flintMulti =    new MultiMain(ItemToolModTier.PFLINT,   0,0,1, new Properties());
-		MultiMain emeraldMulti =  new MultiMain(ItemToolModTier.PEMERALD, 0,0,3, new Properties());
-		MultiMain obsidianMulti = new MultiMain(ItemToolModTier.POBSIDIAN,0,0,4,new Properties());
+		BasePaxel flintMulti =    new BasePaxel(ItemToolModTier.PFLINT,   0,0, new Properties());
+		BasePaxel emeraldMulti =  new BasePaxel(ItemToolModTier.PEMERALD, 0,0, new Properties());
+		BasePaxel obsidianMulti = new BasePaxel(ItemToolModTier.POBSIDIAN,0,0, new Properties());
+		BasePaxel wubMulti = 	  new BasePaxel(ItemToolModTier.PWUBWUB  ,0,0, new Properties());
 	}
 	
-	public MultiMain(IItemTier tier, int baseDmg, int baseSpeed, int level, Properties properties) {
+	public BasePaxel(IItemTier tier, int baseDmg, int baseSpeed, Properties properties) {
 		super(tier, baseDmg, baseSpeed,  properties.group(TinyProgressions.TAB));
 		
 		properties
-		.addToolType(ToolType.PICKAXE, level)
-		.addToolType(ToolType.SHOVEL, level)
-		.addToolType(ToolType.AXE, level)
+		.addToolType(ToolType.PICKAXE, tier.getHarvestLevel())
+		.addToolType(ToolType.SHOVEL, tier.getHarvestLevel())
+		.addToolType(ToolType.AXE, tier.getHarvestLevel())
 		.maxStackSize(1)
 		.group(TinyProgressions.TAB);
 	}

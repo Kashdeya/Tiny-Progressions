@@ -1,4 +1,6 @@
-package com.kashdeya.tinyprogressions.items.scythes;
+package com.kashdeya.tinyprogressions.items.tools.base;
+
+import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -18,10 +20,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
-public class ScytheMain extends SwordItem {
+public class BaseScythe extends SwordItem {
 	
+	
+	static {
+		BaseScythe emeraldScythe=  new BaseScythe(ItemToolModTier.EMERALD, 0, 0, new Properties());
+		BaseScythe obsidianScythe = new BaseScythe(ItemToolModTier.OBSIDIAN, 0, 0, new Properties());
+	}
 
-	public ScytheMain(IItemTier tier,  int p_i48460_2_, float p_i48460_3_, Properties properties) {
+	public BaseScythe(IItemTier tier,  int p_i48460_2_, float p_i48460_3_, Properties properties) {
 		super(tier,p_i48460_2_,p_i48460_3_, properties);
 
 	}

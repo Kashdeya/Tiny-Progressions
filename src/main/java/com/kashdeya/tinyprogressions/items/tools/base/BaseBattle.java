@@ -1,4 +1,4 @@
-package com.kashdeya.tinyprogressions.items.battle;
+package com.kashdeya.tinyprogressions.items.tools.base;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,22 +17,21 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
-public class BattleMain extends AxeItem {
+public class BaseBattle extends AxeItem {
 
 	//TO move later
 	static
 	{
-		BattleMain emeraldBattle = new BattleMain(ItemToolModTier.EMERALD  , 0, 0);
-		BattleMain obsidianBattle = new BattleMain(ItemToolModTier.OBSIDIAN, 0, 0);
+		BaseBattle emeraldBattle = new BaseBattle(ItemToolModTier.EMERALD  , 0, 0);
+		BaseBattle obsidianBattle = new BaseBattle(ItemToolModTier.OBSIDIAN, 0, 0);
 	}
 	
 	
-	public BattleMain(IItemTier material, float damage, float speed)
+	public BaseBattle(IItemTier material, float damage, float speed)
     {
         super(material, damage, speed, new Properties().maxStackSize(1).group(TinyProgressions.TAB));
     }
     
-	
     public Set<String> getToolClasses(ItemStack stack) {
 		return ImmutableSet.of("sword", "axe");
 	}

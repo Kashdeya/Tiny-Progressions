@@ -2,57 +2,85 @@ package com.kashdeya.tinyprogressions.armor;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechArmor;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.items.materials.ArmorMaterialTier;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.ItemArmor;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.oredict.OreDictionary;
 
-public class RedstoneArmor extends ItemArmor {
+public class RedstoneArmor extends BaseArmor {
 
-    public RedstoneArmor(ArmorMaterial material, int renderIndex, EntityEquipmentSlot equipmentSlotIn) {
-        super(material, renderIndex, equipmentSlotIn);
-        this.setMaxStackSize(1);
-        this.setCreativeTab(TinyProgressions.tabTP);
-    }
+	public RedstoneArmor(EquipmentSlotType slot, Properties prop) {
+		super(ArmorMaterialTier.REDSTONE, slot, prop);
+	}
 
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-        ItemStack mat = new ItemStack(Items.REDSTONE);
-        return !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false) || super.getIsRepairable(toRepair, repair);
-    }
+	// TODO reduce redundent code.
+	@Override
+	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+		if (!(entityIn instanceof LivingEntity))
+			return;
 
-    @Override
-    public void onArmorTick(World world, EntityPlayer entity, ItemStack itemStack) {
-        ItemStack chest = entity.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
-        ItemStack feet = entity.getItemStackFromSlot(EntityEquipmentSlot.FEET);
-        ItemStack head = entity.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
-        ItemStack legs = entity.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
-        if (((!head.isEmpty()) && (head.getItem() == TechArmor.redstone_helmet) &&
-            (!chest.isEmpty()) && (chest.getItem() == TechArmor.redstone_chestplate) &&
-            (!legs.isEmpty()) && (legs.getItem() == TechArmor.redstone_leggings) &&
-            (!feet.isEmpty()) && (feet.getItem() == TechArmor.redstone_boots)) || (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
-            if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, false, false));
-            }
-        }
-    }
+		if (entityIn instanceof PlayerEntity) {
+			if (((PlayerEntity) entityIn).isCreative() || ((PlayerEntity) entityIn).isSpectator())
+				return;
+		}
 
-    @Override
-    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
-            tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.redstonearmor_1").getFormattedText());
-        }
-    }
+		LivingEntity living = ((LivingEntity)entityIn);
+		
+        ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
+        ItemStack feet =  living.getItemStackFromSlot(EquipmentSlotType.FEET);
+        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
+        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+        
+        
+		if (((!head.isEmpty()) && (head.getItem() == TechArmor.redstone_helmet) && (!chest.isEmpty())
+				&& (chest.getItem() == TechArmor.redstone_chestplate) && (!legs.isEmpty())
+				&& (legs.getItem() == TechArmor.redstone_leggings) && (!feet.isEmpty())
+				&& (feet.getItem() == TechArmor.redstone_boots))) {
+			if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
+				living.addPotionEffect(new EffectInstance(Effects.SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, false, false));
+			}
+		}
+	}
+
+	// @Override
+	// public void onArmorTick(World world, EntityPlayer entity, ItemStack
+	// itemStack) {
+	// ItemStack chest = entity.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
+	// ItemStack feet = entity.getItemStackFromSlot(EntityEquipmentSlot.FEET);
+	// ItemStack head = entity.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
+	// ItemStack legs = entity.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+	// if (((!head.isEmpty()) && (head.getItem() == TechArmor.redstone_helmet) &&
+	// (!chest.isEmpty()) && (chest.getItem() == TechArmor.redstone_chestplate) &&
+	// (!legs.isEmpty()) && (legs.getItem() == TechArmor.redstone_leggings) &&
+	// (!feet.isEmpty()) && (feet.getItem() == TechArmor.redstone_boots)) ||
+	// (entity.capabilities.isCreativeMode) || (entity.isSpectator())) {
+	// if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
+	// entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 180,
+	// ArmorHandler.redstone_armor_speed_lvl, false, false));
+	// }
+	// }
+	// }
+
+	@Override
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
+			tooltip.add(new TranslationTextComponent("tooltip.redstonearmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+		}
+	}
 
 }

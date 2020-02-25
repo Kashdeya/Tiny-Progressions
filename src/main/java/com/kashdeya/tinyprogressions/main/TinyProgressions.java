@@ -5,12 +5,14 @@ import org.apache.logging.log4j.Logger;
 
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -20,6 +22,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Reference.MOD_ID)
 
@@ -41,13 +45,21 @@ public class TinyProgressions{
 	   }).setTabPath("tiny_progression_items");
     
 	
+	
+	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
+	
+	
+	
     public TinyProgressions() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-
+    	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    	
+    	bus.addListener(this::setup);
+    	bus.addListener(this::enqueueIMC);
+    	bus.addListener(this::processIMC);
+    	bus.addListener(this::doClientStuff);
+		bus.addListener(this::onServerStarting);
         MinecraftForge.EVENT_BUS.register(this);
+		ITEMS.register(bus);
         INSTANCE = this;
     }
 

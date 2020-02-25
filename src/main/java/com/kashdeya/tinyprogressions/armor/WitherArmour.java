@@ -46,10 +46,10 @@ public class WitherArmour extends BaseArmor {
         ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
         ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
         
-        if (((!head.isEmpty()) && (head.getItem() == TechArmor.wither_helmet) &&
-            (!chest.isEmpty()) && (chest.getItem() == TechArmor.wither_chestplate) &&
-            (!legs.isEmpty()) && (legs.getItem() == TechArmor.wither_leggings) &&
-            (!feet.isEmpty()) && (feet.getItem() == TechArmor.wither_boots))) {
+        if (((!head.isEmpty()) && (head.getItem() == TechArmor.wither_helmet.get()) &&
+            (!chest.isEmpty()) && (chest.getItem() == TechArmor.wither_chestplate.get()) &&
+            (!legs.isEmpty()) && (legs.getItem() == TechArmor.wither_leggings.get()) &&
+            (!feet.isEmpty()) && (feet.getItem() == TechArmor.wither_boots.get()))) {
             if (ArmorHandler.wither_armor && ArmorHandler.wither_strength) {
             	living.addPotionEffect(new EffectInstance(Effects.STRENGTH, 180, ArmorHandler.wither_strength_lvl, false, false));
             }

@@ -48,10 +48,10 @@ public class QuartzArmor extends BaseArmor {
         ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
         ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
         
-        if (((!head.isEmpty()) && (head.getItem() == TechArmor.quartz_helmet) &&
-            (!chest.isEmpty()) && (chest.getItem() == TechArmor.quartz_chestplate) &&
-            (!legs.isEmpty()) && (legs.getItem() == TechArmor.quartz_leggings) &&
-            (!feet.isEmpty()) && (feet.getItem() == TechArmor.quartz_boots))) {
+        if (((!head.isEmpty()) && (head.getItem() == TechArmor.quartz_helmet.get()) &&
+            (!chest.isEmpty()) && (chest.getItem() == TechArmor.quartz_chestplate.get()) &&
+            (!legs.isEmpty()) && (legs.getItem() == TechArmor.quartz_leggings.get()) &&
+            (!feet.isEmpty()) && (feet.getItem() == TechArmor.quartz_boots.get()))) {
             if (ArmorHandler.quartz_armor && ArmorHandler.quartz_armor_strength) {
             	living.addPotionEffect(new EffectInstance(Effects.STRENGTH, 180, ArmorHandler.quartz_armor_strength_lvl, false, false));
             }

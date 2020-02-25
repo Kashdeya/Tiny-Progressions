@@ -38,7 +38,7 @@ public class StorageProvider implements ICapabilitySerializable<CompoundNBT>, Ca
     
 	@Override
 	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
-        return hasCapability(cap, side) ? cap : null;
+        return hasCapability(cap, side) ? LazyOptional.of(instanceSupplier)cap : null;
     }
  
 	@Override

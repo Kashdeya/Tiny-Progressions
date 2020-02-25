@@ -51,12 +51,12 @@ public enum ArmorMaterialTier implements IArmorMaterial{
 	
 	@Override
 	public int getDamageReductionAmount(EquipmentSlotType slot) {
-		return this.damageReducton[slot.getSlotIndex()];
+		return this.damageReducton[slot.getSlotIndex()-1];
 	}
 
 	@Override
 	public int getDurability(EquipmentSlotType slot) {
-		return this.damageReducton[slot.getSlotIndex()];
+		return this.damageReducton[slot.getSlotIndex()-1];
 	}
 
 	@Override

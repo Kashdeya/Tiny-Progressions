@@ -47,10 +47,10 @@ public class LavaArmour extends BaseArmor {
         ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
         
  
-        if (((!head.isEmpty()) && (head.getItem() == TechArmor.lava_helmet) &&
-            (!chest.isEmpty()) && (chest.getItem() == TechArmor.lava_chestplate) &&
-            (!legs.isEmpty()) && (legs.getItem() == TechArmor.lava_leggings) &&
-            (!feet.isEmpty()) && (feet.getItem() == TechArmor.lava_boots))) {
+        if (((!head.isEmpty()) && (head.getItem() == TechArmor.lava_helmet.get()) &&
+            (!chest.isEmpty()) && (chest.getItem() == TechArmor.lava_chestplate.get()) &&
+            (!legs.isEmpty()) && (legs.getItem() == TechArmor.lava_leggings.get()) &&
+            (!feet.isEmpty()) && (feet.getItem() == TechArmor.lava_boots.get()))) {
             if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_fire) {
             	living.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.lava_armor_fire_lvl, false, false));
             }

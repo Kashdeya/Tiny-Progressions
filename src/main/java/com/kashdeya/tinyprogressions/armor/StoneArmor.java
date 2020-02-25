@@ -39,16 +39,16 @@ public class StoneArmor extends BaseArmor {
 	        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
 	        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
 	         
-	        if (!head.isEmpty() && head.getItem() == TechArmor.stone_helmet) {
+	        if (!head.isEmpty() && head.getItem() == TechArmor.stone_helmet.get()) {
 	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
 	        }
-	        if (!chest.isEmpty() && chest.getItem() == TechArmor.stone_chestplate) {
+	        if (!chest.isEmpty() && chest.getItem() == TechArmor.stone_chestplate.get()) {
 	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
 	        }
-	        if (!legs.isEmpty() && legs.getItem() == TechArmor.stone_leggings) {
+	        if (!legs.isEmpty() && legs.getItem() == TechArmor.stone_leggings.get()) {
 	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
 	        }
-	        if (!feet.isEmpty() && feet.getItem() == TechArmor.stone_boots) {
+	        if (!feet.isEmpty() && feet.getItem() == TechArmor.stone_boots.get()) {
 	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
 	        }
 	}

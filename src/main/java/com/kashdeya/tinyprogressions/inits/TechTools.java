@@ -3,7 +3,6 @@ package com.kashdeya.tinyprogressions.inits;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.DamageHandler;
 import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
-import com.kashdeya.tinyprogressions.items.battle.BattleMain;
 import com.kashdeya.tinyprogressions.items.battle.EmeraldBattle;
 import com.kashdeya.tinyprogressions.items.battle.ObsidianBattle;
 import com.kashdeya.tinyprogressions.items.bsc.BscDiamondAxe;
@@ -23,17 +22,13 @@ import com.kashdeya.tinyprogressions.items.bsc.BscIronSpade;
 import com.kashdeya.tinyprogressions.items.bsc.BscIronSword;
 import com.kashdeya.tinyprogressions.items.multi.EmeraldMulti;
 import com.kashdeya.tinyprogressions.items.multi.FlintMulti;
-import com.kashdeya.tinyprogressions.items.multi.MultiMain;
 import com.kashdeya.tinyprogressions.items.multi.ObsidianMulti;
 import com.kashdeya.tinyprogressions.items.scythes.EmeraldScythe;
 import com.kashdeya.tinyprogressions.items.scythes.ObsidianScythe;
-import com.kashdeya.tinyprogressions.items.scythes.ScytheMain;
 import com.kashdeya.tinyprogressions.items.seaxe.SeaIronAxe;
 import com.kashdeya.tinyprogressions.items.seaxe.SeaIronPickaxe;
-import com.kashdeya.tinyprogressions.items.shears.ShearsBase;
 import com.kashdeya.tinyprogressions.items.spears.EmeraldSpear;
 import com.kashdeya.tinyprogressions.items.spears.ObsidianSpear;
-import com.kashdeya.tinyprogressions.items.spears.SpearMain;
 import com.kashdeya.tinyprogressions.items.tools.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.KappaPick;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseAxe;
@@ -41,6 +36,11 @@ import com.kashdeya.tinyprogressions.items.tools.base.BaseHoe;
 import com.kashdeya.tinyprogressions.items.tools.base.BasePickaxe;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseSpade;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseSword;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseBattle;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseScythe;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseShears;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseSpear;
+import com.kashdeya.tinyprogressions.items.tools.base.BasePaxel;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneAxe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BoneHoe;
 import com.kashdeya.tinyprogressions.items.tools.bone.BonePickaxe;
@@ -192,22 +192,22 @@ public class TechTools {
 	public static void init(){
 		// Shears
 		if (ConfigHandler.wooden_shears) {
-			wooden_shears = new ShearsBase().setTranslationKey("wooden_shears").setMaxDamage(59);
+			wooden_shears = new BaseShears().setTranslationKey("wooden_shears").setMaxDamage(59);
 		}
 		if (ConfigHandler.golden_shears) {
-			golden_shears = new ShearsBase().setTranslationKey("golden_shears").setMaxDamage(32);
+			golden_shears = new BaseShears().setTranslationKey("golden_shears").setMaxDamage(32);
 		}
 		if (ConfigHandler.diamond_shears) {
-			diamond_shears = new ShearsBase().setTranslationKey("diamond_shears").setMaxDamage(1561);
+			diamond_shears = new BaseShears().setTranslationKey("diamond_shears").setMaxDamage(1561);
 		}
 		if (ConfigHandler.emerald_shears) {
-			emerald_shears = new ShearsBase().setTranslationKey("emerald_shears").setMaxDamage(1061);
+			emerald_shears = new BaseShears().setTranslationKey("emerald_shears").setMaxDamage(1061);
 		}
 		if (ConfigHandler.flint_shears) {
-			flint_shears = new ShearsBase().setTranslationKey("flint_shears").setMaxDamage(81);
+			flint_shears = new BaseShears().setTranslationKey("flint_shears").setMaxDamage(81);
 		}
 		if (ConfigHandler.stone_shears) {
-			stone_shears = new ShearsBase().setTranslationKey("stone_shears").setMaxDamage(131);
+			stone_shears = new BaseShears().setTranslationKey("stone_shears").setMaxDamage(131);
 		}
 		// wub extras
 		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
@@ -303,19 +303,19 @@ public class TechTools {
 	    }
 	    // Scythe
 	    if (ConfigHandler.wooden_scythe){
-	    	wooden_scythe = new ScytheMain(ToolMaterial.WOOD).setTranslationKey("wooden_scythe").setMaxDamage(DamageHandler.wooden_scythe);
+	    	wooden_scythe = new BaseScythe(ToolMaterial.WOOD).setTranslationKey("wooden_scythe").setMaxDamage(DamageHandler.wooden_scythe);
 	    }
 	    if (ConfigHandler.stone_scythe){
-			stone_scythe = new ScytheMain(ToolMaterial.STONE).setTranslationKey("stone_scythe").setMaxDamage(DamageHandler.stone_scythe);
+			stone_scythe = new BaseScythe(ToolMaterial.STONE).setTranslationKey("stone_scythe").setMaxDamage(DamageHandler.stone_scythe);
 	    }
 	    if (ConfigHandler.golden_scythe){
-			golden_scythe = new ScytheMain(ToolMaterial.GOLD).setTranslationKey("golden_scythe").setMaxDamage(DamageHandler.golden_scythe);
+			golden_scythe = new BaseScythe(ToolMaterial.GOLD).setTranslationKey("golden_scythe").setMaxDamage(DamageHandler.golden_scythe);
 	    }
 	    if (ConfigHandler.iron_scythe){
-			iron_scythe = new ScytheMain(ToolMaterial.IRON).setTranslationKey("iron_scythe").setMaxDamage(DamageHandler.iron_scythe);
+			iron_scythe = new BaseScythe(ToolMaterial.IRON).setTranslationKey("iron_scythe").setMaxDamage(DamageHandler.iron_scythe);
 	    }
 	    if (ConfigHandler.diamond_scythe){
-			diamond_scythe = new ScytheMain(ToolMaterial.DIAMOND).setTranslationKey("diamond_scythe").setMaxDamage(DamageHandler.diamond_scythe);
+			diamond_scythe = new BaseScythe(ToolMaterial.DIAMOND).setTranslationKey("diamond_scythe").setMaxDamage(DamageHandler.diamond_scythe);
 	    }
 		if (ConfigHandler.emerald_scythe){
 			emerald_scythe = new EmeraldScythe(MaterialHandler.EMERALD).setTranslationKey("emerald_scythe").setMaxDamage(DamageHandler.emerald_scythe);
@@ -357,22 +357,22 @@ public class TechTools {
 		}
 		// Multi
 		if (ConfigHandler.wooden_multi){
-			wooden_multi = new MultiMain(MaterialHandler.PWOOD).setTranslationKey("wooden_multi").setMaxDamage(DamageHandler.wooden_multi);
+			wooden_multi = new BasePaxel(MaterialHandler.PWOOD).setTranslationKey("wooden_multi").setMaxDamage(DamageHandler.wooden_multi);
 		}
 		if (ConfigHandler.flint_multi){
 			flint_multi = new FlintMulti(MaterialHandler.PFLINT).setTranslationKey("flint_multi").setMaxDamage(DamageHandler.flint_multi);
 		}
 		if (ConfigHandler.stone_multi){
-			stone_multi = new MultiMain(MaterialHandler.PSTONE).setTranslationKey("stone_multi").setMaxDamage(DamageHandler.stone_multi);
+			stone_multi = new BasePaxel(MaterialHandler.PSTONE).setTranslationKey("stone_multi").setMaxDamage(DamageHandler.stone_multi);
 		}
 		if (ConfigHandler.golden_multi){
-			golden_multi = new MultiMain(MaterialHandler.PGOLD).setTranslationKey("golden_multi").setMaxDamage(DamageHandler.golden_multi);
+			golden_multi = new BasePaxel(MaterialHandler.PGOLD).setTranslationKey("golden_multi").setMaxDamage(DamageHandler.golden_multi);
 		}
 		if (ConfigHandler.iron_multi){
-			iron_multi = new MultiMain(MaterialHandler.PIRON).setTranslationKey("iron_multi").setMaxDamage(DamageHandler.iron_multi);
+			iron_multi = new BasePaxel(MaterialHandler.PIRON).setTranslationKey("iron_multi").setMaxDamage(DamageHandler.iron_multi);
 		}
 		if (ConfigHandler.diamond_multi){
-			diamond_multi = new MultiMain(MaterialHandler.PDIAMOND).setTranslationKey("diamond_multi").setMaxDamage(DamageHandler.diamond_multi);
+			diamond_multi = new BasePaxel(MaterialHandler.PDIAMOND).setTranslationKey("diamond_multi").setMaxDamage(DamageHandler.diamond_multi);
 		}
 		if (ConfigHandler.emerald_multi){
 			emerald_multi = new EmeraldMulti(MaterialHandler.PEMERALD).setTranslationKey("emerald_multi").setMaxDamage(DamageHandler.emerald_multi);
@@ -382,19 +382,19 @@ public class TechTools {
 		}
 		// Battle
 		if (ConfigHandler.wooden_battle){
-			wooden_battle = new BattleMain(ToolMaterial.WOOD, 6.0F, -1.2F).setTranslationKey("wooden_battle").setMaxDamage(DamageHandler.wooden_battle);
+			wooden_battle = new BaseBattle(ToolMaterial.WOOD, 6.0F, -1.2F).setTranslationKey("wooden_battle").setMaxDamage(DamageHandler.wooden_battle);
 		}
 		if (ConfigHandler.stone_battle){
-			stone_battle = new BattleMain(ToolMaterial.STONE, 8.0F, -1.2F).setTranslationKey("stone_battle").setMaxDamage(DamageHandler.stone_battle);
+			stone_battle = new BaseBattle(ToolMaterial.STONE, 8.0F, -1.2F).setTranslationKey("stone_battle").setMaxDamage(DamageHandler.stone_battle);
 		}
 		if (ConfigHandler.golden_battle){
-			golden_battle = new BattleMain(ToolMaterial.GOLD, 6.0F, -1.2F).setTranslationKey("golden_battle").setMaxDamage(DamageHandler.golden_battle);
+			golden_battle = new BaseBattle(ToolMaterial.GOLD, 6.0F, -1.2F).setTranslationKey("golden_battle").setMaxDamage(DamageHandler.golden_battle);
 		}
 		if (ConfigHandler.iron_battle){
-			iron_battle = new BattleMain(ToolMaterial.IRON, 8.0F, -1.2F).setTranslationKey("iron_battle").setMaxDamage(DamageHandler.iron_battle);
+			iron_battle = new BaseBattle(ToolMaterial.IRON, 8.0F, -1.2F).setTranslationKey("iron_battle").setMaxDamage(DamageHandler.iron_battle);
 		}
 		if (ConfigHandler.diamond_battle){
-			diamond_battle = new BattleMain(ToolMaterial.DIAMOND, 8.0F, -1.2F).setTranslationKey("diamond_battle").setMaxDamage(DamageHandler.diamond_battle);
+			diamond_battle = new BaseBattle(ToolMaterial.DIAMOND, 8.0F, -1.2F).setTranslationKey("diamond_battle").setMaxDamage(DamageHandler.diamond_battle);
 		}
 		if (ConfigHandler.emerald_battle){
 			emerald_battle = new EmeraldBattle(MaterialHandler.EMERALD, 10.0F, -1.2F).setTranslationKey("emerald_battle").setMaxDamage(DamageHandler.emerald_battle);
@@ -404,19 +404,19 @@ public class TechTools {
 		}
 		// Spear
 		if (ConfigHandler.wooden_spear){
-			wooden_spear = new SpearMain(ToolMaterial.WOOD).setTranslationKey("wooden_spear").setMaxDamage(DamageHandler.wooden_spear);
+			wooden_spear = new BaseSpear(ToolMaterial.WOOD).setTranslationKey("wooden_spear").setMaxDamage(DamageHandler.wooden_spear);
 		}
 		if (ConfigHandler.stone_spear){
-			stone_spear = new SpearMain(ToolMaterial.STONE).setTranslationKey("stone_spear").setMaxDamage(DamageHandler.stone_spear);
+			stone_spear = new BaseSpear(ToolMaterial.STONE).setTranslationKey("stone_spear").setMaxDamage(DamageHandler.stone_spear);
 		}
 		if (ConfigHandler.golden_spear){
-			golden_spear = new SpearMain(ToolMaterial.GOLD).setTranslationKey("golden_spear").setMaxDamage(DamageHandler.golden_spear);
+			golden_spear = new BaseSpear(ToolMaterial.GOLD).setTranslationKey("golden_spear").setMaxDamage(DamageHandler.golden_spear);
 		}
 		if (ConfigHandler.iron_spear){
-			iron_spear = new SpearMain(ToolMaterial.IRON).setTranslationKey("iron_spear").setMaxDamage(DamageHandler.iron_spear);
+			iron_spear = new BaseSpear(ToolMaterial.IRON).setTranslationKey("iron_spear").setMaxDamage(DamageHandler.iron_spear);
 		}
 		if (ConfigHandler.diamond_spear){
-			diamond_spear = new SpearMain(ToolMaterial.DIAMOND).setTranslationKey("diamond_spear").setMaxDamage(DamageHandler.diamond_spear);
+			diamond_spear = new BaseSpear(ToolMaterial.DIAMOND).setTranslationKey("diamond_spear").setMaxDamage(DamageHandler.diamond_spear);
 		}
 		if (ConfigHandler.emerald_spear){
 			emerald_spear = new EmeraldSpear(MaterialHandler.EMERALD).setTranslationKey("emerald_spear").setMaxDamage(DamageHandler.emerald_spear);

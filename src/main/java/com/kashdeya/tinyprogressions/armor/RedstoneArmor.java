@@ -47,10 +47,10 @@ public class RedstoneArmor extends BaseArmor {
         ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
         
         
-		if (((!head.isEmpty()) && (head.getItem() == TechArmor.redstone_helmet) && (!chest.isEmpty())
-				&& (chest.getItem() == TechArmor.redstone_chestplate) && (!legs.isEmpty())
-				&& (legs.getItem() == TechArmor.redstone_leggings) && (!feet.isEmpty())
-				&& (feet.getItem() == TechArmor.redstone_boots))) {
+		if (((!head.isEmpty()) && (head.getItem() == TechArmor.redstone_helmet.get()) && (!chest.isEmpty())
+				&& (chest.getItem() == TechArmor.redstone_chestplate.get()) && (!legs.isEmpty())
+				&& (legs.getItem() == TechArmor.redstone_leggings.get()) && (!feet.isEmpty())
+				&& (feet.getItem() == TechArmor.redstone_boots.get()))) {
 			if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
 				living.addPotionEffect(new EffectInstance(Effects.SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, false, false));
 			}

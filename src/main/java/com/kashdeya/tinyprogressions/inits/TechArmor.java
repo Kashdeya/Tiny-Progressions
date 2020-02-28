@@ -86,10 +86,10 @@ public class TechArmor {
 	public static RegistryObject<Item> quartz_boots=      TinyProgressions.ITEMS.register("quartz_boots", () -> new QuartzArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Redstone
-	public static RegistryObject<Item> redstone_helmet=     TinyProgressions.ITEMS.register("_helmet", () -> new RedstoneArmor(EquipmentSlotType.HEAD, new Properties()));
-	public static RegistryObject<Item> redstone_chestplate= TinyProgressions.ITEMS.register("_chestplate", () -> new RedstoneArmor(EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> redstone_leggings=   TinyProgressions.ITEMS.register("_leggings", () -> new RedstoneArmor(EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> redstone_boots=      TinyProgressions.ITEMS.register("_boots", () ->  new RedstoneArmor(EquipmentSlotType.FEET, new Properties()));
+	public static RegistryObject<Item> redstone_helmet=     TinyProgressions.ITEMS.register("redstone_helmet", () -> new RedstoneArmor(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> redstone_chestplate= TinyProgressions.ITEMS.register("redstone_chestplate", () -> new RedstoneArmor(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> redstone_leggings=   TinyProgressions.ITEMS.register("redstone_leggings", () -> new RedstoneArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> redstone_boots=      TinyProgressions.ITEMS.register("redstone_boots", () ->  new RedstoneArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Emerald
 	public static RegistryObject<Item> emerald_helmet=     TinyProgressions.ITEMS.register("emerald_helmet", () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.HEAD, new Properties()));
@@ -98,6 +98,6 @@ public class TechArmor {
 	public static RegistryObject<Item> emerald_boots=      TinyProgressions.ITEMS.register("emerald_boots", () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.FEET, new Properties()));
 	
 	// bam t-shirt
-	public static RegistryObject<Item> bam_tshirt = TinyProgressions.ITEMS.register("bam_shirt", () -> new BaseArmor(ArmorMaterialTier.BAM, EquipmentSlotType.CHEST, "tooltip.bamsarmor_1", new Properties()));
+	public static RegistryObject<Item> bam_tshirt = TinyProgressions.ITEMS.register("bam_tshirt", () -> new BaseArmor(ArmorMaterialTier.BAM, EquipmentSlotType.CHEST, "tooltip.bamsarmor_1", new Properties()));
 	
 }

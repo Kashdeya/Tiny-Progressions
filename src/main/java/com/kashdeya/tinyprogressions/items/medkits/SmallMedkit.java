@@ -1,7 +1,6 @@
 package com.kashdeya.tinyprogressions.items.medkits;
 
 import java.util.List;
-import java.util.Random;
 
 import javax.annotation.Nullable;
 

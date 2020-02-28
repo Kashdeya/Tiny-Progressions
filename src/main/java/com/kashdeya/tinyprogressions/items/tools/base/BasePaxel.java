@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.items.tools.base;
 
 import java.util.Set;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
@@ -18,14 +17,14 @@ import net.minecraftforge.common.ToolType;
 
 public class BasePaxel extends PickaxeItem {
 	
-	//TOD Move Later Also tweak the settings I think.
-	static
-	{
-		BasePaxel flintMulti =    new BasePaxel(ItemToolModTier.PFLINT,   0,0, new Properties());
-		BasePaxel emeraldMulti =  new BasePaxel(ItemToolModTier.PEMERALD, 0,0, new Properties());
-		BasePaxel obsidianMulti = new BasePaxel(ItemToolModTier.POBSIDIAN,0,0, new Properties());
-		BasePaxel wubMulti = 	  new BasePaxel(ItemToolModTier.PWUBWUB  ,0,0, new Properties());
-	}
+//	//TOD Move Later Also tweak the settings I think.
+//	static
+//	{
+//		BasePaxel flintMulti =    new BasePaxel(ItemToolModTier.PFLINT,   0,0, new Properties());
+//		BasePaxel emeraldMulti =  new BasePaxel(ItemToolModTier.PEMERALD, 0,0, new Properties());
+//		BasePaxel obsidianMulti = new BasePaxel(ItemToolModTier.POBSIDIAN,0,0, new Properties());
+//		BasePaxel wubMulti = 	  new BasePaxel(ItemToolModTier.PWUBWUB  ,0,0, new Properties());
+//	}
 	
 	public BasePaxel(IItemTier tier, int baseDmg, int baseSpeed, Properties properties) {
 		super(tier, baseDmg, baseSpeed,  properties.group(TinyProgressions.TAB));

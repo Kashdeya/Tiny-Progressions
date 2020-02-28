@@ -1,19 +1,18 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import org.lwjgl.system.CallbackI.S;
-
 import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FoodBase;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
 import com.kashdeya.tinyprogressions.items.Foods;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
 import net.minecraft.item.Rarity;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechFoods {
 	
 	// Apples

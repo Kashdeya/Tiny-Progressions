@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.items.misc;
 
 import com.kashdeya.tinyprogressions.capabilities.StorageProvider;
 import com.kashdeya.tinyprogressions.items.ItemBase;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

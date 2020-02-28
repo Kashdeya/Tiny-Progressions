@@ -5,7 +5,6 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.SwordItem;
-import net.minecraft.item.Item.Properties;
 
 public class BaseSword extends SwordItem {
 	

@@ -15,7 +15,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 
 public class BaseBattle extends AxeItem {
 

@@ -46,7 +46,7 @@ public class DragonArmour extends BaseArmor {
 		ItemStack feet = living.getItemStackFromSlot(EquipmentSlotType.FEET);
 		ItemStack head = living.getItemStackFromSlot(EquipmentSlotType.HEAD);
 		ItemStack legs = living.getItemStackFromSlot(EquipmentSlotType.LEGS);
-        if (((!head.isEmpty()) && (head.getItem() == TechArmor..dragon_helmet) &&
+        if (((!head.isEmpty()) && (head.getItem() == TechArmor.dragon_helmet) &&
             (!chest.isEmpty()) && (chest.getItem() == TechArmor.dragon_chestplate) &&
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.dragon_leggings) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.dragon_boots))) {

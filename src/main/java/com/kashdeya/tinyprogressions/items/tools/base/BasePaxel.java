@@ -27,14 +27,12 @@ public class BasePaxel extends PickaxeItem {
 //	}
 	
 	public BasePaxel(IItemTier tier, int baseDmg, int baseSpeed, Properties properties) {
-		super(tier, baseDmg, baseSpeed,  properties.group(TinyProgressions.TAB));
-		
-		properties
-		.addToolType(ToolType.PICKAXE, tier.getHarvestLevel())
-		.addToolType(ToolType.SHOVEL, tier.getHarvestLevel())
-		.addToolType(ToolType.AXE, tier.getHarvestLevel())
-		.maxStackSize(1)
-		.group(TinyProgressions.TAB);
+		super(tier, baseDmg, baseSpeed,  properties
+				.addToolType(ToolType.PICKAXE, tier.getHarvestLevel())
+				.addToolType(ToolType.SHOVEL, tier.getHarvestLevel())
+				.addToolType(ToolType.AXE, tier.getHarvestLevel())
+				.group(TinyProgressions.TAB));
+
 	}
 
 //	@Override

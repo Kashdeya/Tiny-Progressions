@@ -26,9 +26,6 @@ public class BaseHoe extends HoeItem {
 	
 	
 	public BaseHoe(IItemTier tier, float attackSpeed, Properties prop){
-		super(tier, attackSpeed, prop);
-		
-		prop.group(TinyProgressions.TAB)
-		.maxStackSize(1);
+		super(tier, attackSpeed, prop.group(TinyProgressions.TAB));
 	}
 }

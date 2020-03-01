@@ -27,9 +27,8 @@ public class BasePickaxe extends PickaxeItem {
 //	} 
 	
 	public BasePickaxe(IItemTier tier, int maxDamage, float attackSpeed, Properties prop){
-		super(tier, maxDamage, attackSpeed, prop);
-		prop.group(TinyProgressions.TAB)
-		.maxStackSize(1);
+		super(tier, maxDamage, attackSpeed, prop.group(TinyProgressions.TAB));
+
 	}
 }
 

@@ -24,9 +24,6 @@ public class BaseAxe extends AxeItem{
 	
 	
 	public BaseAxe(IItemTier material, float damage, float speed, Properties prop){
-		super(material, damage, speed, prop);
-		
-		prop.group(TinyProgressions.TAB)
-			.maxStackSize(1);
+		super(material, damage, speed, prop.group(TinyProgressions.TAB));
 	}
 }

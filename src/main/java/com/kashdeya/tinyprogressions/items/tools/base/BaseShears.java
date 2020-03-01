@@ -7,7 +7,6 @@ import net.minecraft.item.ShearsItem;
 public class BaseShears extends ShearsItem {
 	
     public BaseShears(Properties prop) {
-    		super(prop);
-    		prop.group(TinyProgressions.TAB);
+    		super(prop.group(TinyProgressions.TAB));
     }
 }

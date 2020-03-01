@@ -2,11 +2,13 @@ package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
+import com.kashdeya.tinyprogressions.items.tools.BirthdayPickaxe;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseAxe;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseBattle;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseHoe;
 import com.kashdeya.tinyprogressions.items.tools.base.BasePaxel;
 import com.kashdeya.tinyprogressions.items.tools.base.BasePickaxe;
+import com.kashdeya.tinyprogressions.items.tools.base.BaseShears;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseSpade;
 import com.kashdeya.tinyprogressions.items.tools.base.BaseSword;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
@@ -15,7 +17,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
 import net.minecraft.item.ItemTier;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechTools {
 	// Flint
 	public static RegistryObject<Item> flint_pickaxe = TinyProgressions.ITEMS.register("flint_pickaxe",() -> new BasePickaxe(ItemToolModTier.FLINT, 0, 0, new Properties()));
@@ -30,15 +34,15 @@ public class TechTools {
 	public static RegistryObject<Item> bone_sword =   TinyProgressions.ITEMS.register("bone_sword",  () -> new BaseSword(ItemToolModTier.BONE, 0, 0, new Properties()));;
 	public static RegistryObject<Item> bone_hoe =     TinyProgressions.ITEMS.register("bone_hoe",    () -> new BaseHoe(ItemToolModTier.BONE, 0, new Properties()));;
 	// Birthday
-	public static RegistryObject<Item> birthday_pickaxe;
+	public static RegistryObject<Item> birthday_pickaxe = TinyProgressions.ITEMS.register("birthday_pickaxe",    () -> new BirthdayPickaxe(new Properties()));
 	// Kappa Pick
-	public static RegistryObject<Item> kappa_pick = TinyProgressions.ITEMS.register("kappa_pick", () -> new BasePickaxe(ItemToolModTier.KAPPA, ConfigHandler.kappa_damage, 0, new Properties()));
+	public static RegistryObject<Item> kappa_pick =       TinyProgressions.ITEMS.register("kappa_pick", () -> new BasePickaxe(ItemToolModTier.KAPPA, ConfigHandler.kappa_damage, 0, new Properties()));
 	// Emerald
 	public static RegistryObject<Item> emerald_pickaxe = TinyProgressions.ITEMS.register("emerald_pickaxe", () -> new BasePickaxe(ItemToolModTier.EMERALD, 0, 0, new Properties()));;
 	public static RegistryObject<Item> emerald_axe =     TinyProgressions.ITEMS.register("emerald_axe",     () -> new BaseAxe(ItemToolModTier.EMERALD, 0, 0, new Properties()));
 	public static RegistryObject<Item> emerald_spade =   TinyProgressions.ITEMS.register("emerald_spade",   () -> new BaseSpade(ItemToolModTier.EMERALD, 0, 0, new Properties()));;
 	public static RegistryObject<Item> emerald_sword =   TinyProgressions.ITEMS.register("emerald_sword",   () -> new BaseSword(ItemToolModTier.EMERALD, 0, 0, new Properties()));;
-	public static RegistryObject<Item> emerald_hoe =     TinyProgressions.ITEMS.register("emerald_spade",   () -> new BaseHoe(ItemToolModTier.EMERALD, 0, new Properties()));;
+	public static RegistryObject<Item> emerald_hoe =     TinyProgressions.ITEMS.register("emerald_hoe",   () -> new BaseHoe(ItemToolModTier.EMERALD, 0, new Properties()));;
 	// Obsidian
 	public static RegistryObject<Item> obsidian_pickaxe = TinyProgressions.ITEMS.register("obsidian_pickaxe", () -> new BasePickaxe(ItemToolModTier.OBSIDIAN, 0, 0, new Properties()));;
 	public static RegistryObject<Item> obsidian_axe =     TinyProgressions.ITEMS.register("obsidian_axe",     () -> new BaseAxe(ItemToolModTier.OBSIDIAN, 0, 0, new Properties()));
@@ -97,26 +101,26 @@ public class TechTools {
 	public static RegistryObject<Item> bsc_diamond_hoe =     TinyProgressions.ITEMS.register("bsc_diamond_hoe",     () -> new BaseHoe(ItemToolModTier.BSCDIAMOND, 0, new Properties()));
 	public static RegistryObject<Item> bsc_diamond_spade =   TinyProgressions.ITEMS.register("bsc_diamond_spade",   () -> new BaseSpade(ItemToolModTier.BSCDIAMOND, 0, 0, new Properties()));
 	// nether tools and weapons
-	public static RegistryObject<Item> nether_iron_sword;
-	public static RegistryObject<Item> nether_iron_pickaxe;
-	public static RegistryObject<Item> nether_iron_axe;
-	public static RegistryObject<Item> nether_iron_hoe;
-	public static RegistryObject<Item> nether_iron_spade;
-	public static RegistryObject<Item> nether_gold_sword;
-	public static RegistryObject<Item> nether_gold_pickaxe;
-	public static RegistryObject<Item> nether_gold_axe;
-	public static RegistryObject<Item> nether_gold_hoe;
-	public static RegistryObject<Item> nether_gold_spade;
-	public static RegistryObject<Item> nether_diamond_sword;
-	public static RegistryObject<Item> nether_diamond_pickaxe;
-	public static RegistryObject<Item> nether_diamond_axe;
-	public static RegistryObject<Item> nether_diamond_hoe;
-	public static RegistryObject<Item> nether_diamond_spade;
-	public static RegistryObject<Item> nether_sword;
-	public static RegistryObject<Item> nether_pickaxe;
-	public static RegistryObject<Item> nether_axe;
-	public static RegistryObject<Item> nether_hoe;
-	public static RegistryObject<Item> nether_spade;
+	public static RegistryObject<Item> nether_iron_sword   =  TinyProgressions.ITEMS.register("nether_iron_sword",   () -> new BaseSword(ItemTier.IRON, 0,0,  new Properties()));  
+	public static RegistryObject<Item> nether_iron_pickaxe =  TinyProgressions.ITEMS.register("nether_iron_pickaxe", () -> new BasePickaxe(ItemTier.IRON, 0, 0, new Properties()));
+	public static RegistryObject<Item> nether_iron_axe =      TinyProgressions.ITEMS.register("nether_iron_axe",     () -> new BaseAxe(ItemTier.IRON, 8, -1.2F, new Properties()));
+	public static RegistryObject<Item> nether_iron_hoe =      TinyProgressions.ITEMS.register("nether_iron_hoe",     () -> new BaseHoe(ItemTier.IRON,  0, new Properties()));
+	public static RegistryObject<Item> nether_iron_spade =    TinyProgressions.ITEMS.register("nether_iron_spade",   () -> new BaseSpade(ItemTier.IRON, 0,0, new Properties()));
+	public static RegistryObject<Item> nether_gold_sword =    TinyProgressions.ITEMS.register("nether_gold_sword",   () -> new BaseSword(ItemTier.GOLD, 0,0,  new Properties()));
+	public static RegistryObject<Item> nether_gold_pickaxe =  TinyProgressions.ITEMS.register("nether_gold_pickaxe", () -> new BasePickaxe(ItemTier.GOLD, 0,0, new Properties()));
+	public static RegistryObject<Item> nether_gold_axe =      TinyProgressions.ITEMS.register("nether_gold_axe",     () -> new BaseAxe(ItemTier.GOLD,  6.0F, -1.2F,  new Properties()));
+	public static RegistryObject<Item> nether_gold_hoe =      TinyProgressions.ITEMS.register("nether_gold_hoe",     () -> new BaseHoe(ItemTier.GOLD, 0, new Properties()));
+	public static RegistryObject<Item> nether_gold_spade =    TinyProgressions.ITEMS.register("nether_gold_spade",   () -> new BaseSpade(ItemTier.GOLD,  0,0,  new Properties()));
+	public static RegistryObject<Item> nether_diamond_sword = TinyProgressions.ITEMS.register("nether_diamond_sword",  () -> new BaseSword(ItemTier.DIAMOND,  0,0,  new Properties()));
+	public static RegistryObject<Item> nether_diamond_pickaxe=TinyProgressions.ITEMS.register("nether_diamond_pickaxe",() -> new BasePickaxe(ItemTier.DIAMOND, 0, 0, new Properties()));; 
+	public static RegistryObject<Item> nether_diamond_axe =   TinyProgressions.ITEMS.register("nether_diamond_axe",    () -> new BaseAxe(ItemTier.DIAMOND, 8, -1.2F, new Properties()));;
+	public static RegistryObject<Item> nether_diamond_hoe =   TinyProgressions.ITEMS.register("nether_diamond_hoe",    () -> new BaseHoe(ItemTier.DIAMOND, 0, new Properties()));
+	public static RegistryObject<Item> nether_diamond_spade = TinyProgressions.ITEMS.register("nether_diamond_spade",  () -> new BaseSpade(ItemTier.DIAMOND,  0,0,  new Properties()));
+	public static RegistryObject<Item> nether_sword    =      TinyProgressions.ITEMS.register("nether_sword",   () -> new BaseSword(ItemTier.STONE, 0,0,  new Properties()));
+	public static RegistryObject<Item> nether_pickaxe  =      TinyProgressions.ITEMS.register("nether_pickaxe", () -> new BasePickaxe(ItemTier.STONE, 0, 0, new Properties()));
+	public static RegistryObject<Item> nether_axe =           TinyProgressions.ITEMS.register("nether_axe",     () -> new BaseAxe(ItemTier.STONE, 8, -1.2F, new Properties()));
+	public static RegistryObject<Item> nether_hoe =           TinyProgressions.ITEMS.register("nether_hoe",     () -> new BaseHoe(ItemTier.STONE, 0, new Properties()));;
+	public static RegistryObject<Item> nether_spade =         TinyProgressions.ITEMS.register("nether_spade",   () -> new BaseSpade(ItemTier.STONE,  0,0,  new Properties()));
 	// c axe
 	public static RegistryObject<Item> c_axe = TinyProgressions.ITEMS.register("c_axe", () -> new BaseAxe(ItemToolModTier.SEAIRON, 0, 0, new Properties()));
 	// Wub Extras
@@ -128,12 +132,11 @@ public class TechTools {
 	public static RegistryObject<Item> wub_paxel =   TinyProgressions.ITEMS.register("wub_paxel",   () -> new BasePaxel(ItemToolModTier.WUBWUB, 0,0, new Properties()));;
 	public static RegistryObject<Item> wub_hammer;
 	// Shears
-	public static RegistryObject<Item> wooden_shears;
-	public static RegistryObject<Item> golden_shears;
-	public static RegistryObject<Item> diamond_shears;
-	public static RegistryObject<Item> emerald_shears;
-	public static RegistryObject<Item> flint_shears;
-	public static RegistryObject<Item> stone_shears;
+	public static RegistryObject<Item> wooden_shears  = TinyProgressions.ITEMS.register("wooden_shears",  () -> new BaseShears(new Properties().defaultMaxDamage(32)));
+	public static RegistryObject<Item> stone_shears =   TinyProgressions.ITEMS.register("stone_shears",   () -> new BaseShears(new Properties().defaultMaxDamage(59)));
+	public static RegistryObject<Item> golden_shears =  TinyProgressions.ITEMS.register("golden_shears",  () -> new BaseShears(new Properties().defaultMaxDamage(70)));
+	public static RegistryObject<Item> flint_shears =   TinyProgressions.ITEMS.register("flint_shears",   () -> new BaseShears(new Properties().defaultMaxDamage(81)));
+	public static RegistryObject<Item> diamond_shears = TinyProgressions.ITEMS.register("diamond_shears", () -> new BaseShears(new Properties().defaultMaxDamage(1561)));
 
 	
 	

@@ -1,15 +1,35 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import com.kashdeya.tinyprogressions.main.Reference;
+import java.util.concurrent.Callable;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import com.kashdeya.tinyprogressions.blocks.compressed.CharcoalBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
+import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.Asphalt;
+import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneGlass;
+import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
+import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.block.Block.Properties;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechBlocks {
 	
 	
-	public static final DeferredRegister<Block> BLOCK_REGISTEY = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
+//	public static final DeferredRegister<Block> BLOCK_REGISTEY = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 	
 	// Tech Blocks
 	public static Block growth_block;
@@ -22,18 +42,19 @@ public class TechBlocks {
 	public static Block blaze_cobblegen_block;
 	public static Block iron_furnace_block;
 	// Deco Blocks
-	public static Block charcoal_block;
+	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
+	
 	public static Block reinforced_glass;
 	public static Block reinforced_obsidian;
 	public static Block dirty_glass;
-	public static Block diorite_brick;
-	public static Block granite_brick;
-	public static Block andesite_brick;
+	public static RegistryObject<Block> diorite_brick = register("diorite_brick", () -> new DioriteBrick());
+	public static RegistryObject<Block> granite_brick = register("granite_brick", () -> new GraniteBrick());
+	public static RegistryObject<Block> andesite_brick  = register("andesite_brick", () -> new AndesiteBrick());;
 	public static Block old_reed;
 	// Compressed Blocks
 	public static Block flesh_block;
-	public static Block bone_block;
-	public static Block netherstar_block;
+	public static RegistryObject<Block> bone_block       = register("bone_block", () -> new NetherStarBlock());
+	public static RegistryObject<Block> netherstar_block = register("netherstar_block", () -> new NetherStarBlock());;
 	public static Block flint_block;
 	// Stone Torch
 	public static Block stone_torch;
@@ -49,9 +70,9 @@ public class TechBlocks {
 	public static Block water_block;
 	// Hardened Stone
 	public static Block unhardened_stone;
-	public static Block hardened_stone;
-	public static Block hardened_stone_bricks;
-	public static Block hardened_stone_smallbricks;
+	public static RegistryObject<Block> hardened_stone              = register("hardened_stone", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
+	public static RegistryObject<Block> hardened_stone_bricks       = register("hardened_stone_bricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
+	public static RegistryObject<Block> hardened_stone_smallbricks  = register("hardened_stone_smallbricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	
 	public static Block hardened_stone_stairs;
 	public static Block hardened_stone_bricks_stairs;
@@ -109,19 +130,56 @@ public class TechBlocks {
     // vasholine
     public static Block VASHOLINE;
     // asphalt
-    public static Block asphalt_block;
+    public static RegistryObject<Block> asphalt_block = register("asphalt_block", () -> new Asphalt());
     // Lava Infused Stone Block
     public static Block lava_infused_stone;
     // Steel Block
-    public static Block steel_block;
+    public static RegistryObject<Block> steel_block = register("steel_block", () -> new DecoMain());
     // Ghost Block
     public static Block ghost_block;
     // quicksand
     public static Block quick_sand;
     // Glowstone Glass
-    public static Block glowstone_glass;
+    public static RegistryObject<Block> glowstone_glass = register("", () -> new GlowstoneGlass());
     
     
+    
+    // Registers a block and blockItem if needed.
+    private static <T extends Block> RegistryObject<T> register(String name, Supplier<? extends T> sup)
+    {
+        return register(name, sup, TechBlocks::itemDefault);
+    }
+
+//    private static <T extends Block> RegistryObject<T> register(String name, Supplier<? extends T> sup, Supplier<Callable<ItemStackTileEntityRenderer>> renderMethod) {
+//        return register(name, sup, block -> item(block, renderMethod));
+//    }
+
+    private static <T extends Block> RegistryObject<T> register(String name, Supplier<? extends T> sup, ItemGroup tab) {
+        return register(name, sup, block -> item(block, tab));
+    }
+
+    private static <T extends Block> RegistryObject<T> register(String name, Supplier<? extends T> sup, Function<RegistryObject<T>, Supplier<? extends Item>> itemCreator) {
+        RegistryObject<T> ret = registerNoItem(name, sup);
+        TinyProgressions.ITEMS.register(name, itemCreator.apply(ret));
+        return ret;
+    }
+
+    private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<? extends T> sup) {
+
+        return TinyProgressions.BLOCKS.register(name, sup);
+    }
+
+    private static Supplier<BlockItem> itemDefault(final RegistryObject<? extends Block> block) {
+        return item(block, TinyProgressions.TAB);
+    }
+
+    private static Supplier<BlockItem> item(final RegistryObject<? extends Block> block, final Supplier<Callable<ItemStackTileEntityRenderer>> renderMethod) {
+        return () -> new BlockItem(block.get(), new Item.Properties().group(TinyProgressions.TAB).setTEISR(renderMethod));
+    }
+
+    private static Supplier<BlockItem> item(final RegistryObject<? extends Block> block, final ItemGroup itemGroup) {
+        return () -> new BlockItem(block.get(), new Item.Properties().group(itemGroup));
+    }
     //TODO
 //	public static void init() {
 //		// glowstone glass

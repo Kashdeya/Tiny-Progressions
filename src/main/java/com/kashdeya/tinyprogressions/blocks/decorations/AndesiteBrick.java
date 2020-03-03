@@ -1,22 +1,18 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import java.util.Random;
-
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.Block.Properties;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-public class AndesiteBrick extends Block implements IOreDictEntry {
+public class AndesiteBrick extends StandardBlock implements IOreDictEntry {
 	
 	public AndesiteBrick()
     {
@@ -38,11 +34,11 @@ public class AndesiteBrick extends Block implements IOreDictEntry {
 	/**
      * Get the Item that this Block should drop when harvested.
      */
-	@Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return Item.getItemFromBlock(TechBlocks.andesite_brick);
-    }
+//	@Override
+//    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+//    {
+//        return Item.getItemFromBlock(TechBlocks.andesite_brick);
+//    }
 	
 	@Override
     public boolean canDropFromExplosion(Explosion explosionIn)
@@ -50,12 +46,12 @@ public class AndesiteBrick extends Block implements IOreDictEntry {
         return false;
     }
 	
-	@Override
-    public int quantityDropped(Random rand)
-    {
-        return 1;
-    }
-	
+//	@Override
+//    public int quantityDropped(Random rand)
+//    {
+//        return 1;
+//    }
+//	
 	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
     {

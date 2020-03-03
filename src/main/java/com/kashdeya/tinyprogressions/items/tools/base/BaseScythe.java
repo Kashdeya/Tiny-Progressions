@@ -66,7 +66,7 @@ public class BaseScythe extends SwordItem {
 
                 if (block == Blocks.DIRT)
                 {
-                    switch (iblockstate.getValue(BlockDirt.VARIANT))
+                    switch (iblockstate..getValue(BlockDirt.VARIANT))
                     {
                         case DIRT:
                             this.setBlock(itemstack, context.getPlayer(), context.getWorld(), context.getPos(), Blocks.FARMLAND.getDefaultState());

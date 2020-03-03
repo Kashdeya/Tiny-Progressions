@@ -29,10 +29,10 @@ public class BlockBerryBush extends BushBlock implements IPlantable {
 	
 	//TODO move later..
 	static {
-		Block blackberryBush = new BlockBerryBush(TechFoods.blackberry_berry,Properties.create(Material.PLANTS, MaterialColor.BLACK).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "blackberry_bush");
-		Block blueBerryBush =  new BlockBerryBush(TechFoods.blueberry_berry, Properties.create(Material.PLANTS, MaterialColor.BLUE).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "blueberry_bush");
-		Block maloBerryBush =  new BlockBerryBush(TechFoods.maloberry_berry, Properties.create(Material.PLANTS, MaterialColor.ORANGE_TERRACOTTA).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "maloberry_bush");
-		Block raspBerryBush =  new BlockBerryBush(TechFoods.raspberry_berry, Properties.create(Material.PLANTS, MaterialColor.RED).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "raspberry_bush");
+		Block blackberryBush = new BlockBerryBush(TechFoods.blackberry_berry.get(),Properties.create(Material.PLANTS, MaterialColor.BLACK).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "blackberry_bush");
+		Block blueBerryBush =  new BlockBerryBush(TechFoods.blueberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.BLUE).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "blueberry_bush");
+		Block maloBerryBush =  new BlockBerryBush(TechFoods.maloberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.ORANGE_TERRACOTTA).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "maloberry_bush");
+		Block raspBerryBush =  new BlockBerryBush(TechFoods.raspberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.RED).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "raspberry_bush");
 	}
 	
 	public BlockBerryBush(Item droppedItem, Properties properties)

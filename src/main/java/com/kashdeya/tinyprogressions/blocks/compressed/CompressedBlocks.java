@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.blocks.compressed;
 
 import java.util.Random;
 
+import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -9,30 +10,27 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.world.Explosion;
+import net.minecraftforge.common.ToolType;
 
-public class CompressedBlocks extends Block{
+public class CompressedBlocks extends StandardBlock{
 	
 	private int meta;
 	private int least_quantity;
 	private int most_quantity;
 	
-	private CompressedBlocks(String unlocalizedName, Material mat, SoundType sound, Block drop, int meta, int least_quantity, int most_quantity) {
-		super(mat);
+	private CompressedBlocks(String unlocalizedName, Properties prop, SoundType sound, Block drop, int meta, int least_quantity, int most_quantity) {
+		super(prop.harvestLevel(1).harvestTool(ToolType.PICKAXE).sound(sound));
 		this.meta = meta;
 		this.least_quantity = least_quantity;
 		this.most_quantity = most_quantity;
-		this.setTranslationKey(unlocalizedName);
-		this.setHarvestLevel("pickaxe", 1);
-        this.setSoundType(sound);
-        this.setCreativeTab(TinyProgressions.tabTP);
 	}
 	
-	public CompressedBlocks(String unlocalizedName, Material mat, SoundType sound, Block drop, int least_quantity, int most_quantity) {
-		this(unlocalizedName, mat, sound, drop, 0, least_quantity, most_quantity);
+	public CompressedBlocks(String unlocalizedName, Properties prop, SoundType sound, Block drop, int least_quantity, int most_quantity) {
+		this(unlocalizedName, prop, sound, drop, 0, least_quantity, most_quantity);
 	}
 
-	protected CompressedBlocks(String unlocalizedName, Material mat, SoundType sound, Block drop) {
-		this(unlocalizedName, mat, sound, drop, 1, 1);
+	protected CompressedBlocks(String unlocalizedName,Properties prop, SoundType sound, Block drop) {
+		this(unlocalizedName, prop, sound, drop, 1, 1);
 	}
 	
 	@Override

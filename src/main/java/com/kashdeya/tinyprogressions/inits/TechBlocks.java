@@ -4,20 +4,30 @@ import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import com.kashdeya.tinyprogressions.blocks.bushes.BlockBerryBush;
+import com.kashdeya.tinyprogressions.blocks.cobblegen.Cobblegen;
 import com.kashdeya.tinyprogressions.blocks.compressed.CharcoalBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.Asphalt;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
+import com.kashdeya.tinyprogressions.blocks.decorations.DirtyGlass;
 import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneGlass;
 import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
+import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
+import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
+import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
+import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
+import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -29,35 +39,33 @@ import net.minecraftforge.fml.common.Mod;
 public class TechBlocks {
 	
 	
-//	public static final DeferredRegister<Block> BLOCK_REGISTEY = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
-	
 	// Tech Blocks
 	public static Block growth_block;
 	public static Block growth_upgrade;
 	public static Block growth_upgrade_two;
-	public static Block cobblegen_block;
-	public static Block iron_cobblegen_block;
-	public static Block diamond_cobblegen_block;
-	public static Block emerald_cobblegen_block;
-	public static Block blaze_cobblegen_block;
-	public static Block iron_furnace_block;
+	public static RegistryObject<Block> cobblegen_block =         register("cobblegen_block",        () -> new Cobblegen(30, 32, Properties.create(Material.IRON)));
+	public static RegistryObject<Block> iron_cobblegen_block =    register("iron_cobblegen_block",   () -> new Cobblegen(20, 64, Properties.create(Material.IRON)));
+	public static RegistryObject<Block> diamond_cobblegen_block = register("diamond_cobblegen_block",() -> new Cobblegen(10, 64, Properties.create(Material.IRON)));
+	public static RegistryObject<Block> emerald_cobblegen_block = register("emerald_cobblegen_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)));
+	public static RegistryObject<Block> blaze_cobblegen_block =   register("blaze_cobblegen_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)));
+	public static RegistryObject<Block> iron_furnace_block;
 	// Deco Blocks
 	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
 	
 	public static Block reinforced_glass;
 	public static Block reinforced_obsidian;
-	public static Block dirty_glass;
-	public static RegistryObject<Block> diorite_brick = register("diorite_brick", () -> new DioriteBrick());
-	public static RegistryObject<Block> granite_brick = register("granite_brick", () -> new GraniteBrick());
-	public static RegistryObject<Block> andesite_brick  = register("andesite_brick", () -> new AndesiteBrick());;
-	public static Block old_reed;
+	public static RegistryObject<Block> dirty_glass = register("dirty_glass", () -> new DirtyGlass());
+	public static RegistryObject<Block> diorite_brick  = register("diorite_brick", () -> new DioriteBrick());
+	public static RegistryObject<Block> granite_brick  = register("granite_brick", () -> new GraniteBrick());
+	public static RegistryObject<Block> andesite_brick = register("andesite_brick", () -> new AndesiteBrick());
+	public static RegistryObject<Block> old_reed       = register("old_reed", () -> new OldReed()); 
 	// Compressed Blocks
 	public static Block flesh_block;
 	public static RegistryObject<Block> bone_block       = register("bone_block", () -> new NetherStarBlock());
 	public static RegistryObject<Block> netherstar_block = register("netherstar_block", () -> new NetherStarBlock());;
 	public static Block flint_block;
 	// Stone Torch
-	public static Block stone_torch;
+	public static RegistryObject<Block> stone_torch = register("stone_torch", () -> new StoneTorch());
 	// EnderOre
 	public static Block ender_ore;
 	// wub ore
@@ -69,14 +77,14 @@ public class TechBlocks {
 	// Water Block
 	public static Block water_block;
 	// Hardened Stone
-	public static Block unhardened_stone;
+	public static RegistryObject<Block> unhardened_stone            = register("unhardened_stone", () -> new UnhardenedBlock());
 	public static RegistryObject<Block> hardened_stone              = register("hardened_stone", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	public static RegistryObject<Block> hardened_stone_bricks       = register("hardened_stone_bricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	public static RegistryObject<Block> hardened_stone_smallbricks  = register("hardened_stone_smallbricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	
-	public static Block hardened_stone_stairs;
-	public static Block hardened_stone_bricks_stairs;
-	public static Block hardened_stone_smallbricks_stairs;
+	public static RegistryObject<Block> hardened_stone_stairs =             register("hardened_stone_stairs", ()->new Stairs(hardened_stone.get()));
+	public static RegistryObject<Block> hardened_stone_bricks_stairs =      register("hardened_stone_bricks_stairs", ()->new Stairs(hardened_stone_bricks.get()));
+	public static RegistryObject<Block> hardened_stone_smallbricks_stairs = register("hardened_stone_smallbricks_stairs", ()->new Stairs(hardened_stone_smallbricks.get()));
 	
 	public static Block hardened_stone_slab_half;
 	public static Block hardened_stone_slab_double;
@@ -89,17 +97,17 @@ public class TechBlocks {
     // Angel
     public static Block fmf_block;
     // Lamp Blocks
-    public static Block lamp;
+    public static RegistryObject<Block> lamp = register("lamp", () -> new Lamp());
     public static Block colored_lamp;
 	// Glowstone Blocks
     public static Block colored_glowstone;
     // Withered Block
     public static Block withered_block;
     // berries
-    public static Block blueberry_bush;
-    public static Block blackberry_bush;
-    public static Block maloberry_bush;
-    public static Block raspberry_bush;
+    public static RegistryObject<Block> blueberry_bush =  register("blueberry_bush",  () -> new BlockBerryBush(TechFoods.blackberry_berry.get(),Properties.create(Material.PLANTS, MaterialColor.BLACK).sound(SoundType.PLANT).hardnessAndResistance(0)));
+    public static RegistryObject<Block> blackberry_bush = register("blackberry_bush", () -> new BlockBerryBush(TechFoods.blueberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.BLUE).sound(SoundType.PLANT).hardnessAndResistance(0)));
+    public static RegistryObject<Block> maloberry_bush =  register("maloberry_bush",  () -> new BlockBerryBush(TechFoods.maloberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.ORANGE_TERRACOTTA).sound(SoundType.PLANT).hardnessAndResistance(0)));
+    public static RegistryObject<Block> raspberry_bush =  register("raspberry_bush",  () -> new BlockBerryBush(TechFoods.raspberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.RED).sound(SoundType.PLANT).hardnessAndResistance(0)));
     // bsc sugar blocks
     public static Block compressed_sugar;
     public static Block double_compressed_sugar;

@@ -1,17 +1,16 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
-import net.minecraft.block.BlockTorch;
+import net.minecraft.block.TorchBlock;
+import net.minecraft.block.material.Material;
 
-public class StoneTorch extends BlockTorch implements IOreDictEntry{
+public class StoneTorch extends TorchBlock implements IOreDictEntry{
 	
 	public StoneTorch()
     {
-        this.setCreativeTab(TinyProgressions.tabTP);
-        this.setTranslationKey("stone_torch");
-        this.setLightLevel(1.0F);
+		super(Properties.create(Material.FIRE)
+				.lightValue(1));
     }
 	
 	@Override

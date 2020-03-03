@@ -3,13 +3,13 @@ package com.kashdeya.tinyprogressions.blocks.ores;
 import java.util.Random;
 
 import com.google.common.base.Predicate;
+import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import javafx.geometry.Side;
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -27,7 +27,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EnderOre extends Block implements IOreDictEntry {
+public class EnderOre extends StandardBlock implements IOreDictEntry {
 	
     public EnderOre()
     {

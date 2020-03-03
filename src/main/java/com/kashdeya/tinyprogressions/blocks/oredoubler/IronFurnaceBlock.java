@@ -7,6 +7,7 @@ import com.kashdeya.tinyprogressions.tiles.TileEntityOreDoubler;
 
 import javafx.geometry.Side;
 import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -31,7 +32,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.BlockStateContainer;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class IronFurnaceBlock extends BlockHorizontal implements ITileEntityProvider{
+public class IronFurnaceBlock extends HorizontalBlock implements ITileEntityProvider{
 
 	public static final PropertyBool ISBURNING = PropertyBool.create("isburning");
 	private int cookSpeedInTicks = 100;

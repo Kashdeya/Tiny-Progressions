@@ -20,7 +20,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class WubOre extends Block implements IOreDictEntry {
+public class WubOre extends StandardBlock implements IOreDictEntry {
 	
     public WubOre()
     {

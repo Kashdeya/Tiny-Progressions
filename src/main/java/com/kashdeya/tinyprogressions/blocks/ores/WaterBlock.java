@@ -33,7 +33,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class WaterBlock extends Block implements IOreDictEntry {
+public class WaterBlock extends StandardBlock implements IOreDictEntry {
 
     public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 

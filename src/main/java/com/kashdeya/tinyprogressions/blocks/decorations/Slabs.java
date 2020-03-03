@@ -5,6 +5,7 @@ import com.kashdeya.tinyprogressions.registry.utils.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,23 +18,23 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.chunk.BlockStateContainer;
 
-public class Slabs extends BlockSlab implements IItemProvider
+public class Slabs extends SlabBlock implements IItemProvider
 {
     private boolean isDouble;
     private Block droppedBlock;
-    private BlockSlab doubleSlab;
+    private SlabBlock doubleSlab;
     
     public Slabs()
     {
     		this(true, null);
     }
     
-    public Slabs(BlockSlab doubleSlab)
+    public Slabs(SlabBlock doubleSlab)
     {
     		this(false, doubleSlab);
     }
     
-    public Slabs(boolean isDouble, BlockSlab doubleSlab)
+    public Slabs(boolean isDouble, SlabBlock doubleSlab)
     {
         super(Material.ROCK);
         this.setHarvestLevel("pickaxe", 1);

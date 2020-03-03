@@ -4,14 +4,14 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.Block.Properties;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -31,20 +31,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.ToolType;
 
-public class Cobblegen extends Block{
+public class Cobblegen extends StandardBlock{
 
-	
-	//TODO Move latter....
-	static {
-		Block blazeCobbleGen   = new Cobblegen(5, 64, Properties.create(Material.IRON));
-		Block diamondCobbleGen = new Cobblegen(10, 64, Properties.create(Material.IRON));
-		Block emeraldCobbleGen = new Cobblegen(1, 64, Properties.create(Material.IRON));
-		Block ironCobbleGen    = new Cobblegen(20, 64, Properties.create(Material.IRON));
-	}
-	
 	int cycleUpdate;
 	int stackSize;
-	
 	
 	public Cobblegen(int cycleUpdate, int stackSize, Properties properties)
 	{
@@ -54,11 +44,6 @@ public class Cobblegen extends Block{
 				.sound(SoundType.STONE)
 				.harvestTool(ToolType.PICKAXE)
 				.harvestLevel(1));
-		
-//		this.setTranslationKey("iron_cobblegen_block");
-//		this.setTranslationKey("emerald_cobblegen_block");
-//		this.setTranslationKey("diamond_cobblegen_block");
-//		this.setTranslationKey("blaze_cobblegen_block");
 		
 		this.cycleUpdate = cycleUpdate;
 		this.stackSize = stackSize;

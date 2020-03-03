@@ -14,6 +14,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -54,7 +55,7 @@ public class WitheredBlock extends Block {
     {    	
         if (entityIn instanceof EntityPlayer)
         {
-            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.WITHER, ConfigHandler.WitheredBlockTime * 20, 0, true, ConfigHandler.WitheredBlockParticals));
+            ((LivingEntity) entityIn).addPotionEffect(new PotionEffect(MobEffects.WITHER, ConfigHandler.WitheredBlockTime * 20, 0, true, ConfigHandler.WitheredBlockParticals));
         }
 
         super.onEntityWalk(worldIn, pos, entityIn);

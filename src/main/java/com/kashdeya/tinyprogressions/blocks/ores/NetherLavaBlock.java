@@ -35,7 +35,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class NetherLavaBlock extends Block implements IOreDictEntry {
+public class NetherLavaBlock extends StandardBlock implements IOreDictEntry {
 
     public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 

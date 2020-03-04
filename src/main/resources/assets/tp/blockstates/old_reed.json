@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tp:old_reed" }
+        "": { "model": "tp:block/old_reed" }
     }
 }

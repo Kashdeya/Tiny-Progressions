@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:soul_sandstone"}
+        "": {"model": "tp:block/soul_sandstone"}
     }
 }

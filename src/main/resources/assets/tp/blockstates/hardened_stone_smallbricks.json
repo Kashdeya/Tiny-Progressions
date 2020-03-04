@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:hardened_stone_smallbricks"}
+        "": {"model": "tp:block/hardened_stone_smallbricks"}
     }
 }

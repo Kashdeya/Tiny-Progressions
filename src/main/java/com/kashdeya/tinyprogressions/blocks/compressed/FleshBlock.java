@@ -1,41 +1,32 @@
 package com.kashdeya.tinyprogressions.blocks.compressed;
 
-import java.util.Random;
-
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
-import net.minecraft.block.BlockFalling;
+import net.minecraft.block.FallingBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class FleshBlock extends BlockFalling{
+public class FleshBlock extends FallingBlock{
 	
 	public FleshBlock()
 	{
-		super(Material.SAND);
-		this.setHardness(0.5F);
-		this.setResistance(5.0F);
-		this.setSoundType(SoundType.SAND);
-		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setTranslationKey("flesh_block");
+		super(Properties
+				.create(Material.SAND)
+				.hardnessAndResistance(.5F, 5F)
+				.sound(SoundType.SAND));
 	}
 	
-	/**
-     * Get the Item that this Block should drop when harvested.
-     */
-	@Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return Item.getItemFromBlock(TechBlocks.flesh_block);
-    }
-	
+//	/**
+//     * Get the Item that this Block should drop when harvested.
+//     */
+//	@Override
+//    public Item getItemDropped(BlockState state, Random rand, int fortune)
+//    {
+//        return Item.getItemFromBlock(TechBlocks.flesh_block);
+//    }
+//	
 	@Override
     public boolean canDropFromExplosion(Explosion explosionIn)
     {
@@ -54,8 +45,7 @@ public class FleshBlock extends BlockFalling{
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
     {
-    	entityIn.motionX *= 0.4D;
-        entityIn.motionZ *= 0.4D;
+        entityIn.setMotion(entityIn.getMotion().getX() * 0.4D, entityIn.getMotion().getY(), entityIn.getMotion().getZ() * 0.4D);
     }
 	
 }

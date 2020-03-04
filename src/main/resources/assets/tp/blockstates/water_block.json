@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal":   { "model": "tp:water_block" }
+        "":   { "model": "tp:block/water_block" }
     }
 }

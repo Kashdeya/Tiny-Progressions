@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tp:blackberry_bush" }
+        "": { "model": "tp:block/blackberry_bush" }
     }
 }

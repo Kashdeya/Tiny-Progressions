@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:glowstone_glass"}
+        "": {"model": "tp:block/glowstone_glass"}
     }
 }

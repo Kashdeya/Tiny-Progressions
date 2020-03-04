@@ -7,6 +7,8 @@ import java.util.function.Supplier;
 import com.kashdeya.tinyprogressions.blocks.bushes.BlockBerryBush;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.Cobblegen;
 import com.kashdeya.tinyprogressions.blocks.compressed.CharcoalBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.FleshBlock;
+import com.kashdeya.tinyprogressions.blocks.compressed.FlintBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.NetherStarBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.Asphalt;
@@ -54,16 +56,16 @@ public class TechBlocks {
 	
 	public static Block reinforced_glass;
 	public static Block reinforced_obsidian;
-	public static RegistryObject<Block> dirty_glass = register("dirty_glass", () -> new DirtyGlass());
+	public static RegistryObject<Block> dirty_glass =    register("dirty_glass", () -> new DirtyGlass());
 	public static RegistryObject<Block> diorite_brick  = register("diorite_brick", () -> new DioriteBrick());
 	public static RegistryObject<Block> granite_brick  = register("granite_brick", () -> new GraniteBrick());
 	public static RegistryObject<Block> andesite_brick = register("andesite_brick", () -> new AndesiteBrick());
 	public static RegistryObject<Block> old_reed       = register("old_reed", () -> new OldReed()); 
 	// Compressed Blocks
-	public static Block flesh_block;
+	public static RegistryObject<Block> flesh_block = register("flesh_block", () -> new FleshBlock());
 	public static RegistryObject<Block> bone_block       = register("bone_block", () -> new NetherStarBlock());
-	public static RegistryObject<Block> netherstar_block = register("netherstar_block", () -> new NetherStarBlock());;
-	public static Block flint_block;
+	public static RegistryObject<Block> netherstar_block = register("netherstar_block", () -> new NetherStarBlock());
+	public static RegistryObject<Block> flint_block = register("flint_block", () -> new FlintBlock());	
 	// Stone Torch
 	public static RegistryObject<Block> stone_torch = register("stone_torch", () -> new StoneTorch());
 	// EnderOre

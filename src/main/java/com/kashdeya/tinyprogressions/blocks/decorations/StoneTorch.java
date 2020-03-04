@@ -9,7 +9,8 @@ public class StoneTorch extends TorchBlock implements IOreDictEntry{
 	
 	public StoneTorch()
     {
-		super(Properties.create(Material.FIRE)
+		super(Properties
+				.create(Material.FIRE)
 				.lightValue(1));
     }
 	

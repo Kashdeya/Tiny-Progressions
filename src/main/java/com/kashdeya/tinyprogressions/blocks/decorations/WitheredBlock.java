@@ -36,19 +36,20 @@ public class WitheredBlock extends Block {
         this.setTranslationKey("withered_block");
         this.disableStats();
     }
-    
-    @Override
-    public int quantityDropped(Random random)
-    {
-        return 0;
-    }
 
-    @Override
-    @Nullable
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return null;
-    }
+	//TODO
+//    @Override
+//    public int quantityDropped(Random random)
+//    {
+//        return 0;
+//    }
+//
+//    @Override
+//    @Nullable
+//    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+//    {
+//        return null;
+//    }
     
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)

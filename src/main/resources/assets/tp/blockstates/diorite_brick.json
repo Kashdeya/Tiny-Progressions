@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:diorite_brick"}
+        "": {"model": "tp:block/diorite_brick"}
     }
 }

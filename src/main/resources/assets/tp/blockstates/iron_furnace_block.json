@@ -1,14 +1,14 @@
 {
 	"forge_marker": 1,
 		"defaults": {
-    	"model": "tp:iron_furnace"
+    	"model": "tp:block/iron_furnace"
   	},
     "variants": {
         "facing": { 
-			"north": { "model": "tp:iron_furnace"},
-			"south": { "model": "tp:iron_furnace", "y": 180 },
-			"west":  { "model": "tp:iron_furnace", "y": 270 },
-			"east":  { "model": "tp:iron_furnace", "y": 90}
+			"north": { "model": "tp:block/iron_furnace"},
+			"south": { "model": "tp:block/iron_furnace", "y": 180 },
+			"west":  { "model": "tp:block/iron_furnace", "y": 270 },
+			"east":  { "model": "tp:block/iron_furnace", "y": 90}
 		},
 		"isburning": {
 			"true": {

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal":   { "model": "tp:nether_lava_block" }
+        "":   { "model": "tp:block/nether_lava_block" }
     }
 }

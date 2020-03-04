@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:reinforced_obsidian"}
+        "": {"model": "tp:block/reinforced_obsidian"}
     }
 }

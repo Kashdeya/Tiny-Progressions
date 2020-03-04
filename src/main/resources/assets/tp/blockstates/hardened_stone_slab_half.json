@@ -1,6 +1,6 @@
 {
     "variants": {
-        "half=bottom": {"model": "tp:hardened_stone_slab_bottom"},
-        "half=top": {"model": "tp:hardened_stone_slab_top"}
+        "half=bottom": {"model": "tp:block/hardened_stone_slab_bottom"},
+        "half=top": {"model": "tp:block/hardened_stone_slab_top"}
     }
 }

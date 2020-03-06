@@ -7,13 +7,9 @@ import net.minecraft.block.material.Material;
 
 public class Lamp extends StandardBlock
 {
-	public Lamp()
+	public Lamp(Properties prop)
 	{
-		super(Properties
-				.create(Material.GLASS)
-				.hardnessAndResistance(.5F, 1F)
-				.lightValue(1)
-				.sound(SoundType.GLASS));
+		super(prop.hardnessAndResistance(.5F, 1F).lightValue(1).sound(SoundType.GLASS));
 	}
 	
 //	@SideOnly(Side.CLIENT)

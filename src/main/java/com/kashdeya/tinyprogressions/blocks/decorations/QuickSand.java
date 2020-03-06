@@ -33,7 +33,7 @@ public class QuickSand extends StandardBlock {
 	
 	@Override
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		
+		builder.
 	}
 	
 	@Override

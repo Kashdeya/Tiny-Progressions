@@ -14,6 +14,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.AndesiteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.Asphalt;
 import com.kashdeya.tinyprogressions.blocks.decorations.DioriteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.DirtyGlass;
+import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneColored;
 import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneGlass;
 import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
@@ -99,10 +100,41 @@ public class TechBlocks {
     // Angel
     public static Block fmf_block;
     // Lamp Blocks
-    public static RegistryObject<Block> lamp = register("lamp", () -> new Lamp());
-    public static Block colored_lamp;
+    public static RegistryObject<Block> lamp =          register("lamp",          () -> new Lamp(Properties.create(Material.GLASS)));
+    public static RegistryObject<Block> yellow_lamp =   register("yellow_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.YELLOW)));
+    public static RegistryObject<Block> white_lamp =    register("white_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.WHITE_TERRACOTTA)));
+    public static RegistryObject<Block> silver_lamp =   register("silver_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GRAY)));
+    public static RegistryObject<Block> red_lamp =      register("red_lamp",      () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.RED)));
+    public static RegistryObject<Block> purple_lamp =   register("purple_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.PURPLE)));
+    public static RegistryObject<Block> pink_lamp =     register("pink_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.PINK)));
+    public static RegistryObject<Block> orange_lamp =   register("orange_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.ORANGE_TERRACOTTA)));
+    public static RegistryObject<Block> magenta_lamp=   register("magenta_lamp",  () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.MAGENTA)));
+    public static RegistryObject<Block> lime_lamp =     register("lime_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.LIME)));
+    public static RegistryObject<Block> lightblue_lamp= register("lightblue_lamp",() -> new Lamp(Properties.create(Material.GLASS, MaterialColor.LIGHT_BLUE)));
+    public static RegistryObject<Block> green_lamp =    register("green_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GREEN)));
+    public static RegistryObject<Block> gray_lamp =     register("gray_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GRAY)));
+    public static RegistryObject<Block> cyan_lamp =     register("cyan_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.CYAN)));
+    public static RegistryObject<Block> brown_lamp =    register("brown_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BROWN)));
+    public static RegistryObject<Block> blue_lamp =     register("blue_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BLUE)));
+    public static RegistryObject<Block> black_lamp =    register("black_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BLACK)));
 	// Glowstone Blocks
     public static Block colored_glowstone;
+    public static RegistryObject<Block> yellow_glowstone =   register("yellow_glowstone",   () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.YELLOW)));
+    public static RegistryObject<Block> white_glowstone=     register("white_glowstone",    () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.WHITE_TERRACOTTA)));
+    public static RegistryObject<Block> silver_glowstone =   register("silver_glowstone",   () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.GRAY)));
+    public static RegistryObject<Block> red_glowstone=       register("red_glowstone",      () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.RED)));
+    public static RegistryObject<Block> purple_glowstone =   register("purple_glowstone",   () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.PURPLE)));
+    public static RegistryObject<Block> pink_glowstone =     register("pink_glowstone",     () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.PINK)));
+    public static RegistryObject<Block> orange_glowstone =   register("orange_glowstone",   () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.ORANGE_TERRACOTTA)));
+    public static RegistryObject<Block> magenta_glowstone=   register("magenta_glowstone",  () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.MAGENTA)));
+    public static RegistryObject<Block> lime_glowstone =     register("lime_glowstone",     () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.LIME)));
+    public static RegistryObject<Block> lightblue_glowstone= register("lightblue_glowstone",() -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.LIGHT_BLUE)));
+    public static RegistryObject<Block> green_glowstone =    register("green_glowstone",    () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.GREEN)));
+    public static RegistryObject<Block> gray_glowstone =     register("gray_glowstone",     () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.GRAY)));
+    public static RegistryObject<Block> cyan_glowstone =     register("cyan_glowstone",     () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.CYAN)));
+    public static RegistryObject<Block> brown_glowstone =    register("brown_glowstone",    () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.BROWN)));
+    public static RegistryObject<Block> blue_glowstone =     register("blue_glowstone",     () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.BLUE)));
+    public static RegistryObject<Block> black_glowstone =    register("black_glowstone",    () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.BLACK)));
     // Withered Block
     public static Block withered_block;
     // berries
@@ -150,7 +182,7 @@ public class TechBlocks {
     // quicksand
     public static Block quick_sand;
     // Glowstone Glass
-    public static RegistryObject<Block> glowstone_glass = register("", () -> new GlowstoneGlass());
+    public static RegistryObject<Block> glowstone_glass = register("glowstone_glass", () -> new GlowstoneGlass());
     
     
     
@@ -190,6 +222,7 @@ public class TechBlocks {
     private static Supplier<BlockItem> item(final RegistryObject<? extends Block> block, final ItemGroup itemGroup) {
         return () -> new BlockItem(block.get(), new Item.Properties().group(itemGroup));
     }
+    
     //TODO
 //	public static void init() {
 //		// glowstone glass

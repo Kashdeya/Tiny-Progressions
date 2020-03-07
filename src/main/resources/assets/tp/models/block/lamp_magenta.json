@@ -51,8 +51,8 @@
         }
     ],
     "textures": {
-        "particle": "block/glass",
-        "t1": "block/glass",
+        "particle": "block/magenta_stained_glass",
+        "t1": "block/magenta_stained_glass",
         "t7": "block/torch"
     }
 }

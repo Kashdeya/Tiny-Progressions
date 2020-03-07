@@ -5,7 +5,7 @@
         "color=orange_lamp": {"model": "tp:block/orange_lamp"},
         "color=magenta_lamp": {"model": "tp:block/magenta_lamp"},
         "color=lightblue_lamp": {"model": "tp:block/lightblue_lamp"},
-        "color=yellow_lamp": {"model": "tp:yellow_lamp"},
+        "color=yellow_lamp": {"model": "tp:block/yellow_lamp"},
         "color=lime_lamp": {"model": "tp:block/lime_lamp"},
         "color=pink_lamp": {"model": "tp:block/pink_lamp"},
         "color=gray_lamp": {"model": "tp:block/gray_lamp"},

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": {"model": "tp:block/lamp"}
+        "": { "model": "tp:block/lamp" }
     }
 }

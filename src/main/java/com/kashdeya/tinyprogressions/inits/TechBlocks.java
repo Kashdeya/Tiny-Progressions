@@ -24,6 +24,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
+import com.kashdeya.tinyprogressions.blocks.properties.BlockColorEnum;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
@@ -101,22 +102,21 @@ public class TechBlocks {
     public static Block fmf_block;
     // Lamp Blocks
     public static RegistryObject<Block> lamp =          register("lamp",          () -> new Lamp(Properties.create(Material.GLASS)));
-    public static RegistryObject<Block> yellow_lamp =   register("yellow_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.YELLOW)));
-    public static RegistryObject<Block> white_lamp =    register("white_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.WHITE_TERRACOTTA)));
-    public static RegistryObject<Block> silver_lamp =   register("silver_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GRAY)));
-    public static RegistryObject<Block> red_lamp =      register("red_lamp",      () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.RED)));
-    public static RegistryObject<Block> purple_lamp =   register("purple_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.PURPLE)));
-    public static RegistryObject<Block> pink_lamp =     register("pink_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.PINK)));
-    public static RegistryObject<Block> orange_lamp =   register("orange_lamp",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.ORANGE_TERRACOTTA)));
-    public static RegistryObject<Block> magenta_lamp=   register("magenta_lamp",  () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.MAGENTA)));
-    public static RegistryObject<Block> lime_lamp =     register("lime_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.LIME)));
-    public static RegistryObject<Block> lightblue_lamp= register("lightblue_lamp",() -> new Lamp(Properties.create(Material.GLASS, MaterialColor.LIGHT_BLUE)));
-    public static RegistryObject<Block> green_lamp =    register("green_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GREEN)));
-    public static RegistryObject<Block> gray_lamp =     register("gray_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GRAY)));
-    public static RegistryObject<Block> cyan_lamp =     register("cyan_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.CYAN)));
-    public static RegistryObject<Block> brown_lamp =    register("brown_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BROWN)));
-    public static RegistryObject<Block> blue_lamp =     register("blue_lamp",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BLUE)));
-    public static RegistryObject<Block> black_lamp =    register("black_lamp",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BLACK)));
+    public static RegistryObject<Block> yellow_lamp =   register("lamp_yellow",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.YELLOW)));
+    public static RegistryObject<Block> white_lamp =    register("lamp_white",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.WHITE_TERRACOTTA)));
+    public static RegistryObject<Block> red_lamp =      register("lamp_red",      () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.RED)));
+    public static RegistryObject<Block> purple_lamp =   register("lamp_purple",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.PURPLE)));
+    public static RegistryObject<Block> pink_lamp =     register("lamp_pink",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.PINK)));
+    public static RegistryObject<Block> orange_lamp =   register("lamp_orange",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.ORANGE_TERRACOTTA)));
+    public static RegistryObject<Block> magenta_lamp=   register("lamp_magenta",  () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.MAGENTA)));
+    public static RegistryObject<Block> lime_lamp =     register("lamp_lime",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.LIME)));
+    public static RegistryObject<Block> lightblue_lamp= register("lamp_lightblue",() -> new Lamp(Properties.create(Material.GLASS, MaterialColor.LIGHT_BLUE)));
+    public static RegistryObject<Block> green_lamp =    register("lamp_green",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GREEN)));
+    public static RegistryObject<Block> gray_lamp =     register("lamp_gray",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.GRAY)));
+    public static RegistryObject<Block> cyan_lamp =     register("lamp_cyan",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.CYAN)));
+    public static RegistryObject<Block> brown_lamp =    register("lamp_brown",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BROWN)));
+    public static RegistryObject<Block> blue_lamp =     register("lamp_blue",     () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BLUE)));
+    public static RegistryObject<Block> black_lamp =    register("lamp_black",    () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.BLACK)));
 	// Glowstone Blocks
     public static Block colored_glowstone;
     public static RegistryObject<Block> yellow_glowstone =   register("yellow_glowstone",   () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.YELLOW)));

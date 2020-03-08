@@ -3,16 +3,16 @@ package com.kashdeya.tinyprogressions.items.block;
 import com.kashdeya.tinyprogressions.registry.utils.IMetadata;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 
-public class MetaItemBlock extends ItemBlock
+public class MetaItemBlock extends BlockItem
 {
 	protected String[] unlocalNames;
 	
 	public MetaItemBlock(Block block)
 	{
-		super(block);
+		super(block, new Properties());
 		setMaxDamage(0);
 		setHasSubtypes(true);
 		

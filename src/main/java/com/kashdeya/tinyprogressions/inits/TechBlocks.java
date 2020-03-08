@@ -20,6 +20,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.GraniteBrick;
 import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
+import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
@@ -180,7 +181,7 @@ public class TechBlocks {
     // Ghost Block
     public static Block ghost_block;
     // quicksand
-    public static Block quick_sand;
+    public static RegistryObject<Block> quick_sand = register("quick_sand", () -> new QuickSand());
     // Glowstone Glass
     public static RegistryObject<Block> glowstone_glass = register("glowstone_glass", () -> new GlowstoneGlass());
     

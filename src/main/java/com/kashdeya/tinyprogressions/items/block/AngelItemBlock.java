@@ -2,25 +2,27 @@ package com.kashdeya.tinyprogressions.items.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class AngelItemBlock extends ItemBlock
+public class AngelItemBlock extends BlockItem
 {
 	public AngelItemBlock(Block block)
 	{
-		super(block);
+		super(block, new Properties().maxStackSize(1));
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) 
 	{
 		if(world.isRemote)
 			return ActionResult.newResult(ActionResultType.SUCCESS, player.getHeldItem(hand));
@@ -55,9 +57,9 @@ public class AngelItemBlock extends ItemBlock
 		}
 		
 		BlockPos pos = new BlockPos(x, y, z);
-		if(world.mayPlace(block, pos, false, side, player))
-			player.getHeldItem(hand).onItemUse(player, world, pos, hand, side, 0, 0, 0);
-		
+		if(canPlace(null, this.getBlock().getStateContainer().getBaseState()))
+			player.getHeldItem(hand).onItemUse(new ItemUseContext(player, hand, new BlockRayTraceResult(Vec3d.ZERO,side, pos, false)));
+
 		return ActionResult.newResult(ActionResultType.SUCCESS, player.getHeldItem(hand));
 	}
 }

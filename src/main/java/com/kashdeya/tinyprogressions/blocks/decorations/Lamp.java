@@ -22,7 +22,7 @@ public class Lamp extends AbstractGlassBlock
 	
 	@Override
 	public BlockRenderLayer getRenderLayer() {
-	      return BlockRenderLayer.CUTOUT_MIPPED;
+	      return BlockRenderLayer.TRANSLUCENT;
 	}
 	
    @OnlyIn(Dist.CLIENT)

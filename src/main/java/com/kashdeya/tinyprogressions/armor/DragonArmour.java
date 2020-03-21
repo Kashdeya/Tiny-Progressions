@@ -38,34 +38,36 @@ public class DragonArmour extends BaseArmor {
 		if (entityIn instanceof PlayerEntity) {
 			if (((PlayerEntity) entityIn).isCreative() || ((PlayerEntity) entityIn).isSpectator())
 				return;
+
+
+			PlayerEntity living = ((PlayerEntity) entityIn);
+	
+			ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
+			ItemStack feet = living.getItemStackFromSlot(EquipmentSlotType.FEET);
+			ItemStack head = living.getItemStackFromSlot(EquipmentSlotType.HEAD);
+			ItemStack legs = living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+	        if (((!head.isEmpty()) && (head.getItem() == TechArmor.dragon_helmet.get()) &&
+	            (!chest.isEmpty()) && (chest.getItem() == TechArmor.dragon_chestplate.get()) &&
+	            (!legs.isEmpty()) && (legs.getItem() == TechArmor.dragon_leggings.get()) &&
+	            (!feet.isEmpty()) && (feet.getItem() == TechArmor.dragon_boots.get()))) {
+	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_resistance) {
+	            	living.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 180, ArmorHandler.dragon_resistance_lvl, false, false));
+	            }
+	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fire) {
+	            	living.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.dragon_fire_lvl, false, false));
+	            }
+	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_strength) {
+	            	living.addPotionEffect(new EffectInstance(Effects.STRENGTH, 180, ArmorHandler.dragon_strength_lvl, false, false));
+	            }
+	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly) {
+	            	living.abilities.allowFlying = true;
+	            }
+	        } else {
+	        	((PlayerEntity)living).abilities.allowFlying = false;
+	        	((PlayerEntity)living).abilities.isFlying = false;
+	        }
+        
 		}
-
-		LivingEntity living = ((LivingEntity) entityIn);
-
-		ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-		ItemStack feet = living.getItemStackFromSlot(EquipmentSlotType.FEET);
-		ItemStack head = living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-		ItemStack legs = living.getItemStackFromSlot(EquipmentSlotType.LEGS);
-        if (((!head.isEmpty()) && (head.getItem() == TechArmor.dragon_helmet) &&
-            (!chest.isEmpty()) && (chest.getItem() == TechArmor.dragon_chestplate) &&
-            (!legs.isEmpty()) && (legs.getItem() == TechArmor.dragon_leggings) &&
-            (!feet.isEmpty()) && (feet.getItem() == TechArmor.dragon_boots))) {
-            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_resistance) {
-            	living.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 180, ArmorHandler.dragon_resistance_lvl, false, false));
-            }
-            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fire) {
-            	living.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.dragon_fire_lvl, false, false));
-            }
-            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_strength) {
-            	living.addPotionEffect(new EffectInstance(Effects.STRENGTH, 180, ArmorHandler.dragon_strength_lvl, false, false));
-            }
-            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly) {
-            	living.capabilities.allowFlying = true;
-            }
-        } else {
-            entity.capabilities.allowFlying = false;
-            entity.capabilities.isFlying = false;
-        }
     }
 
     @Override

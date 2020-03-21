@@ -23,35 +23,9 @@ public class DirtyGlass extends AbstractGlassBlock implements IOreDictEntry
     	return "blockGlassDirty";
     }
     
-    
-    //TODO ?
     public BlockRenderType getBlockLayer()
     {
         return BlockRenderType.MODEL;
     }
-//
-//    @Override
-//    public boolean isFullCube(IBlockState state)
-//    {
-//        return false;
-//    }
-//    
-//    @Override
-//    public boolean isOpaqueCube(IBlockState state)
-//    {
-//        return false;
-//    }
-//    
-//    @Override
-//    public int quantityDropped(Random rand)
-//    {
-//        return 1;
-//    }
-//    
-//    @Override
-//    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-//    {
-//        return Item.getItemFromBlock(TechBlocks.dirty_glass);
-//    }
-//    
+  
 }

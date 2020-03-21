@@ -54,7 +54,7 @@ public class QuickSand extends StandardBlock {
 
 	@SubscribeEvent
 	public void onEntityJump(LivingJumpEvent e) {
-		if (e.getEntity().getEntityWorld().getBlockState(new BlockPos((int) Math.floor(e.getEntity().posX), (int) Math.floor(e.getEntity().posY) - 1, (int) Math.floor(e.getEntity().posZ))).getBlock() == this)
+		if (e.getEntity().getEntityWorld().getBlockState(new BlockPos((int) Math.floor(e.getEntity().getPosition().getX()), (int) Math.floor(e.getEntity().getPosition().getY()) - 1, (int) Math.floor(e.getEntity().getPosition().getZ()))).getBlock() == this)
 			e.getEntityLiving().setMotion(e.getEntityLiving().getMotion().getX(), .001, e.getEntityLiving().getMotion().getY());
 	}
 }

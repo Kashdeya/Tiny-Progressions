@@ -1,7 +1,0 @@
-{
-    "variants": {
-    	"": {"model": "tp:block/hardened_stone"},
-        "half=bottom": {"model": "tp:block/hardened_stone"},
-        "half=top": {"model": "tp:block/hardened_stone"}
-    }
-}

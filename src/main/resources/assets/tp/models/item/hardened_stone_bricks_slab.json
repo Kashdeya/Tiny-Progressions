@@ -1,5 +1,5 @@
 {
-    "parent": "tp:block/hardened_stone_slab_bottom",
+    "parent": "tp:block/hardened_stone_bricks_slab",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

@@ -1,7 +1,0 @@
-{
-    "variants": {
-    	"": {"model": "tp:block/hardened_stone_smallbricks"},
-        "half=bottom": {"model": "tp:block/hardened_stone_smallbricks"},
-        "half=top": {"model": "tp:block/hardened_stone_smallbricks"}
-    }
-}

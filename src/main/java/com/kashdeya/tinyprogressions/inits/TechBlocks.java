@@ -5,7 +5,6 @@ import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import com.kashdeya.tinyprogressions.blocks.bushes.BlockBerryBush;
 import com.kashdeya.tinyprogressions.blocks.cobblegen.Cobblegen;
 import com.kashdeya.tinyprogressions.blocks.compressed.CharcoalBlock;
 import com.kashdeya.tinyprogressions.blocks.compressed.FleshBlock;
@@ -22,7 +21,6 @@ import com.kashdeya.tinyprogressions.blocks.decorations.HardenedBlocks;
 import com.kashdeya.tinyprogressions.blocks.decorations.Lamp;
 import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
-import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
 import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
@@ -33,7 +31,9 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
 import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
@@ -44,6 +44,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidAttributes.Builder;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -97,19 +98,15 @@ public class TechBlocks {
 	public static RegistryObject<Block> hardened_stone_bricks       = register("hardened_stone_bricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	public static RegistryObject<Block> hardened_stone_smallbricks  = register("hardened_stone_smallbricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	
-	public static RegistryObject<Block> hardened_stone_stairs =             register("hardened_stone_stairs", ()->new Stairs(hardened_stone.get()));
-	public static RegistryObject<Block> hardened_stone_bricks_stairs =      register("hardened_stone_bricks_stairs", ()->new Stairs(hardened_stone_bricks.get()));
-	public static RegistryObject<Block> hardened_stone_smallbricks_stairs = register("hardened_stone_smallbricks_stairs", ()->new Stairs(hardened_stone_smallbricks.get()));
+	public static RegistryObject<Block> hardened_stone_stairs =             register("hardened_stone_stairs",             ()->new StairsBlock(()-> hardened_stone.get().getDefaultState(), Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1750F).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
+	public static RegistryObject<Block> hardened_stone_bricks_stairs =      register("hardened_stone_bricks_stairs",      ()->new StairsBlock(()-> hardened_stone_bricks.get().getDefaultState(), Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1750F).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
+	public static RegistryObject<Block> hardened_stone_smallbricks_stairs = register("hardened_stone_smallbricks_stairs", ()->new StairsBlock(()-> hardened_stone_smallbricks.get().getDefaultState(), Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1750F).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
 	
-	public static Block hardened_stone_slab_half;
-	public static Block hardened_stone_slab_double;
-	
-	public static Block hardened_stone_bricks_slab_half;
-	public static Block hardened_stone_bricks_slab_double;
-	
-	public static Block hardened_stone_smallbricks_slab_half;
-    public static Block hardened_stone_smallbricks_slab_double;
-    // Angel
+	public static RegistryObject<Block> hardened_stone_slab =             register("hardened_stone_slab",            ()->new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1500F)));
+	public static RegistryObject<Block> hardened_stone_bricks_slab  =     register("hardened_stone_bricks_slab",     ()->new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1500F)));
+	public static RegistryObject<Block> hardened_stone_smallbricks_slab = register("hardened_stone_smallbricks_slab",()->new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1500F)));
+
+	// Angel
     public static Block fmf_block;
     // Lamp Blocks
     public static RegistryObject<Block> lamp =          register("lamp",          () -> new Lamp(Properties.create(Material.GLASS)));

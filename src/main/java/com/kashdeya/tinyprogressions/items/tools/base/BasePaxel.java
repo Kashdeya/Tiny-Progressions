@@ -3,7 +3,6 @@ package com.kashdeya.tinyprogressions.items.tools.base;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
-import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;

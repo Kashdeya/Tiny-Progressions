@@ -21,10 +21,10 @@ import net.minecraftforge.fml.common.Mod;
 public class TechArmor {
 	
 	// Stone Armor
-	public static RegistryObject<Item> stone_helmet =     TinyProgressions.ITEMS.register("stone_helmet", () -> new StoneArmor(EquipmentSlotType.HEAD, new Properties().group(TinyProgressions.TAB)));
+	public static RegistryObject<Item> stone_helmet =     TinyProgressions.ITEMS.register("stone_helmet",     () -> new StoneArmor(EquipmentSlotType.HEAD, new Properties()));
 	public static RegistryObject<Item> stone_chestplate = TinyProgressions.ITEMS.register("stone_chestplate", () -> new StoneArmor(EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> stone_leggings =   TinyProgressions.ITEMS.register("stone_leggings", () -> new StoneArmor(EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> stone_boots =      TinyProgressions.ITEMS.register("stone_boots", () -> new StoneArmor(EquipmentSlotType.FEET, new Properties()));
+	public static RegistryObject<Item> stone_leggings =   TinyProgressions.ITEMS.register("stone_leggings",   () -> new StoneArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> stone_boots =      TinyProgressions.ITEMS.register("stone_boots",      () -> new StoneArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	
 	// Flint Armor

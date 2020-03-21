@@ -7,7 +7,6 @@ import javax.annotation.Nullable;
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 
-import net.minecraft.block.Block.Properties;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -16,7 +15,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -51,11 +49,11 @@ public class Cobblegen extends StandardBlock{
 	
 	
 
-	@Override
-    public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT_MIPPED;
-    }
+//	@Override
+//    public BlockRenderLayer getRenderLayer()
+//    {
+//        return BlockRenderLayer.CUTOUT_MIPPED;
+//    }
 
 	@Override
     public BlockRenderType getRenderType(BlockState state) {
@@ -83,7 +81,7 @@ public class Cobblegen extends StandardBlock{
     	{
     		TileEntityCobblegen ttest = (TileEntityCobblegen)tile;
     		
-    		if(!player.isSneaking())
+    		if(!player.isCrouching())
     		{
         		ItemStack stack = ttest.getInventory().getAndRemoveSlot(0);
         		

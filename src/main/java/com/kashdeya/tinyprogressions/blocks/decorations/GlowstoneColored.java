@@ -2,9 +2,6 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
-import net.minecraft.block.Block.Properties;
-import net.minecraft.block.material.Material;
-
 public class GlowstoneColored extends StandardBlock
 {
 //	public static final PropertyEnum<EnumGlowstoneColor> COLOR = PropertyEnum.create("color", EnumGlowstoneColor.class);

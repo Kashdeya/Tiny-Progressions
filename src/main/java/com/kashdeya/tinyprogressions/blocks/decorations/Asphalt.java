@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
-import net.minecraft.block.Block.Properties;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;

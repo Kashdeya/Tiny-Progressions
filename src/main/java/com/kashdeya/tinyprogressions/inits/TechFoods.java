@@ -65,7 +65,7 @@ public class TechFoods {
 	// bsc cookie
 	public static RegistryObject<Item> bsc_sugar_cookie = TinyProgressions.ITEMS.register("bsc_sugar_cookie",  () -> new FoodBase(new Properties(), Foods.BSC_SUGAR_COOKIE));
 	// Bams Pizza
-	public static RegistryObject<Item> bams_pizza = TinyProgressions.ITEMS.register("v",  () -> new FoodBase(new Properties(), Foods.BAMS_PIZZA));
+	public static RegistryObject<Item> bams_pizza = TinyProgressions.ITEMS.register("bams_pizza",  () -> new FoodBase(new Properties(), Foods.BAMS_PIZZA));
 	// Extra Drops
 	public static RegistryObject<Item> plump_pear  = TinyProgressions.ITEMS.register("plump_pear",  () -> new FoodBase(new Properties(), Foods.PLUMP_PEAR));
 	public static RegistryObject<Item> plump_peach = TinyProgressions.ITEMS.register("plump_peach",  () -> new FoodBase(new Properties(), Foods.PLUMP_PEACH));

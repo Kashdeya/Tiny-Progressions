@@ -4,12 +4,10 @@ import com.kashdeya.tinyprogressions.registry.utils.IItemProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
-import net.minecraft.util.BlockRenderLayer;
 
 public class StandardBlock extends Block implements IItemProvider
 {
 	private BlockItem itemBlock;
-	private BlockRenderLayer renderLayer;
 	
 	public StandardBlock(Properties propery)
 	{

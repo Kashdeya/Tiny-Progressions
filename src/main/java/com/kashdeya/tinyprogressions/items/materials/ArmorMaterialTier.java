@@ -2,9 +2,9 @@ package com.kashdeya.tinyprogressions.items.materials;
 import net.minecraft.inventory.EquipmentSlotType;
 import  net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyLoadBase;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraftforge.common.util.Lazy;
 
 public enum ArmorMaterialTier implements IArmorMaterial{
 
@@ -29,7 +29,8 @@ public enum ArmorMaterialTier implements IArmorMaterial{
 	SoundEvent event;
 	String name;
 	int[] damageReducton;
-	private LazyLoadBase<Ingredient> repairMaterial;
+//	private LazyLoadBase<Ingredient> repairMaterial;
+	private Lazy<Ingredient> repairMaterial;
 	
 	ArmorMaterialTier(String name, int[] durability, int[] reductionAmounts, int enchantability, SoundEvent soundOnEquip, float toughness){
 		this.name = name;
@@ -71,7 +72,8 @@ public enum ArmorMaterialTier implements IArmorMaterial{
 
 	@Override
 	public Ingredient getRepairMaterial() {
-		return this.repairMaterial.getValue(); 
+		return this.repairMaterial.get();
+
 	}
 
 	@Override

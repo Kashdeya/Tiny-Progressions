@@ -1,7 +1,5 @@
 package com.kashdeya.tinyprogressions.items.tools.base;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.IItemTier;

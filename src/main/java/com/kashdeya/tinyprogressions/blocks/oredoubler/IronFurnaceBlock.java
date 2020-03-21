@@ -6,7 +6,6 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityOreDoubler;
 
 import javafx.geometry.Side;
-import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;

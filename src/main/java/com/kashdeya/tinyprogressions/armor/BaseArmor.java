@@ -10,6 +10,7 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -23,11 +24,11 @@ public class BaseArmor extends ArmorItem {
 	private String tooltipString = null;
 	
 	
-	public BaseArmor(ArmorMaterialTier tier, EquipmentSlotType slot, Properties prop) {
+	public BaseArmor(ArmorMaterialTier tier, EquipmentSlotType slot, Item.Properties prop) {
 		this(tier, slot, null, prop);
 	}
 	
-	public BaseArmor(ArmorMaterialTier tier, EquipmentSlotType slot, String tooltipTranslation, Properties prop) {
+	public BaseArmor(ArmorMaterialTier tier, EquipmentSlotType slot, String tooltipTranslation, Item.Properties prop) {
 		super(tier, slot, prop.group(TinyProgressions.TAB).maxStackSize(1));
 		this.tooltipString = tooltipTranslation;
 	}

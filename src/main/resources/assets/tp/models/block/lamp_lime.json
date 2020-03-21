@@ -1,58 +1,7 @@
 {
-    "parent": "block/cube_all",
-    "ambientocclusion": false,
-    "elements": [{
-            "from": [0, 0, 0],
-            "to": [16, 16, 16],
-            "faces": {
-                "down": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "up": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "north": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "south": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "west": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "east": { "uv": [0, 0, 16, 16], "texture": "#t1" }
-            }
-        },
-        {
-            "from": [7, 0, 0],
-            "to": [9, 16, 16],
-            "faces": {
-                "west": { "uv": [0, 0, 16, 16], "texture": "#t7" },
-                "east": { "uv": [0, 0, 16, 16], "texture": "#t7" }
-            }
-        },
-        {
-            "from": [0, 0, 7],
-            "to": [16, 16, 9],
-            "faces": {
-                "north": { "uv": [0, 0, 16, 16], "texture": "#t7" },
-                "south": { "uv": [0, 0, 16, 16], "texture": "#t7" }
-            }
-        },
-        {
-            "from": [7, 0, 7],
-            "to": [9, 10, 9],
-            "faces": {
-                "down": { "uv": [7, 13, 9, 15], "texture": "#t7" },
-                "up": { "uv": [7, 6, 9, 8], "texture": "#t7" }
-            }
-        },
-        {
-            "from": [0, 0, 0],
-            "to": [16, 16, 16],
-            "faces": {
-                "down": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "up": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "north": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "south": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "west": { "uv": [0, 0, 16, 16], "texture": "#t1" },
-                "east": { "uv": [0, 0, 16, 16], "texture": "#t1" }
-            }
-        }
-    ],
+    "parent": "tp:block/lamp",
     "textures": {
         "particle": "block/lime_stained_glass",
-        "t1": "block/lime_stained_glass",
-        "t7": "block/torch"
+        "t1": "block/lime_stained_glass"
     }
 }

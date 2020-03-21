@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.awt.Color;
 import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -24,19 +25,28 @@ import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
 import com.kashdeya.tinyprogressions.blocks.decorations.Stairs;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
+import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
-import com.kashdeya.tinyprogressions.blocks.properties.BlockColorEnum;
+import com.kashdeya.tinyprogressions.fluids.VasholineFluid;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
+import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Items;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.FluidAttributes;
+import net.minecraftforge.fluids.FluidAttributes.Builder;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 
@@ -171,7 +181,13 @@ public class TechBlocks {
     public static Block bridge_builder;
     public static Block tower_builder;
     // vasholine
-    public static Block VASHOLINE;
+//    public static Block VASHOLINE;
+	public static RegistryObject<FlowingFluid> vasholine_fluid =         TinyProgressions.FLUIDS.register("vasholine_still",   () -> new VasholineFluid.Source(TechBlocks.vasholine_fluid_properties));
+	public static RegistryObject<FlowingFluid> vasholine_fluid_flowing = TinyProgressions.FLUIDS.register("vasholine_flowing", () -> new VasholineFluid.Flowing(TechBlocks.vasholine_fluid_properties));
+	public static RegistryObject<FlowingFluidBlock> vasholine =          TinyProgressions.BLOCKS.register("vasholine",         () -> new BlockFluidVasholine(Block.Properties.create(Material.WATER)));
+	public static RegistryObject<Item> vasholine_bucket =                TinyProgressions.ITEMS.register ("vasholine_bucket",  () -> new BucketItem(vasholine_fluid,new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(TinyProgressions.TAB)));
+	public static final ForgeFlowingFluid.Properties vasholine_fluid_properties = new ForgeFlowingFluid.Properties(vasholine_fluid, vasholine_fluid_flowing, fluidBuilderAttributes(new Color(182, 209, 0).getRGB(), 5000, 5000, 300, 20)).bucket(vasholine_bucket).block(vasholine);
+    
     // asphalt
     public static RegistryObject<Block> asphalt_block = register("asphalt_block", () -> new Asphalt());
     // Lava Infused Stone Block
@@ -223,6 +239,16 @@ public class TechBlocks {
     private static Supplier<BlockItem> item(final RegistryObject<? extends Block> block, final ItemGroup itemGroup) {
         return () -> new BlockItem(block.get(), new Item.Properties().group(itemGroup));
     }
+    
+	public static Builder fluidBuilderAttributes(int fluidColor, int density, int viscosity, int temperature, int luminosity) {
+		FluidAttributes.Builder fluidBuilder = FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"));
+		fluidBuilder.color(fluidColor);
+		fluidBuilder.density(density);
+		fluidBuilder.viscosity(viscosity);
+		fluidBuilder.temperature(temperature);
+		fluidBuilder.luminosity(luminosity);
+		return fluidBuilder;
+	}
     
     //TODO
 //	public static void init() {

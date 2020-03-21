@@ -133,7 +133,6 @@ public class Cobblegen extends StandardBlock{
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_3").setStyle(new Style().setColor(TextFormatting.YELLOW)));
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_4").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-
     }
 
 }

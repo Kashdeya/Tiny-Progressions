@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
 
 import net.minecraft.block.Block;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -49,7 +50,7 @@ public class TinyProgressions{
 	
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
-	
+	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
 	
 	
     public TinyProgressions() {
@@ -63,6 +64,7 @@ public class TinyProgressions{
         MinecraftForge.EVENT_BUS.register(this);
 		ITEMS.register(bus);
 		BLOCKS.register(bus);
+		FLUIDS.register(bus);
         INSTANCE = this;
     }
 

@@ -4,13 +4,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
@@ -51,7 +55,7 @@ public class TinyProgressions{
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
-	
+	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
 	
     public TinyProgressions() {
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -65,6 +69,7 @@ public class TinyProgressions{
 		ITEMS.register(bus);
 		BLOCKS.register(bus);
 		FLUIDS.register(bus);
+		TILE_ENTITY_TYPES.register(bus);
         INSTANCE = this;
     }
 
@@ -111,7 +116,16 @@ public class TinyProgressions{
 //    			proxy.onPostInitialization(e);
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {  }
+    private void doClientStuff(final FMLClientSetupEvent event) {
+    	
+    	RenderType cutout_mipped = RenderType.func_228645_f_();
+
+    	RenderTypeLookup.setRenderLayer(TechBlocks.cobblegen_block.get(), cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.iron_cobblegen_block.get(), cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(), cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.diamond_cobblegen_block.get(), cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.blaze_cobblegen_block.get(), cutout_mipped);
+    }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {  }
 

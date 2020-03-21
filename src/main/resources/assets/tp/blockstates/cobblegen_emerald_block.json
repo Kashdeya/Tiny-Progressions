@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "tp:block/cobblegen_emerald_block" }
+    }
+}

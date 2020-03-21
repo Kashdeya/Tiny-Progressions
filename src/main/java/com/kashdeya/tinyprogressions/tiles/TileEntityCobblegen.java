@@ -6,12 +6,12 @@ import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 import com.kashdeya.tinyprogressions.inits.ModTileEntityTypes;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
@@ -20,7 +20,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 
-public class TileEntityCobblegen extends TileEntity implements  ITickable //ISidedInventory,
+public class TileEntityCobblegen extends TileEntity implements ITickableTileEntity//ISidedInventory,
 {
 
 	public TileEntityCobblegen() {

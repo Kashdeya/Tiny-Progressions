@@ -42,7 +42,7 @@ public class TechTools {
 //	public static RegistryObject<Item> emerald_axe =     TinyProgressions.ITEMS.register("emerald_axe",     () -> new BaseAxe(ItemToolModTier.EMERALD, 0, 0, new Properties()));
 //	public static RegistryObject<Item> emerald_spade =   TinyProgressions.ITEMS.register("emerald_spade",   () -> new BaseSpade(ItemToolModTier.EMERALD, 0, 0, new Properties()));
 //	public static RegistryObject<Item> emerald_sword =   TinyProgressions.ITEMS.register("emerald_sword",   () -> new BaseSword(ItemToolModTier.EMERALD, 0, 0, new Properties()));
-//	public static RegistryObject<Item> emerald_hoe =     TinyProgressions.ITEMS.register("emerald_hoe",   () -> new BaseHoe(ItemToolModTier.EMERALD, 0, new Properties()));
+//	public static RegistryObject<Item> emerald_hoe =     TinyProgressions.ITEMS.register("emerald_hoe",     () -> new BaseHoe(ItemToolModTier.EMERALD, 0, new Properties()));
 //	// Obsidian
 //	public static RegistryObject<Item> obsidian_pickaxe = TinyProgressions.ITEMS.register("obsidian_pickaxe", () -> new BasePickaxe(ItemToolModTier.OBSIDIAN, 0, 0, new Properties()));
 //	public static RegistryObject<Item> obsidian_axe =     TinyProgressions.ITEMS.register("obsidian_axe",     () -> new BaseAxe(ItemToolModTier.OBSIDIAN, 0, 0, new Properties()));
@@ -137,7 +137,7 @@ public class TechTools {
 //	public static RegistryObject<Item> golden_shears =  TinyProgressions.ITEMS.register("golden_shears",  () -> new BaseShears(new Properties().defaultMaxDamage(70)));
 //	public static RegistryObject<Item> flint_shears =   TinyProgressions.ITEMS.register("flint_shears",   () -> new BaseShears(new Properties().defaultMaxDamage(81)));
 //	public static RegistryObject<Item> diamond_shears = TinyProgressions.ITEMS.register("diamond_shears", () -> new BaseShears(new Properties().defaultMaxDamage(1561)));
-//
+
 //	
 	
 //	public static void init(){

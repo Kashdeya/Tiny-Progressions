@@ -58,13 +58,13 @@ public class TechBlocks {
 	public static Block growth_block;
 	public static Block growth_upgrade;
 	public static Block growth_upgrade_two;
-//	public static RegistryObject<Block> cobblegen_block =         register("cobblegen_block",        () -> new Cobblegen(30, 32, Properties.create(Material.IRON)));
-//	public static RegistryObject<Block> iron_cobblegen_block =    register("iron_cobblegen_block",   () -> new Cobblegen(20, 64, Properties.create(Material.IRON)));
-//	public static RegistryObject<Block> diamond_cobblegen_block = register("diamond_cobblegen_block",() -> new Cobblegen(10, 64, Properties.create(Material.IRON)));
-//	public static RegistryObject<Block> emerald_cobblegen_block = register("emerald_cobblegen_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)));
-//	public static RegistryObject<Block> blaze_cobblegen_block =   register("blaze_cobblegen_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)));
-//	public static RegistryObject<Block> iron_furnace_block;
-//	// Deco Blocks
+	public static RegistryObject<Block> cobblegen_block =         register("cobblegen_block",        () -> new Cobblegen(30, 32, Properties.create(Material.IRON)));
+	public static RegistryObject<Block> iron_cobblegen_block =    register("cobblegen_iron_block",   () -> new Cobblegen(20, 64, Properties.create(Material.IRON)));
+	public static RegistryObject<Block> diamond_cobblegen_block = register("cobblegen_diamond_block",() -> new Cobblegen(10, 64, Properties.create(Material.IRON)));
+	public static RegistryObject<Block> emerald_cobblegen_block = register("cobblegen_emerald_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)));
+	public static RegistryObject<Block> blaze_cobblegen_block =   register("cobblegen_blaze_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)));
+	public static RegistryObject<Block> iron_furnace_block;
+	// Deco Blocks
 //	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
 //	
 //	public static Block reinforced_glass;

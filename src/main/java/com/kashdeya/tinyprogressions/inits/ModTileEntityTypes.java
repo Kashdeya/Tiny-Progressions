@@ -1,23 +1,22 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import com.kashdeya.tinyprogressions.main.Reference;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModTileEntityTypes {
-	
-	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
 
 	// We don't have a datafixer for our TileEntities, so we pass null into build.
-	public static final RegistryObject<TileEntityType<TileEntityCobblegen>> CobbleGen = TILE_ENTITY_TYPES.register("cobblegen", () ->
-			TileEntityType.Builder.create(TileEntityCobblegen::new, TechBlocks.cobblegen_block)
-					.build(null)
-	);
-
-	
+	public static final RegistryObject<TileEntityType<TileEntityCobblegen>> CobbleGen = TinyProgressions.TILE_ENTITY_TYPES.register("cobblegen", () -> TileEntityType.Builder.create(TileEntityCobblegen::new, 
+			TechBlocks.cobblegen_block.get(),
+			TechBlocks.iron_cobblegen_block.get(),
+			TechBlocks.emerald_cobblegen_block.get(),
+			TechBlocks.diamond_cobblegen_block.get(),
+			TechBlocks.blaze_cobblegen_block.get()
+			).build(null));
 
 }

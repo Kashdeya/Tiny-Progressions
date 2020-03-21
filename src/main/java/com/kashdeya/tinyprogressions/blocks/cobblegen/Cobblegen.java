@@ -11,10 +11,12 @@ import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
+import net.minecraft.client.renderer.BlockModelRenderer;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -42,13 +44,19 @@ public class Cobblegen extends StandardBlock{
 				.sound(SoundType.STONE)
 				.harvestTool(ToolType.PICKAXE)
 				.harvestLevel(1));
-		
 		this.cycleUpdate = cycleUpdate;
 		this.stackSize = stackSize;
 	}
 	
-	
+	@Override
+	public boolean func_229869_c_(BlockState p_229869_1_, IBlockReader p_229869_2_, BlockPos p_229869_3_) {
+	   return false;
+	}
 
+	@Override
+	public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
+      return false;
+	}
 //	@Override
 //    public BlockRenderLayer getRenderLayer()
 //    {
@@ -57,6 +65,7 @@ public class Cobblegen extends StandardBlock{
 
 	@Override
     public BlockRenderType getRenderType(BlockState state) {
+		
         return BlockRenderType.MODEL;
      }
 
@@ -67,18 +76,21 @@ public class Cobblegen extends StandardBlock{
 //        return false;
 //    }
 //	
-	@Override
-    public boolean onBlockActivated(final BlockState state, final World worldIn, final BlockPos pos, final PlayerEntity player, final Hand handIn, final BlockRayTraceResult hit)
-    {
-    	if(worldIn.isRemote)
+	
+	@Override	
+	public ActionResultType func_225533_a_(BlockState p_225533_1_, World worldIn, BlockPos pos, PlayerEntity player, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
+
+
+		if(worldIn.isRemote)
     	{
-    		return true;
+    		return ActionResultType.SUCCESS;
     	}
-    	
+
     	TileEntity tile = worldIn.getTileEntity(pos);
     	
     	if(tile != null && tile instanceof TileEntityCobblegen)
     	{
+
     		TileEntityCobblegen ttest = (TileEntityCobblegen)tile;
     		
     		if(!player.isCrouching())
@@ -100,7 +112,7 @@ public class Cobblegen extends StandardBlock{
     		}
     	}
     	
-        return true;
+        return ActionResultType.SUCCESS;
     }
 
 	@Override
@@ -117,10 +129,15 @@ public class Cobblegen extends StandardBlock{
 		super.onReplaced(oldState, worldIn, pos, newState, isMoving);
     }
     
+	
+	@Override
+	public boolean hasTileEntity(BlockState state){
+		return true;
+	}
+	
 	@Nullable
 	@Override
 	public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
-		
 		return new TileEntityCobblegen().setGenStats(cycleUpdate, cycleUpdate);
 	}
     

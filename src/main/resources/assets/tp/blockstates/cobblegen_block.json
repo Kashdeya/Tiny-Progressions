@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": {"model": "tp:block/cobblegen_block"}
+        "": { "model": "tp:block/cobblegen_block" }
     }
 }

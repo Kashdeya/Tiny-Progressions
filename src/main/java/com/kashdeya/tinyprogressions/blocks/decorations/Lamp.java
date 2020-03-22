@@ -17,7 +17,12 @@ public class Lamp extends AbstractGlassBlock
 	
 	public Lamp(Properties prop)
 	{
-		super(prop.hardnessAndResistance(.5F, 1F).lightValue(15).sound(SoundType.GLASS).noDrops().func_226896_b_());
+		super(prop
+				.hardnessAndResistance(.5F, 1F)
+				.lightValue(15)
+				.sound(SoundType.GLASS)
+				.noDrops()
+				.func_226896_b_());
 	}
 	
 	

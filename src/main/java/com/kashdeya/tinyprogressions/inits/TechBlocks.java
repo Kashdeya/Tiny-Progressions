@@ -23,8 +23,11 @@ import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
+import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
+import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
+import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.fluids.VasholineFluid;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -68,8 +71,9 @@ public class TechBlocks {
 	// Deco Blocks
 	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
 	
-	public static Block reinforced_glass;
-	public static Block reinforced_obsidian;
+	public static RegistryObject<Block> reinforced_glass = register("reinforced_glass", () -> new ReinforcedGlass());
+	public static RegistryObject<Block> reinforced_obsidian = register("reinforced_obsidian", () -> new ReinforcedObsidian());
+	
 	public static RegistryObject<Block> dirty_glass =    register("dirty_glass", () -> new DirtyGlass());
 	public static RegistryObject<Block> diorite_brick  = register("diorite_brick", () -> new DioriteBrick());
 	public static RegistryObject<Block> granite_brick  = register("granite_brick", () -> new GraniteBrick());
@@ -144,7 +148,7 @@ public class TechBlocks {
     public static RegistryObject<Block> blue_glowstone =     register("blue_glowstone",     () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.BLUE)));
     public static RegistryObject<Block> black_glowstone =    register("black_glowstone",    () -> new GlowstoneColored(Properties.create(Material.GLASS, MaterialColor.BLACK)));
 //    // Withered Block
-//    public static Block withered_block;
+    public static RegistryObject<Block> withered_block = register("withered_block",    () -> new WitheredBlock(Properties.create(Material.ROCK)));;
 //    // berries
 //    public static RegistryObject<Block> blueberry_bush =  register("blueberry_bush",  () -> new BlockBerryBush(TechFoods.blackberry_berry.get(),Properties.create(Material.PLANTS, MaterialColor.BLACK).sound(SoundType.PLANT).hardnessAndResistance(0)));
 //    public static RegistryObject<Block> blackberry_bush = register("blackberry_bush", () -> new BlockBerryBush(TechFoods.blueberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.BLUE).sound(SoundType.PLANT).hardnessAndResistance(0)));

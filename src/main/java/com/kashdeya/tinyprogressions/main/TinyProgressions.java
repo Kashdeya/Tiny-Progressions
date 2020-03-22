@@ -129,23 +129,25 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(), cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.diamond_cobblegen_block.get(), cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.blaze_cobblegen_block.get(), cutout_mipped);
-
-    	RenderTypeLookup.setRenderLayer(TechBlocks.lamp.get(),          translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.black_lamp.get(),    translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.blue_lamp.get(),     translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.brown_lamp.get(),    translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.cyan_lamp.get(),     translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.gray_lamp.get(),     translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.green_lamp.get(),    translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.lightblue_lamp.get(),translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.lime_lamp.get(),     translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.magenta_lamp.get(),  translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.orange_lamp.get(),   translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.pink_lamp.get(),     translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.purple_lamp.get(),   translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.red_lamp.get(),      translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    translucent);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   translucent);
+    	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.reinforced_glass.get(), cutout_mipped);
+    	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lamp.get(),          cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.black_lamp.get(),    cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.blue_lamp.get(),     cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.brown_lamp.get(),    cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.cyan_lamp.get(),     cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.gray_lamp.get(),     cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.green_lamp.get(),    cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lightblue_lamp.get(),cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lime_lamp.get(),     cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.magenta_lamp.get(),  cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.orange_lamp.get(),   cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.pink_lamp.get(),     cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.purple_lamp.get(),   cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.red_lamp.get(),      cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   cutout);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {  }

@@ -25,6 +25,7 @@ import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
 import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
+import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
@@ -59,9 +60,10 @@ public class TechBlocks {
 	
 	
 	// Tech Blocks
-	public static Block growth_block;
-	public static Block growth_upgrade;
-	public static Block growth_upgrade_two;
+	public static RegistryObject<Block> growth_block       = register("growth_block",      () -> new BlockGrowth(Properties.create(Material.IRON), 1,  4,  2));
+	public static RegistryObject<Block> growth_upgrade     = register("growth_upgrade",    () -> new BlockGrowth(Properties.create(Material.IRON), 2,  6,  5));
+	public static RegistryObject<Block> growth_upgrade_two = register("growth_upgrade_two",() -> new BlockGrowth(Properties.create(Material.IRON), 3,  8, 10));
+	 
 	public static RegistryObject<Block> cobblegen_block =         register("cobblegen_block",        () -> new Cobblegen(30, 32, Properties.create(Material.IRON)));
 	public static RegistryObject<Block> iron_cobblegen_block =    register("cobblegen_iron_block",   () -> new Cobblegen(20, 64, Properties.create(Material.IRON)));
 	public static RegistryObject<Block> diamond_cobblegen_block = register("cobblegen_diamond_block",() -> new Cobblegen(10, 64, Properties.create(Material.IRON)));

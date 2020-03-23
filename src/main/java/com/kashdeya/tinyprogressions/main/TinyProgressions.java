@@ -76,6 +76,7 @@ public class TinyProgressions{
 
     private void setup(final FMLCommonSetupEvent event)
     {
+
     	
 //		// Configs
 //		TinyConfig.initMain();
@@ -124,30 +125,35 @@ public class TinyProgressions{
     	RenderType translucent = RenderType.func_228645_f_();
     	RenderType translucent_no_crumbling = RenderType.func_228647_g_();
 
-    	RenderTypeLookup.setRenderLayer(TechBlocks.cobblegen_block.get(), cutout_mipped);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.iron_cobblegen_block.get(), cutout_mipped);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(), cutout_mipped);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.diamond_cobblegen_block.get(), cutout_mipped);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.blaze_cobblegen_block.get(), cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.cobblegen_block.get(),        cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.iron_cobblegen_block.get(),   cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(),cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.diamond_cobblegen_block.get(),cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.blaze_cobblegen_block.get(),  cutout_mipped);
     	
     	RenderTypeLookup.setRenderLayer(TechBlocks.reinforced_glass.get(), cutout_mipped);
     	
-    	RenderTypeLookup.setRenderLayer(TechBlocks.lamp.get(),          cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.black_lamp.get(),    cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.blue_lamp.get(),     cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.brown_lamp.get(),    cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.cyan_lamp.get(),     cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.gray_lamp.get(),     cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.green_lamp.get(),    cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.lightblue_lamp.get(),cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.lime_lamp.get(),     cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.magenta_lamp.get(),  cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.orange_lamp.get(),   cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.pink_lamp.get(),     cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.purple_lamp.get(),   cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.red_lamp.get(),      cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    cutout);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lamp.get(),          cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.black_lamp.get(),    cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.blue_lamp.get(),     cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.brown_lamp.get(),    cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.cyan_lamp.get(),     cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.gray_lamp.get(),     cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.green_lamp.get(),    cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lightblue_lamp.get(),cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lime_lamp.get(),     cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.magenta_lamp.get(),  cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.orange_lamp.get(),   cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.pink_lamp.get(),     cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.purple_lamp.get(),   cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.red_lamp.get(),      cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   cutout_mipped);
+    	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.growth_block.get(),      cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade.get(),    cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade_two.get(),cutout_mipped);
+    	
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {  }

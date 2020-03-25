@@ -23,16 +23,19 @@ import com.kashdeya.tinyprogressions.blocks.decorations.OldReed;
 import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
 import com.kashdeya.tinyprogressions.blocks.decorations.StoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.UnhardenedBlock;
+import com.kashdeya.tinyprogressions.blocks.decorations.WallStoneTorch;
 import com.kashdeya.tinyprogressions.blocks.decorations.WitheredBlock;
 import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
+import com.kashdeya.tinyprogressions.blocks.oredoubler.IronFurnaceBlock;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.fluids.VasholineFluid;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Block.Properties;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.SlabBlock;
@@ -47,6 +50,7 @@ import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
+import net.minecraft.item.WallOrFloorItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fluids.FluidAttributes;
@@ -69,7 +73,8 @@ public class TechBlocks {
 	public static RegistryObject<Block> diamond_cobblegen_block = register("cobblegen_diamond_block",() -> new Cobblegen(10, 64, Properties.create(Material.IRON)));
 	public static RegistryObject<Block> emerald_cobblegen_block = register("cobblegen_emerald_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)));
 	public static RegistryObject<Block> blaze_cobblegen_block =   register("cobblegen_blaze_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)));
-	public static RegistryObject<Block> iron_furnace_block;
+	
+	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100));;
 	// Deco Blocks
 	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
 	
@@ -87,7 +92,10 @@ public class TechBlocks {
 	public static RegistryObject<Block> netherstar_block = register("netherstar_block", () -> new NetherStarBlock());
 	public static RegistryObject<Block> flint_block = register("flint_block", () -> new FlintBlock());	
 	// Stone Torch
-	public static RegistryObject<Block> stone_torch = register("stone_torch", () -> new StoneTorch());
+	public static RegistryObject<Block> stone_torch = registerNoItem("stone_torch", () -> new StoneTorch());
+	public static RegistryObject<Block> stone_torch_wall = registerNoItem("stone_torch_wall", () -> new WallStoneTorch());
+	public static RegistryObject<Item> stone_torch_wall_item = TinyProgressions.ITEMS.register ("stone_torch",  () -> new WallOrFloorItem(stone_torch.get(), stone_torch_wall.get(), (new Item.Properties()).group(TinyProgressions.TAB)));
+
 	// EnderOre
 	public static Block ender_ore;
 	// wub ore

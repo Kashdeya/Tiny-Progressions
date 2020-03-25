@@ -154,6 +154,9 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade_two.get(),cutout_mipped);
     	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch.get(), cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch_wall.get(), cutout_mipped);
+    	
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {  }

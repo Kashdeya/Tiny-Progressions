@@ -2,15 +2,16 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.TorchBlock;
+import net.minecraft.block.WallTorchBlock;
 import net.minecraft.block.material.Material;
 
-public class StoneTorch extends TorchBlock implements IOreDictEntry{
+public class WallStoneTorch extends WallTorchBlock implements IOreDictEntry{
 	
-	public StoneTorch()
+	public WallStoneTorch()
     {
-		super(Properties
+		super(Block.Properties
 				.create(Material.ROCK)
 				.lightValue(14)
 				.doesNotBlockMovement()

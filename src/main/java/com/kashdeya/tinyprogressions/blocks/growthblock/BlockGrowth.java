@@ -135,13 +135,16 @@ public class BlockGrowth extends Block {
                         if (!(cropBlock instanceof BlockGrowth)) {
                         	
                         	cropBlock.func_225534_a_(cropState, world, curPos, RANDOM);
-                        	world.getPendingBlockTicks().scheduleTick(pos, this, getGrowthCrystalTickRate(distanceCoefficient));//                            world.scheduleBlockUpdate(new BlockPos(x, y, z), cropBlock, (int) (distanceCoefficient * ConfigHandler.BlockGrowthTicks * 40), 1);
+                        	//Make sure you dont already have a pending block tick
+                        	if(!world.getPendingBlockTicks().isTickPending(pos, this))
+                        		world.getPendingBlockTicks().scheduleTick(pos, this, getGrowthCrystalTickRate(distanceCoefficient));
                         }
                     }
                 }
             }
         }
-        world.getPendingBlockTicks().scheduleTick(pos, state.getBlock(), getGrowthCrystalTickRate());
+    	if(!world.getPendingBlockTicks().isTickPending(pos, this))
+    		world.getPendingBlockTicks().scheduleTick(pos, state.getBlock(), getGrowthCrystalTickRate());
     }
 	
 	@Override

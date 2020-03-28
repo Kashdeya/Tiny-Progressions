@@ -31,11 +31,11 @@ import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
 import com.kashdeya.tinyprogressions.blocks.oredoubler.IronFurnaceBlock;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
+import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
 import com.kashdeya.tinyprogressions.fluids.VasholineFluid;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Block.Properties;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.SlabBlock;
@@ -45,6 +45,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
 import net.minecraft.fluid.FlowingFluid;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
@@ -53,6 +54,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.WallOrFloorItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidAttributes.Builder;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -74,7 +76,9 @@ public class TechBlocks {
 	public static RegistryObject<Block> emerald_cobblegen_block = register("cobblegen_emerald_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)));
 	public static RegistryObject<Block> blaze_cobblegen_block =   register("cobblegen_blaze_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)));
 	
-	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100));;
+	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100)); 
+	public static RegistryObject<ContainerType<?>> iron_furnace_container = TinyProgressions.CONTAINERS.register("iron_furnace_container", () -> (IForgeContainerType.create(OreDoublerContainer::new)));
+
 	// Deco Blocks
 	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
 	

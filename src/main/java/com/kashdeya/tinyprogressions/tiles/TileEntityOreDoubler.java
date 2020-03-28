@@ -1,12 +1,15 @@
 package com.kashdeya.tinyprogressions.tiles;
 
+import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
 import com.kashdeya.tinyprogressions.inits.ModTileEntityTypes;
 
 import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.BlastFurnaceContainer;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.util.text.ITextComponent;
@@ -25,13 +28,18 @@ public class TileEntityOreDoubler extends AbstractFurnaceTileEntity implements  
 
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
-		return new BlastFurnaceContainer(id, player, this, this.furnaceData);
+		return new OreDoublerContainer(id, player, this, this.furnaceData);
 	}
     
     @Override
     protected int getBurnTime(ItemStack item) {
-    	return super.getBurnTime(item) / 2;
+    	return super.getBurnTime(item) / 3;
 	}
+    
+    @Override
+    protected int func_214005_h() {
+        return super.func_214005_h() / 4;
+     }
     
 //    
 //    public TileEntityOreDoubler setCookSpeed(int ticksIn) {

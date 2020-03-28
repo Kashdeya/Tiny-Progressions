@@ -10,34 +10,39 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import javafx.geometry.Side;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.EndermiteEntity;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EnderOre extends StandardBlock implements IOreDictEntry {
 	
     public EnderOre()
     {
-        super(Material.ROCK);
-        this.setHardness(8.0F);
-        this.setResistance(10.0F);
-        this.setHarvestLevel("pickaxe", 1);
-        this.setSoundType(SoundType.STONE);
-        this.setCreativeTab(TinyProgressions.tabTP);
-        this.setTranslationKey("ender_ore");
+        super(Properties
+        		.create(Material.ROCK)
+        		.hardnessAndResistance(8, 10)
+        		.harvestLevel(1)
+        		.harvestTool(ToolType.PICKAXE));
     }
     
 	@Override
@@ -45,26 +50,26 @@ public class EnderOre extends StandardBlock implements IOreDictEntry {
 		return "oreEnderOre";
 	}
     
-    @Override
-    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
-    {
-        return false;
-    }
+//    @Override
+//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
+//    {
+//        return false;
+//    }
 	
     @Override
-    public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player){
-    	if (ConfigHandler.ender_mite && !world.isRemote){
+    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+    	if (ConfigHandler.ender_mite && !worldIn.isRemote){
             int x = pos.getX();
             int y = pos.getY();
             int z = pos.getZ();
-            int rand = world.rand.nextInt(100);
+            int rand = worldIn.rand.nextInt(100);
 
             if (rand <= ConfigHandler.endermite_spawn) {
-                Entity entity = new EntityEndermite(world);
-                if (!world.isRemote) {
-                    entity.setLocationAndAngles(x + (0.5), y + (1), z + (0.5), world.rand.nextFloat() * 360F, 0.0F);
-                    world.spawnEntity(entity);
-                    ((EntityLiving) entity).playLivingSound();
+                Entity entity = new EndermiteEntity(EntityType.ENDERMITE, worldIn);
+                if (!worldIn.isRemote) {
+                    entity.setLocationAndAngles(x + (0.5), y + (1), z + (0.5), worldIn.rand.nextFloat() * 360F, 0.0F);
+                    worldIn.addEntity(entity);
+                    ((LivingEntity) entity).playSound(SoundEvents.ENTITY_ENDERMITE_AMBIENT, 1, 1);
                 }
             }
     	}
@@ -98,38 +103,38 @@ public class EnderOre extends StandardBlock implements IOreDictEntry {
         }
     }
     
-	
-	@Override
-    @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-    
-    @Override
-    public int quantityDropped(Random rand) {
-        return 1 + rand.nextInt(5);
-    }
-    
-    @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return TechItems.ender_dust;
-    }
-    
-    @Override
-    public int quantityDroppedWithBonus(int fortune, Random rand) {
-    	return MathHelper.clamp(this.quantityDropped(rand) + rand.nextInt(fortune + 1), 1, 6);
-    }
-    
-
-    @Override
-    public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
-        return (this.getItemDropped(state, RANDOM, fortune) != Item.getItemFromBlock(this)) ? (1 + RANDOM.nextInt(5)) : 0;
-    }
-    
-    @Override
-    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target)
-    {
-        return false;
-    }
+//	
+//	@Override
+//    @SideOnly(Side.CLIENT)
+//    public BlockRenderLayer getRenderLayer()
+//    {
+//        return BlockRenderLayer.CUTOUT;
+//    }
+//    
+//    @Override
+//    public int quantityDropped(Random rand) {
+//        return 1 + rand.nextInt(5);
+//    }
+//    
+//    @Override
+//    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+//        return TechItems.ender_dust;
+//    }
+//    
+//    @Override
+//    public int quantityDroppedWithBonus(int fortune, Random rand) {
+//    	return MathHelper.clamp(this.quantityDropped(rand) + rand.nextInt(fortune + 1), 1, 6);
+//    }
+//    
+//
+//    @Override
+//    public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
+//        return (this.getItemDropped(state, RANDOM, fortune) != Item.getItemFromBlock(this)) ? (1 + RANDOM.nextInt(5)) : 0;
+//    }
+//    
+//    @Override
+//    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target)
+//    {
+//        return false;
+//    }
 }

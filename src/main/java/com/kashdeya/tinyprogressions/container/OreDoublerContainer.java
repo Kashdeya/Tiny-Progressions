@@ -1,109 +1,33 @@
 package com.kashdeya.tinyprogressions.container;
 
-import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
-import com.kashdeya.tinyprogressions.tiles.TileEntityOreDoubler;
+import com.google.common.collect.Lists;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
-import javafx.geometry.Side;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.container.IContainerListener;
-import net.minecraft.util.EnumFacing;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraft.client.util.RecipeBookCategories;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.container.AbstractFurnaceContainer;
+import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.IIntArray;
 
-public class OreDoublerContainer extends BasicContainer{
+public class OreDoublerContainer extends AbstractFurnaceContainer{
 
-
-	private final InventoryStorage inputInventory;
-	private final InventoryStorage outputInventory;
-	private final InventoryStorage fuelInventory;
+   public OreDoublerContainer(int p_i50082_1_, PlayerInventory p_i50082_2_) {
+	   super(TechBlocks.iron_furnace_container.get(), IRecipeType.SMELTING, p_i50082_1_, p_i50082_2_);
+   }
 	
-	private final TileEntityOreDoubler oredoubler;
-	
-    private int cookTime;
-    private int totalCookTime;
-    private int furnaceBurnTime;
-    private int currentItemBurnTime;
-
-	public OreDoublerContainer(InventoryPlayer playerInventory,	TileEntityOreDoubler tile, EntityPlayer player) 
+    public OreDoublerContainer (int windowId, PlayerInventory inv, PacketBuffer data) 
+    { 
+    	super(TechBlocks.iron_furnace_container.get(), IRecipeType.SMELTING, windowId, inv);
+   	} 
+    
+	public OreDoublerContainer(int windowId, PlayerInventory playerInventory, IInventory tileentityInventory, IIntArray furnaceData) 
 	{
-		inputInventory = (InventoryStorage) tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
-		
-		outputInventory = (InventoryStorage) tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
-
-		fuelInventory = (InventoryStorage) tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.EAST);
-
-		addInventories(inputInventory, fuelInventory, outputInventory);  
-		
-		oredoubler = tile;
-		
-		addSlotToContainer(new InvStorageSlot(inputInventory, 0, 56, 17) { @Override public boolean canTakeStack(EntityPlayer playerIn) { return true; } });
-		
-		addSlotToContainer(new InvStorageSlot(fuelInventory, 0, 56, 53) { @Override public boolean canTakeStack(EntityPlayer playerIn) { return true; } });
-		
-		addSlotToContainer(new InvStorageSlot(outputInventory, 0, 106, 25));
-		
-		addSlotToContainer(new InvStorageSlot(outputInventory, 1, 125, 25));
-		
-		addSlotToContainer(new InvStorageSlot(outputInventory, 2, 106, 44));
-		
-		addSlotToContainer(new InvStorageSlot(outputInventory, 3, 125, 44));
-		     
-		bindPlayerInventory(playerInventory);          
+		super(TechBlocks.iron_furnace_container.get(), IRecipeType.SMELTING, windowId, playerInventory, tileentityInventory, furnaceData);
 	}
 	
-
-	@Override
-	public void addListener(IContainerListener listener) {
-		if (this.listeners.contains(listener)) {
-			throw new IllegalArgumentException("Listener already listening");
-		} else {
-			this.listeners.add(listener);
-			listener.sendAllContents(this, this.getInventory());
-			this.detectAndSendChanges();
-		}
-	}
-	
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void updateProgressBar(int id, int value) {
-		this.oredoubler.setField(id, value);
-	}
-
-	public void detectAndSendChanges()
-    {
-        super.detectAndSendChanges();
-
-        for (int i = 0; i < this.listeners.size(); ++i)
-        {
-            IContainerListener icontainerlistener = this.listeners.get(i);
-
-            if (this.cookTime != this.oredoubler.getField(2))
-            {
-                icontainerlistener.sendWindowProperty(this, 2, this.oredoubler.getField(2));
-            }
-
-            if (this.furnaceBurnTime != this.oredoubler.getField(0))
-            {
-                icontainerlistener.sendWindowProperty(this, 0, this.oredoubler.getField(0));
-            }
-
-            if (this.currentItemBurnTime != this.oredoubler.getField(1))
-            {
-                icontainerlistener.sendWindowProperty(this, 1, this.oredoubler.getField(1));
-            }
-
-            if (this.totalCookTime != this.oredoubler.getField(3))
-            {
-                icontainerlistener.sendWindowProperty(this, 3, this.oredoubler.getField(3));
-            }
-        }
-
-        this.cookTime = this.oredoubler.getField(2);
-        this.furnaceBurnTime = this.oredoubler.getField(0);
-        this.currentItemBurnTime = this.oredoubler.getField(1);
-        this.totalCookTime = this.oredoubler.getField(3);
-    }
-	
-	
+   public java.util.List<net.minecraft.client.util.RecipeBookCategories> getRecipeBookCategories() {
+	   return Lists.newArrayList(RecipeBookCategories.FURNACE_SEARCH, RecipeBookCategories.FURNACE_FOOD, RecipeBookCategories.FURNACE_BLOCKS, RecipeBookCategories.FURNACE_MISC); 
+   }
 }

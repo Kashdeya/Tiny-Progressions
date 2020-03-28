@@ -3,13 +3,17 @@ package com.kashdeya.tinyprogressions.main;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
+import com.kashdeya.tinyprogressions.gui.OreDoublerGUI;
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -20,6 +24,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -56,6 +61,8 @@ public class TinyProgressions{
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
+	public static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<>(ForgeRegistries.CONTAINERS, Reference.MOD_ID);
+
 	
     public TinyProgressions() {
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -70,6 +77,7 @@ public class TinyProgressions{
 		BLOCKS.register(bus);
 		FLUIDS.register(bus);
 		TILE_ENTITY_TYPES.register(bus);
+		CONTAINERS.register(bus);
         INSTANCE = this;
     }
 
@@ -78,27 +86,13 @@ public class TinyProgressions{
     {
 
     	
-//		// Configs
-//		TinyConfig.initMain();
-//		TinyConfig.initArmor();
-//		TinyConfig.initToolsWeapons();
-//		TinyConfig.initFood();
+
 //		TinyConfig.initExtra();
 //		TinyConfig.initOres();
 //		TinyConfig.initSupporters();
 //		TinyConfig.initReborn();
 //		ModFluids.init();
-//		
-//		TechBlocks.init();
-//		TechItems.init();
-//		TechTools.init();
-//		TechArmor.init();
-//		TechFoods.init();
-//		register(TechBlocks.class);
-//		register(TechItems.class);
-//		register(TechTools.class);
-//		register(TechArmor.class);
-//		register(TechFoods.class);
+
 //				
 //		RemoveItems.initRemove();
 //		
@@ -117,7 +111,8 @@ public class TinyProgressions{
 //    			proxy.onPostInitialization(e);
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
+    @SuppressWarnings("deprecation")
+	private void doClientStuff(final FMLClientSetupEvent event) {
     	
     	RenderType solid = RenderType.func_228639_c_();
     	RenderType cutout_mipped = RenderType.func_228641_d_();
@@ -156,6 +151,13 @@ public class TinyProgressions{
     	
     	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch.get(), cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch_wall.get(), cutout_mipped);
+
+    	
+    	
+		DeferredWorkQueue.runLater( () ->
+		{
+			ScreenManager.registerFactory((ContainerType<OreDoublerContainer>)TechBlocks.iron_furnace_container.get(), OreDoublerGUI::new);
+		});
     	
     }
 

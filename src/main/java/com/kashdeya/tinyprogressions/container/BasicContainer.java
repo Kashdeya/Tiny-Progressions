@@ -4,14 +4,26 @@ package com.kashdeya.tinyprogressions.container;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 
 public class BasicContainer extends Container{
-
+	
 	List<IItemHandler> inventories;
+	PlayerEntity player;
+	IItemHandler playerInventory; 
+	
+	
+	protected BasicContainer(ContainerType<?> type, int id) {
+		super(type, id);
+		// TODO Auto-generated constructor stub
+	}
+
 	
 	public void addInventories(IItemHandler... invs){
 		inventories = Arrays.asList(invs);
@@ -19,20 +31,20 @@ public class BasicContainer extends Container{
 	
 	
 	@Override
-	public boolean canInteractWith(EntityPlayer playerIn) {
+	public boolean canInteractWith(PlayerEntity playerIn) {
 		return true;
 	}
 
 	
-	protected void bindPlayerInventory(InventoryPlayer playerInventory) {
+	protected void bindPlayerInventory(PlayerInventory playerInventory) {
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < 9; ++j) {
-				this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+				this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 			}
 		}
 
 		for (int k = 0; k < 9; ++k) {
-			this.addSlotToContainer(new Slot(playerInventory, k, 8 + k * 18, 142));
+			this.addSlot(new Slot(playerInventory, k, 8 + k * 18, 142));
 		}
 	}
 	
@@ -46,7 +58,7 @@ public class BasicContainer extends Container{
 	}
 	
 	@Override
-	public ItemStack transferStackInSlot(EntityPlayer player, int slotIndex) 
+	public ItemStack transferStackInSlot(PlayerEntity player, int slotIndex) 
 	{
         ItemStack stack = ItemStack.EMPTY;
         Slot slot = (Slot)this.inventorySlots.get(slotIndex);
@@ -137,7 +149,7 @@ public class BasicContainer extends Container{
 						slot1.onSlotChanged();
 						flag = true;
 					}					
-				}
+				} 
 				if (reverseDirection){
 					--i;
 				}else ++i;
@@ -148,6 +160,7 @@ public class BasicContainer extends Container{
 	
 	private static boolean areItemStacksEqual(ItemStack stackA, ItemStack stackB)
 	{
-		return stackB.getItem() == stackA.getItem() && (!stackA.getHasSubtypes() || stackA.getMetadata() == stackB.getMetadata()) && ItemStack.areItemStackTagsEqual(stackA, stackB);
+		return ItemStack.areItemsEqual(stackA, stackB);
 	}
+
 }

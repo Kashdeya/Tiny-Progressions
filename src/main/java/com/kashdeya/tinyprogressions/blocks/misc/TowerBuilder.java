@@ -10,12 +10,9 @@ public class TowerBuilder extends Block {
 	
 	public TowerBuilder()
     {
-        super(Material.WOOD);// needs changed!
-        this.setHardness(1.5F);// needs changed!
-        this.setHarvestLevel("pickaxe", 1);// needs changed!
-        this.setResistance(10.0F);// needs changed!
-        this.setSoundType(SoundType.WOOD);// needs changed!
-        this.setCreativeTab(TinyProgressions.tabTP);
-        this.setTranslationKey("tower_builder");
+        super(Properties.create(Material.WOOD)
+        		.hardnessAndResistance(1.5f, 10)
+        		.sound(SoundType.WOOD));// needs changed!
+//        this.setTranslationKey("tower_builder");
     }
 }

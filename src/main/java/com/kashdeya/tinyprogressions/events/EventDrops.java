@@ -24,7 +24,9 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber
 public class EventDrops {
 	
 	@SubscribeEvent
@@ -35,12 +37,12 @@ public class EventDrops {
 		int trigger = event.getWorld().getRandom().nextInt(1000);
 		if (OreDict.hasTag("leaves", target) || target instanceof LeavesBlock) {
 			if(trigger < ConfigHandler.peachDropsChance && ConfigHandler.extra_drops) {
-				ItemEntity item = new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_peach, ConfigHandler.peachDropsAmount));
+				ItemEntity item = new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_peach.get(), ConfigHandler.peachDropsAmount));
 				event.getWorld().addEntity(item);
 			}
 			
 			if(trigger < ConfigHandler.pearDropsChance && ConfigHandler.extra_drops) {
-				ItemEntity item = new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_pear, ConfigHandler.pearDropsAmount));
+				ItemEntity item = new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_pear.get(), ConfigHandler.pearDropsAmount));
 				event.getWorld().addEntity(item);
 			}
 			
@@ -55,7 +57,7 @@ public class EventDrops {
 			}
 		}
 		
-		if (target == Blocks.DIRT || target == Blocks.GRASS || Tags.Blocks.DIRT.contains(target) || target instanceof GrassBlock) {
+		if (target == Blocks.DIRT || target == Blocks.GRASS || Tags.Blocks.DIRT.getEntries().contains(target) || target instanceof GrassBlock) {
 			if(trigger < ConfigHandler.BoneDropsChance && ConfigHandler.BoneDrops) {
 				ItemEntity item = new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(Items.BONE, ConfigHandler.BoneAmount));
 				event.getWorld().addEntity(item);
@@ -71,9 +73,9 @@ public class EventDrops {
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onLivingDrops(LivingDropsEvent event) {
         if (event.getEntity() instanceof EnderDragonEntity && ArmorHandler.dragon_armor) {
-            registerMobDrop(event, event.getEntity(), true, new ItemStack(TechItems.dragon_scale, new Random().nextInt(16)));
+            registerMobDrop(event, event.getEntity(), true, new ItemStack(TechItems.dragon_scale.get(), new Random().nextInt(16)));
         } else if (event.getEntity() instanceof WitherEntity && ConfigHandler.wither_rib) {
-            registerMobDrop(event, event.getEntity(), true, new ItemStack(TechItems.wither_rib, new Random().nextInt(6)));
+            registerMobDrop(event, event.getEntity(), true, new ItemStack(TechItems.wither_rib.get(), new Random().nextInt(6)));
         }
     }
 

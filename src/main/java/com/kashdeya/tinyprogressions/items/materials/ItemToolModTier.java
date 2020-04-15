@@ -38,7 +38,7 @@ public enum ItemToolModTier implements IItemTier
     private float efficiency;
     private float attackDamage;
     private int enchantability;
-    private LazyLoadBase<Ingredient> repairMaterial;
+    private Supplier<Ingredient> repairMaterial;
 
     private ItemToolModTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> ingredient)
     {
@@ -48,7 +48,7 @@ public enum ItemToolModTier implements IItemTier
         this.efficiency = efficiency;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairMaterial = new LazyLoadBase<>(ingredient);
+        this.repairMaterial = ingredient;
     }
 
     @Override
@@ -67,5 +67,5 @@ public enum ItemToolModTier implements IItemTier
     public int getEnchantability() { return this.enchantability; }
 
     @Override
-    public Ingredient getRepairMaterial() { return this.repairMaterial.getValue(); }
+    public Ingredient getRepairMaterial() { return this.repairMaterial.get(); }
 }

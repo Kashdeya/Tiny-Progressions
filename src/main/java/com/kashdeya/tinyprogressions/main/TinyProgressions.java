@@ -19,6 +19,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
@@ -60,6 +61,7 @@ public class TinyProgressions{
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
+	public static final DeferredRegister<SoundEvent> SOUNDS = new DeferredRegister<>(ForgeRegistries.SOUND_EVENTS,	Reference.MOD_ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<>(ForgeRegistries.CONTAINERS, Reference.MOD_ID);
 
@@ -78,6 +80,7 @@ public class TinyProgressions{
 		FLUIDS.register(bus);
 		TILE_ENTITY_TYPES.register(bus);
 		CONTAINERS.register(bus);
+		SOUNDS.register(bus);
         INSTANCE = this;
     }
 
@@ -152,7 +155,13 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch.get(), cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch_wall.get(), cutout_mipped);
 
-    	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.ender_ore.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.water_block.get(), cutout);	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lava_block.get(), cutout);	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.wub_ore.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.nether_lava_block.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.nether_wub_ore.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.netherstar_block.get(), cutout);
     	
 		DeferredWorkQueue.runLater( () ->
 		{

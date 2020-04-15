@@ -1,66 +1,92 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import net.minecraft.item.Item;
+import java.util.function.Supplier;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.items.ItemStay;
+import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
+import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
+import com.kashdeya.tinyprogressions.items.misc.ItemRib;
+import com.kashdeya.tinyprogressions.items.misc.ItemScale;
+import com.kashdeya.tinyprogressions.items.misc.MyceliumSeeds;
+import com.kashdeya.tinyprogressions.items.misc.QuartzKnife;
+import com.kashdeya.tinyprogressions.items.misc.RepairTablet;
+import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
+
+@Mod.EventBusSubscriber
 public class TechItems {
 	
 
 	// Watering Cans
-	public static Item watering_can;
-	public static Item watering_can_upgrade;
+	public static RegistryObject<Item> watering_can =         registerItem("watering_can", () -> new WateringCanBase(new Properties()).setWateringRange(1).setWateringChance(ConfigHandler.WateringCanChance));
+	public static RegistryObject<Item> watering_can_upgrade = registerItem("watering_can_upgrade", () -> new WateringCanBase(new Properties()).setWateringRange(2).setWateringChance(ConfigHandler.WateringCanUpgradeChance));
 	// Quartz Items
-	public static Item quartz_knife;
-	public static Item quartz_dust;
-	// Misc Items
-	public static Item mycelium_seeds;
-	public static Item dead_reed;
+	public static RegistryObject<Item> quartz_knife = registerItem("quartz_knife", () -> new QuartzKnife()); 
+	public static RegistryObject<Item> quartz_dust =  registerItem("quartz_dust", () -> new ItemBase(new Properties()).setOreDictName("dustQuartz"));
+	// Misc Items 
+	public static RegistryObject<Item> mycelium_seeds = registerItem("mycelium_seeds", () -> new MyceliumSeeds());
 	// Stone Dust
-	public static Item stone_dust;
+	public static RegistryObject<Item> stone_dust = registerItem("stone_dust", () -> new ItemBase(new Properties()).setOreDictName("dustStone"));
 	// Ingots
-	public static Item flint_ingot;
-	public static Item reinforced_obsidian_ingot;
-	public static Item lapis_ingot;
-	public static Item redstone_ingot;
-	public static Item quartz_ingot;
+	public static RegistryObject<Item> flint_ingot =    registerItem("flint_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotFlint"));
+	public static RegistryObject<Item> reinforced_obsidian_ingot = registerItem("reinforced_obsidian_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotObsidian"));
+	public static RegistryObject<Item> lapis_ingot =    registerItem("lapis_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotLapis"));
+	public static RegistryObject<Item> redstone_ingot = registerItem("redstone_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotRedstone"));
+	public static RegistryObject<Item> quartz_ingot =   registerItem("quartz_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotQuartz"));
 	// Flint Knife
-	public static Item flint_knife;
+	public static RegistryObject<Item> flint_knife = registerItem("flint_knife", () -> new FlintKnife()); ;
 	// Stone Stick
-	public static Item stone_stick;
+	public static RegistryObject<Item> stone_stick = registerItem("stone_stick", () -> new ItemBase(new Properties()).setOreDictName("stickStone"));
 	// Ender
-	public static Item ender_dust;
+	public static RegistryObject<Item> ender_dust  = registerItem("ender_dust", () -> new ItemBase(new Properties()).setOreDictName("dustEnder"));
 	// Drops
-	public static Item wither_rib;
-	public static Item dragon_scale;
+	public static RegistryObject<Item> wither_rib = registerItem("wither_rib", () -> new ItemRib(new Properties()).setOreDictName("witherRib"));
+	
+	public static RegistryObject<Item> dragon_scale = registerItem("dragon_scale", () -> new ItemScale(new Properties()).setOreDictName("dragonScale"));
 	// Pouch
-	public static Item pouch;
+	public static RegistryObject<Item> pouch;
 	// Glowstone Dust
-	public static Item colored_dust;
+	public static RegistryObject<Item> colored_dust;
 	// Repair Tablet
-	public static Item repair_tablet;
+	public static RegistryObject<Item> repair_tablet = registerItem("repair_tablet", () -> new RepairTablet());
 	// nether rod
-	public static Item nether_rod;
-	// bsc rod
-	public static Item bsc_rod;
+	public static RegistryObject<Item> nether_rod = registerItem("nether_rod", () -> new ItemBase(new Properties()).setOreDictName("stickNether"));
+	
+	public static RegistryObject<Item> bsc_rod = registerItem("bsc_rod", () -> new ItemBase(new Properties()).setOreDictName("stickCane"));
 	// tiny coal & charcoal
-	public static Item tiny_coal;
-	public static Item tiny_charcoal;
+	public static RegistryObject<Item> tiny_coal =     registerItem("tiny_coal", () -> new ItemBase(new Properties()).setOreDictName("oreCoalTiny"));
+	public static RegistryObject<Item> tiny_charcoal = registerItem("tiny_charcoal", () -> new ItemBase(new Properties()).setOreDictName("oreCharcoalTiny"));
 	// chainmail
-	public static Item chainmail_part;
-	public static Item stone_hammer;
-	// Steel
-	public static Item steel_ingot;
+	
+	public static RegistryObject<Item> chainmail_part = registerItem("chainmail_part", () -> new ItemBase(new Properties()).setOreDictName("chainmail"));
+	public static RegistryObject<Item> stone_hammer   = registerItem("stone_hammer", () -> new ItemStay(new Properties()));
+	// Steel 
+	public static RegistryObject<Item> steel_ingot = registerItem("steel_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotSteel"));
 	// Infin Water Bucket
-	public static Item infin_bucket;
+	public static RegistryObject<Item> infin_bucket = registerItem("infin_bucket", () -> new InfinBucket());
 	// Dust
-	public static Item obsidian_dust;
+	public static RegistryObject<Item> obsidian_dust = registerItem("obsidian_dust", () -> new ItemBase(new Properties()).setOreDictName("dustObsidian"));
 	// Wub Gem
-	public static Item wub_gem;
-	public static Item wub_ingot;
+	public static RegistryObject<Item> wub_gem   = registerItem("wub_gem",   () -> new ItemBase(new Properties()).setOreDictName("gemWub"));
+	public static RegistryObject<Item> wub_ingot = registerItem("wub_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotWub"));
 	// Healing Items
-	public static Item small_bandage;
-	public static Item large_bandage;
-	public static Item small_med_kit;
-	public static Item large_med_kit;
+	public static RegistryObject<Item> small_bandage;
+	public static RegistryObject<Item> large_bandage;
+	public static RegistryObject<Item> small_med_kit;
+	public static RegistryObject<Item> large_med_kit;
+	
+
+	
+    private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<? extends T> sup) {
+        return TinyProgressions.ITEMS.register(name, sup);
+    }
 	
 	
 //	public static void init() {

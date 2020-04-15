@@ -5,17 +5,17 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.common.ToolType;
 
 public class WaterHarvester extends Block {
 	
 	public WaterHarvester()
     {
-        super(Material.ROCK);// needs changed!
-        this.setHardness(1.5F);// needs changed!
-        this.setHarvestLevel("pickaxe", 1);// needs changed!
-        this.setResistance(10.0F);// needs changed!
-        this.setSoundType(SoundType.STONE);// needs changed!
-        this.setCreativeTab(TinyProgressions.tabTP);
-        this.setTranslationKey("water_harvester");
+        super(Properties.create(Material.ROCK)
+        		.hardnessAndResistance(1.5f, 10)
+        		.sound(SoundType.STONE)
+        		.harvestTool(ToolType.PICKAXE)
+        		.harvestLevel(1));// needs changed!
+//        this.setTranslationKey("water_harvester");
     }
 }

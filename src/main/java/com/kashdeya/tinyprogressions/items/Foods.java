@@ -75,9 +75,11 @@ public class Foods {
 		// Bams Pizza
 		public static Food BAMS_PIZZA  = (new Food.Builder()).hunger(ConfigHandler.bams_pizza_amount).saturation(ConfigHandler.bams_pizza_sat).meat().build();  ;
 		// Extra Drops
-		public static Food PLUMP_PEAR  = (new Food.Builder()).hunger(3).saturation(0.25F).build();  ;
-		public static Food PLUMP_PEACH = (new Food.Builder()).hunger(3).saturation(0.25F).build();  ;
+		public static Food PLUMP_PEAR  = (new Food.Builder()).hunger(3).saturation(0.25F).build();
+		public static Food PLUMP_PEACH = (new Food.Builder()).hunger(3).saturation(0.25F).build();
 		//Succ The Pearls
-		public static Food SUCC_PEARLS = (new Food.Builder()).hunger(3).saturation(0.15F).build();  ;
+		public static Food SUCC_PEARLS = (new Food.Builder()).hunger(3).saturation(0.15F).build();
+		
+		public static Food DEAD_REEDS = (new Food.Builder()).hunger(1).saturation(0.15F).build();
 		
 }

@@ -7,13 +7,16 @@ import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.Capability.IStorage;
+import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 public class StorageProvider implements ICapabilitySerializable<CompoundNBT>, Capability.IStorage<IStorage<?>>
 {
-    private final InventoryStorage instance;
+    @CapabilityInject(InventoryStorage.class)
+    public static Capability<InventoryStorage> TYPE;
+    private LazyOptional<InventoryStorage> instance = LazyOptional.of(TYPE::getDefaultInstance);;
  
     public StorageProvider()
     {
@@ -27,7 +30,7 @@ public class StorageProvider implements ICapabilitySerializable<CompoundNBT>, Ca
     
     public StorageProvider(String name, int inventorySize)
     {
-        instance = new InventoryStorage(name, inventorySize);
+        instance = LazyOptional.of(()->new InventoryStorage(name, inventorySize));
     }
     
     public boolean hasCapability(Capability<?> capability, @Nullable Direction facing)
@@ -38,7 +41,7 @@ public class StorageProvider implements ICapabilitySerializable<CompoundNBT>, Ca
     
 	@Override
 	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
-        return hasCapability(cap, side) ? LazyOptional.of(instanceSupplier)cap : null;
+        return hasCapability(cap, side) ? instance.cast() : LazyOptional.empty();
     }
  
 	@Override
@@ -56,14 +59,19 @@ public class StorageProvider implements ICapabilitySerializable<CompoundNBT>, Ca
     public CompoundNBT serializeNBT()
     {
     	CompoundNBT compound = new CompoundNBT();
-        instance.writeToNBT(compound);
+        InventoryStorage storage = instance.orElse(null);
+        if(storage != null)
+        	storage.writeToNBT(compound);
+        
         return compound;
     }
 
     @Override
     public void deserializeNBT(CompoundNBT nbt)
     {
-        instance.readFromNBT(nbt);
+        InventoryStorage storage = instance.orElse(null);
+        if(storage != null)
+        	storage.readFromNBT(nbt);
     }
 
     

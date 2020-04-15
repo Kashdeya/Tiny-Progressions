@@ -29,6 +29,10 @@ import com.kashdeya.tinyprogressions.blocks.fluids.BlockFluidVasholine;
 import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
 import com.kashdeya.tinyprogressions.blocks.oredoubler.IronFurnaceBlock;
+import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
+import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
+import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
+import com.kashdeya.tinyprogressions.blocks.ores.WubOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
 import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
@@ -101,15 +105,15 @@ public class TechBlocks {
 	public static RegistryObject<Item> stone_torch_wall_item = TinyProgressions.ITEMS.register ("stone_torch",  () -> new WallOrFloorItem(stone_torch.get(), stone_torch_wall.get(), (new Item.Properties()).group(TinyProgressions.TAB)));
 
 	// EnderOre
-	public static Block ender_ore;
+	public static RegistryObject<Block> ender_ore = register("ender_ore", () -> new EnderOre());
 	// wub ore
-	public static Block wub_ore;
-	public static Block nether_wub_ore;
+	public static RegistryObject<Block> wub_ore = register("wub_ore", () -> new WubOre("oreWubOre"));;
+	public static RegistryObject<Block> nether_wub_ore =register("nether_wub_ore", () -> new WubOre("oreNetherWubOre"));
 	// Lava Block
-	public static Block lava_block;
-	public static Block nether_lava_block;
+	public static RegistryObject<Block> lava_block = register("lava_block", () -> new LavaBlock("oreLavaBlock"));
+	public static RegistryObject<Block> nether_lava_block = register("nether_lava_block", () -> new LavaBlock("oreNetherLavaBlock"));;
 	// Water Block
-	public static Block water_block;
+	public static RegistryObject<Block> water_block = register("water_block", () -> new WaterBlock());
 	// Hardened Stone
 	public static RegistryObject<Block> unhardened_stone            = register("unhardened_stone", () -> new UnhardenedBlock());
 	public static RegistryObject<Block> hardened_stone              = register("hardened_stone", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;

@@ -2,25 +2,24 @@ package com.kashdeya.tinyprogressions.items;
 
 import java.util.List;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import javax.annotation.Nullable;
 
-import javafx.geometry.Side;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ItemStay extends Item {
+public class ItemStay extends ItemBase {
 	
-	public ItemStay() {
-		super();
-		super.setMaxStackSize(1);
-		super.setContainerItem(this);
-		this.setCreativeTab(TinyProgressions.tabTP);
+	public ItemStay(Properties prop) {
+		super(prop);
 	}
+	
 	
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
 	{
@@ -32,14 +31,12 @@ public class ItemStay extends Item {
 	{
 		ItemStack stack = itemStack.copy();
 		stack.setCount(1);
-
 		return stack;
 	}
 	
-    @Override
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
-    {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.stay_1").getFormattedText());
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip,	ITooltipFlag flagIn) {
+		tooltip.add(new TranslationTextComponent("tooltip.stay_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
     }
 }

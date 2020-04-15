@@ -1,50 +1,39 @@
 package com.kashdeya.tinyprogressions.blocks.ores;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import com.google.common.base.Predicate;
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
-import javafx.geometry.Side;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyInteger;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Explosion;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WaterBlock extends StandardBlock implements IOreDictEntry {
 
-    public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
-
-    public WaterBlock() {
-        super(Material.GROUND);
-        this.setHardness(1.0F);
-        this.setResistance(5.0F);
-        this.setTickRandomly(true);
-        this.setSoundType(SoundType.STONE);
-        this.setTranslationKey("water_block");
-        this.setCreativeTab(TinyProgressions.tabTP);
+     public WaterBlock() {
+        super(Properties.create(Material.ROCK)
+        		.hardnessAndResistance(1, 5)
+        		.tickRandomly()
+        		.sound(SoundType.STONE));
     }
 
     @Override
@@ -52,29 +41,31 @@ public class WaterBlock extends StandardBlock implements IOreDictEntry {
         return "oreWaterBlock";
     }
 
-	@Override
-    @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
-
-    @Override
-    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
-        return false;
-    }
+//	@Override
+//    @SideOnly(Side.CLIENT)
+//    public BlockRenderLayer getRenderLayer()
+//    {
+//        return BlockRenderLayer.CUTOUT;
+//    }
+//
+//    @Override
+//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
+//        return false;
+//    }
 
     @Override
     public boolean canDropFromExplosion(Explosion explosionIn) {
         return false;
     }
-
-    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack) {
-        player.addStat(StatList.getBlockStats(this));
+    
+    
+    @Override
+    public void harvestBlock(World worldIn, PlayerEntity player, BlockPos pos, BlockState state, TileEntity te, ItemStack stack) {
+//        player.addStat(StatList.getBlockStats(this));
         player.addExhaustion(0.025F);
-        if (this.canSilkHarvest(worldIn, pos, state, player) && EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
-            List<ItemStack> items = new ArrayList<>();
-            ItemStack itemstack = this.getSilkTouchDrop(state);
+        if (EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
+            NonNullList<ItemStack> items = NonNullList.create();
+            ItemStack itemstack = new ItemStack(this.asItem());
 
             if (!itemstack.isEmpty()) {
                 items.add(itemstack);
@@ -83,63 +74,64 @@ public class WaterBlock extends StandardBlock implements IOreDictEntry {
             ForgeEventFactory.fireBlockHarvesting(items, worldIn, pos, state, 0, 1.0f, true, player);
             items.forEach(item -> spawnAsEntity(worldIn, pos, item));
         } else {
-            worldIn.setBlockState(pos, Blocks.FLOWING_WATER.getDefaultState());
+            worldIn.setBlockState(pos, Blocks.WATER.getDefaultState());
         }
     }
 
-    public int quantityDropped(Random random) {
-        return 1;
-    }
+//    @Override
+//    public int quantityDropped(Random random) {
+//        return 1;
+//    }
 
-    public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
-        entityIn.fall(fallDistance, 3.0F);
-    }
+//    public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
+//        entityIn.fall(fallDistance, 3.0F);
+//    }
 
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-        entityIn.motionX *= 0.8D;
-        entityIn.motionZ *= 0.8D;
+       entityIn.setMotionMultiplier(worldIn.getBlockState(pos), new Vec3d(0.8D, 1D, 0.8D));
     }
 
-    @SideOnly(Side.CLIENT)
-    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
-        int i = source.getCombinedLight(pos, 0);
-        int j = source.getCombinedLight(pos.up(), 0);
-        int k = i & 255;
-        int l = j & 255;
-        int i1 = i >> 16 & 255;
-        int j1 = j >> 16 & 255;
-        return (k > l ? k : l) | (i1 > j1 ? i1 : j1) << 16;
-    }
+//    @SideOnly(Side.CLIENT)
+//    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
+//        int i = source.getCombinedLight(pos, 0);
+//        int j = source.getCombinedLight(pos.up(), 0);
+//        int k = i & 255;
+//        int l = j & 255;
+//        int i1 = i >> 16 & 255;
+//        int j1 = j >> 16 & 255;
+//        return (k > l ? k : l) | (i1 > j1 ? i1 : j1) << 16;
+//    }
 
-    @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState worldIn, World pos, BlockPos state, Random rand) {
-        double d0 = (double) state.getX();
-        double d1 = (double) state.getY();
-        double d2 = (double) state.getZ();
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+        double d0 = (double) pos.getX();
+        double d1 = (double) pos.getY();
+        double d2 = (double) pos.getZ();
 
         if (rand.nextInt(100) == 0) {
             double d8 = d0 + (double) rand.nextFloat();
-            double d4 = d1 + worldIn.getBoundingBox(pos, state).maxY;
+            double d4 = d1 + stateIn.getCollisionShape(worldIn, pos).getBoundingBox().maxY;
             double d6 = d2 + (double) rand.nextFloat();
-            pos.spawnParticle(EnumParticleTypes.WATER_BUBBLE, d8, d4, d6, 0.05D, 0.05D, 0.05D);
+            worldIn.addParticle(ParticleTypes.UNDERWATER, d8, d4, d6, 0.05D, 0.05D, 0.05D);
         }
 
         if (rand.nextInt(200) == 0) {
-            pos.playSound(d0, d1, d2, SoundEvents.BLOCK_WATER_AMBIENT, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
+        	worldIn.playSound(d0, d1, d2, SoundEvents.BLOCK_WATER_AMBIENT, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
         }
 
         if (rand.nextInt(100) == 0) {
             double d3 = d0 + (double) rand.nextFloat();
             double d7 = d2 + (double) rand.nextFloat();
 
-            pos.spawnParticle(EnumParticleTypes.DRIP_WATER, d3, d1, d7, 0.0D, 0.0D, 0.0D);
+            worldIn.addParticle(ParticleTypes.DRIPPING_WATER, d3, d1, d7, 0.0D, 0.0D, 0.0D);
         }
     }
 
-    @Override
-    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target) {
-        return false;
-    }
+//    @Override
+//    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target) {
+//        return false;
+//    }
 
 }

@@ -60,11 +60,11 @@ public class RepairTablet extends ItemBase {
 				if (invStack.isEmpty() || !invStack.isRepairable())
 					continue;
 	
-				if (invStack != player.getItemStackFromSlot(EquipmentSlotType.MAINHAND)
-						&& invStack != player.getItemStackFromSlot(EquipmentSlotType.OFFHAND)
-						|| !player.isSwingInProgress) {
-					if (!invStack.getHasSubtypes() && invStack.getMaxDamage() != 0 && invStack.getItemDamage() > 0)
-						invStack.setItemDamage(invStack.getItemDamage() - 1);
+				if (invStack != player.getItemStackFromSlot(EquipmentSlotType.MAINHAND)	&& invStack != player.getItemStackFromSlot(EquipmentSlotType.OFFHAND)
+						|| !player.isSwingInProgress) 
+				{
+					if (invStack.isDamageable() && invStack.isDamaged())
+						invStack.setDamage(invStack.getDamage() - 1);
 				}
 			}
 	}

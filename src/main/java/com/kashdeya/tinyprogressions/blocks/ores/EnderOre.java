@@ -2,37 +2,24 @@ package com.kashdeya.tinyprogressions.blocks.ores;
 
 import java.util.Random;
 
-import com.google.common.base.Predicate;
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
-import javafx.geometry.Side;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.EndermiteEntity;
-import net.minecraft.entity.monster.EntityEndermite;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EnderOre extends StandardBlock implements IOreDictEntry {
 	
@@ -75,9 +62,9 @@ public class EnderOre extends StandardBlock implements IOreDictEntry {
     	}
     }
     
-	@SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
-    {
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         for (int i = 0; i < 4; ++i)
         {
             double d0 = (double)((float)pos.getX() + rand.nextFloat());
@@ -99,7 +86,7 @@ public class EnderOre extends StandardBlock implements IOreDictEntry {
                 d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
             }
 
-            worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5);
+            worldIn.addParticle(ParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5);
         }
     }
     

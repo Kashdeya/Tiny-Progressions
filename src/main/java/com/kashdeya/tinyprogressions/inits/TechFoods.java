@@ -3,7 +3,7 @@ package com.kashdeya.tinyprogressions.inits;
 import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FoodBase;
 import com.kashdeya.tinyprogressions.items.Foods;
-import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.items.ItemStay;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.Item;
@@ -24,7 +24,7 @@ public class TechFoods {
 	
 
 	// Juices
-	public static RegistryObject<Item> JUICER = TinyProgressions.ITEMS.register("juicer", () -> new ItemBase(new Properties()));
+	public static RegistryObject<Item> JUICER = TinyProgressions.ITEMS.register("juicer", () -> new ItemStay(new Properties()));
 	public static RegistryObject<Item> apple_juice  = TinyProgressions.ITEMS.register("apple_juice",  () -> new DrinkBase(new Properties(), Foods.APPLE_JUICE));
 	public static RegistryObject<Item> carrot_juice = TinyProgressions.ITEMS.register("carrot_juice",  () -> new DrinkBase(new Properties(), Foods.CARROT_JUICE));
 	public static RegistryObject<Item> potatoe_juice= TinyProgressions.ITEMS.register("potatoe_juice",  () -> new DrinkBase(new Properties(), Foods.POTATOE_JUICE));
@@ -70,9 +70,9 @@ public class TechFoods {
 	public static RegistryObject<Item> plump_pear  = TinyProgressions.ITEMS.register("plump_pear",  () -> new FoodBase(new Properties(), Foods.PLUMP_PEAR));
 	public static RegistryObject<Item> plump_peach = TinyProgressions.ITEMS.register("plump_peach",  () -> new FoodBase(new Properties(), Foods.PLUMP_PEACH));
 	//Succ The Pearls
-	public static RegistryObject<Item> succ_pearls = TinyProgressions.ITEMS.register("succ_pearls",  () -> new FoodBase(new Properties(), Foods.SUCC_PEARLS));
+	public static RegistryObject<Item> succ_pearls = TinyProgressions.ITEMS.register("succ_pearls",  () -> new DrinkBase(new Properties(), Foods.SUCC_PEARLS).setSound(TechSounds.SUCULANT_DRINK));
 
-	
+	public static RegistryObject<Item> dead_reed = TinyProgressions.ITEMS.register("dead_reed",  () -> new FoodBase(new Properties(), Foods.DEAD_REEDS));
 	
 	//public static void init(){
 //	// Succ Pearls

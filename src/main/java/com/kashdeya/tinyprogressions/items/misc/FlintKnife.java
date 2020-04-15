@@ -20,7 +20,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class FlintKnife extends Item {
 	
 	public FlintKnife() {
-		super(new Properties().maxDamage(ConfigHandler.FlintKnifeDamage).maxStackSize(1));
+		super(new Properties().maxDamage(ConfigHandler.FlintKnifeDamage));
 
 		
 		//TODO couldn't set .containerItem(this)
@@ -38,7 +38,6 @@ public class FlintKnife extends Item {
 	{
 		ItemStack stack = itemStack.copy();
 		stack.setCount(1);
-
 		return stack;
 	}
 	

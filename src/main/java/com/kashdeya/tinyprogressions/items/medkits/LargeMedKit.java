@@ -42,7 +42,7 @@ public class LargeMedKit extends ItemBase {
 			if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
 				this.onItemUse(stack, worldIn, PlayerEntity);
 			}
-	        worldIn.playSound((PlayerEntity)null, PlayerEntity.posX, PlayerEntity.posY, PlayerEntity.posZ, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
+	        worldIn.playSound((PlayerEntity)null, PlayerEntity.getPosition().getX(), PlayerEntity.getPosition().getY(), PlayerEntity.getPosition().getZ(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
 	        
 	        if (PlayerEntity instanceof ServerPlayerEntity)
             {

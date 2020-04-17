@@ -5,6 +5,10 @@ import java.util.function.Supplier;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemStay;
+import com.kashdeya.tinyprogressions.items.medkits.LargeBandage;
+import com.kashdeya.tinyprogressions.items.medkits.LargeMedKit;
+import com.kashdeya.tinyprogressions.items.medkits.SmallBandage;
+import com.kashdeya.tinyprogressions.items.medkits.SmallMedkit;
 import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
 import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
 import com.kashdeya.tinyprogressions.items.misc.ItemRib;
@@ -77,12 +81,10 @@ public class TechItems {
 	public static RegistryObject<Item> wub_gem   = registerItem("wub_gem",   () -> new ItemBase(new Properties()).setOreDictName("gemWub"));
 	public static RegistryObject<Item> wub_ingot = registerItem("wub_ingot", () -> new ItemBase(new Properties()).setOreDictName("ingotWub"));
 	// Healing Items
-	public static RegistryObject<Item> small_bandage;
-	public static RegistryObject<Item> large_bandage;
-	public static RegistryObject<Item> small_med_kit;
-	public static RegistryObject<Item> large_med_kit;
-	
-
+	public static RegistryObject<Item> small_bandage = registerItem("small_bandage",   () -> new SmallBandage());
+	public static RegistryObject<Item> large_bandage = registerItem("large_bandage",   () -> new LargeBandage());
+	public static RegistryObject<Item> small_med_kit = registerItem("small_med_kit",   () -> new SmallMedkit());
+	public static RegistryObject<Item> large_med_kit = registerItem("large_med_kit",   () -> new LargeMedKit());
 	
     private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<? extends T> sup) {
         return TinyProgressions.ITEMS.register(name, sup);

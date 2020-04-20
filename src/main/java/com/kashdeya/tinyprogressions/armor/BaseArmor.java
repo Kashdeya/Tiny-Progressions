@@ -20,20 +20,17 @@ import net.minecraft.world.World;
 
 public class BaseArmor extends ArmorItem {
 	 
-	
 	private String tooltipString = null;
-	
 	
 	public BaseArmor(ArmorMaterialTier tier, EquipmentSlotType slot, Item.Properties prop) {
 		this(tier, slot, null, prop);
 	}
 	
 	public BaseArmor(ArmorMaterialTier tier, EquipmentSlotType slot, String tooltipTranslation, Item.Properties prop) {
-		super(tier, slot, prop.group(TinyProgressions.TAB).maxStackSize(1));
+		super(tier, slot, prop.group(TinyProgressions.combatGroup).maxStackSize(1));
 		this.tooltipString = tooltipTranslation;
 	}
 	
-
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if(tooltipString != null)

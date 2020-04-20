@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.util.ITooltipFlag;
@@ -32,7 +33,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class SmallMedkit extends ItemBase {
 	
 	public SmallMedkit() {
-		super(new Properties().maxStackSize(ConfigHandler.smallMedHealStack));
+		super(new Properties().maxStackSize(ConfigHandler.smallMedHealStack).group(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override

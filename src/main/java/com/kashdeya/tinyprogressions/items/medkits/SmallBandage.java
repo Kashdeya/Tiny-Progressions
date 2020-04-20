@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -27,7 +28,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class SmallBandage extends ItemBase {
 	
 	public SmallBandage() {
-		super(new Properties().maxStackSize(ConfigHandler.smallBandageHealStack));
+		super(new Properties().maxStackSize(ConfigHandler.smallBandageHealStack).group(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override

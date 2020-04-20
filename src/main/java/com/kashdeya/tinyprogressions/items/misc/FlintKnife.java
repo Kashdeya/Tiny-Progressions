@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
@@ -20,7 +21,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class FlintKnife extends Item {
 	
 	public FlintKnife() {
-		super(new Properties().maxDamage(ConfigHandler.FlintKnifeDamage));
+		super(new Properties().maxDamage(ConfigHandler.FlintKnifeDamage).group(TinyProgressions.ToolsGroup));
 
 		
 		//TODO couldn't set .containerItem(this)

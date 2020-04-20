@@ -22,7 +22,7 @@ import net.minecraftforge.event.ForgeEventFactory;
 public class BaseScythe extends SwordItem {
 
 	public BaseScythe(IItemTier tier, int p_i48460_2_, float p_i48460_3_, Properties properties) {
-		super(tier, p_i48460_2_, p_i48460_3_, properties.group(TinyProgressions.TAB));
+		super(tier, p_i48460_2_, p_i48460_3_, properties.group(TinyProgressions.ToolsGroup));
 
 	}
 

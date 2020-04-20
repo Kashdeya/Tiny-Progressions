@@ -1,8 +1,11 @@
 package com.kashdeya.tinyprogressions.items.block;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResult;
@@ -18,18 +21,18 @@ public class AngelItemBlock extends BlockItem
 {
 	public AngelItemBlock(Block block)
 	{
-		super(block, new Properties().maxStackSize(1));
+		super(block, new Properties().maxStackSize(1).group(TinyProgressions.TAB));
 	}
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) 
 	{
 		if(world.isRemote)
-			return ActionResult.newResult(ActionResultType.SUCCESS, player.getHeldItem(hand));
+			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
 		
-		int x = (int)Math.floor(player.posX);
-		int y = (int)Math.floor(player.posY + player.getEyeHeight());
-		int z = (int)Math.floor(player.posZ);
+		int x = (int)Math.floor(player.getPosition().getX());
+		int y = (int)Math.floor(player.getPosition().getY() + player.getEyeHeight());
+		int z = (int)Math.floor(player.getPosition().getZ());
 		
 		Vec3d look = player.getLookVec();
 		
@@ -57,9 +60,11 @@ public class AngelItemBlock extends BlockItem
 		}
 		
 		BlockPos pos = new BlockPos(x, y, z);
-		if(canPlace(null, this.getBlock().getStateContainer().getBaseState()))
-			player.getHeldItem(hand).onItemUse(new ItemUseContext(player, hand, new BlockRayTraceResult(Vec3d.ZERO,side, pos, false)));
+		ItemUseContext context = new ItemUseContext(player, hand, new BlockRayTraceResult(Vec3d.ZERO,side, pos, false));
+		BlockItemUseContext blockContext = new BlockItemUseContext(context);
+		if(canPlace(blockContext, this.getBlock().getStateContainer().getBaseState()))
+			player.getHeldItem(hand).onItemUse(context);
 
-		return ActionResult.newResult(ActionResultType.SUCCESS, player.getHeldItem(hand));
+		return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
 	}
 }

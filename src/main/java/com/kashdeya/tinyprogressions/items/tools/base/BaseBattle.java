@@ -18,17 +18,10 @@ import net.minecraft.item.ItemStack;
 
 public class BaseBattle extends AxeItem {
 
-	//TO move later
-	static
-	{
-		BaseBattle emeraldBattle = new BaseBattle(ItemToolModTier.EMERALD  , 0, 0);
-		BaseBattle obsidianBattle = new BaseBattle(ItemToolModTier.OBSIDIAN, 0, 0);
-	}
-	
 	
 	public BaseBattle(IItemTier material, float damage, float speed)
     {
-        super(material, damage, speed, new Properties().maxStackSize(1).group(TinyProgressions.TAB));
+        super(material, damage, speed, new Properties().maxStackSize(1).group(TinyProgressions.combatGroup));
     }
     
     public Set<String> getToolClasses(ItemStack stack) {

@@ -13,20 +13,20 @@ public class CompressedBlocks extends StandardBlock{
 	private int least_quantity;
 	private int most_quantity;
 	
-	private CompressedBlocks(String unlocalizedName, Properties prop, SoundType sound, Block drop, int meta, int least_quantity, int most_quantity) {
-		super(prop.harvestLevel(1).harvestTool(ToolType.PICKAXE).sound(sound));
-		this.meta = meta;
-		this.least_quantity = least_quantity;
-		this.most_quantity = most_quantity;
+	public CompressedBlocks(Properties prop) {
+		super(prop.harvestLevel(1).harvestTool(ToolType.PICKAXE));
+//		this.meta = meta;
+//		this.least_quantity = least_quantity;
+//		this.most_quantity = most_quantity;
 	}
 	
-	public CompressedBlocks(String unlocalizedName, Properties prop, SoundType sound, Block drop, int least_quantity, int most_quantity) {
-		this(unlocalizedName, prop, sound, drop, 0, least_quantity, most_quantity);
-	}
-
-	protected CompressedBlocks(String unlocalizedName,Properties prop, SoundType sound, Block drop) {
-		this(unlocalizedName, prop, sound, drop, 1, 1);
-	}
+//	public CompressedBlocks(String unlocalizedName, Properties prop, SoundType sound, Block drop, int least_quantity, int most_quantity) {
+//		this(unlocalizedName, prop, sound, drop, 0, least_quantity, most_quantity);
+//	}
+//
+//	protected CompressedBlocks(String unlocalizedName,Properties prop, SoundType sound, Block drop) {
+//		this(unlocalizedName, prop, sound, drop, 1, 1);
+//	}
 	
 //	@Override
 //	public boolean isOpaqueCube(IBlockState state)

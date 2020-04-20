@@ -7,6 +7,8 @@ import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
 import com.kashdeya.tinyprogressions.gui.OreDoublerGUI;
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFoods;
+import com.kashdeya.tinyprogressions.inits.TechTools;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.ScreenManager;
@@ -56,6 +58,40 @@ public class TinyProgressions{
 	      }
 	   }).setTabPath("tiny_progression_items");
     
+	public static final ItemGroup FoodGroup = (new ItemGroup(Reference.MOD_ID) {
+	      @OnlyIn(Dist.CLIENT)
+	      public ItemStack createIcon() {
+	         return new ItemStack(TechFoods.diamond_apple.get());
+	      }
+	   }).setTabPath("tiny_progression_foods");
+	
+	public static final ItemGroup combatGroup = (new ItemGroup(Reference.MOD_ID) {
+	      @OnlyIn(Dist.CLIENT)
+	      public ItemStack createIcon() {
+	         return new ItemStack(TechTools.obsidian_sword.get());
+	      }
+	   }).setTabPath("tiny_progression_combat");
+	
+	   public static final ItemGroup ToolsGroup = (new ItemGroup(Reference.MOD_ID) {
+	      @OnlyIn(Dist.CLIENT)
+	      public ItemStack createIcon() {
+	         return new ItemStack(TechTools.wub_pickaxe.get());
+	      }
+	   }).setTabPath("tiny_progression_tools");
+	   
+	   
+	   public static final ItemGroup BlocksGroup = (new ItemGroup(Reference.MOD_ID) {
+		      @OnlyIn(Dist.CLIENT)
+		      public ItemStack createIcon() {
+		         return new ItemStack(TechBlocks.hardened_stone_bricks.get());
+		      }
+		   }).setTabPath("tiny_progression_blocks");
+	
+	
+	
+	
+	
+	
 	
 	
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
@@ -148,6 +184,8 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   cutout_mipped);
     	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.fmf_block.get(), cutout_mipped);
+    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_block.get(),      cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade_two.get(),cutout_mipped);
@@ -155,6 +193,8 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch.get(), cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch_wall.get(), cutout_mipped);
 
+    	RenderTypeLookup.setRenderLayer(TechBlocks.lava_infused_stone.get(), cutout);
+    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.ender_ore.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.water_block.get(), cutout);	
     	RenderTypeLookup.setRenderLayer(TechBlocks.lava_block.get(), cutout);	

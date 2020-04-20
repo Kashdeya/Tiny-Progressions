@@ -1,7 +1,13 @@
 package com.kashdeya.tinyprogressions.blocks.misc;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.ToolType;
 
 public class GhostBlock extends Block {
@@ -11,9 +17,17 @@ public class GhostBlock extends Block {
         super(Properties.create(Material.WOOL)
         		.hardnessAndResistance(1.5f, 10f)
         		.harvestTool(ToolType.PICKAXE)
-        		.harvestLevel(1));
+        		.harvestLevel(1)
+        		.func_226896_b_());
 //        this.setTranslationKey("ghost_block");
     }
+	
+	
+	
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, IBlockReader reader, BlockPos position, ISelectionContext context) {
+		return VoxelShapes.empty();
+	}
 	
     /**
      * Used to determine ambient occlusion and culling when rebuilding chunks for render

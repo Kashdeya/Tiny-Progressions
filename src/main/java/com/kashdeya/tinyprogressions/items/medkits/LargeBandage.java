@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.util.ITooltipFlag;
@@ -33,7 +34,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class LargeBandage extends ItemBase {
 	
 	public LargeBandage() {
-		super(new Properties().maxStackSize(ConfigHandler.largeBandageStack));
+		super(new Properties().maxStackSize(ConfigHandler.largeBandageStack).group(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override

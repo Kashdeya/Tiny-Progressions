@@ -16,28 +16,16 @@ import net.minecraftforge.common.ToolType;
 
 public class BasePaxel extends PickaxeItem {
 	
-//	//TOD Move Later Also tweak the settings I think.
-//	static
-//	{
-//		BasePaxel flintMulti =    new BasePaxel(ItemToolModTier.PFLINT,   0,0, new Properties());
-//		BasePaxel emeraldMulti =  new BasePaxel(ItemToolModTier.PEMERALD, 0,0, new Properties());
-//		BasePaxel obsidianMulti = new BasePaxel(ItemToolModTier.POBSIDIAN,0,0, new Properties());
-//		BasePaxel wubMulti = 	  new BasePaxel(ItemToolModTier.PWUBWUB  ,0,0, new Properties());
-//	}
-	
+
 	public BasePaxel(IItemTier tier, int baseDmg, int baseSpeed, Properties properties) {
 		super(tier, baseDmg, baseSpeed,  properties
 				.addToolType(ToolType.PICKAXE, tier.getHarvestLevel())
 				.addToolType(ToolType.SHOVEL, tier.getHarvestLevel())
 				.addToolType(ToolType.AXE, tier.getHarvestLevel())
-				.group(TinyProgressions.TAB));
+				.group(TinyProgressions.ToolsGroup));
 
 	}
 
-//	@Override
-//	public Set<ToolType> getToolTypes(ItemStack stack) {
-//		return ImmutableSet.of(ToolType.PICKAXE, ToolType.SHOVEL, ToolType.AXE);
-//	}
 
 	private static Set<Block> effectiveAgainst = Sets.newHashSet(
 		Blocks.ACACIA_PLANKS, Blocks.BIRCH_PLANKS, Blocks.DARK_OAK_PLANKS, Blocks.JUNGLE_PLANKS, Blocks.SPRUCE_PLANKS,

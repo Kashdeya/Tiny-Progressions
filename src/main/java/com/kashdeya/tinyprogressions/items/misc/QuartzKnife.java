@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -20,7 +21,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class QuartzKnife extends ItemBase {
 	
 	public QuartzKnife() {
-		super(new Properties().maxStackSize(1).maxDamage(ConfigHandler.QuartzKnifeDamage));
+		super(new Properties().maxStackSize(1).maxDamage(ConfigHandler.QuartzKnifeDamage).group(TinyProgressions.ToolsGroup));
 		//TODO
 //		super.setContainerItem(this);
 	}

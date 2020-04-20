@@ -35,13 +35,14 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.fluids.capability.templates.FluidHandlerItemStack;
 
 public class InfinBucket extends BucketItem {
 
 	public InfinBucket() {
-		super(()-> Fluids.WATER, new Properties().group(TinyProgressions.TAB));
+		super(()-> Fluids.WATER, new Properties().group(TinyProgressions.ToolsGroup));
 	}
 
 	@Override
@@ -49,11 +50,11 @@ public class InfinBucket extends BucketItem {
 		return p_203790_1_;
 	}
 	
-	@Override
-	public ICapabilityProvider initCapabilities(ItemStack stack, CompoundNBT nbt) {
-		return new FluidUtil(stack, 1000, Fluids.WATER);
-	}
-	
+//	@Override
+//	public ICapabilityProvider initCapabilities(ItemStack stack, CompoundNBT nbt) {
+//		return new FluidUtil(stack, 1000, Fluids.WATER);
+//	}
+//	
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {

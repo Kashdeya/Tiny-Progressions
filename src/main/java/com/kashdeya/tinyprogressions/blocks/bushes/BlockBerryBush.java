@@ -28,11 +28,11 @@ public class BlockBerryBush extends BushBlock implements IPlantable {
 //		Block raspBerryBush =  new BlockBerryBush(TechFoods.raspberry_berry.get(), Properties.create(Material.PLANTS, MaterialColor.RED).sound(SoundType.PLANT).hardnessAndResistance(0)).setRegistryName(Reference.MOD_ID, "raspberry_bush");
 //	}
 	
-	public BlockBerryBush(Item droppedItem, Properties properties)
+	public BlockBerryBush(Properties properties)
     {
 		super(properties);
 		//TODO I think this is actually handled by loot tables
-		this.droppedItem = droppedItem;
+//		this.droppedItem = droppedItem;
     }
 	
 	@Override

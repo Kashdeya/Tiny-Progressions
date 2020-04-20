@@ -21,50 +21,29 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechArmor {
 	
-	// Stone Armor
-	public static RegistryObject<Item> stone_helmet =     TinyProgressions.ITEMS.register("stone_helmet",     () -> new StoneArmor(EquipmentSlotType.HEAD, new Properties()));
-	public static RegistryObject<Item> stone_chestplate = TinyProgressions.ITEMS.register("stone_chestplate", () -> new StoneArmor(EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> stone_leggings =   TinyProgressions.ITEMS.register("stone_leggings",   () -> new StoneArmor(EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> stone_boots =      TinyProgressions.ITEMS.register("stone_boots",      () -> new StoneArmor(EquipmentSlotType.FEET, new Properties()));
-	
-	
-	// Flint Armor
-	public static RegistryObject<Item> flint_helmet =    TinyProgressions.ITEMS.register("flint_helmet",     () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.HEAD, new Properties()));
-	public static RegistryObject<Item> flint_chestplate= TinyProgressions.ITEMS.register("flint_chestplate", () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> flint_leggings=   TinyProgressions.ITEMS.register("flint_leggings",   () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> flint_boots=      TinyProgressions.ITEMS.register("flint_boots",      () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.LEGS, new Properties()));
-	
-	// Bone Armor
-	public static RegistryObject<Item> bone_helmet =     TinyProgressions.ITEMS.register("bone_helmet",     () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.HEAD, new Properties()));
-	public static RegistryObject<Item> bone_chestplate = TinyProgressions.ITEMS.register("bone_chestplate", () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> bone_leggings =   TinyProgressions.ITEMS.register("bone_leggings",   () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> bone_boots =      TinyProgressions.ITEMS.register("bone_boots",      () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.FEET, new Properties()));
-	
 	// Wood Armor
 	public static RegistryObject<Item> wooden_helmet =     TinyProgressions.ITEMS.register("wooden_helmet",     () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.HEAD, new Properties()));
 	public static RegistryObject<Item> wooden_chestplate = TinyProgressions.ITEMS.register("wooden_chestplate", () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.CHEST, new Properties()));
 	public static RegistryObject<Item> wooden_leggings =   TinyProgressions.ITEMS.register("wooden_leggings",   () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.LEGS, new Properties()));
 	public static RegistryObject<Item> wooden_boots =      TinyProgressions.ITEMS.register("wooden_boots",      () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.FEET, new Properties()));
 	
-	// Lava
-	public static RegistryObject<Item> lava_helmet =     TinyProgressions.ITEMS.register("lava_helmet",     () -> new LavaArmour(EquipmentSlotType.HEAD, new Properties()));
-	public static RegistryObject<Item> lava_chestplate = TinyProgressions.ITEMS.register("lava_chestplate", () -> new LavaArmour(EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> lava_leggings =   TinyProgressions.ITEMS.register("lava_leggings",   () -> new LavaArmour(EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> lava_boots =      TinyProgressions.ITEMS.register("lava_boots",      () -> new LavaArmour(EquipmentSlotType.LEGS, new Properties()));
+	// Bone Armor
+	public static RegistryObject<Item> bone_helmet =     TinyProgressions.ITEMS.register("bone_helmet",     () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> bone_chestplate = TinyProgressions.ITEMS.register("bone_chestplate", () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> bone_leggings =   TinyProgressions.ITEMS.register("bone_leggings",   () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> bone_boots =      TinyProgressions.ITEMS.register("bone_boots",      () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.FEET, new Properties()));
+		
+	// Flint Armor
+	public static RegistryObject<Item> flint_helmet =    TinyProgressions.ITEMS.register("flint_helmet",     () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> flint_chestplate= TinyProgressions.ITEMS.register("flint_chestplate", () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> flint_leggings=   TinyProgressions.ITEMS.register("flint_leggings",   () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> flint_boots=      TinyProgressions.ITEMS.register("flint_boots",      () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.LEGS, new Properties()));
 	
-	// Wither
-	public static RegistryObject<Item> wither_helmet =    TinyProgressions.ITEMS.register("wither_helmet",     () -> new WitherArmour(EquipmentSlotType.HEAD, new Properties()));
-	public static RegistryObject<Item> wither_chestplate= TinyProgressions.ITEMS.register("wither_chestplate", () -> new WitherArmour(EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> wither_leggings=   TinyProgressions.ITEMS.register("wither_leggings",   () -> new WitherArmour(EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> wither_boots=      TinyProgressions.ITEMS.register("wither_boots",      () -> new WitherArmour(EquipmentSlotType.FEET, new Properties()));
-	
-	// Dragon
-	//TODOD Fix Dragon
-	public static RegistryObject<Item> dragon_helmet=     TinyProgressions.ITEMS.register("dragon_helmet",    () -> new DragonArmour(EquipmentSlotType.HEAD, new Properties()));
-	public static RegistryObject<Item> dragon_chestplate= TinyProgressions.ITEMS.register("dragon_chestplate",() -> new DragonArmour(EquipmentSlotType.CHEST, new Properties()));
-	public static RegistryObject<Item> dragon_leggings=   TinyProgressions.ITEMS.register("dragon_leggings",  () -> new DragonArmour(EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> dragon_boots=      TinyProgressions.ITEMS.register("dragon_boots",     () -> new DragonArmour(EquipmentSlotType.FEET, new Properties()));
-	
+	// Stone Armor
+	public static RegistryObject<Item> stone_helmet =     TinyProgressions.ITEMS.register("stone_helmet",     () -> new StoneArmor(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> stone_chestplate = TinyProgressions.ITEMS.register("stone_chestplate", () -> new StoneArmor(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> stone_leggings =   TinyProgressions.ITEMS.register("stone_leggings",   () -> new StoneArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> stone_boots =      TinyProgressions.ITEMS.register("stone_boots",      () -> new StoneArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Obsidian
 	public static RegistryObject<Item> obsidian_helmet=     TinyProgressions.ITEMS.register("obsidian_helmet",     () -> new ObsidianArmor(EquipmentSlotType.HEAD, new Properties()));
@@ -95,6 +74,26 @@ public class TechArmor {
 	public static RegistryObject<Item> emerald_chestplate= TinyProgressions.ITEMS.register("emerald_chestplate", () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.CHEST, new Properties()));
 	public static RegistryObject<Item> emerald_leggings=   TinyProgressions.ITEMS.register("emerald_leggings",   () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.LEGS, new Properties()));
 	public static RegistryObject<Item> emerald_boots=      TinyProgressions.ITEMS.register("emerald_boots",      () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.FEET, new Properties()));
+	
+	// Lava
+	public static RegistryObject<Item> lava_helmet =     TinyProgressions.ITEMS.register("lava_helmet",     () -> new LavaArmour(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> lava_chestplate = TinyProgressions.ITEMS.register("lava_chestplate", () -> new LavaArmour(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> lava_leggings =   TinyProgressions.ITEMS.register("lava_leggings",   () -> new LavaArmour(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> lava_boots =      TinyProgressions.ITEMS.register("lava_boots",      () -> new LavaArmour(EquipmentSlotType.LEGS, new Properties()));
+	
+	// Wither
+	public static RegistryObject<Item> wither_helmet =    TinyProgressions.ITEMS.register("wither_helmet",     () -> new WitherArmour(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> wither_chestplate= TinyProgressions.ITEMS.register("wither_chestplate", () -> new WitherArmour(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> wither_leggings=   TinyProgressions.ITEMS.register("wither_leggings",   () -> new WitherArmour(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> wither_boots=      TinyProgressions.ITEMS.register("wither_boots",      () -> new WitherArmour(EquipmentSlotType.FEET, new Properties()));
+	
+	// Dragon
+	//TODOD Fix Dragon
+	public static RegistryObject<Item> dragon_helmet=     TinyProgressions.ITEMS.register("dragon_helmet",    () -> new DragonArmour(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> dragon_chestplate= TinyProgressions.ITEMS.register("dragon_chestplate",() -> new DragonArmour(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> dragon_leggings=   TinyProgressions.ITEMS.register("dragon_leggings",  () -> new DragonArmour(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> dragon_boots=      TinyProgressions.ITEMS.register("dragon_boots",     () -> new DragonArmour(EquipmentSlotType.FEET, new Properties()));
+	
 	
 	// bam t-shirt
 	public static RegistryObject<Item> bam_tshirt = TinyProgressions.ITEMS.register("bam_tshirt", () -> new BaseArmor(ArmorMaterialTier.BAM, EquipmentSlotType.CHEST, "tooltip.bamsarmor_1", new Properties()));

@@ -9,7 +9,7 @@ public class ItemBase extends Item implements IOreDictEntry{
 	String oredictName;
 	
 	public ItemBase(Properties properties) {
-		super(properties.group(TinyProgressions.TAB));
+		super(properties);
 	}
 	
 	public ItemBase setOreDictName(String oredictName)

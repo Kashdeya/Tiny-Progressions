@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -25,7 +26,7 @@ import net.minecraftforge.items.IItemHandler;
 
 public class RepairTablet extends ItemBase {
 	public RepairTablet() {
-		super(new Properties().maxStackSize(1));
+		super(new Properties().maxStackSize(1).group(TinyProgressions.ToolsGroup));
 
 	}
 

@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.util.ITooltipFlag;
@@ -31,7 +32,7 @@ import net.minecraft.world.World;
 public class LargeMedKit extends ItemBase {
 	
 	public LargeMedKit() {
-		super(new Properties().maxStackSize(ConfigHandler.LargeMedHealStack));
+		super(new Properties().maxStackSize(ConfigHandler.LargeMedHealStack).group(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.InventoryHelper;
 
 import net.minecraft.block.Blocks;
@@ -25,7 +26,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class MyceliumSeeds extends ItemBase {
 
 	public MyceliumSeeds() {
-		super(new Properties());
+		super(new Properties().group(TinyProgressions.FoodGroup));
 //		this.setTranslationKey("mycelium_seeds");
 	}
 

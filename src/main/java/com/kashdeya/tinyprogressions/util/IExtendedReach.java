@@ -25,5 +25,5 @@ public interface IExtendedReach {
 	
 	default void removeReach(PlayerEntity player) {
 		player.getAttribute(PlayerEntity.REACH_DISTANCE).removeModifier(attUUID);
-	}
+}
 }

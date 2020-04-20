@@ -1,10 +1,7 @@
 package com.kashdeya.tinyprogressions.items.block;
 
-import com.kashdeya.tinyprogressions.registry.utils.IMetadata;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
 
 public class MetaItemBlock extends BlockItem
 {
@@ -12,22 +9,20 @@ public class MetaItemBlock extends BlockItem
 	
 	public MetaItemBlock(Block block)
 	{
-		super(block, new Properties());
-		setMaxDamage(0);
-		setHasSubtypes(true);
+		super(block, new Properties().maxDamage(0));
 		
-		this.unlocalNames = ((IMetadata)block).getUnlocalizedNames();
+//		this.unlocalNames = ((IMetadata)block).getUnlocalizedNames();
 	}
 	
-	@Override
-	public int getMetadata(int damage)
-	{
-		return damage;
-	}
-	
-	@Override
-	public String getTranslationKey(ItemStack stack)
-	{
-		return "tile." + unlocalNames[stack.getItemDamage()];
-	}
+//	@Override
+//	public int getMetadata(int damage)
+//	{
+//		return damage;
+//	}
+//	
+//	@Override
+//	public String getTranslationKey(ItemStack stack)
+//	{
+//		return "tile." + unlocalNames[stack.getItemDamage()];
+//	}
 }

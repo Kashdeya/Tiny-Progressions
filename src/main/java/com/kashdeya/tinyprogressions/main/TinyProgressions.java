@@ -7,6 +7,7 @@ import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
 import com.kashdeya.tinyprogressions.gui.OreDoublerGUI;
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechFeatures;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 
@@ -87,19 +88,14 @@ public class TinyProgressions{
 		      }
 		   }).setTabPath("tiny_progression_blocks");
 	
-	
-	
-	
-	
-	
-	
-	
+		
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
 	public static final DeferredRegister<SoundEvent> SOUNDS = new DeferredRegister<>(ForgeRegistries.SOUND_EVENTS,	Reference.MOD_ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<>(ForgeRegistries.CONTAINERS, Reference.MOD_ID);
+	public static final DeferredRegister<?> Features = new DeferredRegister<>(ForgeRegistries.FEATURES, Reference.MOD_ID);
 
 	
     public TinyProgressions() {
@@ -123,31 +119,15 @@ public class TinyProgressions{
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
-    	
-
+    	TechFeatures.registerAllFeatures();
 //		TinyConfig.initExtra();
 //		TinyConfig.initOres();
 //		TinyConfig.initSupporters();
 //		TinyConfig.initReborn();
-//		ModFluids.init();
-
-//				
 //		RemoveItems.initRemove();
-//		
-//		// Events
-//		MinecraftForge.EVENT_BUS.register(instance);
-//		MinecraftForge.EVENT_BUS.register(new IReachEvent());
-//		MinecraftForge.EVENT_BUS.register(EventDrops.class);
-//		MinecraftForge.EVENT_BUS.register(SpongeBlockPlacement.class);
-//		MinecraftForge.EVENT_BUS.register(BucketUseEvent.class);
-    	
 //		proxy.onInitialization(e);
-//		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 //		OreDict.init();
-    	
-    	
-//    			proxy.onPostInitialization(e);
+//    	proxy.onPostInitialization(e);
     }
 
     @SuppressWarnings("deprecation")
@@ -164,6 +144,12 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(),cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.diamond_cobblegen_block.get(),cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.blaze_cobblegen_block.get(),  cutout_mipped);
+    	
+    	RenderTypeLookup.setRenderLayer(TechBlocks.blackberry_bush.get(),cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.blueberry_bush.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.maloberry_bush.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.raspberry_bush.get(), cutout);
+    	    	
     	
     	RenderTypeLookup.setRenderLayer(TechBlocks.reinforced_glass.get(), cutout_mipped);
     	

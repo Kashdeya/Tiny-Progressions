@@ -23,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
@@ -95,7 +96,7 @@ public class TinyProgressions{
 	public static final DeferredRegister<SoundEvent> SOUNDS = new DeferredRegister<>(ForgeRegistries.SOUND_EVENTS,	Reference.MOD_ID);
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<>(ForgeRegistries.CONTAINERS, Reference.MOD_ID);
-	public static final DeferredRegister<?> Features = new DeferredRegister<>(ForgeRegistries.FEATURES, Reference.MOD_ID);
+	public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<>(ForgeRegistries.FEATURES, Reference.MOD_ID);
 
 	
     public TinyProgressions() {
@@ -112,6 +113,7 @@ public class TinyProgressions{
 		FLUIDS.register(bus);
 		TILE_ENTITY_TYPES.register(bus);
 		CONTAINERS.register(bus);
+		FEATURES.register(bus);
 		SOUNDS.register(bus);
         INSTANCE = this;
     }

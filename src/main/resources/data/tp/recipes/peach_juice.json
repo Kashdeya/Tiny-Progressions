@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "item": "tp:plump_peach"
+    }
+  ],
+  "result": {
+    "item": "tp:peach_juice"
+  }
+}

@@ -20,19 +20,19 @@ public class ItemStay extends ItemBase {
 		super(prop);
 	}
 	
-	
-	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
-	{
-			return false;
-	}
-	
-	@Override
-	public ItemStack getContainerItem(ItemStack itemStack)
-	{
-		ItemStack stack = itemStack.copy();
-		stack.setCount(1);
-		return stack;
-	}
+//	
+//	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
+//	{
+//			return false;
+//	}
+//	
+//	@Override
+//	public ItemStack getContainerItem(ItemStack itemStack)
+//	{
+//		ItemStack stack = itemStack.copy();
+//		stack.setCount(1);
+//		return stack;
+//	}
 	
 	@Override
 	@OnlyIn(Dist.CLIENT)

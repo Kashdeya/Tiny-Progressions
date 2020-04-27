@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "tag": "forge:bottles/glass"
+    }
+  ],
+  "result": {
+    "item": "tp:slime_juice"
+  }
+}

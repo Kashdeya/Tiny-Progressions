@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " II",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:rods/netherrack"
+    },
+    "I": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "result": {
+    "item": "tp:nether_diamond_hoe"
+  }
+}

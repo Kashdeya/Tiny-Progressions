@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CGC",
+    "GHG",
+    "CGC"
+  ],
+  "key": {
+    "C": {
+      "tag": "forge:cobblestone"
+    },
+    "G": {
+      "tag": "forge:glass/colorless"
+    },
+    "H": {
+      "item": "tp:stone_hammer"
+    }
+  },
+  "result": {
+    "item": "tp:ghost_block",
+    "count": 4
+  }
+}

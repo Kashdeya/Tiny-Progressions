@@ -150,6 +150,7 @@ public class TechTools {
 	public static RegistryObject<Item> stone_shears =   TinyProgressions.ITEMS.register("stone_shears",   () -> new BaseShears(new Properties().defaultMaxDamage(59)));
 	public static RegistryObject<Item> golden_shears =  TinyProgressions.ITEMS.register("golden_shears",  () -> new BaseShears(new Properties().defaultMaxDamage(70)));
 	public static RegistryObject<Item> flint_shears =   TinyProgressions.ITEMS.register("flint_shears",   () -> new BaseShears(new Properties().defaultMaxDamage(81)));
+	public static RegistryObject<Item> emerald_shears = TinyProgressions.ITEMS.register("emerald_shears",   () -> new BaseShears(new Properties().defaultMaxDamage(1061)));
 	public static RegistryObject<Item> diamond_shears = TinyProgressions.ITEMS.register("diamond_shears", () -> new BaseShears(new Properties().defaultMaxDamage(1561)));
 
 //	

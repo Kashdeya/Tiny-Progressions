@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "KQ"
+  ],
+  "key": {
+    "Q": {
+      "tag": "forge:gem/quartz"
+    },
+    "K": {
+      "item": "tp:quartz_knife"
+    }
+  },
+  "result": {
+    "item": "tp:quartz_dust"
+  }
+}

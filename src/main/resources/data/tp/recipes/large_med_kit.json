@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MM",
+    "MM"
+  ],
+  "key": {
+    "M": {
+      "item": "tp:small_med_kit"
+    }
+  },
+  "result": {
+    "item": "tp:large_med_kit"
+  }
+}

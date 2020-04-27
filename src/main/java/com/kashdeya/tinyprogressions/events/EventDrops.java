@@ -6,7 +6,6 @@ import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.util.OreDict;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -35,7 +34,8 @@ public class EventDrops {
 		
 		Block target = event.getState().getBlock();
 		int trigger = event.getWorld().getRandom().nextInt(1000);
-		if (OreDict.hasTag("leaves", target) || target instanceof LeavesBlock) {
+		//OreDict.hasTag("leaves", target) ||
+		if (target instanceof LeavesBlock) {
 			if(trigger < ConfigHandler.peachDropsChance && ConfigHandler.extra_drops) {
 				ItemEntity item = new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), new ItemStack(TechFoods.plump_peach.get(), ConfigHandler.peachDropsAmount));
 				event.getWorld().addEntity(item);

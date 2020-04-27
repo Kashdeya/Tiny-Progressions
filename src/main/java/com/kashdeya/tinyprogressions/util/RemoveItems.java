@@ -23,15 +23,16 @@ public class RemoveItems {
 		}
 		
 	}
-	
+
+	//TODO
 	private static void removeRecipe(ItemStack resultItem){
 
-		RecipeManager.REGISTRY.forEach((recipe) -> {
-			if(ItemStack.areItemsEqual(recipe.getRecipeOutput(), resultItem))
-			{
-				recipes.add(recipe.getRegistryName());
-			}
-		});
+//		Recipe.forEach((recipe) -> {
+//			if(ItemStack.areItemsEqual(recipe.getRecipeOutput(), resultItem))
+//			{
+//				recipes.add(recipe.getRegistryName());
+//			}
+//		});
 	}
 
 }

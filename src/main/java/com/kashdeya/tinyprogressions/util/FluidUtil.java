@@ -1,19 +1,11 @@
 package com.kashdeya.tinyprogressions.util;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 
-public class FluidUtil implements IFluidHandlerItem, ICapabilityProvider {
+public class FluidUtil implements IFluidHandlerItem {
 
 	private ItemStack container;
 	private int capacity;
@@ -83,12 +75,12 @@ public class FluidUtil implements IFluidHandlerItem, ICapabilityProvider {
 		return drained;
 	}
 
-	@Override
-	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+//	@Override
+//	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	
 	
 	
 	
@@ -132,18 +124,17 @@ public class FluidUtil implements IFluidHandlerItem, ICapabilityProvider {
 //		return drained;
 //	}
 
-	@Override
-	public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable Direction facing) {
-		return capability == CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY;
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	@Nullable
-	public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable Direction facing) {
-		return capability == CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY ? (T) this : null;
-	}
-
+//	public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable Direction facing) {
+//		return capability == CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY;
+//	}
+//
+//	@SuppressWarnings("unchecked")
+//	@Override
+//	@Nullable
+//	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction facing) {
+//		return capability == CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY ?  (LazyOptional<T>)this : null;
+//	}
+//
 
 
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tp:soul_sandstone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:soul_sand",
+    "count": 4
+  }
+}

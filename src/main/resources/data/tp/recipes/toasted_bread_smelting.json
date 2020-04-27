@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "result": {
+    "item": "tp:toasted_bread"
+  },
+  "experience": 1
+}

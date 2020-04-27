@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "D D",
+    "DDD",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "tp:quartz_ingot"
+    }
+  },
+  "result": {
+    "item": "tp:quartz_chestplate"
+  }
+}

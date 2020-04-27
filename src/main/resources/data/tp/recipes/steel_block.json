@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "tp:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "tp:steel_block"
+  }
+}

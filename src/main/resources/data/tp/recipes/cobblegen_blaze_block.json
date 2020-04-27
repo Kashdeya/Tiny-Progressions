@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BDB",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "D": {
+      "item": "tp:cobblegen_diamond_block"
+    }
+  },
+  "result": {
+    "item": "tp:cobblegen_blaze_block"
+  }
+}

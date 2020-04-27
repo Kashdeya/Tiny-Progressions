@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "W W",
+    "W W"
+  ],
+  "key": {
+    "W": {
+      "item": "tp:wither_rib"
+    }
+  },
+  "result": {
+    "item": "tp:wither_leggings"
+  }
+}

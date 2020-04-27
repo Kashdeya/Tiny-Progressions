@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  S",
+    " SS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "tp:hardened_stone_smallbricks"
+    }
+  },
+  "result": {
+    "item": "tp:hardened_stone_smallbricks_stairs",
+    "count": 4
+  }
+}

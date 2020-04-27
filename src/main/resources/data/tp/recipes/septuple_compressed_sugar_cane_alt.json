@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tp:octuple_compressed_sugar_cane"
+    }
+  ],
+  "result": {
+    "item": "tp:septuple_compressed_sugar_cane",
+    "count": 9
+  }
+}

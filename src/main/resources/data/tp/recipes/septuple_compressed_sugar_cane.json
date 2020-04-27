@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "tp:sextuple_compressed_sugar_cane"
+    }
+  },
+  "result": {
+    "item": "tp:septuple_compressed_sugar_cane"
+  }
+}

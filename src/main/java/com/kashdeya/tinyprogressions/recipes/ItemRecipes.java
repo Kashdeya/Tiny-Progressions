@@ -1,173 +1,247 @@
 package com.kashdeya.tinyprogressions.recipes;
 
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechItems;
+import com.kashdeya.tinyprogressions.properties.EnumDustColor;
+
+import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+
 public class ItemRecipes {
 	
-//	public static IRecipe NETHER_ROD, BSC_ROD;
-//	public static IRecipe[] COLORED_DUST;
-//	
-//	public static IRecipe WATERING_CAN, WATERING_CAN_UPGRADE;
-//
-//	public static IRecipe SMALL_BANDAGE, LARGE_BANDAGE, SMALL_MEDKIT, LARGE_MEDKIT;
-//	public static IRecipe ENDERPEARL;
-//	public static IRecipe REPAIR_TABLET;
-//	
-//	public static IRecipe TINY_CHARCOAL, TINY_COAL, CHARCOAL1, COAL, STEEL_INGOT, STEEL_INGOT1;
-//	
-//	public static IRecipe CHAINMAIL_PART;
-//	public static IRecipe STONE_HAMMER, OBSIDIAN_DUST;
-//	
-//		public static void init() {
-//			// Nether
-//			if (ConfigHandler.nether_rod){
-//				NETHER_ROD = new ShapedRecipe(new ItemStack(TechItems.nether_rod, 4), 
-//						"i",
-//						"i",
-//						'i', new ItemStack(TechBlocks.soul_sandstone));
-//			}
-//			// bsc
-//			if (ConfigHandler.bsc_rod) {
-//				BSC_ROD = new ShapedRecipe(new ItemStack(TechItems.bsc_rod, 4), 
-//						"i",
-//						"i",
-//						'i', new ItemStack(TechBlocks.compressed_sugar_cane));
-//			}
-//			
-//			// Glowstone Dust
-//			if (ConfigHandler.ColorGlowstone)
-//			{
-//				COLORED_DUST = new IRecipe[EnumDustColor.values().length];
-//				for(int i = 0; i < EnumDustColor.values().length; i++)
-//				{
-//					COLORED_DUST[i] = new ShapedRecipe(new ItemStack(TechItems.colored_dust, 8, i), 
-//							"ddd",
-//							"dgd",
-//							"ddd",
-//							'g', new ItemStack(Items.GLOWSTONE_DUST),
-//							'd', EnumDustColor.values()[i].getCraftingOredict());
-//				}
-//			}
-//			
-//			// Watering Cans
-//			if (ConfigHandler.WateringCan) {
-//				WATERING_CAN = new ShapedRecipe(new ItemStack(TechItems.watering_can), 
-//						"id ",
-//						"iwi",
-//						" i ",
-//						'i', "ingotIron",
-//						'd', "dyeWhite",
-//						'w', new ItemStack(Items.WATER_BUCKET));
-//			}
-//			if (ConfigHandler.WateringCanUpgrade && ConfigHandler.WateringCan) {
-//				WATERING_CAN_UPGRADE = new ShapedRecipe(new ItemStack(TechItems.watering_can_upgrade), 
-//						"on ",
-//						"owo",
-//						" o ",
-//						'o', "ingotReinforcedObsidian",
-//						'n', new ItemStack(Items.NETHER_STAR),
-//						'w', new ItemStack(TechItems.watering_can));
-//			}
-//			
-//			// Medkit
-//			if (ConfigHandler.medical_kits) {
-//				// Small bandage
-//				SMALL_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.small_bandage, 4), 
-//						" p ",
-//						"psp",
-//						" p ",
-//						'p', new ItemStack(Items.PAPER),
-//						's', new ItemStack(Items.SLIME_BALL));
-//				// Large Bandage
-//				LARGE_BANDAGE = new ShapedRecipe(new ItemStack(TechItems.large_bandage, 4), 
-//						"bsb",
-//						"sls",
-//						"bsb",
-//						'l', "leather",
-//						's', "string",
-//						'b', new ItemStack(TechItems.small_bandage));
-//				// Small Med Kit
-//				SMALL_MEDKIT = new ShapedRecipe(new ItemStack(TechItems.small_med_kit, 2), 
-//						"bb",
-//						"bb",
-//						'b', new ItemStack(TechItems.large_bandage));				
-//				// Large Med Kit
-//				LARGE_MEDKIT = new ShapedRecipe(new ItemStack(TechItems.large_med_kit), 
-//						"mm",
-//						"mm",
-//						'm', new ItemStack(TechItems.small_med_kit));
-//			}
-//			
-//			// Ender Dust
-//			if (ConfigHandler.ender_ore) {
-//				ENDERPEARL = new ShapedRecipe(new ItemStack(Items.ENDER_PEARL), 
-//						"ee",
-//						"ee",
-//						'e', "dustEnder");
-//			}
-//			
-//			// repair kit
-//			if (ConfigHandler.repair_tablet) {
-//				REPAIR_TABLET = new ShapedRecipe(new ItemStack(TechItems.repair_tablet), 
-//						"plp",
-//						"rgr",
-//						"prp",
-//						'p', new ItemStack(TechBlocks.hardened_stone),
-//						'r', new ItemStack(Items.GHAST_TEAR),
-//						'l', new ItemStack(Items.NETHER_STAR),
-//						'g', new ItemStack(TechItems.redstone_ingot));
-//			}
-//			
-//			// Tiny Coal & Charcoal
-//			if (ConfigHandler.tiny_charcoal) {
-//				TINY_CHARCOAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_charcoal, 8), new ItemStack(Items.COAL, 1, 1), new ItemStack(TechItems.stone_hammer));
-//				CHARCOAL1 = new ShapedRecipe(new ItemStack(Items.COAL, 1, 1),
-//						
-//						"sss",
-//						"s s",
-//						"sss",
-//						's', new ItemStack(TechItems.tiny_charcoal));
-//			}
-//			if (ConfigHandler.tiny_coal) {
-//				TINY_COAL = new ShapelessRecipe(new ItemStack(TechItems.tiny_coal, 8), new ItemStack(Items.COAL, 1, 0), new ItemStack(TechItems.stone_hammer));
-//				COAL = new ShapedRecipe(new ItemStack(Items.COAL, 1, 0), 
-//						"sss",
-//						"s s",
-//						"sss",
-//						's', new ItemStack(TechItems.tiny_coal));
-//			}
-//			
-//			// Chainmail part
-//			if (ArmorHandler.chain_armor){
-//				CHAINMAIL_PART = new ShapelessRecipe(new ItemStack(TechItems.chainmail_part, 2), new ItemStack(Items.IRON_INGOT), new ItemStack(TechItems.stone_hammer));
-//			}
-//			
-//			// Steel
-//			if (ConfigHandler.steel_ingot){
-//				STEEL_INGOT = new ShapedRecipe(new ItemStack(TechItems.steel_ingot, 2), 
-//						"sss",
-//						"ihi",
-//						"sss",
-//						'h', new ItemStack(TechItems.stone_hammer),
-//						'i', new ItemStack(Items.IRON_INGOT),
-//						's', new ItemStack(Items.COAL, 1, 0));
-//				STEEL_INGOT1 = new ShapedRecipe(new ItemStack(TechItems.steel_ingot, 2), 
-//						"sss",
-//						"ihi",
-//						"sss",
-//						'h', new ItemStack(TechItems.stone_hammer),
-//						'i', new ItemStack(Items.IRON_INGOT),
-//						's', new ItemStack(Items.COAL, 1, 1));
-//			}
-//			
-//			// Can not be turned off.
-//				OBSIDIAN_DUST = new ShapelessRecipe(new ItemStack(TechItems.obsidian_dust), new ItemStack(Blocks.OBSIDIAN), new ItemStack(TechItems.stone_hammer));
-//				STONE_HAMMER = new ShapedRecipe(new ItemStack(TechItems.stone_hammer),					
-//						"cic",
-//						"isi",
-//						" s ",
-//						'i', new ItemStack(Items.STRING),
-//						's', new ItemStack(Items.STICK),
-//						'c', new ItemStack(TechBlocks.hardened_stone));
-//			
-//		}
+	public static void init() {
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.nether_rod.get(), 4), 
+					"i",
+					"i",
+					'i', new ItemStack(TechBlocks.soul_sandstone.get()));
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.bsc_rod.get(), 4), 
+					"i",
+					"i",
+					'i', new ItemStack(TechBlocks.compressed_sugar_cane.get()));
+		
 
+		exportJson.addShapedRecipe(new ItemStack(TechItems.white_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/white");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.silver_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/light_gray");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.red_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/red");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.purple_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/purple");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.pink_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/pink");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.orange_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/orange");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.magenta_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/magenta");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.lime_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/lime");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.lightblue_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/light_blue");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.green_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/green");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.gray_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/gray");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.cyan_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/cyan");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.brown_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/brown");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.blue_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/blue");
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.black_dust.get(), 8), 
+				"ddd",
+				"dgd",
+				"ddd",
+				'g', new ItemStack(Items.GLOWSTONE_DUST),
+				'd', "forge:dyes/black");
+		
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.watering_can.get()), 
+					"id ",
+					"iwi",
+					" i ",
+					'i', "forge:ingots/iron",
+					'd', "forge:dyes/white",
+					'w', new ItemStack(Items.WATER_BUCKET));
+		
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.watering_can_upgrade.get()), 
+					"on ",
+					"owo",
+					" o ",
+					'o', "forge:ingots/reinforced_obsidian",
+					'n', new ItemStack(Items.NETHER_STAR),
+					'w', new ItemStack(TechItems.watering_can.get()));
+		
+		
+		// Medkit
+		
+			// Small bandage
+		exportJson.addShapedRecipe(new ItemStack(TechItems.small_bandage.get(), 4), 
+					" p ",
+					"psp",
+					" p ",
+					'p', new ItemStack(Items.PAPER),
+					's', new ItemStack(Items.SLIME_BALL));
+			// Large Bandage
+		exportJson.addShapedRecipe(new ItemStack(TechItems.large_bandage.get(), 4), 
+					"bsb",
+					"sls",
+					"bsb",
+					'l', "forge:leather",
+					's', "forge:string",
+					'b', new ItemStack(TechItems.small_bandage.get()));
+			// Small Med Kit
+		exportJson.addShapedRecipe(new ItemStack(TechItems.small_med_kit.get(), 2), 
+					"bb",
+					"bb",
+					'b', new ItemStack(TechItems.large_bandage.get()));				
+			// Large Med Kit
+		exportJson.addShapedRecipe(new ItemStack(TechItems.large_med_kit.get()), 
+					"mm",
+					"mm",
+					'm', new ItemStack(TechItems.small_med_kit.get()));
+		
+		
+		// Ender Dust
+		
+		exportJson.addShapedRecipe(new ItemStack(Items.ENDER_PEARL), 
+					"ee",
+					"ee",
+					'e', "forge:dusts/ender");
+		
+		
+		// repair kit
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.repair_tablet.get()), 
+					"plp",
+					"rgr",
+					"prp",
+					'p', new ItemStack(TechBlocks.hardened_stone.get()),
+					'r', new ItemStack(Items.GHAST_TEAR),
+					'l', new ItemStack(Items.NETHER_STAR),
+					'g', new ItemStack(TechItems.redstone_ingot.get()));
+		
+					// Tiny Coal & Charcoal
+		
+		exportJson.addShapelessRecipe(new ItemStack(TechItems.tiny_charcoal.get(), 8), new ItemStack(Items.CHARCOAL, 1), new ItemStack(TechItems.stone_hammer.get()));
+		exportJson.addShapedRecipe(new ItemStack(Items.CHARCOAL, 1),
+					"sss",
+					"s s",
+					"sss",
+					's', new ItemStack(TechItems.tiny_charcoal.get()));
+		exportJson.addShapelessRecipe(new ItemStack(TechItems.tiny_coal.get(), 8), new ItemStack(Items.COAL, 1), new ItemStack(TechItems.stone_hammer.get()));
+		exportJson.addShapedRecipe(new ItemStack(Items.COAL, 1), 
+					"sss",
+					"s s",
+					"sss",
+					's', new ItemStack(TechItems.tiny_coal.get()));
+		
+		
+		
+		
+		exportJson.addShapelessRecipe(new ItemStack(TechItems.chainmail_part.get(), 2), new ItemStack(Items.IRON_INGOT), new ItemStack(TechItems.stone_hammer.get()));
+		
+		
+		
+		exportJson.addShapedRecipe(new ItemStack(TechItems.steel_ingot.get(), 2), 
+					"sss",
+					"ihi",
+					"sss",
+					'h', new ItemStack(TechItems.stone_hammer.get()),
+					'i', new ItemStack(Items.IRON_INGOT),
+					's', new ItemStack(Items.COAL, 1));
+		exportJson.addShapedRecipe(new ItemStack(TechItems.steel_ingot.get(), 2), 
+					"sss",
+					"ihi",
+					"sss",
+					'h', new ItemStack(TechItems.stone_hammer.get()),
+					'i', new ItemStack(Items.IRON_INGOT),
+					's', new ItemStack(Items.CHARCOAL, 1));
+		
+		
+		// Can not be turned off.
+		exportJson.addShapelessRecipe(new ItemStack(TechItems.obsidian_dust.get()), new ItemStack(Blocks.OBSIDIAN), new ItemStack(TechItems.stone_hammer.get()));
+		exportJson.addShapedRecipe(new ItemStack(TechItems.stone_hammer.get()),					
+					"cic",
+					"isi",
+					" s ",
+					'i', new ItemStack(Items.STRING),
+					's', new ItemStack(Items.STICK),
+					'c', new ItemStack(TechBlocks.hardened_stone.get()));
+		
+	}
 }

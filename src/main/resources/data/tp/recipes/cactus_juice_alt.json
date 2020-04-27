@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "item": "minecraft:cactus"
+    },
+    {
+      "tag": "forge:bottles/glass"
+    },
+    {
+      "tag": "forge:bottles/glass"
+    }
+  ],
+  "result": {
+    "item": "tp:cactus_juice",
+    "count": 2
+  }
+}

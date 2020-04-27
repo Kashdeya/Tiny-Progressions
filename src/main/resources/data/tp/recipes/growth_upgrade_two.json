@@ -1,0 +1,23 @@
+{
+  "type": "tp:crafting_shaped_nbt",
+  "pattern": [
+    "CGC",
+    "SCS",
+    "CGC"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:potion",
+      "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+    },
+    "C": {
+      "item": "minecraft:end_crystal"
+    },
+    "G": {
+      "item": "tp:growth_upgrade"
+    }
+  },
+  "result": {
+    "item": "tp:growth_upgrade_two"
+  }
+}

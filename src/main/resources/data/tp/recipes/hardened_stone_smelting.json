@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "tp:unhardened_stone"
+    }
+  ],
+  "result": {
+    "item": "tp:hardened_stone"
+  },
+  "experience": 0
+}

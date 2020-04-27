@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "tp:raw_bacon"
+    }
+  ],
+  "result": {
+    "item": "tp:cooked_bacon"
+  },
+  "experience": 1
+}

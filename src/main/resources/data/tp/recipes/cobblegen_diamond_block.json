@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "DID",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "tag": "forge:gems/diamond"
+    },
+    "I": {
+      "item": "tp:cobblegen_iron_block"
+    }
+  },
+  "result": {
+    "item": "tp:cobblegen_diamond_block"
+  }
+}

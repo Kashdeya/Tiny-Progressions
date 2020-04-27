@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AIA",
+    " I "
+  ],
+  "key": {
+    "A": {
+      "item": "tp:wub_ingot"
+    },
+    "I": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "tp:wub_hammer"
+  }
+}

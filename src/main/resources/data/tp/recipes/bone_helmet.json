@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "B B"
+  ],
+  "key": {
+    "B": {
+      "tag": "forge:bones"
+    }
+  },
+  "result": {
+    "item": "tp:bone_helmet"
+  }
+}

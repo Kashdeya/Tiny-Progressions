@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "IHI",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:charcoal"
+    },
+    "H": {
+      "item": "tp:stone_hammer"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "tp:steel_ingot",
+    "count": 2
+  }
+}

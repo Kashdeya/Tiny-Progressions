@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 public class TechFoods {
 	
 	// Juices
-	public static RegistryObject<Item> JUICER       = TinyProgressions.ITEMS.register("juicer", () -> new ItemStay(new Properties().group(TinyProgressions.FoodGroup)));
+	public static RegistryObject<Item> Juicer           = TinyProgressions.ITEMS.register("juicer", () -> new ItemStay(new Properties().group(TinyProgressions.FoodGroup)));
 	
 	public static RegistryObject<Item> apple_juice  	= TinyProgressions.ITEMS.register("apple_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.APPLE_JUICE));
 	public static RegistryObject<Item> carrot_juice		= TinyProgressions.ITEMS.register("carrot_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.CARROT_JUICE));

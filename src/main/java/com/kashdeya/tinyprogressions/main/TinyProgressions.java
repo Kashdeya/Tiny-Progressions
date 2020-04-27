@@ -1,5 +1,7 @@
 package com.kashdeya.tinyprogressions.main;
 
+import java.io.File;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,6 +12,7 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechFeatures;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechTools;
+import com.kashdeya.tinyprogressions.recipes.exportJson;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.ScreenManager;
@@ -21,6 +24,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.gen.feature.Feature;
@@ -97,6 +101,7 @@ public class TinyProgressions{
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
 	public static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<>(ForgeRegistries.CONTAINERS, Reference.MOD_ID);
 	public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<>(ForgeRegistries.FEATURES, Reference.MOD_ID);
+	public static final DeferredRegister<IRecipeSerializer<?>> RECIPEHANDLER = new DeferredRegister<>(ForgeRegistries.RECIPE_SERIALIZERS, Reference.MOD_ID);
 
 	
     public TinyProgressions() {
@@ -115,6 +120,7 @@ public class TinyProgressions{
 		CONTAINERS.register(bus);
 		FEATURES.register(bus);
 		SOUNDS.register(bus);
+		RECIPEHANDLER.register(bus);
         INSTANCE = this;
     }
 
@@ -130,6 +136,9 @@ public class TinyProgressions{
 //		proxy.onInitialization(e);
 //		OreDict.init();
 //    	proxy.onPostInitialization(e);
+//    	exportJson.init();
+    	exportDrops.init();
+   	
     }
 
     @SuppressWarnings("deprecation")
@@ -190,6 +199,7 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.nether_lava_block.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.nether_wub_ore.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.netherstar_block.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.old_reed.get(), cutout);
     	
 		DeferredWorkQueue.runLater( () ->
 		{
@@ -202,8 +212,16 @@ public class TinyProgressions{
 
     private void processIMC(final InterModProcessEvent event) { }
 
+    
+    private File drops_DIR;
     @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event) {  }
+    public void onServerStarting(FMLServerStartingEvent event) { 
+    	
+    	
+    	
+
+    	
+    }
 
     
 // was in the orginal file.. but prolly needs to be moved or just changed. 

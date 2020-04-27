@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "tp:maloberry_berry"
+					"name": "tp:raspberry_berry"
 				}
 			],
 			"conditions": [

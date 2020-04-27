@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BSB",
+    "SLS",
+    "BSB"
+  ],
+  "key": {
+    "B": {
+      "item": "tp:small_bandage"
+    },
+    "S": {
+      "tag": "forge:string"
+    },
+    "L": {
+      "tag": "forge:leather"
+    }
+  },
+  "result": {
+    "item": "tp:large_bandage",
+    "count": 4
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SP",
+    "PS"
+  ],
+  "key": {
+    "P": {
+      "tag": "forge:ingots/copper"
+    },
+    "S": {
+      "tag": "stickWood"
+    }
+  },
+  "result": {
+    "item": "tp:wooden_shears"
+  }
+}

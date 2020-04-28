@@ -8,6 +8,9 @@
         "entries": [{
             "type": "minecraft:item",
             "name": "tp:white_dust"
+        }],
+        "conditions": [{
+            "condition": "minecraft:survives_explosion"
         }]
     }]
 }

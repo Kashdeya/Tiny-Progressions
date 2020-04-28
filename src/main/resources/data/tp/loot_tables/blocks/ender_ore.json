@@ -1,12 +1,13 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [{
-        "type": "minecraft:block",
-        "name": "tp:ender_ore"
-      }]
-    }
-  ]
+    "type": "minecraft:block",
+    "pools": [{
+        "rolls": 1,
+        "entries": [{
+            "type": "minecraft:block",
+            "name": "tp:ender_ore"
+        }],
+        "conditions": [{
+            "condition": "minecraft:survives_explosion"
+        }]
+    }]
 }

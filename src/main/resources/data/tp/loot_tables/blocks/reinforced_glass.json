@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:block",
+    "pools": [{
+        "rolls": 1,
+        "entries": [{
+            "type": "minecraft:block",
+            "name": "tp:reinforced_glass"
+        }],
+        "conditions": [{
+            "condition": "minecraft:survives_explosion"
+        }]
+    }]
+}

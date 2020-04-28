@@ -1,12 +1,13 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [{
-        "type": "minecraft:block",
-        "name": "tp:compressed_sugar_cane"
-      }]
-    }
-  ]
+    "type": "minecraft:block",
+    "pools": [{
+        "rolls": 1,
+        "entries": [{
+            "type": "minecraft:block",
+            "name": "tp:compressed_sugar_cane"
+        }],
+        "conditions": [{
+            "condition": "minecraft:survives_explosion"
+        }]
+    }]
 }

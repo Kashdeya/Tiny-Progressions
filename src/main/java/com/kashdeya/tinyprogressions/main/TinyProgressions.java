@@ -137,7 +137,7 @@ public class TinyProgressions{
 //		OreDict.init();
 //    	proxy.onPostInitialization(e);
 //    	exportJson.init();
-    	exportDrops.init();
+//    	exportDrops.init();
    	
     }
 

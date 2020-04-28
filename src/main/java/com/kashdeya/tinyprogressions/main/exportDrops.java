@@ -34,7 +34,8 @@ public class exportDrops {
 		}
     	
 	    ForgeRegistries.BLOCKS.forEach((block) -> {
-	    	if(block instanceof StandardBlock) {
+	    	System.out.println(block.getRegistryName().toString());
+	    	if(block.getRegistryName().toString().startsWith("tp")) {
 		    	JsonObject json = new JsonObject();
 		    	
 		    	json.addProperty("type", "minecraft:block");

@@ -10,7 +10,7 @@ public class GlowstoneColored extends StandardBlock
 	{
 		super(prop
 				.hardnessAndResistance(0.3F)
-				.lightValue(1));
+				.lightValue(15));
 	}
 	
 //	@Override

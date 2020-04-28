@@ -3,10 +3,10 @@
   "pools": [
     {
       "rolls": 1,
-      "entries": {
+      "entries": [{
         "type": "minecraft:block",
         "name": "tp:compressed_nether_block"
-      }
+      }]
     }
   ]
 }

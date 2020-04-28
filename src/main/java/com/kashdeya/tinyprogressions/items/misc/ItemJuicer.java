@@ -17,8 +17,8 @@ public class ItemJuicer extends ItemStay implements IOreDictEntry {
 
 	@SubscribeEvent
 	public static void onCrafting(PlayerDestroyItemEvent e) {
-		System.out.println("--");
-		System.out.println(e.getOriginal().getItem().getRegistryName().toString());
+//		System.out.println("--");
+//		System.out.println(e.getOriginal().getItem().getRegistryName().toString());
 	}
 	
 	@Override

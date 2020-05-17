@@ -5,11 +5,8 @@ import com.kashdeya.tinyprogressions.inits.ModTileEntityTypes;
 
 import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.container.BlastFurnaceContainer;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.util.text.ITextComponent;

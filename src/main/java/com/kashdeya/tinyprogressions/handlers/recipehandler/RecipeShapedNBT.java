@@ -266,7 +266,6 @@ public class RecipeShapedNBT implements ICraftingRecipe, net.minecraftforge.comm
 	            throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
 	         }
 
-	         System.out.println(entry.getValue().toString());
 	         if(entry.getValue().isJsonObject() && entry.getValue().getAsJsonObject().has("nbt"))
 	        	 map.put(entry.getKey(), Ingredient.fromStacks(deserializeItem(entry.getValue().getAsJsonObject())));
 	         else

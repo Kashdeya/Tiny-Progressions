@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.ItemBase;
+import com.kashdeya.tinyprogressions.items.ItemStay;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.client.util.ITooltipFlag;
@@ -18,26 +18,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class QuartzKnife extends ItemBase {
+public class QuartzKnife extends ItemStay {
 	
 	public QuartzKnife() {
 		super(new Properties().maxStackSize(1).maxDamage(ConfigHandler.QuartzKnifeDamage).group(TinyProgressions.ToolsGroup));
-		//TODO
-//		super.setContainerItem(this);
-	}
-	
-	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
-	{
-		return true;
-	}
-	
-	@Override
-	public ItemStack getContainerItem(ItemStack itemStack)
-	{
-		ItemStack stack = itemStack.copy();
-		stack.setCount(1);
-
-		return stack;
 	}
 	
 	@Override

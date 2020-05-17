@@ -1,13 +1,12 @@
 modLoader="javafml" #mandatory
-loaderVersion="[28,)" #mandatory (28 is current forge version)
+loaderVersion="[30,)" #mandatory (30 is current forge version)
 issueTrackerURL="https://github.com/Kashdeya/Tiny-Progressions/issues" #optional
 [[mods]] #mandatory
 modId="tp" #mandatory
 version="${file.jarVersion}" #mandatory
 displayName="Tiny Progressions" #mandatory
-updateJSONURL="http://myurl.me/" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/tiny-progressions" #optional
-logoFile="examplemod.png" #optional
+logoFile="tplogo.png" #optional
 credits="Thanks for this example mod goes to Java" #optional
 authors="Kashdeya, Darkosto, GenDeathrow, ArclightTW, Vadis365" #optional
 description='''

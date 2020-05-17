@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.BlockState;

@@ -2,8 +2,6 @@ package com.kashdeya.tinyprogressions.inits;
 
 import java.util.function.Supplier;
 
-import com.kashdeya.tinyprogressions.blocks.decorations.GlowstoneColored;
-import com.kashdeya.tinyprogressions.container.PouchContainer;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.items.ItemStay;
@@ -22,14 +20,8 @@ import com.kashdeya.tinyprogressions.items.misc.RepairTablet;
 import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanBase;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.client.Minecraft;
-import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
-import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 
@@ -67,7 +59,7 @@ public class TechItems {
 	public static RegistryObject<Item> repair_tablet = registerItem("repair_tablet", () -> new RepairTablet());
 	
 	public static RegistryObject<Item> pouch = registerItem("pouch", () -> new Pouch());;
-	public static RegistryObject<ContainerType<?>> pouch_container = TinyProgressions.CONTAINERS.register("pouch_container", () -> IForgeContainerType.create((windowId, inv, data) -> {	return new PouchContainer(windowId, inv, Minecraft.getInstance().player);}));   
+//	public static RegistryObject<ContainerType<?>> pouch_container = TinyProgressions.CONTAINERS.register("pouch_container", () -> IForgeContainerType.create((windowId, inv, data) -> {	return new PouchContainer(windowId, inv, Minecraft.getInstance().player);}));   
 
 
 	public static RegistryObject<Item> quartz_dust    = registerItem("quartz_dust", () -> new ItemBase(new Properties().group(TinyProgressions.TAB)).setOreDictName("dustQuartz"));
@@ -117,139 +109,4 @@ public class TechItems {
     }
 	
 	
-//	public static void init() {
-//		// Wub Gem
-//		if (ConfigHandler.vasholine){
-//			wub_gem = new ItemBase().setOreDictName("gemWub").setTranslationKey("wub_gem");
-//		}
-//		if (ConfigHandler.wub_juice_tools && ConfigHandler.vasholine){
-//			wub_ingot = new ItemBase().setOreDictName("ingotWub").setTranslationKey("wub_ingot");
-//		}
-//		// Infin Water Bucket
-//		if (ConfigHandler.infin_bucket){
-//			infin_bucket = new InfinBucket().setTranslationKey("infin_bucket");
-//		}
-//		// Steel
-//		if (ConfigHandler.steel_ingot) {
-//			steel_ingot = new ItemBase().setOreDictName("ingotSteel").setTranslationKey("steel_ingot");
-//		}
-//		// nether rod
-//		if (ConfigHandler.nether_rod){
-//			nether_rod = new ItemBase().setOreDictName("stickNether").setTranslationKey("nether_rod");
-//		}
-//		// Chainmail
-//		if (ArmorHandler.chain_armor){
-//			chainmail_part = new ItemBase().setOreDictName("chainmail").setTranslationKey("chainmail_part");
-//		}
-//		// bsc rod
-//		if (ConfigHandler.bsc_rod){
-//			bsc_rod = new ItemBase().setOreDictName("stickCane").setTranslationKey("bsc_rod");
-//		}
-//		
-//		// Watering Cans
-//		if (ConfigHandler.WateringCan) {
-//			watering_can = new WateringCan();
-//		}
-//		if (ConfigHandler.WateringCanUpgrade) {
-//			watering_can_upgrade = new WateringCanUpgrade();
-//		}
-//		
-//		// Quartz Items
-//		if (ConfigHandler.QuartzKnife) {
-//			quartz_knife = new QuartzKnife();
-//			quartz_dust = new ItemBase().setTranslationKey("quartz_dust");
-//		}
-//		
-//	    // Drops
-//	    if (ArmorHandler.dragon_armor){
-//		    dragon_scale = new ItemScale().setOreDictName("dragonScale").setTranslationKey("dragon_scale");
-//	    }
-//	    if (ArmorHandler.wither_armor || ConfigHandler.wither_rib){
-//		    wither_rib = new ItemRib().setOreDictName("witherRib").setTranslationKey("wither_rib");
-//	    }
-//	    
-//		// Misc Items
-//		if (ConfigHandler.StoneTorch) {
-//			stone_stick = new ItemBase().setOreDictName("stickStone").setTranslationKey("stone_stick");
-//		}
-//		if (ConfigHandler.MyceliumSeeds) {
-//			mycelium_seeds = new MyceliumSeeds();
-//		}
-//		if (ConfigHandler.old_reed){
-//	    		dead_reed = new FoodBase(1, 0.15F, false).setOreDictName("sugarcane").setTranslationKey("dead_reed");
-//	    }
-//		
-//		// Medkit
-//		if (ConfigHandler.medical_kits){
-//			small_bandage = new SmallBandage();
-//			large_bandage = new LargeBandage();
-//			small_med_kit = new SmallMedkit();
-//			large_med_kit = new LargeMedKit();
-//		}
-//		
-//		// Tiny Coal & Charcoal
-//		if (ConfigHandler.tiny_charcoal){
-//			tiny_charcoal = new ItemBase().setOreDictName("dustCharcoal").setTranslationKey("tiny_charcoal");
-//		}
-//		if (ConfigHandler.tiny_coal){
-//			tiny_coal = new ItemBase().setOreDictName("dustCoal").setTranslationKey("tiny_coal");
-//		}
-//		
-//		// Stone Dust
-//		if (ConfigHandler.StoneDust) {
-//			stone_dust = new ItemBase().setTranslationKey("stone_dust");
-//		}
-//		
-//		// Ingot
-//		if (ArmorHandler.FlintArmor) {
-//			flint_ingot = new ItemBase().setOreDictName("ingotFlint").setTranslationKey("flint_ingot");
-//		}
-//		if (ConfigHandler.ReinforcedObsidian) {
-//			reinforced_obsidian_ingot = new ItemBase().setOreDictName("ingotReinforcedObsidian").setTranslationKey("reinforced_obsidian_ingot");
-//		}
-//		
-//		// Flint Knife
-//		if (ConfigHandler.FlintKnife) {
-//			flint_knife = new FlintKnife();
-//		}
-//		
-//		// Ender Dust
-//		if (ConfigHandler.ender_ore) {
-//			ender_dust = new ItemBase().setOreDictName("dustEnder").setTranslationKey("ender_dust");
-//		}
-//		
-//		// Pouch
-//		if (ConfigHandler.pouch) {
-//			pouch = new Pouch().setTranslationKey("pouch");
-//		}
-//		
-//	    // Glowstone Dust
-//	    if (ConfigHandler.ColorGlowstone){
-//	    	colored_dust = new ItemBaseMeta(EnumDustColor.getNames());
-//	    }
-//	    
-//	    // Lapis armor
-//	    if (ArmorHandler.lapis_armor){
-//	    	lapis_ingot = new ItemBase().setOreDictName("ingotLapis").setTranslationKey("lapis_ingot");
-//	    }
-//	    
-//	    // Redstone Amor
-//	    if (ArmorHandler.redstone_armor){
-//	    	redstone_ingot = new ItemBase().setOreDictName("ingotRedstone").setTranslationKey("redstone_ingot");
-//	    }
-//	    
-//	    // Quartz Amor
-//	    if (ArmorHandler.quartz_armor){
-//	    	quartz_ingot = new ItemBase().setOreDictName("ingotQuartz").setTranslationKey("quartz_ingot");
-//	    }
-//	    
-//	    // Repair Tablet
-//	    if (ConfigHandler.repair_tablet){
-//	    	repair_tablet = new RepairTablet().setTranslationKey("repair_tablet");
-//	    }
-//	    
-//	    // Can not be turned off
-//	    obsidian_dust = new ItemBase().setOreDictName("dustObsidian").setTranslationKey("obsidian_dust");
-//	    stone_hammer = new ItemStay().setTranslationKey("stone_hammer");
-//	}
 }

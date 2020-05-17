@@ -15,17 +15,10 @@ import java.util.TreeSet;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTUtil;
-import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.common.crafting.NBTIngredient;
-import net.minecraftforge.common.crafting.NBTIngredient.Serializer;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class exportJson {
 
@@ -68,7 +61,6 @@ public class exportJson {
 	private static void setupDir() {
 		if (RECIPE_DIR == null) {
 			RECIPE_DIR = new File("E:/Minecraft Modding/1.14.x Workspace All Mods/TinyProgressions/Tiny-Progressions/run/config/tp/recipes/");
-			System.out.println(RECIPE_DIR.toPath().toString());
 		}
 
 		if (!RECIPE_DIR.exists()) {

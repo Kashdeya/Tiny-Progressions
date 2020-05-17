@@ -387,6 +387,7 @@ public class ConfigHandler {
 	public static int nether_lava_block_frequency = 16;
 	public static int nether_lava_block_min = 25;
 	public static int nether_lava_block_max = 35;
+	public static int nether_lava_block_size;
 	public static int ww = 6;
 	public static boolean lava_block_recipe = true;
 	public static int lava_block_frequency = 10;
@@ -404,4 +405,5 @@ public class ConfigHandler {
 	// Repair Tablet
 	public static boolean repair_tablet;
 	public static int repair_tablet_cooldown;
+	
 }

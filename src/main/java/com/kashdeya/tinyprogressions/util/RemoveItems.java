@@ -7,10 +7,7 @@ import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistry;
 
 public class RemoveItems {
 	

@@ -6,12 +6,10 @@ import java.util.stream.IntStream;
 
 import javax.annotation.Nullable;
 
-import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.util.CanUtil;
 
-import javafx.geometry.Side;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

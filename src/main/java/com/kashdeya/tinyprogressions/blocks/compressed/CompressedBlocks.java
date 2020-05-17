@@ -2,8 +2,6 @@ package com.kashdeya.tinyprogressions.blocks.compressed;
 
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
 import net.minecraft.world.Explosion;
 import net.minecraftforge.common.ToolType;
 

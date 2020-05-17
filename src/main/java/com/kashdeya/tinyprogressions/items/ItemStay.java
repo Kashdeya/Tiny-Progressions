@@ -20,19 +20,33 @@ public class ItemStay extends ItemBase {
 		super(prop);
 	}
 	
-//	
-//	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
-//	{
-//			return false;
-//	}
-//	
-//	@Override
-//	public ItemStack getContainerItem(ItemStack itemStack)
-//	{
-//		ItemStack stack = itemStack.copy();
-//		stack.setCount(1);
-//		return stack;
-//	}
+    @Override
+    public void setDamage(ItemStack stack, int damage){}
+
+    @Override
+    public boolean isRepairable(ItemStack stack) {
+        return super.isRepairable(stack);
+    }
+
+    @Override
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+        return super.getIsRepairable(toRepair, repair);
+    }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack){return true;}
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack)
+    {
+        return new ItemStack(getItem());
+    }
+	   
+	@Override
+	 public boolean isDamageable() {
+		 return false;
+	 }
+	
 	
 	@Override
 	@OnlyIn(Dist.CLIENT)

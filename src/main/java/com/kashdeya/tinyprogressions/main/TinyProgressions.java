@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.kashdeya.tinyprogressions.config.TinyConfig;
 import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
 import com.kashdeya.tinyprogressions.gui.OreDoublerGUI;
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
@@ -12,7 +13,6 @@ import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechFeatures;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechTools;
-import com.kashdeya.tinyprogressions.recipes.exportJson;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.ScreenManager;
@@ -30,11 +30,11 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -46,12 +46,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(Reference.MOD_ID)
-
 public class TinyProgressions{
 
     private static final Logger LOGGER = LogManager.getLogger();
     
-	public static TinyProgressions INSTANCE;
+//	public static TinyProgressions INSTANCE;
 	
 	//Not sure if needed atm.
     public static final SimpleChannel network = ModNetwork.getNetworkChannel();
@@ -112,7 +111,11 @@ public class TinyProgressions{
     	bus.addListener(this::processIMC);
     	bus.addListener(this::doClientStuff);
 		bus.addListener(this::onServerStarting);
-        MinecraftForge.EVENT_BUS.register(this);
+
+        ModLoadingContext.get().registerConfig(Type.COMMON, TinyConfig.commonSpec);
+//        ModLoadingContext.get().registerConfig(Type.CLIENT, TinyConfig.clientSpec);
+        bus.register(TinyConfig.class);
+        
 		ITEMS.register(bus);
 		BLOCKS.register(bus);
 		FLUIDS.register(bus);
@@ -121,26 +124,28 @@ public class TinyProgressions{
 		FEATURES.register(bus);
 		SOUNDS.register(bus);
 		RECIPEHANDLER.register(bus);
-        INSTANCE = this;
     }
 
 
     private void setup(final FMLCommonSetupEvent event)
     {
     	TechFeatures.registerAllFeatures();
+    	
 //		TinyConfig.initExtra();
 //		TinyConfig.initOres();
 //		TinyConfig.initSupporters();
 //		TinyConfig.initReborn();
+    	
 //		RemoveItems.initRemove();
+    	
 //		proxy.onInitialization(e);
-//		OreDict.init();
-//    	proxy.onPostInitialization(e);
+    	
 //    	exportJson.init();
 //    	exportDrops.init();
    	
     }
 
+    
     @SuppressWarnings("deprecation")
 	private void doClientStuff(final FMLClientSetupEvent event) {
     	
@@ -214,7 +219,8 @@ public class TinyProgressions{
 
     
     private File drops_DIR;
-    @SubscribeEvent
+
+    
     public void onServerStarting(FMLServerStartingEvent event) { 
     	
     	
@@ -236,7 +242,7 @@ public class TinyProgressions{
     
     
     /// We can move this into another folder.
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+//    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
     	
 //		BlockRecipes.init();

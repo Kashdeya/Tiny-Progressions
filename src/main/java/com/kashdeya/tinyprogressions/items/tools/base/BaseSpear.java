@@ -1,11 +1,9 @@
 package com.kashdeya.tinyprogressions.items.tools.base;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.materials.ItemToolModTier;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.util.IExtendedReach;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;

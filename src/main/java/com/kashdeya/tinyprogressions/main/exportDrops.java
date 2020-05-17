@@ -3,8 +3,6 @@ package com.kashdeya.tinyprogressions.main;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -12,7 +10,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -26,7 +23,6 @@ public class exportDrops {
     	
 		if (drops_DIR == null) {
 			drops_DIR = new File("E:/Minecraft Modding/1.14.x Workspace All Mods/TinyProgressions/Tiny-Progressions/run/config/tp/drops/");
-			System.out.println(drops_DIR.toPath().toString());
 		}
 
 		if (!drops_DIR.exists()) {
@@ -34,7 +30,6 @@ public class exportDrops {
 		}
     	
 	    ForgeRegistries.BLOCKS.forEach((block) -> {
-	    	System.out.println(block.getRegistryName().toString());
 	    	if(block.getRegistryName().toString().startsWith("tp")) {
 		    	JsonObject json = new JsonObject();
 		    	

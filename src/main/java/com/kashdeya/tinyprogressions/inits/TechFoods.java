@@ -3,7 +3,7 @@ package com.kashdeya.tinyprogressions.inits;
 import com.kashdeya.tinyprogressions.items.DrinkBase;
 import com.kashdeya.tinyprogressions.items.FoodBase;
 import com.kashdeya.tinyprogressions.items.Foods;
-import com.kashdeya.tinyprogressions.items.ItemStay;
+import com.kashdeya.tinyprogressions.items.misc.ItemJuicer;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.Item;
@@ -14,9 +14,8 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechFoods {
-	
 	// Juices
-	public static RegistryObject<Item> Juicer           = TinyProgressions.ITEMS.register("juicer", () -> new ItemStay(new Properties().group(TinyProgressions.FoodGroup)));
+	public static RegistryObject<Item> Juicer           = TinyProgressions.ITEMS.register("juicer", () -> new ItemJuicer(new Properties().group(TinyProgressions.FoodGroup)));
 	
 	public static RegistryObject<Item> apple_juice  	= TinyProgressions.ITEMS.register("apple_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.APPLE_JUICE));
 	public static RegistryObject<Item> carrot_juice		= TinyProgressions.ITEMS.register("carrot_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.CARROT_JUICE));

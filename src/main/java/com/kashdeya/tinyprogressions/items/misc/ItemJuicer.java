@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.items.misc;
 
-import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.items.ItemStay;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
@@ -12,14 +11,11 @@ import net.minecraftforge.fml.common.Mod;
 public class ItemJuicer extends ItemStay implements IOreDictEntry {
 	
 	public ItemJuicer(Properties prop) {
-		super(prop.containerItem(TechFoods.Juicer.get()));
+		super(prop.maxStackSize(1));
 	}
 
 	@SubscribeEvent
-	public static void onCrafting(PlayerDestroyItemEvent e) {
-//		System.out.println("--");
-//		System.out.println(e.getOriginal().getItem().getRegistryName().toString());
-	}
+	public static void onCrafting(PlayerDestroyItemEvent e) { }
 	
 	@Override
 	public String getOreDictName() {

@@ -4,7 +4,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -49,7 +48,6 @@ public class RecipeFurnaceNBT extends FurnaceRecipe {
 		      }
 		      if(json.has("resultNBT") && json.get("resultNBT").isJsonObject()) {
 		    	  CompoundNBT tag = new CompoundNBT();
-		    	  System.out.print(json.get("resultNBT").getAsJsonObject().toString());
 				try {
 					tag = JsonToNBT.getTagFromJson(json.get("resultNBT").getAsJsonObject().toString());
 				} catch (CommandSyntaxException e) {

@@ -33,7 +33,6 @@ import net.minecraftforge.common.FarmlandWaterManager;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.ticket.AABBTicket;
-import net.minecraftforge.common.ticket.SimpleTicket;
 
 public class BlockGrowth extends Block {
 	
@@ -75,11 +74,7 @@ public class BlockGrowth extends Block {
 	
 	private void makeWaterRegion(World worldIn, BlockPos pos) {
 		if(this.growthLvl > 1 && !worldIn.isRemote) {
-			System.out.println("null");
 			waterRegion = FarmlandWaterManager.addAABBTicket(worldIn, new AxisAlignedBB(pos).expand(range * 2, rangeY * 2, range* 2).offset(-range, -range, -range));
-		}
-		else {
-			System.out.println("not null");
 		}
 	}
 	

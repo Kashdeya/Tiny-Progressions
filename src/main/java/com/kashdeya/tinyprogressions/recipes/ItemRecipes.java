@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.recipes;
 
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
 import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.properties.EnumDustColor;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;

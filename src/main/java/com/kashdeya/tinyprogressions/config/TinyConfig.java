@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.kashdeya.tinyprogressions.handlers.FuelHandler;
 import com.kashdeya.tinyprogressions.main.Reference;
@@ -19,7 +20,7 @@ import net.minecraftforge.fml.config.ModConfig.Loading;
 import net.minecraftforge.fml.config.ModConfig.ModConfigEvent;
 import net.minecraftforge.fml.config.ModConfig.Type;
 
-@SuppressWarnings({ "WeakerAccess", "SameParameterValue", "unused" })
+@SuppressWarnings({ "unused" })
 public class TinyConfig {
 
 	public static final ForgeConfigSpec commonSpec;
@@ -43,154 +44,344 @@ public class TinyConfig {
 
 	public static class ConfigCommon {
 
-		private IntValue BlockGrowthTicks, GrowthParticalTicks, BlockGrowthUpgradeTicks, GrowthUpgradeParticalTicks,
+		private final IntValue BlockGrowthTicks, GrowthParticalTicks, BlockGrowthUpgradeTicks, GrowthUpgradeParticalTicks,
 				BlockGrowthUpgradeTwoTicks, GrowthUpgradeTwoParticalTicks;
-		private BooleanValue ParticalTicks;
-		private IntValue WateringCanChance, WateringCanUpgradeChance;
-		private IntValue CharcoalBlockBurn, FlintKnifeDamage, QuartzKnifeDamage;
-		private DoubleValue vasholine_heal_amount, vasholine_mobs_amount, mob_heal_amount;
-		private BooleanValue vasholine_mobs, wub_heal_mobs, wub_weakness, wub_blindness, wub_fatigue;
-		private IntValue smallBandageHealStack, smallBandageRegen, largeBandageStack, largeBandageDuration,
+		private final BooleanValue ParticalTicks;
+		private final IntValue WateringCanChance, WateringCanUpgradeChance;
+		private final IntValue CharcoalBlockBurn, FlintKnifeDamage, QuartzKnifeDamage;
+		private final DoubleValue vasholine_heal_amount, vasholine_mobs_amount, mob_heal_amount;
+		private final BooleanValue vasholine_mobs, wub_heal_mobs, wub_weakness, wub_blindness, wub_fatigue;
+		private final IntValue smallBandageHealStack, smallBandageRegen, largeBandageStack, largeBandageDuration,
 				largeBandageBoostTime, smallMedHealStack, smallMedDuration, smallMedBoostTime, LargeMedHealStack,
 				LargeMedDuration, largeMedBoostTime, kappa_level, kappa_damage, bams_pizza_amount;
-		private DoubleValue bams_pizza_sat;
-		private BooleanValue succ_juice_bottle, sea_axe, sea_pickaxe;
-		private IntValue lava_block_frequency, lava_block_min, lava_block_max, lava_block_size;
-		private IntValue nether_lava_block_frequency, nether_lava_block_min, nether_lava_block_max, nether_lava_block_size;
-		private IntValue water_block_frequency;
-		private IntValue water_block_min;
-		private IntValue water_block_max;
-		private IntValue water_block_size;
+		private final DoubleValue bams_pizza_sat;
+		private final BooleanValue sea_axe, sea_pickaxe;
+		private final IntValue lava_block_frequency, lava_block_min, lava_block_max, lava_block_size;
+		private final IntValue nether_lava_block_frequency, nether_lava_block_min, nether_lava_block_max, nether_lava_block_size;
+		private final IntValue water_block_frequency, water_block_min, water_block_max, water_block_size;
+		private final BooleanValue ender_ore, ender_mite;
+		private final IntValue endermite_spawn, ender_ore_frequency, ender_ore_min, ender_ore_max, ender_ore_size, charcoal_size, 
+						charcoal_max, charcoal_min, charcoal_frequency;
+		private final BooleanValue CharcoalWorldgen, overworld_wub;
+		private final IntValue wub_block_count, wub_block_frequency, wub_block_min, wub_block_max;
+		private final BooleanValue nether_wub;
+		private final IntValue nether_wub_block_count, nether_wub_block_frequency, nether_wub_block_min, nether_wub_block_max,
+				tiny_charcoal_burntime, tiny_coal_burntime, repair_tablet_cooldown;
+		private final BooleanValue lava_armor_resistance, lava_armor_fire;;
+		private final IntValue lava_armor_resistance_lvl, lava_armor_fire_lvl;
+		private final BooleanValue dragon_fly, dragon_resistance, dragon_fire, dragon_strength;
+		private final IntValue dragon_fire_lvl, dragon_resistance_lvl, dragon_strength_lvl;
+		private final BooleanValue wither_resistance, wither_fire, wither_strength;
+		private final IntValue wither_resistance_lvl, wither_fire_lvl, wither_strength_lvl;
+		private final BooleanValue lapis_armor_water;
+		private final IntValue lapis_armor_water_lvl;
+		private final BooleanValue obsidian_armor_resistance;
+		private final IntValue obsidian_armor_resistance_lvl;
+		private final BooleanValue quartz_armor_strength;
+		private final IntValue quartz_armor_strength_lvl;
+		private final BooleanValue redstone_armor_speed;
+		private final IntValue redstone_armor_speed_lvl;
+		private final DoubleValue spear_reach;
+		private final IntValue AppleAmount, CarrotAmount, PotatoAmount, BeetAmount, CactusAmount, SlimeAmount, WheatAmount, MelonAmount, PumpkinAmount;
+		private final DoubleValue AppleSaturation, CarrotSaturation, PotatoSaturation, BeetSaturation, CactusSaturation, SlimeSaturation, WheatSaturation, MelonSaturation, PumpkinSaturation;
+		private final BooleanValue ExtraPlantGen;
+		private final IntValue berryPlantRarity, BlueberryAmount, BlackberryAmount, MaloberryAmount, RaspberryAmount, ToastedAmount, eat_timer;
+		private final DoubleValue BlueberrySaturation, BlackberrySaturation, MaloberrySaturation, RaspberrySaturation, ToastedSaturation;
 
+		
 		private ConfigCommon(Builder builder) {
-
-			builder.comment("These like to grow things!").push("Growth Crystal");
-				builder.push("Tier 1");
-					BlockGrowthTicks = lazyInt(builder, "Growth Crystal Tier 1 Speed", 60, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 40 Ticks or 2 Seconds]\n[Default*40=1200 Ticks]");
-					GrowthParticalTicks = lazyInt(builder, "Growth Crystal Tier 1 Particles", 1000, 50, 1000, "Lower Number gives more Particles");
+			builder.push("Main");
+				builder.push("Growth Crystal").comment("These like to grow things!");
+					builder.push("Tier 1");
+						BlockGrowthTicks = lazyInt(builder, "Growth Crystal Tier 1 Speed", 60, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 40 Ticks or 2 Seconds]\n[Default*40=1200 Ticks]");
+						GrowthParticalTicks = lazyInt(builder, "Growth Crystal Tier 1 Particles", 1000, 50, 1000, "Lower Number gives more Particles");
+					builder.pop();
+					builder.push("Tier 2");
+						BlockGrowthUpgradeTicks = lazyInt(builder, "Growth Crystal Tier 2 Speed", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 20 Ticks or 1 Second]\n[Default*20=800 Ticks]");
+						GrowthUpgradeParticalTicks = lazyInt(builder, "Growth Crystal Tier 2 Particles", 1000, 50, 1000, "Lower Number gives more Particles");
+					builder.pop();
+					builder.push("Tier 3");
+						BlockGrowthUpgradeTwoTicks = lazyInt(builder, "Growth Crystal Tier 3 Speed", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 10 Ticks or 1/2 a Second]\n[Default*10=400 Ticks]");
+						GrowthUpgradeTwoParticalTicks = lazyInt(builder, "Growth Crystal Tier 3 Particles", 1000, 50, 1000,	"Lower Number gives more Particles");
+					builder.pop();
+					ParticalTicks = lazyBool(builder, "Growth Crystal Particles", false, "Enable Growth Crystal Particles?");
 				builder.pop();
-				builder.push("Tier 2");
-					BlockGrowthUpgradeTicks = lazyInt(builder, "Growth Crystal Tier 2 Speed", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 20 Ticks or 1 Second]\n[Default*20=800 Ticks]");
-					GrowthUpgradeParticalTicks = lazyInt(builder, "Growth Crystal Tier 2 Particles", 1000, 50, 1000, "Lower Number gives more Particles");
+	
+				builder.comment("Remember to water those plants!").push("Watering Cans");
+					WateringCanChance = lazyInt(builder, "Watering Can Chance", 50, 1, 50, "Chance out of 50 that the Watering Can will tick the plant!");
+					WateringCanUpgradeChance = lazyInt(builder, "Watering Can Reinforced Chance", 100, 50, 100,	"Chance out of 100 that the Watering Can will tick the plant!");
 				builder.pop();
-				builder.push("Tier 3");
-					BlockGrowthUpgradeTwoTicks = lazyInt(builder, "Growth Crystal Tier 3 Speed", 30, 1, 100, "Number of Ticks between Growth Ticks.\n[1 = 10 Ticks or 1/2 a Second]\n[Default*10=400 Ticks]");
-					GrowthUpgradeTwoParticalTicks = lazyInt(builder, "Growth Crystal Tier 3 Particles", 1000, 50, 1000,	"Lower Number gives more Particles");
+	
+				builder.comment("It's the little things that count right?").push("Charcoal");
+					CharcoalBlockBurn = lazyInt(builder, "Charcoal Block Burn Time", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
 				builder.pop();
-				ParticalTicks = lazyBool(builder, "Growth Crystal Particles", false, "Enable Growth Crystal Particles?");
 			builder.pop();
 
-			builder.comment("Remember to water those plants!").push("Watering Cans");
-				WateringCanChance = lazyInt(builder, "Watering Can Chance", 50, 1, 50, "Chance out of 50 that the Watering Can will tick the plant!");
-				WateringCanUpgradeChance = lazyInt(builder, "Watering Can Reinforced Chance", 100, 50, 100,	"Chance out of 100 that the Watering Can will tick the plant!");
+			builder.push("Supporters");
+				builder.push("Custom Packs").comment("Added for Custom Packs!\n[If you enable please make a recipe for them, Other wise they do nothing.]");
+					FlintKnifeDamage = lazyInt(builder, "Flint Knife Durability", 100, 0, Integer.MAX_VALUE, "Sets the amount of Durability.");
+					QuartzKnifeDamage = lazyInt(builder, "Quartz Knife Durability", 128, 0, Integer.MAX_VALUE, "Sets the amount of Durability.");
+				builder.pop();
+	
+				builder.comment("WUB WUB WUB!").push("WUB Juice");
+					vasholine_heal_amount = lazyDouble(builder, "WUB Juice Heal Amount", 0.25D, 0.0D, 1.0D,	"Sets the amount of heal Wub Juice does per tick.");
+					vasholine_mobs = lazyBool(builder, "WUB Juice Hurts Mobs", true, "Enable mobs getting hurt?");
+					vasholine_mobs_amount = lazyDouble(builder, "WUB Juice Hurts Mobs Amount", 0.01D, 0.0D, 1.0D,"Sets the amount mobs get hurt.");
+					wub_heal_mobs = lazyBool(builder, "WUB Juice Heals Mobs", false, "Enable mobs getting healed?");
+					mob_heal_amount = lazyDouble(builder, "WUB Juice Heals Mobs Amount", 0.01D, 0.0F, 1.0D,	"Sets the amount mobs get healed.");
+					wub_weakness = lazyBool(builder, "WUB Juice Side Effect Weakness", true, "Enable Weakness while being healed?");
+					wub_blindness = lazyBool(builder, "WUB Juice Side Effect Blindness", true, "Enable Blindness while being healed?");
+					wub_fatigue = lazyBool(builder, "WUB Juice Side Effect Mining Fatigue", true, "Enable Mining Fatigue while being healed?");
+				builder.pop();
+	
+				// builder.comment("Sink Into Madness Block!\n[This item is not a Craftable
+				// Block.]\n[To be used with Bedrock Replacer Mod]\n[MAY CAUSE SERVER LAG NEEDS
+				// MORE TESTING]").push("Withered Bedrock");
+				// ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", "Withered
+				// Bedrock", false, "Enable Withered Bedrock?");
+				// ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered
+				// Particles", "Withered Bedrock", false, "Enable Player Withered Particles?");
+				// ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", "Withered
+				// Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from
+				// standing on Withered Bedrock.\n[1 = 20Ticks]");
+	
+				builder.comment("Need a little healing?\n[Each teir requires the lower teir for crafting!]\n[Medical Items can now only be used if player is hurt!]").push("Medical Items");
+					// Small Bandage
+					smallBandageHealStack = lazyInt(builder, "Teir 1 Meical Item Stacksize", 8, 1, 64, "Sets the Stacksize of the Small Medical Bandage!");
+					smallBandageRegen = lazyInt(builder, "Teir 1 Meical Item Regen Time", 5, 1, 30,	"Sets the length of regen of the Small Medical Bandage!\n[Does not stack]");
+					// Large Bandage
+					largeBandageStack = lazyInt(builder, "Teir 2 Meical Item Stacksize", 16, 1, 64,	"Sets the Stacksize of the Large Medical Bandage!");
+					largeBandageDuration = lazyInt(builder, "Teir 2 Meical Item Use Duration", 4, 1, 64, "Sets how long it takes the player to apply the Large Medical Bandage!");
+					largeBandageBoostTime = lazyInt(builder, "Teir 2 Meical Item Boost Time", 15, 0, 120, "Sets how long the player has 2 extra hearts on the Large Medical Bandage!\n[Does not stack]");
+					// Small Med kit
+					smallMedHealStack = lazyInt(builder, "Teir 3 Meical Item Stacksize", 16, 1, 64,	 "Sets the Stacksize of the Small Medical Kit!");
+					smallMedDuration = lazyInt(builder, "Teir 3 Meical Item Use Duration", 8, 1, 64, "Sets how long it takes the player to apply the Small Medical Kit!");
+					smallMedBoostTime = lazyInt(builder, "Teir 3 Meical Item Boost Time", 30, 0, 240,"Sets how long the player has 4 extra hearts on the Small Medical Kit!\n[Does not stack]");
+					// Large Med kit
+					LargeMedHealStack = lazyInt(builder, "Teir 4 Meical Item Stacksize", 16, 1, 64,	"Sets the Stacksize of the Large Medical Kit!");
+					LargeMedDuration = lazyInt(builder, "Teir 4 Meical Item Use Duration", 16, 1, 64, "Sets how long it takes the player to apply the Large Medical Kit!");
+					largeMedBoostTime = lazyInt(builder, "Teir 4 Meical Item Boost Time", 60, 0, 300, "Sets how long the player has 6 extra hearts on the Large Medical Kit!\n[Does not stack]");
+				builder.pop();
+	
+				builder.comment("Fun Stuff\n[Not PicKappa stop asking!]").push("Kappa Pick");
+					kappa_level = lazyInt(builder, "Kappa Pick Mining Level", 1, 0, 3, "Mining Level.");
+					kappa_damage = lazyInt(builder, "Kappa Pick Mining Level Durability", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
+				builder.pop();
+	
+				builder.comment("Because Pineapple goes on Pizza! Kappa").push("Pizza");
+					bams_pizza_amount = lazyInt(builder, "Bams Pizza Heal Amount", 10, 1, 20, "Sets the Heal Amount.");
+					bams_pizza_sat = lazyDouble(builder, "Bams Pizza Saturation Amount", 1.0D, 0.0D, 1.0D, "Sets the Saturation Amount.");
+				builder.pop();
+	
+	//			builder.comment("SUCC THE PEARLS").push("Succ Juice");
+	//				succ_juice_bottle = lazyBool(builder, "Pearl Juice Recipe", false,	"Enable Pearl Juice require a bottle in recipe?");
+	//			builder.pop();
+	
+				builder.comment("A Funny Thing").push("Sea Axe");
+					sea_axe = lazyBool(builder, "Sea Axe - Axe", true,	"Enable Sea Axe as a Axe?\n[Axe has 11 attack damage!]\n[Only ENABLE if Sea Axe - Pickaxe is DISABLED!]\n[Sea Axe must be ENABLED for this config to work!]");
+					sea_pickaxe = lazyBool(builder, "Sea Axe - Pickaxe", false,	"Enable Sea Axe as a Pickaxe?\n[Pickaxe has 10 attack damage!]\n[Only ENABLE if Sea Axe - Axe is DISABLED!]\n[Sea Axe must be ENABLED for this config to work!]");
+				builder.pop();
 			builder.pop();
-
-			builder.comment("It's the little things that count right?").push("Charcoal");
-				CharcoalBlockBurn = lazyInt(builder, "Charcoal Block Burn Time", 16000, 0, Integer.MAX_VALUE, "Sets the burn time for the Charcoal Block.");
+			
+			builder.push("Ores");
+				builder.comment("Lavastone!").push("Lava Source Block Stones");		
+					lava_block_frequency = lazyInt(builder, "Lavastone Gen Frequency", 5, 1, 100, "Sets the Chance of Lavastone generating.");
+					lava_block_min = lazyInt(builder,"Lavastone Gen Min", 12, 1, 255, "Sets the min Y level.");
+					lava_block_max = lazyInt(builder, "Lavastone Gen Max", 32, 1, 255, "Sets the max Y level.");
+					lava_block_size = lazyInt(builder, "Lavastone Gen Size", 4, 1, 100, "Sets the Lavastone Vein Size.");
+				builder.pop();
+				
+				builder.comment("Nether Lavastone!").push("Nether Lava Source Block Stones");	
+					nether_lava_block_frequency = lazyInt(builder, "Nether Lavastone Gen Frequency",  5, 1, 100, "Sets the Chance of Nether Lavastone generating.");
+					nether_lava_block_min = lazyInt(builder, "Nether Lavastone Gen Min", 12, 1, 255, "Sets the min Y level.");
+					nether_lava_block_max = lazyInt(builder, "Nether Lavastone Gen Max", 32, 1, 255, "Sets the max Y level.");
+					nether_lava_block_size = lazyInt(builder, "Nether Lavastone Gen Size", 4, 1, 100, "Sets the Nether Lavastone Vein Size.");
+				builder.pop();
+				
+				builder.comment("Waterstone!").push("Water Source Block Stones");	
+					water_block_frequency = lazyInt(builder,"Waterstone Gen Frequency", 5, 1, 100, "Sets the Chance of Waterstone generating.");
+					water_block_min = lazyInt(builder,"Waterstone Gen Min", 32, 1, 255, "Sets the min Y level.");
+					water_block_max = lazyInt(builder,"Waterstone Gen Max", 48, 1, 255, "Sets the max Y level.");
+					water_block_size = lazyInt(builder,"Waterstone Gen Size", 4, 1, 100, "Sets the Waterstone Vein Size.");
+				builder.pop();
+				
+				builder.comment("Might as well add this!").push("Ender Ore");	
+					ender_ore = lazyBool(builder,"Ender Ore", true, "World Generate Ender Ore?");
+					ender_mite = lazyBool(builder,"Endermite", true, "Enable Endermite spawn?");
+					endermite_spawn = lazyInt(builder,"Endermite Spawn", 25, 0, 100, "Sets the Chance of Endermites to spawn when Ore is mined.");
+					ender_ore_frequency = lazyInt(builder,"Ender Ore Frequency",  5, 1, 100, "Sets the Chance of Ender ore generating.");
+					ender_ore_min = lazyInt(builder,"Ender Ore Min", 1, 1, 255, "Sets the min Y level.");
+					ender_ore_max = lazyInt(builder,"Ender Ore Max", 32, 1, 255, "Sets the max Y level.");
+					ender_ore_size = lazyInt(builder,"Ender Ore Size", 4, 1, 100, "Sets the Ender Ore Vein Size.");
+				builder.pop();
+				
+				builder.comment("It's the little things that count right?!").push("Charcoal");	
+					CharcoalWorldgen = lazyBool(builder, "Charcoal Block Nether Worldgen", true, "Enable the Charcoal Block to spawn in the nether?");
+					charcoal_frequency = lazyInt(builder,"Charcoal Block Nether Worldgen Frequency",  10, 1, 100, "Sets the Chance of Charcoal Block.");
+					charcoal_min = lazyInt(builder,"Charcoal Block Nether Worldgen Min", 1, 1, 255, "Sets the min Y level.");
+					charcoal_max = lazyInt(builder,"Charcoal Block Nether Worldgen Max",  128, 1, 255, "Sets the max Y level.");
+					charcoal_size = lazyInt(builder,"Charcoal Block Nether Worldgen Size",  10, 1, 100, "Sets the Charcoal Vein Size.");  
+				builder.pop();
+				
+				builder.push("WUB Juice Overworld Ore");
+					overworld_wub = lazyBool(builder, "Overworld Wub Ore", true, "Enable Overworld Wub Ore?");
+					wub_block_count = lazyInt(builder,"Overworld Wub Ore Gen Size", 5, 1, 100, "Sets the Overworld Wub Ore Vein Size.");
+					wub_block_frequency = lazyInt(builder,"Overworld Wub Ore Gen Chance", 50, 1, 100, "Sets the Chance of Overworld Wub Ore generating.");
+					wub_block_min = lazyInt(builder,"Overworld Wub Ore Gen Min", 1, 1, 255, "Sets the Overworld min Y level.");
+					wub_block_max = lazyInt(builder,"Overworld Wub Ore Gen Max", 255, 1, 255, "Sets the Overworld max Y level.");
+				builder.pop();
+				
+				builder.push("WUB Juice Nether Ore");
+					nether_wub = lazyBool(builder,"Nether Wub Ore", true, "WorldGen Nether Wub Ore?");
+					nether_wub_block_count =lazyInt(builder,"Nether Wub Ore Gen Size", 5, 1, 100, "Sets the Nether Wub Ore Vein Size.");
+					nether_wub_block_frequency =lazyInt(builder,"Nether Wub Ore Gen Chance", 50, 1, 100, "Sets the Chance of Nether Wub Ore generating.");
+					nether_wub_block_min = lazyInt(builder,"Nether Wub Ore Gen Min", 1, 1, 120, "Sets the Nether min Y level.");
+					nether_wub_block_max = lazyInt(builder,"Nether Wub Ore Gen Max", 120, 1, 120, "Sets the Nether max Y level.");
+				builder.pop();
 			builder.pop();
-
-			builder.comment("Added for Custom Packs!\n[If you enable please make a recipe for them, Other wise they do nothing.]").push("Custom Packs");
-			FlintKnifeDamage = lazyInt(builder, "Flint Knife Durability", 100, 0, Integer.MAX_VALUE, "Sets the amount of Durability.");
-			QuartzKnifeDamage = lazyInt(builder, "Quartz Knife Durability", 128, 0, Integer.MAX_VALUE, "Sets the amount of Durability.");
+			
+			builder.push("Extras");
+			
+			//TODO drops???
+//				ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", "Dirt Drops", true, "Enable Bones to drop from Dirt?");
+//				ConfigHandler.BoneDropsChance = config.getInt("Bone Drop Chance", "Dirt Drops", 1, 0, 100, "Sets the Chance of Bones from Dirt.");
+//				ConfigHandler.BoneAmount = config.getInt("Bone Drop Amount", "Dirt Drops", 1, 1, 64, "Sets the Amount of Bones Dropped from Dirt.");
+//				ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", "Dirt Drops", true, "Enable Skulls to drop from Dirt?");
+//				ConfigHandler.SkullDropsChance = config.getInt("Skull Drop Chance", "Dirt Drops", 1, 0, 100, "Sets the Chance of Skulls from Dirt.");
+//				ConfigHandler.SkullAmount = config.getInt("Skull Drop Amount", "Dirt Drops", 1, 1, 64, "Sets the Amount of Skulls Dropped from Dirt.");
+			
+//				config.addCustomCategoryComment("Extra Tree Drops", "Extra Drops");
+//				ConfigHandler.extra_drops = config.getBoolean("Extra Fruit Drops", "Extra Tree Drops", true, "Enable Pears and Peaches to drop from leaves?");
+//				ConfigHandler.extra_drop_bottle = config.getBoolean("Extra Fruit Drops need bottle to make juice", "Extra Tree Drops", false, "Enable Bottle in recipe?");
+//				ConfigHandler.pearDropsChance = config.getInt("Extra Fruit Drops Pear Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Pears from leaves.");
+//				ConfigHandler.pearDropsAmount = config.getInt("Extra Fruit Drops Pear Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Pears Dropped from leaves.");
+//				ConfigHandler.peachDropsChance = config.getInt("Extra Fruit Drops Peach Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Peaches from leaves.");
+//				ConfigHandler.peachDropsAmount = config.getInt("Extra Fruit Drops Peach Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Peaches Dropped from leaves.");
+//				ConfigHandler.peachAmount = config.getInt("Extra Fruit Drops Peach Juice Heal Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Peach Juice.");
+//				ConfigHandler.peachSaturation = config.getFloat("Extra Fruit Drops Peach Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Peach Juice.");
+//				ConfigHandler.pearAmount = config.getInt("Extra Fruit Drops Pear Juice Heal Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Pear Juice.");
+//				ConfigHandler.pearSaturation = config.getFloat("Extra Fruit Drops Pear Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Pear Juice.");
+			
+//				config.addCustomCategoryComment("Extra Tree Drops Vanilla", "Extra Drops Vanilla");
+//				ConfigHandler.extra_drops_vanilla = config.getBoolean("Extra Tree Drops Vanilla", "Extra Tree Drops Vanilla", true, "Enable Extra Sticks and Apples to drop from leaves?");
+//				ConfigHandler.stickDropsChance = config.getInt("Extra Tree Drops Stick Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Sticks from leaves.");
+//				ConfigHandler.stickDropsAmount = config.getInt("Extra Tree Drops Stick Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Sticks Dropped from leaves.");
+//				ConfigHandler.appleDropsChance = config.getInt("Extra Tree Drops Apple Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Apple from leaves.");
+//				ConfigHandler.appleDropsAmount = config.getInt("Extra Tree Drops Apple Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Apple Dropped from leaves.");
+			
+				builder.push("Tiny Coal & Charcoal");
+					tiny_charcoal_burntime = lazyInt(builder,"Tiny Charcoal Burn Time", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Charcoal.");
+					tiny_coal_burntime = lazyInt(builder,"Tiny Coal Burn Time", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Coal.");
+				builder.pop();
+				
+				builder.comment("Need some extra durability, eh?\n[Repairs Items in Players Inventory only.]").push("Repair Tablet");
+					repair_tablet_cooldown = lazyInt(builder,"Repair Tablet Cooldown", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks) between repair processes.");
+				builder.pop();
 			builder.pop();
-
-			builder.comment("WUB WUB WUB!").push("WUB Juice");
-				vasholine_heal_amount = lazyDouble(builder, "WUB Juice Heal Amount", 0.25D, 0.0D, 1.0D,	"Sets the amount of heal Wub Juice does per tick.");
-				vasholine_mobs = lazyBool(builder, "WUB Juice Hurts Mobs", true, "Enable mobs getting hurt?");
-				vasholine_mobs_amount = lazyDouble(builder, "WUB Juice Hurts Mobs Amount", 0.01D, 0.0D, 1.0D,"Sets the amount mobs get hurt.");
-				wub_heal_mobs = lazyBool(builder, "WUB Juice Heals Mobs", false, "Enable mobs getting healed?");
-				mob_heal_amount = lazyDouble(builder, "WUB Juice Heals Mobs Amount", 0.01D, 0.0F, 1.0D,	"Sets the amount mobs get healed.");
-				wub_weakness = lazyBool(builder, "WUB Juice Side Effect Weakness", true, "Enable Weakness while being healed?");
-				wub_blindness = lazyBool(builder, "WUB Juice Side Effect Blindness", true, "Enable Blindness while being healed?");
-				wub_fatigue = lazyBool(builder, "WUB Juice Side Effect Mining Fatigue", true, "Enable Mining Fatigue while being healed?");
+			
+			builder.push("Armor");
+				builder.comment("What Armor?").push("Lava Armor");
+					lava_armor_resistance = lazyBool(builder,"Lava Armor Resistance", true, "Enable Lava Armor Resistance?");
+					lava_armor_resistance_lvl = lazyInt(builder,"Lava Armor Resistance Level",  0, 0, 10, "Resistance Level.");
+					lava_armor_fire = lazyBool(builder,"Lava Armor Fire Resistance", true, "Enable Lava Armor Fire Resistance?");
+					lava_armor_fire_lvl = lazyInt(builder,"Lava Armor Fire Resistance Level", 0, 0, 10, "Fire Resistance Level.");
+				builder.pop();
+				
+				builder.comment("End Game Armor").push("Dragon Armor");
+					dragon_fly = lazyBool(builder,"Dragon Armor Allow Flight", true, "Enable Dragon Armor Flight?");
+					dragon_resistance = lazyBool(builder, "Dragon Armor Resistance",  true, "Enable Dragon Armor Resistance?");
+					dragon_resistance_lvl = lazyInt(builder,"Dragon Armor Resistance Level",  1, 0, 10, "Resistance Level.");
+					dragon_fire = lazyBool(builder,"Dragon Armor Fire Resistance",  true, "Enable Dragon Armor Fire Resistance?");
+					dragon_fire_lvl = lazyInt(builder,"Dragon Armor Fire Resistance Level",  1, 0, 10, "Fire Resistance Level.");
+					dragon_strength = lazyBool(builder,"Dragon Armor Strength", true, "Enable Dragon Armor Strength?");
+					dragon_strength_lvl = lazyInt(builder,"Dragon Armor Strength Level",  1, 0, 10, "Strength Level.");
+				builder.pop();
+				
+				builder.comment("Mid Game Armor").push("Wither Armor");
+					wither_resistance = lazyBool(builder,"Wither Armor Resistance", true, "Enable Wither Armor Resistance?");
+					wither_resistance_lvl = lazyInt(builder,"Wither Armor Resistance Level", 0, 0, 10, "Resistance Level.");
+					wither_fire = lazyBool(builder,"Wither Armor Fire Resistance", true, "Enable Wither Armor Fire Resistance?");
+					wither_fire_lvl = lazyInt(builder,"Wither Armor Fire Resistance Level",  0, 0, 10, "Fire Resistance Level.");
+					wither_strength = lazyBool(builder,"Wither Armor Strength",  true, "Enable Wither Armor Strength?");
+					wither_strength_lvl = lazyInt(builder,"Wither Armor Strength Level", 0, 0, 10, "Strength Level.");
+				builder.pop();
+				
+				builder.comment("Lets go under the water").push("Lapis Armor");
+					lapis_armor_water = lazyBool(builder, "Lapis Armor Water Breathing", true, "Enable Lapis Water Breathing?");
+					lapis_armor_water_lvl = lazyInt(builder, "Lapis Armor Water Breathing Level", 0, 0, 10, "Water Breathing Level.");
+				builder.pop();
+				
+				builder.comment("What?").push("Obsidian Armor");
+					obsidian_armor_resistance = lazyBool(builder,"Obsidian Armor Resistance", true, "Enable Obsidian Resistance?");
+					obsidian_armor_resistance_lvl = lazyInt(builder, "Obsidian Armor Resistance Level", 0, 0, 10, "Resistance Level.");
+				builder.pop();
+				
+				builder.comment("You went where?").push("Quartz Armor");
+					quartz_armor_strength = lazyBool(builder,"Quartz Armor Strength", true, "Enable Quartz Strength?");
+					quartz_armor_strength_lvl = lazyInt(builder,"Quartz Armor Strength Level",  0, 0, 10, "Strength Level.");
+				builder.pop();
+				
+				builder.comment("How fast you want to go?").push("Redstone Armor");
+					redstone_armor_speed = lazyBool(builder,"Redstone Armor Speed", true, "Enable Redstone Speed?");
+					redstone_armor_speed_lvl = lazyInt(builder,"Redstone Armor Speed Level", 0, 0, 10, "Speed Level.");
+				builder.pop();
 			builder.pop();
-
-			// builder.comment("Sink Into Madness Block!\n[This item is not a Craftable
-			// Block.]\n[To be used with Bedrock Replacer Mod]\n[MAY CAUSE SERVER LAG NEEDS
-			// MORE TESTING]").push("Withered Bedrock");
-			// ConfigHandler.WitheredBlock = config.getBoolean("Withered Bedrock", "Withered
-			// Bedrock", false, "Enable Withered Bedrock?");
-			// ConfigHandler.WitheredBlockParticals = config.getBoolean("Withered
-			// Particles", "Withered Bedrock", false, "Enable Player Withered Particles?");
-			// ConfigHandler.WitheredBlockTime = config.getInt("Withered Time", "Withered
-			// Bedrock", 3, 1, Integer.MAX_VALUE, "Sets the Time a player is Withered from
-			// standing on Withered Bedrock.\n[1 = 20Ticks]");
-
-			builder.comment(
-					"Need a little healing?\n[Each teir requires the lower teir for crafting!]\n[Medical Items can now only be used if player is hurt!]")
-					.push("Medical Items");
-			// Small Bandage
-			smallBandageHealStack = lazyInt(builder, "Teir 1 Meical Item Stacksize", 8, 1, 64,
-					"Sets the Stacksize of the Small Medical Bandage!");
-			smallBandageRegen = lazyInt(builder, "Teir 1 Meical Item Regen Time", 5, 1, 30,
-					"Sets the length of regen of the Small Medical Bandage!\n[Does not stack]");
-			// Large Bandage
-			largeBandageStack = lazyInt(builder, "Teir 2 Meical Item Stacksize", 16, 1, 64,
-					"Sets the Stacksize of the Large Medical Bandage!");
-			largeBandageDuration = lazyInt(builder, "Teir 2 Meical Item Use Duration", 4, 1, 64,
-					"Sets how long it takes the player to apply the Large Medical Bandage!");
-			largeBandageBoostTime = lazyInt(builder, "Teir 2 Meical Item Boost Time", 15, 0, 120,
-					"Sets how long the player has 2 extra hearts on the Large Medical Bandage!\n[Does not stack]");
-			// Small Med kit
-			smallMedHealStack = lazyInt(builder, "Teir 3 Meical Item Stacksize", 16, 1, 64,
-					"Sets the Stacksize of the Small Medical Kit!");
-			smallMedDuration = lazyInt(builder, "Teir 3 Meical Item Use Duration", 8, 1, 64,
-					"Sets how long it takes the player to apply the Small Medical Kit!");
-			smallMedBoostTime = lazyInt(builder, "Teir 3 Meical Item Boost Time", 30, 0, 240,
-					"Sets how long the player has 4 extra hearts on the Small Medical Kit!\n[Does not stack]");
-			// Large Med kit
-			LargeMedHealStack = lazyInt(builder, "Teir 4 Meical Item Stacksize", 16, 1, 64,
-					"Sets the Stacksize of the Large Medical Kit!");
-			LargeMedDuration = lazyInt(builder, "Teir 4 Meical Item Use Duration", 16, 1, 64,
-					"Sets how long it takes the player to apply the Large Medical Kit!");
-			largeMedBoostTime = lazyInt(builder, "Teir 4 Meical Item Boost Time", 60, 0, 300,
-					"Sets how long the player has 6 extra hearts on the Large Medical Kit!\n[Does not stack]");
-			builder.pop();
-
-			builder.comment("Fun Stuff\n[Not PicKappa stop asking!]").push("Kappa Pick");
-			kappa_level = lazyInt(builder, "Kappa Pick Mining Level", 1, 0, 3, "Mining Level.");
-			kappa_damage = lazyInt(builder, "Kappa Pick Mining Level Durability", 31513, 100, Integer.MAX_VALUE,
-					"Durability Level.");
-			builder.pop();
-
-			builder.comment("Because Pineapple goes on Pizza! Kappa").push("Pizza");
-			bams_pizza_amount = lazyInt(builder, "Bams Pizza Heal Amount", 10, 1, 20, "Sets the Heal Amount.");
-			bams_pizza_sat = lazyDouble(builder, "Bams Pizza Saturation Amount", 1.0D, 0.0D, 1.0D,
-					"Sets the Saturation Amount.");
-			builder.pop();
-
-			builder.comment("SUCC THE PEARLS").push("Succ Juice");
-			succ_juice_bottle = lazyBool(builder, "Pearl Juice Recipe", false,
-					"Enable Pearl Juice require a bottle in recipe?");
-			builder.pop();
-
-			builder.comment("A Funny Thing").push("Sea Axe");
-			sea_axe = lazyBool(builder, "Sea Axe - Axe", true,
-					"Enable Sea Axe as a Axe?\n[Axe has 11 attack damage!]\n[Only ENABLE if Sea Axe - Pickaxe is DISABLED!]\n[Sea Axe must be ENABLED for this config to work!]");
-			sea_pickaxe = lazyBool(builder, "Sea Axe - Pickaxe", false,
-					"Enable Sea Axe as a Pickaxe?\n[Pickaxe has 10 attack damage!]\n[Only ENABLE if Sea Axe - Axe is DISABLED!]\n[Sea Axe must be ENABLED for this config to work!]");
+			
+			builder.push("Tools & Weapons");
+				builder.push("Spears");
+					spear_reach = lazyDouble(builder, "A Spears Extended Reach", 7D, 5D, 10D, "Sets the Reach of a Spear.\n[Vanilla is 5 blocks!]");
+				builder.pop();
 			builder.pop();
 			
 			
-			 builder.comment("Lavastone!").push("Lava Source Block Stones");		
-			 lava_block_frequency = lazyInt(builder, "Lavastone Gen Frequency", 5, 1, 100, "Sets the Chance of Lavastone generating.");
-			 lava_block_min = lazyInt(builder,"Lavastone Gen Min", 12, 1, 255, "Sets the min Y level.");
-			 lava_block_max = lazyInt(builder, "Lavastone Gen Max", 32, 1, 255, "Sets the max Y level.");
-			 lava_block_size = lazyInt(builder, "Lavastone Gen Size", 4, 1, 100, "Sets the Lavastone Vein Size.");
-			 builder.pop();
-			
-			 builder.comment("Nether Lavastone!").push("Nether Lava Source Block Stones");	
-			 nether_lava_block_frequency = lazyInt(builder, "Nether Lavastone Gen Frequency",  5, 1, 100, "Sets the Chance of Nether Lavastone generating.");
-			 nether_lava_block_min = lazyInt(builder, "Nether Lavastone Gen Min", 12, 1, 255, "Sets the min Y level.");
-			 nether_lava_block_max = lazyInt(builder, "Nether Lavastone Gen Max", 32, 1, 255, "Sets the max Y level.");
-			 nether_lava_block_size = lazyInt(builder, "Nether Lavastone Gen Size", 4, 1, 100, "Sets the Nether Lavastone Vein Size.");
-			 
-			 builder.comment("Waterstone!").push("Water Source Block Stones");	
-			 water_block_frequency = lazyInt(builder,"Waterstone Gen Frequency", 5, 1, 100, "Sets the Chance of Waterstone generating.");
-			 water_block_min = lazyInt(builder,"Waterstone Gen Min", 32, 1, 255, "Sets the min Y level.");
-			 water_block_max = lazyInt(builder,"Waterstone Gen Max", 48, 1, 255, "Sets the max Y level.");
-			 water_block_size = lazyInt(builder,"Waterstone Gen Size", 4, 1, 100, "Sets the Waterstone Vein Size.");
-			 builder.pop();
+			builder.push("Food & Drinks");
+				builder.comment("Everyone loves juice Stats!").push("Juice Stats");
+					AppleAmount = lazyInt(builder,"Apple Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					AppleSaturation = lazyDouble(builder, "Apple Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					CarrotAmount = lazyInt(builder,"Carrot Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					CarrotSaturation = lazyDouble(builder,"Carrot Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					PotatoAmount = lazyInt(builder,"Potato Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					PotatoSaturation = lazyDouble(builder, "Potato Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					BeetAmount = lazyInt(builder,"Beet Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					BeetSaturation = lazyDouble(builder, "Beet Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					CactusAmount = lazyInt(builder,"Cactus Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					CactusSaturation = lazyDouble(builder, "Cactus Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					SlimeAmount = lazyInt(builder,"Slime Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					SlimeSaturation = lazyDouble(builder, "Slime Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					WheatAmount = lazyInt(builder,"Wheat Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					WheatSaturation = lazyDouble(builder, "Wheat Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					MelonAmount = lazyInt(builder,"Melon Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					MelonSaturation = lazyDouble(builder, "Melon Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					PumpkinAmount = lazyInt(builder,"Pumpkin Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					PumpkinSaturation = lazyDouble(builder, "Pumpkin Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+				builder.pop();
+				
+				builder.comment("Extra Berry Plants!\n[Disable Extra Plant Generation if you want to use Naturas Berries instead!]\n[The higher the value, the more Plants are generated.]").push("Modded Juice Generation");
+					ExtraPlantGen = lazyBool(builder,"Extra Plant Generation", true, "Enable Extra Plant Generation?");
+					berryPlantRarity = lazyInt(builder,"Extra Plant Generation Rarity", 5, 1, Integer.MAX_VALUE, "Sets the Rarity of Berry Plants.");
+				builder.pop();
+				
+				builder.comment("Everyone loves juice Stats!").push("Juice Stats");
+					BlueberryAmount = lazyInt(builder,"Blueberry Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					BlueberrySaturation = lazyDouble(builder, "Blueberry Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					BlackberryAmount = lazyInt(builder,"Blackberry Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					BlackberrySaturation = lazyDouble(builder, "Blackberry Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					MaloberryAmount = lazyInt(builder,"Maloberry Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					MaloberrySaturation = lazyDouble(builder, "Maloberry Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+					RaspberryAmount = lazyInt(builder,"Raspberry Juice Heal Amount", 4, 1, 20, "Sets the Heal Amount.");
+					RaspberrySaturation = lazyDouble(builder, "Raspberry Juice Saturation Amount", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+				builder.pop();
+				
+				builder.comment("Want more food Stats?\n[WIP Section]").push("Extra Food Stats");
+					ToastedAmount = lazyInt(builder,"Toasted Bread Heal Amount", 6, 1, 20, "Sets the Heal Amount.");
+					ToastedSaturation = lazyDouble(builder, "Toasted Bread Saturation Amount", 0.7F, 0.0F, 1.0F, "Sets the Saturation Amount.");
+				builder.pop();
+				
+				builder.comment( "How long it takes to eat food.").push("Food Eat Duration");
+					eat_timer = lazyInt(builder,"Eat Duration", 32, 8, Integer.MAX_VALUE, "Sets how long it takes to eat TP food.");
+				builder.pop();
+				
+			builder.pop();
 		}
 
 		private void apply() {
@@ -241,7 +432,7 @@ public class TinyConfig {
 			ConfigHandler.bams_pizza_amount = bams_pizza_amount.get();
 			ConfigHandler.bams_pizza_sat = bams_pizza_sat.get().floatValue();
 
-			ConfigHandler.succ_juice_bottle = succ_juice_bottle.get();
+//			ConfigHandler.succ_juice_bottle = succ_juice_bottle.get();
 
 			ConfigHandler.sea_axe = sea_axe.get();
 			ConfigHandler.sea_pickaxe = sea_pickaxe.get();
@@ -261,31 +452,119 @@ public class TinyConfig {
 			ConfigHandler.water_block_max = water_block_max.get();
 			ConfigHandler.water_block_size = water_block_size.get();
 
+			ConfigHandler.ender_ore = ender_ore.get();
+			ConfigHandler.ender_mite = ender_mite.get();
+			ConfigHandler.endermite_spawn = endermite_spawn.get();
+			ConfigHandler.ender_ore_frequency = ender_ore_frequency.get();
+			ConfigHandler.ender_ore_min = ender_ore_min.get();
+			ConfigHandler.ender_ore_max = ender_ore_max.get();
+			ConfigHandler.ender_ore_size = ender_ore_size.get();
+			
+			ConfigHandler.CharcoalWorldgen = CharcoalWorldgen.get();
+			ConfigHandler.charcoal_frequency = charcoal_frequency.get();
+			ConfigHandler.charcoal_min = charcoal_min.get();
+			ConfigHandler.charcoal_max = charcoal_max.get();
+			ConfigHandler.charcoal_size =charcoal_size.get();
+			
+			ConfigHandler.overworld_wub = overworld_wub.get();
+			ConfigHandler.wub_block_count = wub_block_count.get();
+			ConfigHandler.wub_block_frequency = wub_block_frequency.get();
+			ConfigHandler.wub_block_min = wub_block_min.get();
+			ConfigHandler.wub_block_max = wub_block_max.get();
+			
+			ConfigHandler.nether_wub = nether_wub.get();
+			ConfigHandler.nether_wub_block_count =nether_wub_block_count.get();
+			ConfigHandler.nether_wub_block_frequency =nether_wub_block_count.get();
+			ConfigHandler.nether_wub_block_min = nether_wub_block_min.get();
+			ConfigHandler.nether_wub_block_max = nether_wub_block_max.get();
+			
+			FuelHandler.tiny_charcoal_burntime = tiny_charcoal_burntime.get();
+			FuelHandler.tiny_coal_burntime = tiny_coal_burntime.get();
+			
+			ConfigHandler.repair_tablet_cooldown = repair_tablet_cooldown.get();
+			
+			//ARMOR
+			ArmorHandler.lava_armor_resistance = lava_armor_resistance.get();
+			ArmorHandler.lava_armor_resistance_lvl = lava_armor_resistance_lvl.get();
+			ArmorHandler.lava_armor_fire = lava_armor_fire.get();
+			ArmorHandler.lava_armor_fire_lvl = lava_armor_fire_lvl.get();
+			
+			ArmorHandler.dragon_fly = dragon_fly.get();
+			ArmorHandler.dragon_resistance = dragon_resistance.get();
+			ArmorHandler.dragon_resistance_lvl = dragon_resistance_lvl.get();
+			ArmorHandler.dragon_fire = dragon_fire.get();
+			ArmorHandler.dragon_fire_lvl = dragon_fire_lvl.get();
+			ArmorHandler.dragon_strength = dragon_strength.get();
+			ArmorHandler.dragon_strength_lvl = dragon_strength_lvl.get();
+			
+			ArmorHandler.wither_resistance = wither_resistance.get();
+			ArmorHandler.wither_resistance_lvl = wither_resistance_lvl.get();
+			ArmorHandler.wither_fire = wither_fire.get();
+			ArmorHandler.wither_fire_lvl = wither_fire_lvl.get();
+			ArmorHandler.wither_strength = wither_strength.get();
+			ArmorHandler.wither_strength_lvl = wither_strength_lvl.get();
+			
+			ArmorHandler.lapis_armor_water = lapis_armor_water.get();
+			ArmorHandler.lapis_armor_water_lvl = lapis_armor_water_lvl.get();
+			
+			ArmorHandler.obsidian_armor_resistance = obsidian_armor_resistance.get();
+			ArmorHandler.obsidian_armor_resistance_lvl = obsidian_armor_resistance_lvl.get();
+			
+			ArmorHandler.quartz_armor_strength = quartz_armor_strength.get();
+			ArmorHandler.quartz_armor_strength_lvl = quartz_armor_strength_lvl.get();
+			
+			ArmorHandler.redstone_armor_speed = redstone_armor_speed.get();
+			ArmorHandler.redstone_armor_speed_lvl = redstone_armor_speed_lvl.get();
+			
+			ConfigHandler.spear_reach = spear_reach.get().floatValue();
+			
+			ConfigHandler.AppleAmount = AppleAmount.get();
+			ConfigHandler.AppleSaturation = AppleSaturation.get().floatValue();
+			ConfigHandler.CarrotAmount = CarrotAmount.get();
+			ConfigHandler.CarrotSaturation = CarrotSaturation.get().floatValue();
+			ConfigHandler.PotatoAmount = PotatoAmount.get();
+			ConfigHandler.PotatoSaturation = PotatoSaturation.get().floatValue();
+			ConfigHandler.BeetAmount = BeetAmount.get();
+			ConfigHandler.BeetSaturation = BeetSaturation.get().floatValue();
+			ConfigHandler.CactusAmount = CactusAmount.get();
+			ConfigHandler.CactusSaturation = CactusSaturation.get().floatValue();
+			ConfigHandler.SlimeAmount = SlimeAmount.get();
+			ConfigHandler.SlimeSaturation = SlimeSaturation.get().floatValue();
+			ConfigHandler.WheatAmount = WheatAmount.get();
+			ConfigHandler.WheatSaturation = WheatSaturation.get().floatValue();
+			ConfigHandler.MelonAmount = MelonAmount.get();
+			ConfigHandler.MelonSaturation = MelonSaturation.get().floatValue();
+			ConfigHandler.PumpkinAmount = PumpkinAmount.get();
+			ConfigHandler.PumpkinSaturation = PumpkinSaturation.get().floatValue();
+
+			ConfigHandler.ExtraPlantGen = ExtraPlantGen.get();
+			ConfigHandler.berryPlantRarity =berryPlantRarity.get();
+
+			ConfigHandler.BlueberryAmount = BlueberryAmount.get();
+			ConfigHandler.BlueberrySaturation = BlueberrySaturation.get().floatValue();
+			ConfigHandler.BlackberryAmount = BlackberryAmount.get();
+			ConfigHandler.BlackberrySaturation = BlackberrySaturation.get().floatValue();
+			ConfigHandler.MaloberryAmount = MaloberryAmount.get();
+			ConfigHandler.MaloberrySaturation = MaloberrySaturation.get().floatValue();
+			ConfigHandler.RaspberryAmount = RaspberryAmount.get();
+			ConfigHandler.RaspberrySaturation = RaspberrySaturation.get().floatValue();
+
+			ConfigHandler.ToastedAmount = ToastedAmount.get();
+			ConfigHandler.ToastedSaturation = ToastedSaturation.get().floatValue();
+
+			ConfigHandler.eat_timer = eat_timer.get();
+
 		}
 	}
 
+	
+	// Not being used atm
 	public static class ConfigClient {
-		// public final IntValue mineMode;
-		// public final BooleanValue mustHold;
-		// public final BooleanValue useSideHit;
-
 		private ConfigClient(ForgeConfigSpec.Builder builder) {
 			builder.push("client");
-
-			// mineMode = lazyInt(builder, "Mode", 0, -1, 2, "Excavation mode (-1 Disabled,
-			// 0 = Keybind, 1 = Sneak, 2 = Always)");
-			// mustHold = lazyBool(builder, "Must Hold", true, "Allows players to cancel
-			// excavation by releasing the keys");
-			// useSideHit = lazyBool(builder, "Use Side Hit", true, "Use the side of the
-			// block hit to determine shape mining direction");
-			//
 			builder.pop();
 		}
-
 		private void apply() {
-			// ExcavationSettings.mineMode = mineMode.get();
-			// ExcavationSettings.mustHold = mustHold.get();
-			// ExcavationSettings.useSideHit = useSideHit.get();
 		}
 	}
 
@@ -348,674 +627,4 @@ public class TinyConfig {
 
 	}
 
-	//
-	// public static void initOres()
-	// {
-	//
-	// File f = new File(configDir, "Ores.cfg");
-	// config = new Configuration(f, configVersion);
-	//
-	// config.load();
-	//
-	//
-	// config.addCustomCategoryComment("Ender Ore", "Might as well add this");
-	// ConfigHandler.ender_ore = config.getBoolean("Ender Ore", "Ender Ore", true,
-	// "Enable Ender Ore?");
-	// ConfigHandler.ender_mite = config.getBoolean("Endermite", "Ender Ore", true,
-	// "Enable Endermite spawn?");
-	// ConfigHandler.endermite_spawn = config.getInt("Endermite Spawn", "Ender Ore",
-	// 25, 0, 100, "Sets the Chance of Endermites to spawn when Ore is mined.");
-	// ConfigHandler.ender_ore_frequency = config.getInt("Ender Ore Frequency",
-	// "Ender Ore", 5, 1, 100, "Sets the Chance of Ender ore generating.");
-	// ConfigHandler.ender_ore_min = config.getInt("Ender Ore Min", "Ender Ore", 1,
-	// 1, 255, "Sets the min Y level.");
-	// ConfigHandler.ender_ore_max = config.getInt("Ender Ore Max", "Ender Ore", 32,
-	// 1, 255, "Sets the max Y level.");
-	// ConfigHandler.ender_ore_size = config.getInt("Ender Ore Size", "Ender Ore",
-	// 4, 1, 100, "Sets the Ender Ore Vein Size.");
-	//
-	// config.addCustomCategoryComment("Charcoal", "It's the little things that
-	// count right?\n[Charcoal Block must be ENABLED in Main.cfg]");
-	// ConfigHandler.CharcoalWorldgen = config.getBoolean("Charcoal Block Nether
-	// Worldgen", "Charcoal", true, "Enable the Charcoal Block to spawn in the
-	// nether?");
-	// ConfigHandler.charcoal_frequency = config.getInt("Charcoal Block Nether
-	// Worldgen Frequency", "Charcoal", 10, 1, 100, "Sets the Chance of Charcoal
-	// Block.");
-	// ConfigHandler.charcoal_min = config.getInt("Charcoal Block Nether Worldgen
-	// Min", "Charcoal", 1, 1, 255, "Sets the min Y level.");
-	// ConfigHandler.charcoal_max = config.getInt("Charcoal Block Nether Worldgen
-	// Max", "Charcoal", 128, 1, 255, "Sets the max Y level.");
-	// ConfigHandler.charcoal_size = config.getInt("Charcoal Block Nether Worldgen
-	// Size", "Charcoal", 10, 1, 100, "Sets the Charcoal Vein Size.");
-	//
-	// config.addCustomCategoryComment("WUB Juice Overworld Ore", "[Requires WUB
-	// Juice to be ENABLED in the Supporters.cfg]");
-	// ConfigHandler.overworld_wub = config.getBoolean("Overworld Wub Ore", "WUB
-	// Juice Overworld Ore", true, "Enable Overworld Wub Ore?");
-	// ConfigHandler.wub_block_count = config.getInt("Overworld Wub Ore Gen Size",
-	// "WUB Juice Overworld Ore", 5, 1, 100, "Sets the Overworld Wub Ore Vein
-	// Size.");
-	// ConfigHandler.wub_block_frequency = config.getInt("Overworld Wub Ore Gen
-	// Chance", "WUB Juice Overworld Ore", 50, 1, 100, "Sets the Chance of Overworld
-	// Wub Ore generating.");
-	// ConfigHandler.wub_block_min = config.getInt("Overworld Wub Ore Gen Min", "WUB
-	// Juice Overworld Ore", 1, 1, 255, "Sets the Overworld min Y level.");
-	// ConfigHandler.wub_block_max = config.getInt("Overworld Wub Ore Gen Max", "WUB
-	// Juice Overworld Ore", 255, 1, 255, "Sets the Overworld max Y level.");
-	//
-	// config.addCustomCategoryComment("WUB Juice Nether Ore", "[Requires WUB Juice
-	// to be ENABLED in the Supporters.cfg]");
-	// ConfigHandler.nether_wub = config.getBoolean("Nether Wub Ore", "WUB Juice
-	// Nether Ore", true, "Enable Nether Wub Ore?");
-	// ConfigHandler.nether_wub_block_count = config.getInt("Nether Wub Ore Gen
-	// Size", "WUB Juice Nether Ore", 5, 1, 100, "Sets the Nether Wub Ore Vein
-	// Size.");
-	// ConfigHandler.nether_wub_block_frequency = config.getInt("Nether Wub Ore Gen
-	// Chance", "WUB Juice Nether Ore", 50, 1, 100, "Sets the Chance of Nether Wub
-	// Ore generating.");
-	// ConfigHandler.nether_wub_block_min = config.getInt("Nether Wub Ore Gen Min",
-	// "WUB Juice Nether Ore", 1, 1, 120, "Sets the Nether min Y level.");
-	// ConfigHandler.nether_wub_block_max = config.getInt("Nether Wub Ore Gen Max",
-	// "WUB Juice Nether Ore", 120, 1, 120, "Sets the Nether max Y level.");
-	//
-	// if (config.hasChanged())
-	// config.save();
-	// }
-	//
-	// public static void initExtra()
-	// {
-	//
-	// File f = new File(configDir, "Extras.cfg");
-	// config = new Configuration(f, configVersion);
-	//
-	// config.load();
-	//
-	// config.addCustomCategoryComment("Dirt Drops", "Extra Drops");
-	// ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", "Dirt Drops", true,
-	// "Enable Bones to drop from Dirt?");
-	// ConfigHandler.BoneDropsChance = config.getInt("Bone Drop Chance", "Dirt
-	// Drops", 1, 0, 100, "Sets the Chance of Bones from Dirt.");
-	// ConfigHandler.BoneAmount = config.getInt("Bone Drop Amount", "Dirt Drops", 1,
-	// 1, 64, "Sets the Amount of Bones Dropped from Dirt.");
-	// ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", "Dirt Drops",
-	// true, "Enable Skulls to drop from Dirt?");
-	// ConfigHandler.SkullDropsChance = config.getInt("Skull Drop Chance", "Dirt
-	// Drops", 1, 0, 100, "Sets the Chance of Skulls from Dirt.");
-	// ConfigHandler.SkullAmount = config.getInt("Skull Drop Amount", "Dirt Drops",
-	// 1, 1, 64, "Sets the Amount of Skulls Dropped from Dirt.");
-	//
-	// config.addCustomCategoryComment("Bricks", "Because People Love Bricks");
-	// ConfigHandler.AndesiteBrick = config.getBoolean("Andesite Bricks", "Bricks",
-	// false, "Enable Andesite Bricks?");
-	// ConfigHandler.DioriteBrick = config.getBoolean("Diorite Bricks", "Bricks",
-	// false, "Enable Diorite Bricks?");
-	// ConfigHandler.GraniteBrick = config.getBoolean("Granite Bricks", "Bricks",
-	// false, "Enable Granite Bricks?");
-	//
-	// config.addCustomCategoryComment("Tiny Coal & Charcoal", "tiny things.");
-	// ConfigHandler.tiny_charcoal = config.getBoolean("Tiny Charcoal", "Tiny Coal &
-	// Charcoal", true, "Enable Tiny Charcoal?");
-	// FuelHandler.tiny_charcoal_burntime = config.getInt("Tiny Charcoal Burn Time",
-	// "Tiny Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for
-	// Tiny Charcoal.");
-	// ConfigHandler.tiny_coal = config.getBoolean("Tiny Coal", "Tiny Coal &
-	// Charcoal", true, "Enable Tiny Coal?");
-	// FuelHandler.tiny_coal_burntime = config.getInt("Tiny Coal Burn Time", "Tiny
-	// Coal & Charcoal", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny
-	// Coal.");
-	//
-	// config.addCustomCategoryComment("Steel", "Used to craft the Infinity
-	// Bucket.\n[Uses oredict and works with other mods]");
-	// ConfigHandler.steel_ingot = config.getBoolean("Steel Ingots", "Steel", true,
-	// "Enable Steel Ingots?");
-	//
-	// config.addCustomCategoryComment("Rib", "Used for Crafting!\n[DO NOT ENABLE if
-	// Wither Armor is ENABLED.]");
-	// ConfigHandler.wither_rib = config.getBoolean("Wither Rib", "Rib", false,
-	// "Enable Wither Rib?");
-	//
-	// config.addCustomCategoryComment("Seeds", "Things to plant?");
-	// ConfigHandler.MyceliumSeeds = config.getBoolean("Mycelium Seeds", "Seeds",
-	// true, "Enable Mycelium Seeds?");
-	//
-	// config.addCustomCategoryComment("Torch", "I'll light the way!\n[Do not ENABLE
-	// if Tinkers is installed.]");
-	// ConfigHandler.StoneTorch = config.getBoolean("Stone Torch", "Torch", false,
-	// "Enable Stone Torch?");
-	//
-	// config.addCustomCategoryComment("Flint", "A little extra flint can help,
-	// right?\n[Do not ENABLE is Tinkers is installed.]");
-	// ConfigHandler.FlintRecipe = config.getBoolean("Flint Recipe", "Flint", false,
-	// "Enable 3 Gravel into Flint Recipe?");
-	//
-	// config.addCustomCategoryComment("Harder Stone", "It's the little things that
-	// count right?\n[Required for Recipes in this mod.]");
-	// ConfigHandler.hardened_stone = config.getBoolean("Hardened Stone", "Harder
-	// Stone", true, "Enable Hardened Stone?");
-	//
-	// config.addCustomCategoryComment("Sugar", "even the dead stuff can help!\n[Can
-	// be used as FOOD for a small amount as well.]");
-	// ConfigHandler.old_reed = config.getBoolean("Dead Sugar Cane", "Sugar", true,
-	// "Enable Dead Sugar Cane?");
-	//
-	// config.addCustomCategoryComment("Pouch", "More storage anyone?");
-	// ConfigHandler.pouch = config.getBoolean("Pouch", "Pouch", true, "Enable
-	// Pouch?");
-	//
-	// config.addCustomCategoryComment("Repair Tablet", "Need some extra durability,
-	// eh?\n[Repairs Items in Players Inventory only.]");
-	// ConfigHandler.repair_tablet = config.getBoolean("Repair Tablet", "Repair
-	// Tablet", true, "Enable Repair Tablet?");
-	// ConfigHandler.repair_tablet_cooldown = config.getInt("Repair Tablet
-	// Cooldown", "Repair Tablet", 20, 1, Integer.MAX_VALUE, "Cooldown (in ticks)
-	// between repair processes.");
-	//
-	// config.addCustomCategoryComment("Infinity", "Unlimited Water!\n[Requires
-	// Steel to be enabled.]");
-	// ConfigHandler.infin_bucket = config.getBoolean("Infinity Water Bucket",
-	// "Infinity", true, "Enable Infinity Water Bucket?");
-	//
-	// config.addCustomCategoryComment("Extra Tree Drops", "Extra Drops");
-	// ConfigHandler.extra_drops = config.getBoolean("Extra Fruit Drops", "Extra
-	// Tree Drops", true, "Enable Pears and Peaches to drop from leaves?");
-	// ConfigHandler.extra_drop_bottle = config.getBoolean("Extra Fruit Drops need
-	// bottle to make juice", "Extra Tree Drops", false, "Enable Bottle in
-	// recipe?");
-	// ConfigHandler.pearDropsChance = config.getInt("Extra Fruit Drops Pear
-	// Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Pears from
-	// leaves.");
-	// ConfigHandler.pearDropsAmount = config.getInt("Extra Fruit Drops Pear
-	// Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Pears Dropped from
-	// leaves.");
-	// ConfigHandler.peachDropsChance = config.getInt("Extra Fruit Drops Peach
-	// Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Peaches from
-	// leaves.");
-	// ConfigHandler.peachDropsAmount = config.getInt("Extra Fruit Drops Peach
-	// Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Peaches Dropped
-	// from leaves.");
-	// ConfigHandler.peachAmount = config.getInt("Extra Fruit Drops Peach Juice Heal
-	// Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Peach
-	// Juice.");
-	// ConfigHandler.peachSaturation = config.getFloat("Extra Fruit Drops Peach
-	// Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the
-	// Saturation Amount of Peach Juice.");
-	// ConfigHandler.pearAmount = config.getInt("Extra Fruit Drops Pear Juice Heal
-	// Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Pear
-	// Juice.");
-	// ConfigHandler.pearSaturation = config.getFloat("Extra Fruit Drops Pear Juice
-	// Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the
-	// Saturation Amount of Pear Juice.");
-	//
-	// config.addCustomCategoryComment("Extra Tree Drops Vanilla", "Extra Drops
-	// Vanilla");
-	// ConfigHandler.extra_drops_vanilla = config.getBoolean("Extra Tree Drops
-	// Vanilla", "Extra Tree Drops Vanilla", true, "Enable Extra Sticks and Apples
-	// to drop from leaves?");
-	// ConfigHandler.stickDropsChance = config.getInt("Extra Tree Drops Stick
-	// Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Sticks
-	// from leaves.");
-	// ConfigHandler.stickDropsAmount = config.getInt("Extra Tree Drops Stick
-	// Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Sticks
-	// Dropped from leaves.");
-	// ConfigHandler.appleDropsChance = config.getInt("Extra Tree Drops Apple
-	// Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Apple
-	// from leaves.");
-	// ConfigHandler.appleDropsAmount = config.getInt("Extra Tree Drops Apple
-	// Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Apple
-	// Dropped from leaves.");
-	//
-	// config.addCustomCategoryComment("Extra Shears", "Because people love more
-	// shears!");
-	// ConfigHandler.wooden_shears = config.getBoolean("Wooden Shears", "Extra
-	// Shears", true, "Enable Wooden Shears?");
-	// ConfigHandler.golden_shears = config.getBoolean("Golden Shears", "Extra
-	// Shears", true, "Enable Golden Shears?");
-	// ConfigHandler.diamond_shears = config.getBoolean("Diamond Shears", "Extra
-	// Shears", true, "Enable Diamond Shears?");
-	// ConfigHandler.emerald_shears = config.getBoolean("Emerald Shears", "Extra
-	// Shears", true, "Enable Emerald Shears?");
-	// ConfigHandler.flint_shears = config.getBoolean("Flint Shears", "Extra
-	// Shears", true, "Enable Flint Shears?");
-	// ConfigHandler.stone_shears = config.getBoolean("Stone Shears", "Extra
-	// Shears", true, "Enable Stone Shears?");
-	//
-	//
-	// if (config.hasChanged())
-	// config.save();
-	// }
-	//
-	// public static void initArmor()
-	// {
-	//
-	// File f = new File(configDir, "Armor.cfg");
-	// config = new Configuration(f, configVersion);
-	//
-	// config.load();
-	//
-	// config.addCustomCategoryComment("Armor", "Why not");
-	// ArmorHandler.StoneArmor = config.getBoolean("Stone Armor", "Armor", true,
-	// "Enable Stone Armor?");
-	// ArmorHandler.FlintArmor = config.getBoolean("Flint Armor", "Armor", true,
-	// "Enable Flint Armor?");
-	// ArmorHandler.BoneArmor = config.getBoolean("Bone Armor", "Armor", true,
-	// "Enable Bone Armor?");
-	// ArmorHandler.WoodArmor = config.getBoolean("Wooden Armor", "Armor", true,
-	// "Enable Wooden Armor?");
-	// ArmorHandler.emerald_amor = config.getBoolean("Emerald Armor", "Armor", true,
-	// "Enable Emerald Armor?");
-	// ArmorHandler.chain_armor = config.getBoolean("Chain Armor", "Armor", true,
-	// "Enable Chain Armor Recipe?");
-	// ArmorHandler.lava_armor = config.getBoolean("Lava Armor", "Armor", true,
-	// "Enable Lava Armor?");
-	// ArmorHandler.dragon_armor = config.getBoolean("Dragon Armor", "Armor", true,
-	// "Enable Dragon Armor?");
-	// ArmorHandler.wither_armor = config.getBoolean("Wither Armor", "Armor", true,
-	// "Enable Wither Armor?");
-	// ArmorHandler.lapis_armor = config.getBoolean("Lapis Armor", "Armor", true,
-	// "Enable Lapis Armor?");
-	// ArmorHandler.obsidian_armor = config.getBoolean("Obsidian Armor", "Armor",
-	// true, "Enable Obsidian Armor?");
-	// ArmorHandler.quartz_armor = config.getBoolean("Quartz Armor", "Armor", true,
-	// "Enable Quartz Armor?");
-	// ArmorHandler.redstone_armor = config.getBoolean("Redstone Armor", "Armor",
-	// true, "Enable Redstone Armor?");
-	//
-	// config.addCustomCategoryComment("Lava Armor", "What Armor?\n[Needs Emerald
-	// armor to be enabled]");
-	// ArmorHandler.lava_armor_resistance = config.getBoolean("Lava Armor
-	// Resistance", "Lava Armor", true, "Enable Lava Armor Resistance?");
-	// ArmorHandler.lava_armor_resistance_lvl = config.getInt("Lava Armor Resistance
-	// Level", "Lava Armor", 0, 0, 10, "Resistance Level.");
-	// ArmorHandler.lava_armor_fire = config.getBoolean("Lava Armor Fire
-	// Resistance", "Lava Armor", true, "Enable Lava Armor Fire Resistance?");
-	// ArmorHandler.lava_armor_fire_lvl = config.getInt("Lava Armor Fire Resistance
-	// Level", "Lava Armor", 0, 0, 10, "Fire Resistance Level.");
-	//
-	// config.addCustomCategoryComment("Dragon Armor", "End Game Armor");
-	// ArmorHandler.dragon_fly = config.getBoolean("Dragon Armor Allow Flight",
-	// "Dragon Armor", true, "Enable Dragon Armor Flight?");
-	// ArmorHandler.dragon_resistance = config.getBoolean("Dragon Armor Resistance",
-	// "Dragon Armor", true, "Enable Dragon Armor Resistance?");
-	// ArmorHandler.dragon_resistance_lvl = config.getInt("Dragon Armor Resistance
-	// Level", "Dragon Armor", 1, 0, 10, "Resistance Level.");
-	// ArmorHandler.dragon_fire = config.getBoolean("Dragon Armor Fire Resistance",
-	// "Dragon Armor", true, "Enable Dragon Armor Fire Resistance?");
-	// ArmorHandler.dragon_fire_lvl = config.getInt("Dragon Armor Fire Resistance
-	// Level", "Dragon Armor", 1, 0, 10, "Fire Resistance Level.");
-	// ArmorHandler.dragon_strength = config.getBoolean("Dragon Armor Strength",
-	// "Dragon Armor", true, "Enable Dragon Armor Strength?");
-	// ArmorHandler.dragon_strength_lvl = config.getInt("Dragon Armor Strength
-	// Level", "Dragon Armor", 1, 0, 10, "Strength Level.");
-	//
-	// config.addCustomCategoryComment("Wither Armor", "Mid Game Armor");
-	// ArmorHandler.wither_resistance = config.getBoolean("Wither Armor Resistance",
-	// "Wither Armor", true, "Enable Wither Armor Resistance?");
-	// ArmorHandler.wither_resistance_lvl = config.getInt("Wither Armor Resistance
-	// Level", "Wither Armor", 0, 0, 10, "Resistance Level.");
-	// ArmorHandler.wither_fire = config.getBoolean("Wither Armor Fire Resistance",
-	// "Wither Armor", true, "Enable Wither Armor Fire Resistance?");
-	// ArmorHandler.wither_fire_lvl = config.getInt("Wither Armor Fire Resistance
-	// Level", "Wither Armor", 0, 0, 10, "Fire Resistance Level.");
-	// ArmorHandler.wither_strength = config.getBoolean("Wither Armor Strength",
-	// "Wither Armor", true, "Enable Wither Armor Strength?");
-	// ArmorHandler.wither_strength_lvl = config.getInt("Wither Armor Strength
-	// Level", "Wither Armor", 0, 0, 10, "Strength Level.");
-	//
-	// config.addCustomCategoryComment("Lapis Armor", "Lets go under the water");
-	// ArmorHandler.lapis_armor_water = config.getBoolean("Lapis Armor Water
-	// Breathing", "Lapis Armor", true, "Enable Lapis Water Breathing?");
-	// ArmorHandler.lapis_armor_water_lvl = config.getInt("Lapis Armor Water
-	// Breathing Level", "Lapis Armor", 0, 0, 10, "Water Breathing Level.");
-	//
-	// config.addCustomCategoryComment("Obsidian Armor", "What?");
-	// ArmorHandler.obsidian_armor_resistance = config.getBoolean("Obsidian Armor
-	// Resistance", "Obsidian Armor", true, "Enable Obsidian Resistance?");
-	// ArmorHandler.obsidian_armor_resistance_lvl = config.getInt("Obsidian Armor
-	// Resistance Level", "Obsidian Armor", 0, 0, 10, "Resistance Level.");
-	//
-	// config.addCustomCategoryComment("Quartz Armor", "You went where?");
-	// ArmorHandler.quartz_armor_strength = config.getBoolean("Quartz Armor
-	// Strength", "Quartz Armor", true, "Enable Quartz Strength?");
-	// ArmorHandler.quartz_armor_strength_lvl = config.getInt("Quartz Armor Strength
-	// Level", "Quartz Armor", 0, 0, 10, "Strength Level.");
-	//
-	// config.addCustomCategoryComment("Redstone Armor", "How fast you want to
-	// go?");
-	// ArmorHandler.redstone_armor_speed = config.getBoolean("Redstone Armor Speed",
-	// "Redstone Armor", true, "Enable Redstone Speed?");
-	// ArmorHandler.redstone_armor_speed_lvl = config.getInt("Redstone Armor Speed
-	// Level", "Redstone Armor", 0, 0, 10, "Speed Level.");
-	//
-	// if (config.hasChanged())
-	// config.save();
-	// }
-	//
-	// public static void initToolsWeapons()
-	// {
-	//
-	// File f = new File(configDir, "Tools & Weapons.cfg");
-	// config = new Configuration(f, configVersion);
-	//
-	// config.load();
-	//
-	// config.addCustomCategoryComment("Flint and Bone Tools & Weapons", "Cause
-	// Progression!");
-	// ConfigHandler.BoneTools = config.getBoolean("Bone Tools & Weapons", "Flint
-	// and Bone Tools & Weapons", true, "Enable Bone Tools & Weapons?");
-	// ConfigHandler.FlintTools = config.getBoolean("Flint Tools & Weapons", "Flint
-	// and Bone Tools & Weapons", true, "Enable Flint Tools & Weapons?");
-	//
-	// config.addCustomCategoryComment("Scythes", "Because I love to farm and
-	// stuff!\n[WIP - Enable at your own risk.]\n[Known bug - May Dupe Drops with
-	// some modded crops]");
-	// ConfigHandler.wooden_scythe = config.getBoolean("Wooden Scythe", "Scythes",
-	// false, "Enable Wooden Scythe?");
-	// ConfigHandler.stone_scythe = config.getBoolean("Stone Scythe", "Scythes",
-	// false, "Enable Stone Scythe?");
-	// ConfigHandler.golden_scythe = config.getBoolean("Golden Scythe", "Scythes",
-	// false, "Enable Golden Scythe?");
-	// ConfigHandler.iron_scythe = config.getBoolean("Iron Scythe", "Scythes",
-	// false, "Enable Iron Scythe?");
-	// ConfigHandler.diamond_scythe = config.getBoolean("Diamond Scythe", "Scythes",
-	// false, "Enable Diamond Scythe?");
-	// ConfigHandler.emerald_scythe = config.getBoolean("Emerald Scythe", "Scythes",
-	// false, "Enable Emerald Scythe?");
-	// ConfigHandler.obsidian_scythe = config.getBoolean("Obsidian Scythe",
-	// "Scythes", false, "Enable Obsidian Scythe?");
-	//
-	// config.addCustomCategoryComment("Paxels", "Because I love weird
-	// stuff!\n[Requires Other Items in this mod.]");
-	// ConfigHandler.wooden_multi = config.getBoolean("Wooden Paxel", "Paxels",
-	// true, "Enable Wooden Paxel?");
-	// ConfigHandler.stone_multi = config.getBoolean("Stone Paxel", "Paxels", true,
-	// "Enable Stone Paxel?");
-	// ConfigHandler.golden_multi = config.getBoolean("Golden Paxel", "Paxels",
-	// true, "Enable Golden Paxel?");
-	// ConfigHandler.iron_multi = config.getBoolean("Iron Paxel", "Paxels", true,
-	// "Enable Iron Paxel?");
-	// ConfigHandler.diamond_multi = config.getBoolean("Diamond Paxel", "Paxels",
-	// true, "Enable Diamond Paxel?");
-	// ConfigHandler.emerald_multi = config.getBoolean("Emerald Paxel", "Paxels",
-	// true, "Enable Emerald Paxel?");
-	// ConfigHandler.obsidian_multi = config.getBoolean("Obsidian Paxel", "Paxels",
-	// true, "Enable Obsidian Paxel?");
-	// ConfigHandler.flint_multi = config.getBoolean("Flint Paxel", "Paxels", true,
-	// "Enable Flint Paxel?");
-	//
-	// config.addCustomCategoryComment("Spears", "Don't mess with the long arm of
-	// the LAW!");
-	// ConfigHandler.spear_reach = config.getInt("A Spears Extended Reach",
-	// "Spears", 7, 5, 10, "Sets the Reach of a Spear.\n[Vanilla is 5 blocks!]");
-	// ConfigHandler.wooden_spear = config.getBoolean("Wooden Spear", "Spears",
-	// true, "Enable Wooden Spear?");
-	// ConfigHandler.stone_spear = config.getBoolean("Stone Spear", "Spears", true,
-	// "Enable Stone Spear?");
-	// ConfigHandler.golden_spear = config.getBoolean("Golden Spear", "Spears",
-	// true, "Enable Golden Spear?");
-	// ConfigHandler.iron_spear = config.getBoolean("Iron Spear", "Spears", true,
-	// "Enable Iron Spear?");
-	// ConfigHandler.diamond_spear = config.getBoolean("Diamond Spear", "Spears",
-	// true, "Enable Diamond Spear?");
-	// ConfigHandler.emerald_spear = config.getBoolean("Emerald Spear", "Spears",
-	// true, "Enable Emerald Spear?");
-	// ConfigHandler.obsidian_spear = config.getBoolean("Obsidian Spear", "Spears",
-	// true, "Enable Obsidian Spear?");
-	//
-	// config.addCustomCategoryComment("BattleAxes", "Because BIG AXES are better
-	// for Battles!");
-	// ConfigHandler.wooden_battle = config.getBoolean("Wooden BattleAxe",
-	// "BattleAxes", true, "Enable Wooden BattleAxe?");
-	// ConfigHandler.stone_battle = config.getBoolean("Stone BattleAxe",
-	// "BattleAxes", true, "Enable Stone BattleAxe?");
-	// ConfigHandler.golden_battle = config.getBoolean("Golden BattleAxe",
-	// "BattleAxes", true, "Enable Golden BattleAxe?");
-	// ConfigHandler.iron_battle = config.getBoolean("Iron BattleAxe", "BattleAxes",
-	// true, "Enable Iron BattleAxe?");
-	// ConfigHandler.diamond_battle = config.getBoolean("Diamond BattleAxe",
-	// "BattleAxes", true, "Enable Diamond BattleAxe?");
-	// ConfigHandler.emerald_battle = config.getBoolean("Emerald BattleAxe",
-	// "BattleAxes", true, "Enable Emerald BattleAxe?");
-	// ConfigHandler.obsidian_battle = config.getBoolean("Obsidian BattleAxe",
-	// "BattleAxes", true, "Enable Obsidian BattleAxe?");
-	//
-	// config.addCustomCategoryComment("Obsidian", "More uses for
-	// Obsidian!\n[Required for Other Items in this mod.]");
-	// ConfigHandler.obsidian_axe = config.getBoolean("Obsidian Axe", "Obsidian",
-	// true, "Enable Obsidian Axe?");
-	// ConfigHandler.obsidian_pickaxe = config.getBoolean("Obsidian Pickaxe",
-	// "Obsidian", true, "Enable Obsidian Pickaxe?");
-	// ConfigHandler.obsidian_hoe = config.getBoolean("Obsidian Hoe", "Obsidian",
-	// true, "Enable Obsidian Hoe?");
-	// ConfigHandler.obsidian_spade = config.getBoolean("Obsidian Shovel",
-	// "Obsidian", true, "Enable Obsidian Shovel?");
-	// ConfigHandler.obsidian_sword = config.getBoolean("Obsidian Sword",
-	// "Obsidian", true, "Enable Obsidian Sword?");
-	//
-	// config.addCustomCategoryComment("Emerald", "More uses for
-	// Emeralds!\n[Required for Other Items in this mod.]");
-	// ConfigHandler.emerald_axe = config.getBoolean("Emerald Axe", "Emerald", true,
-	// "Enable Emerald Axe?");
-	// ConfigHandler.emerald_pickaxe = config.getBoolean("Emerald Pickaxe",
-	// "Emerald", true, "Enable Emerald Pickaxe?");
-	// ConfigHandler.emerald_hoe = config.getBoolean("Emerald Hoe", "Emerald", true,
-	// "Enable Emerald Hoe?");
-	// ConfigHandler.emerald_spade = config.getBoolean("Emerald Shovel", "Emerald",
-	// true, "Enable Emerald Shovel?");
-	// ConfigHandler.emerald_sword = config.getBoolean("Emerald Sword", "Emerald",
-	// true, "Enable Emerald Sword?");
-	//
-	// if (config.hasChanged())
-	// config.save();
-	// }
-	//
-	// public static void initFood()
-	// {
-	//
-	// File f = new File(configDir, "Food & Drinks.cfg");
-	// config = new Configuration(f, configVersion);
-	//
-	// config.load();
-	//
-	// config.addCustomCategoryComment("Apples", "Just Because");
-	// ConfigHandler.EmeraldApple = config.getBoolean("Emerald Apple", "Apples",
-	// true, "Enable Emerald Apple?");
-	// ConfigHandler.NotchApple = config.getBoolean("Notch Apple", "Apples", true,
-	// "Bring back the Notch Apple Recipe?\n[Only Enable if you have Golden Apple
-	// Progression DISABLED.]");
-	// ConfigHandler.DiamondApple = config.getBoolean("Diamond Apple", "Apples",
-	// true, "Enable Diamond Apple?");
-	// ConfigHandler.iron_apple = config.getBoolean("Iron Apple", "Apples", true,
-	// "Enable Iron Apple?");
-	// ConfigHandler.redstone_apple = config.getBoolean("Redstone Apple", "Apples",
-	// true, "Enable Redstone Apple?");
-	// ConfigHandler.ApplePro = config.getBoolean("Golden Apple Progression",
-	// "Apples", false, "Enable Golden Apple Progression?\n[Only Enable if you have
-	// Notch Apple DISABLED.]");
-	//
-	// config.addCustomCategoryComment("Juice", "Everyone loves juice!\n[Only ENABLE
-	// one or the other.]");
-	// ConfigHandler.all_juices = config.getBoolean("Vanilla Juice W/O Bottles",
-	// "Juice", true, "Enable Juice W/O bottles in the recipe?");
-	// ConfigHandler.JuiceBottles = config.getBoolean("Vanilla Juice With Bottles",
-	// "Juice", false, "Enable Juice With bottles in the recipe?");
-	//
-	// config.addCustomCategoryComment("Juice Stats", "Everyone loves juice
-	// Stats!");
-	// ConfigHandler.AppleAmount = config.getInt("Apple Juice Heal Amount", "Juice
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.AppleSaturation = config.getFloat("Apple Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.CarrotAmount = config.getInt("Carrot Juice Heal Amount", "Juice
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.CarrotSaturation = config.getFloat("Carrot Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.PotatoAmount = config.getInt("Potato Juice Heal Amount", "Juice
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.PotatoSaturation = config.getFloat("Potato Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.BeetAmount = config.getInt("Beet Juice Heal Amount", "Juice
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.BeetSaturation = config.getFloat("Beet Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.CactusAmount = config.getInt("Cactus Juice Heal Amount", "Juice
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.CactusSaturation = config.getFloat("Cactus Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.SlimeAmount = config.getInt("Slime Juice Heal Amount", "Juices
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.SlimeSaturation = config.getFloat("Slime Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.WheatAmount = config.getInt("Wheat Juice Heal Amount", "Juice
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.WheatSaturation = config.getFloat("Wheat Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.MelonAmount = config.getInt("Melon Juice Heal Amount", "Juice
-	// Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.MelonSaturation = config.getFloat("Melon Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	// ConfigHandler.PumpkinAmount = config.getInt("Pumpkin Juice Heal Amount",
-	// "Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.PumpkinSaturation = config.getFloat("Pumpkin Juice Saturation
-	// Amount", "Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount.");
-	//
-	// config.addCustomCategoryComment("Modded Juice", "Everyone loves Modded
-	// juice!\n[Only ENABLE one or the other.]");
-	// ConfigHandler.ExtraJuices = config.getBoolean("Extra Juice W/O Bottles",
-	// "Modded Juice", true, "Enable Juices W/O bottles in the recipe?");
-	// ConfigHandler.ExtraJuicesBottles = config.getBoolean("Extra Juice With
-	// Bottles", "Modded Juice", false, "Enable Juice With bottles in the recipe?");
-	//
-	// config.addCustomCategoryComment("Modded Juice Generation", "Extra Berry
-	// Plants!\n[Disable Extra Plant Generation if you want to use Naturas Berries
-	// instead!]\n[The higher the value, the more Plants are generated.]");
-	// ConfigHandler.ExtraPlantGen = config.getBoolean("Extra Plant Generation",
-	// "Modded Juice Generation", true, "Enable Extra Plant Generation?");
-	// ConfigHandler.berryPlantRarity = config.getInt("Extra Plant Generation
-	// Rarity", "Modded Juice Generation", 5, 1, Integer.MAX_VALUE, "Sets the Rarity
-	// of Berry Plants.");
-	//
-	// config.addCustomCategoryComment("Modded Juice Stats", "Everyone loves Modded
-	// juice Stats!");
-	// ConfigHandler.BlueberryAmount = config.getInt("Blueberry Juice Heal Amount",
-	// "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.BlueberrySaturation = config.getFloat("Blueberry Juice
-	// Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the
-	// Saturation Amount.");
-	// ConfigHandler.BlackberryAmount = config.getInt("Blackberry Juice Heal
-	// Amount", "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.BlackberrySaturation = config.getFloat("Blackberry Juice
-	// Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the
-	// Saturation Amount.");
-	// ConfigHandler.MaloberryAmount = config.getInt("Maloberry Juice Heal Amount",
-	// "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.MaloberrySaturation = config.getFloat("Maloberry Juice
-	// Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the
-	// Saturation Amount.");
-	// ConfigHandler.RaspberryAmount = config.getInt("Raspberry Juice Heal Amount",
-	// "Modded Juice Stats", 4, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.RaspberrySaturation = config.getFloat("Raspberry Juice
-	// Saturation Amount", "Modded Juice Stats", 0.3F, 0.0F, 1.0F, "Sets the
-	// Saturation Amount.");
-	//
-	// config.addCustomCategoryComment("Extra Food", "Want more food?");
-	// ConfigHandler.CookedBacon = config.getBoolean("Cooked Bacon", "Extra Food",
-	// true, "Enable Cooked Bacon?");
-	// ConfigHandler.MonsterJerky = config.getBoolean("Monster Jerky", "Extra Food",
-	// true, "Enable Monster jerky?");
-	// ConfigHandler.ToastedBread = config.getBoolean("Toasted Bread", "Extra Food",
-	// true, "Enable Toasted Bread?");
-	// ConfigHandler.FriedEgg = config.getBoolean("Fried Egg", "Extra Food", true,
-	// "Enable Fried Egg?");
-	// ConfigHandler.CookedMushrooms = config.getBoolean("Cooked Mushrooms", "Extra
-	// Food", true, "Enable Cooked Mushrooms?");
-	// ConfigHandler.BaconEggs = config.getBoolean("Bacon & Eggs", "Extra Food",
-	// true, "Enable Bacon & Eggs?");
-	// ConfigHandler.LittleCandy = config.getBoolean("Little Candy", "Extra Food",
-	// true, "Enable Little Candy?");
-	// ConfigHandler.Sandwiches = config.getBoolean("Sandwiches", "Extra Food",
-	// true, "Enable Sandwiches?");
-	// ConfigHandler.CookedApple = config.getBoolean("Cooked Apple", "Extra Food",
-	// true, "Enable Cooked Apple?");
-	//
-	// config.addCustomCategoryComment("Extra Food Stats", "Want more food
-	// Stats?\n[WIP Section]");
-	// ConfigHandler.ToastedAmount = config.getInt("Toasted Bread Heal Amount",
-	// "Extra Food Stats", 6, 1, 20, "Sets the Heal Amount.");
-	// ConfigHandler.ToastedSaturation = config.getFloat("Toasted Bread Saturation
-	// Amount", "Extra Food Stats", 0.7F, 0.0F, 1.0F, "Sets the Saturation
-	// Amount.");
-	//
-	// config.addCustomCategoryComment("Food Eat Duration", "How long it takes to
-	// eat food.");
-	// ConfigHandler.eat_timer = config.getInt("Eat Duration", "Food Eat Duration",
-	// 32, 8, Integer.MAX_VALUE, "Sets how long it takes to eat TP food.");
-	//
-	// if (config.hasChanged())
-	// config.save();
-	// }
-	//
-	// public static void initReborn()
-	// {
-	//
-	// File f = new File(configDir, "Reborn.cfg");
-	// config = new Configuration(f, configVersion);
-	//
-	// config.load();
-	//
-	// config.addCustomCategoryComment("Better Sugar Cane", "Bringing back a oldie
-	// but goodie");
-	// ConfigHandler.bsc_rod = config.getBoolean("Better Sugar Cane Rod", "Better
-	// Sugar Cane", true, "Enable Better Sugar Cane Rod?\n[MUST be ENABLED for all
-	// Sugar Cane Tools and Weapons to work!]");
-	// // iron
-	// ConfigHandler.bsc_iron_tools_weapons = config.getBoolean("Iron Sugar Cane
-	// Tools and Weapons", "Better Sugar Cane", true, "Enable Iron Sugar Cane Tools
-	// and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-	// // gold
-	// ConfigHandler.bsc_gold_tools_weapons = config.getBoolean("Gold Sugar Cane
-	// Tools and Weapons", "Better Sugar Cane", true, "Enable Gold Sugar Cane Tools
-	// and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-	// // diamond
-	// ConfigHandler.bsc_diamond_tools_weapons = config.getBoolean("Diamond Sugar
-	// Cane Tools and Weapons", "Better Sugar Cane", true, "Enable Sugar Cane Tools
-	// and Weapons?\n[Better Sugar Cane Rod MUST be ENABLED!]");
-	// // cookie
-	// ConfigHandler.bsc_sugar_cookie = config.getBoolean("Sugar Cookie", "Better
-	// Sugar Cane", true, "Enable Sugar Cookie?");
-	// // sugar blocks
-	// ConfigHandler.bsc_sugar_compressed_blocks = config.getBoolean("Compressed
-	// Sugar", "Better Sugar Cane", true, "Enable Compressed Sugar?");
-	// // sugarcane blocks
-	// ConfigHandler.bsc_sugarcane_compressed_blocks = config.getBoolean("Compressed
-	// Sugar Cane", "Better Sugar Cane", true, "Enable Compressed Sugar Cane?");
-	//
-	// config.addCustomCategoryComment("Better Nether", "Bringing back a oldie but
-	// goodie 2");
-	// ConfigHandler.nether_rod = config.getBoolean("Better Nether Rod", "Better
-	// Nether", true, "Enable Better Nether Rod?\n[MUST be ENABLED for all Nether
-	// Tools and Weapons to work!]");
-	// // iron
-	// ConfigHandler.nether_iron_tools_weapons = config.getBoolean("Iron Netherrack
-	// Tools and Weapons", "Better Nether", true, "Enable Iron Netherrack Tools and
-	// Weapons?\n[Better Nether Rod MUST be ENABLED!]");
-	// // gold
-	// ConfigHandler.nether_gold_tools_weapons = config.getBoolean("Gold Netherrack
-	// Tools and Weapons", "Better Nether", true, "Enable Gold Netherrack Tools and
-	// Weapons?\n[Better Nether Rod MUST be ENABLED!]");
-	// // diamond
-	// ConfigHandler.nether_diamond_tools_weapons = config.getBoolean("Diamond
-	// Netherrack Tools and Weapons", "Better Nether", true, "Enable Diamond
-	// Netherrack Tools and Weapons?\n[Better Nether Rod MUST be ENABLED!]");
-	// // diamond
-	// ConfigHandler.nether_tools_weapons = config.getBoolean("Netherrack Tools and
-	// Weapons", "Better Nether", true, "Enable Netherrack Tools and
-	// Weapons?\n[Better Nether Rod MUST be ENABLED!]");
-	// // sugarcane blocks
-	// ConfigHandler.nether_compressed_blocks = config.getBoolean("Compressed
-	// Netherrack", "Better Nether", true, "Enable Compressed Netherrack?");
-	//
-	// if (config.hasChanged())
-	// config.save();
-	// }
 }

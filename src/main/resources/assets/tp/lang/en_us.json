@@ -445,5 +445,10 @@
 	"item.tp.nether_iron_spade":"Iron Netherrack Shovel",
 	"item.tp.nether_gold_spade":"Golden Netherrack Shovel",
 	"item.tp.nether_diamond_spade":"Diamond Netherrack Shovel",
-	"item.tp.nether_spade":"Netherrack Shovel"
+	"item.tp.nether_spade":"Netherrack Shovel",
+	"itemGroup.tp.general": "Tiny Progression Items",
+	"itemGroup.tp.food": "Tiny Progression Foods",
+	"itemGroup.tp.combat": "Tiny Progression Combat",
+	"itemGroup.tp.tools": "Tiny Progression Tools",
+	"itemGroup.tp.blocks": "Tiny Progression Blocks"
 }

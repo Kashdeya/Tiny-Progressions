@@ -19,6 +19,8 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
 public class IronFurnaceBlock extends AbstractFurnaceBlock {
@@ -66,6 +68,7 @@ public class IronFurnaceBlock extends AbstractFurnaceBlock {
 	      }
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
@@ -118,84 +121,4 @@ public class IronFurnaceBlock extends AbstractFurnaceBlock {
 //    		super.breakBlock(worldIn, pos, state);
 //    }
     
-//	
-//	public static EnumFacing getFacing(IBlockState blockStateContainer)
-//	{
-//		return (EnumFacing)blockStateContainer.getValue(FACING);
-//	}
-    
-    /**
-     * Called by ItemBlocks after a block is set in the world, to allow post-place logic
-     */
-//	@Override
-//    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
-//    {
-//        worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
-//        
-//        if(!worldIn.isRemote)
-//       	 worldIn.notifyBlockUpdate(pos, worldIn.getBlockState(pos), worldIn.getBlockState(pos), 2); 
-//    }
-//
-//	@Override
-//	protected void interactWith(World worldIn, BlockPos pos, PlayerEntity player) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-    
-//	/** Is the Shredder turned on? */
-//	public static boolean isBurning(IBlockState blockStateContainer)
-//	{
-//		return blockStateContainer.getValue(ISBURNING);
-//	}
-	
-//	/** Update shredding */
-//	public static void setBurning(World worldIn, BlockPos pos, boolean isBurningIn)
-//	{
-//		worldIn.checkLightFor(EnumSkyBlock.BLOCK, pos);
-//		worldIn.setBlockState(pos, worldIn.getBlockState(pos).withProperty(FACING, getFacing(worldIn.getBlockState(pos))).withProperty(ISBURNING, isBurningIn), 3);
-//	}
-	
-//	@Override
-//	public int getLightValue(IBlockState state, IBlockAccess world, BlockPos pos) {
-//		if(isBurning(state))
-//				return 15;
-//		return 0;
-//	}
-	
-//	@Override
-//	public IBlockState getStateFromMeta(int meta)
-//	{
-//		 return this.getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta)).withProperty(ISBURNING, (meta >> 2) == 1 ? true : false);
-//	}
-
-	/**
-	 * Convert the BlockState into the correct metadata value
-	 */
-//	@Override
-//	public int getMetaFromState(IBlockState state)
-//	{
-//		int i = 0;
-//		i |= ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
-//		i |= (state.getValue(ISBURNING) ? 1 : 0 ) << 2;
-//	    	
-//		return i  ;
-//	}
-
-//	@Override
-//	public IBlockState withRotation(IBlockState state, Rotation rot)
-//	{
-//		return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
-//	}
-//
-//	@Override
-//	public IBlockState withMirror(IBlockState state, Mirror mirrorIn)
-//	{
-//		return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
-//	}
-//	
-//	@Override
-//	protected BlockStateContainer createBlockState()
-//	{
-//		return new BlockStateContainer(this, new IProperty[] {FACING, ISBURNING});
-//	}
 

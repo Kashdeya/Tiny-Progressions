@@ -79,7 +79,7 @@ public class TechArmor {
 	public static RegistryObject<Item> lava_helmet =     TinyProgressions.ITEMS.register("lava_helmet",     () -> new LavaArmour(EquipmentSlotType.HEAD, new Properties()));
 	public static RegistryObject<Item> lava_chestplate = TinyProgressions.ITEMS.register("lava_chestplate", () -> new LavaArmour(EquipmentSlotType.CHEST, new Properties()));
 	public static RegistryObject<Item> lava_leggings =   TinyProgressions.ITEMS.register("lava_leggings",   () -> new LavaArmour(EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> lava_boots =      TinyProgressions.ITEMS.register("lava_boots",      () -> new LavaArmour(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> lava_boots =      TinyProgressions.ITEMS.register("lava_boots",      () -> new LavaArmour(EquipmentSlotType.FEET, new Properties()));
 	
 	// Wither
 	public static RegistryObject<Item> wither_helmet =    TinyProgressions.ITEMS.register("wither_helmet",     () -> new WitherArmour(EquipmentSlotType.HEAD, new Properties()));

@@ -5,11 +5,13 @@ import java.io.File;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
 import com.kashdeya.tinyprogressions.config.TinyConfig;
 import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
 import com.kashdeya.tinyprogressions.gui.OreDoublerGUI;
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.inits.TechContainers;
 import com.kashdeya.tinyprogressions.inits.TechFeatures;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechTools;
@@ -30,6 +32,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -197,27 +200,21 @@ public class TinyProgressions{
     	
 		DeferredWorkQueue.runLater( () ->
 		{
-			ScreenManager.registerFactory((ContainerType<OreDoublerContainer>)TechBlocks.iron_furnace_container.get(), OreDoublerGUI::new);
+			ScreenManager.registerFactory((ContainerType<OreDoublerContainer>)TechContainers.iron_furnace_container.get(), OreDoublerGUI::new);
 		});
-    	
+		
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(QuickSand::onHeadSubmerged);
+		
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {  }
 
     private void processIMC(final InterModProcessEvent event) { }
-
     
     private File drops_DIR;
-
     
     public void onServerStarting(FMLServerStartingEvent event) { 
-    	
-    	
-    	
-
-    	
     }
-
     
 // was in the orginal file.. but prolly needs to be moved or just changed. 
 //	@SubscribeEvent
@@ -227,39 +224,15 @@ public class TinyProgressions{
 //			event.crafting.addEnchantment(Enchantments.MENDING, 0);
 //	}
     
-    
-    
-    
     /// We can move this into another folder.
 //    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
-    	
-//		BlockRecipes.init();
-//		ItemRecipes.init();
-//		ToolsRecipes.init();
-//		ArmorRecipes.init();
-//		FoodRecipes.init();
-//		OtherRecipes.init();
-//		//OreDictRecipes.init();
-//		register(BlockRecipes.class);
-//		register(ItemRecipes.class);
-//		register(ToolsRecipes.class);
-//		register(ArmorRecipes.class);
-//		register(FoodRecipes.class);
-//		register(OtherRecipes.class);
-//		//register(OreDictRecipes.class);
-//		
 //		IForgeRegistryModifiable<IRecipe> registry = (IForgeRegistryModifiable<IRecipe>) event.getRegistry();
 //
 //		RemoveItems.recipes.forEach(rl -> {
 //			System.out.println("Removing: " + rl);
 //			registry.remove(rl);
 //		});
-    	
-    	
-//        @SubscribeEvent
-//        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-//        }
     }
     
     

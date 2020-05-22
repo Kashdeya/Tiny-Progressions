@@ -62,6 +62,8 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
 import net.minecraft.item.WallOrFloorItem;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fluids.FluidAttributes;
@@ -85,9 +87,8 @@ public class TechBlocks {
 	public static RegistryObject<Block> emerald_cobblegen_block = register("cobblegen_emerald_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)), TinyProgressions.TAB);
 	public static RegistryObject<Block> blaze_cobblegen_block   = register("cobblegen_blaze_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)), TinyProgressions.TAB);
 	
-	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100), TinyProgressions.TAB); 
-	public static RegistryObject<ContainerType<?>> iron_furnace_container = TinyProgressions.CONTAINERS.register("iron_furnace_container", () -> (IForgeContainerType.create(OreDoublerContainer::new)));
-
+	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100), TinyProgressions.TAB);
+	
 	// Deco Blocks
 	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
 	

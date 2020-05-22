@@ -26,6 +26,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.common.ToolType;
@@ -88,8 +89,7 @@ public class QuickSand extends StandardBlock {
 	
 	private static ResourceLocation SandTexture = new ResourceLocation("minecraft:textures/sand");
 	
-
-	@SubscribeEvent
+	
 	public static void onHeadSubmerged(RenderGameOverlayEvent.Post event) {
         		if(event.getType() == ElementType.HELMET)
 		{

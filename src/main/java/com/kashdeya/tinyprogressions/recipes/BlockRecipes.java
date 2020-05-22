@@ -13,12 +13,12 @@ public class BlockRecipes {
 	
 	
 	public static void init() {
-		exportJson.addShapedRecipe(new ItemStack(TechBlocks.iron_furnace_block.get()), 
-				"ifi",
-                "fif",
-                "ifi",
-				'i', "forge:ingots/iron",
-				'f', new ItemStack(Blocks.FURNACE));
+//		exportJson.addShapedRecipe(new ItemStack(TechBlocks.iron_furnace_block.get()), 
+//				"ifi",
+//                "fif",
+//                "ifi",
+//				'i', "forge:ingots/iron",
+//				'f', new ItemStack(Blocks.FURNACE));
 		exportJson.addShapedRecipe(new ItemStack(TechBlocks.glowstone_glass.get()), 
 				"ggg",
                 "glg",

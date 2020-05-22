@@ -9,7 +9,7 @@ import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value= Dist.CLIENT)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value= Dist.DEDICATED_SERVER)
 public class TechContainers {
 
 	public static RegistryObject<ContainerType<?>> iron_furnace_container = TinyProgressions.CONTAINERS.register("iron_furnace_container", () -> (IForgeContainerType.create(OreDoublerContainer::new)));

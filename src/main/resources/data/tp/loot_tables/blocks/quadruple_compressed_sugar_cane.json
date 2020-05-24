@@ -3,7 +3,7 @@
     "pools": [{
         "rolls": 1,
         "entries": [{
-            "type": "minecraft:block",
+            "type": "minecraft:item",
             "name": "tp:quadruple_compressed_sugar_cane"
         }],
         "conditions": [{

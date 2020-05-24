@@ -3,7 +3,6 @@ package com.kashdeya.tinyprogressions.world;
 import java.util.Random;
 import java.util.function.Function;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;

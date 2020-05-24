@@ -1,7 +1,6 @@
 package com.kashdeya.tinyprogressions.tiles;
 
 import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
-import com.kashdeya.tinyprogressions.inits.ModTileEntityTypes;
 
 import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.entity.player.PlayerInventory;

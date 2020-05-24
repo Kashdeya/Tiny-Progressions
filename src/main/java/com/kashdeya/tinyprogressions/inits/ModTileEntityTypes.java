@@ -2,7 +2,6 @@ package com.kashdeya.tinyprogressions.inits;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
-import com.kashdeya.tinyprogressions.tiles.TileEntityOreDoubler;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;

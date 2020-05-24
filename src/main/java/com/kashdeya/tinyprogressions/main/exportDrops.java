@@ -39,7 +39,7 @@ public class exportDrops {
 		    			pool.addProperty("rolls", 1);
 		    				JsonArray entires = new JsonArray();
 		    					JsonObject entire = new JsonObject();
-		    					entire.addProperty("type", "minecraft:block");
+		    					entire.addProperty("type", "minecraft:item");
 		    					entire.addProperty("name", block.getRegistryName().toString());
 		    				entires.add(entire);
 		    				pool.add("entries", entire);

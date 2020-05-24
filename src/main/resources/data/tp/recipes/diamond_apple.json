@@ -10,7 +10,7 @@
       "item": "minecraft:apple"
     },
     "D": {
-      "tag": "forge:gem/diamond"
+      "tag": "forge:gems/diamond"
     }
   },
   "result": {

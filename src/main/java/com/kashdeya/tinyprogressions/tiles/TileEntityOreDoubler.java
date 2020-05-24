@@ -16,7 +16,8 @@ public class TileEntityOreDoubler extends AbstractFurnaceTileEntity implements  
     
 	
     public TileEntityOreDoubler() {
-		super(ModTileEntityTypes.DoubleFurnace.get(), IRecipeType.SMELTING);
+    	super(null, IRecipeType.SMELTING);
+//		super(ModTileEntityTypes.DoubleFurnace.get(), IRecipeType.SMELTING);
 	}
 
     protected ITextComponent getDefaultName() {

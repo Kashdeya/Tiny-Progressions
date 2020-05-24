@@ -28,7 +28,7 @@ public class ModTileEntityTypes {
 			).build(null));
 	
 	
-	public static final RegistryObject<TileEntityType<TileEntityOreDoubler>> DoubleFurnace = TinyProgressions.TILE_ENTITY_TYPES.register("doublefurnace", () -> TileEntityType.Builder.create(TileEntityOreDoubler::new, 
-			TechBlocks.iron_furnace_block.get()
-			).build(null));
+//	public static final RegistryObject<TileEntityType<TileEntityOreDoubler>> DoubleFurnace = TinyProgressions.TILE_ENTITY_TYPES.register("doublefurnace", () -> TileEntityType.Builder.create(TileEntityOreDoubler::new, 
+//			TechBlocks.iron_furnace_block.get()
+//			).build(null));
 }

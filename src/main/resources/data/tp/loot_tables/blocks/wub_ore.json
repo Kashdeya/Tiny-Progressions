@@ -4,7 +4,7 @@
         "rolls": 1,
         "entries": [{
             "type": "minecraft:item",
-            "name": "tp:wub_ore"
+            "name": "tp:wub_gem"
         }],
         "conditions": [{
             "condition": "minecraft:survives_explosion"

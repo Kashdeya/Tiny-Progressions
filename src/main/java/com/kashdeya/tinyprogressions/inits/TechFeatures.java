@@ -56,9 +56,14 @@ public class TechFeatures {
 
 		
 		for(Biome biome : ForgeRegistries.BIOMES) {
-			registerBushesToBiomes(biome);
+			
+			if(ConfigHandler.bushes_terrain_gen)
+				registerBushesToBiomes(biome);
+			
 			registerOres(biome);
-			addQuickSand(biome);
+			
+			if(ConfigHandler.should_gen_quick_sand)
+				addQuickSand(biome);
 			
 			if(reedWhitelist.contains(biome.getCategory()))
 				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_227248_z_.func_225566_b_(reedConfigFeature).func_227228_a_(Placement.COUNT_HEIGHTMAP_DOUBLE.func_227446_a_(new FrequencyConfig(1))));
@@ -75,17 +80,27 @@ public class TechFeatures {
 	
 	public static void registerOres(Biome biome) {
 		if(biome.getCategory() == Biome.Category.NETHER) {
-			addNetherOre(biome, TechBlocks.nether_wub_ore.get().getDefaultState()    ,new CountRangeConfig(ConfigHandler.nether_wub_block_frequency, ConfigHandler.nether_wub_block_min, 0, ConfigHandler.nether_wub_block_max), ConfigHandler.nether_wub_block_count );
-			addNetherOre(biome, TechBlocks.charcoal_block.get().getDefaultState()    ,new CountRangeConfig(ConfigHandler.charcoal_frequency , ConfigHandler.charcoal_min, 0, ConfigHandler.charcoal_max), ConfigHandler.charcoal_size);
-			addNetherOre(biome, TechBlocks.nether_lava_block.get().getDefaultState() ,new CountRangeConfig(ConfigHandler.nether_lava_block_frequency, ConfigHandler.nether_lava_block_min, 0, ConfigHandler.nether_lava_block_max), ConfigHandler.lava_block_size);
+			if(ConfigHandler.wub_ore_gen)
+				addNetherOre(biome, TechBlocks.nether_wub_ore.get().getDefaultState()    ,new CountRangeConfig(ConfigHandler.nether_wub_block_frequency, ConfigHandler.nether_wub_block_min, 0, ConfigHandler.nether_wub_block_max), ConfigHandler.nether_wub_block_count );
+			
+			if(ConfigHandler.charcoal_ore_gen)
+				addNetherOre(biome, TechBlocks.charcoal_block.get().getDefaultState()    ,new CountRangeConfig(ConfigHandler.charcoal_frequency , ConfigHandler.charcoal_min, 0, ConfigHandler.charcoal_max), ConfigHandler.charcoal_size);
+			
+			if(ConfigHandler.lava_block_gen)
+				addNetherOre(biome, TechBlocks.nether_lava_block.get().getDefaultState() ,new CountRangeConfig(ConfigHandler.nether_lava_block_frequency, ConfigHandler.nether_lava_block_min, 0, ConfigHandler.nether_lava_block_max), ConfigHandler.lava_block_size);
 		}
 		else {
-			if(ConfigHandler.overworld_wub)
+			if(ConfigHandler.wub_ore_gen && ConfigHandler.overworld_wub)
 				addNatureOre(biome, TechBlocks.wub_ore.get().getDefaultState() ,new CountRangeConfig(ConfigHandler.wub_block_frequency, ConfigHandler.wub_block_min, 0, ConfigHandler.wub_block_max), ConfigHandler.wub_block_count );
 			
-			addNatureOre(biome, TechBlocks.lava_block.get().getDefaultState()  ,new CountRangeConfig(ConfigHandler.lava_block_frequency, ConfigHandler.lava_block_min, 0, ConfigHandler.lava_block_max),ConfigHandler.lava_block_size );
-			addNatureOre(biome, TechBlocks.ender_ore.get().getDefaultState()   ,new CountRangeConfig(ConfigHandler.ender_ore_frequency, ConfigHandler.ender_ore_min, 0, ConfigHandler.ender_ore_max),ConfigHandler.ender_ore_size );
-			addNatureOre(biome, TechBlocks.water_block.get().getDefaultState() ,new CountRangeConfig(ConfigHandler.water_block_frequency, ConfigHandler.water_block_min, 0, ConfigHandler.water_block_max), ConfigHandler.water_block_size);
+			if(ConfigHandler.lava_block_gen)
+				addNatureOre(biome, TechBlocks.lava_block.get().getDefaultState()  ,new CountRangeConfig(ConfigHandler.lava_block_frequency, ConfigHandler.lava_block_min, 0, ConfigHandler.lava_block_max),ConfigHandler.lava_block_size );
+			
+			if(ConfigHandler.ender_ore_gen)
+				addNatureOre(biome, TechBlocks.ender_ore.get().getDefaultState()   ,new CountRangeConfig(ConfigHandler.ender_ore_frequency, ConfigHandler.ender_ore_min, 0, ConfigHandler.ender_ore_max),ConfigHandler.ender_ore_size );
+			
+			if(ConfigHandler.water_block_gen)
+				addNatureOre(biome, TechBlocks.water_block.get().getDefaultState() ,new CountRangeConfig(ConfigHandler.water_block_frequency, ConfigHandler.water_block_min, 0, ConfigHandler.water_block_max), ConfigHandler.water_block_size);
 		}
 	}	
 	

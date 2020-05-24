@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.world;
 import java.util.Random;
 import java.util.function.Function;
 
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
@@ -28,6 +29,7 @@ public class QuickSandFeature extends Feature<BlockStateFeatureConfig>  {
 
 	@Override
 	   public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos pos, BlockStateFeatureConfig config) {
+		
 	      while(pos.getY() > 5 && worldIn.isAirBlock(pos)) { // && worldIn.getBlockState(pos).getBlock() != Blocks.SAND
 	         pos = pos.func_177977_b();
 	      }

@@ -25,7 +25,7 @@ public class ConfigHandler {
 	public static boolean steel_ingot = true;
 	
 	// quicksand
-	public static boolean quick_sand = true;
+	public static boolean should_gen_quick_sand = true;
 	
 	// Extra Drops
 	public static boolean extra_drops = true;
@@ -135,6 +135,7 @@ public class ConfigHandler {
 	public static boolean ExtraPlantGen = true;
 	public static boolean ExtraJuices = true;
 	public static boolean ExtraJuicesBottles = true;
+	public static boolean bushes_terrain_gen = true;
 	public static int RaspberryAmount = 3;
 	public static float RaspberrySaturation = 0.08F;
 	public static int BlueberryAmount = 3;
@@ -405,5 +406,13 @@ public class ConfigHandler {
 	// Repair Tablet
 	public static boolean repair_tablet;
 	public static int repair_tablet_cooldown;
+	
+	
+	public static Boolean berrybush_gen = true;
+	public static Boolean wub_ore_gen = true;
+	public static Boolean charcoal_ore_gen = true;
+	public static Boolean ender_ore_gen = true;
+	public static Boolean lava_block_gen = true;
+	public static Boolean water_block_gen = true;
 	
 }

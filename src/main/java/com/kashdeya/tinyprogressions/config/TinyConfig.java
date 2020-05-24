@@ -87,6 +87,7 @@ public class TinyConfig {
 		private final BooleanValue ExtraPlantGen;
 		private final IntValue berryPlantRarity, BlueberryAmount, BlackberryAmount, MaloberryAmount, RaspberryAmount, ToastedAmount, eat_timer;
 		private final DoubleValue BlueberrySaturation, BlackberrySaturation, MaloberrySaturation, RaspberrySaturation, ToastedSaturation;
+		private BooleanValue quick_sand_generation, berry_bushes_generation, wub_ore_generation, charcoal_ore_generation, ender_ore_generation, lava_block_generation, water_block_generation;
 
 		
 		private ConfigCommon(Builder builder) {
@@ -333,6 +334,18 @@ public class TinyConfig {
 				builder.pop();
 			builder.pop();
 			
+			builder.push("Terrain Generation");
+					quick_sand_generation = lazyBool(builder, "Quick Sand Gen", true, "Spawn quick sand traps in the overworld");
+					berry_bushes_generation = lazyBool(builder, "Berry Bush Gen", true, "Spawn berry bushes in the overworld");
+			builder.pop();
+
+			builder.push("Ore Generation");
+				wub_ore_generation =      lazyBool(builder, "Wub Ore Gen", true,      "Add Wub Ore to World Generation");
+				charcoal_ore_generation = lazyBool(builder, "Charcoal Ore Gen", true, "Add Charcoal Ore to World Generation");
+				ender_ore_generation =    lazyBool(builder, "Ender Ore Gen", true,    "Add Ender Ore to World Generation");
+				lava_block_generation =   lazyBool(builder, "Lava Block Gen", true,   "Add Lava Block to World Generation");
+				water_block_generation =  lazyBool(builder, "Water Block Gen", true,  "Add Water Block to World Generation");
+			builder.pop();			
 			
 			builder.push("Food & Drinks");
 				builder.comment("Everyone loves juice Stats!").push("Juice Stats");
@@ -553,6 +566,15 @@ public class TinyConfig {
 			ConfigHandler.ToastedSaturation = ToastedSaturation.get().floatValue();
 
 			ConfigHandler.eat_timer = eat_timer.get();
+			
+			
+			ConfigHandler.should_gen_quick_sand = quick_sand_generation.get();
+			ConfigHandler.bushes_terrain_gen = berry_bushes_generation.get();
+			ConfigHandler.wub_ore_gen = wub_ore_generation.get();
+			ConfigHandler.charcoal_ore_gen = charcoal_ore_generation.get();
+			ConfigHandler.ender_ore_gen =  ender_ore_generation.get();
+			ConfigHandler.lava_block_gen = lava_block_generation.get();
+			ConfigHandler.water_block_gen = water_block_generation.get();
 
 		}
 	}

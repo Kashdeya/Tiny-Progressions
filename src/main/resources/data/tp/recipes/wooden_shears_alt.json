@@ -1,18 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "SP",
-    "PS"
-  ],
-  "key": {
-    "P": {
-      "tag": "forge:ingots/copper"
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SP",
+        "PS"
+    ],
+    "key": {
+        "P": {
+            "tag": "forge:ingots/copper"
+        },
+        "S": {
+            "tag": "forge:rods"
+        }
     },
-    "S": {
-      "tag": "stickWood"
+    "result": {
+        "item": "tp:wooden_shears"
     }
-  },
-  "result": {
-    "item": "tp:wooden_shears"
-  }
 }

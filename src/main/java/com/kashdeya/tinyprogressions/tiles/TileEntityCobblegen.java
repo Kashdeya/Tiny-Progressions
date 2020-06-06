@@ -206,7 +206,7 @@ public class TileEntityCobblegen extends TileEntity implements ITickableTileEnti
 	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
 		return false;
 	}
-	
+
 	
 	//TODO no metadata....
 //	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {

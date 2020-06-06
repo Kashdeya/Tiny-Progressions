@@ -16,7 +16,6 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.ICraftingRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.crafting.ShapedRecipe;
@@ -27,7 +26,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
-public class RecipeShapedNBT implements ICraftingRecipe, net.minecraftforge.common.crafting.IShapedRecipe<CraftingInventory> {
+public class RecipeShapedNBT extends ShapedRecipe {
 	   static int MAX_WIDTH = 3;
 	   static int MAX_HEIGHT = 3;
 	   /**
@@ -51,7 +50,7 @@ public class RecipeShapedNBT implements ICraftingRecipe, net.minecraftforge.comm
 
 	   public RecipeShapedNBT(ResourceLocation idIn, String groupIn, int recipeWidthIn, int recipeHeightIn,
 			NonNullList<Ingredient> recipeItemsIn, ItemStack recipeOutputIn) {
-		
+	       super(idIn, groupIn, recipeWidthIn, recipeHeightIn, recipeItemsIn, recipeOutputIn);
 	      this.id = idIn;
 	      this.group = groupIn;
 	      this.recipeWidth = recipeWidthIn;

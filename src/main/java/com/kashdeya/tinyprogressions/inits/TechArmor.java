@@ -37,7 +37,7 @@ public class TechArmor {
 	public static RegistryObject<Item> flint_helmet =    TinyProgressions.ITEMS.register("flint_helmet",     () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.HEAD, new Properties()));
 	public static RegistryObject<Item> flint_chestplate= TinyProgressions.ITEMS.register("flint_chestplate", () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.CHEST, new Properties()));
 	public static RegistryObject<Item> flint_leggings=   TinyProgressions.ITEMS.register("flint_leggings",   () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.LEGS, new Properties()));
-	public static RegistryObject<Item> flint_boots=      TinyProgressions.ITEMS.register("flint_boots",      () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> flint_boots=      TinyProgressions.ITEMS.register("flint_boots",      () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.FEET, new Properties()));
 	
 	// Stone Armor
 	public static RegistryObject<Item> stone_helmet =     TinyProgressions.ITEMS.register("stone_helmet",     () -> new StoneArmor(EquipmentSlotType.HEAD, new Properties()));

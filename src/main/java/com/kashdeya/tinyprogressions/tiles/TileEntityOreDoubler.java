@@ -1,22 +1,23 @@
 package com.kashdeya.tinyprogressions.tiles;
 
 import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
+import com.kashdeya.tinyprogressions.inits.ModTileEntityTypes;
 
-import net.minecraft.client.renderer.texture.ITickable;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class TileEntityOreDoubler extends AbstractFurnaceTileEntity implements  ITickable{
+public class TileEntityOreDoubler extends AbstractFurnaceTileEntity implements  ITickableTileEntity {
     
 	
     public TileEntityOreDoubler() {
-    	super(null, IRecipeType.SMELTING);
-//		super(ModTileEntityTypes.DoubleFurnace.get(), IRecipeType.SMELTING);
+//    	super(null, IRecipeType.SMELTING);
+		super(ModTileEntityTypes.DoubleFurnace.get(), IRecipeType.SMELTING);
 	}
 
     protected ITextComponent getDefaultName() {

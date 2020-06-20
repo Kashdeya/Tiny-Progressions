@@ -19,8 +19,6 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolType;
 
 public class IronFurnaceBlock extends AbstractFurnaceBlock {
@@ -35,6 +33,7 @@ public class IronFurnaceBlock extends AbstractFurnaceBlock {
 				.harvestTool(ToolType.PICKAXE)
 				.lightValue(13)
 				.sound(SoundType.STONE));
+		
 		this.cookSpeedInTicks = cookSpeedInTicksIn;
 	}
 
@@ -48,17 +47,6 @@ public class IronFurnaceBlock extends AbstractFurnaceBlock {
 		return new TileEntityOreDoubler();
 	}
 
-	// @Override
-	// public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState
-	// state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX,
-	// float hitY, float hitZ)
-	// {
-	// playerIn.openGui(TinyProgressions.INSTANCE, 1, worldIn, pos.getX(),
-	// pos.getY(), pos.getZ());
-	//
-	// return true;
-	// }
-
 	@Override
 	protected void interactWith(World worldIn, BlockPos pos, PlayerEntity player) {
 	      TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -68,7 +56,6 @@ public class IronFurnaceBlock extends AbstractFurnaceBlock {
 	      }
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {

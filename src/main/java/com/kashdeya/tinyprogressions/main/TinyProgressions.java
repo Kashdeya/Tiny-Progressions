@@ -146,6 +146,7 @@ public class TinyProgressions{
     	RenderType translucent = RenderType.func_228645_f_();
     	RenderType translucent_no_crumbling = RenderType.func_228647_g_();
 
+    	RenderTypeLookup.setRenderLayer(TechBlocks.iron_furnace_block.get(),     cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.cobblegen_block.get(),        cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.iron_cobblegen_block.get(),   cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(),cutout_mipped);

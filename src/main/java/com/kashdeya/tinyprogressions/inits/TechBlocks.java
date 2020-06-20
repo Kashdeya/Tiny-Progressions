@@ -32,6 +32,7 @@ import com.kashdeya.tinyprogressions.blocks.growthblock.BlockGrowth;
 import com.kashdeya.tinyprogressions.blocks.misc.DecoMain;
 import com.kashdeya.tinyprogressions.blocks.misc.GhostBlock;
 import com.kashdeya.tinyprogressions.blocks.misc.Infused;
+import com.kashdeya.tinyprogressions.blocks.oredoubler.IronFurnaceBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.EnderOre;
 import com.kashdeya.tinyprogressions.blocks.ores.LavaBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
@@ -81,7 +82,7 @@ public class TechBlocks {
 	public static RegistryObject<Block> emerald_cobblegen_block = register("cobblegen_emerald_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)), TinyProgressions.TAB);
 	public static RegistryObject<Block> blaze_cobblegen_block   = register("cobblegen_blaze_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)), TinyProgressions.TAB);
 	
-//	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100), TinyProgressions.TAB);
+	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100), TinyProgressions.TAB);
 	
 	// Deco Blocks
 	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());

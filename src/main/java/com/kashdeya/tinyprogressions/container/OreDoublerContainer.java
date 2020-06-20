@@ -27,7 +27,8 @@ public class OreDoublerContainer extends AbstractFurnaceContainer{
 		super(TechContainers.iron_furnace_container.get(), IRecipeType.SMELTING, windowId, playerInventory, tileentityInventory, furnaceData);
 	}
 	
-   public java.util.List<net.minecraft.client.util.RecipeBookCategories> getRecipeBookCategories() {
+	@Override
+	public java.util.List<net.minecraft.client.util.RecipeBookCategories> getRecipeBookCategories() {
 	   return Lists.newArrayList(RecipeBookCategories.FURNACE_SEARCH, RecipeBookCategories.FURNACE_FOOD, RecipeBookCategories.FURNACE_BLOCKS, RecipeBookCategories.FURNACE_MISC); 
    }
 }

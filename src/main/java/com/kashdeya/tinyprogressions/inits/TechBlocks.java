@@ -68,37 +68,37 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechBlocks {
-	
-	
+
+
 	// Tech Blocks
 	public static RegistryObject<Block> growth_block       = register("growth_block",      () -> new BlockGrowth(Properties.create(Material.IRON), 1,  4,  2), TinyProgressions.TAB);
 	public static RegistryObject<Block> growth_upgrade     = register("growth_upgrade",    () -> new BlockGrowth(Properties.create(Material.IRON), 2,  6,  5), TinyProgressions.TAB);
 	public static RegistryObject<Block> growth_upgrade_two = register("growth_upgrade_two",() -> new BlockGrowth(Properties.create(Material.IRON), 3,  8, 10), TinyProgressions.TAB);
-	 
+
 	public static RegistryObject<Block> cobblegen_block         = register("cobblegen_block",        () -> new Cobblegen(30, 32, Properties.create(Material.IRON)), TinyProgressions.TAB);
 	public static RegistryObject<Block> iron_cobblegen_block    = register("cobblegen_iron_block",   () -> new Cobblegen(20, 64, Properties.create(Material.IRON)), TinyProgressions.TAB);
 	public static RegistryObject<Block> diamond_cobblegen_block = register("cobblegen_diamond_block",() -> new Cobblegen(10, 64, Properties.create(Material.IRON)), TinyProgressions.TAB);
+    public static RegistryObject<Block> blaze_cobblegen_block   = register("cobblegen_blaze_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)), TinyProgressions.TAB);
 	public static RegistryObject<Block> emerald_cobblegen_block = register("cobblegen_emerald_block",() -> new Cobblegen(1, 64,  Properties.create(Material.IRON)), TinyProgressions.TAB);
-	public static RegistryObject<Block> blaze_cobblegen_block   = register("cobblegen_blaze_block",  () -> new Cobblegen(5, 64,  Properties.create(Material.IRON)), TinyProgressions.TAB);
-	
+
 //	public static RegistryObject<Block> iron_furnace_block = register("iron_furnace_block",  () -> new IronFurnaceBlock(Properties.create(Material.IRON), 100), TinyProgressions.TAB);
-	
+
 	// Deco Blocks
 	public static RegistryObject<Block> charcoal_block  = register("charcoal_block", () -> new CharcoalBlock());
-	
+
 	public static RegistryObject<Block> reinforced_glass    = register("reinforced_glass", () -> new ReinforcedGlass(), TinyProgressions.TAB);
 	public static RegistryObject<Block> reinforced_obsidian = register("reinforced_obsidian", () -> new ReinforcedObsidian(), TinyProgressions.TAB);
-	 
+
 	public static RegistryObject<Block> dirty_glass    = register("dirty_glass", () -> new DirtyGlass());
 	public static RegistryObject<Block> diorite_brick  = register("diorite_brick", () -> new DioriteBrick());
 	public static RegistryObject<Block> granite_brick  = register("granite_brick", () -> new GraniteBrick());
 	public static RegistryObject<Block> andesite_brick = register("andesite_brick", () -> new AndesiteBrick());
-	public static RegistryObject<Block> old_reed       = register("old_reed", () -> new OldReed()); 
+	public static RegistryObject<Block> old_reed       = register("old_reed", () -> new OldReed());
 	// Compressed Blocks
 	public static RegistryObject<Block> flesh_block      = register("flesh_block", () -> new FleshBlock());
 	public static RegistryObject<Block> bone_block       = register("bone_block", () -> new NetherStarBlock());
 	public static RegistryObject<Block> netherstar_block = register("netherstar_block", () -> new NetherStarBlock());
-	public static RegistryObject<Block> flint_block      = register("flint_block", () -> new FlintBlock());	
+	public static RegistryObject<Block> flint_block      = register("flint_block", () -> new FlintBlock());
 	// Stone Torch
 	public static RegistryObject<Block> stone_torch          = registerNoItem("stone_torch", () -> new StoneTorch());
 	public static RegistryObject<Block> stone_torch_wall     = registerNoItem("stone_torch_wall", () -> new WallStoneTorch());
@@ -115,17 +115,17 @@ public class TechBlocks {
 	// Water Block
 	public static RegistryObject<Block> water_block = register("water_block", () -> new WaterBlock());
     public static RegistryObject<Block> lava_infused_stone = register("lava_infused_stone", () -> new Infused());
-	
+
 	// Hardened Stone
 	public static RegistryObject<Block> unhardened_stone            = register("unhardened_stone", () -> new UnhardenedBlock());
 	public static RegistryObject<Block> hardened_stone              = register("hardened_stone", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	public static RegistryObject<Block> hardened_stone_bricks       = register("hardened_stone_bricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
 	public static RegistryObject<Block> hardened_stone_smallbricks  = register("hardened_stone_smallbricks", () -> new HardenedBlocks(Properties.create(Material.ROCK), 1, 1));;
-	
+
 	public static RegistryObject<Block> hardened_stone_stairs =             register("hardened_stone_stairs",             ()->new StairsBlock(()-> hardened_stone.get().getDefaultState(), Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1750F).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
 	public static RegistryObject<Block> hardened_stone_bricks_stairs =      register("hardened_stone_bricks_stairs",      ()->new StairsBlock(()-> hardened_stone_bricks.get().getDefaultState(), Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1750F).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
 	public static RegistryObject<Block> hardened_stone_smallbricks_stairs = register("hardened_stone_smallbricks_stairs", ()->new StairsBlock(()-> hardened_stone_smallbricks.get().getDefaultState(), Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1750F).sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
-	
+
 	public static RegistryObject<Block> hardened_stone_slab =             register("hardened_stone_slab",            ()->new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1500F)));
 	public static RegistryObject<Block> hardened_stone_bricks_slab  =     register("hardened_stone_bricks_slab",     ()->new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1500F)));
 	public static RegistryObject<Block> hardened_stone_smallbricks_slab = register("hardened_stone_smallbricks_slab",()->new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(50F, 1500F)));
@@ -133,7 +133,7 @@ public class TechBlocks {
 	// Angel
     public static RegistryObject<Block> fmf_block    = registerNoItem("fmf_block",	()->new StandardBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 1000F).sound(SoundType.STONE).harvestLevel(0).harvestTool(ToolType.PICKAXE)));
     public static RegistryObject<Item> fmf_BlockItem = TinyProgressions.ITEMS.register ("fmf_block",  () -> new AngelItemBlock(fmf_block.get()));
-    
+
     // Lamp Blocks
     public static RegistryObject<Block> lamp =          register("lamp",          () -> new Lamp(Properties.create(Material.GLASS)));
     public static RegistryObject<Block> yellow_lamp =   register("lamp_yellow",   () -> new Lamp(Properties.create(Material.GLASS, MaterialColor.YELLOW)));
@@ -209,7 +209,7 @@ public class TechBlocks {
 	public static RegistryObject<FlowingFluidBlock> vasholine =          TinyProgressions.BLOCKS.register("vasholine",         () -> new BlockFluidVasholine(Block.Properties.create(Material.WATER)));
 	public static RegistryObject<Item> vasholine_bucket =                TinyProgressions.ITEMS.register ("vasholine_bucket",  () -> new BucketItem(vasholine_fluid,new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(TinyProgressions.ToolsGroup)));
 	public static final ForgeFlowingFluid.Properties vasholine_fluid_properties = new ForgeFlowingFluid.Properties(vasholine_fluid, vasholine_fluid_flowing, fluidBuilderAttributes(new Color(182, 209, 0).getRGB(), 5000, 5000, 300, 20)).bucket(vasholine_bucket).block(vasholine);
-    
+
 //    // asphalt
     public static RegistryObject<Block> asphalt_block = register("asphalt_block", () -> new Asphalt());
     // Steel Block
@@ -221,8 +221,8 @@ public class TechBlocks {
     // Glowstone Glass
 
 //    
-    
-    
+
+
     // Registers a block and blockItem if needed.
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<? extends T> sup)
     {
@@ -259,7 +259,7 @@ public class TechBlocks {
     private static Supplier<BlockItem> item(final RegistryObject<? extends Block> block, final ItemGroup itemGroup) {
         return () -> new BlockItem(block.get(), new Item.Properties().group(itemGroup));
     }
-    
+
 	public static Builder fluidBuilderAttributes(int fluidColor, int density, int viscosity, int temperature, int luminosity) {
 		FluidAttributes.Builder fluidBuilder = FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"));
 		fluidBuilder.color(fluidColor);
@@ -269,7 +269,7 @@ public class TechBlocks {
 		fluidBuilder.luminosity(luminosity);
 		return fluidBuilder;
 	}
-    
+
     //TODO
 //	public static void init() {
 //		// glowstone glass

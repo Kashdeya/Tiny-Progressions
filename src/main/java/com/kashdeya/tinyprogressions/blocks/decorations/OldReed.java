@@ -1,6 +1,8 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.BushBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -31,42 +33,9 @@ public class OldReed extends BushBlock implements IShearable {
 		return VoxelShapes.create(REED_AABB);
 	}
 	
-
+	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		Block block = state.getBlock();
+		return block == Blocks.SAND;
+	}
 	
-	//TODO
-
-//	@Override
-//    protected boolean canSustainBush(BlockState state)
-//    {
-//        return state.getBlock() == Blocks.SAND;
-//    }
-//
-//	@Override
-//    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
-//    {
-//        return true;
-//    }
-
-//	@Override
-//	public int quantityDropped(Random random)
-//    {
-//        return 2;
-//    }
-
-//	@Override
-//    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-//    {
-//        return TechItems.dead_reed;
-//    }
-
-//    @Override 
-//    public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){
-//    	return false; 
-//    }
-//
-//    @Override
-//    public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune)
-//    {
-//        return Collections.singletonList(new ItemStack(TechBlocks.old_reed));
-//    }
 }

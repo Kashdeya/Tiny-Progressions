@@ -28,7 +28,6 @@ public class WitherArmour extends BaseArmor {
 		super(ArmorMaterialTier.WITHER, slot, prop);
 	}
 
-	// TODO reduce redundent code.
 	@Override
 	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if (!(entityIn instanceof LivingEntity))

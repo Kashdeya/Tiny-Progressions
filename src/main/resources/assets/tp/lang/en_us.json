@@ -11,6 +11,7 @@
 	"block.tp.cobblegen_blaze_block":"Cobblestone Generator Tier 4",
 	"block.tp.cobblegen_emerald_block":"Cobblestone Generator Tier 5",
 	"block.tp.iron_furnace_block":"Iron Furnace",
+	"tp.container.iron_furnace_block":"Iron Furnace",
 	"block.tp.asphalt_block":"Asphalt",
 	"block.tp.ghost_block":"Cobblestone",
 	"item.tp.succ_pearls":"SUCC THE PEARLS",

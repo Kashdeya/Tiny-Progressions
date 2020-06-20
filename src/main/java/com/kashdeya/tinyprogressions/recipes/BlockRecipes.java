@@ -173,7 +173,6 @@ public class BlockRecipes {
 				'c', "forge:cobblestone");
 	
 	// Growth Crystals
-		//TODO
 		exportJson.addShapedNBTRecipe(new ItemStack(TechBlocks.growth_block.get()), 
 				"ibi",
 				"ded",

@@ -1,6 +1,6 @@
 package com.kashdeya.tinyprogressions.events;
 
-//TODO feel like this will need some reworking. Things have changed. I believe items can be giving more reach.
+
 public class IReachEvent {
 
 //    @SubscribeEvent(priority = EventPriority.HIGHEST, receiveCanceled = true)

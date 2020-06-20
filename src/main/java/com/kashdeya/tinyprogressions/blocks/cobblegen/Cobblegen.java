@@ -68,14 +68,6 @@ public class Cobblegen extends StandardBlock{
         return BlockRenderType.MODEL;
      }
 
-//TODO
-//	@Override
-//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
-//    {
-//        return false;
-//    }
-//	
-	
 	@Override	
 	public ActionResultType func_225533_a_(BlockState p_225533_1_, World worldIn, BlockPos pos, PlayerEntity player, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
 

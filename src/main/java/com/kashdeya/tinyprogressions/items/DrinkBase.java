@@ -45,7 +45,6 @@ public class DrinkBase extends FoodBase{
 		
     	ItemStack stack = playerIn.getHeldItem(handIn);
     	
-    	//TODO update the stats stuff?
     	playerIn.getFoodStats().addStats(1, this.getFood().getSaturation());
         worldIn.playSound(null, playerIn.getPosition().getX(), playerIn.getPosition().getY(), playerIn.getPosition().getZ(), this.sound, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
 

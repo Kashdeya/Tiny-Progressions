@@ -28,7 +28,6 @@ public class ObsidianArmor extends BaseArmor {
 		super(ArmorMaterialTier.OBSIDIAN, slot, prop);
     }
 
-	// TODO reduce redundent code.
 	@Override
 	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if (!(entityIn instanceof LivingEntity))

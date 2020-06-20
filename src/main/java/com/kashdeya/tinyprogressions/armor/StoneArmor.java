@@ -20,7 +20,6 @@ public class StoneArmor extends BaseArmor {
     }
 
 	
-	//TODO this needs to be redone to reduce redundant calls of potion effects
 	@Override	
 	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		

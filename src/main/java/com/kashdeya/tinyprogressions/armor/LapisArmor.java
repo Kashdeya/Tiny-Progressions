@@ -28,7 +28,6 @@ public class LapisArmor extends BaseArmor {
 		super(ArmorMaterialTier.LAPIS, slot, prop);
 	}
 
-	// TODO this needs to be redone to reduce redundant calls of potion effects
 	@Override
 	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 

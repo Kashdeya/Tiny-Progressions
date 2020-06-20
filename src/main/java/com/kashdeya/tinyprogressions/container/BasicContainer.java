@@ -21,7 +21,6 @@ public class BasicContainer extends Container{
 	
 	protected BasicContainer(ContainerType<?> type, int id) {
 		super(type, id);
-		// TODO Auto-generated constructor stub
 	}
 
 	

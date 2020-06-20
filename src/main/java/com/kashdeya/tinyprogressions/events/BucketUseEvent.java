@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.events;
 
-//TODO should no longer be needed since growthblock is no longer water
 public class BucketUseEvent {
 //    @SubscribeEvent
 //    public static void onBucketUse(FillBucketEvent event)

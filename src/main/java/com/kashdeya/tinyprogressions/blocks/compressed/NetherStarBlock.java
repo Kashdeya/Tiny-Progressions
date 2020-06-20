@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
@@ -18,6 +19,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
@@ -35,31 +37,12 @@ public class NetherStarBlock extends StandardBlock {
 		
 	}
 	
-//	@Override
-//    @SideOnly(Side.CLIENT)
-//    public BlockRenderLayer getRenderLayer()
-//    {
-//        return BlockRenderLayer.CUTOUT_MIPPED;
-//    }
-	
-//	@Override
-//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
-//    {
-//        return false;
-//    }
-
-	//TODO
-//	@Override
-//	public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon)
-//    {
-//        return true; 
-//    }
-//	
-//	@Override
-//    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-//    {
-//        return Item.getItemFromBlock(TechBlocks.netherstar_block);
-//    }
+	@Override
+	public boolean isBeaconBase(BlockState state, IWorldReader world, BlockPos pos, BlockPos beacon)
+    {
+		return true;
+    	
+    }
 	
 	@Override
     public boolean canDropFromExplosion(Explosion explosionIn)

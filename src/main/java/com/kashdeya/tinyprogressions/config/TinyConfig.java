@@ -243,33 +243,6 @@ public class TinyConfig {
 			
 			builder.push("Extras");
 			
-			//TODO drops???
-//				ConfigHandler.BoneDrops = config.getBoolean("Bone Drops", "Dirt Drops", true, "Enable Bones to drop from Dirt?");
-//				ConfigHandler.BoneDropsChance = config.getInt("Bone Drop Chance", "Dirt Drops", 1, 0, 100, "Sets the Chance of Bones from Dirt.");
-//				ConfigHandler.BoneAmount = config.getInt("Bone Drop Amount", "Dirt Drops", 1, 1, 64, "Sets the Amount of Bones Dropped from Dirt.");
-//				ConfigHandler.SkullDrops = config.getBoolean("Skull Drops", "Dirt Drops", true, "Enable Skulls to drop from Dirt?");
-//				ConfigHandler.SkullDropsChance = config.getInt("Skull Drop Chance", "Dirt Drops", 1, 0, 100, "Sets the Chance of Skulls from Dirt.");
-//				ConfigHandler.SkullAmount = config.getInt("Skull Drop Amount", "Dirt Drops", 1, 1, 64, "Sets the Amount of Skulls Dropped from Dirt.");
-			
-//				config.addCustomCategoryComment("Extra Tree Drops", "Extra Drops");
-//				ConfigHandler.extra_drops = config.getBoolean("Extra Fruit Drops", "Extra Tree Drops", true, "Enable Pears and Peaches to drop from leaves?");
-//				ConfigHandler.extra_drop_bottle = config.getBoolean("Extra Fruit Drops need bottle to make juice", "Extra Tree Drops", false, "Enable Bottle in recipe?");
-//				ConfigHandler.pearDropsChance = config.getInt("Extra Fruit Drops Pear Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Pears from leaves.");
-//				ConfigHandler.pearDropsAmount = config.getInt("Extra Fruit Drops Pear Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Pears Dropped from leaves.");
-//				ConfigHandler.peachDropsChance = config.getInt("Extra Fruit Drops Peach Chance", "Extra Tree Drops", 1, 0, 100, "Sets the Chance of Peaches from leaves.");
-//				ConfigHandler.peachDropsAmount = config.getInt("Extra Fruit Drops Peach Amount", "Extra Tree Drops", 1, 1, 64, "Sets the Amount of Peaches Dropped from leaves.");
-//				ConfigHandler.peachAmount = config.getInt("Extra Fruit Drops Peach Juice Heal Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Peach Juice.");
-//				ConfigHandler.peachSaturation = config.getFloat("Extra Fruit Drops Peach Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Peach Juice.");
-//				ConfigHandler.pearAmount = config.getInt("Extra Fruit Drops Pear Juice Heal Amount", "Extra Tree Drops", 4, 1, 20, "Sets the Heal Amount of Pear Juice.");
-//				ConfigHandler.pearSaturation = config.getFloat("Extra Fruit Drops Pear Juice Saturation Amount", "Extra Tree Drops", 0.3F, 0.0F, 1.0F, "Sets the Saturation Amount of Pear Juice.");
-			
-//				config.addCustomCategoryComment("Extra Tree Drops Vanilla", "Extra Drops Vanilla");
-//				ConfigHandler.extra_drops_vanilla = config.getBoolean("Extra Tree Drops Vanilla", "Extra Tree Drops Vanilla", true, "Enable Extra Sticks and Apples to drop from leaves?");
-//				ConfigHandler.stickDropsChance = config.getInt("Extra Tree Drops Stick Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Sticks from leaves.");
-//				ConfigHandler.stickDropsAmount = config.getInt("Extra Tree Drops Stick Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Sticks Dropped from leaves.");
-//				ConfigHandler.appleDropsChance = config.getInt("Extra Tree Drops Apple Chance", "Extra Tree Drops Vanilla", 1, 0, 100, "Sets the Chance of Apple from leaves.");
-//				ConfigHandler.appleDropsAmount = config.getInt("Extra Tree Drops Apple Amount", "Extra Tree Drops Vanilla", 1, 1, 64, "Sets the Amount of Apple Dropped from leaves.");
-			
 				builder.push("Tiny Coal & Charcoal");
 					tiny_charcoal_burntime = lazyInt(builder,"Tiny Charcoal Burn Time", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Charcoal.");
 					tiny_coal_burntime = lazyInt(builder,"Tiny Coal Burn Time", 200, 0, Integer.MAX_VALUE, "Sets the burn time for Tiny Coal.");

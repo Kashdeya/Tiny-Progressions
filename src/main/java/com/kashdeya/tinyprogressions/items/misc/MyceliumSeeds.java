@@ -32,10 +32,6 @@ public class MyceliumSeeds extends ItemBase {
 
 	@Override
 	public ActionResultType onItemUse(ItemUseContext context) {
-		// TODO if (context.getWorld().getBlockState(context.getPos()).getBlock() ==
-		// Blocks.DIRT &&
-		// context.getWorld().getBlockState(context.getPos()).getValue(BlockDirt.VARIANT)
-		// == BlockDirt.DirtType.DIRT) {
 
 		if (context.getWorld().getBlockState(context.getPos()).getBlock() == Blocks.DIRT) {
 			context.getWorld().setBlockState(context.getPos(), Blocks.MYCELIUM.getDefaultState(), 2);
@@ -52,8 +48,7 @@ public class MyceliumSeeds extends ItemBase {
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip,
 			ITooltipFlag flagIn) {
-		tooltip.add(
-				new TranslationTextComponent("tooltip.seeds").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+		tooltip.add(	new TranslationTextComponent("tooltip.seeds").setStyle(new Style().setColor(TextFormatting.YELLOW)));
 	}
 
 }

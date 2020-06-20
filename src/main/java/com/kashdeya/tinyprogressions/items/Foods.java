@@ -8,28 +8,27 @@ import net.minecraft.potion.Effects;
 
 public class Foods {
 		// Apples
-	//TODO set effects
 		public static Food GOLDEN_APPLE  = (new Food.Builder()).hunger(4).saturation(1F).setAlwaysEdible()
-				.effect(new EffectInstance(Effects.RESISTANCE, 3000, 0), 1F)
-				.effect(new EffectInstance(Effects.REGENERATION, 225, 0), 1F)
-				.effect(new EffectInstance(Effects.ABSORPTION, 2400, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.RESISTANCE, 3000, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.REGENERATION, 225, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.ABSORPTION, 2400, 0), 1F)
 				.build();  
 		public static Food DIAMOND_APPLE = (new Food.Builder()).hunger(4).saturation(1F).setAlwaysEdible()
-				.effect(new EffectInstance(Effects.RESISTANCE, 1200, 0), 1F)
-				.effect(new EffectInstance(Effects.REGENERATION, 300, 0), 1F)
-				.effect(new EffectInstance(Effects.FIRE_RESISTANCE, 300, 0), 1F)
-				.effect(new EffectInstance(Effects.SPEED, 1200, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.RESISTANCE, 1200, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.REGENERATION, 300, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.FIRE_RESISTANCE, 300, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.SPEED, 1200, 0), 1F)
 				.build();  
 		public static Food EMERALD_APPLE = (new Food.Builder()).hunger(4).saturation(1F).setAlwaysEdible()
-				.effect(new EffectInstance(Effects.ABSORPTION, 300, 0), 1F)
-				.effect(new EffectInstance(Effects.SPEED, 300, 0), 1F)
-				.effect(new EffectInstance(Effects.SATURATION, 120, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.ABSORPTION, 300, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.SPEED, 300, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.SATURATION, 120, 0), 1F)
 				.build();  
 		public static Food IRON_APPLE    = (new Food.Builder()).hunger(4).saturation(1F).setAlwaysEdible()
-				.effect(new EffectInstance(Effects.RESISTANCE, 300, 2), 1F)
+				.effect(() -> new EffectInstance(Effects.RESISTANCE, 300, 2), 1F)
 				.build();  
 		public static Food REDSTON_APPLE = (new Food.Builder()).hunger(4).saturation(1F).setAlwaysEdible()
-				.effect(new EffectInstance(Effects.HASTE, 300, 0), 1F)
+				.effect(() -> new EffectInstance(Effects.HASTE, 300, 0), 1F)
 				.build();  
 		
 		// Juices

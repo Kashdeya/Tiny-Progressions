@@ -7,7 +7,6 @@ public class WorldGenQuickSand {
 //	
 //	public WorldGenQuickSand(World worldIn, long seed, boolean mapFeaturesEnabledIn, String generatorOptions) {
 //		super(worldIn, seed, mapFeaturesEnabledIn, generatorOptions);
-//		// TODO Auto-generated constructor stub
 //		this.world = worldIn;
 //		this.rand = new Random(seed);
 //	}

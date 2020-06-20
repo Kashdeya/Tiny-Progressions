@@ -205,15 +205,8 @@ public class TileEntityCobblegen extends TileEntity implements ITickableTileEnti
 	}
 
 	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
-		return false;
+		return ItemStack.areItemsEqual(stack1, stack2);
 	}
-
-	
-	//TODO no metadata....
-//	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
-//		return stack1.getItem() == stack2.getItem() && (stack1.getMetadata() == stack2.getMetadata() && (stack1.getCount() <= stack1.getMaxStackSize() && ItemStack.areItemStackTagsEqual(stack1, stack2)));
-//	}
-
 
 	@Override
 	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {

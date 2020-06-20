@@ -21,7 +21,6 @@ public class RemoveItems {
 		
 	}
 
-	//TODO
 	private static void removeRecipe(ItemStack resultItem){
 
 //		Recipe.forEach((recipe) -> {

@@ -10,7 +10,6 @@ import net.minecraft.block.material.MaterialColor;
 
 public class DirtyGlass extends AbstractGlassBlock implements IOreDictEntry
 {
-	//TODO not sure where to register
     public DirtyGlass()
     {
         super(Properties.create(Material.GLASS, MaterialColor.AIR)

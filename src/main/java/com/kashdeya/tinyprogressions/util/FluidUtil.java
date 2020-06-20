@@ -77,7 +77,6 @@ public class FluidUtil implements IFluidHandlerItem {
 
 //	@Override
 //	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
-//		// TODO Auto-generated method stub
 //		return null;
 //	}
 //	

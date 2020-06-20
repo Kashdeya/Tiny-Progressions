@@ -107,7 +107,7 @@ public class Cobblegen extends StandardBlock{
     		} else
     		{
         		ItemStack stack = ttest.getInventory().getStackInSlot(0);
-    			player.sendMessage(new TranslationTextComponent(Blocks.COBBLESTONE.getNameTextComponent() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
+    			player.sendMessage(new TranslationTextComponent(Blocks.COBBLESTONE.getNameTextComponent().getString() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
     		}
     	}
     	
@@ -137,14 +137,14 @@ public class Cobblegen extends StandardBlock{
 	@Nullable
 	@Override
 	public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
-		return new TileEntityCobblegen().setGenStats(cycleUpdate, cycleUpdate);
+		return new TileEntityCobblegen().setGenStats(cycleUpdate, stackSize);
 	}
     
     @Override
     @OnlyIn(Dist.CLIENT)
     public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_1", stackSize).setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_2", cycleUpdate).setStyle(new Style().setColor(TextFormatting.YELLOW)));
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_3").setStyle(new Style().setColor(TextFormatting.YELLOW)));
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_4").setStyle(new Style().setColor(TextFormatting.YELLOW)));
     }

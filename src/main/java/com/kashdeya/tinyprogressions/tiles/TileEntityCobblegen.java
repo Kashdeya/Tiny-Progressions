@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.tiles;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
@@ -206,7 +207,7 @@ public class TileEntityCobblegen extends TileEntity implements ITickableTileEnti
 	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
 		return false;
 	}
-	
+
 	
 	//TODO no metadata....
 //	private static boolean canCombine(ItemStack stack1, ItemStack stack2) {
@@ -221,5 +222,22 @@ public class TileEntityCobblegen extends TileEntity implements ITickableTileEnti
         }
         return super.getCapability(cap, side);
     }
-	    
+
+	@Override
+	@Nonnull
+	public CompoundNBT write(@Nonnull CompoundNBT compound) {
+		super.write(compound);
+		compound.putInt("maxStackSize", maxStacksize);
+		compound.putInt("cycleUpdate", cycleUpdate);
+		compound.putInt("cycle", cycle);
+		return compound;
+	}
+
+	@Override
+	public void read(@Nonnull CompoundNBT compound) {
+		super.read(compound);
+		this.maxStacksize = compound.getInt("maxStackSize");
+		this.cycleUpdate = compound.getInt("cycleUpdate");
+		this.cycle = compound.getInt("cycle");
+	}
 }

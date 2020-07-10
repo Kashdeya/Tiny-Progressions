@@ -53,7 +53,7 @@ public class TinyConfig {
 		private final BooleanValue vasholine_mobs, wub_heal_mobs, wub_weakness, wub_blindness, wub_fatigue;
 		private final IntValue smallBandageHealStack, smallBandageRegen, largeBandageStack, largeBandageDuration,
 				largeBandageBoostTime, smallMedHealStack, smallMedDuration, smallMedBoostTime, LargeMedHealStack,
-				LargeMedDuration, largeMedBoostTime, kappa_level, kappa_damage, bams_pizza_amount;
+				LargeMedDuration, largeMedBoostTime,bams_pizza_amount; //kappa_level, kappa_damage, kappa_durability, 
 		private final DoubleValue bams_pizza_sat;
 		private final BooleanValue sea_axe, sea_pickaxe;
 		private final IntValue lava_block_frequency, lava_block_min, lava_block_max, lava_block_size;
@@ -164,10 +164,11 @@ public class TinyConfig {
 					largeMedBoostTime = lazyInt(builder, "Teir 4 Meical Item Boost Time", 60, 0, 300, "Sets how long the player has 6 extra hearts on the Large Medical Kit!\n[Does not stack]");
 				builder.pop();
 	
-				builder.comment("Fun Stuff\n[Not PicKappa stop asking!]").push("Kappa Pick");
-					kappa_level = lazyInt(builder, "Kappa Pick Mining Level", 1, 0, 3, "Mining Level.");
-					kappa_damage = lazyInt(builder, "Kappa Pick Mining Level Durability", 31513, 100, Integer.MAX_VALUE, "Durability Level.");
-				builder.pop();
+//				builder.comment("Fun Stuff\n[Not PicKappa stop asking!]").push("Kappa Pick");
+//					kappa_level = lazyInt(builder, "Kappa Pick Mining Level", 1, 0, 3, "Mining Level.");
+//					kappa_durability = lazyInt(builder, "Kappa Pick Mining Level Durability", 31513, 1, Integer.MAX_VALUE, "Durability Level.");
+//					kappa_damage = lazyInt(builder, "Kappa Pick Mining Damage", 75, 0, Integer.MAX_VALUE, "Damage Level.");
+//				builder.pop();
 	
 				builder.comment("Because Pineapple goes on Pizza! Kappa").push("Pizza");
 					bams_pizza_amount = lazyInt(builder, "Bams Pizza Heal Amount", 10, 1, 20, "Sets the Heal Amount.");
@@ -412,8 +413,9 @@ public class TinyConfig {
 			ConfigHandler.LargeMedDuration = LargeMedDuration.get();
 			ConfigHandler.largeMedBoostTime = largeMedBoostTime.get();
 
-			ConfigHandler.kappa_level = kappa_level.get();
-			ConfigHandler.kappa_damage = kappa_damage.get();
+//			ConfigHandler.kappa_level = kappa_level.get();
+//			ConfigHandler.kappa_durability = kappa_durability.get();
+//			ConfigHandler.kappa_damage = kappa_damage.get();
 
 			ConfigHandler.bams_pizza_amount = bams_pizza_amount.get();
 			ConfigHandler.bams_pizza_sat = bams_pizza_sat.get().floatValue();

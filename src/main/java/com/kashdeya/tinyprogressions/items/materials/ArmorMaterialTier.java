@@ -1,8 +1,13 @@
 package com.kashdeya.tinyprogressions.items.materials;
+import com.google.common.base.Supplier;
 import com.kashdeya.tinyprogressions.main.Reference;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.inventory.EquipmentSlotType;
 import  net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -22,8 +27,7 @@ public enum ArmorMaterialTier implements IArmorMaterial{
 	LAPIS   ("lapis"   , 20 ,  new int[]{1, 4, 5, 3}  , 20,  SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.5F),
 	QUARTZ  ("quartz"  , 20 ,  new int[]{1, 4, 5, 2}  , 12,  SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.2F),
 	EMERALD ("emerald" , 43 ,  new int[]{4, 7, 9, 4}  , 25,  SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4.0F),
-	BAM     ("bam"     , 43 ,  new int[]{4, 7, 9, 4}  , 25,  SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4.5F);
-	
+	BAM     ("bam"     , 43 ,  new int[]{4, 7, 9, 4}  , 25,  SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4.5F);	
 	
 	int[] durability;
 	int enchantability;

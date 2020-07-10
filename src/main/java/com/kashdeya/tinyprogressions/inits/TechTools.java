@@ -54,7 +54,7 @@ public class TechTools {
 	public static RegistryObject<Item> nether_diamond_pickaxe = TinyProgressions.ITEMS.register("nether_diamond_pickaxe",() -> new BasePickaxe(ItemTier.DIAMOND, 0, 0, new Properties()));;
 	public static RegistryObject<Item> wub_pickaxe            = TinyProgressions.ITEMS.register("wub_pickaxe", 			 () -> new BasePickaxe(ItemToolModTier.WUBWUB, 0, 0, new Properties()));
 	public static RegistryObject<Item> birthday_pickaxe       = TinyProgressions.ITEMS.register("birthday_pickaxe",      () -> new BirthdayPickaxe(new Properties()));
-	public static RegistryObject<Item> kappa_pick             = TinyProgressions.ITEMS.register("kappa_pick", 			 () -> new BasePickaxe(ItemToolModTier.KAPPA, ConfigHandler.kappa_damage, 0, new Properties()));
+	public static RegistryObject<Item> kappa_pick             = TinyProgressions.ITEMS.register("kappa_pick", 			 () -> new BasePickaxe(ItemToolModTier.KAPPA, 0, 0, new Properties()));
 	
 	//Axe 12 + 1
 	public static RegistryObject<Item> flint_axe 		  = TinyProgressions.ITEMS.register("flint_axe",    	 () -> new BaseAxe(ItemToolModTier.FLINT, 0, 0, new Properties()));

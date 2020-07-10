@@ -28,7 +28,7 @@ public class DragonArmour extends BaseArmor {
 		super(ArmorMaterialTier.DRAGON, slot, prop);
 	}
 
-@Override
+    @Override
 	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 
 		if (!(entityIn instanceof LivingEntity))

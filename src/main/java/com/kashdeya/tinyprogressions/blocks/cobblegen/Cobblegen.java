@@ -99,7 +99,9 @@ public class Cobblegen extends StandardBlock{
     		} else
     		{
         		ItemStack stack = ttest.getInventory().getStackInSlot(0);
-    			player.sendMessage(new TranslationTextComponent(Blocks.COBBLESTONE.getNameTextComponent().getString() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
+        		
+        		if(worldIn.isRemote())
+        			player.sendMessage(new TranslationTextComponent(Blocks.COBBLESTONE.getNameTextComponent().getString() + " x " + (stack.isEmpty()? 0 : stack.getCount())));
     		}
     	}
     	

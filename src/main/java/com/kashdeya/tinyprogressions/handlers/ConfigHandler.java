@@ -125,6 +125,7 @@ public class ConfigHandler {
 	public static boolean kappa_pick = true;
 	public static int kappa_damage = 31513;
 	public static int kappa_level = 1;
+	public static int kappa_durability = 31513;
 	
 	// Bams Pizza
 	public static boolean bams_pizza = true;
@@ -414,5 +415,6 @@ public class ConfigHandler {
 	public static Boolean ender_ore_gen = true;
 	public static Boolean lava_block_gen = true;
 	public static Boolean water_block_gen = true;
+
 	
 }

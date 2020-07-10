@@ -1,9 +1,13 @@
 package com.kashdeya.tinyprogressions.inits;
 
+import java.util.function.Supplier;
+
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
 import com.kashdeya.tinyprogressions.tiles.TileEntityOreDoubler;
 
+import net.minecraft.block.Block;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
@@ -31,4 +35,5 @@ public class ModTileEntityTypes {
 	public static final RegistryObject<TileEntityType<TileEntityOreDoubler>> DoubleFurnace = TinyProgressions.TILE_ENTITY_TYPES.register("doublefurnace", () -> TileEntityType.Builder.create(TileEntityOreDoubler::new, 
 			TechBlocks.iron_furnace_block.get()
 			).build(null));
+	
 }

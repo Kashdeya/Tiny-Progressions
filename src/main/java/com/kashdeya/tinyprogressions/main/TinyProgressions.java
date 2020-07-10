@@ -178,7 +178,7 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   cutout_mipped);
     	
-    	RenderTypeLookup.setRenderLayer(TechBlocks.fmf_block.get(), cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.fmf_block.get(), cutout);
     	
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_block.get(),      cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade.get(),    cutout_mipped);

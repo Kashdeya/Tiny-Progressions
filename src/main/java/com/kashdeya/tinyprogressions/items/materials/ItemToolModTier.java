@@ -15,7 +15,7 @@ public enum ItemToolModTier implements IItemTier
 	BIRTHDAY   (4, 3061,  100.0F, 10.0F, 22,() -> { return Ingredient.fromItems(TechItems.reinforced_obsidian_ingot.get()); }),
 	OBSIDIAN   (4, 1961,  9.0F,   4.0F,  10,() -> { return Ingredient.fromItems(Items.OBSIDIAN); }),
 	EMERALD    (4, 2961,  10.0F,  5.0F,  22,() -> { return Ingredient.fromItems(Items.EMERALD); }),
-	KAPPA      (ConfigHandler.kappa_level, 31513, 5.0F,  13.0F,  22,() -> { return Ingredient.fromItems(TechItems.wub_ingot.get()); }),
+	KAPPA      (4, 31513, 18.0F,  40,    54,() -> { return Ingredient.fromItems(TechItems.wub_ingot.get()); }),
 	BSCIRON    (3, 2750,  12.0F,  8.0F,  14,() -> { return Ingredient.fromItems(Items.IRON_INGOT); }),
 	BSCDIAMOND (3, 4549,  16.0F,  5.0F,  10,() -> { return Ingredient.fromItems(Items.DIAMOND); }),
 	BSCGOLD    (0, 788,   16.0F,  2.0F,  22,() -> { return Ingredient.fromItems(Items.GOLD_INGOT); }),

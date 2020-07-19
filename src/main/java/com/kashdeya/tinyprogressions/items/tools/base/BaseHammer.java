@@ -9,12 +9,16 @@ import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ExperienceOrbEntity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -78,7 +82,15 @@ public class BaseHammer extends PickaxeItem {
                                         	worldIn.addEntity(new ExperienceOrbEntity(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, worldIn.getBlockState(pos).getBlock().getExpDrop(targetBlock, worldIn, targetPos, 0, 0)));
                                         }
                                     }
-                                    worldIn.destroyBlock(new BlockPos(x, y, z), true);
+                                    TileEntity tileentity = worldIn.getTileEntity(pos);
+                                    targetBlock.getBlock().harvestBlock(worldIn, player, pos, state, tileentity, stack);
+                                    
+                                    
+                                    if(EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
+                                    	worldIn.func_225521_a_(new BlockPos(x, y, z), false, new ItemEntity(worldIn, x, y, z, new ItemStack(state.getBlock().asItem())));
+                                    }
+                                    else
+                                    	worldIn.destroyBlock(new BlockPos(x, y, z), true);
                                 }
                                 stack.damageItem(1, player,  (p_220040_1_) -> { p_220040_1_.sendBreakAnimation(Hand.MAIN_HAND); });
                             }

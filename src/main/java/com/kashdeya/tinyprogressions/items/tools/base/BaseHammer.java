@@ -47,6 +47,9 @@ public class BaseHammer extends PickaxeItem {
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
 
+    	if(worldIn.isRemote)
+    		return false;
+    	
         if (entityLiving instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) entityLiving;
             
@@ -78,7 +81,7 @@ public class BaseHammer extends PickaxeItem {
                             if (canHarvestBlock(targetBlock)) {
                                 if ((stack.getMaxDamage() - stack.getDamage()) >= 1 && targetBlock.getBlock() != Blocks.BEDROCK) {
                                     if (targetBlock.getBlock().getExpDrop(targetBlock, worldIn, targetPos, 0, 0) > 0) {
-                                        if (!worldIn.isRemote && worldIn.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
+                                        if (worldIn.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                                         	worldIn.addEntity(new ExperienceOrbEntity(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, worldIn.getBlockState(pos).getBlock().getExpDrop(targetBlock, worldIn, targetPos, 0, 0)));
                                         }
                                     }
@@ -89,8 +92,9 @@ public class BaseHammer extends PickaxeItem {
                                     if(EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
                                     	worldIn.func_225521_a_(new BlockPos(x, y, z), false, new ItemEntity(worldIn, x, y, z, new ItemStack(state.getBlock().asItem())));
                                     }
-                                    else
-                                    	worldIn.destroyBlock(new BlockPos(x, y, z), true);
+                                    else {
+                                    	worldIn.destroyBlock(new BlockPos(x, y, z), false);
+                                    }
                                 }
                                 stack.damageItem(1, player,  (p_220040_1_) -> { p_220040_1_.sendBreakAnimation(Hand.MAIN_HAND); });
                             }

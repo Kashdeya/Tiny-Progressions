@@ -25,8 +25,8 @@
         }
     ],
     "textures": {
-        "particle": "blocks/stone",
-        "t1": "blocks/stone",
+        "particle": "block/stone",
+        "t1": "block/stone",
         "t2": "tp:blocks/ender_ore"
     }
 }

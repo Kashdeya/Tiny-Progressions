@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " II",
+    " SI",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:rods/netherrack"
+    },
+    "I": {
+      "tag": "forge:ingots/gold"
+    }
+  },
+  "result": {
+    "item": "tp:nether_gold_axe"
+  }
+}

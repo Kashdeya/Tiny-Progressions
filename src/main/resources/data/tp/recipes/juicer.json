@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:stone"
+    },
+    "L": {
+      "item": "minecraft:stone_button"
+    }
+  },
+  "result": {
+    "item": "tp:juicer"
+  }
+}

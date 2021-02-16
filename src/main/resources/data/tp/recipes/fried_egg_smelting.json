@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "result": {
+    "item": "tp:fried_egg"
+  },
+  "experience": 1
+}

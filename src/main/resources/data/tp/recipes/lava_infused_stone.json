@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "H H",
+    " W ",
+    "H H"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:lava_bucket"
+    },
+    "H": {
+      "item": "tp:hardened_stone"
+    }
+  },
+  "result": {
+    "item": "tp:lava_infused_stone"
+  }
+}

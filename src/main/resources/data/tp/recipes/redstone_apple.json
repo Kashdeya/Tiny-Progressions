@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "RAR",
+    "RRR"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:apple"
+    },
+    "R": {
+      "tag": "forge:dusts/redstone"
+    }
+  },
+  "result": {
+    "item": "tp:redstone_apple"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "P": {
+      "item": "tp:obsidian_pickaxe"
+    },
+    "A": {
+      "item": "tp:obsidian_axe"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "tp:obsidian_multi"
+  }
+}

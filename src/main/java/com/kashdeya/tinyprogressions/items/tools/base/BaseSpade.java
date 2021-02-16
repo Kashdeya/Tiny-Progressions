@@ -2,13 +2,13 @@ package com.kashdeya.tinyprogressions.items.tools.base;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.item.ItemSpade;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.ShovelItem;
 
-public class BaseSpade extends ItemSpade {
+public class BaseSpade extends ShovelItem {
 	
-	public BaseSpade(ToolMaterial material){
-		super(material);
-		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setMaxStackSize(1);
+	
+	public BaseSpade(IItemTier tier, int maxDamage, float attackSpeed, Properties prop){
+		super(tier, maxDamage, attackSpeed, prop.group(TinyProgressions.ToolsGroup));
 	}
 }

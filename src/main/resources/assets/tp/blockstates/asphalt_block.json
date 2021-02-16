@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:asphalt_block"}
+        "": {"model": "tp:block/asphalt_block"}
     }
 }

@@ -2,13 +2,12 @@ package com.kashdeya.tinyprogressions.items.tools.base;
 
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.item.ItemHoe;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.IItemTier;
 
-public class BaseHoe extends ItemHoe {
+public class BaseHoe extends HoeItem {
 	
-	public BaseHoe(ToolMaterial material){
-		super(material);
-		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setMaxStackSize(1);
+	public BaseHoe(IItemTier tier, int attackDamage, float attackSpeed, Properties prop){
+		super(tier, attackDamage, attackSpeed, prop.group(TinyProgressions.ToolsGroup));
 	}
 }

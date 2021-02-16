@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SES",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "E": {
+      "item": "minecraft:spider_eye"
+    }
+  },
+  "result": {
+    "item": "tp:mycelium_seeds"
+  }
+}

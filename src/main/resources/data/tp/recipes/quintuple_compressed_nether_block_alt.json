@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tp:sextuple_compressed_nether_block"
+    }
+  ],
+  "result": {
+    "item": "tp:quintuple_compressed_nether_block",
+    "count": 9
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB ",
+    "BS ",
+    " S "
+  ],
+  "key": {
+    "B": {
+      "tag": "forge:bones"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "tp:bone_axe"
+  }
+}

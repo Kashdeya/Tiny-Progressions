@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "tag": "forge:bottles/glass"
+    }
+  ],
+  "result": {
+    "item": "tp:wheat_juice"
+  }
+}

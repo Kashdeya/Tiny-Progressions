@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B B",
+    "CDC",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:magma_block"
+    },
+    "C": {
+      "item": "minecraft:magma_cream"
+    },
+    "D": {
+      "item": "tp:emerald_chestplate"
+    }
+  },
+  "result": {
+    "item": "tp:lava_chestplate"
+  }
+}

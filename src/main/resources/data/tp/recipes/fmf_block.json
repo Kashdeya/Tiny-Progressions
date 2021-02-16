@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IFI",
+    "FIF",
+    "IFI"
+  ],
+  "key": {
+    "F": {
+      "tag": "forge:feathers"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "tp:fmf_block"
+  }
+}

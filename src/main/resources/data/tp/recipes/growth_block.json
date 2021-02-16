@@ -1,0 +1,26 @@
+{
+  "type": "tp:crafting_shaped_nbt",
+  "pattern": [
+    "IBI",
+    "DED",
+    "IBI"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "D": {
+      "item": "minecraft:potion",
+      "nbt": "{Potion:\"minecraft:swiftness\"}"
+    },
+    "E": {
+      "item": "minecraft:sea_lantern"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "tp:growth_block"
+  }
+}

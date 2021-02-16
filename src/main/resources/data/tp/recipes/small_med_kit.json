@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "tp:large_bandage"
+    }
+  },
+  "result": {
+    "item": "tp:small_med_kit",
+    "count": 2
+  }
+}

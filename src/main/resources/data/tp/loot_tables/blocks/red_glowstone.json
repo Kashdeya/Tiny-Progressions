@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:block",
+    "pools": [{
+        "rolls": {
+            "min": 2,
+            "max": 5
+        },
+        "entries": [{
+            "type": "minecraft:item",
+            "name": "tp:red_dust"
+        }],
+        "conditions": [{
+            "condition": "minecraft:survives_explosion"
+        }]
+    }]
+}

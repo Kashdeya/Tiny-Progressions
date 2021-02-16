@@ -7,7 +7,7 @@ public class DamageHandler {
 	public static int emerald_spade = 2961;
 	public static int emerald_hoe = 2961;
 	public static int emerald_sword = 2961;
-	// Wub WUb
+	// Wub Wub
 	public static int wub_axe = 3261;
 	public static int wub_pickaxe = 3261;
 	public static int wub_spade = 3261;
@@ -19,7 +19,7 @@ public class DamageHandler {
 	public static int obsidian_pickaxe = 1961;
 	public static int obsidian_spade = 1961;
 	public static int obsidian_hoe = 1961;
-	public static int obsidian_sword = 1961;
+	public static int obsidian_sword = 1721;
 	// Scythe
 	public static int wooden_scythe = 59;
 	public static int stone_scythe = 131;
@@ -27,7 +27,7 @@ public class DamageHandler {
 	public static int iron_scythe = 250;
 	public static int emerald_scythe = 1961;
 	public static int diamond_scythe = 1561;
-	public static int obsidian_scythe = 2561;
+	public static int obsidian_scythe = 1721;
 	// Multi
 	public static int wooden_multi = 59;
 	public static int stone_multi = 131;
@@ -35,7 +35,7 @@ public class DamageHandler {
 	public static int iron_multi = 250;
 	public static int emerald_multi = 4000;
 	public static int diamond_multi = 1561;
-	public static int obsidian_multi = 3000;
+	public static int obsidian_multi = 2500;
 	public static int flint_multi = 89;
 	// Battle
 	public static int wooden_battle = 59;
@@ -44,7 +44,7 @@ public class DamageHandler {
 	public static int iron_battle = 250;
 	public static int emerald_battle = 1961;
 	public static int diamond_battle = 1561;
-	public static int obsidian_battle = 2561;
+	public static int obsidian_battle = 1721;
 	// Spear
 	public static int wooden_spear = 59;
 	public static int stone_spear = 131;
@@ -52,5 +52,5 @@ public class DamageHandler {
 	public static int iron_spear = 250;
 	public static int emerald_spear = 1961;
 	public static int diamond_spear = 1561;
-	public static int obsidian_spear = 2561;
+	public static int obsidian_spear = 1721;
 }

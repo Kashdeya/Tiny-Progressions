@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "tag": "forge:crops/blackberry"
+    }
+  ],
+  "result": {
+    "item": "tp:blackberry_juice"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "minecraft:red_mushroom"
+    }
+  ],
+  "result": {
+    "item": "tp:cooked_mushroom_red"
+  },
+  "experience": 1
+}

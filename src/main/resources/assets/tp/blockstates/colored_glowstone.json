@@ -1,21 +1,21 @@
 {
     "variants": {
-	    "normal": {"model": "tp:white_glowstone"},
-        "color=white_glowstone": {"model": "tp:white_glowstone"},
-        "color=orange_glowstone": {"model": "tp:orange_glowstone"},
-        "color=magenta_glowstone": {"model": "tp:magenta_glowstone"},
-        "color=lightblue_glowstone": {"model": "tp:lightblue_glowstone"},
-        "color=yellow_glowstone": {"model": "tp:yellow_glowstone"},
-        "color=lime_glowstone": {"model": "tp:lime_glowstone"},
-        "color=pink_glowstone": {"model": "tp:pink_glowstone"},
-        "color=gray_glowstone": {"model": "tp:gray_glowstone"},
-        "color=silver_glowstone": {"model": "tp:silver_glowstone"},
-        "color=cyan_glowstone": {"model": "tp:cyan_glowstone"},
-        "color=purple_glowstone": {"model": "tp:purple_glowstone"},
-        "color=blue_glowstone": {"model": "tp:blue_glowstone"},
-        "color=brown_glowstone": {"model": "tp:brown_glowstone"},
-        "color=green_glowstone": {"model": "tp:green_glowstone"},
-        "color=red_glowstone": {"model": "tp:red_glowstone"},
-        "color=black_glowstone": {"model": "tp:black_glowstone"}
+	    "": {"model": "tp:block/white_glowstone"},
+        "color=white_glowstone": {"model": "tp:block/white_glowstone"},
+        "color=orange_glowstone": {"model": "tp:block/orange_glowstone"},
+        "color=magenta_glowstone": {"model": "tp:block/magenta_glowstone"},
+        "color=lightblue_glowstone": {"model": "tp:block/lightblue_glowstone"},
+        "color=yellow_glowstone": {"model": "tp:block/yellow_glowstone"},
+        "color=lime_glowstone": {"model": "tp:block/lime_glowstone"},
+        "color=pink_glowstone": {"model": "tp:block/pink_glowstone"},
+        "color=gray_glowstone": {"model": "tp:block/gray_glowstone"},
+        "color=silver_glowstone": {"model": "tp:block/silver_glowstone"},
+        "color=cyan_glowstone": {"model": "tp:block/cyan_glowstone"},
+        "color=purple_glowstone": {"model": "tp:block/purple_glowstone"},
+        "color=blue_glowstone": {"model": "tp:block/blue_glowstone"},
+        "color=brown_glowstone": {"model": "tp:block/brown_glowstone"},
+        "color=green_glowstone": {"model": "tp:block/green_glowstone"},
+        "color=red_glowstone": {"model": "tp:block/red_glowstone"},
+        "color=black_glowstone": {"model": "tp:block/black_glowstone"}
     }
 }

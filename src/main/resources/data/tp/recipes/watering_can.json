@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ID ",
+    "IWI",
+    " I "
+  ],
+  "key": {
+    "D": {
+      "tag": "forge:dyes/white"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "tp:watering_can"
+  }
+}

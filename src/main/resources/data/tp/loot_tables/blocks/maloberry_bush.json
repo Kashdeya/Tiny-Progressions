@@ -1,0 +1,16 @@
+  {
+      "type": "minecraft:block",
+      "pools": [{
+          "rolls": {
+              "min": 1,
+              "max": 6
+          },
+          "entries": [{
+              "type": "minecraft:item",
+              "name": "tp:maloberry_berry"
+          }],
+          "conditions": [{
+              "condition": "minecraft:survives_explosion"
+          }]
+      }]
+  }

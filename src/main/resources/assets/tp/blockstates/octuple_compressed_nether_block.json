@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:octuple_compressed_nether_block"}
+        "": {"model": "tp:block/octuple_compressed_nether_block"}
     }
 }

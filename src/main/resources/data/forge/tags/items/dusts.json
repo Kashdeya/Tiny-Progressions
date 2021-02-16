@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:dusts/quartz",
+    "#forge:dusts/obsidian",
+    "#forge:dusts/ender",
+    "#forge:dusts/stone",
+    "#forge:dusts/white_glowstone",
+    "#forge:dusts/silver_glowstone",
+    "#forge:dusts/red_glowstone",
+    "#forge:dusts/purple_glowstone",
+    "#forge:dusts/pink_glowstone",
+    "#forge:dusts/orange_glowstone",
+    "#forge:dusts/magenta_glowstone",
+    "#forge:dusts/lime_glowstone",
+    "#forge:dusts/light_blue_glowstone",
+    "#forge:dusts/green_glowstone",
+    "#forge:dusts/gray_glowstone",
+    "#forge:dusts/cyan_glowstone",
+    "#forge:dusts/brown_glowstone",
+    "#forge:dusts/blue_glowstone",
+    "#forge:dusts/black_glowstone"
+  ]
+}

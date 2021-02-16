@@ -3,93 +3,109 @@ package com.kashdeya.tinyprogressions.blocks.fluids;
 import java.util.List;
 import java.util.Random;
 
-import com.kashdeya.tinyprogressions.fluids.ModFluids;
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import javax.annotation.Nullable;
 
-import net.minecraft.block.state.IBlockState;
+import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechBlocks;
+import com.kashdeya.tinyprogressions.main.Reference;
+
+import net.minecraft.block.BlockState;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.particles.IParticleData;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.BlockFluidClassic;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class BlockFluidVasholine extends BlockFluidClassic {
 
-	public BlockFluidVasholine() {
-		super(ModFluids.VASHOLINE, MaterialHandler.VASHOLINE);
-		setTranslationKey("vasholine");
-		this.setLightLevel(1.0F);
+public class BlockFluidVasholine extends FlowingFluidBlock {
+
+	public static ResourceLocation overlay = new ResourceLocation(Reference.MOD_ID, "textures/fluids/wub_juice_overlay");
+	
+	public BlockFluidVasholine(Properties props) {
+		super(TechBlocks.vasholine_fluid, props.doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops().setLightLevel((p) -> 15).tickRandomly());
 	}
 
-	@Override
-	public boolean canDisplace(IBlockAccess world, BlockPos pos) {
-		return !world.getBlockState(pos).getMaterial().isLiquid() && super.canDisplace(world, pos);
-	}
+	
 
-	@Override
-	public boolean displaceIfPossible(World world, BlockPos pos) {
-		return !world.getBlockState(pos).getMaterial().isLiquid() && super.displaceIfPossible(world, pos);
-	}	
+//	@Override
+//	public boolean canDisplace(IBlockAccess world, BlockPos pos) {
+//		return !world.getBlockState(pos).getMaterial().isLiquid() && super.canDisplace(world, pos);
+//	}
+//
+//	@Override
+//	public boolean displaceIfPossible(World world, BlockPos pos) {
+//		return !world.getBlockState(pos).getMaterial().isLiquid() && super.displaceIfPossible(world, pos);
+//	}	
 
+   @Nullable
+   @OnlyIn(Dist.CLIENT)
+   public IParticleData getDripParticleData() {
+      return ParticleTypes.DRIPPING_WATER;
+   }
+
+	
 	@Override
-	public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
-		if (entity instanceof EntityPlayer) {
-			if(world.getTotalWorldTime()%20 == 0 && ((EntityPlayer) entity).getHealth() < ((EntityPlayer) entity).getMaxHealth()) // add whatever time you want here 20 = every 1 second
-				((EntityPlayer) entity).heal(ConfigHandler.vasholine_heal_amount);
+	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+		
+		if (entity instanceof PlayerEntity) {
+			if(world.getGameTime()%20 == 0 && ((PlayerEntity) entity).getHealth() < ((PlayerEntity) entity).getMaxHealth()) // add whatever time you want here 20 = every 1 second
+				((PlayerEntity) entity).heal(ConfigHandler.vasholine_heal_amount);
 			if (ConfigHandler.wub_weakness){
-				((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 20, 0, false, false));
+				((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.WEAKNESS, 20, 0, false, false));
 			}
 			if (ConfigHandler.wub_blindness){
-				((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 20, 0, false, false));
+				((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.BLINDNESS, 20, 0, false, false));
 			}
 			if (ConfigHandler.wub_fatigue){	
-				((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.MINING_FATIGUE, 20, 0, false, false));
+				((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, 20, 0, false, false));
 			}
 			entity.rotationYaw -= (world.rand.nextFloat() - world.rand.nextFloat()) * 0.5D;
 			entity.prevRotationYaw += (world.rand.nextFloat() + world.rand.nextFloat()) * 0.5D;
 		}
-		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer) && ConfigHandler.vasholine_mobs){
+		if (entity instanceof LivingEntity && !(entity instanceof PlayerEntity) && ConfigHandler.vasholine_mobs){
 			entity.attackEntityFrom(DamageSource.MAGIC, ConfigHandler.vasholine_mobs_amount);
 		}
-		if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer) && ConfigHandler.wub_heal_mobs){
-			((EntityLivingBase) entity).heal(ConfigHandler.mob_heal_amount);
+		if (entity instanceof LivingEntity && !(entity instanceof PlayerEntity) && ConfigHandler.wub_heal_mobs){
+			((LivingEntity) entity).heal(ConfigHandler.mob_heal_amount);
 		}
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
-		if (world.isAirBlock(pos.up()) && world.getTotalWorldTime()%5 == 0) {
+	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+		if (worldIn.isAirBlock(pos.up()) && worldIn.getGameTime() % 5 == 0) {
 
 			float xx = (float) pos.getX() + 0.5F;
 			float zz = (float) pos.getZ() + 0.5F;
 			float fixedOffset = 0.25F;
 			float randomOffset = rand.nextFloat() * 0.6F - 0.3F;
-
-			TinyProgressions.proxy.spawnCustomParticle("sparkles", world, (double) (xx - fixedOffset), (double) pos.getY() + 0.8D, (double) (zz + randomOffset), 0.0D, 0.0D, 0.0D);
-			TinyProgressions.proxy.spawnCustomParticle("sparkles", world, (double) (xx + fixedOffset), (double) pos.getY() + 0.8D, (double) (zz + randomOffset), 0.0D, 0.0D, 0.0D);
-			TinyProgressions.proxy.spawnCustomParticle("sparkles", world, (double) (xx + randomOffset), (double) pos.getY() + 0.8D, (double) (zz - fixedOffset), 0.0D, 0.0D, 0.0D);
-			TinyProgressions.proxy.spawnCustomParticle("sparkles", world, (double) (xx + randomOffset), (double) pos.getY() + 0.8D, (double) (zz + fixedOffset), 0.0D, 0.0D, 0.0D);
+			
+			worldIn.addParticle(ParticleTypes.FIREWORK, true, (double) (xx - fixedOffset), (double) pos.getY() + 0.8D, (double) (zz + randomOffset), 0.0D, 0.0D, 0.0D);
+			worldIn.addParticle(ParticleTypes.FIREWORK, true, (double) (xx + fixedOffset), (double) pos.getY() + 0.8D, (double) (zz + randomOffset), 0.0D, 0.0D, 0.0D);
+			worldIn.addParticle(ParticleTypes.FIREWORK, true, (double) (xx + randomOffset), (double) pos.getY() + 0.8D, (double) (zz - fixedOffset), 0.0D, 0.0D, 0.0D);
+			worldIn.addParticle(ParticleTypes.FIREWORK, true, (double) (xx + randomOffset), (double) pos.getY() + 0.8D, (double) (zz + fixedOffset), 0.0D, 0.0D, 0.0D);
 
 		}
 	}
 	
     @Override
-    public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.vasholine_1").getFormattedText());
+    @OnlyIn(Dist.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    	tooltip.add(new TranslationTextComponent("tooltip.vasholine_1"));
     }
 }

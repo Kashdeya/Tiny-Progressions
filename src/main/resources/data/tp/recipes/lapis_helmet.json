@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "D D"
+  ],
+  "key": {
+    "D": {
+      "item": "tp:lapis_ingot"
+    }
+  },
+  "result": {
+    "item": "tp:lapis_helmet"
+  }
+}

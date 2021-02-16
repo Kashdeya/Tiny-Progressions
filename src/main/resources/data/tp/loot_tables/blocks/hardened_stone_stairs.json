@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:block",
+    "pools": [{
+        "rolls": 1,
+        "entries": [{
+            "type": "minecraft:item",
+            "name": "tp:hardened_stone_stairs"
+        }],
+        "conditions": [{
+            "condition": "minecraft:survives_explosion"
+        }]
+    }]
+}

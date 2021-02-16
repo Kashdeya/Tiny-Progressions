@@ -1,0 +1,7 @@
+{
+    "parent": "tp:block/lamp",
+    "textures": {
+        "particle": "block/yellow_stained_glass",
+        "t1": "block/yellow_stained_glass"
+    }
+}

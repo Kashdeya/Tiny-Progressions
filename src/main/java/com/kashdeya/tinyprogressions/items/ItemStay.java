@@ -2,44 +2,55 @@ package com.kashdeya.tinyprogressions.items;
 
 import java.util.List;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import javax.annotation.Nullable;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ItemStay extends Item {
+public class ItemStay extends ItemBase {
 	
-	public ItemStay() {
-		super();
-		super.setMaxStackSize(1);
-		super.setContainerItem(this);
-		this.setCreativeTab(TinyProgressions.tabTP);
-	}
-	
-	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
-	{
-			return false;
-	}
-	
-	@Override
-	public ItemStack getContainerItem(ItemStack itemStack)
-	{
-		ItemStack stack = itemStack.copy();
-		stack.setCount(1);
-
-		return stack;
+	public ItemStay(Properties prop) {
+		super(prop);
 	}
 	
     @Override
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
+    public void setDamage(ItemStack stack, int damage){}
+
+    @Override
+    public boolean isRepairable(ItemStack stack) {
+        return super.isRepairable(stack);
+    }
+
+    @Override
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+        return super.getIsRepairable(toRepair, repair);
+    }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack){return true;}
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack)
     {
-    	tooltip.add(TextFormatting.YELLOW + new TextComponentTranslation("tooltip.stay_1").getFormattedText());
+        return new ItemStack(getItem());
+    }
+	   
+	@Override
+	 public boolean isDamageable() {
+		 return false;
+	 }
+	
+	
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip,	ITooltipFlag flagIn) {
+		tooltip.add(new TranslationTextComponent("tooltip.stay_1"));
     }
 }

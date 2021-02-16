@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "F F",
+    "F F"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "tp:flint_leggings"
+  }
+}

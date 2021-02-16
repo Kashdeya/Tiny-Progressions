@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "tp:flint_block"
+    }
+  ],
+  "result": {
+    "item": "tp:flint_ingot"
+  },
+  "experience": 3
+}

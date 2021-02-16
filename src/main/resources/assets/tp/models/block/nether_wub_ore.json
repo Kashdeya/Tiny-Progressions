@@ -25,8 +25,8 @@
         }
     ],
     "textures": {
-        "particle": "blocks/netherrack",
-        "t1": "blocks/netherrack",
+        "particle": "block/netherrack",
+        "t1": "block/netherrack",
         "t2": "tp:blocks/wub_ore"
     }
 }

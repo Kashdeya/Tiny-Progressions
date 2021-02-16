@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PLP",
+    "RGR",
+    "PRP"
+  ],
+  "key": {
+    "P": {
+      "item": "tp:hardened_stone"
+    },
+    "R": {
+      "item": "minecraft:ghast_tear"
+    },
+    "G": {
+      "item": "tp:redstone_ingot"
+    },
+    "L": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "tp:repair_tablet"
+  }
+}

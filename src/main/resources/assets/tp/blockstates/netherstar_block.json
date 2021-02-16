@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:netherstar_block"}
+        "": {"model": "tp:block/netherstar_block"}
     }
 }

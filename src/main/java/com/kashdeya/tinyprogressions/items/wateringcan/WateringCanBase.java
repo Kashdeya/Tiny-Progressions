@@ -1,35 +1,45 @@
 package com.kashdeya.tinyprogressions.items.wateringcan;
 
+import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+import javax.annotation.Nullable;
+
 import com.kashdeya.tinyprogressions.inits.TechItems;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
+import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.util.CanUtil;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFarmland;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CropsBlock;
+import net.minecraft.block.FarmlandBlock;
 import net.minecraft.block.IGrowable;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.EnumAction;
-import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.item.ItemUseContext;
+import net.minecraft.item.Rarity;
+import net.minecraft.item.UseAction;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext.FluidMode;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraft.block.AbstractBlock.AbstractBlockState;
 
-public class WateringCanBase extends Item
+public class WateringCanBase extends ItemBase
 {
 
     private int     range            = 1;
@@ -42,23 +52,25 @@ public class WateringCanBase extends Item
 
     private long    ticksInUse;
 
-    public WateringCanBase()
+    public WateringCanBase(Properties prop)
     {
-        this.setMaxStackSize(1);
-        this.setCreativeTab(TinyProgressions.tabTP);
+    	super(prop.maxStackSize(1));
     }
 
-    protected void setWateringRange(int newRange)
+    public WateringCanBase setWateringRange(int newRange)
     {
         this.range = newRange;
+        return this;
     }
 
-    protected void setWateringChance(int newChance)
+    public WateringCanBase setWateringChance(int newChance)
     {
         this.waterChance = newChance;
+        return this;
     }
     
-    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+    @Override
+    public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
         ticksInUse++;
 
@@ -68,37 +80,39 @@ public class WateringCanBase extends Item
             canWater = true;
         }
         
-        if(forceActive && entityIn instanceof EntityPlayer)
+        if(forceActive && entityIn instanceof PlayerEntity)
         {
-            EntityPlayer player = (EntityPlayer)entityIn;
+        	PlayerEntity player = (PlayerEntity)entityIn;
             
             if(!isSelected)
             {
-                ItemStack offhand = player.getHeldItem(EnumHand.OFF_HAND);
+                ItemStack offhand = player.getHeldItem(Hand.OFF_HAND);
                 
-                if(offhand.getItem() != TechItems.watering_can && offhand.getItem() != TechItems.watering_can_upgrade)
+                if(offhand.getItem() != TechItems.watering_can.get() && offhand.getItem() != TechItems.watering_can_upgrade.get())
                     forceActive = false;
             }
             
-            RayTraceResult raytrace = rayTrace(worldIn, player, false);
-            if(raytrace != null && raytrace.typeOfHit == Type.BLOCK)
+            RayTraceResult raytrace = rayTrace(worldIn, player, FluidMode.NONE);
+            if(raytrace != null && raytrace.getType() == Type.BLOCK)
             {
-                attemptWaterParticles(worldIn, raytrace.getBlockPos());
-                attemptWater(worldIn, raytrace.getBlockPos());
+            	BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)raytrace;
+            	
+                attemptWaterParticles(worldIn, blockraytraceresult.getPos());
+                attemptWater(worldIn, blockraytraceresult.getPos());
             }
         }
     }
 
-    @Override
-    public EnumAction getItemUseAction(ItemStack stack)
-    {
-        return EnumAction.NONE;
+    
+	@Override
+	public UseAction getUseAction(ItemStack stack) {
+        return UseAction.NONE;
     }
 
-    @Override
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        return hasEffect(stack) ? EnumRarity.UNCOMMON : EnumRarity.COMMON;
+
+	@Override
+	public Rarity getRarity(ItemStack stack) {
+        return hasEffect(stack) ? Rarity.UNCOMMON : Rarity.COMMON;
     }
 
     @Override
@@ -110,40 +124,44 @@ public class WateringCanBase extends Item
     int clicks = 0;
 
     @Override
-    public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing,
-            float hitX, float hitY, float hitZ)
+    public ActionResultType onItemUse(ItemUseContext context) 
     {
-        if(!world.isRemote && player.isSneaking())
+    	World world = context.getWorld();
+    	PlayerEntity player = context.getPlayer();
+    	BlockPos pos = context.getPos();
+    	Hand hand = context.getHand();
+    	Direction facing = context.getFace();
+    	
+        if(!world.isRemote && player.isCrouching())
         {
-            int wateringcanCount = (int) IntStream.range(0, player.inventory.getSizeInventory()).mapToObj(i -> player.inventory.getStackInSlot(i)).filter(itemstack -> itemstack != ItemStack.EMPTY).map(ItemStack::getItem).filter(item -> item == TechItems.watering_can || item == TechItems.watering_can_upgrade).count();
+            int wateringcanCount = (int) IntStream.range(0, player.inventory.getSizeInventory()).mapToObj(i -> player.inventory.getStackInSlot(i)).filter(itemstack -> itemstack != ItemStack.EMPTY).map(ItemStack::getItem).filter(item -> item == TechItems.watering_can.get() || item == TechItems.watering_can_upgrade.get()).count();
 
             if(wateringcanCount <= 1)
             {
                 if(wateringcanCount == 1)   // This should always be true given the above check (we should never get a count of 0)
                     forceActive = !forceActive;
                 
-                return EnumActionResult.FAIL;
+                return ActionResultType.FAIL;
             }
             
             forceActive = false;
-            player.sendMessage(new TextComponentTranslation("item.watering_can.invalidusage"));
+            player.sendMessage(new TranslationTextComponent("item.watering_can.invalidusage"), player.getUniqueID());
         }
 
         if(!player.canPlayerEdit(pos.offset(facing), facing, player.getHeldItem(hand)))
         {
-            return EnumActionResult.FAIL;
+            return ActionResultType.FAIL;
         }
 
         attemptWaterParticles(world, pos);
         return attemptWater(world, pos);
     }
 
-    private EnumActionResult attemptWater(World world, BlockPos pos)
+    private ActionResultType attemptWater(World world, BlockPos pos)
     {
-        // only tick if canWater is true (Basically after the duration runs out
-        // getMaxDuration)
         if(!world.isRemote && canWater)
         {
+
             canWater = false;
             int chance = CanUtil.randInt(1, 100);
             if(chance <= waterChance)
@@ -154,21 +172,24 @@ public class WateringCanBase extends Item
                     {
                         for(int yAxis = -range; yAxis <= range; yAxis++)
                         {
-                            Block checkBlock = world.getBlockState(pos.add(xAxis, yAxis, zAxis)).getBlock();
-
-                            if(checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM
-                                    || checkBlock == Blocks.CACTUS || checkBlock == Blocks.REEDS
-                                    || checkBlock == Blocks.CHORUS_FLOWER)
+                            BlockState checkBlock = world.getBlockState(pos.add(xAxis, yAxis, zAxis));
+                         	
+                            if(checkBlock.getBlock() instanceof IGrowable || checkBlock.getBlock() == Blocks.MYCELIUM
+                                    || checkBlock.getBlock() == Blocks.CACTUS || checkBlock.getBlock() == Blocks.SUGAR_CANE
+                                    || checkBlock.getBlock() == Blocks.CHORUS_FLOWER)
                             {
-                                world.scheduleBlockUpdate(pos.add(xAxis, yAxis, zAxis), checkBlock, 0, 1);
+                            	if(checkBlock.getBlock() instanceof CropsBlock)
+                            		checkBlock.getBlock().tick(checkBlock, (ServerWorld) world, pos.add(xAxis, yAxis, zAxis), world.rand);
+                            	else
+                            		world.notifyBlockUpdate(pos.add(xAxis, yAxis, zAxis), checkBlock, checkBlock, 2);
                             }
                         }
                     }
                 }
-                return EnumActionResult.FAIL;
+                return ActionResultType.FAIL;
             }
         }
-        return EnumActionResult.FAIL;
+        return ActionResultType.FAIL;
     }
     
 	private void attemptWaterParticles(World world, BlockPos pos)
@@ -187,29 +208,26 @@ public class WateringCanBase extends Item
                     double d1 = pos.add(x, 0, z).getY() + 1.0D;
                     double d2 = pos.add(x, 0, z).getZ() + rand.nextFloat();
 
-                    IBlockState checkSolidState = world.getBlockState(pos);
+                    BlockState checkSolidState = world.getBlockState(pos);
                     Block checkSolid = checkSolidState.getBlock();
-                    if((checkSolid.isFullCube(checkSolidState)) || ((checkSolid instanceof BlockFarmland)))
-                    {
-                        d1 += 1.0D;
-                    }
+                    // if(checkSolid.isNormalCube(checkSolidState, world, pos) || (checkSolid instanceof FarmlandBlock))
+                    // {
+                       // d1 += 1.0D;
+                    //}
 
-                    world.spawnParticle(EnumParticleTypes.WATER_DROP, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[5]);
+                    world.addParticle(ParticleTypes.RAIN, d0, d1, d2, 0.0D, 0.0D, 0.0D);
                 }
             }
         }
     }
 
-    public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player,
-            EnumHand hand)
+    public static boolean applyBonemeal(ItemStack stack, World worldIn, BlockPos target, PlayerEntity player, Hand hand)
     {
 
-        IBlockState iblockstate = worldIn.getBlockState(target);
-
-        int hook = ForgeEventFactory.onApplyBonemeal(player, worldIn, target, iblockstate, stack, hand);
+        BlockState iblockstate = worldIn.getBlockState(target);
+        int hook = ForgeEventFactory.onApplyBonemeal(player, worldIn, target, iblockstate, stack);
         if(hook != 0)
             return hook > 0;
-
         if((iblockstate.getBlock() instanceof IGrowable && iblockstate.getBlock() != Blocks.GRASS))
         {
             IGrowable igrowable = (IGrowable)iblockstate.getBlock();
@@ -220,7 +238,7 @@ public class WateringCanBase extends Item
                 {
                     if(igrowable.canUseBonemeal(worldIn, worldIn.rand, target, iblockstate))
                     {
-                        igrowable.grow(worldIn, worldIn.rand, target, iblockstate);
+                        igrowable.grow((ServerWorld) worldIn, worldIn.rand, target, iblockstate);
                     }
 
                     stack.setCount(stack.getCount() - 1);
@@ -231,4 +249,18 @@ public class WateringCanBase extends Item
         }
         return false;
     }
+    
+    
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    	if(stack.getItem() == TechItems.watering_can.get()) { 
+    		tooltip.add(new TranslationTextComponent("tooltip.can_1"));
+    		tooltip.add(new TranslationTextComponent("tooltip.can_1"));
+    		tooltip.add(new TranslationTextComponent("tooltip.can_1"));
+    	}else {
+    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_1"));
+    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_2"));
+    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_3"));
+    	}
+	}
 }

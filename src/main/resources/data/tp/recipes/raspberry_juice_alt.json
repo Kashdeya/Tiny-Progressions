@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "tag": "forge:crops/raspberry"
+    },
+    {
+      "tag": "forge:bottles/glass"
+    }
+  ],
+  "result": {
+    "item": "tp:raspberry_juice"
+  }
+}

@@ -1,5 +1,5 @@
 {
-    "parent": "block/upper_slab",
+    "parent": "block/slab_top",
     "textures": {
         "bottom": "tp:blocks/hardened_stone_bricks",
         "top": "tp:blocks/hardened_stone_bricks",

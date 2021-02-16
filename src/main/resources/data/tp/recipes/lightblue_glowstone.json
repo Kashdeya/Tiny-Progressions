@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DD",
+    "DD"
+  ],
+  "key": {
+    "D": {
+      "tag": "forge:dusts/light_blue_glowstone"
+    }
+  },
+  "result": {
+    "item": "tp:lightblue_glowstone"
+  }
+}

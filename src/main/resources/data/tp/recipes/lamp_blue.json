@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DT"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:blue_stained_glass"
+    },
+    "T": {
+      "tag": "forge:torches"
+    }
+  },
+  "result": {
+    "item": "tp:lamp_blue"
+  }
+}

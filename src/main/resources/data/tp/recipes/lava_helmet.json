@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "CDC"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:magma_block"
+    },
+    "C": {
+      "item": "minecraft:magma_cream"
+    },
+    "D": {
+      "item": "tp:emerald_helmet"
+    }
+  },
+  "result": {
+    "item": "tp:lava_helmet"
+  }
+}

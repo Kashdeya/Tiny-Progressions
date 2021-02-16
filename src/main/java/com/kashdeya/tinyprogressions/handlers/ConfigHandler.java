@@ -25,7 +25,7 @@ public class ConfigHandler {
 	public static boolean steel_ingot = true;
 	
 	// quicksand
-	public static boolean quick_sand = true;
+	public static boolean should_gen_quick_sand = true;
 	
 	// Extra Drops
 	public static boolean extra_drops = true;
@@ -57,14 +57,14 @@ public class ConfigHandler {
 	
 	public static boolean overworld_wub = true;
 	public static int wub_block_count = 5;
-	public static int wub_block_frequency = 50;
+	public static int wub_block_frequency = 1;
 	public static int wub_block_min = 1;
 	public static int wub_block_max = 32;
 	
 	public static boolean nether_wub = true;
 	public static int nether_wub_block_count = 5;
-	public static int nether_wub_block_frequency = 50;
-	public static int nether_wub_block_min = 1;
+	public static int nether_wub_block_frequency = 1;
+	public static int nether_wub_block_min = 10;
 	public static int nether_wub_block_max = 60;
 	
 	// wub juics other
@@ -125,6 +125,7 @@ public class ConfigHandler {
 	public static boolean kappa_pick = true;
 	public static int kappa_damage = 31513;
 	public static int kappa_level = 1;
+	public static int kappa_durability = 31513;
 	
 	// Bams Pizza
 	public static boolean bams_pizza = true;
@@ -135,6 +136,7 @@ public class ConfigHandler {
 	public static boolean ExtraPlantGen = true;
 	public static boolean ExtraJuices = true;
 	public static boolean ExtraJuicesBottles = true;
+	public static boolean bushes_terrain_gen = true;
 	public static int RaspberryAmount = 3;
 	public static float RaspberrySaturation = 0.08F;
 	public static int BlueberryAmount = 3;
@@ -236,7 +238,7 @@ public class ConfigHandler {
 	// Charcoal
 	public static boolean CharcoalBlock = true;
 	public static boolean CharcoalWorldgen = true;
-	public static int charcoal_frequency = 5;
+	public static int charcoal_frequency = 20;
 	public static int charcoal_min = 32;
 	public static int charcoal_max = 48;
 	public static int charcoal_size = 20;
@@ -355,7 +357,7 @@ public class ConfigHandler {
 	public static boolean ender_ore = true;
 	public static boolean ender_mite = true;
 	public static int endermite_spawn = 50;
-	public static int ender_ore_frequency = 50;
+	public static int ender_ore_frequency = 1;
 	public static int ender_ore_min = 1;
 	public static int ender_ore_max = 35;
 	public static int ender_ore_size = 7;
@@ -384,19 +386,20 @@ public class ConfigHandler {
 	// Lava Block
 	public static boolean lava_block = true;
 	public static boolean nether_lava_block = true;
-	public static int nether_lava_block_frequency = 5;
-	public static int nether_lava_block_min = 16;
-	public static int nether_lava_block_max = 32;
-	public static int nether_lava_block_size = 3;
+	public static int nether_lava_block_frequency = 16;
+	public static int nether_lava_block_min = 25;
+	public static int nether_lava_block_max = 35;
+	public static int nether_lava_block_size;
+	public static int ww = 6;
 	public static boolean lava_block_recipe = true;
-	public static int lava_block_frequency = 5;
+	public static int lava_block_frequency = 10;
 	public static int lava_block_min = 16;
 	public static int lava_block_max = 32;
 	public static int lava_block_size = 3;
 	
 	// Water Block
 	public static boolean water_block = true;
-	public static int water_block_frequency = 5;
+	public static int water_block_frequency = 15;
 	public static int water_block_min = 32;
 	public static int water_block_max = 48;
 	public static int water_block_size = 3;
@@ -404,4 +407,14 @@ public class ConfigHandler {
 	// Repair Tablet
 	public static boolean repair_tablet;
 	public static int repair_tablet_cooldown;
+	
+	
+	public static Boolean berrybush_gen = true;
+	public static Boolean wub_ore_gen = true;
+	public static Boolean charcoal_ore_gen = true;
+	public static Boolean ender_ore_gen = true;
+	public static Boolean lava_block_gen = true;
+	public static Boolean water_block_gen = true;
+
+	
 }

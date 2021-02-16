@@ -7,6 +7,8 @@
         "normal": [
     {
     "custom": {
+    	"model": "forge:fluid",
+		"transform": "forge:default-item",
         "fluid": "vasholine"
         }
     }

@@ -1,0 +1,42 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"weight": 2,
+					"name": "minecraft:bone",
+					"conditions": [
+						{
+							"condition": "random_chance",
+							"chance": 0.02
+						}
+					],
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"weight": 1,
+					"name": "minecraft:skeleton_skull",
+					"quality": 1,
+					"conditions": [
+						{
+							"condition": "random_chance",
+							"chance": 0.01
+						}
+					]
+				}
+			]
+		}
+	]
+}

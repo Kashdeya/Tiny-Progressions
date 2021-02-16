@@ -1,21 +1,21 @@
 {
     "variants": {
-    		"normal": {"model": "tp:white_lamp"},
-        "color=white_lamp": {"model": "tp:white_lamp"},
-        "color=orange_lamp": {"model": "tp:orange_lamp"},
-        "color=magenta_lamp": {"model": "tp:magenta_lamp"},
-        "color=lightblue_lamp": {"model": "tp:lightblue_lamp"},
-        "color=yellow_lamp": {"model": "tp:yellow_lamp"},
-        "color=lime_lamp": {"model": "tp:lime_lamp"},
-        "color=pink_lamp": {"model": "tp:pink_lamp"},
-        "color=gray_lamp": {"model": "tp:gray_lamp"},
-        "color=silver_lamp": {"model": "tp:silver_lamp"},
-        "color=cyan_lamp": {"model": "tp:cyan_lamp"},
-        "color=purple_lamp": {"model": "tp:purple_lamp"},
-        "color=blue_lamp": {"model": "tp:blue_lamp"},
-        "color=brown_lamp": {"model": "tp:brown_lamp"},
-        "color=green_lamp": {"model": "tp:green_lamp"},
-        "color=red_lamp": {"model": "tp:red_lamp"},
-        "color=black_lamp": {"model": "tp:black_lamp"}
+    		"": {"model": "tp:block/white_lamp"},
+        "color=white_lamp": {"model": "tp:block/white_lamp"},
+        "color=orange_lamp": {"model": "tp:block/orange_lamp"},
+        "color=magenta_lamp": {"model": "tp:block/magenta_lamp"},
+        "color=lightblue_lamp": {"model": "tp:block/lightblue_lamp"},
+        "color=yellow_lamp": {"model": "tp:block/yellow_lamp"},
+        "color=lime_lamp": {"model": "tp:block/lime_lamp"},
+        "color=pink_lamp": {"model": "tp:block/pink_lamp"},
+        "color=gray_lamp": {"model": "tp:block/gray_lamp"},
+        "color=silver_lamp": {"model": "tp:block/silver_lamp"},
+        "color=cyan_lamp": {"model": "tp:block/cyan_lamp"},
+        "color=purple_lamp": {"model": "tp:block/purple_lamp"},
+        "color=blue_lamp": {"model": "tp:block/blue_lamp"},
+        "color=brown_lamp": {"model": "tp:block/brown_lamp"},
+        "color=green_lamp": {"model": "tp:block/green_lamp"},
+        "color=red_lamp": {"model": "tp:block/red_lamp"},
+        "color=black_lamp": {"model": "tp:block/black_lamp"}
     }
 }

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "tag": "forge:crops/maloberry"
+    }
+  ],
+  "result": {
+    "item": "tp:maloberry_juice"
+  }
+}

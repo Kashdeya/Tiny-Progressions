@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:dirty_glass"}
+        "": {"model": "tp:block/dirty_glass"}
     }
 }

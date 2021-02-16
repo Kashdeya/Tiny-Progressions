@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:bone_block"}
+        "": {"model": "tp:block/bone_block"}
     }
 }

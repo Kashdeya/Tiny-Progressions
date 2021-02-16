@@ -1,19 +1,15 @@
 package com.kashdeya.tinyprogressions.items;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
-import net.minecraft.item.EnumAction;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.Food;
 
-public class FoodBase extends ItemFood implements IOreDictEntry{
+public class FoodBase extends ItemBase implements IOreDictEntry{
+	
 	String oredictName;
 	
-	public FoodBase(int amount, float saturation, boolean isWolfFood) {
-		super(amount, saturation, isWolfFood);
-		this.setCreativeTab(TinyProgressions.tabTP);
+	public FoodBase(Properties properties, Food food) {
+		super(properties.food(food));
 	}
 	
 	public FoodBase setOreDictName(String oredictName)
@@ -27,15 +23,6 @@ public class FoodBase extends ItemFood implements IOreDictEntry{
 		return oredictName;
 	}
 	
-	@Override
-    public EnumAction getItemUseAction(ItemStack stack)
-    {
-        return EnumAction.EAT;
-    }
-	
-	@Override
-	public int getMaxItemUseDuration(ItemStack stack)
-    {
-        return ConfigHandler.eat_timer;
-    }
+
 }
+

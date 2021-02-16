@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tp:reinforced_obsidian"
+    }
+  ],
+  "result": {
+    "item": "tp:reinforced_obsidian_ingot",
+    "count": 9
+  }
+}

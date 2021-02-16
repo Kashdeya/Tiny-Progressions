@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:quadruple_compressed_sugar_cane"}
+        "": {"model": "tp:block/quadruple_compressed_sugar_cane"}
     }
 }

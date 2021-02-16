@@ -1,62 +1,65 @@
 package com.kashdeya.tinyprogressions.blocks.misc;
 
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.Explosion;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.ToolType;
 
 public class GhostBlock extends Block {
 	
 	public GhostBlock()
     {
-        super(Material.CLOTH);
-        this.setHardness(1.5F);
-        this.setHarvestLevel("pickaxe", 1);
-        this.setResistance(10.0F);
-        this.setCreativeTab(TinyProgressions.tabTP);
-        this.setTranslationKey("ghost_block");
+        super(Properties.create(Material.WOOL)
+        		.hardnessAndResistance(1.5f, 10f)
+        		.harvestTool(ToolType.PICKAXE)
+        		.harvestLevel(1)
+        		.notSolid());
+//        this.setTranslationKey("ghost_block");
     }
+	
+	
+	
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, IBlockReader reader, BlockPos position, ISelectionContext context) {
+		return VoxelShapes.empty();
+	}
 	
     /**
      * Used to determine ambient occlusion and culling when rebuilding chunks for render
      */
-	@Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
-    }
-    
-    @Override
-    public boolean isFullCube(IBlockState state)
-    {
-        return false;
-    }
-	
-	@Override
-    public boolean canDropFromExplosion(Explosion explosionIn)
-    {
-        return false;
-    }
-	
-	@Override
-    public int quantityDropped(Random rand)
-    {
-        return 0;
-    }
-	
-    @Nullable
-    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-    {
-        return NULL_AABB;
-    }
+//	@Override
+//    public boolean isOpaqueCube(IBlockState state)
+//    {
+//        return false;
+//    }
+//    
+//    @Override
+//    public boolean isFullCube(IBlockState state)
+//    {
+//        return false;
+//    }
+//	
+//	@Override
+//    public boolean canDropFromExplosion(Explosion explosionIn)
+//    {
+//        return false;
+//    }
+//	
+//	@Override
+//    public int quantityDropped(Random rand)
+//    {
+//        return 0;
+//    }
+//	
+//    @Nullable
+//    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+//    {
+//        return NULL_AABB;
+//    }
 
 }

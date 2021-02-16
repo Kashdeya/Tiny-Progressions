@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    " I ",
+    " I "
+  ],
+  "key": {
+    "P": {
+      "item": "tp:wub_pickaxe"
+    },
+    "A": {
+      "item": "tp:wub_axe"
+    },
+    "S": {
+      "item": "tp:wub_spade"
+    },
+    "I": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "tp:wub_paxel"
+  }
+}

@@ -1,10 +1,7 @@
 package com.kashdeya.tinyprogressions.inits;
 
-import com.kashdeya.tinyprogressions.armor.BamShirt;
-import com.kashdeya.tinyprogressions.armor.BoneArmor;
+import com.kashdeya.tinyprogressions.armor.BaseArmor;
 import com.kashdeya.tinyprogressions.armor.DragonArmour;
-import com.kashdeya.tinyprogressions.armor.EmeraldArmor;
-import com.kashdeya.tinyprogressions.armor.FlintArmor;
 import com.kashdeya.tinyprogressions.armor.LapisArmor;
 import com.kashdeya.tinyprogressions.armor.LavaArmour;
 import com.kashdeya.tinyprogressions.armor.ObsidianArmor;
@@ -12,190 +9,93 @@ import com.kashdeya.tinyprogressions.armor.QuartzArmor;
 import com.kashdeya.tinyprogressions.armor.RedstoneArmor;
 import com.kashdeya.tinyprogressions.armor.StoneArmor;
 import com.kashdeya.tinyprogressions.armor.WitherArmour;
-import com.kashdeya.tinyprogressions.armor.WoodArmor;
-import com.kashdeya.tinyprogressions.handlers.ArmorHandler;
-import com.kashdeya.tinyprogressions.handlers.MaterialHandler;
+import com.kashdeya.tinyprogressions.items.materials.ArmorMaterialTier;
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemArmor;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechArmor {
-	// Stone Armor
-	public static ItemArmor stone_helmet;
-	public static ItemArmor stone_chestplate;
-	public static ItemArmor stone_leggings;
-	public static ItemArmor stone_boots;
-	
-	// Flint Armor
-	public static ItemArmor flint_helmet;
-	public static ItemArmor flint_chestplate;
-	public static ItemArmor flint_leggings;
-	public static ItemArmor flint_boots;
-	
-	// Bone Armor
-	public static ItemArmor bone_helmet;
-	public static ItemArmor bone_chestplate;
-	public static ItemArmor bone_leggings;
-	public static ItemArmor bone_boots;
 	
 	// Wood Armor
-	public static ItemArmor wooden_helmet;
-	public static ItemArmor wooden_chestplate;
-	public static ItemArmor wooden_leggings;
-	public static ItemArmor wooden_boots;
+	public static RegistryObject<Item> wooden_helmet =     TinyProgressions.ITEMS.register("wooden_helmet",     () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> wooden_chestplate = TinyProgressions.ITEMS.register("wooden_chestplate", () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> wooden_leggings =   TinyProgressions.ITEMS.register("wooden_leggings",   () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> wooden_boots =      TinyProgressions.ITEMS.register("wooden_boots",      () -> new BaseArmor(ArmorMaterialTier.WOOD, EquipmentSlotType.FEET, new Properties()));
 	
-	// Lava
-	public static ItemArmor lava_helmet;
-	public static ItemArmor lava_chestplate;
-	public static ItemArmor lava_leggings;
-	public static ItemArmor lava_boots;
+	// Bone Armor
+	public static RegistryObject<Item> bone_helmet =     TinyProgressions.ITEMS.register("bone_helmet",     () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> bone_chestplate = TinyProgressions.ITEMS.register("bone_chestplate", () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> bone_leggings =   TinyProgressions.ITEMS.register("bone_leggings",   () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> bone_boots =      TinyProgressions.ITEMS.register("bone_boots",      () -> new BaseArmor(ArmorMaterialTier.BONE, EquipmentSlotType.FEET, new Properties()));
+		
+	// Flint Armor
+	public static RegistryObject<Item> flint_helmet =    TinyProgressions.ITEMS.register("flint_helmet",     () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> flint_chestplate= TinyProgressions.ITEMS.register("flint_chestplate", () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> flint_leggings=   TinyProgressions.ITEMS.register("flint_leggings",   () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> flint_boots=      TinyProgressions.ITEMS.register("flint_boots",      () -> new BaseArmor(ArmorMaterialTier.FLINT, EquipmentSlotType.FEET, new Properties()));
 	
-	// Wither
-	public static ItemArmor wither_helmet;
-	public static ItemArmor wither_chestplate;
-	public static ItemArmor wither_leggings;
-	public static ItemArmor wither_boots;
-	
-	// Dragon
-	public static ItemArmor dragon_helmet;
-	public static ItemArmor dragon_chestplate;
-	public static ItemArmor dragon_leggings;
-	public static ItemArmor dragon_boots;
+	// Stone Armor
+	public static RegistryObject<Item> stone_helmet =     TinyProgressions.ITEMS.register("stone_helmet",     () -> new StoneArmor(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> stone_chestplate = TinyProgressions.ITEMS.register("stone_chestplate", () -> new StoneArmor(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> stone_leggings =   TinyProgressions.ITEMS.register("stone_leggings",   () -> new StoneArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> stone_boots =      TinyProgressions.ITEMS.register("stone_boots",      () -> new StoneArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Obsidian
-	public static ItemArmor obsidian_helmet;
-	public static ItemArmor obsidian_chestplate;
-	public static ItemArmor obsidian_leggings;
-	public static ItemArmor obsidian_boots;
+	public static RegistryObject<Item> obsidian_helmet=     TinyProgressions.ITEMS.register("obsidian_helmet",     () -> new ObsidianArmor(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> obsidian_chestplate= TinyProgressions.ITEMS.register("obsidian_chestplate", () -> new ObsidianArmor(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> obsidian_leggings=   TinyProgressions.ITEMS.register("obsidian_leggings",   () -> new ObsidianArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> obsidian_boots=      TinyProgressions.ITEMS.register("obsidian_boots",      () -> new ObsidianArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Lapis
-	public static ItemArmor lapis_helmet;
-	public static ItemArmor lapis_chestplate;
-	public static ItemArmor lapis_leggings;
-	public static ItemArmor lapis_boots;
+	public static RegistryObject<Item> lapis_helmet=     TinyProgressions.ITEMS.register("lapis_helmet",     () -> new LapisArmor(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> lapis_chestplate= TinyProgressions.ITEMS.register("lapis_chestplate", () -> new LapisArmor(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> lapis_leggings=   TinyProgressions.ITEMS.register("lapis_leggings",   () -> new LapisArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> lapis_boots=      TinyProgressions.ITEMS.register("lapis_boots",      () -> new LapisArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Quartz
-	public static ItemArmor quartz_helmet;
-	public static ItemArmor quartz_chestplate;
-	public static ItemArmor quartz_leggings;
-	public static ItemArmor quartz_boots;
+	public static RegistryObject<Item> quartz_helmet=     TinyProgressions.ITEMS.register("quartz_helmet",     () ->  new QuartzArmor(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> quartz_chestplate= TinyProgressions.ITEMS.register("quartz_chestplate", () -> new QuartzArmor(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> quartz_leggings=   TinyProgressions.ITEMS.register("quartz_leggings",   () -> new QuartzArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> quartz_boots=      TinyProgressions.ITEMS.register("quartz_boots",      () -> new QuartzArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Redstone
-	public static ItemArmor redstone_helmet;
-	public static ItemArmor redstone_chestplate;
-	public static ItemArmor redstone_leggings;
-	public static ItemArmor redstone_boots;
+	public static RegistryObject<Item> redstone_helmet=     TinyProgressions.ITEMS.register("redstone_helmet",     () -> new RedstoneArmor(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> redstone_chestplate= TinyProgressions.ITEMS.register("redstone_chestplate", () -> new RedstoneArmor(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> redstone_leggings=   TinyProgressions.ITEMS.register("redstone_leggings",   () -> new RedstoneArmor(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> redstone_boots=      TinyProgressions.ITEMS.register("redstone_boots",      () ->  new RedstoneArmor(EquipmentSlotType.FEET, new Properties()));
 	
 	// Emerald
-	public static ItemArmor emerald_helmet;
-	public static ItemArmor emerald_chestplate;
-	public static ItemArmor emerald_leggings;
-	public static ItemArmor emerald_boots;
+	public static RegistryObject<Item> emerald_helmet=     TinyProgressions.ITEMS.register("emerald_helmet",     () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> emerald_chestplate= TinyProgressions.ITEMS.register("emerald_chestplate", () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> emerald_leggings=   TinyProgressions.ITEMS.register("emerald_leggings",   () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> emerald_boots=      TinyProgressions.ITEMS.register("emerald_boots",      () -> new BaseArmor(ArmorMaterialTier.EMERALD, EquipmentSlotType.FEET, new Properties()));
+	
+	// Lava
+	public static RegistryObject<Item> lava_helmet =     TinyProgressions.ITEMS.register("lava_helmet",     () -> new LavaArmour(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> lava_chestplate = TinyProgressions.ITEMS.register("lava_chestplate", () -> new LavaArmour(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> lava_leggings =   TinyProgressions.ITEMS.register("lava_leggings",   () -> new LavaArmour(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> lava_boots =      TinyProgressions.ITEMS.register("lava_boots",      () -> new LavaArmour(EquipmentSlotType.FEET, new Properties()));
+	
+	// Wither
+	public static RegistryObject<Item> wither_helmet =    TinyProgressions.ITEMS.register("wither_helmet",     () -> new WitherArmour(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> wither_chestplate= TinyProgressions.ITEMS.register("wither_chestplate", () -> new WitherArmour(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> wither_leggings=   TinyProgressions.ITEMS.register("wither_leggings",   () -> new WitherArmour(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> wither_boots=      TinyProgressions.ITEMS.register("wither_boots",      () -> new WitherArmour(EquipmentSlotType.FEET, new Properties()));
+	
+	// Dragon
+	//TODOD Fix Dragon
+	public static RegistryObject<Item> dragon_helmet=     TinyProgressions.ITEMS.register("dragon_helmet",    () -> new DragonArmour(EquipmentSlotType.HEAD, new Properties()));
+	public static RegistryObject<Item> dragon_chestplate= TinyProgressions.ITEMS.register("dragon_chestplate",() -> new DragonArmour(EquipmentSlotType.CHEST, new Properties()));
+	public static RegistryObject<Item> dragon_leggings=   TinyProgressions.ITEMS.register("dragon_leggings",  () -> new DragonArmour(EquipmentSlotType.LEGS, new Properties()));
+	public static RegistryObject<Item> dragon_boots=      TinyProgressions.ITEMS.register("dragon_boots",     () -> new DragonArmour(EquipmentSlotType.FEET, new Properties()));
+	
 	
 	// bam t-shirt
-	public static ItemArmor bam_tshirt;
+	public static RegistryObject<Item> bam_tshirt = TinyProgressions.ITEMS.register("bam_tshirt", () -> new BaseArmor(ArmorMaterialTier.BAM, EquipmentSlotType.CHEST, "tooltip.bamsarmor_1", new Properties()));
 	
-	public static void init(){
-		
-		// bam t-shirt
-		if (ArmorHandler.emerald_amor && ArmorHandler.bam_tshirt) {
-			bam_tshirt = (ItemArmor) new BamShirt(MaterialHandler.bamArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("bam_tshirt");
-		}
-		
-		// Emerald Armor
-		if (ArmorHandler.emerald_amor){
-			emerald_helmet = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("emerald_helmet");
-			emerald_chestplate = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("emerald_chestplate");
-			emerald_leggings = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("emerald_leggings");
-			emerald_boots = (ItemArmor) new EmeraldArmor(MaterialHandler.emeraldArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("emerald_boots");
-		}
-		
-		// Stone Armor
-		if (ArmorHandler.StoneArmor){
-			stone_helmet = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("stone_helmet");
-			stone_chestplate = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("stone_chestplate");
-			stone_leggings = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("stone_leggings");
-			stone_boots = (ItemArmor) new StoneArmor(MaterialHandler.stoneArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("stone_boots");
-		}
-		
-		// Flint Armor
-		if (ArmorHandler.FlintArmor){
-			flint_helmet = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("flint_helmet");
-			flint_chestplate = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("flint_chestplate");
-			flint_leggings = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("flint_leggings");
-			flint_boots = (ItemArmor) new FlintArmor(MaterialHandler.flintArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("flint_boots");
-		}
-		
-		// Bone Armor
-		if (ArmorHandler.BoneArmor){
-			bone_helmet = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("bone_helmet");
-			bone_chestplate = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("bone_chestplate");
-			bone_leggings = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("bone_leggings");
-			bone_boots = (ItemArmor) new BoneArmor(MaterialHandler.boneArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("bone_boots");
-		}
-		
-		// Wood Armor
-		if (ArmorHandler.WoodArmor){
-			wooden_helmet = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("wooden_helmet");
-			wooden_chestplate = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("wooden_chestplate");
-			wooden_leggings = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("wooden_leggings");
-			wooden_boots = (ItemArmor) new WoodArmor(MaterialHandler.woodArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("wooden_boots");
-		}
-		
-		// Lava
-		if (ArmorHandler.lava_armor){
-			lava_helmet = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("lava_helmet");
-		   	lava_chestplate = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("lava_chestplate");
-		   	lava_leggings = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("lava_leggings");
-		   	lava_boots = (ItemArmor) new LavaArmour(MaterialHandler.lavaArmorMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("lava_boots");
-		}
-		
-		// Wither
-		if (ArmorHandler.wither_armor){
-			wither_helmet = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("wither_helmet");
-		   	wither_chestplate = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("wither_chestplate");
-		   	wither_leggings = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("wither_leggings");
-		   	wither_boots = (ItemArmor) new WitherArmour(MaterialHandler.witherArmorMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("wither_boots");
-		}
-		
-		// Dragon
-		if (ArmorHandler.dragon_armor){
-			dragon_helmet = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("dragon_helmet");
-		   	dragon_chestplate = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("dragon_chestplate");
-		   	dragon_leggings = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("dragon_leggings");
-		   	dragon_boots = (ItemArmor) new DragonArmour(MaterialHandler.dragonArmorMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("dragon_boots");
-		}
-		
-		// Obsidian
-		if (ArmorHandler.obsidian_armor){
-			obsidian_helmet = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("obsidian_helmet");
-		   	obsidian_chestplate = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("obsidian_chestplate");
-		   	obsidian_leggings = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("obsidian_leggings");
-		   	obsidian_boots = (ItemArmor) new ObsidianArmor(MaterialHandler.obsidianArmorMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("obsidian_boots");
-		}
-		
-		// Lapis
-		if (ArmorHandler.lapis_armor){
-			lapis_helmet = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("lapis_helmet");
-		   	lapis_chestplate = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("lapis_chestplate");
-		   	lapis_leggings = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("lapis_leggings");
-		   	lapis_boots = (ItemArmor) new LapisArmor(MaterialHandler.lapisArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("lapis_boots");
-		}
-		
-		// Quartz
-		if (ArmorHandler.quartz_armor){
-			quartz_helmet = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("quartz_helmet");
-		   	quartz_chestplate = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("quartz_chestplate");
-		   	quartz_leggings = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("quartz_leggings");
-		   	quartz_boots = (ItemArmor) new QuartzArmor(MaterialHandler.quartzArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("quartz_boots");
-		}
-		
-		// Redstone
-		if (ArmorHandler.redstone_armor){
-			redstone_helmet = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.HEAD).setTranslationKey("redstone_helmet");
-		   	redstone_chestplate = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.CHEST).setTranslationKey("redstone_chestplate");
-		   	redstone_leggings = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 2, EntityEquipmentSlot.LEGS).setTranslationKey("redstone_leggings");
-		   	redstone_boots = (ItemArmor) new RedstoneArmor(MaterialHandler.redstoneArmourMaterial, 1, EntityEquipmentSlot.FEET).setTranslationKey("redstone_boots");
-		}
-	}
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BDB",
+    "C C"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:magma_block"
+    },
+    "C": {
+      "item": "minecraft:magma_cream"
+    },
+    "D": {
+      "item": "tp:emerald_boots"
+    }
+  },
+  "result": {
+    "item": "tp:lava_boots"
+  }
+}

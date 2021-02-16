@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tp:emerald_chestplate"
+    }
+  ],
+  "result": {
+    "item": "tp:bam_tshirt"
+  }
+}

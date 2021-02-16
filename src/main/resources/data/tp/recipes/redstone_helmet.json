@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "D D"
+  ],
+  "key": {
+    "D": {
+      "item": "tp:redstone_ingot"
+    }
+  },
+  "result": {
+    "item": "tp:redstone_helmet"
+  }
+}

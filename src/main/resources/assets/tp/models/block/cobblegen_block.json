@@ -35,8 +35,8 @@
         "particle": "tp:blocks/cobblegen_block_generic",
         "t1": "tp:blocks/cobblegen_block_generic",
         "t2": "tp:blocks/cobblegen_block_glass",
-        "t3": "blocks/lava_still",
-        "t4": "blocks/water_still",
-        "t5": "blocks/cobblestone"
+        "t3": "block/lava_still",
+        "t4": "tp:fluids/water_still",
+        "t5": "block/cobblestone"
     }
 }

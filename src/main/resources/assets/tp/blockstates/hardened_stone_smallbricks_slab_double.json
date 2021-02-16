@@ -1,7 +1,0 @@
-{
-    "variants": {
-    	"normal": {"model": "tp:hardened_stone_smallbricks"},
-        "half=bottom": {"model": "tp:hardened_stone_smallbricks"},
-        "half=top": {"model": "tp:hardened_stone_smallbricks"}
-    }
-}

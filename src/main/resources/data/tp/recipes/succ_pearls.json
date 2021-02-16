@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "tag": "forge:juicer"
+    }
+  ],
+  "result": {
+    "item": "tp:succ_pearls"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:rods/cane",
+    "#forge:rods/netherrack",
+    "#forge:rods/stone"
+  ]
+}

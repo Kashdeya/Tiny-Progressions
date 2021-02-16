@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "D D",
+    "DDD",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "tp:redstone_ingot"
+    }
+  },
+  "result": {
+    "item": "tp:redstone_chestplate"
+  }
+}

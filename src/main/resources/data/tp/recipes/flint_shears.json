@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SP",
+    "PS"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:flint"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "tp:flint_shears"
+  }
+}

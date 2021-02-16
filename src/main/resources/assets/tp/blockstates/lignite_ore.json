@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal":   { "model": "tp:lignite_ore" }
+        "":   { "model": "tp:block/lignite_ore" }
     }
 }

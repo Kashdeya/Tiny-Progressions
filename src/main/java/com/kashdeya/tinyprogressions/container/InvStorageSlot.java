@@ -4,7 +4,7 @@ import javax.annotation.Nonnull;
 
 import com.kashdeya.tinyprogressions.capabilities.InventoryStorage;
 
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.SlotItemHandler;
@@ -57,7 +57,7 @@ public class InvStorageSlot extends SlotItemHandler{
 	     * Return whether this slot's stack can be taken from this slot.
 	     */
 	    @Override
-	    public boolean canTakeStack(EntityPlayer playerIn)
+	    public boolean canTakeStack(PlayerEntity playerIn)
 	    {
 	        return !(this.getItemHandler().extractItemInternal(index, 1, true).isEmpty());
 	    }

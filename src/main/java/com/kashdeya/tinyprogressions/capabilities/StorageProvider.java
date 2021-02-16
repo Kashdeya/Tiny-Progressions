@@ -2,69 +2,53 @@ package com.kashdeya.tinyprogressions.capabilities;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.Capability.IStorage;
+import net.minecraftforge.common.capabilities.CapabilityInject;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 
-public class StorageProvider implements ICapabilitySerializable<NBTTagCompound>, Capability.IStorage<IStorage<?>>
+public class StorageProvider implements  ICapabilityProvider , ICapabilitySerializable<CompoundNBT>
 {
-    private final InventoryStorage instance;
+    @CapabilityInject(InventoryStorage.class)
+
+    public final LazyOptional<ItemStackHandler> instance;
  
-    public StorageProvider()
+    public StorageProvider(ItemStackHandler handler)
     {
-        this(0);
+    	instance = LazyOptional.of(() -> handler); 
     }
     
-    public StorageProvider(int inventorySize)
+    public boolean hasCapability(Capability<?> capability, @Nullable Direction facing)
     {
-        this(null, inventorySize);
+        return capability.equals(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
     }
     
-    public StorageProvider(String name, int inventorySize)
-    {
-        instance = new InventoryStorage(name, inventorySize);
-    }
-    
-    @Override
-    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing)
-    {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
-    }
- 
+	@SuppressWarnings("unchecked")
 	@Override
-    @SuppressWarnings("unchecked")
-    public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing)
-    {
-        return hasCapability(capability, facing) ? (T)instance : null;
-    }
- 
-    @Override
-    public NBTBase writeNBT(Capability<IStorage<?>> capability, IStorage<?> instance, EnumFacing side)
-    {
-        return serializeNBT();
-    }
- 
-    @Override
-    public void readNBT(Capability<IStorage<?>> capability, IStorage<?> instance, EnumFacing facing, NBTBase nbt)
-    {
-        deserializeNBT((NBTTagCompound)nbt);
-    }
+	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
 
-    @Override
-    public NBTTagCompound serializeNBT()
-    {
-        NBTTagCompound compound = new NBTTagCompound();
-        instance.writeToNBT(compound);
-        return compound;
-    }
+		if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+			return (LazyOptional<T>) instance;
+		
+		return LazyOptional.empty();
+	}
 
-    @Override
-    public void deserializeNBT(NBTTagCompound nbt)
-    {
-        instance.readFromNBT(nbt);
-    }
+	@Override
+	public CompoundNBT serializeNBT() {
+		ItemStackHandler inv = instance.orElseGet(null);
+		return inv.serializeNBT();
+	}
+
+	@Override
+	public void deserializeNBT(CompoundNBT nbt) {
+		ItemStackHandler inv = instance.orElseGet(null);
+		inv.deserializeNBT(nbt);
+	}
+
+
 }

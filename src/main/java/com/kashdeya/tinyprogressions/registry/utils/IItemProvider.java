@@ -1,8 +1,8 @@
 package com.kashdeya.tinyprogressions.registry.utils;
 
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.BlockItem;
 
 public interface IItemProvider
 {
-	ItemBlock createItemBlock();
+	BlockItem createItemBlock();
 }

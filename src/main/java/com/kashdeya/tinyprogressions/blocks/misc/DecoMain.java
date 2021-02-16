@@ -1,33 +1,29 @@
 package com.kashdeya.tinyprogressions.blocks.misc;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.ToolType;
 
 public class DecoMain extends Block implements IOreDictEntry{
 	String oredictName;
 	
 	public DecoMain()
     {
-		super(Material.IRON);
-		this.setResistance(1000.0F);
-		this.setHardness(2.0F);
-		this.setCreativeTab(TinyProgressions.tabTP);
-		this.setHarvestLevel("pickaxe", 1);
+		super(Properties.create(Material.IRON)
+				.hardnessAndResistance(2F, 1000F)
+				.harvestLevel(1)
+				.harvestTool(ToolType.PICKAXE));
+
     }
     
-    @Override
-    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
-    {
-        return false;
-    }
-    
+//    @Override
+//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
+//    {
+//        return false;
+//    }
+//    
     public DecoMain setOreDictName(String oredictName)
 	{
 		this.oredictName = oredictName;

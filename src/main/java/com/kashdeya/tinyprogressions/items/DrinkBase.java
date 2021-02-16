@@ -1,69 +1,73 @@
 package com.kashdeya.tinyprogressions.items;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.item.EnumAction;
-import net.minecraft.item.ItemFood;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.Food;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
+import net.minecraft.item.Items;
+import net.minecraft.item.UseAction;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
-public class DrinkBase extends ItemFood{
+public class DrinkBase extends FoodBase{
 	
-	public DrinkBase(int amount, float saturation, boolean isWolfFood) {
-		super(amount, saturation, isWolfFood);
-		this.setCreativeTab(TinyProgressions.tabTP);
+	SoundEvent sound = SoundEvents.ENTITY_PLAYER_BURP;
+	
+	public DrinkBase(Properties properties, Food food) {
+		super(properties, food);
 	}
 	
-	/**
-     * returns the action that specifies what animation to play when the items is being used
-     */
+	
+	public DrinkBase setSound(SoundEvent soundIn) {
+		this.sound = soundIn;
+		return this;
+	}
+
 	@Override
-    public EnumAction getItemUseAction(ItemStack stack)
-    {
-        return EnumAction.DRINK;
+	public UseAction getUseAction(ItemStack stack) {
+        return UseAction.DRINK;
     }
     
 	@Override
-    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
-    {
-        if (entityLiving instanceof EntityPlayer)
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+    
+		
+		ActionResult<ItemStack> rtn = super.onItemRightClick(worldIn, playerIn, handIn);
+		
+		if(rtn.getType() == ActionResultType.FAIL)
+			return rtn;
+		
+    	ItemStack stack = playerIn.getHeldItem(handIn);
+    	
+    	playerIn.getFoodStats().addStats(1, this.getFood().getSaturation());
+        worldIn.playSound(null, playerIn.getPosition().getX(), playerIn.getPosition().getY(), playerIn.getPosition().getZ(), this.sound, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+
+        //this.onFoodEaten(stack, worldIn, playerIn);
+        
+
+        if (playerIn instanceof ServerPlayerEntity)
         {
-            EntityPlayer entityplayer = (EntityPlayer)entityLiving;
-            entityplayer.getFoodStats().addStats(this, stack);
-            worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
-            this.onFoodEaten(stack, worldIn, entityplayer);
-            entityplayer.addStat(StatList.getObjectUseStats(this));
-
-            if (entityplayer instanceof EntityPlayerMP)
+            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayerEntity)playerIn, stack);
+        }
+        
+        if (!playerIn.isCreative())
+        {
+            if (stack.isEmpty())
             {
-                CriteriaTriggers.CONSUME_ITEM.trigger((EntityPlayerMP)entityplayer, stack);
+                return new ActionResult<ItemStack> (ActionResultType.PASS, new ItemStack(Items.GLASS_BOTTLE));
             }
-            
-            if (!entityplayer.capabilities.isCreativeMode)
-            {
-                if (stack.isEmpty() && ConfigHandler.JuiceBottles)
-                {
-                    return new ItemStack(Items.GLASS_BOTTLE);
-                }
 
-                if (ConfigHandler.JuiceBottles)
-                {
-                    entityplayer.inventory.addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
-                }
-            }
+           	playerIn.inventory.addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
         }
 
         stack.shrink(1);
-        return stack;
+        return  new ActionResult<ItemStack> (ActionResultType.FAIL, stack);
     }
-
+	
 }

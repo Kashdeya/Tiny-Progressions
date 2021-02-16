@@ -1,41 +1,35 @@
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
-import java.util.Random;
+import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
-import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
-
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 
-public class Asphalt extends Block{
+public class Asphalt extends StandardBlock{
 	
 	public Asphalt()
     {
-        super(Material.ROCK);
-        this.setHardness(0.8F);
-        this.setHarvestLevel("pickaxe", 1);
-        this.setResistance(100.0F);
-        this.setSoundType(SoundType.STONE);
-        this.setCreativeTab(TinyProgressions.tabTP);
-        this.setTranslationKey("asphalt_block");
+        super(Properties
+        		.create(Material.ROCK)
+        		.hardnessAndResistance(.8F, 100F)
+        		.sound(SoundType.STONE)
+        		.harvestLevel(1)
+        		.harvestTool(ToolType.PICKAXE));
     }
 	
 	/**
      * Get the Item that this Block should drop when harvested.
      */
-	@Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return Item.getItemFromBlock(TechBlocks.asphalt_block);
-    }
+//	@Override
+//    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+//    {
+//        return Item.getItemFromBlock(TechBlocks.asphalt_block);
+//    }
 	
 	@Override
     public boolean canDropFromExplosion(Explosion explosionIn)
@@ -43,24 +37,22 @@ public class Asphalt extends Block{
         return true;
     }
 	
+//	@Override
+//    public int quantityDropped(Random rand)
+//    {
+//        return 1;
+//    }
+//	
 	@Override
-    public int quantityDropped(Random rand)
+	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) 
     {
-        return 1;
-    }
-	
-	@Override
-	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
-    {
-        entityIn.fall(fallDistance, 3.0F);
+        entityIn.onLivingFall(fallDistance, 3.0F);
     }
 	
 	@Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
     {
-    	entityIn.motionX *= 1.8D;
-        entityIn.motionZ *= 1.8D;
-
+    	entityIn.setMotion(entityIn.getMotion().x * 1.8D, entityIn.getMotion().y, entityIn.getMotion().z * 1.8D);
         super.onEntityWalk(worldIn, pos, entityIn);
     }
 

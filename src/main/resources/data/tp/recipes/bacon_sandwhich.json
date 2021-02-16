@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tp:bread_slice"
+    },
+    {
+      "item": "tp:cooked_bacon"
+    },
+    {
+      "item": "tp:cooked_bacon"
+    },
+    {
+      "item": "tp:bread_slice"
+    }
+  ],
+  "result": {
+    "item": "tp:bacon_sandwhich"
+  }
+}

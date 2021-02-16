@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " II",
+    " SI",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:rods/cane"
+    },
+    "I": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "result": {
+    "item": "tp:bsc_diamond_axe"
+  }
+}

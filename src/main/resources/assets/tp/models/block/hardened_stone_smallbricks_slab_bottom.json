@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "tp:blocks/hardened_stone_smallbricks",
-        "top": "tp:blocks/hardened_stone_smallbricks",
-        "side": "tp:blocks/hardened_stone_smallbricks"
-    }
-}

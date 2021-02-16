@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RDR",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "R": {
+      "tag": "forge:ingots/reinforced_obsidian"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    },
+    "D": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "result": {
+    "item": "tp:birthday_pickaxe"
+  }
+}

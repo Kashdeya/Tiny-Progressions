@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": {"model": "tp:fmf_block"}
+        "": {"model": "tp:block/fmf_block"}
     }
 }

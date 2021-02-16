@@ -1,0 +1,26 @@
+{
+  "type": "tp:crafting_shaped_nbt",
+  "pattern": [
+    "CNC",
+    "WEW",
+    "CNC"
+  ],
+  "key": {
+    "C": {
+      "item": "tp:growth_block"
+    },
+    "E": {
+      "tag": "forge:glass"
+    },
+    "W": {
+      "item": "minecraft:potion",
+      "nbt": "{Potion:\"minecraft:long_swiftness\"}"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "tp:growth_upgrade"
+  }
+}

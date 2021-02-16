@@ -1,6 +1,5 @@
 package com.kashdeya.tinyprogressions.items;
 
-import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.item.Item;
@@ -8,9 +7,8 @@ import net.minecraft.item.Item;
 public class ItemBase extends Item implements IOreDictEntry{
 	String oredictName;
 	
-	public ItemBase() {
-		super();
-		this.setCreativeTab(TinyProgressions.tabTP);
+	public ItemBase(Properties properties) {
+		super(properties);
 	}
 	
 	public ItemBase setOreDictName(String oredictName)

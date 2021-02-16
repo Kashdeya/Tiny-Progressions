@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal":   { "model": "tp:anthracite_ore" }
+        "":   { "model": "tp:block/anthracite_ore" }
     }
 }

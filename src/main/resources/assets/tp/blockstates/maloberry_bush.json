@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "tp:maloberry_bush" }
+        "": { "model": "tp:block/maloberry_bush" }
     }
 }

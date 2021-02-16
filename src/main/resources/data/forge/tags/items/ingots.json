@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:ingots/flint",
+    "#forge:ingots/lapis",
+    "#forge:ingots/quartz",
+    "#forge:ingots/redstone",
+    "#forge:ingots/reinforced_obsidian",
+    "#forge:ingots/steel",
+    "#forge:ingots/wub"
+  ]
+}

@@ -44,6 +44,6 @@
 		"t4": "tp:blocks/growth_upgrade_south",
 		"t5": "tp:blocks/growth_upgrade_west",
 		"t6": "tp:blocks/growth_upgrade_east",
-		"t7": "blocks/water_still"
+		"t7": "tp:fluids/water_still"
     }
 }

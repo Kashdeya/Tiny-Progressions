@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tp:old_reed"
+    }
+  ],
+  "result": {
+    "item": "minecraft:sugar"
+  }
+}

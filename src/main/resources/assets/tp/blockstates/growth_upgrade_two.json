@@ -1,20 +1,5 @@
 {
     "variants": {
-        "level=0": {"model": "tp:growth_upgrade_two"},
-		"level=1": {"model": "tp:growth_upgrade_two"},
-		"level=2": {"model": "tp:growth_upgrade_two"},
-		"level=3": {"model": "tp:growth_upgrade_two"},
-		"level=4": {"model": "tp:growth_upgrade_two"},
-		"level=5": {"model": "tp:growth_upgrade_two"},
-		"level=6": {"model": "tp:growth_upgrade_two"},
-		"level=7": {"model": "tp:growth_upgrade_two"},
-		"level=8": {"model": "tp:growth_upgrade_two"},
-		"level=9": {"model": "tp:growth_upgrade_two"},
-		"level=10": {"model": "tp:growth_upgrade_two"},
-		"level=11": {"model": "tp:growth_upgrade_two"},
-		"level=12": {"model": "tp:growth_upgrade_two"},
-		"level=13": {"model": "tp:growth_upgrade_two"},
-		"level=14": {"model": "tp:growth_upgrade_two"},
-		"level=15": {"model": "tp:growth_upgrade_two"}
+        "": {"model": "tp:block/growth_upgrade_two"}
     }
 }

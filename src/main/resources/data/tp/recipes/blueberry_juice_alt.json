@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:juicer"
+    },
+    {
+      "tag": "forge:crops/blueberry"
+    },
+    {
+      "tag": "forge:bottles/glass"
+    }
+  ],
+  "result": {
+    "item": "tp:blueberry_juice"
+  }
+}

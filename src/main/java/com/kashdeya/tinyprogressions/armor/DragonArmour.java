@@ -72,16 +72,16 @@ public class DragonArmour extends BaseArmor {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly) {
-        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_1"));
         }
         if (ArmorHandler.dragon_armor && ArmorHandler.dragon_strength) {
-        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_2"));
         }
         if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fire) {
-        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_3").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_3"));
         }
         if (ArmorHandler.dragon_armor && ArmorHandler.dragon_resistance) {
-        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_4").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_4"));
         }
     }
 }

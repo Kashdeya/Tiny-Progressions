@@ -64,16 +64,16 @@ public class WitherArmour extends BaseArmor {
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.wither_armor && (ArmorHandler.wither_strength || ArmorHandler.wither_fire || ArmorHandler.wither_resistance)) {
-        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_1"));
         }
         if (ArmorHandler.wither_armor && ArmorHandler.wither_strength) {
-        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_2"));
         }
         if (ArmorHandler.wither_armor && ArmorHandler.wither_fire) {
-        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_3").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_3"));
         }
         if (ArmorHandler.wither_armor && ArmorHandler.wither_resistance) {
-        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_4").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_4"));
         }
     }
 }

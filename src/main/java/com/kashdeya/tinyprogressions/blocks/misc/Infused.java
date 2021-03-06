@@ -13,7 +13,7 @@ public class Infused extends Block {
 		super(Properties.create(Material.LAVA)
 				.hardnessAndResistance(2, 1000)
 				.tickRandomly()
-				.lightValue(8)
+				.setLightLevel((p) -> 8)
 				.sound(SoundType.STONE)
 				.harvestLevel(1)
 				.harvestTool(ToolType.PICKAXE));

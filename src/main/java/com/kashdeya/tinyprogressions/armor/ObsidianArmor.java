@@ -58,8 +58,8 @@ public class ObsidianArmor extends BaseArmor {
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.obsidian_armor && ArmorHandler.obsidian_armor_resistance) {
-        	tooltip.add(new TranslationTextComponent("tooltip.obsidianarmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-        	tooltip.add(new TranslationTextComponent("tooltip.obsidianarmor_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.obsidianarmor_1"));
+        	tooltip.add(new TranslationTextComponent("tooltip.obsidianarmor_2"));
         }
     }
 }

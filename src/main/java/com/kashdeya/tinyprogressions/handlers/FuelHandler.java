@@ -24,8 +24,6 @@ public class FuelHandler
 		
 		if(itemIn == TechBlocks.charcoal_block.get().asItem())
 			event.setBurnTime(CharcoalBlockBurn);
-		else if(itemIn == TechBlocks.stone_torch.get().asItem())
-				event.setBurnTime(150);
 		else if(itemIn == TechItems.tiny_coal.get())
 				event.setBurnTime(tiny_coal_burntime);
 		else if(itemIn == TechItems.tiny_charcoal.get())

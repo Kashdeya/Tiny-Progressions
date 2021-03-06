@@ -9,7 +9,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class PouchGui extends ContainerScreen<PouchContainer> 
+public abstract class PouchGui extends ContainerScreen<PouchContainer>
 {
     private final ResourceLocation texture = new ResourceLocation("minecraft", "textures/gui/container/generic_54.png");
     
@@ -21,15 +21,13 @@ public class PouchGui extends ContainerScreen<PouchContainer>
 //        this.storage = storage2;
         ySize = 222;
     }
- 
-    @Override
+
     public void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
     {
         Minecraft.getInstance().getTextureManager().bindTexture(texture);
 //        drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
     }
- 
-    @Override
+
     public void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
     {
 //        drawCenteredString(fontRenderer, new TextComponentTranslation("item." + storage.getName()).getFormattedText(), xSize / 2, 5, 0xFFFFFF);

@@ -38,7 +38,7 @@ public class BlockFluidVasholine extends FlowingFluidBlock {
 	public static ResourceLocation overlay = new ResourceLocation(Reference.MOD_ID, "textures/fluids/wub_juice_overlay");
 	
 	public BlockFluidVasholine(Properties props) {
-		super(TechBlocks.vasholine_fluid, props.doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops().lightValue(15).tickRandomly());
+		super(TechBlocks.vasholine_fluid, props.doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops().setLightLevel((p) -> 15).tickRandomly());
 	}
 
 	
@@ -106,6 +106,6 @@ public class BlockFluidVasholine extends FlowingFluidBlock {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-    	tooltip.add(new TranslationTextComponent("tooltip.vasholine_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    	tooltip.add(new TranslationTextComponent("tooltip.vasholine_1"));
     }
 }

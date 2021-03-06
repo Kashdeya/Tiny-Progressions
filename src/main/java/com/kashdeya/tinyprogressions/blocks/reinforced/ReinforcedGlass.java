@@ -24,10 +24,10 @@ public class ReinforcedGlass extends AbstractGlassBlock implements IOreDictEntry
     public ReinforcedGlass()
     {
         super(Properties.create(Material.GLASS, MaterialColor.BLACK)
-        		.hardnessAndResistance(20, 2000)
+        		.hardnessAndResistance(40, 2000)
         		.harvestLevel(1)
         		.harvestTool(ToolType.PICKAXE)
-        		.func_226896_b_()
+        		.notSolid()
         		);
 
     }

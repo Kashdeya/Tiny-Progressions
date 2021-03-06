@@ -37,7 +37,6 @@ public enum EnumLampColor implements IStringSerializable
 		return metadata;
 	}
 
-	@Override
 	public String getName()
 	{
 		return name;
@@ -46,5 +45,9 @@ public enum EnumLampColor implements IStringSerializable
 	public static String[] getNames()
 	{
 		return Arrays.stream(EnumLampColor.values()).map(EnumLampColor::getName).toArray(String[]::new);
+	}
+
+	public String getString() {
+		return null;
 	}
 }

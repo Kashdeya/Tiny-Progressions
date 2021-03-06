@@ -52,7 +52,7 @@ public class GraniteBrick extends StandardBlock implements IOreDictEntry {
 	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) 
     {
-        entityIn.func_225503_b_(fallDistance, 3.0F);
+        entityIn.onLivingFall(fallDistance, 3.0F);
     }
 
 }

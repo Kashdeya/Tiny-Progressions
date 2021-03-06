@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.properties;
 
+/*
 import java.util.Arrays;
 
 import net.minecraft.util.IStringSerializable;
@@ -36,7 +37,6 @@ public enum EnumGlowstoneColor implements IStringSerializable
 		return metadata;
 	}
 
-	@Override
 	public String getName()
 	{
 		return name;
@@ -46,4 +46,9 @@ public enum EnumGlowstoneColor implements IStringSerializable
 	{
 		return Arrays.stream(EnumGlowstoneColor.values()).map(EnumGlowstoneColor::getName).toArray(String[]::new);
 	}
+
+	public String getString() {
+		return null;
+	}
 }
+*/

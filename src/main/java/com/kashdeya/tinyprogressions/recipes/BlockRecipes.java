@@ -19,12 +19,12 @@ public class BlockRecipes {
 //                "ifi",
 //				'i', "forge:ingots/iron",
 //				'f', new ItemStack(Blocks.FURNACE));
-		exportJson.addShapedRecipe(new ItemStack(TechBlocks.glowstone_glass.get()), 
-				"ggg",
-                "glg",
-                "ggg",
-				'g', new ItemStack(Items.GLOWSTONE_DUST),
-				'l', "forge:glass");
+//		exportJson.addShapedRecipe(new ItemStack(TechBlocks.glowstone_glass.get()),
+//				"ggg",
+//                "glg",
+//                "ggg",
+//				'g', new ItemStack(Items.GLOWSTONE_DUST),
+//				'l', "forge:glass");
 		exportJson.addShapedRecipe(new ItemStack(TechBlocks.steel_block.get()), 
 				"aaa",
                 "aaa",
@@ -241,18 +241,6 @@ public class BlockRecipes {
             	"eee",
 				'e', "forge:gems/emerald",
 				'b', new ItemStack(TechBlocks.blaze_cobblegen_block.get()));
-
-	// Stone Torch
-		exportJson.addShapedRecipe(new ItemStack(TechBlocks.stone_torch.get(), 4), 
-				"c",
-				"s",
-				'c', new ItemStack(Items.COAL),
-				's', "forge:rods/stone");
-		exportJson.addShapedRecipe(new ItemStack(TechBlocks.stone_torch.get(), 4), 
-				"c",
-				"s",
-				'c', new ItemStack(Items.COAL),
-				's', "forge:rods/stone");
 	
 	// Reinforced Blocks
 		exportJson.addShapedRecipe(new ItemStack(TechBlocks.reinforced_glass.get(), 4), 
@@ -395,7 +383,7 @@ public class BlockRecipes {
 //			"dd",
 //			'd', "forge:dust/glowstone");
 
-		exportJson.addShapedRecipe(new ItemStack(TechBlocks.white_glowstone.get(), 1), 
+/*		exportJson.addShapedRecipe(new ItemStack(TechBlocks.white_glowstone.get(), 1),
 				"dd",
 				"dd",
 				'd', "forge:dust/white_glowstone");
@@ -457,7 +445,7 @@ public class BlockRecipes {
 				"dd",
 				'd', "forge:dust/black_glowstone");
 		
-		
+		*/
 	// Lamps
 		exportJson.addShapedRecipe(new ItemStack(TechBlocks.lamp.get()), 
 				"dt",

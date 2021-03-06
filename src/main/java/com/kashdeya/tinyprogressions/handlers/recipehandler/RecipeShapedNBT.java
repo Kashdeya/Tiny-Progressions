@@ -25,6 +25,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class RecipeShapedNBT extends ShapedRecipe {
     static int MAX_WIDTH = 3;
@@ -275,9 +276,7 @@ public class RecipeShapedNBT extends ShapedRecipe {
 
     public static ItemStack deserializeItem(JsonObject p_199798_0_) {
         String s = JSONUtils.getString(p_199798_0_, "item");
-        Item item = Registry.ITEM.getValue(new ResourceLocation(s)).orElseThrow(() -> {
-            return new JsonSyntaxException("Unknown item '" + s + "'");
-        });
+        Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(s));
         if (p_199798_0_.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
         } else {

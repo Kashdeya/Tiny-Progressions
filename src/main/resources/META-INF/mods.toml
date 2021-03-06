@@ -1,6 +1,7 @@
 modLoader="javafml" #mandatory
-loaderVersion="[30,)" #mandatory (30 is current forge version)
+loaderVersion="[34,)" #mandatory (30 is current forge version)
 issueTrackerURL="https://github.com/Kashdeya/Tiny-Progressions/issues" #optional
+license = "ARR"
 [[mods]] #mandatory
 modId="tp" #mandatory
 version="${file.jarVersion}" #mandatory
@@ -16,13 +17,13 @@ Cobblegens, Growth Crystals and Watering Cans and more oh my!
 [[dependencies.tp]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[30,)" #mandatory
+    versionRange="[34,)" #mandatory
     ordering="NONE"
     side="BOTH"
 # Here's another dependency
 [[dependencies.tp]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.4]"
     ordering="NONE"
     side="BOTH"

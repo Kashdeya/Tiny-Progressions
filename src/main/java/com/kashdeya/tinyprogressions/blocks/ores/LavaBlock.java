@@ -23,7 +23,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -38,7 +38,7 @@ public class LavaBlock extends StandardBlock implements IOreDictEntry {
     public LavaBlock(String oredic) {
         super(Properties.create(Material.ROCK)
         		.hardnessAndResistance(1, 5)
-        		.lightValue(4)
+        		.setLightLevel((p) -> 4)
         		.tickRandomly()
         		.sound(SoundType.STONE));
         
@@ -60,18 +60,8 @@ public class LavaBlock extends StandardBlock implements IOreDictEntry {
 //        player.addStat(Stats.getBlockStats(this));
     	
         player.addExhaustion(0.025F);
-        if (EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
-            NonNullList<ItemStack> items = NonNullList.create();
-            ItemStack itemstack = new ItemStack(this.asItem());
-            if (!itemstack.isEmpty()) {
-                items.add(itemstack);
-            }
-            ForgeEventFactory.fireBlockHarvesting(items, worldIn, pos, state, 0, 1.0f, true, player);
-            items.forEach(item -> spawnAsEntity(worldIn, pos, item));
-        } else {
-            worldIn.setBlockState(pos, Blocks.LAVA.getDefaultState());
+        worldIn.setBlockState(pos, Blocks.LAVA.getDefaultState());
         }
-    }
 //
 //    @Override
 //    public int quantityDropped(Random random) {
@@ -85,7 +75,7 @@ public class LavaBlock extends StandardBlock implements IOreDictEntry {
 
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-        entityIn.setMotionMultiplier(worldIn.getBlockState(pos), new Vec3d(0.8D, 1D, 0.8D));
+        entityIn.setMotionMultiplier(worldIn.getBlockState(pos), new Vector3d(0.8D, 1D, 0.8D));
        
         if (!entityIn.isImmuneToFire() && entityIn instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity) entityIn)) {
             entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 1.0F);
@@ -98,7 +88,6 @@ public class LavaBlock extends StandardBlock implements IOreDictEntry {
 //        return false;
 //    }
 //
-    @Override
        public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
         return type.isImmuneToFire();
     }

@@ -78,7 +78,7 @@ public class RedstoneArmor extends BaseArmor {
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
-			tooltip.add(new TranslationTextComponent("tooltip.redstonearmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+			tooltip.add(new TranslationTextComponent("tooltip.redstonearmor_1"));
 		}
 	}
 

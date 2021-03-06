@@ -34,6 +34,6 @@ public class BaseArmor extends ArmorItem {
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if(tooltipString != null)
-			tooltip.add(new TranslationTextComponent(this.tooltipString).setStyle(new Style().setColor(TextFormatting.YELLOW)));
+			tooltip.add(new TranslationTextComponent(this.tooltipString));
     }
 }

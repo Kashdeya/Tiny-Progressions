@@ -1,3 +1,4 @@
+/*
 package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
@@ -14,13 +15,14 @@ public class GlowstoneGlass extends AbstractGlassBlock implements IOreDictEntry
         super(Properties.create(Material.GLASS, MaterialColor.AIR)
         		.hardnessAndResistance(.3F)
         		.sound(SoundType.GLASS)
-        		.lightValue(1));
-        
+        		.setLightLevel((p) -> 1));
+
     }
-    
+
     @Override
     public String getOreDictName() {
     	return "blockGlassGlowstone";
     }
 
 }
+*/

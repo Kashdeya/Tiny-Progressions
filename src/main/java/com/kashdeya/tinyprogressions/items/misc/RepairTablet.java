@@ -73,7 +73,7 @@ public class RepairTablet extends ItemBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.tablet_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-		tooltip.add(new TranslationTextComponent("tooltip.tablet_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+		tooltip.add(new TranslationTextComponent("tooltip.tablet_1"));
+		tooltip.add(new TranslationTextComponent("tooltip.tablet_2"));
 	}
 }

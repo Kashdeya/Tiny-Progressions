@@ -50,7 +50,6 @@ public enum EnumDustColor implements IStringSerializable
 		return craftingOredict;
 	}
 
-	@Override
 	public String getName()
 	{
 		return name;
@@ -59,5 +58,9 @@ public enum EnumDustColor implements IStringSerializable
 	public static String[] getNames()
 	{
 		return Arrays.stream(EnumDustColor.values()).map(EnumDustColor::getName).toArray(String[]::new);
+	}
+
+	public String getString() {
+		return null;
 	}
 }

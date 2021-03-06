@@ -20,7 +20,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -63,20 +63,8 @@ public class WaterBlock extends StandardBlock implements IOreDictEntry {
     public void harvestBlock(World worldIn, PlayerEntity player, BlockPos pos, BlockState state, TileEntity te, ItemStack stack) {
 //        player.addStat(StatList.getBlockStats(this));
         player.addExhaustion(0.025F);
-        if (EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
-            NonNullList<ItemStack> items = NonNullList.create();
-            ItemStack itemstack = new ItemStack(this.asItem());
-
-            if (!itemstack.isEmpty()) {
-                items.add(itemstack);
-            }
-
-            ForgeEventFactory.fireBlockHarvesting(items, worldIn, pos, state, 0, 1.0f, true, player);
-            items.forEach(item -> spawnAsEntity(worldIn, pos, item));
-        } else {
-            worldIn.setBlockState(pos, Blocks.WATER.getDefaultState());
+        worldIn.setBlockState(pos, Blocks.WATER.getDefaultState());
         }
-    }
 
 //    @Override
 //    public int quantityDropped(Random random) {
@@ -89,7 +77,7 @@ public class WaterBlock extends StandardBlock implements IOreDictEntry {
 
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-       entityIn.setMotionMultiplier(worldIn.getBlockState(pos), new Vec3d(0.8D, 1D, 0.8D));
+       entityIn.setMotionMultiplier(worldIn.getBlockState(pos), new Vector3d(0.8D, 1D, 0.8D));
     }
 
 //    @SideOnly(Side.CLIENT)

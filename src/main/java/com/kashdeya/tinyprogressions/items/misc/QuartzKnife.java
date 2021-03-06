@@ -27,7 +27,7 @@ public class QuartzKnife extends ItemStay {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.knife").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+		tooltip.add(new TranslationTextComponent("tooltip.knife"));
 	}
 }
 

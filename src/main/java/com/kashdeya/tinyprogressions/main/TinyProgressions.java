@@ -2,22 +2,19 @@ package com.kashdeya.tinyprogressions.main;
 
 import java.io.File;
 
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.kashdeya.tinyprogressions.blocks.decorations.QuickSand;
 import com.kashdeya.tinyprogressions.config.TinyConfig;
-import com.kashdeya.tinyprogressions.container.OreDoublerContainer;
-import com.kashdeya.tinyprogressions.gui.OreDoublerGUI;
 import com.kashdeya.tinyprogressions.inits.ModNetwork;
 import com.kashdeya.tinyprogressions.inits.TechBlocks;
-import com.kashdeya.tinyprogressions.inits.TechContainers;
-import com.kashdeya.tinyprogressions.inits.TechFeatures;
+// import com.kashdeya.tinyprogressions.inits.TechFeatures;
 import com.kashdeya.tinyprogressions.inits.TechFoods;
 import com.kashdeya.tinyprogressions.inits.TechTools;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.fluid.Fluid;
@@ -33,7 +30,6 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig.Type;
@@ -93,16 +89,15 @@ public class TinyProgressions{
 		         return new ItemStack(TechBlocks.hardened_stone_bricks.get());
 		      }
 		   }).setTabPath("tiny_progression_blocks");
-	
-		
-	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Reference.MOD_ID);
-	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, Reference.MOD_ID);
-	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
-	public static final DeferredRegister<SoundEvent> SOUNDS = new DeferredRegister<>(ForgeRegistries.SOUND_EVENTS,	Reference.MOD_ID);
-	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
-	public static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<>(ForgeRegistries.CONTAINERS, Reference.MOD_ID);
-	public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<>(ForgeRegistries.FEATURES, Reference.MOD_ID);
-	public static final DeferredRegister<IRecipeSerializer<?>> RECIPEHANDLER = new DeferredRegister<>(ForgeRegistries.RECIPE_SERIALIZERS, Reference.MOD_ID);
+
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
+	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
+	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS,	Reference.MOD_ID);
+	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Reference.MOD_ID);
+	public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Reference.MOD_ID);
+	public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, Reference.MOD_ID);
+	public static final DeferredRegister<IRecipeSerializer<?>> RECIPEHANDLER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Reference.MOD_ID);
 
 	
     public TinyProgressions() {
@@ -112,7 +107,6 @@ public class TinyProgressions{
     	bus.addListener(this::enqueueIMC);
     	bus.addListener(this::processIMC);
     	bus.addListener(this::doClientStuff);
-		bus.addListener(this::onServerStarting);
 
         ModLoadingContext.get().registerConfig(Type.COMMON, TinyConfig.commonSpec);
 //        ModLoadingContext.get().registerConfig(Type.CLIENT, TinyConfig.clientSpec);
@@ -131,7 +125,7 @@ public class TinyProgressions{
 
     private void setup(final FMLCommonSetupEvent event)
     {
-    	TechFeatures.registerAllFeatures();
+//    	TechFeatures.registerAllFeatures();
 //    	exportJson.init();
 //    	exportDrops.init();
     }
@@ -140,13 +134,12 @@ public class TinyProgressions{
     @SuppressWarnings("deprecation")
 	private void doClientStuff(final FMLClientSetupEvent event) {
     	
-    	RenderType solid = RenderType.func_228639_c_();
-    	RenderType cutout_mipped = RenderType.func_228641_d_();
-    	RenderType cutout = RenderType.func_228643_e_();
-    	RenderType translucent = RenderType.func_228645_f_();
-    	RenderType translucent_no_crumbling = RenderType.func_228647_g_();
+    	RenderType solid = RenderType.getSolid();
+    	RenderType cutout_mipped = RenderType.getCutoutMipped();
+    	RenderType cutout = RenderType.getCutout();
+    	RenderType translucent = RenderType.getTranslucent();
+    	RenderType translucent_no_crumbling = RenderType.getTranslucentNoCrumbling();
 
-    	RenderTypeLookup.setRenderLayer(TechBlocks.iron_furnace_block.get(),     cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.cobblegen_block.get(),        cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.iron_cobblegen_block.get(),   cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(),cutout_mipped);
@@ -183,9 +176,6 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_block.get(),      cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade_two.get(),cutout_mipped);
-    	
-    	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch.get(), cutout_mipped);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.stone_torch_wall.get(), cutout_mipped);
 
     	RenderTypeLookup.setRenderLayer(TechBlocks.lava_infused_stone.get(), cutout);
     	
@@ -197,13 +187,8 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.nether_wub_ore.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.netherstar_block.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.old_reed.get(), cutout);
-    	
-		DeferredWorkQueue.runLater( () ->
-		{
-			ScreenManager.registerFactory((ContainerType<OreDoublerContainer>)TechContainers.iron_furnace_container.get(), OreDoublerGUI::new);
-		});
 		
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(QuickSand::onHeadSubmerged);
+//		FMLJavaModLoadingContext.get().getModEventBus().addListener(QuickSand::onHeadSubmerged);
 		
     }
 
@@ -212,9 +197,7 @@ public class TinyProgressions{
     private void processIMC(final InterModProcessEvent event) { }
     
     private File drops_DIR;
-    
-    public void onServerStarting(FMLServerStartingEvent event) { 
-    }
+
     
 // was in the orginal file.. but prolly needs to be moved or just changed. 
 //	@SubscribeEvent

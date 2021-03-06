@@ -18,7 +18,7 @@ public class GhostBlock extends Block {
         		.hardnessAndResistance(1.5f, 10f)
         		.harvestTool(ToolType.PICKAXE)
         		.harvestLevel(1)
-        		.func_226896_b_());
+        		.notSolid());
 //        this.setTranslationKey("ghost_block");
     }
 	

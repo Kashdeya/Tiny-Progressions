@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraftforge.common.ForgeMod;
 
 public interface IExtendedReach {
 	
@@ -14,16 +15,16 @@ public interface IExtendedReach {
 	default void extendReach(PlayerEntity player) {
 		AttributeModifier extended = new AttributeModifier(attUUID, "extend-reach", getReach(), AttributeModifier.Operation.ADDITION);
 
-		if(!player.getAttribute(PlayerEntity.REACH_DISTANCE).hasModifier(extended))
-			player.getAttribute(PlayerEntity.REACH_DISTANCE).applyModifier(extended);
+		if(!player.getAttribute(ForgeMod.REACH_DISTANCE.get()).hasModifier(extended))
+			player.getAttribute(ForgeMod.REACH_DISTANCE.get()).applyPersistentModifier(extended);
 	}
 	
 	default boolean hasReach(PlayerEntity player) {
 		AttributeModifier extended = new AttributeModifier(attUUID, "extend-reach", getReach(), AttributeModifier.Operation.ADDITION);
-		return player.getAttribute(PlayerEntity.REACH_DISTANCE).hasModifier(extended);
+		return player.getAttribute(ForgeMod.REACH_DISTANCE.get()).hasModifier(extended);
 	}
 	
 	default void removeReach(PlayerEntity player) {
-		player.getAttribute(PlayerEntity.REACH_DISTANCE).removeModifier(attUUID);
+		player.getAttribute(ForgeMod.REACH_DISTANCE.get()).removeModifier(attUUID);
 }
 }

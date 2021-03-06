@@ -19,7 +19,7 @@ public class WitheredBlock extends Block {
 	
 	public WitheredBlock(Properties prop)
     {
-        super(prop.hardnessAndResistance(200F, 3600000.0F).tickRandomly().sound(SoundType.STONE));
+        super(prop.hardnessAndResistance(400F, 3600000.0F).tickRandomly().sound(SoundType.STONE));
     }
 
     @Override
@@ -32,8 +32,7 @@ public class WitheredBlock extends Block {
 
         super.onEntityWalk(worldIn, pos, entityIn);
     }
-    
-    @Override
+
     public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
 		return true;
 	}

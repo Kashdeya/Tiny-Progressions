@@ -19,10 +19,10 @@ public class Lamp extends AbstractGlassBlock
 	{
 		super(prop
 				.hardnessAndResistance(.5F, 1F)
-				.lightValue(15)
+				.setLightLevel((p) -> 15)
 				.sound(SoundType.GLASS)
 				.noDrops()
-				.func_226896_b_());
+				.notSolid());
 	}
 	
 	

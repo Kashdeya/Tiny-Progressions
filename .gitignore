@@ -23,4 +23,4 @@ run
 runServer
 tp 1.12 src.rar
 SetupDecompWorkspaceEclipse.bat
-.vs
+.DS_Store

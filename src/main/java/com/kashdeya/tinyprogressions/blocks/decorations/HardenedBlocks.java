@@ -10,7 +10,7 @@ import net.minecraftforge.common.ToolType;
 public class HardenedBlocks extends StandardBlock{
 	
 	private HardenedBlocks(Properties prop, int meta, int least_quantity, int most_quantity) {
-		super(prop.hardnessAndResistance(50F, 2000F)
+		super(prop.hardnessAndResistance(100F, 2000F)
 				.harvestLevel(1)
 				.harvestTool(ToolType.PICKAXE)
 				.sound(SoundType.STONE));

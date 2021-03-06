@@ -91,9 +91,9 @@ public class LargeMedKit extends ItemBase {
 	}
 	  
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.medkit_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-		tooltip.add(new TranslationTextComponent("tooltip.largemedkit_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-		tooltip.add(new TranslationTextComponent("tooltip.medkits").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+		tooltip.add(new TranslationTextComponent("tooltip.medkit_1"));
+		tooltip.add(new TranslationTextComponent("tooltip.largemedkit_2"));
+		tooltip.add(new TranslationTextComponent("tooltip.medkits"));
 	}
 	
 }

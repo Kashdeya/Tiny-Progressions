@@ -64,7 +64,7 @@ public class QuartzArmor extends BaseArmor {
     @Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.quartz_armor && ArmorHandler.quartz_armor_strength) {
-			tooltip.add(new TranslationTextComponent("tooltip.quartzarmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+			tooltip.add(new TranslationTextComponent("tooltip.quartzarmor_1"));
         }
     }
 

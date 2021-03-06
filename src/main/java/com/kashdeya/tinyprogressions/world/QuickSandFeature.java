@@ -1,3 +1,4 @@
+/*
 package com.kashdeya.tinyprogressions.world;
 
 import java.util.Random;
@@ -119,3 +120,4 @@ public class QuickSandFeature extends Feature<BlockStateFeatureConfig>  {
 	   }
 
 }
+*/

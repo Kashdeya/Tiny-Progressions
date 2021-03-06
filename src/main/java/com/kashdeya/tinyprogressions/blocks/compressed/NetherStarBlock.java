@@ -30,14 +30,13 @@ public class NetherStarBlock extends StandardBlock {
 	{
 		super(Properties.create(Material.PORTAL)
 				.hardnessAndResistance(3F, 2000F)
-				.lightValue(1)
+				.setLightLevel((p) -> 1)
 				.sound(SoundType.STONE)
 				.harvestLevel(1)
 				.harvestTool(ToolType.PICKAXE));
 		
 	}
-	
-	@Override
+
 	public boolean isBeaconBase(BlockState state, IWorldReader world, BlockPos pos, BlockPos beacon)
     {
 		return true;
@@ -53,12 +52,12 @@ public class NetherStarBlock extends StandardBlock {
 	@Override
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) 
     {
-        entityIn.func_225503_b_(fallDistance, 3.0F);
+        entityIn.onLivingFall(fallDistance, 3.0F);
     }
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn){
-			tooltip.add(new TranslationTextComponent("tooltip.netherstar_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+			tooltip.add(new TranslationTextComponent("tooltip.netherstar_1"));
 	}
 
 }

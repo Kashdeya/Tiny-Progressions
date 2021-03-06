@@ -59,7 +59,7 @@ public class LapisArmor extends BaseArmor {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if (ArmorHandler.lapis_armor && ArmorHandler.lapis_armor_water) {
-			tooltip.add(new TranslationTextComponent("tooltip.lapisarmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+			tooltip.add(new TranslationTextComponent("tooltip.lapisarmor_1"));
 		}
 	}
 

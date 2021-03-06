@@ -62,13 +62,13 @@ public class LavaArmour extends BaseArmor {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.lava_armor && (ArmorHandler.lava_armor_resistance || ArmorHandler.lava_armor_fire)) {
-        	tooltip.add(new TranslationTextComponent("tooltip.lavaarmor_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.lavaarmor_1"));
         }
         if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_fire) {
-        	tooltip.add(new TranslationTextComponent("tooltip.lavaarmor_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.lavaarmor_2"));
         }
         if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_resistance) {
-        	tooltip.add(new TranslationTextComponent("tooltip.lavaarmor_3").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        	tooltip.add(new TranslationTextComponent("tooltip.lavaarmor_3"));
         }
     }
 }

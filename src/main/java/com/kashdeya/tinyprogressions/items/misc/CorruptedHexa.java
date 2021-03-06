@@ -34,7 +34,7 @@ public class CorruptedHexa extends ItemBase {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.warning_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-		tooltip.add(new TranslationTextComponent("tooltip.hexa_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+		tooltip.add(new TranslationTextComponent("tooltip.warning_1"));
+		tooltip.add(new TranslationTextComponent("tooltip.hexa_1"));
 	}
 }

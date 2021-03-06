@@ -14,7 +14,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 public class AngelItemBlock extends BlockItem
@@ -34,7 +34,7 @@ public class AngelItemBlock extends BlockItem
 		int y = (int)Math.floor(player.getPosition().getY() + player.getEyeHeight());
 		int z = (int)Math.floor(player.getPosition().getZ());
 		
-		Vec3d look = player.getLookVec();
+		Vector3d look = player.getLookVec();
 		
 		Direction side = Direction.getFacingFromVector((float)look.x, (float)look.y, (float)look.z);
 		switch(side)
@@ -60,7 +60,7 @@ public class AngelItemBlock extends BlockItem
 		}
 		
 		BlockPos pos = new BlockPos(x, y, z);
-		ItemUseContext context = new ItemUseContext(player, hand, new BlockRayTraceResult(Vec3d.ZERO,side, pos, false));
+		ItemUseContext context = new ItemUseContext(player, hand, new BlockRayTraceResult(Vector3d.ZERO,side, pos, false));
 		BlockItemUseContext blockContext = new BlockItemUseContext(context);
 		if(canPlace(blockContext, this.getBlock().getStateContainer().getBaseState()))
 			player.getHeldItem(hand).onItemUse(context);

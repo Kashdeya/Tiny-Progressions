@@ -45,14 +45,14 @@ public class RecipeTagOutput extends ShapedRecipe {
 	@Override
 	@Nonnull
 	public ItemStack getRecipeOutput() {
-		Collection<Item> list = ItemTags.getCollection().getOrCreate(resultName).getAllElements();
+		Collection<Item> list = ItemTags.getCollection().get(resultName).getAllElements();
 		return new ItemStack(list.stream().findFirst().orElse(Items.AIR));
 	}
 
 	@Override
 	@Nonnull
 	public ItemStack getCraftingResult(@Nonnull CraftingInventory var1) {
-		Collection<Item> list = ItemTags.getCollection().getOrCreate(resultName).getAllElements();
+		Collection<Item> list = ItemTags.getCollection().get(resultName).getAllElements();
 		return new ItemStack(list.stream().findFirst().orElse(Items.AIR));
 	}
 

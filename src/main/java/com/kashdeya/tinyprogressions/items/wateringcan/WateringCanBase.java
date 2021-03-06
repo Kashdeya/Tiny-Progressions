@@ -33,12 +33,11 @@ import net.minecraft.util.math.RayTraceContext.FluidMode;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraft.block.AbstractBlock.AbstractBlockState;
 
 public class WateringCanBase extends ItemBase
 {
@@ -146,7 +145,7 @@ public class WateringCanBase extends ItemBase
             }
             
             forceActive = false;
-            player.sendMessage(new TranslationTextComponent("item.watering_can.invalidusage"));
+            player.sendMessage(new TranslationTextComponent("item.watering_can.invalidusage"), player.getUniqueID());
         }
 
         if(!player.canPlayerEdit(pos.offset(facing), facing, player.getHeldItem(hand)))
@@ -180,7 +179,7 @@ public class WateringCanBase extends ItemBase
                                     || checkBlock.getBlock() == Blocks.CHORUS_FLOWER)
                             {
                             	if(checkBlock.getBlock() instanceof CropsBlock)
-                            		checkBlock.getBlock().func_225534_a_(checkBlock, (ServerWorld) world, pos.add(xAxis, yAxis, zAxis), world.rand);
+                            		checkBlock.getBlock().tick(checkBlock, (ServerWorld) world, pos.add(xAxis, yAxis, zAxis), world.rand);
                             	else
                             		world.notifyBlockUpdate(pos.add(xAxis, yAxis, zAxis), checkBlock, checkBlock, 2);
                             }
@@ -211,10 +210,10 @@ public class WateringCanBase extends ItemBase
 
                     BlockState checkSolidState = world.getBlockState(pos);
                     Block checkSolid = checkSolidState.getBlock();
-                    if(checkSolid.isNormalCube(checkSolidState, world, pos) || (checkSolid instanceof FarmlandBlock))
-                    {
-                        d1 += 1.0D;
-                    }
+                    // if(checkSolid.isNormalCube(checkSolidState, world, pos) || (checkSolid instanceof FarmlandBlock))
+                    // {
+                       // d1 += 1.0D;
+                    //}
 
                     world.addParticle(ParticleTypes.RAIN, d0, d1, d2, 0.0D, 0.0D, 0.0D);
                 }
@@ -239,7 +238,7 @@ public class WateringCanBase extends ItemBase
                 {
                     if(igrowable.canUseBonemeal(worldIn, worldIn.rand, target, iblockstate))
                     {
-                        igrowable.func_225535_a_((ServerWorld) worldIn, worldIn.rand, target, iblockstate);
+                        igrowable.grow((ServerWorld) worldIn, worldIn.rand, target, iblockstate);
                     }
 
                     stack.setCount(stack.getCount() - 1);
@@ -255,13 +254,13 @@ public class WateringCanBase extends ItemBase
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
     	if(stack.getItem() == TechItems.watering_can.get()) { 
-    		tooltip.add(new TranslationTextComponent("tooltip.can_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-    		tooltip.add(new TranslationTextComponent("tooltip.can_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-    		tooltip.add(new TranslationTextComponent("tooltip.can_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    		tooltip.add(new TranslationTextComponent("tooltip.can_1"));
+    		tooltip.add(new TranslationTextComponent("tooltip.can_1"));
+    		tooltip.add(new TranslationTextComponent("tooltip.can_1"));
     	}else {
-    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_1").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_2").setStyle(new Style().setColor(TextFormatting.YELLOW)));
-    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_3").setStyle(new Style().setColor(TextFormatting.YELLOW)));
+    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_1"));
+    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_2"));
+    		tooltip.add(new TranslationTextComponent("tooltip.canupgrade_3"));
     	}
 	}
 }

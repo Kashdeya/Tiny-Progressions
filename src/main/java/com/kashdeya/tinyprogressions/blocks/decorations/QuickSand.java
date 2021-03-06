@@ -2,6 +2,7 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 
 import java.nio.ByteOrder;
 
+import net.minecraft.client.settings.PointOfView;
 import org.lwjgl.opengl.GL11;
 
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
@@ -21,7 +22,7 @@ import net.minecraft.potion.Effects;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
@@ -63,7 +64,7 @@ public class QuickSand extends StandardBlock {
 	@Override
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
 		entityIn.isAirBorne = false;
-		entityIn.setMotionMultiplier(state, new Vec3d(0.25D, (double)0.05F, 0.25D));
+		entityIn.setMotionMultiplier(state, new Vector3d(0.25D, (double)0.05F, 0.25D));
 		
 		if(entityIn instanceof PlayerEntity)
 			if(!((PlayerEntity)entityIn).isPotionActive(Effects.MINING_FATIGUE))
@@ -89,12 +90,12 @@ public class QuickSand extends StandardBlock {
 	private static ResourceLocation SandTexture = new ResourceLocation("minecraft:textures/sand");
 	
 	
-	public static void onHeadSubmerged(RenderGameOverlayEvent.Post event) {
+/*	public static void onHeadSubmerged(RenderGameOverlayEvent.Post event) {
         		if(event.getType() == ElementType.HELMET)
 		{
 			BlockPos pos = Minecraft.getInstance().player.getPosition().add(0, Minecraft.getInstance().player.getEyeHeight(), 0);
 			if(Minecraft.getInstance().world.getBlockState(pos).getBlock() instanceof QuickSand) {
-				if(Minecraft.getInstance().gameSettings.thirdPersonView == 0)
+				if(Minecraft.getInstance().gameSettings.getPointOfView() == PointOfView.FIRST_PERSON)
 				{
 					Minecraft.getInstance().textureManager.bindTexture(new ResourceLocation("minecraft","textures/block/sand.png"));
 					int par5 = getColorFromRGBA(255, 255, 255, 255);
@@ -111,16 +112,16 @@ public class QuickSand extends StandardBlock {
 					GL11.glDisable(GL11.GL_ALPHA_TEST);
 					RenderSystem.enableLighting();
 
-					int width = Minecraft.getInstance().func_228018_at_().getScaledWidth();
-					int height = Minecraft.getInstance().func_228018_at_().getScaledHeight();
+					int width = Minecraft.getInstance().getMainWindow().getScaledWidth();
+					int height = Minecraft.getInstance().getMainWindow().getScaledHeight();
 					
 			        Tessellator tessellator = Tessellator.getInstance();
 			        BufferBuilder wr = tessellator.getBuffer();
 			        wr.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
-			        wr.func_225582_a_(0, height, 0).func_225583_a_(0, 1).endVertex();
-			        wr.func_225582_a_(width, height, 0).func_225583_a_(1,1).endVertex();
-			        wr.func_225582_a_(width, 0, 0).func_225583_a_(1,0).endVertex();
-			        wr.func_225582_a_(0,0,0).func_225583_a_(0,0).endVertex();
+			        wr.pos(0, height, 0).tex(0, 1).endVertex();
+			        wr.pos(width, height, 0).tex(1,1).endVertex();
+			        wr.pos(width, 0, 0).tex(1,0).endVertex();
+			        wr.pos(0,0,0).tex(0,0).endVertex();
 
 			        
 			        tessellator.draw();
@@ -132,7 +133,7 @@ public class QuickSand extends StandardBlock {
 				}
 			}
 		}
-	}
+	}*/
 	
 	public static int getColorFromRGBA(int R, int G, int B, int A)
 	{

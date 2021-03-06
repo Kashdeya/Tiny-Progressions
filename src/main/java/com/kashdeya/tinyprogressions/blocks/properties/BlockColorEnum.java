@@ -2,7 +2,7 @@ package com.kashdeya.tinyprogressions.blocks.properties;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum BlockColorEnum implements IStringSerializable {
+enum BlockColorEnum implements IStringSerializable {
 
 	None("none"),
 	White("white"),
@@ -21,10 +21,13 @@ public enum BlockColorEnum implements IStringSerializable {
 	Green("green"),
 	Red("red"),
 	Black("black");
-	
-   
-	
-   private final String name;
+
+	@Override
+	public String getString() {
+		return null;
+	}
+
+	private final String name;
 
    private BlockColorEnum(String name) {
       this.name = name;

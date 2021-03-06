@@ -9,7 +9,7 @@ displayName="Tiny Progressions" #mandatory
 displayURL="https://www.curseforge.com/minecraft/mc-mods/tiny-progressions" #optional
 logoFile="tplogo.png" #optional
 credits="Thanks for this example mod goes to Java" #optional
-authors="Kashdeya, Darkosto, GenDeathrow, ArclightTW, Vadis365" #optional
+authors="Kashdeya, Darkosto, GenDeathrow, ArclightTW, Vadis365 , OneLemonyBoi" #optional
 description='''
 Cobblegens, Growth Crystals and Watering Cans and more oh my!
 '''
@@ -24,6 +24,6 @@ Cobblegens, Growth Crystals and Watering Cans and more oh my!
 [[dependencies.tp]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4]"
+    versionRange="[1.16.5]"
     ordering="NONE"
     side="BOTH"

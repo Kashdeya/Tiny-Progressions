@@ -3,6 +3,7 @@ package com.kashdeya.tinyprogressions.blocks.bushes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BushBlock;
+import net.minecraft.block.FarmlandBlock;
 import net.minecraft.item.Item;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -33,7 +34,7 @@ public class BlockBerryBush extends BushBlock implements IPlantable {
 	@Override
 	public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) 
 	{
-        return state.getBlock() == Blocks.GRASS || state.getBlock() == Blocks.DIRT;
+        return state.getBlock() == Blocks.GRASS || state.getBlock() == Blocks.DIRT || state.getBlock() instanceof FarmlandBlock;
     }
 	
 //	@Override

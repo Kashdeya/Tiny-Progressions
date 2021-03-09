@@ -2,6 +2,9 @@ package com.kashdeya.tinyprogressions.main;
 
 import java.io.File;
 
+import com.kashdeya.tinyprogressions.world.WorldGen;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -107,6 +110,7 @@ public class TinyProgressions{
     	bus.addListener(this::enqueueIMC);
     	bus.addListener(this::processIMC);
     	bus.addListener(this::doClientStuff);
+		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, WorldGen::generateOres);
 
         ModLoadingContext.get().registerConfig(Type.COMMON, TinyConfig.commonSpec);
 //        ModLoadingContext.get().registerConfig(Type.CLIENT, TinyConfig.clientSpec);

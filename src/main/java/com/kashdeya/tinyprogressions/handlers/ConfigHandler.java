@@ -356,8 +356,7 @@ public class ConfigHandler {
 	// Ender Ore
 	public static boolean ender_ore = true;
 	public static boolean ender_mite = true;
-	public static int endermite_spawn = 50;
-	public static int ender_ore_frequency = 1;
+	public static int ender_ore_frequency = 4;
 	public static int ender_ore_min = 1;
 	public static int ender_ore_max = 35;
 	public static int ender_ore_size = 7;

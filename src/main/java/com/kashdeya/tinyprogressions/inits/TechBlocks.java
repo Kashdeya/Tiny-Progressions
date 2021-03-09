@@ -62,6 +62,7 @@ import net.minecraftforge.fluids.FluidAttributes.Builder;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ObjectHolder;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechBlocks {
@@ -97,6 +98,8 @@ public class TechBlocks {
 
 	// EnderOre
 	public static RegistryObject<Block> ender_ore = register("ender_ore", () -> new EnderOre());
+    @ObjectHolder("tp:ender_ore")
+    public static Block enderOre = null;
 	// wub ore
 	public static RegistryObject<Block> wub_ore        = register("wub_ore", () -> new WubOre("oreWubOre"));;
 	public static RegistryObject<Block> nether_wub_ore = register("nether_wub_ore", () -> new WubOre("oreNetherWubOre"));

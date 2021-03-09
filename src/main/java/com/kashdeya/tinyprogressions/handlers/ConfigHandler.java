@@ -357,10 +357,10 @@ public class ConfigHandler {
 	public static boolean ender_ore = true;
 	public static boolean ender_mite = true;
 	public static int endermite_spawn = 10;
-	public static int ender_ore_frequency = 29;
+	public static int ender_ore_frequency = 30;
 	public static int ender_ore_min = 0;
-	public static int ender_ore_max = 55;
-	public static int ender_ore_size = 7;
+	public static int ender_ore_max = 45;
+	public static int ender_ore_size = 8;
 	
 	// Pouch
 	public static boolean pouch = true;

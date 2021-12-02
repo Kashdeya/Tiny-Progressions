@@ -4,7 +4,9 @@ import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.ToolType;
 import net.minecraft.block.BlockState;
 
@@ -18,6 +20,7 @@ public class CompressedBlocks extends StandardBlock{
 	
 	public CompressedBlocks(Properties prop) {
 		super(prop.harvestLevel(1).harvestTool(ToolType.PICKAXE));
+		
 		this.meta = meta;
 		this.least_quantity = least_quantity;
 		this.most_quantity = most_quantity;
@@ -39,7 +42,7 @@ public class CompressedBlocks extends StandardBlock{
 	}
 	
 	@Override
-    public boolean canDropFromExplosion(Explosion explosionIn)
+    public boolean canDropFromExplosion(BlockState state, IBlockReader world, BlockPos pos, Explosion explosionIn)
     {
       return false;
     }

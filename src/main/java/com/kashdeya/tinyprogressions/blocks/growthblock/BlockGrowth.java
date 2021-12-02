@@ -2,21 +2,32 @@ package com.kashdeya.tinyprogressions.blocks.growthblock;
 
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.tiles.cobblegen.TileEntityCobblegen;
+import com.kashdeya.tinyprogressions.tiles.growthblock.TileEntityGrowthBlock;
+import com.mojang.authlib.GameProfile;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FarmlandBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -31,6 +42,7 @@ import net.minecraftforge.common.FarmlandWaterManager;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.ticket.AABBTicket;
+import net.minecraftforge.common.util.FakePlayer;
 
 public class BlockGrowth extends Block {
 
@@ -41,56 +53,45 @@ public class BlockGrowth extends Block {
 
     public BlockGrowth(Properties prop, int level, int rangeX, int rangeY) {
         super(prop
-                .tickRandomly()
-                .hardnessAndResistance(8, 1000)
-                .setLightLevel((p) -> 7)
+                .randomTicks()
+                .strength(8, 1000)
+                .lightLevel((p) -> 7)
                 .harvestLevel(1)
                 .harvestTool(ToolType.PICKAXE)
                 .sound(SoundType.METAL)
-                .notSolid());
+                .air());
 
         this.range = rangeX;
         this.rangeY = rangeY;
         this.growthLvl = level;
     }
 
-    @Override
-    public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        makeWaterRegion(worldIn, pos);
+     @Override
+    public void playerWillDestroy(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+    	TileEntity tile = worldIn.getBlockEntity(pos);
+    	
+    	if(tile instanceof TileEntityGrowthBlock)
+    		((TileEntityGrowthBlock)tile).removeWaterRegion();
     }
 
     @Override
-    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-        removeWaterRegion();
+    public void wasExploded(World worldIn, BlockPos pos, Explosion explosionIn) {
+    	TileEntity tile = worldIn.getBlockEntity(pos);
+    	
+    	if(tile instanceof TileEntityGrowthBlock)
+      		((TileEntityGrowthBlock)tile).removeWaterRegion();
     }
 
     @Override
-    public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {
-        removeWaterRegion();
-    }
-
-    private void makeWaterRegion(World worldIn, BlockPos pos) {
-        if (this.growthLvl > 1 && !worldIn.isRemote) {
-            waterRegion = FarmlandWaterManager.addAABBTicket(worldIn, new AxisAlignedBB(pos).expand(range * 2, rangeY * 2, range * 2).offset(-range, -range, -range));
-        }
-    }
-
-    private void removeWaterRegion() {
-        if (waterRegion != null)
-            waterRegion.invalidate();
-    }
-
-    public void func_225534_a_(BlockState state, ServerWorld world, BlockPos pos, Random rand) {
-        if (this.waterRegion == null)
-            makeWaterRegion(world, pos);
+    public void tick(BlockState state, ServerWorld world, BlockPos pos, Random rand) {
         this.growCropsNearby(world, pos, state);
     }
 
 
     private int getGrowthCrystalTickRate() {
         int tickRate = this.growthLvl == 1 ? ConfigHandler.BlockGrowthTicks :
-                this.growthLvl == 2 ? ConfigHandler.BlockGrowthUpgradeTicks :
-                        this.growthLvl == 3 ? ConfigHandler.BlockGrowthUpgradeTwoTicks : 40;
+                       this.growthLvl == 2 ? ConfigHandler.BlockGrowthUpgradeTicks :
+                       this.growthLvl == 3 ? ConfigHandler.BlockGrowthUpgradeTwoTicks : 40;
 
         return tickRate * 40;
     }
@@ -99,7 +100,6 @@ public class BlockGrowth extends Block {
         int tickRate = this.growthLvl == 1 ? ConfigHandler.BlockGrowthTicks :
                 this.growthLvl == 2 ? ConfigHandler.BlockGrowthUpgradeTicks :
                         this.growthLvl == 3 ? ConfigHandler.BlockGrowthUpgradeTwoTicks : 40;
-
         return (int) (distanceCoefficient * tickRate * 40);
     }
 
@@ -107,7 +107,7 @@ public class BlockGrowth extends Block {
         int xO = pos.getX();
         int yO = pos.getY();
         int zO = pos.getZ();
-
+        
         for (int xD = -range; xD <= range; xD++) {
             for (int yD = -rangeY; yD <= rangeY; yD++) {
                 for (int zD = -range; zD <= range; zD++) {
@@ -122,24 +122,50 @@ public class BlockGrowth extends Block {
                     BlockState cropState = world.getBlockState(curPos);
                     Block cropBlock = cropState.getBlock();
 
+                    hoeGround(world, pos, curPos, state);
+                    
                     if (cropBlock instanceof IPlantable || cropBlock instanceof IGrowable) {
                         if (!(cropBlock instanceof BlockGrowth)) {
 
-                            cropBlock.tick(cropState, world, curPos, RANDOM);
+                            cropBlock.randomTick(cropState, world, curPos, RANDOM);
                             //Make sure you dont already have a pending block tick
-                            if (!world.getPendingBlockTicks().isTickPending(pos, this))
-                                world.getPendingBlockTicks().scheduleTick(pos, this, getGrowthCrystalTickRate(distanceCoefficient));
+                            if (!world.getBlockTicks().willTickThisTick(pos, this))
+                                world.getBlockTicks().scheduleTick(pos, this, getGrowthCrystalTickRate(distanceCoefficient));
                         }
                     }
                 }
             }
         }
-        if (!world.getPendingBlockTicks().isTickPending(pos, this))
-            world.getPendingBlockTicks().scheduleTick(pos, state.getBlock(), getGrowthCrystalTickRate());
+        if (!world.getBlockTicks().willTickThisTick(pos, this))
+            world.getBlockTicks().scheduleTick(pos, state.getBlock(), getGrowthCrystalTickRate());
     }
 
+    private FakePlayer fakeplayer = null;
+    private ItemStack hoe = new ItemStack(Items.DIAMOND_HOE);
+    		
+    		
+    public void hoeGround(ServerWorld world, BlockPos blockpos, BlockPos targetpos,  BlockState state)
+    {
+    	 if(this.growthLvl < 3) return;
+    	 if(world.getBlockState(targetpos.below()).getBlock() instanceof FarmlandBlock) return;
+    	 if(fakeplayer == null) {
+    		 fakeplayer = new FakePlayer(world, new GameProfile(UUID.randomUUID(), "growthblock"));
+    		 fakeplayer.setPos((double)blockpos.getX(), (double)blockpos.getY(), (double)blockpos.getZ());
+    	 }
+    	 BlockState newstate = world.getBlockState(targetpos.below()).getToolModifiedState(world,  targetpos.below(), fakeplayer, hoe, ToolType.HOE);
+    	 if (newstate != null) 
+    	 {
+             world.playSound(fakeplayer, targetpos.below(), SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+             if (!world.isClientSide) {
+                world.setBlock(targetpos.below(), newstate, 11);
+             }
+         }
+ 
+    }
+    
     @Override
-    public boolean canDropFromExplosion(Explosion explosionIn) {
+    public boolean canDropFromExplosion(BlockState state, IBlockReader world, BlockPos pos, Explosion explosionIn)
+    {
         return false;
     }
 
@@ -161,8 +187,8 @@ public class BlockGrowth extends Block {
                                 for (int xAxis = -range; xAxis <= range; xAxis++) {
                                     for (int zAxis = -range; zAxis <= range; zAxis++) {
                                         for (int yAxis = -rangeY; yAxis <= rangeY; yAxis++) {
-                                            BlockPos blockpos = pos.add(i, k, j);
-                                            Block checkBlock = worldIn.getBlockState(blockpos.add(xAxis, yAxis, zAxis)).getBlock();
+                                            BlockPos blockpos = pos.offset(i, k, j);
+                                            Block checkBlock = worldIn.getBlockState(blockpos.offset(xAxis, yAxis, zAxis)).getBlock();
 
                                             if (checkBlock instanceof IGrowable || checkBlock == Blocks.MYCELIUM || checkBlock == Blocks.CACTUS || checkBlock == Blocks.SUGAR_CANE || checkBlock == Blocks.CHORUS_FLOWER) {
                                                 worldIn.addParticle(ParticleTypes.ENCHANT, (double) pos.getX() + 0.5D, (double) pos.getY() + 2.0D, (double) pos.getZ() + 0.5D, (double) ((float) i + rand.nextFloat()) - 0.5D, (float) k - rand.nextFloat() - 1.0F, (double) ((float) j + rand.nextFloat()) - 0.5D);
@@ -221,10 +247,21 @@ public class BlockGrowth extends Block {
 //        }
 //    }
 //	
+	@Override
+	public boolean hasTileEntity(BlockState state){
+		return true;
+	}
+	
+	@Nullable
+	@Override
+	public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
+		return new TileEntityGrowthBlock().setStats(this.growthLvl, this.range, this.rangeY);
+	}
+	
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         switch (growthLvl) {
             case 1:
                 tooltip.add(new TranslationTextComponent("tooltip.growth_1"));

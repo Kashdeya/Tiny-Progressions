@@ -42,17 +42,17 @@ public class QuartzArmor extends BaseArmor {
 		LivingEntity living = ((LivingEntity)entityIn);
 		
 
-        ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-        ItemStack feet =  living.getItemStackFromSlot(EquipmentSlotType.FEET);
-        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+        ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+        ItemStack feet =  living.getItemBySlot(EquipmentSlotType.FEET);
+        ItemStack head =  living.getItemBySlot(EquipmentSlotType.HEAD);
+        ItemStack legs =  living.getItemBySlot(EquipmentSlotType.LEGS);
         
         if (((!head.isEmpty()) && (head.getItem() == TechArmor.quartz_helmet.get()) &&
             (!chest.isEmpty()) && (chest.getItem() == TechArmor.quartz_chestplate.get()) &&
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.quartz_leggings.get()) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.quartz_boots.get()))) {
             if (ArmorHandler.quartz_armor && ArmorHandler.quartz_armor_strength) {
-            	living.addPotionEffect(new EffectInstance(Effects.STRENGTH, 180, ArmorHandler.quartz_armor_strength_lvl, false, false));
+            	living.addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 180, ArmorHandler.quartz_armor_strength_lvl, false, false));
             }
         }
     }
@@ -62,7 +62,7 @@ public class QuartzArmor extends BaseArmor {
 
 
     @Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.quartz_armor && ArmorHandler.quartz_armor_strength) {
 			tooltip.add(new TranslationTextComponent("tooltip.quartzarmor_1"));
         }

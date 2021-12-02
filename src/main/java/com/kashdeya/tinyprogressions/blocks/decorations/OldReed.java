@@ -22,9 +22,9 @@ public class OldReed extends BushBlock implements IForgeShearable {
 	public OldReed()
     {
         super(Properties
-        		.create(Material.PLANTS, MaterialColor.WOOD)
-        		.hardnessAndResistance(0F)
-        		.sound(SoundType.PLANT));
+        		.of(Material.PLANT, MaterialColor.WOOD)
+        		.strength(0F)
+        		.sound(SoundType.STEM));
     }
 	
 	

@@ -11,8 +11,8 @@ public class DecoMain extends Block implements IOreDictEntry{
 	
 	public DecoMain()
     {
-		super(Properties.create(Material.IRON)
-				.hardnessAndResistance(2F, 1000F)
+		super(Properties.of(Material.METAL)
+				.strength(2F, 1000F)
 				.harvestLevel(1)
 				.harvestTool(ToolType.PICKAXE));
 

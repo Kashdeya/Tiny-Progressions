@@ -40,29 +40,29 @@ public class WitherArmour extends BaseArmor {
 
 		LivingEntity living = ((LivingEntity)entityIn);
 		
-        ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-        ItemStack feet =  living.getItemStackFromSlot(EquipmentSlotType.FEET);
-        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+        ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+        ItemStack feet =  living.getItemBySlot(EquipmentSlotType.FEET);
+        ItemStack head =  living.getItemBySlot(EquipmentSlotType.HEAD);
+        ItemStack legs =  living.getItemBySlot(EquipmentSlotType.LEGS);
         
         if (((!head.isEmpty()) && (head.getItem() == TechArmor.wither_helmet.get()) &&
             (!chest.isEmpty()) && (chest.getItem() == TechArmor.wither_chestplate.get()) &&
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.wither_leggings.get()) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.wither_boots.get()))) {
             if (ArmorHandler.wither_armor && ArmorHandler.wither_strength) {
-            	living.addPotionEffect(new EffectInstance(Effects.STRENGTH, 180, ArmorHandler.wither_strength_lvl, false, false));
+            	living.addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 180, ArmorHandler.wither_strength_lvl, false, false));
             }
             if (ArmorHandler.wither_armor && ArmorHandler.wither_fire) {
-            	living.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.wither_fire_lvl, false, false));
+            	living.addEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.wither_fire_lvl, false, false));
             }
             if (ArmorHandler.wither_armor && ArmorHandler.wither_resistance) {
-            	living.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 180, ArmorHandler.wither_resistance_lvl, false, false));
+            	living.addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 180, ArmorHandler.wither_resistance_lvl, false, false));
             }
         }
     }
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.wither_armor && (ArmorHandler.wither_strength || ArmorHandler.wither_fire || ArmorHandler.wither_resistance)) {
         	tooltip.add(new TranslationTextComponent("tooltip.witherarmor_1"));
         }

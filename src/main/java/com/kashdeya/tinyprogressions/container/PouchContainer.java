@@ -19,18 +19,15 @@ public class PouchContainer extends Container
 	
     public PouchContainer(int id, PlayerInventory playerInventoryIn, PlayerEntity playerIn)
     {
-    	super(ContainerType.GENERIC_9X6, id);
+    	super(ContainerType.GENERIC_9x6, id);
     	
     	this.storage = null;
     	
 		this.player = playerIn;
 		this.playerInventory = new InvWrapper(playerInventoryIn);
 		
-		player.getHeldItemMainhand().getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
-				this.addSlot(new SlotPouch(h, 0, 46, 33) {	@Override
-					   public void onSlotChanged() {
-					   super.onSlotChanged();
-				   }});
+		player.getMainHandItem().getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
+				this.addSlot(new SlotPouch(h, 0, 46, 33));
 				this.addSlot(new SlotPouch(h, 1, 46, 58));
 				this.addSlot(new SlotPouch(h, 2, 112, 33));
 				this.addSlot(new SlotPouch(h, 3, 112, 58));
@@ -79,11 +76,11 @@ public class PouchContainer extends Container
 		
 	}
 		
-    @Override
-    public boolean canInteractWith(PlayerEntity player)
-    {
-        return true;
-    }
+	@Override
+	public boolean stillValid(PlayerEntity p_75145_1_) {
+		// TODO Auto-generated method stub
+		return true;
+	}
     
 //    @Override
 //    public ItemStack transferStackInSlot(PlayerEntity player, int index)

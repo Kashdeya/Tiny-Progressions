@@ -40,10 +40,10 @@ public class LavaArmour extends BaseArmor {
 
 		LivingEntity living = ((LivingEntity)entityIn);
 		
-        ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-        ItemStack feet =  living.getItemStackFromSlot(EquipmentSlotType.FEET);
-        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+        ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+        ItemStack feet =  living.getItemBySlot(EquipmentSlotType.FEET);
+        ItemStack head =  living.getItemBySlot(EquipmentSlotType.HEAD);
+        ItemStack legs =  living.getItemBySlot(EquipmentSlotType.LEGS);
         
  
         if (((!head.isEmpty()) && (head.getItem() == TechArmor.lava_helmet.get()) &&
@@ -51,16 +51,16 @@ public class LavaArmour extends BaseArmor {
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.lava_leggings.get()) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.lava_boots.get()))) {
             if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_fire) {
-            	living.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.lava_armor_fire_lvl, false, false));
+            	living.addEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.lava_armor_fire_lvl, false, false));
             }
             if (ArmorHandler.lava_armor && ArmorHandler.lava_armor_resistance) {
-            	living.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 180, ArmorHandler.lava_armor_resistance_lvl, false, false));
+            	living.addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 180, ArmorHandler.lava_armor_resistance_lvl, false, false));
             }
         }
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.lava_armor && (ArmorHandler.lava_armor_resistance || ArmorHandler.lava_armor_fire)) {
         	tooltip.add(new TranslationTextComponent("tooltip.lavaarmor_1"));
         }

@@ -41,23 +41,23 @@ public class LapisArmor extends BaseArmor {
 
 		LivingEntity living = ((LivingEntity) entityIn);
 
-		ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-		ItemStack feet = living.getItemStackFromSlot(EquipmentSlotType.FEET);
-		ItemStack head = living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-		ItemStack legs = living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+		ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+		ItemStack feet = living.getItemBySlot(EquipmentSlotType.FEET);
+		ItemStack head = living.getItemBySlot(EquipmentSlotType.HEAD);
+		ItemStack legs = living.getItemBySlot(EquipmentSlotType.LEGS);
 		if (((!head.isEmpty()) && (head.getItem() == TechArmor.lapis_helmet.get()) && (!chest.isEmpty())
 				&& (chest.getItem() == TechArmor.lapis_chestplate.get()) && (!legs.isEmpty())
 				&& (legs.getItem() == TechArmor.lapis_leggings.get()) && (!feet.isEmpty())
 				&& (feet.getItem() == TechArmor.lapis_boots.get()))) {
 			if (ArmorHandler.lapis_armor && ArmorHandler.lapis_armor_water) {
-				living.addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, 180,
+				living.addEffect(new EffectInstance(Effects.WATER_BREATHING, 180,
 						ArmorHandler.lapis_armor_water_lvl, false, false));
 			}
 		}
 	}
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if (ArmorHandler.lapis_armor && ArmorHandler.lapis_armor_water) {
 			tooltip.add(new TranslationTextComponent("tooltip.lapisarmor_1"));
 		}

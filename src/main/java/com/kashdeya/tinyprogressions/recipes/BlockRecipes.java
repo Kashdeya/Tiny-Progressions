@@ -179,7 +179,7 @@ public class BlockRecipes {
             	"ibi",
 				'i', "forge:ingots/iron",
 				'b', new ItemStack(Items.BONE_BLOCK),
-				'd', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.SWIFTNESS),
+				'd', PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.SWIFTNESS),
 				'e', new ItemStack(Blocks.SEA_LANTERN));
 		
 		exportJson.addShapedNBTRecipe(new ItemStack(TechBlocks.growth_upgrade.get()), 
@@ -187,7 +187,7 @@ public class BlockRecipes {
             	"wew",
             	"cnc",
 				'e', "forge:glass",
-				'w', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.LONG_SWIFTNESS),
+				'w', PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.LONG_SWIFTNESS),
 				'c', new ItemStack(TechBlocks.growth_block.get()),
 				'n', new ItemStack(Items.NETHER_STAR));
 		
@@ -195,7 +195,7 @@ public class BlockRecipes {
 				"cgc",
 				"scs",
 				"cgc",
-				's', PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.STRONG_SWIFTNESS),
+				's', PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.STRONG_SWIFTNESS),
 				'g', new ItemStack(TechBlocks.growth_upgrade.get()),
 				'c', new ItemStack(Items.END_CRYSTAL));
 	

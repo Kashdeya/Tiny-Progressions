@@ -9,8 +9,8 @@ public class WaterHarvester extends Block {
 	
 	public WaterHarvester()
     {
-        super(Properties.create(Material.ROCK)
-        		.hardnessAndResistance(1.5f, 10)
+        super(Properties.of(Material.STONE)
+        		.strength(1.5f, 10)
         		.sound(SoundType.STONE)
         		.harvestTool(ToolType.PICKAXE)
         		.harvestLevel(1));// needs changed!

@@ -3,14 +3,17 @@ package com.kashdeya.tinyprogressions.blocks.decorations;
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.ToolType;
 
 public class HardenedBlocks extends StandardBlock{
 	
 	private HardenedBlocks(Properties prop, int meta, int least_quantity, int most_quantity) {
-		super(prop.hardnessAndResistance(100F, 2000F)
+		super(prop.strength(100F, 2000F)
 				.harvestLevel(1)
 				.harvestTool(ToolType.PICKAXE)
 				.sound(SoundType.STONE));
@@ -31,7 +34,7 @@ public class HardenedBlocks extends StandardBlock{
 //    }
     
     @Override
-    public boolean canDropFromExplosion(Explosion explosionIn)
+    public boolean canDropFromExplosion(BlockState state, IBlockReader world, BlockPos pos, Explosion explosionIn)
     {
       return false;
     }

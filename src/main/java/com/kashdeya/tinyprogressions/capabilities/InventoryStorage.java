@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -141,16 +142,16 @@ public class InventoryStorage extends ItemStackHandler
 		
 		/**
 		 * This will drop any and all items from this inventory at block Pos given.
-		 * @param world
+		 * @param worldIn
 		 * @param pos
 		 */
-		public void dropInventory(World world, BlockPos pos) {
+		public void dropInventory(World worldIn, BlockPos pos) {
 	        for (int i = 0; i < this.getSlots(); ++i)
 	        {
 	        	ItemStack stack = getAndRemoveSlot(i);
 	        	
 	        	if(!stack.isEmpty()){
-	        		world.addEntity(new ItemEntity(world, pos.getX(), pos.getY()+1, pos.getZ(), stack));
+	        		worldIn.addFreshEntity(new ItemEntity(worldIn, pos.getX(), pos.getY()+1, pos.getZ(), stack));
 	        	}
 	        }
 		}

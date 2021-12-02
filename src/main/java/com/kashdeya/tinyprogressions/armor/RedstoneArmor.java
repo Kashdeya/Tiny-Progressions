@@ -40,10 +40,10 @@ public class RedstoneArmor extends BaseArmor {
 
 		LivingEntity living = ((LivingEntity)entityIn);
 		
-        ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-        ItemStack feet =  living.getItemStackFromSlot(EquipmentSlotType.FEET);
-        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+        ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+        ItemStack feet =  living.getItemBySlot(EquipmentSlotType.FEET);
+        ItemStack head =  living.getItemBySlot(EquipmentSlotType.HEAD);
+        ItemStack legs =  living.getItemBySlot(EquipmentSlotType.LEGS);
         
         
 		if (((!head.isEmpty()) && (head.getItem() == TechArmor.redstone_helmet.get()) && (!chest.isEmpty())
@@ -51,7 +51,7 @@ public class RedstoneArmor extends BaseArmor {
 				&& (legs.getItem() == TechArmor.redstone_leggings.get()) && (!feet.isEmpty())
 				&& (feet.getItem() == TechArmor.redstone_boots.get()))) {
 			if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
-				living.addPotionEffect(new EffectInstance(Effects.SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, false, false));
+				living.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 180, ArmorHandler.redstone_armor_speed_lvl, false, false));
 			}
 		}
 	}
@@ -76,7 +76,7 @@ public class RedstoneArmor extends BaseArmor {
 	// }
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if (ArmorHandler.redstone_armor && ArmorHandler.redstone_armor_speed) {
 			tooltip.add(new TranslationTextComponent("tooltip.redstonearmor_1"));
 		}

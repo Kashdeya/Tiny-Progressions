@@ -16,7 +16,7 @@ public interface IExtendedReach {
 		AttributeModifier extended = new AttributeModifier(attUUID, "extend-reach", getReach(), AttributeModifier.Operation.ADDITION);
 
 		if(!player.getAttribute(ForgeMod.REACH_DISTANCE.get()).hasModifier(extended))
-			player.getAttribute(ForgeMod.REACH_DISTANCE.get()).applyPersistentModifier(extended);
+			player.getAttribute(ForgeMod.REACH_DISTANCE.get()).addPermanentModifier(extended);
 	}
 	
 	default boolean hasReach(PlayerEntity player) {

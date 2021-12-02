@@ -9,8 +9,8 @@ public class BridgeBuilder extends Block {
 	
 	public BridgeBuilder()
     {
-        super(Properties.create(Material.WOOD)
-        		.hardnessAndResistance(1.5f, 10f)
+        super(Properties.of(Material.WOOD)
+        		.strength(1.5f, 10f)
         		.harvestTool(ToolType.PICKAXE)
         		.harvestLevel(1)
         		.sound(SoundType.WOOD));// needs changed!

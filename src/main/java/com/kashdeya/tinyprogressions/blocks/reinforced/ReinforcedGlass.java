@@ -23,11 +23,11 @@ public class ReinforcedGlass extends AbstractGlassBlock implements IOreDictEntry
 {
     public ReinforcedGlass()
     {
-        super(Properties.create(Material.GLASS, MaterialColor.BLACK)
-        		.hardnessAndResistance(40, 2000)
+        super(Properties.of(Material.GLASS, MaterialColor.COLOR_BLACK)
+        		.strength(40, 3600000.0F)
         		.harvestLevel(1)
         		.harvestTool(ToolType.PICKAXE)
-        		.notSolid()
+        		.noOcclusion()
         		);
 
     }
@@ -37,23 +37,23 @@ public class ReinforcedGlass extends AbstractGlassBlock implements IOreDictEntry
     	return "blockReinforcedGlass";
     }
 
-    @Override
-    public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {}
-    
-    @Override
-    public boolean canDropFromExplosion(Explosion explosionIn)
-    {
-      return false;
-    }
-    
+//    @Override
+//    public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {}
+//    
+//    @Override
+//    public boolean canDropFromExplosion(Explosion explosionIn)
+//    {
+//      return false;
+//    }
+//    
     
     @SubscribeEvent
 	public static void onWitherBlockDestory(LivingDestroyBlockEvent event) {
         if (((event.getEntity() instanceof WitherEntity) || (event.getEntity() instanceof WitherSkullEntity)))
         {
-        	Block block = event.getEntity().world.getBlockState(event.getPos()).getBlock();
+        	Block block = event.getEntity().level.getBlockState(event.getPos()).getBlock();
         	if(block == TechBlocks.reinforced_obsidian.get() || block == TechBlocks.reinforced_glass.get())
-        	event.setCanceled(true);
+        		event.setCanceled(true);
         }
 	}
 

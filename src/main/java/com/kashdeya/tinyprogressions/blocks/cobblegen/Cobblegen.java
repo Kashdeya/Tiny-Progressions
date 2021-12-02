@@ -1,20 +1,17 @@
 package com.kashdeya.tinyprogressions.blocks.cobblegen;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
-import com.kashdeya.tinyprogressions.tiles.TileEntityCobblegen;
+import com.kashdeya.tinyprogressions.inits.ModTileEntityTypes;
+import com.kashdeya.tinyprogressions.tiles.cobblegen.TileEntityCobblegen;
 
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -22,7 +19,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -38,18 +36,20 @@ public class Cobblegen extends StandardBlock{
 	public Cobblegen(int cycleUpdate, int stackSize, Properties properties)
 	{
 		super(properties
-				.hardnessAndResistance(1.0F, 1000.0F)
-				.setLightLevel((p) -> 1)
+				.strength(1.0F, 1000.0F)
+				.lightLevel((p) -> 1)
 				.sound(SoundType.STONE)
 				.harvestTool(ToolType.PICKAXE)
 				.harvestLevel(1));
+		
 		this.cycleUpdate = cycleUpdate;
 		this.stackSize = stackSize;
 	}
 
-	public boolean func_229869_c_(BlockState p_229869_1_, IBlockReader p_229869_2_, BlockPos p_229869_3_) {
-	   return false;
-	}
+//	@Override
+//	public boolean func_229869_c_(BlockState p_229869_1_, IBlockReader p_229869_2_, BlockPos p_229869_3_) {
+//	   return false;
+//	}
 
 	public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
       return false;
@@ -61,20 +61,20 @@ public class Cobblegen extends StandardBlock{
 //    }
 
 	@Override
-    public BlockRenderType getRenderType(BlockState state) {
-		
+    public BlockRenderType getRenderShape(BlockState state) {
         return BlockRenderType.MODEL;
      }
 
-	public ActionResultType func_225533_a_(BlockState p_225533_1_, World worldIn, BlockPos pos, PlayerEntity player, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
+	@Override
+	public ActionResultType use(BlockState p_225533_1_, World worldIn, BlockPos pos, PlayerEntity player, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
 
 
-		if(worldIn.isRemote)
+		if(worldIn.isClientSide())
     	{
     		return ActionResultType.SUCCESS;
     	}
 
-    	TileEntity tile = worldIn.getTileEntity(pos);
+    	TileEntity tile = worldIn.getBlockEntity(pos);
     	
     	if(tile != null && tile instanceof TileEntityCobblegen)
     	{
@@ -83,11 +83,11 @@ public class Cobblegen extends StandardBlock{
     		
     		if(!player.isCrouching())
     		{
-        		ItemStack stack = ttest.getInventory().getAndRemoveSlot(0);
+        		ItemStack stack = ttest.getInventory().removeItem(0, ttest.getMaxStackSize());
         		
 	    		if(stack != null)
 	    		{
-		    		if(!player.inventory.addItemStackToInventory(stack))
+		    		if(!player.inventory.add(stack))
 		    		{		    			
 		    			//player.dropItem(stack, false);
 		    			ForgeHooks.onPlayerTossEvent(player, stack, false);
@@ -95,22 +95,23 @@ public class Cobblegen extends StandardBlock{
 	    		}
     		} else
     		{
-        		ItemStack stack = ttest.getInventory().getStackInSlot(0);
+        		ItemStack stack = ttest.getInventory().getItem(0);
 
-        		ITextComponent Cobblestone = ITextComponent.getTextComponentOrEmpty("Cobblestone x " + (stack.isEmpty()? 0 : stack.getCount()));
+        		ITextComponent Cobblestone = ITextComponent.nullToEmpty("Cobblestone x " + (stack.isEmpty()? 0 : stack.getCount()));
 
-        		if(worldIn.isRemote())
-        			player.sendMessage(Cobblestone, player.getUniqueID());
+        		if(worldIn.isClientSide())
+        			player.sendMessage(Cobblestone, player.getUUID());
     		}
     	}
     	
         return ActionResultType.SUCCESS;
     }
 
+	//TODO
 	@Override
-	public void onReplaced(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+	public void onRemove(BlockState oldState, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (oldState.getBlock() != newState.getBlock()) {
-			TileEntity tile =worldIn.getTileEntity(pos);
+			TileEntity tile =worldIn.getBlockEntity(pos);
 			
 			if (tile != null && tile instanceof TileEntityCobblegen)
 			{
@@ -118,7 +119,7 @@ public class Cobblegen extends StandardBlock{
 			}
         
 		}
-		super.onReplaced(oldState, worldIn, pos, newState, isMoving);
+		super.onRemove(oldState, worldIn, pos, newState, isMoving);
     }
     
 	
@@ -130,12 +131,14 @@ public class Cobblegen extends StandardBlock{
 	@Nullable
 	@Override
 	public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
-		return new TileEntityCobblegen().setGenStats(cycleUpdate, stackSize);
+		
+		return ModTileEntityTypes.CobbleGen.get().create().setGenStats(this.cycleUpdate, this.stackSize);
+//		return new TileEntityCobblegen().setGenStats(cycleUpdate, stackSize);
 	}
     
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_1", stackSize));
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_2", cycleUpdate));
     	tooltip.add(new TranslationTextComponent("tooltip.cobblegen_3"));

@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
@@ -18,17 +19,18 @@ public class Lamp extends AbstractGlassBlock
 	public Lamp(Properties prop)
 	{
 		super(prop
-				.hardnessAndResistance(.5F, 1F)
-				.setLightLevel((p) -> 15)
+				.strength(.5F, 1F)
+				.lightLevel((p) -> 15)
 				.sound(SoundType.GLASS)
 				.noDrops()
-				.notSolid());
+				.air()
+				.noOcclusion()
+				);
 	}
 	
 	
 	@Override
-    public BlockRenderType getRenderType(BlockState state) {
-		
+    public BlockRenderType getRenderShape(BlockState state) {
         return BlockRenderType.MODEL;
      }
 

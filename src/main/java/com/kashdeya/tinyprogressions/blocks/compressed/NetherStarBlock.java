@@ -28,9 +28,9 @@ public class NetherStarBlock extends StandardBlock {
 	
 	public NetherStarBlock()
 	{
-		super(Properties.create(Material.PORTAL)
-				.hardnessAndResistance(3F, 2000F)
-				.setLightLevel((p) -> 1)
+		super(Properties.of(Material.PORTAL)
+				.strength(3F, 2000F)
+				.lightLevel((p) -> 1)
 				.sound(SoundType.STONE)
 				.harvestLevel(1)
 				.harvestTool(ToolType.PICKAXE));
@@ -44,19 +44,19 @@ public class NetherStarBlock extends StandardBlock {
     }
 	
 	@Override
-    public boolean canDropFromExplosion(Explosion explosionIn)
+    public boolean canDropFromExplosion(BlockState state, IBlockReader world, BlockPos pos, Explosion explosionIn)
     {
         return true;
     }
 	
 	@Override
-	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) 
+	public void fallOn(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) 
     {
-        entityIn.onLivingFall(fallDistance, 3.0F);
+        entityIn.causeFallDamage(fallDistance, 5.0F);
     }
 	
 	@Override
-	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn){
+	public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn){
 			tooltip.add(new TranslationTextComponent("tooltip.netherstar_1"));
 	}
 

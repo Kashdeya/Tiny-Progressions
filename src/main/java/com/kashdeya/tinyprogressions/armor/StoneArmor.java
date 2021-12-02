@@ -33,22 +33,22 @@ public class StoneArmor extends BaseArmor {
 			
 			LivingEntity living = ((LivingEntity)entityIn);
 		
-	        ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-	        ItemStack feet =  living.getItemStackFromSlot(EquipmentSlotType.FEET);
-	        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-	        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+	        ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+	        ItemStack feet =  living.getItemBySlot(EquipmentSlotType.FEET);
+	        ItemStack head =  living.getItemBySlot(EquipmentSlotType.HEAD);
+	        ItemStack legs =  living.getItemBySlot(EquipmentSlotType.LEGS);
 	         
 	        if (!head.isEmpty() && head.getItem() == TechArmor.stone_helmet.get()) {
-	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
+	        	living.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 180, 0, false, false));
 	        }
 	        if (!chest.isEmpty() && chest.getItem() == TechArmor.stone_chestplate.get()) {
-	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
+	        	living.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 180, 0, false, false));
 	        }
 	        if (!legs.isEmpty() && legs.getItem() == TechArmor.stone_leggings.get()) {
-	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
+	        	living.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 180, 0, false, false));
 	        }
 	        if (!feet.isEmpty() && feet.getItem() == TechArmor.stone_boots.get()) {
-	        	living.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 180, 0, false, false));
+	        	living.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 180, 0, false, false));
 	        }
 	}
 	

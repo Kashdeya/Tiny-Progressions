@@ -38,7 +38,12 @@ public class BlockFluidVasholine extends FlowingFluidBlock {
 	public static ResourceLocation overlay = new ResourceLocation(Reference.MOD_ID, "textures/fluids/wub_juice_overlay");
 	
 	public BlockFluidVasholine(Properties props) {
-		super(TechBlocks.vasholine_fluid, props.doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops().setLightLevel((p) -> 15).tickRandomly());
+		super(TechBlocks.vasholine_fluid, props
+				.noCollission()
+				.strength(100.0F)
+				.noDrops()
+				.lightLevel((p) -> 15)
+				.randomTicks());
 	}
 
 	
@@ -67,19 +72,19 @@ public class BlockFluidVasholine extends FlowingFluidBlock {
 			if(world.getGameTime()%20 == 0 && ((PlayerEntity) entity).getHealth() < ((PlayerEntity) entity).getMaxHealth()) // add whatever time you want here 20 = every 1 second
 				((PlayerEntity) entity).heal(ConfigHandler.vasholine_heal_amount);
 			if (ConfigHandler.wub_weakness){
-				((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.WEAKNESS, 20, 0, false, false));
+				((PlayerEntity) entity).addEffect(new EffectInstance(Effects.WEAKNESS, 20, 0, false, false));
 			}
 			if (ConfigHandler.wub_blindness){
-				((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.BLINDNESS, 20, 0, false, false));
+				((PlayerEntity) entity).addEffect(new EffectInstance(Effects.BLINDNESS, 20, 0, false, false));
 			}
 			if (ConfigHandler.wub_fatigue){	
-				((PlayerEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, 20, 0, false, false));
+				((PlayerEntity) entity).addEffect(new EffectInstance(Effects.DIG_SLOWDOWN, 20, 0, false, false));
 			}
-			entity.rotationYaw -= (world.rand.nextFloat() - world.rand.nextFloat()) * 0.5D;
-			entity.prevRotationYaw += (world.rand.nextFloat() + world.rand.nextFloat()) * 0.5D;
+			entity.rotationYaw -= (world.random.nextFloat() - world.random.nextFloat()) * 0.5D;
+			entity.prevRotationYaw += (world.random.nextFloat() + world.random.nextFloat()) * 0.5D;
 		}
 		if (entity instanceof LivingEntity && !(entity instanceof PlayerEntity) && ConfigHandler.vasholine_mobs){
-			entity.attackEntityFrom(DamageSource.MAGIC, ConfigHandler.vasholine_mobs_amount);
+			entity.hurt(DamageSource.MAGIC, ConfigHandler.vasholine_mobs_amount);
 		}
 		if (entity instanceof LivingEntity && !(entity instanceof PlayerEntity) && ConfigHandler.wub_heal_mobs){
 			((LivingEntity) entity).heal(ConfigHandler.mob_heal_amount);
@@ -88,7 +93,7 @@ public class BlockFluidVasholine extends FlowingFluidBlock {
 
 	@Override
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-		if (worldIn.isAirBlock(pos.up()) && worldIn.getGameTime() % 5 == 0) {
+		if (worldIn.isEmptyBlock(pos.above()) && worldIn.getGameTime() % 5 == 0) {
 
 			float xx = (float) pos.getX() + 0.5F;
 			float zz = (float) pos.getZ() + 0.5F;
@@ -105,7 +110,7 @@ public class BlockFluidVasholine extends FlowingFluidBlock {
 	
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
     	tooltip.add(new TranslationTextComponent("tooltip.vasholine_1"));
     }
 }

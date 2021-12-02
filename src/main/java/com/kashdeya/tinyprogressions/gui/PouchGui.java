@@ -19,12 +19,13 @@ public abstract class PouchGui extends ContainerScreen<PouchContainer>
     {
         super(container, inventory, titleIn);
 //        this.storage = storage2;
-        ySize = 222;
+//        ySize = 222;
+//        this.s
     }
 
     public void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
     {
-        Minecraft.getInstance().getTextureManager().bindTexture(texture);
+        Minecraft.getInstance().getTextureManager().bind(texture);
 //        drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
     }
 

@@ -31,8 +31,8 @@ public class VasholineFluid extends ForgeFlowingFluid{
 	     return tagIn == FluidTags.WATER; //FluidTags.WATER.contains(this);
 	}
 
-    public int getLevel(FluidState state) {
-        return state.get(LEVEL_1_8);
+    public int getAmount(FluidState state) {
+        return state.getValue(LEVEL);
     }
 	
 //	@Override
@@ -56,15 +56,15 @@ public class VasholineFluid extends ForgeFlowingFluid{
 			super(properties);
 		}
 		
-
-        protected void fillStateContainer(StateContainer.Builder<Fluid, FluidState> builder) {
-            super.fillStateContainer(builder);
-            builder.add(LEVEL_1_8);
+		@Override
+        protected void createFluidStateDefinition(StateContainer.Builder<Fluid, FluidState> builder) {
+            super.createFluidStateDefinition(builder);
+            builder.add(LEVEL);
         }
 
 		@Override
-        public int getLevel(FluidState state) {
-            return state.get(LEVEL_1_8);
+        public int getAmount(FluidState state) {
+            return state.getValue(LEVEL);
         }
 
         @Override
@@ -81,13 +81,14 @@ public class VasholineFluid extends ForgeFlowingFluid{
 			super(properties);
 		}
 		
-        protected void fillStateContainer(StateContainer.Builder<Fluid, FluidState> builder) {
-            super.fillStateContainer(builder);
-            builder.add(LEVEL_1_8);
+		@Override
+        protected void createFluidStateDefinition(StateContainer.Builder<Fluid, FluidState> builder) {
+            super.createFluidStateDefinition(builder);
+            builder.add(LEVEL);
         }
 
 		@Override
-        public int getLevel(FluidState state) {
+        public int getAmount(FluidState state) {
             return 8;
         }
 
@@ -96,4 +97,10 @@ public class VasholineFluid extends ForgeFlowingFluid{
             return true;
         }
     }
+
+//	@Override
+//	public int getAmount(FluidState p_207192_1_) {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
 }

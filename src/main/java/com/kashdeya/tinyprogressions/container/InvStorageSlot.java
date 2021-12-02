@@ -24,7 +24,7 @@ public class InvStorageSlot extends SlotItemHandler{
 
 	
 	@Override
-	    public int getItemStackLimit(@Nonnull ItemStack stack)
+	    public int getMaxStackSize(@Nonnull ItemStack stack)
 	    {
 	        ItemStack maxAdd = stack.copy();
 	        int maxInput = stack.getMaxStackSize();
@@ -57,7 +57,7 @@ public class InvStorageSlot extends SlotItemHandler{
 	     * Return whether this slot's stack can be taken from this slot.
 	     */
 	    @Override
-	    public boolean canTakeStack(PlayerEntity playerIn)
+	    public boolean mayPickup(PlayerEntity playerIn)
 	    {
 	        return !(this.getItemHandler().extractItemInternal(index, 1, true).isEmpty());
 	    }
@@ -69,7 +69,7 @@ public class InvStorageSlot extends SlotItemHandler{
 	     */
 	    @Override
 	    @Nonnull
-	    public ItemStack decrStackSize(int amount)
+	    public ItemStack remove(int amount)
 	    {
 	        return  this.getItemHandler().extractItemInternal(index, amount, false);
 	    }

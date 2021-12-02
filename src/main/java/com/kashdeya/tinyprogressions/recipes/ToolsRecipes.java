@@ -475,7 +475,7 @@ public class ToolsRecipes {
 		
 		
 			ItemStack BirthdayPickaxe = new ItemStack(TechTools.birthday_pickaxe.get());
-			BirthdayPickaxe.addEnchantment(Enchantments.MENDING, 0);
+			BirthdayPickaxe.enchant(Enchantments.MENDING, 0);
 			
 		exportJson.addShapedRecipe(BirthdayPickaxe, 
 				"rdr",

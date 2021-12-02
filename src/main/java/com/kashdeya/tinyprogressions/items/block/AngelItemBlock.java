@@ -21,18 +21,18 @@ public class AngelItemBlock extends BlockItem
 {
 	public AngelItemBlock(Block block)
 	{
-		super(block, new Properties().maxStackSize(1).group(TinyProgressions.TAB));
+		super(block, new Properties().stacksTo(1).group(TinyProgressions.TAB));
 	}
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) 
 	{
-		if(world.isRemote)
+		if(world.isClientSide)
 			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
 		
-		int x = (int)Math.floor(player.getPosition().getX());
-		int y = (int)Math.floor(player.getPosition().getY() + player.getEyeHeight());
-		int z = (int)Math.floor(player.getPosition().getZ());
+		int x = (int)Math.floor(player.getX());
+		int y = (int)Math.floor(player.getY() + player.getEyeHeight());
+		int z = (int)Math.floor(player.getZ());
 		
 		Vector3d look = player.getLookVec();
 		

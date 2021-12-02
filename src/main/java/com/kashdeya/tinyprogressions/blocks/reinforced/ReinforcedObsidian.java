@@ -26,8 +26,8 @@ public class ReinforcedObsidian extends Block implements IOreDictEntry {
 	
 	public ReinforcedObsidian()
     {
-        super(Properties.create(Material.GLASS, MaterialColor.BLACK)
-        		.hardnessAndResistance(60, 2000)
+        super(Properties.of(Material.GLASS, MaterialColor.COLOR_BLACK)
+        		.strength(60, 3600000.0F)
         		.harvestLevel(2)
         		.harvestTool(ToolType.PICKAXE)
         		.sound(SoundType.ANVIL));
@@ -38,17 +38,17 @@ public class ReinforcedObsidian extends Block implements IOreDictEntry {
 		return "blockReinforcedObsidian";
 	}
 
-    @Override
-    public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {}
-	  
-	@Override
-	public boolean canDropFromExplosion(Explosion explosionIn)
-	{
-		return false;	
-	}
+//    @Override
+//    public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {}
+//	  
+//	@Override
+//	public boolean canDropFromExplosion(Explosion explosionIn)
+//	{
+//		return false;	
+//	}
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
+	public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
     {
     	tooltip.add(new TranslationTextComponent("tooltip.obsidian_1"));
     }

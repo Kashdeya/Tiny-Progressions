@@ -2,6 +2,9 @@ package com.kashdeya.tinyprogressions.main;
 
 import java.io.File;
 
+import com.kashdeya.tinyprogressions.world.WorldGen;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -56,39 +59,44 @@ public class TinyProgressions{
     
 	public static final ItemGroup TAB = (new ItemGroup(Reference.MOD_ID +".general") {
 	      @OnlyIn(Dist.CLIENT)
-	      public ItemStack createIcon() {
+	      public ItemStack makeIcon() {
 	         return new ItemStack(Items.NETHER_STAR);
 	      }
-	   }).setTabPath("tiny_progression_items");
+	   }).setRecipeFolderName("tiny_progression_items");
     
+	
+	
 	public static final ItemGroup FoodGroup = (new ItemGroup(Reference.MOD_ID+".food") {
 	      @OnlyIn(Dist.CLIENT)
-	      public ItemStack createIcon() {
-	         return new ItemStack(TechFoods.diamond_apple.get());
+	      public ItemStack makeIcon() {
+	    	  return new ItemStack(Items.APPLE);
+//TODO
+//	         return new ItemStack(TechFoods.diamond_apple.get());
 	      }
-	   }).setTabPath("tiny_progression_foods");
-	
-	public static final ItemGroup combatGroup = (new ItemGroup(Reference.MOD_ID+".combat") {
-	      @OnlyIn(Dist.CLIENT)
-	      public ItemStack createIcon() {
-	         return new ItemStack(TechTools.obsidian_sword.get());
-	      }
-	   }).setTabPath("tiny_progression_combat");
-	
-	   public static final ItemGroup ToolsGroup = (new ItemGroup(Reference.MOD_ID+".tools") {
-	      @OnlyIn(Dist.CLIENT)
-	      public ItemStack createIcon() {
-	         return new ItemStack(TechTools.wub_pickaxe.get());
-	      }
-	   }).setTabPath("tiny_progression_tools");
-	   
+	   }).setRecipeFolderName("tiny_progression_foods");
+//	
+//	public static final ItemGroup combatGroup = (new ItemGroup(Reference.MOD_ID+".combat") {
+//	      @OnlyIn(Dist.CLIENT)
+//	      public ItemStack makeIcon() {
+//	         return new ItemStack(TechTools.obsidian_sword.get());
+//	      }
+//	   }).setRecipeFolderName("tiny_progression_combat");
+//	
+//	   public static final ItemGroup ToolsGroup = (new ItemGroup(Reference.MOD_ID+".tools") {
+//	      @OnlyIn(Dist.CLIENT)
+//	      public ItemStack makeIcon() {
+//	         return new ItemStack(TechTools.wub_pickaxe.get());
+//	      }
+//	   }).setRecipeFolderName("tiny_progression_tools");
+//	   
 	   
 	   public static final ItemGroup BlocksGroup = (new ItemGroup(Reference.MOD_ID+".blocks") {
 		      @OnlyIn(Dist.CLIENT)
-		      public ItemStack createIcon() {
-		         return new ItemStack(TechBlocks.hardened_stone_bricks.get());
+		      public ItemStack makeIcon() {
+//		         return new ItemStack(TechBlocks.hardened_stone_bricks.get());
+		         return new ItemStack(TechBlocks.cobblegen_block.get());
 		      }
-		   }).setTabPath("tiny_progression_blocks");
+		   }).setRecipeFolderName("tiny_progression_blocks");
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
@@ -107,6 +115,8 @@ public class TinyProgressions{
     	bus.addListener(this::enqueueIMC);
     	bus.addListener(this::processIMC);
     	bus.addListener(this::doClientStuff);
+		
+//    	MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, WorldGen::generateOres);
 
         ModLoadingContext.get().registerConfig(Type.COMMON, TinyConfig.commonSpec);
 //        ModLoadingContext.get().registerConfig(Type.CLIENT, TinyConfig.clientSpec);
@@ -114,12 +124,12 @@ public class TinyProgressions{
         
 		ITEMS.register(bus);
 		BLOCKS.register(bus);
-		FLUIDS.register(bus);
+//		FLUIDS.register(bus);
 		TILE_ENTITY_TYPES.register(bus);
-		CONTAINERS.register(bus);
-		FEATURES.register(bus);
-		SOUNDS.register(bus);
-		RECIPEHANDLER.register(bus);
+//		CONTAINERS.register(bus);
+//		FEATURES.register(bus);
+//		SOUNDS.register(bus);
+//		RECIPEHANDLER.register(bus);
     }
 
 
@@ -134,26 +144,26 @@ public class TinyProgressions{
     @SuppressWarnings("deprecation")
 	private void doClientStuff(final FMLClientSetupEvent event) {
     	
-    	RenderType solid = RenderType.getSolid();
-    	RenderType cutout_mipped = RenderType.getCutoutMipped();
-    	RenderType cutout = RenderType.getCutout();
-    	RenderType translucent = RenderType.getTranslucent();
-    	RenderType translucent_no_crumbling = RenderType.getTranslucentNoCrumbling();
+    	RenderType solid = RenderType.solid();
+    	RenderType cutout_mipped = RenderType.cutoutMipped();
+    	RenderType cutout = RenderType.cutout();
+    	RenderType translucent = RenderType.translucent();
+    	RenderType translucent_no_crumbling = RenderType.translucentNoCrumbling();
 
     	RenderTypeLookup.setRenderLayer(TechBlocks.cobblegen_block.get(),        cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.iron_cobblegen_block.get(),   cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.emerald_cobblegen_block.get(),cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.diamond_cobblegen_block.get(),cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.blaze_cobblegen_block.get(),  cutout_mipped);
-    	
+//    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.blackberry_bush.get(),cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.blueberry_bush.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.maloberry_bush.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.raspberry_bush.get(), cutout);
-    	    	
-    	
+//    	    	
+//    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.reinforced_glass.get(), cutout_mipped);
-    	
+//    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.lamp.get(),          cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.black_lamp.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.blue_lamp.get(),     cutout_mipped);
@@ -167,18 +177,18 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.orange_lamp.get(),   cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.pink_lamp.get(),     cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.purple_lamp.get(),   cutout_mipped);
-    	RenderTypeLookup.setRenderLayer(TechBlocks.red_lamp.get(),      cutout_mipped);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.red_lamp.get(),      translucent);
     	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   cutout_mipped);
-    	
-    	RenderTypeLookup.setRenderLayer(TechBlocks.fmf_block.get(), cutout);
-    	
+//    	
+//    	RenderTypeLookup.setRenderLayer(TechBlocks.fmf_block.get(), cutout);
+//    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_block.get(),      cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade_two.get(),cutout_mipped);
-
+//
     	RenderTypeLookup.setRenderLayer(TechBlocks.lava_infused_stone.get(), cutout);
-    	
+//    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.ender_ore.get(), cutout);
     	RenderTypeLookup.setRenderLayer(TechBlocks.water_block.get(), cutout);	
     	RenderTypeLookup.setRenderLayer(TechBlocks.lava_block.get(), cutout);	

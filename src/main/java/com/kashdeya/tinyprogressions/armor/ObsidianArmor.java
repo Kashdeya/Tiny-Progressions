@@ -40,23 +40,23 @@ public class ObsidianArmor extends BaseArmor {
 
 		LivingEntity living = ((LivingEntity)entityIn);
 
-        ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-        ItemStack feet =  living.getItemStackFromSlot(EquipmentSlotType.FEET);
-        ItemStack head =  living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-        ItemStack legs =  living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+        ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+        ItemStack feet =  living.getItemBySlot(EquipmentSlotType.FEET);
+        ItemStack head =  living.getItemBySlot(EquipmentSlotType.HEAD);
+        ItemStack legs =  living.getItemBySlot(EquipmentSlotType.LEGS);
         if (((!head.isEmpty()) && (head.getItem() == TechArmor.obsidian_helmet.get()) &&
             (!chest.isEmpty()) && (chest.getItem() == TechArmor.obsidian_chestplate.get()) &&
             (!legs.isEmpty()) && (legs.getItem() == TechArmor.obsidian_leggings.get()) &&
             (!feet.isEmpty()) && (feet.getItem() == TechArmor.obsidian_boots.get()))) {
             if (ArmorHandler.obsidian_armor && ArmorHandler.obsidian_armor_resistance) {
-            	living.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 180, ArmorHandler.obsidian_armor_resistance_lvl, false, false));
+            	living.addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 180, ArmorHandler.obsidian_armor_resistance_lvl, false, false));
             }
         }
     }
 
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.obsidian_armor && ArmorHandler.obsidian_armor_resistance) {
         	tooltip.add(new TranslationTextComponent("tooltip.obsidianarmor_1"));
         	tooltip.add(new TranslationTextComponent("tooltip.obsidianarmor_2"));

@@ -22,7 +22,7 @@ public class StorageUtil
         if(itemstack == null || itemstack.isEmpty())
             return new byte[0];
         
-        CompoundNBT nbt = itemstack.write(new CompoundNBT());
+        CompoundNBT nbt = itemstack.save(new CompoundNBT());
         
         String id = nbt.getString("id");
         if(id.equals("minecraft:air"))
@@ -35,8 +35,8 @@ public class StorageUtil
         short damage = nbt.getShort("Damage");
         boolean vanilla = id.startsWith("minecraft:") && id.indexOf(':', "minecraft:".length()) < 0;
         
-        CompoundNBT tag = nbt.hasUniqueId("tag") ? nbt.getCompound("tag") : null;
-        CompoundNBT forgeCaps = nbt.hasUniqueId("ForgeCaps") ? nbt.getCompound("ForgeCaps") : null;
+        CompoundNBT tag = nbt.hasUUID("tag") ? nbt.getCompound("tag") : null;
+        CompoundNBT forgeCaps = nbt.hasUUID("ForgeCaps") ? nbt.getCompound("ForgeCaps") : null;
         
         byte type = 0;
         if(damage != 0)
@@ -161,7 +161,7 @@ public class StorageUtil
         if(forgeCaps != null)
             finalTag.put("ForgeCaps", forgeCaps);
         
-        return ItemStack.read(finalTag);
+        return ItemStack.of(finalTag);
     }
     
     private static PacketBuffer writeSmallString(PacketBuffer buffer, String string)

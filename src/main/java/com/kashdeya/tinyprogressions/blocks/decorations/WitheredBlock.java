@@ -19,18 +19,18 @@ public class WitheredBlock extends Block {
 	
 	public WitheredBlock(Properties prop)
     {
-        super(prop.hardnessAndResistance(400F, 3600000.0F).tickRandomly().sound(SoundType.STONE));
+        super(prop.strength(400F, 3600000.0F).randomTicks().sound(SoundType.STONE));
     }
 
     @Override
-    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
+    public void stepOn(World worldIn, BlockPos pos, Entity entityIn)
     {    	
         if (entityIn instanceof PlayerEntity)
         {
-            ((LivingEntity) entityIn).addPotionEffect(new EffectInstance(Effects.WITHER, ConfigHandler.WitheredBlockTime * 20, 1, true, ConfigHandler.WitheredBlockParticals));
+            ((LivingEntity) entityIn).addEffect(new EffectInstance(Effects.WITHER, ConfigHandler.WitheredBlockTime * 20, 1, true, ConfigHandler.WitheredBlockParticals));
         }
 
-        super.onEntityWalk(worldIn, pos, entityIn);
+        super.stepOn(worldIn, pos, entityIn);
     }
 
     public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {

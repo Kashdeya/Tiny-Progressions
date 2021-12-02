@@ -26,8 +26,8 @@ public class EnderOre extends StandardBlock implements IOreDictEntry {
     public EnderOre()
     {
         super(Properties
-        		.create(Material.ROCK)
-        		.hardnessAndResistance(8, 10)
+        		.of(Material.STONE)
+        		.strength(8, 10)
         		.harvestLevel(1)
         		.harvestTool(ToolType.PICKAXE));
     }
@@ -37,27 +37,21 @@ public class EnderOre extends StandardBlock implements IOreDictEntry {
 		return "oreEnderOre";
 	}
     
-//    @Override
-//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
-//    {
-//        return false;
-//    }
-	
     @Override
-    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-    	if (ConfigHandler.ender_mite && !worldIn.isRemote){
+    public void playerWillDestroy(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+    	if (ConfigHandler.ender_mite && !worldIn.isClientSide()){
             int x = pos.getX();
             int y = pos.getY();
             int z = pos.getZ();
-            int rand = worldIn.rand.nextInt(100);
-
+            int rand = worldIn.random.nextInt(100);
             if (rand <= ConfigHandler.endermite_spawn) {
-                Entity entity = new EndermiteEntity(EntityType.ENDERMITE, worldIn);
-                if (!worldIn.isRemote) {
-                    entity.setLocationAndAngles(x + (0.5), y + (1), z + (0.5), worldIn.rand.nextFloat() * 360F, 0.0F);
-                    worldIn.addEntity(entity);
-                    ((LivingEntity) entity).playSound(SoundEvents.ENTITY_ENDERMITE_AMBIENT, 1, 1);
-                }
+            	for(int i= worldIn.random.nextInt(4)+1; i > 0; i-- ) {
+	                Entity entity = new EndermiteEntity(EntityType.ENDERMITE, worldIn);
+	                    entity.setPos(x + (0.5), y + (1), z + (0.5));
+	                    entity.setYBodyRot(worldIn.random.nextFloat() * 360F);
+	                    worldIn.addFreshEntity(entity);
+	                    ((LivingEntity) entity).playSound(SoundEvents.ENDERMITE_AMBIENT, 1, 1);
+            	}
             }
     	}
     }
@@ -90,38 +84,4 @@ public class EnderOre extends StandardBlock implements IOreDictEntry {
         }
     }
     
-//	
-//	@Override
-//    @SideOnly(Side.CLIENT)
-//    public BlockRenderLayer getRenderLayer()
-//    {
-//        return BlockRenderLayer.CUTOUT;
-//    }
-//    
-//    @Override
-//    public int quantityDropped(Random rand) {
-//        return 1 + rand.nextInt(5);
-//    }
-//    
-//    @Override
-//    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-//        return TechItems.ender_dust;
-//    }
-//    
-//    @Override
-//    public int quantityDroppedWithBonus(int fortune, Random rand) {
-//    	return MathHelper.clamp(this.quantityDropped(rand) + rand.nextInt(fortune + 1), 1, 6);
-//    }
-//    
-//
-//    @Override
-//    public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
-//        return (this.getItemDropped(state, RANDOM, fortune) != Item.getItemFromBlock(this)) ? (1 + RANDOM.nextInt(5)) : 0;
-//    }
-//    
-//    @Override
-//    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target)
-//    {
-//        return false;
-//    }
 }

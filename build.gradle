@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -16,7 +16,10 @@ apply plugin: 'maven-publish'
 version = modversion
 group = modgroup
 archivesBaseName = modname +"-"+ mcversion
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
+
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
 minecraft {
     mappings channel: mcpchannel, version: mcpsnapshot
@@ -26,7 +29,7 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+           property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
@@ -42,7 +45,7 @@ minecraft {
             workingDirectory project.file('runServer')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
@@ -58,7 +61,7 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
@@ -73,6 +76,8 @@ minecraft {
         }
     }
 }
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed

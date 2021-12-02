@@ -2,6 +2,8 @@ package com.kashdeya.tinyprogressions.blocks.ores;
 
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import com.kashdeya.tinyprogressions.blocks.StandardBlock;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
@@ -10,8 +12,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntitySpawnPlacementRegistry.PlacementType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -29,17 +31,16 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.event.ForgeEventFactory;
 
 public class LavaBlock extends StandardBlock implements IOreDictEntry {
 
 	private final String oredic;
 	
     public LavaBlock(String oredic) {
-        super(Properties.create(Material.ROCK)
-        		.hardnessAndResistance(1, 5)
-        		.setLightLevel((p) -> 4)
-        		.tickRandomly()
+        super(Properties.of(Material.STONE)
+        		.strength(1, 5)
+        		.lightLevel((p) -> 4)
+        		.randomTicks()
         		.sound(SoundType.STONE));
         
         this.oredic = oredic;
@@ -50,59 +51,38 @@ public class LavaBlock extends StandardBlock implements IOreDictEntry {
         return this.oredic;
     }
 	
-//    @Override
-//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
-//        return false;
-//    }
+    @Override
+    public void playerDestroy(World worldIn, PlayerEntity player, BlockPos pos, BlockState state, @Nullable TileEntity te, ItemStack stack) {
+        super.playerWillDestroy(worldIn, pos, state, player);
+//    	if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, stack) == 0) {
+//      if (worldIn.dimensionType().ultraWarm()) {
+//      	worldIn.removeBlock(pos, false);
+//         return;
+//      }
+//	}
+        player.causeFoodExhaustion(0.025F);
+        worldIn.setBlockAndUpdate(pos, Blocks.LAVA.defaultBlockState());
+
+       }
 
     @Override
-    public void harvestBlock(World worldIn, PlayerEntity player, BlockPos pos, BlockState state, TileEntity te, ItemStack stack) {
-//        player.addStat(Stats.getBlockStats(this));
-    	
-        player.addExhaustion(0.025F);
-        worldIn.setBlockState(pos, Blocks.LAVA.getDefaultState());
-        }
-//
-//    @Override
-//    public int quantityDropped(Random random) {
-//        return 1;
-//    }
-
-    @Override
-    public boolean canDropFromExplosion(Explosion explosionIn) {
+    public boolean dropFromExplosion(Explosion explosionIn) {
         return false;
     }
 
     @Override
-    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-        entityIn.setMotionMultiplier(worldIn.getBlockState(pos), new Vector3d(0.8D, 1D, 0.8D));
-       
-        if (!entityIn.isImmuneToFire() && entityIn instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity) entityIn)) {
-            entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 1.0F);
+    public void stepOn(World worldIn, BlockPos pos, Entity entityIn) {
+    	entityIn.setDeltaMovement(entityIn.getDeltaMovement().multiply(new Vector3d(0.8D, 1D, 0.8D)));
+        if (!entityIn.fireImmune() && entityIn instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity) entityIn)) {
+            entityIn.hurt(DamageSource.HOT_FLOOR, 1.0F);
         }
-        super.onEntityWalk(worldIn, pos, entityIn);
+       super.stepOn(worldIn, pos, entityIn);
     }
 
-//    @Override
-//    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target) {
-//        return false;
-//    }
-//
-       public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
-        return type.isImmuneToFire();
+    @Override
+    public boolean canCreatureSpawn(BlockState state, IBlockReader worldIn, BlockPos pos, PlacementType placement, EntityType<?> type) {
+        return type.fireImmune();
     }
-//
-//    @Override
-//    @SideOnly(Side.CLIENT)
-//    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
-//        int i = source.getCombinedLight(pos, 0);
-//        int j = source.getCombinedLight(pos.up(), 0);
-//        int k = i & 255;
-//        int l = j & 255;
-//        int i1 = i >> 16 & 255;
-//        int j1 = j >> 16 & 255;
-//        return (k > l ? k : l) | (i1 > j1 ? i1 : j1) << 16;
-//    }
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
@@ -113,14 +93,14 @@ public class LavaBlock extends StandardBlock implements IOreDictEntry {
 
         if (rand.nextInt(100) == 0) {
             double d8 = d0 + (double) rand.nextFloat();
-            double d4 = d1 + stateIn.getCollisionShape(worldIn, pos).getBoundingBox().maxY;
+            double d4 = d1 + stateIn.getCollisionShape(worldIn, pos).max(Direction.Axis.Y);
             double d6 = d2 + (double) rand.nextFloat();
             worldIn.addParticle(ParticleTypes.LAVA, d8, d4, d6, 0.0D, 0.0D, 0.0D);
-            worldIn.playSound(d8, d4, d6, SoundEvents.BLOCK_LAVA_POP, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
+            worldIn.playLocalSound(d8, d4, d6, SoundEvents.LAVA_POP, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
         }
 
         if (rand.nextInt(200) == 0) {
-        	worldIn.playSound(d0, d1, d2, SoundEvents.BLOCK_LAVA_AMBIENT, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
+        	worldIn.playLocalSound(d0, d1, d2, SoundEvents.LAVA_POP, SoundCategory.BLOCKS, 0.2F + rand.nextFloat() * 0.2F, 0.9F + rand.nextFloat() * 0.15F, false);
         }
 
         if (rand.nextInt(100) == 0) {

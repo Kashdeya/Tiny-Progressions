@@ -27,12 +27,12 @@ public class BaseArmor extends ArmorItem {
 	}
 	
 	public BaseArmor(ArmorMaterialTier tier, EquipmentSlotType slot, String tooltipTranslation, Item.Properties prop) {
-		super(tier, slot, prop.group(TinyProgressions.combatGroup).maxStackSize(1));
+		super(tier, slot, prop.tab(TinyProgressions.combatGroup).stacksTo(1));
 		this.tooltipString = tooltipTranslation;
 	}
 	
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if(tooltipString != null)
 			tooltip.add(new TranslationTextComponent(this.tooltipString));
     }

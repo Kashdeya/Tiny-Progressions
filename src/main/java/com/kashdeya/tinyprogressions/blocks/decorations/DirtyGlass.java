@@ -12,8 +12,8 @@ public class DirtyGlass extends AbstractGlassBlock implements IOreDictEntry
 {
     public DirtyGlass()
     {
-        super(Properties.create(Material.GLASS, MaterialColor.AIR)
-        		.hardnessAndResistance(.3F)
+        super(Properties.of(Material.GLASS, MaterialColor.NONE)
+        		.strength(.3F)
         		.sound(SoundType.GLASS));
     }
     

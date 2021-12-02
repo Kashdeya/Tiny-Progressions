@@ -14,11 +14,11 @@ public class GhostBlock extends Block {
 	
 	public GhostBlock()
     {
-        super(Properties.create(Material.WOOL)
-        		.hardnessAndResistance(1.5f, 10f)
+        super(Properties.of(Material.WOOL)
+        		.strength(1.5f, 10f)
         		.harvestTool(ToolType.PICKAXE)
         		.harvestLevel(1)
-        		.notSolid());
+        		.air());
 //        this.setTranslationKey("ghost_block");
     }
 	

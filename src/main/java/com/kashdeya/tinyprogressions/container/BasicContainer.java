@@ -28,13 +28,6 @@ public class BasicContainer extends Container{
 		inventories = Arrays.asList(invs);
 	}
 	
-	
-	@Override
-	public boolean canInteractWith(PlayerEntity playerIn) {
-		return true;
-	}
-
-	
 	protected void bindPlayerInventory(PlayerInventory playerInventory) {
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < 9; ++j) {
@@ -156,10 +149,12 @@ public class BasicContainer extends Container{
 		}
 		return flag;
 	}
-	
-	private static boolean areItemStacksEqual(ItemStack stackA, ItemStack stackB)
-	{
-		return ItemStack.areItemsEqual(stackA, stackB);
-	}
 
+
+	@Override
+	public boolean stillValid(PlayerEntity playerEntity)
+	{
+		return true;
+	}
+	
 }

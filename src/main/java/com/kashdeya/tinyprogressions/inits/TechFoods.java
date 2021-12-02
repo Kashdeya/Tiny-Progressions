@@ -14,66 +14,66 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TechFoods {
-	// Juices
-	public static RegistryObject<Item> Juicer           = TinyProgressions.ITEMS.register("juicer", () -> new ItemJuicer(new Properties().group(TinyProgressions.FoodGroup)));
-	
-	public static RegistryObject<Item> apple_juice  	= TinyProgressions.ITEMS.register("apple_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.APPLE_JUICE));
-	public static RegistryObject<Item> carrot_juice		= TinyProgressions.ITEMS.register("carrot_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.CARROT_JUICE));
-	public static RegistryObject<Item> potatoe_juice	= TinyProgressions.ITEMS.register("potatoe_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.POTATOE_JUICE));
-	public static RegistryObject<Item> beet_juice   	= TinyProgressions.ITEMS.register("beet_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BEET_JUICE));
-	public static RegistryObject<Item> cactus_juice 	= TinyProgressions.ITEMS.register("cactus_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.CACTUS_JUICE));
-	public static RegistryObject<Item> slime_juice  	= TinyProgressions.ITEMS.register("slime_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.SLIME_JUICE));
-	public static RegistryObject<Item> wheat_juice  	= TinyProgressions.ITEMS.register("wheat_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.WHEAT_JUICE));
-	public static RegistryObject<Item> melon_juice  	= TinyProgressions.ITEMS.register("melon_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.MELON_JUICE));
-	public static RegistryObject<Item> pumpkin_juice	= TinyProgressions.ITEMS.register("pumpkin_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.PUMPKIN_JUICE));
-	public static RegistryObject<Item> peach_juice  	= TinyProgressions.ITEMS.register("peach_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.PEACH_JUICE));
-	public static RegistryObject<Item> pear_juice   	= TinyProgressions.ITEMS.register("pear_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.PEAR_JUICE));
-	public static RegistryObject<Item> raspberry_juice  = TinyProgressions.ITEMS.register("raspberry_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.RASPBERRY_JUICE));
-	public static RegistryObject<Item> blueberry_juice  = TinyProgressions.ITEMS.register("blueberry_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BLUEBERRY_JUICE));
-	public static RegistryObject<Item> blackberry_juice = TinyProgressions.ITEMS.register("blackberry_juice", () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BLACBERRY_JUICE));
-	public static RegistryObject<Item> maloberry_juice  = TinyProgressions.ITEMS.register("maloberry_juice",  () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.MALOBERRY_JUICE));
-	public static RegistryObject<Item> raspberry_berry  = TinyProgressions.ITEMS.register("raspberry_berry",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.RASPBERRY_BEERY));
-	public static RegistryObject<Item> blueberry_berry  = TinyProgressions.ITEMS.register("blueberry_berry",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BLUEBERRY_BEERY));
-	public static RegistryObject<Item> blackberry_berry = TinyProgressions.ITEMS.register("blackberry_berry", () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BLACKBEERY_BEERY));
-	public static RegistryObject<Item> maloberry_berry  = TinyProgressions.ITEMS.register("maloberry_berry",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.MALOBERRY_BERRY));
-
-	// Apples
-	public static RegistryObject<Item> golden_apple   = TinyProgressions.ITEMS.register("golden_apple",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.GOLDEN_APPLE) );
-	public static RegistryObject<Item> diamond_apple  = TinyProgressions.ITEMS.register("diamond_apple", () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.DIAMOND_APPLE));
-	public static RegistryObject<Item> emerald_apple  = TinyProgressions.ITEMS.register("emerald_apple", () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.EMERALD_APPLE));
-	public static RegistryObject<Item> iron_apple     = TinyProgressions.ITEMS.register("iron_apple",    () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.IRON_APPLE));
-	public static RegistryObject<Item> redstone_apple = TinyProgressions.ITEMS.register("redstone_apple",() -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.REDSTON_APPLE));
-	public static RegistryObject<Item> cooked_apple	  = TinyProgressions.ITEMS.register("cooked_apple",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.COOKED_APPLE));
-	public static RegistryObject<Item> plump_pear  	  = TinyProgressions.ITEMS.register("plump_pear",    () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.PLUMP_PEAR));
-	public static RegistryObject<Item> plump_peach 	  = TinyProgressions.ITEMS.register("plump_peach",   () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.PLUMP_PEACH));
-	public static RegistryObject<Item> succ_pearls 	  = TinyProgressions.ITEMS.register("succ_pearls",   () -> new DrinkBase(new Properties().group(TinyProgressions.FoodGroup), Foods.SUCC_PEARLS).setSound(TechSounds.SUCULANT_DRINK));
-	
-	// MISC
-	public static RegistryObject<Item> raw_bacon             = TinyProgressions.ITEMS.register("raw_bacon",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.RAW_BACON));
-	public static RegistryObject<Item> cooked_bacon		 	 = TinyProgressions.ITEMS.register("cooked_bacon",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.COOKED_BACON));
-	public static RegistryObject<Item> fried_egg		     = TinyProgressions.ITEMS.register("fried_egg",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.FRIED_EGG));
-	public static RegistryObject<Item> bacon_eggs			 = TinyProgressions.ITEMS.register("bacon_eggs",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BACON_EGGS));
-
-	public static RegistryObject<Item> bread_slice 			 = TinyProgressions.ITEMS.register("bread_slice",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BREAD_SLICE));
-	public static RegistryObject<Item> toasted_bread		 = TinyProgressions.ITEMS.register("toasted_bread",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.TOASTED_BREAD));
-	public static RegistryObject<Item> bacon_sandwhich		 = TinyProgressions.ITEMS.register("bacon_sandwhich",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BACON_SANDWICH));
-	public static RegistryObject<Item> bacon_eggs_sandwhich  = TinyProgressions.ITEMS.register("bacon_eggs_sandwhich",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BACON_EGGS_SANDWICH));
-	public static RegistryObject<Item> beef_sandwhich		 = TinyProgressions.ITEMS.register("beef_sandwhich",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BEEF_SANDWICH));
-	public static RegistryObject<Item> chicken_sandwhich	 = TinyProgressions.ITEMS.register("chicken_sandwhich",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.CHICKEN_SANDWICH));
-	public static RegistryObject<Item> rabbit_sandwhich		 = TinyProgressions.ITEMS.register("rabbit_sandwhich",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.RABBIT_SANDWICH));
-	public static RegistryObject<Item> monster_jerky		 = TinyProgressions.ITEMS.register("monster_jerky",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.MONSTER_JERKEY));
-	
-	public static RegistryObject<Item> cooked_mushroom_brown = TinyProgressions.ITEMS.register("cooked_mushroom_brown",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.COOKED_MUSHROOM_BROWN));
-	public static RegistryObject<Item> cooked_mushroom_red   = TinyProgressions.ITEMS.register("cooked_mushroom_red",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.COOKED_MUSHROOM_RED));
-	
-	public static RegistryObject<Item> little_candy			 = TinyProgressions.ITEMS.register("little_candy",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.LITTLE_CANDYS));
-	public static RegistryObject<Item> bsc_sugar_cookie = TinyProgressions.ITEMS.register("bsc_sugar_cookie",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BSC_SUGAR_COOKIE));
-
-	// Bams Pizza
-	public static RegistryObject<Item> bams_pizza = TinyProgressions.ITEMS.register("bams_pizza",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.BAMS_PIZZA));
-	
-	// Extra Drops
-	public static RegistryObject<Item> dead_reed = TinyProgressions.ITEMS.register("dead_reed",  () -> new FoodBase(new Properties().group(TinyProgressions.FoodGroup), Foods.DEAD_REEDS));
+//	// Juices
+//	public static RegistryObject<Item> Juicer           = TinyProgressions.ITEMS.register("juicer", () -> new ItemJuicer(new Properties().tab(TinyProgressions.FoodGroup)));
+//	
+//	public static RegistryObject<Item> apple_juice  	= TinyProgressions.ITEMS.register("apple_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.APPLE_JUICE));
+//	public static RegistryObject<Item> carrot_juice		= TinyProgressions.ITEMS.register("carrot_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.CARROT_JUICE));
+//	public static RegistryObject<Item> potatoe_juice	= TinyProgressions.ITEMS.register("potatoe_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.POTATOE_JUICE));
+//	public static RegistryObject<Item> beet_juice   	= TinyProgressions.ITEMS.register("beet_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BEET_JUICE));
+//	public static RegistryObject<Item> cactus_juice 	= TinyProgressions.ITEMS.register("cactus_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.CACTUS_JUICE));
+//	public static RegistryObject<Item> slime_juice  	= TinyProgressions.ITEMS.register("slime_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.SLIME_JUICE));
+//	public static RegistryObject<Item> wheat_juice  	= TinyProgressions.ITEMS.register("wheat_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.WHEAT_JUICE));
+//	public static RegistryObject<Item> melon_juice  	= TinyProgressions.ITEMS.register("melon_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.MELON_JUICE));
+//	public static RegistryObject<Item> pumpkin_juice	= TinyProgressions.ITEMS.register("pumpkin_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.PUMPKIN_JUICE));
+//	public static RegistryObject<Item> peach_juice  	= TinyProgressions.ITEMS.register("peach_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.PEACH_JUICE));
+//	public static RegistryObject<Item> pear_juice   	= TinyProgressions.ITEMS.register("pear_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.PEAR_JUICE));
+//	public static RegistryObject<Item> raspberry_juice  = TinyProgressions.ITEMS.register("raspberry_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.RASPBERRY_JUICE));
+//	public static RegistryObject<Item> blueberry_juice  = TinyProgressions.ITEMS.register("blueberry_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BLUEBERRY_JUICE));
+//	public static RegistryObject<Item> blackberry_juice = TinyProgressions.ITEMS.register("blackberry_juice", () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BLACBERRY_JUICE));
+//	public static RegistryObject<Item> maloberry_juice  = TinyProgressions.ITEMS.register("maloberry_juice",  () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.MALOBERRY_JUICE));
+//	public static RegistryObject<Item> raspberry_berry  = TinyProgressions.ITEMS.register("raspberry_berry",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.RASPBERRY_BEERY));
+//	public static RegistryObject<Item> blueberry_berry  = TinyProgressions.ITEMS.register("blueberry_berry",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BLUEBERRY_BEERY));
+//	public static RegistryObject<Item> blackberry_berry = TinyProgressions.ITEMS.register("blackberry_berry", () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BLACKBEERY_BEERY));
+//	public static RegistryObject<Item> maloberry_berry  = TinyProgressions.ITEMS.register("maloberry_berry",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.MALOBERRY_BERRY));
+//
+//	// Apples
+//	public static RegistryObject<Item> golden_apple   = TinyProgressions.ITEMS.register("golden_apple",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.GOLDEN_APPLE) );
+//	public static RegistryObject<Item> diamond_apple  = TinyProgressions.ITEMS.register("diamond_apple", () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.DIAMOND_APPLE));
+//	public static RegistryObject<Item> emerald_apple  = TinyProgressions.ITEMS.register("emerald_apple", () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.EMERALD_APPLE));
+//	public static RegistryObject<Item> iron_apple     = TinyProgressions.ITEMS.register("iron_apple",    () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.IRON_APPLE));
+//	public static RegistryObject<Item> redstone_apple = TinyProgressions.ITEMS.register("redstone_apple",() -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup).rarity(Rarity.EPIC), Foods.REDSTON_APPLE));
+//	public static RegistryObject<Item> cooked_apple	  = TinyProgressions.ITEMS.register("cooked_apple",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.COOKED_APPLE));
+//	public static RegistryObject<Item> plump_pear  	  = TinyProgressions.ITEMS.register("plump_pear",    () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.PLUMP_PEAR));
+//	public static RegistryObject<Item> plump_peach 	  = TinyProgressions.ITEMS.register("plump_peach",   () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.PLUMP_PEACH));
+//	public static RegistryObject<Item> succ_pearls 	  = TinyProgressions.ITEMS.register("succ_pearls",   () -> new DrinkBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.SUCC_PEARLS).setSound(TechSounds.SUCULANT_DRINK));
+//	
+//	// MISC
+//	public static RegistryObject<Item> raw_bacon             = TinyProgressions.ITEMS.register("raw_bacon",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.RAW_BACON));
+//	public static RegistryObject<Item> cooked_bacon		 	 = TinyProgressions.ITEMS.register("cooked_bacon",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.COOKED_BACON));
+//	public static RegistryObject<Item> fried_egg		     = TinyProgressions.ITEMS.register("fried_egg",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.FRIED_EGG));
+//	public static RegistryObject<Item> bacon_eggs			 = TinyProgressions.ITEMS.register("bacon_eggs",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BACON_EGGS));
+//
+//	public static RegistryObject<Item> bread_slice 			 = TinyProgressions.ITEMS.register("bread_slice",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BREAD_SLICE));
+//	public static RegistryObject<Item> toasted_bread		 = TinyProgressions.ITEMS.register("toasted_bread",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.TOASTED_BREAD));
+//	public static RegistryObject<Item> bacon_sandwhich		 = TinyProgressions.ITEMS.register("bacon_sandwhich",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BACON_SANDWICH));
+//	public static RegistryObject<Item> bacon_eggs_sandwhich  = TinyProgressions.ITEMS.register("bacon_eggs_sandwhich",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BACON_EGGS_SANDWICH));
+//	public static RegistryObject<Item> beef_sandwhich		 = TinyProgressions.ITEMS.register("beef_sandwhich",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BEEF_SANDWICH));
+//	public static RegistryObject<Item> chicken_sandwhich	 = TinyProgressions.ITEMS.register("chicken_sandwhich",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.CHICKEN_SANDWICH));
+//	public static RegistryObject<Item> rabbit_sandwhich		 = TinyProgressions.ITEMS.register("rabbit_sandwhich",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.RABBIT_SANDWICH));
+//	public static RegistryObject<Item> monster_jerky		 = TinyProgressions.ITEMS.register("monster_jerky",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.MONSTER_JERKEY));
+//	
+//	public static RegistryObject<Item> cooked_mushroom_brown = TinyProgressions.ITEMS.register("cooked_mushroom_brown",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.COOKED_MUSHROOM_BROWN));
+//	public static RegistryObject<Item> cooked_mushroom_red   = TinyProgressions.ITEMS.register("cooked_mushroom_red",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.COOKED_MUSHROOM_RED));
+//	
+//	public static RegistryObject<Item> little_candy			 = TinyProgressions.ITEMS.register("little_candy",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.LITTLE_CANDYS));
+//	public static RegistryObject<Item> bsc_sugar_cookie = TinyProgressions.ITEMS.register("bsc_sugar_cookie",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BSC_SUGAR_COOKIE));
+//
+//	// Bams Pizza
+//	public static RegistryObject<Item> bams_pizza = TinyProgressions.ITEMS.register("bams_pizza",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.BAMS_PIZZA));
+//	
+//	// Extra Drops
+//	public static RegistryObject<Item> dead_reed = TinyProgressions.ITEMS.register("dead_reed",  () -> new FoodBase(new Properties().tab(TinyProgressions.FoodGroup), Foods.DEAD_REEDS));
 	
 	//public static void init(){
 //	// Succ Pearls

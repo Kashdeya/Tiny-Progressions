@@ -13,8 +13,8 @@ public class WubOre extends StandardBlock implements IOreDictEntry {
 	
     public WubOre(String oredic)
     {
-        super(Properties.create(Material.ROCK)
-        		.hardnessAndResistance(2, 10)
+        super(Properties.of(Material.STONE)
+        		.strength(2, 10)
         		.harvestTool(ToolType.PICKAXE)
         		.harvestLevel(3)
         		.sound(SoundType.STONE));
@@ -26,43 +26,4 @@ public class WubOre extends StandardBlock implements IOreDictEntry {
 		return this.oredic;
 	}
     
-//    @Override
-//    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face)
-//    {
-//        return false;
-//    }
-    
-//	@Override
-//    @SideOnly(Side.CLIENT)
-//    public BlockRenderLayer getRenderLayer()
-//    {
-//        return BlockRenderLayer.CUTOUT;
-//    }
-//    
-//    @Override
-//    public int quantityDropped(Random rand) {
-//        return 1 + rand.nextInt(2);
-//    }
-//    
-//    @Override
-//    public Item getItemDropped(BlockState state, Random rand, int fortune) {
-//        return TechItems.wub_gem;
-//    }
-//    
-//    @Override
-//    public int quantityDroppedWithBonus(int fortune, Random rand) {
-//    	return MathHelper.clamp(this.quantityDropped(rand) + rand.nextInt(fortune + 1), 1, 6);
-//    }
-//    
-//
-//    @Override
-//    public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
-//        return (this.getItemDropped(state, RANDOM, fortune) != Item.getItemFromBlock(this)) ? (1 + RANDOM.nextInt(5)) : 0;
-//    }
-//    
-//    @Override
-//    public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, Predicate<IBlockState> target)
-//    {
-//        return false;
-//    }
 }

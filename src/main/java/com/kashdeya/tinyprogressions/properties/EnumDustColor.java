@@ -63,4 +63,10 @@ public enum EnumDustColor implements IStringSerializable
 	public String getString() {
 		return null;
 	}
+
+	@Override
+	public String getSerializedName() {
+		
+		return "colored_dust";
+	}
 }

@@ -16,7 +16,7 @@ public class SlotPouch extends SlotItemHandler
     }
     
     @Override
-    public boolean isItemValid(ItemStack stack)
+    public boolean mayPlace(ItemStack stack)
     {
         return !stack.isEmpty() && (stack.getItem() != TechItems.pouch.get() || !(stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).isPresent()) );
     }

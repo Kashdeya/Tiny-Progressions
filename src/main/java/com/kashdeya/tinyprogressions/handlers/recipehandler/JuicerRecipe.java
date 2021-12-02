@@ -64,12 +64,12 @@ public class JuicerRecipe implements ICraftingRecipe {
       java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
       int i = 0;
 
-      for(int j = 0; j < inv.getSizeInventory(); ++j) {
-         ItemStack itemstack = inv.getStackInSlot(j);
+      for(int j = 0; j < inv.getContainerSize(); ++j) {
+         ItemStack itemstack = inv.getItem(j);
          if (!itemstack.isEmpty()) {
             ++i;
             if (isSimple)
-            recipeitemhelper.func_221264_a(itemstack, 1);
+            recipeitemhelper.accountStack(itemstack, 1);
             else inputs.add(itemstack);
          }
       }
@@ -79,9 +79,9 @@ public class JuicerRecipe implements ICraftingRecipe {
 
    public ItemStack getCraftingResult(CraftingInventory inv) {
 	  ItemStack juicerOutput = ItemStack.EMPTY;
-      for(int j = 0; j < inv.getSizeInventory(); ++j) {
-         ItemStack itemstack = inv.getStackInSlot(j);
-         if(ItemStack.areItemsEqual(itemstack, new ItemStack(TechFoods.Juicer.get()))) { 
+      for(int j = 0; j < inv.getContainerSize(); ++j) {
+         ItemStack itemstack = inv.getItem(j);
+         if(ItemStack.isSame(itemstack, new ItemStack(TechFoods.Juicer.get()))) { 
         	 juicerOutput = itemstack;
         	 break;
          }

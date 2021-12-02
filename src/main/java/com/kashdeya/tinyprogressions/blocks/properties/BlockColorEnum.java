@@ -22,10 +22,7 @@ enum BlockColorEnum implements IStringSerializable {
 	Red("red"),
 	Black("black");
 
-	@Override
-	public String getString() {
-		return null;
-	}
+
 
 	private final String name;
 
@@ -40,4 +37,9 @@ enum BlockColorEnum implements IStringSerializable {
    public String getName() {
       return this.name;
    }
+
+	@Override
+	public String getSerializedName() {
+		return "block-color-enum";
+	}
 }

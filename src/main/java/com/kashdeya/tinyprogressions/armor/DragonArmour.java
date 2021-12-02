@@ -41,36 +41,36 @@ public class DragonArmour extends BaseArmor {
 
 			PlayerEntity living = ((PlayerEntity) entityIn);
 	
-			ItemStack chest = living.getItemStackFromSlot(EquipmentSlotType.CHEST);
-			ItemStack feet = living.getItemStackFromSlot(EquipmentSlotType.FEET);
-			ItemStack head = living.getItemStackFromSlot(EquipmentSlotType.HEAD);
-			ItemStack legs = living.getItemStackFromSlot(EquipmentSlotType.LEGS);
+			ItemStack chest = living.getItemBySlot(EquipmentSlotType.CHEST);
+			ItemStack feet = living.getItemBySlot(EquipmentSlotType.FEET);
+			ItemStack head = living.getItemBySlot(EquipmentSlotType.HEAD);
+			ItemStack legs = living.getItemBySlot(EquipmentSlotType.LEGS);
 	        if (((!head.isEmpty()) && (head.getItem() == TechArmor.dragon_helmet.get()) &&
 	            (!chest.isEmpty()) && (chest.getItem() == TechArmor.dragon_chestplate.get()) &&
 	            (!legs.isEmpty()) && (legs.getItem() == TechArmor.dragon_leggings.get()) &&
 	            (!feet.isEmpty()) && (feet.getItem() == TechArmor.dragon_boots.get()))) {
 	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_resistance) {
-	            	living.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 180, ArmorHandler.dragon_resistance_lvl, false, false));
+	            	living.addEffect(new EffectInstance(Effects.DAMAGE_RESISTANCE, 180, ArmorHandler.dragon_resistance_lvl, false, false));
 	            }
 	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fire) {
-	            	living.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.dragon_fire_lvl, false, false));
+	            	living.addEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 180, ArmorHandler.dragon_fire_lvl, false, false));
 	            }
 	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_strength) {
-	            	living.addPotionEffect(new EffectInstance(Effects.STRENGTH, 180, ArmorHandler.dragon_strength_lvl, false, false));
+	            	living.addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 180, ArmorHandler.dragon_strength_lvl, false, false));
 	            }
 	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly) {
-	            	living.abilities.allowFlying = true;
+	            	living.abilities.flying = true;
 	            }
 	        } else {
-	        	((PlayerEntity)living).abilities.allowFlying = false;
-	        	((PlayerEntity)living).abilities.isFlying = false;
+	        	((PlayerEntity)living).abilities.flying = false;
+	        	((PlayerEntity)living).abilities.mayfly = false;
 	        }
         
 		}
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly) {
         	tooltip.add(new TranslationTextComponent("tooltip.dragonarmor_1"));
         }

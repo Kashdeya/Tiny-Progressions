@@ -82,12 +82,13 @@ public class TinyProgressions{
 //	      }
 //	   }).setRecipeFolderName("tiny_progression_combat");
 //	
-//	   public static final ItemGroup ToolsGroup = (new ItemGroup(Reference.MOD_ID+".tools") {
-//	      @OnlyIn(Dist.CLIENT)
-//	      public ItemStack makeIcon() {
+	   public static final ItemGroup ToolsGroup = (new ItemGroup(Reference.MOD_ID+".tools") {
+	      @OnlyIn(Dist.CLIENT)
+	      public ItemStack makeIcon() {
+	    	  return new ItemStack(Items.DIAMOND_PICKAXE);
 //	         return new ItemStack(TechTools.wub_pickaxe.get());
-//	      }
-//	   }).setRecipeFolderName("tiny_progression_tools");
+	      }
+	   }).setRecipeFolderName("tiny_progression_tools");
 //	   
 	   
 	   public static final ItemGroup BlocksGroup = (new ItemGroup(Reference.MOD_ID+".blocks") {
@@ -124,7 +125,7 @@ public class TinyProgressions{
         
 		ITEMS.register(bus);
 		BLOCKS.register(bus);
-//		FLUIDS.register(bus);
+		FLUIDS.register(bus);
 		TILE_ENTITY_TYPES.register(bus);
 //		CONTAINERS.register(bus);
 //		FEATURES.register(bus);

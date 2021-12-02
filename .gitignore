@@ -26,3 +26,4 @@ SetupDecompWorkspaceEclipse.bat
 .DS_Store
 logs/latest.log
 *.log
+doc

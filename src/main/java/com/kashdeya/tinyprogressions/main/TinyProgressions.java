@@ -75,12 +75,13 @@ public class TinyProgressions{
 	      }
 	   }).setRecipeFolderName("tiny_progression_foods");
 //	
-//	public static final ItemGroup combatGroup = (new ItemGroup(Reference.MOD_ID+".combat") {
-//	      @OnlyIn(Dist.CLIENT)
-//	      public ItemStack makeIcon() {
+	public static final ItemGroup combatGroup = (new ItemGroup(Reference.MOD_ID+".combat") {
+	      @OnlyIn(Dist.CLIENT)
+	      public ItemStack makeIcon() {
+	    	  return new ItemStack(Items.DIAMOND_SWORD);
 //	         return new ItemStack(TechTools.obsidian_sword.get());
-//	      }
-//	   }).setRecipeFolderName("tiny_progression_combat");
+	      }
+	   }).setRecipeFolderName("tiny_progression_combat");
 //	
 	   public static final ItemGroup ToolsGroup = (new ItemGroup(Reference.MOD_ID+".tools") {
 	      @OnlyIn(Dist.CLIENT)
@@ -100,6 +101,7 @@ public class TinyProgressions{
 		   }).setRecipeFolderName("tiny_progression_blocks");
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
+	public static final DeferredRegister<Item> FOOD = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,	Reference.MOD_ID);
 	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS,	Reference.MOD_ID);
@@ -124,6 +126,7 @@ public class TinyProgressions{
         bus.register(TinyConfig.class);
         
 		ITEMS.register(bus);
+		FOOD.register(bus);
 		BLOCKS.register(bus);
 		FLUIDS.register(bus);
 		TILE_ENTITY_TYPES.register(bus);

@@ -23,7 +23,7 @@ public class BaseSword extends SwordItem {
 	
 	
 	public BaseSword(IItemTier tier, int maxDamage, float attackSpeed, Properties prop){
-		super(tier, maxDamage, attackSpeed, prop.group(TinyProgressions.combatGroup));
+		super(tier, maxDamage, attackSpeed, prop.tab(TinyProgressions.combatGroup));
 
 	}
 }

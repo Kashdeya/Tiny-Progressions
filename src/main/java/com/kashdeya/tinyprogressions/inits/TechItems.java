@@ -2,26 +2,10 @@ package com.kashdeya.tinyprogressions.inits;
 
 import java.util.function.Supplier;
 
-import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
-import com.kashdeya.tinyprogressions.items.ItemBase;
-import com.kashdeya.tinyprogressions.items.ItemStay;
-import com.kashdeya.tinyprogressions.items.medkits.LargeBandage;
-import com.kashdeya.tinyprogressions.items.medkits.LargeMedKit;
-import com.kashdeya.tinyprogressions.items.medkits.SmallBandage;
-import com.kashdeya.tinyprogressions.items.medkits.SmallMedkit;
 import com.kashdeya.tinyprogressions.items.misc.FlintKnife;
-import com.kashdeya.tinyprogressions.items.misc.InfinBucket;
-import com.kashdeya.tinyprogressions.items.misc.ItemRib;
-import com.kashdeya.tinyprogressions.items.misc.ItemScale;
-import com.kashdeya.tinyprogressions.items.misc.MyceliumSeeds;
-import com.kashdeya.tinyprogressions.items.misc.Pouch;
-import com.kashdeya.tinyprogressions.items.misc.QuartzKnife;
-import com.kashdeya.tinyprogressions.items.misc.RepairTablet;
-import com.kashdeya.tinyprogressions.items.wateringcan.WateringCanBase;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.Properties;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 
@@ -35,7 +19,7 @@ public class TechItems {
 //	public static RegistryObject<Item> infin_bucket 		= registerItem("infin_bucket",         () -> new InfinBucket());
 //	// Quartz Items
 //	public static RegistryObject<Item> quartz_knife = registerItem("quartz_knife", () -> new QuartzKnife()); 
-//	public static RegistryObject<Item> flint_knife  = registerItem("flint_knife",  () -> new FlintKnife());
+	public static RegistryObject<Item> flint_knife  = registerItem("flint_knife",  () -> new FlintKnife());
 //	
 //	// Misc Items 
 //	public static RegistryObject<Item> mycelium_seeds = registerItem("mycelium_seeds", () -> new MyceliumSeeds());

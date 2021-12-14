@@ -19,10 +19,10 @@ public class BasePaxel extends PickaxeItem {
 
 	public BasePaxel(IItemTier tier, int baseDmg, int baseSpeed, Properties properties) {
 		super(tier, baseDmg, baseSpeed,  properties
-				.addToolType(ToolType.PICKAXE, tier.getHarvestLevel())
-				.addToolType(ToolType.SHOVEL, tier.getHarvestLevel())
-				.addToolType(ToolType.AXE, tier.getHarvestLevel())
-				.group(TinyProgressions.ToolsGroup));
+				.addToolType(ToolType.PICKAXE, tier.getLevel())
+				.addToolType(ToolType.SHOVEL, tier.getLevel())
+				.addToolType(ToolType.AXE, tier.getLevel())
+				.tab(TinyProgressions.ToolsGroup));
 
 	}
 

@@ -23,17 +23,17 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class CorruptedShard extends ItemBase {
 
 	public CorruptedShard() {
-		super(new Properties().maxStackSize(1));
+		super(new Properties().stacksTo(1));
 	}
 
 	public void onUpdate(ItemStack stack, World worldIn, Entity player, int itemSlot, boolean isSelected) {
 		if (player instanceof PlayerEntity)
-			((PlayerEntity) player).addPotionEffect(new EffectInstance(Effects.POISON, 10 * 20, 0, true, true));
+			((PlayerEntity) player).addEffect(new EffectInstance(Effects.POISON, 10 * 20, 0, true, true));
 	}
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip,	ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip,	ITooltipFlag flagIn) {
 		tooltip.add(new TranslationTextComponent("tooltip.warning_1"));
 		tooltip.add(new TranslationTextComponent("tooltip.shard_1"));
 	}

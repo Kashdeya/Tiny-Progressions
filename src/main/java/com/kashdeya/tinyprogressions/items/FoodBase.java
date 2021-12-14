@@ -1,5 +1,6 @@
 package com.kashdeya.tinyprogressions.items;
 
+import com.kashdeya.tinyprogressions.main.TinyProgressions;
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
 import net.minecraft.item.Food;
@@ -9,7 +10,7 @@ public class FoodBase extends ItemBase implements IOreDictEntry{
 	String oredictName;
 	
 	public FoodBase(Properties properties, Food food) {
-		super(properties.food(food));
+		super(properties.tab(TinyProgressions.FoodGroup).food(food));
 	}
 	
 	public FoodBase setOreDictName(String oredictName)

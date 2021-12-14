@@ -37,8 +37,8 @@ import net.minecraftforge.common.ToolType;
 public class BaseHammer extends PickaxeItem {
 	
 	public BaseHammer(IItemTier tier, int maxDamage, float attackSpeed, Properties prop){
-		super(tier, maxDamage, attackSpeed, prop.group(TinyProgressions.ToolsGroup)
-				.addToolType(ToolType.PICKAXE, tier.getHarvestLevel()));
+		super(tier, maxDamage, attackSpeed, prop.tab(TinyProgressions.ToolsGroup)
+				.addToolType(ToolType.PICKAXE, tier.getLevel()));
 		
 	}
 	

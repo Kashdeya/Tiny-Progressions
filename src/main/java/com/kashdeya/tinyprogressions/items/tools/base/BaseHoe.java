@@ -8,6 +8,6 @@ import net.minecraft.item.IItemTier;
 public class BaseHoe extends HoeItem {
 	
 	public BaseHoe(IItemTier tier, int attackDamage, float attackSpeed, Properties prop){
-		super(tier, attackDamage, attackSpeed, prop.group(TinyProgressions.ToolsGroup));
+		super(tier, attackDamage, attackSpeed, prop.tab(TinyProgressions.ToolsGroup));
 	}
 }

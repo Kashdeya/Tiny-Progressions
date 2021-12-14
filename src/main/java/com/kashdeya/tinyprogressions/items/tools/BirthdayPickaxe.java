@@ -31,7 +31,7 @@ public class BirthdayPickaxe extends BasePickaxe {
 	public BirthdayPickaxe(Properties prop)
 	{
 		super(ItemToolModTier.BIRTHDAY, 0, 0, prop);
-		prop.maxDamage(6521);
+		prop.defaultDurability(6521);
 		prop.addToolType(ToolType.PICKAXE, 4);
 	}
 	 

@@ -20,7 +20,7 @@ public class BaseBattle extends AxeItem {
 	
 	public BaseBattle(IItemTier material, float damage, float speed)
     {
-        super(material, damage, speed, new Properties().maxStackSize(1).group(TinyProgressions.combatGroup));
+        super(material, damage, speed, new Properties().stacksTo(1).tab(TinyProgressions.combatGroup));
     }
     
     public Set<String> getToolClasses(ItemStack stack) {

@@ -9,6 +9,6 @@ public class BaseSpade extends ShovelItem {
 	
 	
 	public BaseSpade(IItemTier tier, int maxDamage, float attackSpeed, Properties prop){
-		super(tier, maxDamage, attackSpeed, prop.group(TinyProgressions.ToolsGroup));
+		super(tier, maxDamage, attackSpeed, prop.tab(TinyProgressions.ToolsGroup));
 	}
 }

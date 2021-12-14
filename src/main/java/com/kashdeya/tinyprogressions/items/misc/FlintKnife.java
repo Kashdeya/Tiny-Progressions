@@ -9,7 +9,9 @@ import com.kashdeya.tinyprogressions.items.ItemStay;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
@@ -21,12 +23,18 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class FlintKnife extends ItemStay {
 	
 	public FlintKnife() {
-		super(new Properties().maxDamage(ConfigHandler.FlintKnifeDamage).group(TinyProgressions.ToolsGroup));
+		super(new Properties().durability(ConfigHandler.FlintKnifeDamage).defaultDurability(ConfigHandler.FlintKnifeDamage/2).tab(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override
+    public Item getRepairItem() {
+    	return Items.FLINT;
+    }
+    
+	
+	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(new TranslationTextComponent("tooltip.knife"));
 	}
 }

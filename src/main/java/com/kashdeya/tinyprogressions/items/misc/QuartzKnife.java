@@ -21,12 +21,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class QuartzKnife extends ItemStay {
 	
 	public QuartzKnife() {
-		super(new Properties().maxStackSize(1).maxDamage(ConfigHandler.QuartzKnifeDamage).group(TinyProgressions.ToolsGroup));
+		super(new Properties().stacksTo(1).durability(ConfigHandler.QuartzKnifeDamage).tab(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(new TranslationTextComponent("tooltip.knife"));
 	}
 }

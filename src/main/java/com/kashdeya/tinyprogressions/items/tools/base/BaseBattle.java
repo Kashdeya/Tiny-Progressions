@@ -14,6 +14,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 
 public class BaseBattle extends AxeItem {
 
@@ -30,13 +31,18 @@ public class BaseBattle extends AxeItem {
 	private static HashSet<Block> effectiveAgainst = Sets.newHashSet(Blocks.COBWEB);
 
 	@Override
-	public boolean canHarvestBlock(BlockState blockIn) {
-			return effectiveAgainst.contains(blockIn.getBlock()) || super.canHarvestBlock(blockIn);
+	public boolean isCorrectToolForDrops(BlockState blockIn) {
+			return effectiveAgainst.contains(blockIn.getBlock()) || super.isCorrectToolForDrops(blockIn);
 	}
 
 	@Override
 	public float getDestroySpeed(ItemStack stack, BlockState state) {
-		return state.getMaterial() == Material.WEB ? this.efficiency : effectiveAgainst.contains(state.getBlock()) ? this.efficiency : super.getDestroySpeed(stack, state);
+	      if (state.is(Blocks.COBWEB)) {
+	          return 15.0F;
+	       } else {
+	          Material material = state.getMaterial();
+	          return material != Material.PLANT && material != Material.REPLACEABLE_PLANT && material != Material.CORAL && !state.is(BlockTags.LEAVES) && material != Material.VEGETABLE ? super.getDestroySpeed(stack, state) : 1.5F;
+	       }
 	}
 	
 

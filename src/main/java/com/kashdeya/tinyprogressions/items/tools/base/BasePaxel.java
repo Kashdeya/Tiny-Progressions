@@ -44,12 +44,12 @@ public class BasePaxel extends PickaxeItem {
 		Blocks.SNOW, Blocks.SNOW, Blocks.SOUL_SAND, Blocks.GRASS_PATH, Blocks.COBWEB);
 
 	@Override
-	public boolean canHarvestBlock(BlockState blockIn) {
-			return effectiveAgainst.contains(blockIn.getBlock()) || super.canHarvestBlock(blockIn);
+	public boolean isCorrectToolForDrops(BlockState blockIn) {
+			return effectiveAgainst.contains(blockIn.getBlock()) || super.isCorrectToolForDrops(blockIn);
 	}
 
 	@Override
 	public float getDestroySpeed(ItemStack stack, BlockState state) {
-		return state.getMaterial() == Material.WEB || state.getMaterial() == Material.WOOD || state.getMaterial() == Material.TALL_PLANTS || state.getMaterial() == Material.PLANTS || state.getMaterial() == Material.ORGANIC || state.getMaterial() == Material.SAND ? this.efficiency : effectiveAgainst.contains(state.getBlock()) ? this.efficiency : super.getDestroySpeed(stack, state);
+		return state.getMaterial() == Material.WEB || state.getMaterial() == Material.WOOD || state.getMaterial() == Material.PLANT || state.getMaterial() == Material.VEGETABLE || state.getMaterial() == Material.SAND ? this.speed : effectiveAgainst.contains(state.getBlock()) ? this.speed : super.getDestroySpeed(stack, state);
 	}
 }

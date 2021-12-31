@@ -8,7 +8,7 @@ import net.minecraft.item.PickaxeItem;
 public class BasePickaxe extends PickaxeItem {
 
 	public BasePickaxe(IItemTier tier, int maxDamage, float attackSpeed, Properties prop){
-		super(tier, maxDamage, attackSpeed, prop.group(TinyProgressions.ToolsGroup));
+		super(tier, maxDamage, attackSpeed, prop.tab(TinyProgressions.ToolsGroup));
 
 	}
 }

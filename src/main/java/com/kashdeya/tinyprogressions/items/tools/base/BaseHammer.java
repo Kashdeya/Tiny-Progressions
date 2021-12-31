@@ -45,21 +45,21 @@ public class BaseHammer extends PickaxeItem {
 	private int mineRadius = 1, mineDepth = 0;
 
     @Override
-    public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
+    public boolean mineBlock(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
 
-    	if(worldIn.isRemote)
+    	if(worldIn.isClientSide())
     		return false;
     	
         if (entityLiving instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) entityLiving;
             
-            Vector3d Vector3d = new Vector3d(entityLiving.getPosition().getX(), entityLiving.getPosition().getY() + (double)entityLiving.getEyeHeight(), entityLiving.getPosition().getZ());
+            Vector3d Vector3d = new Vector3d(entityLiving.position().x, entityLiving.position().y + (double)entityLiving.getEyeHeight(), entityLiving.position().z);
             Vector3d Vector3d1 = new Vector3d(pos.getX(), pos.getY(), pos.getZ());
-            RayTraceResult raytrace =  worldIn.rayTraceBlocks(new RayTraceContext(Vector3d, Vector3d1, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, player));
+            RayTraceResult raytrace =  worldIn.clip(new RayTraceContext(Vector3d, Vector3d1, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, player));
             BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)raytrace;
             
-	    if (blockraytraceresult.getFace() == null) return false;
-            Direction sideHit = blockraytraceresult.getFace();
+	    if (blockraytraceresult.getDirection() == null) return false;
+            Direction sideHit = blockraytraceresult.getDirection();
 
             int xDist, yDist, zDist;
             yDist = xDist = zDist = mineRadius;
@@ -78,36 +78,36 @@ public class BaseHammer extends PickaxeItem {
                         for (int z = pos.getZ() - zDist; z <= pos.getZ() + zDist; z++) {
                             BlockPos targetPos = new BlockPos(x, y, z);
                             BlockState targetBlock = worldIn.getBlockState(targetPos);
-                            if (canHarvestBlock(targetBlock)) {
-                                if ((stack.getMaxDamage() - stack.getDamage()) >= 1 && targetBlock.getBlock() != Blocks.BEDROCK) {
+                            if (isCorrectToolForDrops(targetBlock)) {
+                                if ((stack.getMaxDamage() - stack.getDamageValue()) >= 1 && targetBlock.getBlock() != Blocks.BEDROCK) {
                                     if (targetBlock.getBlock().getExpDrop(targetBlock, worldIn, targetPos, 0, 0) > 0) {
-                                        if (worldIn.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
-                                        	worldIn.addEntity(new ExperienceOrbEntity(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, worldIn.getBlockState(pos).getBlock().getExpDrop(targetBlock, worldIn, targetPos, 0, 0)));
+                                        if (worldIn.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+                                        	worldIn.addFreshEntity(new ExperienceOrbEntity(worldIn, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, worldIn.getBlockState(pos).getBlock().getExpDrop(targetBlock, worldIn, targetPos, 0, 0)));
                                         }
                                     }
-                                    TileEntity tileentity = worldIn.getTileEntity(pos);
-                                    targetBlock.getBlock().harvestBlock(worldIn, player, pos, state, tileentity, stack);
+                                    TileEntity tileentity = worldIn.getBlockEntity(pos);
+                                    targetBlock.getBlock().playerDestroy(worldIn, player, pos, state, tileentity, stack);
                                     
                                     
-                                    if(EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
+                                    if(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, stack) > 0) {
                                     	worldIn.destroyBlock(new BlockPos(x, y, z), false, new ItemEntity(worldIn, x, y, z, new ItemStack(state.getBlock().asItem())));
                                     }
                                     else {
                                     	worldIn.destroyBlock(new BlockPos(x, y, z), false);
                                     }
                                 }
-                                stack.damageItem(1, player,  (p_220040_1_) -> { p_220040_1_.sendBreakAnimation(Hand.MAIN_HAND); });
+                                stack.hurtAndBreak(1, player,  (p_220040_1_) -> { p_220040_1_.broadcastBreakEvent(Hand.MAIN_HAND); });
                             }
                         }
                     }
                 }
-                stack.damageItem(1, player,  (p_220040_1_) -> { p_220040_1_.sendBreakAnimation(Hand.MAIN_HAND); });
+                stack.hurtAndBreak(1, player,  (p_220040_1_) -> { p_220040_1_.broadcastBreakEvent(Hand.MAIN_HAND); });
             }
             return false;
         }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(new TranslationTextComponent("tooltip.wubhammer_1"));
     }
 

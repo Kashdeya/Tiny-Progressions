@@ -18,8 +18,6 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
@@ -38,28 +36,28 @@ public class BirthdayPickaxe extends BasePickaxe {
    
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
        	tooltip.add(new TranslationTextComponent("tooltip.birthday_1"));
        	tooltip.add(new TranslationTextComponent("tooltip.birthday_2"));
 	}
     
    
 	@Override
-	public ActionResultType onItemUse(ItemUseContext context) {
-		if (!context.getWorld().isRemote) {
-			BlockPos pos = context.getPos().offset(context.getFace());
-			if (!context.getPlayer().canPlayerEdit(pos, context.getFace(), context.getPlayer().getHeldItem(context.getHand()))) {
+	public ActionResultType useOn(ItemUseContext context) {
+		if (!context.getLevel().isClientSide()) {
+			BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
+			if (!context.getPlayer().mayUseItemAt(pos, context.getClickedFace(), context.getPlayer().getItemInHand(context.getHand()))) {
 				return ActionResultType.FAIL;
-			} else if (context.getWorld().isAirBlock(pos)) {
-				if (context.getPlayer().getName().getUnformattedComponentText().equalsIgnoreCase("dark" + "osto")) {
-					context.getPlayer().sendMessage(new TranslationTextComponent("HAPPY BIRTHDAY DARKOSTO"), context.getPlayer().getUniqueID());
-					FireworkRocketEntity firework = new FireworkRocketEntity(context.getWorld(), context.getItem(), context.getPlayer());
-					firework.setPosition(context.getPos().getX(), context.getPos().getY(), context.getPos().getZ());
-					context.getPlayer().world.addEntity(firework);
+			} else if (context.getLevel().isEmptyBlock(pos)) {
+				if (context.getPlayer().getName().getContents().equalsIgnoreCase("dark" + "osto")) {
+					context.getPlayer().sendMessage(new TranslationTextComponent("HAPPY BIRTHDAY DARKOSTO"), context.getPlayer().getUUID());
+					FireworkRocketEntity firework = new FireworkRocketEntity(context.getLevel(), context.getItemInHand(), context.getPlayer());
+					firework.setPos(context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ());
+					context.getPlayer().level.addFreshEntity(firework);
 				}
-				context.getWorld().setBlockState(pos, Blocks.CAKE.getDefaultState());
-				context.getPlayer().getHeldItem(context.getHand()).damageItem(854, context.getPlayer(), (p_220040_1_) -> {
-	                  p_220040_1_.sendBreakAnimation(context.getHand());
+				context.getLevel().setBlockAndUpdate(pos, Blocks.CAKE.defaultBlockState());
+				context.getPlayer().getItemInHand(context.getHand()).hurtAndBreak(854, context.getPlayer(), (p_220040_1_) -> {
+	                  p_220040_1_.broadcastBreakEvent(context.getHand());
 	               });
 				return ActionResultType.SUCCESS;
 			}

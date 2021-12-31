@@ -28,7 +28,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class SmallBandage extends ItemBase {
 	
 	public SmallBandage() {
-		super(new Properties().maxStackSize(ConfigHandler.smallBandageHealStack).group(TinyProgressions.ToolsGroup));
+		super(new Properties().stacksTo(ConfigHandler.smallBandageHealStack).tab(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override
@@ -37,23 +37,23 @@ public class SmallBandage extends ItemBase {
 	}
 	  
 	@Override
-	public UseAction getUseAction(ItemStack stack) {
+	public UseAction getUseAnimation(ItemStack stack) {
 	    return UseAction.NONE;
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn,Hand handIn) {
+	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn,Hand handIn) {
 	    if (!playerIn.isCreative() && playerIn.getHealth() < playerIn.getMaxHealth()) {
-	      playerIn.getHeldItem(handIn).setCount(playerIn.getHeldItem(handIn).getCount() - 1);
-	      ((PlayerEntity) playerIn).addPotionEffect(new EffectInstance(Effects.REGENERATION, ConfigHandler.smallBandageRegen * 20, 0, false, false));
-	      return new ActionResult<ItemStack>(ActionResultType.SUCCESS, playerIn.getHeldItem(handIn));
+	      playerIn.getItemInHand(handIn).setCount(playerIn.getItemInHand(handIn).getCount() - 1);
+	      ((PlayerEntity) playerIn).addEffect(new EffectInstance(Effects.REGENERATION, ConfigHandler.smallBandageRegen * 20, 0, false, false));
+	      return new ActionResult<ItemStack>(ActionResultType.SUCCESS, playerIn.getItemInHand(handIn));
 	    }
-	    return new ActionResult<ItemStack>(ActionResultType.FAIL, playerIn.getHeldItem(handIn));
+	    return new ActionResult<ItemStack>(ActionResultType.FAIL, playerIn.getItemInHand(handIn));
 	}
 	  
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(new TranslationTextComponent("tooltip.bandage_1"));
 		tooltip.add(new TranslationTextComponent("tooltip.bandage_2"));
 		tooltip.add(new TranslationTextComponent("tooltip.medkits"));

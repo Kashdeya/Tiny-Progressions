@@ -38,27 +38,33 @@ public class JuicerRecipe implements ICraftingRecipe {
 	      this.isSimple = recipeItemsIn.stream().allMatch(Ingredient::isSimple);
 	   }
 	
-	
+   @Override
    public ResourceLocation getId() {
       return this.id;
    }
    
+   @Override
    public IRecipeSerializer<?> getSerializer() {
       return TechRecipeSerializer.Juicer.get();
    }
 
+   @Override
    public String getGroup() {
       return this.group;
    }
 
-   public ItemStack getRecipeOutput() {
+
+   @Override
+   public ItemStack getResultItem() {
       return this.recipeOutput;
    }
-
+   
+   @Override
    public NonNullList<Ingredient> getIngredients() {
       return this.recipeItems;
    }
 
+   @Override
    public boolean matches(CraftingInventory inv, World worldIn) {
       RecipeItemHelper recipeitemhelper = new RecipeItemHelper();
       java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
@@ -76,8 +82,10 @@ public class JuicerRecipe implements ICraftingRecipe {
 
       return i == this.recipeItems.size() && (isSimple ? recipeitemhelper.canCraft(this, (IntList)null) : net.minecraftforge.common.util.RecipeMatcher.findMatches(inputs,  this.recipeItems) != null);
    }
-
-   public ItemStack getCraftingResult(CraftingInventory inv) {
+   
+   
+   @Override
+   public ItemStack assemble(CraftingInventory inv) {
 	  ItemStack juicerOutput = ItemStack.EMPTY;
       for(int j = 0; j < inv.getContainerSize(); ++j) {
          ItemStack itemstack = inv.getItem(j);
@@ -98,16 +106,17 @@ public class JuicerRecipe implements ICraftingRecipe {
 	
    public static class Serializer extends net.minecraftforge.registries.ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<JuicerRecipe> {
 	      private static final ResourceLocation NAME = new ResourceLocation("minecraft", "crafting_shapeless");
-	      
-	      public JuicerRecipe read(ResourceLocation recipeId, JsonObject json) {
-	         String s = JSONUtils.getString(json, "group", "");
-	         NonNullList<Ingredient> nonnulllist = readIngredients(JSONUtils.getJsonArray(json, "ingredients"));
+	  	
+	      @Override
+	      public JuicerRecipe fromJson(ResourceLocation recipeId, JsonObject json) {
+	         String s = JSONUtils.getAsString(json, "group", "");
+	         NonNullList<Ingredient> nonnulllist = readIngredients(JSONUtils.getAsJsonArray(json, "ingredients"));
 	         if (nonnulllist.isEmpty()) {
 	            throw new JsonParseException("No ingredients for shapeless recipe");
 	         } else if (nonnulllist.size() > JuicerRecipe.MAX_WIDTH * JuicerRecipe.MAX_HEIGHT) {
 	             throw new JsonParseException("Too many ingredients for shapeless recipe the max is " + (JuicerRecipe.MAX_WIDTH * JuicerRecipe.MAX_HEIGHT));
 	         } else {
-	            ItemStack itemstack = ShapedRecipe.deserializeItem(JSONUtils.getJsonObject(json, "result"));
+	            ItemStack itemstack = ShapedRecipe.itemFromJson(JSONUtils.getAsJsonObject(json, "result"));
 	            return new JuicerRecipe(recipeId, s, itemstack, nonnulllist);
 	         }
 	      }
@@ -116,8 +125,9 @@ public class JuicerRecipe implements ICraftingRecipe {
 	         NonNullList<Ingredient> nonnulllist = NonNullList.create();
 
 	         for(int i = 0; i < p_199568_0_.size(); ++i) {
-	            Ingredient ingredient = Ingredient.deserialize(p_199568_0_.get(i));
-	            if (!ingredient.hasNoMatchingItems()) {
+	            Ingredient ingredient = Ingredient.fromJson(p_199568_0_.get(i));
+	            if (!ingredient.isEmpty()) {
+//	            	if (!ingredient.hasNoMatchingItems()) {
 	               nonnulllist.add(ingredient);
 	            }
 	         }
@@ -125,29 +135,41 @@ public class JuicerRecipe implements ICraftingRecipe {
 	         return nonnulllist;
 	      }
 
-	      public JuicerRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
-	         String s = buffer.readString(32767);
+	      @Override
+	      public JuicerRecipe fromNetwork(ResourceLocation recipeId, PacketBuffer buffer) {
+	         String s = buffer.readUtf(32767);
 	         int i = buffer.readVarInt();
 	         NonNullList<Ingredient> nonnulllist = NonNullList.withSize(i, Ingredient.EMPTY);
 
 	         for(int j = 0; j < nonnulllist.size(); ++j) {
-	            nonnulllist.set(j, Ingredient.read(buffer));
+	            nonnulllist.set(j, Ingredient.fromNetwork(buffer));
 	         }
 
-	         ItemStack itemstack = buffer.readItemStack();
+	         ItemStack itemstack = buffer.readItem();
 	         return new JuicerRecipe(recipeId, s, itemstack, nonnulllist);
 	      }
 
-	      public void write(PacketBuffer buffer, JuicerRecipe recipe) {
-	         buffer.writeString(recipe.group);
+	      @Override
+	      public void toNetwork(PacketBuffer buffer, JuicerRecipe recipe) {
+	         buffer.writeUtf(recipe.group);
 	         buffer.writeVarInt(recipe.recipeItems.size());
 
 	         for(Ingredient ingredient : recipe.recipeItems) {
-	            ingredient.write(buffer);
+	            ingredient.toNetwork(buffer);
 	         }
 
-	         buffer.writeItemStack(recipe.recipeOutput);
+	         buffer.writeItem(recipe.recipeOutput);
 	      }
+
+
 	   }
+
+
+@Override
+public boolean canCraftInDimensions(int p_194133_1_, int p_194133_2_) {
+	return true;
+}
+
+
 
 }

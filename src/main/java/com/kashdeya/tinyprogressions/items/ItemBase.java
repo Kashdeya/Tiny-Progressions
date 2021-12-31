@@ -2,9 +2,10 @@ package com.kashdeya.tinyprogressions.items;
 
 import com.kashdeya.tinyprogressions.registry.utils.IOreDictEntry;
 
+import net.minecraft.enchantment.IVanishable;
 import net.minecraft.item.Item;
 
-public class ItemBase extends Item implements IOreDictEntry{
+public class ItemBase extends Item implements IOreDictEntry, IVanishable{
 	String oredictName;
 	
 	public ItemBase(Properties properties) {

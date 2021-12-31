@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.kashdeya.tinyprogressions.handlers.ConfigHandler;
+import com.kashdeya.tinyprogressions.inits.TechItems;
 import com.kashdeya.tinyprogressions.items.ItemBase;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
@@ -12,6 +13,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
@@ -26,8 +28,7 @@ import net.minecraftforge.items.IItemHandler;
 
 public class RepairTablet extends ItemBase {
 	public RepairTablet() {
-		super(new Properties().maxStackSize(1).group(TinyProgressions.ToolsGroup));
-
+		super(new Properties().stacksTo(1).tab(TinyProgressions.ToolsGroup));
 	}
 
 	@Override
@@ -35,9 +36,18 @@ public class RepairTablet extends ItemBase {
 		if (!stack.hasTag())
 			stack.setTag(new CompoundNBT());
 
-		if (worldIn.isRemote || !(entityIn instanceof PlayerEntity))
+		if (worldIn.isClientSide() || !(entityIn instanceof PlayerEntity))
 			return;
 
+		PlayerEntity player = (PlayerEntity) entityIn;
+		boolean isHolding =false;
+
+		if(player.getItemBySlot(EquipmentSlotType.OFFHAND).sameItem(stack) || player.getItemBySlot(EquipmentSlotType.MAINHAND).sameItem(stack))
+			isHolding = true;
+
+		if(!isHolding)
+			return;
+		
 		stack.getTag().putInt("timer", stack.getTag().getInt("timer") + 1);
 
 		if (stack.getTag().getInt("timer") < ConfigHandler.repair_tablet_cooldown)
@@ -53,6 +63,7 @@ public class RepairTablet extends ItemBase {
 	}
 
 	void repairAllItems(PlayerEntity player) {
+		
 		final IItemHandler inv = player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).orElse(null);
 		if(inv != null)
 			for (int i = 0; i < inv.getSlots(); i++) {
@@ -61,11 +72,10 @@ public class RepairTablet extends ItemBase {
 				if (invStack.isEmpty() || !invStack.isRepairable())
 					continue;
 	
-				if (invStack != player.getItemStackFromSlot(EquipmentSlotType.MAINHAND)	&& invStack != player.getItemStackFromSlot(EquipmentSlotType.OFFHAND)
-						|| !player.isSwingInProgress) 
+				if (invStack != player.getItemBySlot(EquipmentSlotType.MAINHAND) && invStack != player.getItemBySlot(EquipmentSlotType.OFFHAND) || !player.swinging) 
 				{
-					if (invStack.isDamageable() && invStack.isDamaged())
-						invStack.setDamage(invStack.getDamage() - 1);
+					if (invStack.isDamageableItem() && invStack.isDamaged())
+						invStack.setDamageValue(invStack.getDamageValue()-1);
 				}
 			}
 	}

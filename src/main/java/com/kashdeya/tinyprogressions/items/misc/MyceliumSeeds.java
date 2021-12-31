@@ -26,17 +26,17 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class MyceliumSeeds extends ItemBase {
 
 	public MyceliumSeeds() {
-		super(new Properties().group(TinyProgressions.FoodGroup));
+		super(new Properties().tab(TinyProgressions.FoodGroup));
 //		this.setTranslationKey("mycelium_seeds");
 	}
 
 	@Override
-	public ActionResultType onItemUse(ItemUseContext context) {
+	public ActionResultType useOn(ItemUseContext context) {
 
-		if (context.getWorld().getBlockState(context.getPos()).getBlock() == Blocks.DIRT) {
-			context.getWorld().setBlockState(context.getPos(), Blocks.MYCELIUM.getDefaultState(), 2);
-			context.getWorld().playSound(null, context.getPos(), SoundEvents.BLOCK_GRASS_HIT, SoundCategory.BLOCKS, 0.3f, 1.5f);
-			InventoryHelper.consumeItem(context.getPlayer(), context.getPlayer().getHeldItem(context.getHand()));
+		if (context.getLevel().getBlockState(context.getClickedPos()).getBlock() == Blocks.DIRT) {
+			context.getLevel().setBlock(context.getClickedPos(), Blocks.MYCELIUM.defaultBlockState(), 2);
+			context.getLevel().playSound(null, context.getClickedPos(), SoundEvents.GRASS_HIT, SoundCategory.BLOCKS, 0.3f, 1.5f);
+			InventoryHelper.consumeItem(context.getPlayer(), context.getPlayer().getItemInHand(context.getHand()));
 			return ActionResultType.SUCCESS;
 		}
 

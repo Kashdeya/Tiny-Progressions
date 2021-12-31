@@ -36,6 +36,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraft.block.AbstractBlock.AbstractBlockState;
 
@@ -54,7 +56,7 @@ public class WateringCanBase extends ItemBase
 
     public WateringCanBase(Properties prop)
     {
-    	super(prop.maxStackSize(1));
+    	super(prop.stacksTo(1));
     }
 
     public WateringCanBase setWateringRange(int newRange)
@@ -86,37 +88,37 @@ public class WateringCanBase extends ItemBase
             
             if(!isSelected)
             {
-                ItemStack offhand = player.getHeldItem(Hand.OFF_HAND);
+                ItemStack offhand = player.getItemInHand(Hand.OFF_HAND);
                 
                 if(offhand.getItem() != TechItems.watering_can.get() && offhand.getItem() != TechItems.watering_can_upgrade.get())
                     forceActive = false;
             }
             
-            RayTraceResult raytrace = rayTrace(worldIn, player, FluidMode.NONE);
+            RayTraceResult raytrace = getPlayerPOVHitResult(worldIn, player, FluidMode.NONE);
             if(raytrace != null && raytrace.getType() == Type.BLOCK)
             {
             	BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)raytrace;
             	
-                attemptWaterParticles(worldIn, blockraytraceresult.getPos());
-                attemptWater(worldIn, blockraytraceresult.getPos());
+                attemptWaterParticles(worldIn, blockraytraceresult.getBlockPos());
+                attemptWater(worldIn, blockraytraceresult.getBlockPos());
             }
         }
     }
 
     
 	@Override
-	public UseAction getUseAction(ItemStack stack) {
+	public UseAction getUseAnimation(ItemStack stack) {
         return UseAction.NONE;
     }
 
 
 	@Override
 	public Rarity getRarity(ItemStack stack) {
-        return hasEffect(stack) ? Rarity.UNCOMMON : Rarity.COMMON;
+        return isFoil(stack) ? Rarity.UNCOMMON : Rarity.COMMON;
     }
 
     @Override
-    public boolean hasEffect(ItemStack stack)
+    public boolean isFoil(ItemStack stack)
     {
         return forceActive;
     }
@@ -124,17 +126,17 @@ public class WateringCanBase extends ItemBase
     int clicks = 0;
 
     @Override
-    public ActionResultType onItemUse(ItemUseContext context) 
+    public ActionResultType useOn(ItemUseContext context) 
     {
-    	World world = context.getWorld();
+    	World world = context.getLevel();
     	PlayerEntity player = context.getPlayer();
-    	BlockPos pos = context.getPos();
+    	BlockPos pos = context.getClickedPos();
     	Hand hand = context.getHand();
-    	Direction facing = context.getFace();
+    	Direction facing = context.getClickedFace();
     	
-        if(!world.isRemote && player.isCrouching())
+        if(!world.isClientSide() && player.isCrouching())
         {
-            int wateringcanCount = (int) IntStream.range(0, player.inventory.getSizeInventory()).mapToObj(i -> player.inventory.getStackInSlot(i)).filter(itemstack -> itemstack != ItemStack.EMPTY).map(ItemStack::getItem).filter(item -> item == TechItems.watering_can.get() || item == TechItems.watering_can_upgrade.get()).count();
+            int wateringcanCount = (int) IntStream.range(0, player.inventory.getContainerSize()).mapToObj(i -> player.inventory.getItem(i)).filter(itemstack -> itemstack != ItemStack.EMPTY).map(ItemStack::getItem).filter(item -> item == TechItems.watering_can.get() || item == TechItems.watering_can_upgrade.get()).count();
 
             if(wateringcanCount <= 1)
             {
@@ -145,10 +147,10 @@ public class WateringCanBase extends ItemBase
             }
             
             forceActive = false;
-            player.sendMessage(new TranslationTextComponent("item.watering_can.invalidusage"), player.getUniqueID());
+            player.sendMessage(new TranslationTextComponent("item.watering_can.invalidusage"), player.getUUID());
         }
 
-        if(!player.canPlayerEdit(pos.offset(facing), facing, player.getHeldItem(hand)))
+        if(!player.mayUseItemAt(pos.relative(facing), facing, player.getItemInHand(hand)))
         {
             return ActionResultType.FAIL;
         }
@@ -159,7 +161,7 @@ public class WateringCanBase extends ItemBase
 
     private ActionResultType attemptWater(World world, BlockPos pos)
     {
-        if(!world.isRemote && canWater)
+        if(!world.isClientSide() && canWater)
         {
 
             canWater = false;
@@ -172,16 +174,16 @@ public class WateringCanBase extends ItemBase
                     {
                         for(int yAxis = -range; yAxis <= range; yAxis++)
                         {
-                            BlockState checkBlock = world.getBlockState(pos.add(xAxis, yAxis, zAxis));
+                            BlockState checkBlock = world.getBlockState(pos.offset(xAxis, yAxis, zAxis));
                          	
                             if(checkBlock.getBlock() instanceof IGrowable || checkBlock.getBlock() == Blocks.MYCELIUM
                                     || checkBlock.getBlock() == Blocks.CACTUS || checkBlock.getBlock() == Blocks.SUGAR_CANE
                                     || checkBlock.getBlock() == Blocks.CHORUS_FLOWER)
                             {
                             	if(checkBlock.getBlock() instanceof CropsBlock)
-                            		checkBlock.getBlock().tick(checkBlock, (ServerWorld) world, pos.add(xAxis, yAxis, zAxis), world.rand);
+                            		checkBlock.tick((ServerWorld) world, pos.offset(xAxis, yAxis, zAxis), world.random);
                             	else
-                            		world.notifyBlockUpdate(pos.add(xAxis, yAxis, zAxis), checkBlock, checkBlock, 2);
+                            		world.sendBlockUpdated(pos.offset(xAxis, yAxis, zAxis), checkBlock, checkBlock, 2);
                             }
                         }
                     }
@@ -204,9 +206,9 @@ public class WateringCanBase extends ItemBase
             {
                 for(int z = -range; z <= range; z++)
                 {
-                    double d0 = pos.add(x, 0, z).getX() + rand.nextFloat();
-                    double d1 = pos.add(x, 0, z).getY() + 1.0D;
-                    double d2 = pos.add(x, 0, z).getZ() + rand.nextFloat();
+                    double d0 = pos.offset(x, 0, z).getX() + rand.nextFloat();
+                    double d1 = pos.offset(x, 0, z).getY() + 1.0D;
+                    double d2 = pos.offset(x, 0, z).getZ() + rand.nextFloat();
 
                     BlockState checkSolidState = world.getBlockState(pos);
                     Block checkSolid = checkSolidState.getBlock();
@@ -232,13 +234,13 @@ public class WateringCanBase extends ItemBase
         {
             IGrowable igrowable = (IGrowable)iblockstate.getBlock();
 
-            if(igrowable.canGrow(worldIn, target, iblockstate, worldIn.isRemote))
+            if(igrowable.isValidBonemealTarget(worldIn, target, iblockstate, worldIn.isClientSide()))
             {
-                if(!worldIn.isRemote)
+                if(!worldIn.isClientSide())
                 {
-                    if(igrowable.canUseBonemeal(worldIn, worldIn.rand, target, iblockstate))
+                    if(igrowable.isBonemealSuccess(worldIn, worldIn.random, target, iblockstate))
                     {
-                        igrowable.grow((ServerWorld) worldIn, worldIn.rand, target, iblockstate);
+                        igrowable.performBonemeal((ServerWorld) worldIn, worldIn.random, target, iblockstate);
                     }
 
                     stack.setCount(stack.getCount() - 1);
@@ -252,7 +254,8 @@ public class WateringCanBase extends ItemBase
     
     
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    @OnlyIn(Dist.CLIENT)
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
     	if(stack.getItem() == TechItems.watering_can.get()) { 
     		tooltip.add(new TranslationTextComponent("tooltip.can_1"));
     		tooltip.add(new TranslationTextComponent("tooltip.can_1"));

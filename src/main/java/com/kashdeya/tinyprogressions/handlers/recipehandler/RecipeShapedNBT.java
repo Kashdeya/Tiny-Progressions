@@ -23,7 +23,6 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -68,7 +67,7 @@ public class RecipeShapedNBT extends ShapedRecipe {
     }
 
     public IRecipeSerializer<?> getSerializer() {
-        return IRecipeSerializer.CRAFTING_SHAPED;
+        return IRecipeSerializer.SHAPED_RECIPE;
     }
 
     public String getGroup() {
@@ -117,7 +116,7 @@ public class RecipeShapedNBT extends ShapedRecipe {
                     }
                 }
 
-                if (!ingredient.test(craftingInventory.getStackInSlot(i + j * craftingInventory.getWidth()))) {
+                if (!ingredient.test(craftingInventory.getItem(i + j * craftingInventory.getWidth()))) {
                     return false;
                 }
             }
@@ -234,7 +233,7 @@ public class RecipeShapedNBT extends ShapedRecipe {
             throw new JsonSyntaxException("Invalid pattern: empty pattern not allowed");
         } else {
             for (int i = 0; i < astring.length; ++i) {
-                String s = JSONUtils.getString(jsonArr.get(i), "pattern[" + i + "]");
+                String s = JSONUtils.getAsString((JsonObject) jsonArr.get(i), "pattern[" + i + "]");
                 if (s.length() > MAX_WIDTH) {
                     throw new JsonSyntaxException("Invalid pattern: too many columns, " + MAX_WIDTH + " is maximum");
                 }
@@ -264,9 +263,9 @@ public class RecipeShapedNBT extends ShapedRecipe {
             }
 
             if (entry.getValue().isJsonObject() && entry.getValue().getAsJsonObject().has("nbt"))
-                map.put(entry.getKey(), Ingredient.fromStacks(deserializeItem(entry.getValue().getAsJsonObject())));
+                map.put(entry.getKey(), Ingredient.of(deserializeItem(entry.getValue().getAsJsonObject())));
             else
-                map.put(entry.getKey(), Ingredient.deserialize(entry.getValue()));
+                map.put(entry.getKey(), Ingredient.fromJson(entry.getValue()));
         }
 
         map.put(" ", Ingredient.EMPTY);
@@ -275,12 +274,12 @@ public class RecipeShapedNBT extends ShapedRecipe {
 
 
     public static ItemStack deserializeItem(JsonObject p_199798_0_) {
-        String s = JSONUtils.getString(p_199798_0_, "item");
+        String s = JSONUtils.getAsString(p_199798_0_, "item");
         Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(s));
         if (p_199798_0_.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
         } else {
-            int i = JSONUtils.getInt(p_199798_0_, "count", 1);
+            int i = JSONUtils.getAsInt(p_199798_0_, "count", 1);
             return net.minecraftforge.common.crafting.CraftingHelper.getItemStack(p_199798_0_, true);
         }
     }
@@ -289,41 +288,44 @@ public class RecipeShapedNBT extends ShapedRecipe {
     public static class Serializer extends net.minecraftforge.registries.ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<RecipeShapedNBT> {
         private static final ResourceLocation NAME = new ResourceLocation("minecraft", "crafting_shaped");
 
-        public RecipeShapedNBT read(ResourceLocation recipeId, JsonObject json) {
-            String s = JSONUtils.getString(json, "group", "");
-            Map<String, Ingredient> map = RecipeShapedNBT.deserializeKeyNBT(JSONUtils.getJsonObject(json, "key"));
-            String[] astring = RecipeShapedNBT.shrink(RecipeShapedNBT.patternFromJson(JSONUtils.getJsonArray(json, "pattern")));
+        @Override
+        public RecipeShapedNBT fromJson(ResourceLocation recipeId, JsonObject json) {
+            String s = JSONUtils.getAsString(json, "group", "");
+            Map<String, Ingredient> map = RecipeShapedNBT.deserializeKeyNBT(JSONUtils.getAsJsonObject(json, "key"));
+            String[] astring = RecipeShapedNBT.shrink(RecipeShapedNBT.patternFromJson(JSONUtils.getAsJsonArray(json, "pattern")));
             int i = astring[0].length();
             int j = astring.length;
             NonNullList<Ingredient> nonnulllist = RecipeShapedNBT.deserializeIngredients(astring, map, i, j);
-            ItemStack itemstack = ShapedRecipe.deserializeItem(JSONUtils.getJsonObject(json, "result"));
+            ItemStack itemstack = ShapedRecipe.itemFromJson(JSONUtils.getAsJsonObject(json, "result"));
             return new RecipeShapedNBT(recipeId, s, i, j, nonnulllist, itemstack);
         }
 
-        public RecipeShapedNBT read(ResourceLocation recipeId, PacketBuffer buffer) {
+        @Override
+        public RecipeShapedNBT fromNetwork(ResourceLocation recipeId, PacketBuffer buffer) {
             int i = buffer.readVarInt();
             int j = buffer.readVarInt();
-            String s = buffer.readString(32767);
+            String s = buffer.readUtf(32767);
             NonNullList<Ingredient> nonnulllist = NonNullList.withSize(i * j, Ingredient.EMPTY);
 
             for (int k = 0; k < nonnulllist.size(); ++k) {
-                nonnulllist.set(k, Ingredient.read(buffer));
+                nonnulllist.set(k, Ingredient.fromNetwork(buffer));
             }
 
-            ItemStack itemstack = buffer.readItemStack();
+            ItemStack itemstack = buffer.readItem();
             return new RecipeShapedNBT(recipeId, s, i, j, nonnulllist, itemstack);
         }
 
-        public void write(PacketBuffer buffer, RecipeShapedNBT recipe) {
+	    @Override
+        public void toNetwork(PacketBuffer buffer, RecipeShapedNBT recipe) {
             buffer.writeVarInt(recipe.recipeWidth);
             buffer.writeVarInt(recipe.recipeHeight);
-            buffer.writeString(recipe.group);
+            buffer.writeUtf(recipe.group);
 
             for (Ingredient ingredient : recipe.recipeItems) {
-                ingredient.write(buffer);
+                ingredient.toNetwork(buffer);
             }
 
-            buffer.writeItemStack(recipe.getRecipeOutput());
+            buffer.writeItem(recipe.getRecipeOutput());
         }
 
     }

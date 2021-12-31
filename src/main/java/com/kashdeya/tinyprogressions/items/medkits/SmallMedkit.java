@@ -33,18 +33,26 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class SmallMedkit extends ItemBase {
 	
 	public SmallMedkit() {
-		super(new Properties().maxStackSize(ConfigHandler.smallMedHealStack).group(TinyProgressions.ToolsGroup));
+		super(new Properties().stacksTo(ConfigHandler.smallMedHealStack).tab(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+	 public void releaseUsing(ItemStack p_77615_1_, World p_77615_2_, LivingEntity p_77615_3_, int p_77615_4_) {
+		System.out.println("test");
+		super.releaseUsing(p_77615_1_, p_77615_2_, p_77615_3_, p_77615_4_);
+	 }
+	
+	
+	@Override
+	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+		System.out.println("test");
 		if (entityLiving instanceof PlayerEntity) {
 			PlayerEntity PlayerEntity = (PlayerEntity)entityLiving;
 			if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
 				this.onItemUse(stack, worldIn, PlayerEntity);
 			}
-	        worldIn.playSound((PlayerEntity)null, PlayerEntity.getPosition().getX(), PlayerEntity.getPosition().getY(), PlayerEntity.getPosition().getZ(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
-	        
+	        worldIn.playSound((PlayerEntity)null, PlayerEntity.position().x, PlayerEntity.position().y, PlayerEntity.position().z, SoundEvents.ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
+	        	        
 	        if (PlayerEntity instanceof ServerPlayerEntity)
             {
 	        	if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
@@ -63,35 +71,40 @@ public class SmallMedkit extends ItemBase {
 	
 	protected void onItemUse(ItemStack stack, World worldIn, PlayerEntity player) {
 		if (player.getHealth() < player.getMaxHealth()){
-			player.addPotionEffect(new EffectInstance(Effects.INSTANT_HEALTH, 1 * 20, 0, false, false));
-			player.addPotionEffect(new EffectInstance(Effects.HEALTH_BOOST, ConfigHandler.smallMedBoostTime * 20, 1, false, false));
+			player.addEffect(new EffectInstance(Effects.HEAL, 1 * 20, 0, false, false));
+			player.addEffect(new EffectInstance(Effects.HEALTH_BOOST, ConfigHandler.smallMedBoostTime * 20, 1, false, false));
 		}
 	}
 	
 	@Override
 	public int getUseDuration(ItemStack stack) {
 	    return ConfigHandler.smallMedDuration;
+//		return 72000;
 	}
 	  
 	  
 	@Override
-	public UseAction getUseAction(ItemStack stack) {
+	public UseAction getUseAnimation(ItemStack stack) {
 	    return UseAction.BOW;
 	}
 	
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
 		if (playerIn.getHealth() < playerIn.getMaxHealth()){
-			playerIn.setActiveHand(handIn);
-			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, playerIn.getHeldItem(handIn));
+//			playerIn.setActiveHand(handIn);
+			System.out.println("worked");
+			playerIn.startUsingItem(handIn);
+			return ActionResult.consume(playerIn.getItemInHand(handIn));
 		}
-		return new ActionResult<ItemStack>(ActionResultType.FAIL, playerIn.getHeldItem(handIn));
+		System.out.println("fail");
+		
+		return ActionResult.fail(playerIn.getItemInHand(handIn));
 	}
 	  
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(new TranslationTextComponent("tooltip.medkit_1"));
 		tooltip.add(new TranslationTextComponent("tooltip.smallmedkit_2"));
 		tooltip.add(new TranslationTextComponent("tooltip.medkits"));

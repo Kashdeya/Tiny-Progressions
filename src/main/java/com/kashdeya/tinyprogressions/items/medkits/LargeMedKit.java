@@ -32,18 +32,18 @@ import net.minecraft.world.World;
 public class LargeMedKit extends ItemBase {
 	
 	public LargeMedKit() {
-		super(new Properties().maxStackSize(ConfigHandler.LargeMedHealStack).group(TinyProgressions.ToolsGroup));
+		super(new Properties().stacksTo(ConfigHandler.LargeMedHealStack).tab(TinyProgressions.ToolsGroup));
 	}
 	
 	@Override
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
 		if (entityLiving instanceof PlayerEntity) {
 			Random random = new Random();
 			PlayerEntity PlayerEntity = (PlayerEntity)entityLiving;
 			if (entityLiving.getHealth() < entityLiving.getMaxHealth()){
 				this.onItemUse(stack, worldIn, PlayerEntity);
 			}
-	        worldIn.playSound((PlayerEntity)null, PlayerEntity.getPosition().getX(), PlayerEntity.getPosition().getY(), PlayerEntity.getPosition().getZ(), SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
+	        worldIn.playSound((PlayerEntity)null, PlayerEntity.position().x, PlayerEntity.position().y, PlayerEntity.position().z, SoundEvents.ARMOR_EQUIP_GENERIC, SoundCategory.PLAYERS, 1.0F, 0.1F);
 	        
 	        if (PlayerEntity instanceof ServerPlayerEntity)
             {
@@ -63,8 +63,8 @@ public class LargeMedKit extends ItemBase {
 	
 	protected void onItemUse(ItemStack stack, World worldIn, PlayerEntity player) {
 		if (player.getHealth() < player.getMaxHealth()){
-			player.addPotionEffect(new EffectInstance(Effects.INSTANT_HEALTH, 1 * 20, 0, false, false));
-			player.addPotionEffect(new EffectInstance(Effects.HEALTH_BOOST, ConfigHandler.largeMedBoostTime * 20, 2, false, false));
+			player.addEffect(new EffectInstance(Effects.HEAL, 1 * 20, 0, false, false));
+			player.addEffect(new EffectInstance(Effects.HEALTH_BOOST, ConfigHandler.largeMedBoostTime * 20, 2, false, false));
 		}
 		// Saving for a later date
 		//player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(22);
@@ -77,17 +77,17 @@ public class LargeMedKit extends ItemBase {
 	}
 	  
 	@Override
-	public UseAction getUseAction(ItemStack stack) {
+	public UseAction getUseAnimation(ItemStack stack) {
 	    return UseAction.BOW;
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
 		if (playerIn.getHealth() < playerIn.getMaxHealth()){
-			playerIn.setActiveHand(handIn);
-			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, playerIn.getHeldItem(handIn));
+			playerIn.startUsingItem(handIn);
+			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, playerIn.getItemInHand(handIn));
 		}
-		return new ActionResult<ItemStack>(ActionResultType.FAIL, playerIn.getHeldItem(handIn));
+		return new ActionResult<ItemStack>(ActionResultType.FAIL, playerIn.getItemInHand(handIn));
 	}
 	  
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {

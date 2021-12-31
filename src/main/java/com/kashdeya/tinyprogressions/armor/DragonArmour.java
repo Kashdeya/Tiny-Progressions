@@ -59,7 +59,7 @@ public class DragonArmour extends BaseArmor {
 	            	living.addEffect(new EffectInstance(Effects.DAMAGE_BOOST, 180, ArmorHandler.dragon_strength_lvl, false, false));
 	            }
 	            if (ArmorHandler.dragon_armor && ArmorHandler.dragon_fly) {
-	            	living.abilities.flying = true;
+	            	living.abilities.mayfly = true;
 	            }
 	        } else {
 	        	((PlayerEntity)living).abilities.flying = false;

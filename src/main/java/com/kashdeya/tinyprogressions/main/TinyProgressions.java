@@ -69,34 +69,29 @@ public class TinyProgressions{
 	public static final ItemGroup FoodGroup = (new ItemGroup(Reference.MOD_ID+".food") {
 	      @OnlyIn(Dist.CLIENT)
 	      public ItemStack makeIcon() {
-	    	  return new ItemStack(Items.APPLE);
-//TODO
-//	         return new ItemStack(TechFoods.diamond_apple.get());
+	         return new ItemStack(TechFoods.diamond_apple.get());
 	      }
 	   }).setRecipeFolderName("tiny_progression_foods");
-//	
+	
 	public static final ItemGroup combatGroup = (new ItemGroup(Reference.MOD_ID+".combat") {
 	      @OnlyIn(Dist.CLIENT)
 	      public ItemStack makeIcon() {
-	    	  return new ItemStack(Items.DIAMOND_SWORD);
-//	         return new ItemStack(TechTools.obsidian_sword.get());
+	         return new ItemStack(TechTools.obsidian_sword.get());
 	      }
 	   }).setRecipeFolderName("tiny_progression_combat");
-//	
+	
 	   public static final ItemGroup ToolsGroup = (new ItemGroup(Reference.MOD_ID+".tools") {
 	      @OnlyIn(Dist.CLIENT)
 	      public ItemStack makeIcon() {
-	    	  return new ItemStack(Items.DIAMOND_PICKAXE);
-//	         return new ItemStack(TechTools.wub_pickaxe.get());
+	         return new ItemStack(TechTools.wub_pickaxe.get());
 	      }
 	   }).setRecipeFolderName("tiny_progression_tools");
-//	   
+	   
 	   
 	   public static final ItemGroup BlocksGroup = (new ItemGroup(Reference.MOD_ID+".blocks") {
 		      @OnlyIn(Dist.CLIENT)
 		      public ItemStack makeIcon() {
-//		         return new ItemStack(TechBlocks.hardened_stone_bricks.get());
-		         return new ItemStack(TechBlocks.cobblegen_block.get());
+		         return new ItemStack(TechBlocks.hardened_stone_bricks.get());
 		      }
 		   }).setRecipeFolderName("tiny_progression_blocks");
 
@@ -132,8 +127,8 @@ public class TinyProgressions{
 		TILE_ENTITY_TYPES.register(bus);
 //		CONTAINERS.register(bus);
 //		FEATURES.register(bus);
-//		SOUNDS.register(bus);
-//		RECIPEHANDLER.register(bus);
+		SOUNDS.register(bus);
+		RECIPEHANDLER.register(bus);
     }
 
 
@@ -185,7 +180,7 @@ public class TinyProgressions{
     	RenderTypeLookup.setRenderLayer(TechBlocks.white_lamp.get(),    cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.yellow_lamp.get(),   cutout_mipped);
 //    	
-//    	RenderTypeLookup.setRenderLayer(TechBlocks.fmf_block.get(), cutout);
+    	RenderTypeLookup.setRenderLayer(TechBlocks.fmf_block.get(), cutout);
 //    	
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_block.get(),      cutout_mipped);
     	RenderTypeLookup.setRenderLayer(TechBlocks.growth_upgrade.get(),    cutout_mipped);

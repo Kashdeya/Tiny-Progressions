@@ -9,7 +9,7 @@ public class MetaItemBlock extends BlockItem
 	
 	public MetaItemBlock(Block block)
 	{
-		super(block, new Properties().maxDamage(0));
+		super(block, new Properties());
 		
 //		this.unlocalNames = ((IMetadata)block).getUnlocalizedNames();
 	}

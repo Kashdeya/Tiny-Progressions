@@ -34,6 +34,7 @@ import com.kashdeya.tinyprogressions.blocks.ores.WaterBlock;
 import com.kashdeya.tinyprogressions.blocks.ores.WubOre;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedGlass;
 import com.kashdeya.tinyprogressions.blocks.reinforced.ReinforcedObsidian;
+import com.kashdeya.tinyprogressions.items.block.AngelItemBlock;
 import com.kashdeya.tinyprogressions.main.TinyProgressions;
 
 import net.minecraft.block.AbstractBlock.Properties;
@@ -112,7 +113,7 @@ public class TechBlocks {
 	// Angel 
 	//TODO
     public static RegistryObject<Block> fmf_block    = registerNoItem("fmf_block",	()->new StandardBlock(Block.Properties.of(Material.STONE).strength(1.5F, 1000F).sound(SoundType.STONE).harvestLevel(0).harvestTool(ToolType.PICKAXE).air()));
-//    public static RegistryObject<Item> fmf_BlockItem = TinyProgressions.ITEMS.register ("fmf_block",  () -> new AngelItemBlock(fmf_block.get()));
+    public static RegistryObject<Item> fmf_BlockItem = TinyProgressions.ITEMS.register ("fmf_block",  () -> new AngelItemBlock(fmf_block.get()));
 
     // Lamp Blocks
     public static RegistryObject<Block> lamp =          register("lamp",          () -> new Lamp(Properties.of(Material.GLASS)));

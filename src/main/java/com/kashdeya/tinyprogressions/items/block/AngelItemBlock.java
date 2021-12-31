@@ -21,22 +21,22 @@ public class AngelItemBlock extends BlockItem
 {
 	public AngelItemBlock(Block block)
 	{
-		super(block, new Properties().stacksTo(1).group(TinyProgressions.TAB));
+		super(block, new Properties().stacksTo(1).tab(TinyProgressions.TAB));
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) 
+	public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) 
 	{
 		if(world.isClientSide)
-			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
+			return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getItemInHand(hand));
 		
 		int x = (int)Math.floor(player.getX());
 		int y = (int)Math.floor(player.getY() + player.getEyeHeight());
 		int z = (int)Math.floor(player.getZ());
 		
-		Vector3d look = player.getLookVec();
+		Vector3d look = player.getLookAngle();
 		
-		Direction side = Direction.getFacingFromVector((float)look.x, (float)look.y, (float)look.z);
+		Direction side = Direction.getNearest((float)look.x, (float)look.y, (float)look.z);
 		switch(side)
 		{
 		case DOWN:
@@ -62,9 +62,9 @@ public class AngelItemBlock extends BlockItem
 		BlockPos pos = new BlockPos(x, y, z);
 		ItemUseContext context = new ItemUseContext(player, hand, new BlockRayTraceResult(Vector3d.ZERO,side, pos, false));
 		BlockItemUseContext blockContext = new BlockItemUseContext(context);
-		if(canPlace(blockContext, this.getBlock().getStateContainer().getBaseState()))
-			player.getHeldItem(hand).onItemUse(context);
+		if(canPlace(blockContext, this.getBlock().defaultBlockState()))
+			player.getItemInHand(hand).useOn(context);
 
-		return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getHeldItem(hand));
+		return new ActionResult<ItemStack>(ActionResultType.SUCCESS, player.getItemInHand(hand));
 	}
 }

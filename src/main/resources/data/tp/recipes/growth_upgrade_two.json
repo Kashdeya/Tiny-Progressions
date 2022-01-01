@@ -1,5 +1,5 @@
 {
-  "type": "tp:crafting_shaped_nbt",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "CGC",
     "SCS",
@@ -7,8 +7,12 @@
   ],
   "key": {
     "S": {
+	  "type": "forge:nbt",
       "item": "minecraft:potion",
-      "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+	  "count": 1,
+      "nbt": {
+		"Potion":"minecraft:strong_swiftness"
+	   }
     },
     "C": {
       "item": "minecraft:end_crystal"

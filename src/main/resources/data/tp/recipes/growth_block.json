@@ -1,5 +1,6 @@
 {
-  "type": "tp:crafting_shaped_nbt",
+  "type": "minecraft:crafting_shaped",
+  "group": "mbe35_sword_upgrade_group",
   "pattern": [
     "IBI",
     "DED",
@@ -10,8 +11,13 @@
       "item": "minecraft:bone_block"
     },
     "D": {
+
       "item": "minecraft:potion",
-      "nbt": "{Potion:\"minecraft:swiftness\"}"
+      "type": "forge:nbt",
+      "count": 1,
+      "nbt": {
+        "Potion": "minecraft:swiftness"
+      }
     },
     "E": {
       "item": "minecraft:sea_lantern"

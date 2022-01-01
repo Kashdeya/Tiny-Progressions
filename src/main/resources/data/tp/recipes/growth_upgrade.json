@@ -1,5 +1,5 @@
 {
-  "type": "tp:crafting_shaped_nbt",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "CNC",
     "WEW",
@@ -13,8 +13,12 @@
       "tag": "forge:glass"
     },
     "W": {
+	  "type": "forge:nbt",
       "item": "minecraft:potion",
-      "nbt": "{Potion:\"minecraft:long_swiftness\"}"
+	  "count": 1,
+      "nbt": {
+		"Potion": "minecraft:long_swiftness"
+	  }
     },
     "N": {
       "item": "minecraft:nether_star"

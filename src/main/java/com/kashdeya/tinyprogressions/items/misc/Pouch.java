@@ -25,7 +25,7 @@ public class Pouch extends ItemBase  implements INamedContainerProvider
 {
     public Pouch()
     {
-    	super(new Properties().maxStackSize(1));
+    	super(new Properties().stacksTo(1));
     }
     
     @Override
@@ -35,12 +35,12 @@ public class Pouch extends ItemBase  implements INamedContainerProvider
     }
      
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
+    public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand)
     {
-    	ItemStack itemstack = player.getHeldItem(hand);
-    	if(!world.isRemote) {
+    	ItemStack itemstack = player.getItemInHand(hand);
+    	if(!world.isClientSide()) {
     		NetworkHooks.openGui((ServerPlayerEntity) player, this);
-    		return new ActionResult<>(ActionResultType.SUCCESS, player.getHeldItem(hand));
+    		return new ActionResult<>(ActionResultType.SUCCESS, player.getItemInHand(hand));
     	}
     	return new ActionResult<>(ActionResultType.FAIL, itemstack);
     }

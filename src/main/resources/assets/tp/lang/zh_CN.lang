@@ -1,12 +1,26 @@
+#Shears
+item.wooden_shears.name=木剪刀
+item.golden_shears.name=金剪刀
+item.diamond_shears.name=钻石剪刀
+item.emerald_shears.name=绿宝石剪刀
+item.flint_shears.name=燧石剪刀
+item.stone_shears.name=石剪刀
+
 #Tech Blocks
 tile.cobblegen_block.name=造石机
 tile.iron_cobblegen_block.name=中级造石机
 tile.diamond_cobblegen_block.name=高级造石机
 tile.blaze_cobblegen_block.name=终极造石机
 tile.emerald_cobblegen_block.name=究极造石机
-
+tile.iron_furnace_block.name=铁炉
 #asphalt
 tile.asphalt_block.name=沥青
+
+#ghost block
+tile.ghost_block.name="圆石"
+
+#SUCC THE PEARLS
+item.succ_pearls.name=末影珍珠特饮
 
 #Growth Blocks
 tile.growth_block.name=生长晶体
@@ -23,22 +37,6 @@ item.blueberry_berry.name=蓝莓
 item.maloberry_berry.name=桑椹
 item.raspberry_berry.name=树莓
 
-
-#Artifacts
-item.wither_ring.name=§8凋零戒指
-tooltip.witherring_1=免疫凋零效果
-item.fire_ring.name=§4炽热戒指
-tooltip.firering_1=免疫熔岩以及火的伤害
-item.posion_ring.name=§a毒液戒指
-tooltip.posionring_1=免疫中毒效果
-item.nausea_ring.name=§a反胃抗性戒指
-tooltip.nausearing_1=免疫反胃效果
-item.master_ring.name=§a通灵之戒
-tooltip.masterring_1=免疫凋零效果
-tooltip.masterring_2=免疫熔岩以及火的伤害
-tooltip.masterring_3=免疫中毒效果
-tooltip.masterring_4=免疫反胃效果
-
 #Infinity Bucket
 item.infin_bucket.name=无尽之桶
 tooltip.infinbucket_1=提供无限水源
@@ -46,6 +44,16 @@ tooltip.infinbucket_1=提供无限水源
 #Steel
 tile.steel_block.name=钢块
 item.steel_ingot.name=钢锭
+
+#Dust
+item.obsidian_dust.name=黑曜石粉
+
+#Glowstone Glass
+tile.glowstone_glass.name=荧石玻璃
+
+#Tree Drops
+item.plump_pear.name=饱满的梨
+item.plump_peach.name=饱满的桃子
 
 #Infused Lava Block
 tile.lava_infused_stone.name=脉冲熔岩石
@@ -55,7 +63,8 @@ tooltip.infused_3=放置在水周围会凝结为圆石
 
 #JonBam Items
 item.c_axe.name=C-斧
-item.bam_tshirt.name=Bam-体恤衫
+item.bam_tshirt.name=Bam-T恤
+tooltip.bamsarmor_1=留胡子的蓝莓勇士穿的T恤！
 
 #TinyCoal
 item.tiny_charcoal.name=小块木炭
@@ -80,28 +89,29 @@ tile.diorite_brick.name=闪长岩砖块
 tile.granite_brick.name=花岗岩砖块
 tile.andesite_brick.name=安山岩砖块
 tile.smooth_endstone.name=平滑末地石
-tile.old_reed.name=干枯芦苇
-item.dead_reed.name=干枯甘蔗
+tile.old_reed.name=干枯甘蔗
+item.dead_reed.name=枯死的甘蔗
 tile.lava_block.name=熔岩石
+tile.nether_lava_block.name=地狱熔岩石
 tile.water_block.name=水石
 tile.soul_sandstone.name=灵魂砂岩
 
 #Hardened Stone
 tile.unhardened_stone.name=软石
 tile.hardened_stone.name=硬化石
-tile.hardened_stone_bricks.name=硬化石楼梯
-tile.hardened_stone_smallbricks.name=硬化石砖
+tile.hardened_stone_bricks.name=硬化石砖
+tile.hardened_stone_smallbricks.name=叠制硬化石砖
 
 tile.hardened_stone_stairs.name=硬化石楼梯
-tile.hardened_stone_smallbricks_stairs.name=硬化石砖楼梯
+tile.hardened_stone_smallbricks_stairs.name=叠制硬化石砖楼梯
 tile.hardened_stone_bricks_stairs.name=硬化石砖楼梯
 
 tile.hardened_stone_slab_half.name=硬化石台阶
 tile.hardened_stone_slab_double.name=硬化石台阶
 tile.hardened_stone_bricks_slab_half.name=硬化石砖台阶
 tile.hardened_stone_bricks_slab_double.name=硬化石砖台阶
-tile.hardened_stone_smallbricks_slab_half.name=硬化石砖楼梯
-tile.hardened_stone_smallbricks_slab_double.name=硬化石砖楼梯
+tile.hardened_stone_smallbricks_slab_half.name=叠制硬化石砖楼梯
+tile.hardened_stone_smallbricks_slab_double.name=叠制硬化石砖楼梯
 
 #Stone Torch
 tile.stone_torch.name=石质火把
@@ -122,9 +132,11 @@ item.raspberry_juice.name=树莓汁
 item.blueberry_juice.name=蓝莓汁
 item.blackberry_juice.name=黑莓汁
 item.maloberry_juice.name=桑椹汁
+item.pear_juice.name=梨汁
+item.peach_juice.name=桃汁
 
 #Kappa
-item.kappa_pick.name=Kappa Pick
+item.kappa_pick.name=Kappa镐
 
 #Reinforced Blocks
 tile.reinforced_glass.name=强化玻璃
@@ -137,9 +149,23 @@ tile.netherstar_block.name=压缩下界之星块
 tile.flint_block.name=压缩燧石块
 
 #Fluids
-fluid.vasholine=Wub Wub Juice
-tile.vasholine.name=Wub Wub Juice
-tooltip.vasholine_1=BEST FOR: DRY, CRACKED SKIN, MINOR CUTS, SCRAPES & BURNS!
+fluid.vasholine=Wub Wub汁
+tile.vasholine.name=Wub Wub汁
+tooltip.vasholine_1=最适用于：皮肤干燥、破裂、轻微割伤、擦伤和烧伤！
+item.wub_gem.name=Wub矿
+tooltip.wubgem_1=用来制作Wub Wub汁
+tile.wub_ore.name=Wub Wub矿石
+tile.nether_wub_ore.name=地狱Wub Wub矿石
+item.wub_paxel.name=Wub多功能工具
+tooltip.wubhammer_1=一次挖掘3x3
+item.wub_hammer.name=Wub锤子
+item.wub_pickaxe.name=Wub镐
+item.wub_axe.name=Wub斧
+item.wub_spade.name=Wub铲
+item.wub_sword.name=Wub剑
+item.wub_hoe.name=Wub锄
+item.wub_ingot.name=Wub锭
+
 
 #Watering Cans
 item.watering_can.name=洒水壶
@@ -168,7 +194,7 @@ item.ender_dust.name=末影粉
 item.BirthdayPickaxe.name=派对镐
 
 #Creative Tabs
-itemGroup.tiny_progressions=Tiny Progressions
+itemGroup.tiny_progressions=微型自动化
 
 #Armor
 item.stone_helmet.name=石头盔
@@ -203,8 +229,23 @@ item.redstone_apple.name=红石苹果
 #AppleProgression
 item.golden_apple.name=金苹果
 
+#Quick Sand
+tile.quick_sand.name=流砂
+
 #Medkit
-item.med_kit.name=医疗包
+item.small_bandage.name=小型医疗绷带
+item.large_bandage.name=大型医疗绷带
+item.small_med_kit.name=小型医疗包
+item.large_med_kit.name=大型医疗包
+
+#Medkit Tooltip
+tooltip.medkit_1=立刻治疗玩家!
+tooltip.medkits=医疗用品只能在受伤后使用!
+tooltip.smallmedkit_2=短时间内提供8点额外生命!
+tooltip.largemedkit_2=短时间内提供12点额外生命!
+tooltip.bandage_1=提供短时间的生命回复!
+tooltip.bandage_2=生命回复效果不能堆叠!
+tooltip.largebandage_1=短时间内提供4点额外生命!
 
 #Lapis Armor
 tooltip.lapisarmor_1=全套效果：水下呼吸
@@ -234,6 +275,7 @@ item.flint_axe.name=燧石斧
 item.flint_sword.name=燧石剑
 item.flint_hoe.name=燧石锄
 item.flint_knife.name=燧石匕首
+item.flint_multi.name=燧石多功能工具
 
 #Flint Armor
 item.flint_helmet.name=燧石头盔
@@ -310,15 +352,12 @@ tooltip.netherstar_1=可作为信标基座使用。
 tooltip.armor_1=使你缓慢！
 
 #Reinforced Blocks Tooltips
-tooltip.glass_1=凋零的证明！
-tooltip.obsidian_1=凋零的证明！
+tooltip.glass_1=能抵御凋零的攻击！
+tooltip.obsidian_1=能抵御凋零的攻击！
 
 #Birthday Pickaxe Tooltip
 tooltip.birthday_1=神速力镐！
 tooltip.birthday_2=右击会有惊喜！
-
-#Medkit Tooltip
-tooltip.medkit=治愈玩家！
 
 #Mycelium Tooltip
 tooltip.seeds=右击泥土将其感染为菌丝！
@@ -403,15 +442,11 @@ item.diamond_spear.name=钻石长矛
 item.emerald_spear.name=绿宝石长矛
 item.obsidian_spear.name=黑曜石长矛
 
-#Lava Armor
+#Magma Armor
 item.lava_helmet.name=熔岩头盔
 item.lava_chestplate.name=熔岩胸甲
 item.lava_leggings.name=熔岩护腿
 item.lava_boots.name=熔岩护腿
-
-#Lava Crystal
-item.lava_crystal.name=熔岩水晶
-tile.lava_crystal_block.name=熔岩水晶块
 
 #Lava Armor Tooltip
 tooltip.lavaarmor_1=全套效果：
@@ -434,7 +469,7 @@ item.dragon_boots.name=龙鳞靴子
 item.dragon_scale.name=龙鳞
 tooltip.scale_1=源于龙的鳞甲
 item.wither_rib.name=凋灵之骨
-tooltip.rib_1=源于凋灵骷髅的肋骨
+tooltip.rib_1=源于凋灵的肋骨
 
 #Wither Tooltips
 tooltip.witherarmor_1=全套效果：
@@ -528,7 +563,7 @@ item.bacon_eggs_sandwhich.name=煎蛋腌肉三明治
 item.chicken_sandwhich.name=鸡肉三明治
 item.beef_sandwhich.name=牛肉三明治
 item.bacon_sandwhich.name=腌肉三明治
-item.bams_pizza.name=Bam 披萨
+item.bams_pizza.name=Bam披萨
 
 #Repair Tablet
 item.repair_tablet.name=万用修理器
